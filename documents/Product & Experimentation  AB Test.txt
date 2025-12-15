@@ -1,0 +1,49 @@
+Product & Experimentation / A/B Test Questions
+A core part of the Meta data scientist product analytics interview involves product-sense and experimentation challenges that test your ability to define metrics, evaluate tests, and think like a product partner in a data-driven organization:
+
+7. How would you assess the validity of the result in an AB test?
+
+To assess the validity of the result, first ensure that the user groups were properly separated and randomly bucketed to avoid biases. Next, confirm that the variants were equal in all other aspects except the tested feature. Additionally, evaluate the measurement process, including sample size, duration of the test, and whether the p-value was monitored continuously, as this can lead to false positives or negatives. Finally, determine the minimum effect size and compute the required sample size and duration before starting the experiment to ensure statistical reliability.
+
+8. Revenue Retention: Calculate the formula for the average lifetime value
+
+To calculate the average lifetime value (LTV) for a subscription-based service, use the formula (LTV = \sum_{i=0}^{\infty} 100 \cdot 0.9^i), where 100 is the monthly subscription cost and 0.9 represents the retention rate after accounting for 10% churn. This formula sums the expected value of the customer over infinite months, converging to (LTV = $1000). The calculation accounts for retention rates and churn, providing a more accurate LTV than simply multiplying the average customer duration by the monthly cost.
+
+9. Given a list of strings, write a function that returns the longest common prefix
+
+To measure the percentage of fake news stories within 24 hours, start by defining what constitutes fake news, such as spam, bot-generated content, or incorrect media reporting. Then, use unsupervised methods to identify fake accounts, analyze article sharing patterns, and validate media outlets’ credibility. Metrics like user engagement, account authenticity, and cross-referencing news titles can help infer the percentage of fake news stories.
+
+10. Given a team wants to A/B test multiple changes through a sign-up funnel, how would you set up this test?
+
+To set up this test, you would create a multivariate test with four variants: red button at the top, red button at the bottom, blue button at the top, and blue button at the bottom. Randomly assign users to each variant and calculate the sample size needed to reach statistical significance. Alternatively, chaining A/B tests could be considered, but this approach would not account for interaction effects between the variables.
+
+11. Given customer spending data, how would you determine the next partner card?
+
+To determine the next partner card, analyze customer transaction data by grouping spending by merchants and identifying high-spending merchants without existing partnerships. Consider metrics like average transaction price and frequency to optimize for recurring spending. Additionally, examine year-over-year growth trends to forecast future high-spending merchants and conduct external research to identify merchants popular outside the current dataset for customer acquisition.
+
+Behavioral & Culture-Fit Questions
+The data scientist Meta interview also includes behavioral prompts designed to assess collaboration, resilience, and alignment with Meta’s values—key qualities that Facebook data science interview loops look for in high-performing candidates:
+
+12. Describe an analytics experiment that you designed. How were you able to measure success?
+
+In a Meta context, this question is often about demonstrating your ability to design robust, scalable experiments that drive product decisions. You might describe designing an A/B test to evaluate the impact of a new ranking algorithm on user engagement within the News Feed.
+
+Success would be measured through metrics like time spent, click-through rates, or meaningful social interactions. You should explain how you set up the control and treatment groups, ensured randomization, and accounted for bias or variance. Mention tools like Hive, PyTorch, or Meta’s internal experimentation platforms, and show how you used p-values or confidence intervals to validate findings and inform product rollout decisions.
+
+13. Talk about a time when you had trouble communicating with stakeholders. How were you able to overcome it?
+
+At Meta, stakeholders range from product managers to engineers and designers, and they often have different levels of technical fluency. You could describe a time when you presented a complex causal inference model, but the team found it too abstract.
+
+To overcome this, you simplified the narrative using data visualizations and drew parallels to user behavior they were more familiar with. You might mention how you scheduled follow-ups or embedded yourself in sprint reviews to build context. Emphasize how this experience improved your stakeholder management and ultimately helped align teams on the insights and next steps.
+
+14. Why Do You Want to Work With Us
+
+For a Metadata Scientist role at Meta, you should go beyond generic enthusiasm. Highlight how Meta’s commitment to open science, large-scale experimentation, and infrastructure for data scientists aligns with your interests.
+
+For example, you could mention your excitement about working on products that impact billions of users or the opportunity to contribute to innovations in content discovery, trust and safety, or generative AI. Be specific about how Meta’s scale and emphasis on measurement excellence match your goals. This is also a good place to reflect on Meta’s core values like “Focus on Long-Term Impact” or “Move Fast.”
+
+15. Describe a data project you worked on. What were some of the challenges you faced?
+
+This is a chance to show your ability to drive a project end-to-end. For a Meta role, you could describe working on a project where you built a machine learning model to predict user churn or optimized a recommendation pipeline.
+
+Explain the technical scope, like data ingestion with Presto, model training using PyTorch, and how you collaborated with product teams to define success. Then describe real-world challenges—maybe you faced incomplete logging or had to backfill data to simulate historical results. Talk about how you navigated ambiguity, validated your approach with stakeholders, and iterated to ship a solution that drove measurable impact.

@@ -1,0 +1,842 @@
+### **Understanding the `OVER()` Clause in SQL**
+
+The `OVER()` clause is used with **window functions** to perform calculations across a set of rows related to the current row **without collapsing the result set** like a standard `GROUP BY`. It enables **ranking, aggregations, and comparisons** without reducing the number of rows returned.
+
+---
+
+## **🚀 Basic Syntax of `OVER()`**
+
+The general syntax is:
+
+```sql
+<window_function> OVER (
+    [PARTITION BY column_name]
+    [ORDER BY column_name]
+)
+```
+
+* `<window_function>` → A function that works across a "window" (subset of data).
+* `PARTITION BY column_name` → Defines groups for calculations (optional).
+* `ORDER BY column_name` → Defines row order within the partition (optional).
+
+---
+
+## **🔥 Key Use Cases of `OVER()`**
+
+### **1️⃣ Ranking Functions (`RANK()`, `DENSE_RANK()`, `ROW_NUMBER()`)**
+
+👉 Used to assign ranks, row numbers, or unique positions within partitions.
+
+```sql
+SELECT 
+    CustomerID, 
+    LoanID, 
+    Amount, 
+    RANK() OVER (PARTITION BY CustomerID ORDER BY Amount DESC) AS LoanRank
+FROM Loans;
+```
+
+**🔹 What It Does:**
+
+* Partitions data **by CustomerID** (each customer is ranked separately).
+* Ranks loans **within each customer**, based on **loan amount (highest first)**.
+* `RANK()` assigns **same rank to ties** (next rank skips numbers).
+
+**📝 Example Output:**
+
+| CustomerID | LoanID | Amount | LoanRank |
+| ---------- | ------ | -----: | -------- |
+| 101        | 5001   |  10000 | 1        |
+| 101        | 5002   |   8000 | 2        |
+| 101        | 5003   |   8000 | 2        |
+| 101        | 5004   |   5000 | 4        |
+
+---
+
+### **2️⃣ Running Totals / Moving Averages**
+
+👉 Used to compute cumulative totals or sliding window averages.
+
+```sql
+SELECT 
+    CustomerID,
+    LoanID,
+    Amount,
+    SUM(Amount) OVER (PARTITION BY CustomerID ORDER BY LoanDate) AS RunningTotal
+FROM Loans;
+```
+
+**🔹 What It Does:**
+
+* Groups rows **by CustomerID** (each customer has a separate running total).
+* Orders by **LoanDate** (calculations accumulate sequentially).
+* `SUM(Amount) OVER(...)` gives a **cumulative sum of loan amounts**.
+
+**📝 Example Output:**
+
+| CustomerID | LoanID | Amount | RunningTotal |
+| ---------- | ------ | ------ | ------------ |
+| 101        | 5001   | 5000   | 5000         |
+| 101        | 5002   | 2000   | 7000         |
+| 101        | 5003   | 1000   | 8000         |
+
+---
+
+### **3️⃣ Comparing Current & Previous Row (`LAG()`, `LEAD()`)**
+
+👉 Used to access **previous or next row values** without a self-join.
+
+```sql
+SELECT 
+    CustomerID, 
+    LoanID, 
+    LoanDate,
+    LAG(LoanDate) OVER (PARTITION BY CustomerID ORDER BY LoanDate) AS PreviousLoanDate,
+    DATEDIFF(DAY, LAG(LoanDate) OVER (PARTITION BY CustomerID ORDER BY LoanDate), LoanDate) AS DaysBetweenLoans
+FROM Loans;
+```
+
+**🔹 What It Does:**
+
+* Uses `LAG(LoanDate)` to get **previous loan’s LoanDate**.
+* Computes **days between consecutive loans** using `DATEDIFF()`.
+
+**📝 Example Output:**
+
+| CustomerID | LoanID | LoanDate   | PreviousLoanDate | DaysBetweenLoans |
+| ---------- | ------ | ---------- | ---------------- | ---------------- |
+| 101        | 5001   | 2024-01-01 | NULL             | NULL             |
+| 101        | 5002   | 2024-03-01 | 2024-01-01       | 60               |
+| 101        | 5003   | 2024-06-01 | 2024-03-01       | 92               |
+
+---
+
+### **4️⃣ Percentile & Running Percent**
+
+👉 Used for percentile calculations or cumulative percentage totals.
+
+```sql
+SELECT 
+    CustomerID, 
+    LoanID, 
+    Amount, 
+    100.0 * SUM(Amount) OVER (PARTITION BY CustomerID ORDER BY LoanDate) / SUM(Amount) OVER (PARTITION BY CustomerID) AS PercentOfTotal
+FROM Loans;
+```
+
+**🔹 What It Does:**
+
+* Computes running **percentage of total loan amount per customer**.
+
+**📝 Example Output:**
+
+| CustomerID | LoanID | Amount | PercentOfTotal |
+| ---------- | ------ | ------ | -------------- |
+| 101        | 5001   | 5000   | 50.00%         |
+| 101        | 5002   | 3000   | 80.00%         |
+| 101        | 5003   | 2000   | 100.00%        |
+
+---
+
+## **🚀 Summary of `OVER()` Concepts**
+
+| **Function**          | **Usage**                                | **Example**                         |
+| --------------------- | ---------------------------------------- | ----------------------------------- |
+| `RANK() OVER()`       | Assigns ranking (skips numbers for ties) | Rank customers by total loan amount |
+| `DENSE_RANK() OVER()` | Similar to RANK but no gaps in numbering | Rank loans per customer             |
+| `ROW_NUMBER() OVER()` | Assigns unique row numbers               | Get first loan per customer         |
+| `SUM() OVER()`        | Running total                            | Running interest paid per customer  |
+| `AVG() OVER()`        | Moving average                           | 3-month loan default rate           |
+| `LAG() OVER()`        | Get previous row’s value                 | Compare current and last loan dates |
+| `LEAD() OVER()`       | Get next row’s value                     | Predict next payment date           |
+
+---
+
+## **🔹 When NOT to Use `OVER()`**
+
+🚫 **If you need to collapse results** into fewer rows, use **GROUP BY** instead.
+🚫 **If you only need a single-row aggregation**, use `SUM()`/`COUNT()` directly.
+🚫 **If previous/next comparisons require filtering**, consider `JOIN` instead of `LAG()`.
+
+---
+
+## **🔥 Takeaway**
+
+The `OVER()` clause makes **ranking, running totals, and row-wise comparisons simple**! Mastering it **eliminates the need for complex subqueries or joins** in many cases.
+
+🚀 **Use `OVER()` whenever you need row-level computations that don’t change row counts!** 🚀
+
+
+Here’s an expanded version of your **SQL syntax usage list**, with more key SQL functions and concepts, including **`OVER()`**, **recursive queries**, **performance optimization**, **string manipulations**, and **conditional filtering**.
+
+---
+
+### **🔹 Basic Filtering & Selection**
+
+* **Keywords:** Find, Retrieve, List, Return, Filter
+* **Common Syntax:** `SELECT`, `WHERE`, `DISTINCT`, `LIMIT`, `TOP`, `IN`, `BETWEEN`
+* **Example:**
+
+  ```sql
+  SELECT DISTINCT CustomerID FROM Loans WHERE Amount > 5000;
+  ```
+
+---
+
+### **🔹 Aggregation & Grouping**
+
+* **Keywords:** Total, Sum, Average, Count, Categorical
+* **Common Syntax:** `SUM()`, `COUNT()`, `AVG()`, `MIN()`, `MAX()`, `GROUP BY`, `HAVING`
+* **Example:**
+
+  ```sql
+  SELECT CustomerID, SUM(Amount) AS TotalLoan FROM Loans GROUP BY CustomerID;
+  ```
+
+---
+
+### **🔹 Joins & Relationships**
+
+* **Keywords:** Combine, Match, Link, Cross-Analysis (Tables)
+* **Common Syntax:** `INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, `FULL OUTER JOIN`, `SELF JOIN`, `CROSS JOIN`
+* **Example:**
+
+  ```sql
+  SELECT c.CustomerName, l.Amount
+  FROM Customers c
+  INNER JOIN Loans l ON c.CustomerID = l.CustomerID;
+  ```
+
+---
+
+### **🔹 Ranking & Ordering**
+
+* **Keywords:** Top N, Largest, Smallest, Rank
+* **Common Syntax:** `ORDER BY`, `RANK() OVER()`, `DENSE_RANK() OVER()`, `ROW_NUMBER() OVER()`
+* **Example:**
+
+  ```sql
+  SELECT CustomerID, LoanID, Amount,
+         RANK() OVER (PARTITION BY CustomerID ORDER BY Amount DESC) AS Rank
+  FROM Loans;
+  ```
+
+---
+
+### **🔹 Window Calculations (`OVER()` Clause)**
+
+* **Keywords:** Previous, Next, Running Total, Cumulative
+* **Common Syntax:** `SUM() OVER()`, `AVG() OVER()`, `LAG()`, `LEAD()`, `PARTITION BY`
+* **Example:**
+
+  ```sql
+  SELECT CustomerID, LoanID, Amount,
+         SUM(Amount) OVER (PARTITION BY CustomerID ORDER BY LoanDate) AS RunningTotal
+  FROM Loans;
+  ```
+
+---
+
+### **🔹 Date Calculations**
+
+* **Keywords:** “How Many Days?”, “Within x Days”, “Monthly”
+* **Common Syntax:** `DATEDIFF()`, `DATEADD()`, `EXTRACT()`, `CURRENT_DATE`, `NOW()`, `FORMAT()`
+* **Example:**
+
+  ```sql
+  SELECT LoanID, LoanDate, DATEDIFF(DAY, LoanDate, CURRENT_DATE) AS DaysSinceLoan
+  FROM Loans;
+  ```
+
+---
+
+### **🔹 Case Statements**
+
+* **Keywords:** Categorize, Bucket, “If This, Then That”
+* **Common Syntax:** `CASE WHEN THEN ELSE END`, `COALESCE()`, `NULLIF()`
+* **Example:**
+
+  ```sql
+  SELECT CustomerID, Amount,
+         CASE 
+           WHEN Amount > 10000 THEN 'High'
+           WHEN Amount BETWEEN 5000 AND 9999 THEN 'Medium'
+           ELSE 'Low'
+         END AS LoanCategory
+  FROM Loans;
+  ```
+
+---
+
+### **🔹 Subqueries & CTEs**
+
+* **Keywords:** “Find Based on X”, “Nested Queries”, Temp. Results
+* **Common Syntax:** `WITH`, `EXISTS`, `IN`, `NOT IN`, `ANY`, `ALL`, `LATERAL`
+* **Example (CTE):**
+
+  ```sql
+  WITH HighLoans AS (
+      SELECT CustomerID, SUM(Amount) AS TotalLoans
+      FROM Loans
+      GROUP BY CustomerID
+      HAVING SUM(Amount) > 50000
+  )
+  SELECT c.CustomerName, h.TotalLoans
+  FROM Customers c
+  INNER JOIN HighLoans h ON c.CustomerID = h.CustomerID;
+  ```
+* **Example (Subquery):**
+
+  ```sql
+  SELECT CustomerID, Amount 
+  FROM Loans
+  WHERE Amount > (SELECT AVG(Amount) FROM Loans);
+  ```
+
+---
+
+### **🔹 Recursive Queries**
+
+* **Keywords:** Hierarchy, Recursive Data, Tree Structure
+* **Common Syntax:** `WITH RECURSIVE`
+* **Example:**
+
+  ```sql
+  WITH RECURSIVE LoanHierarchy (CustomerID, LoanID, ParentLoanID, Level) AS (
+    SELECT CustomerID, LoanID, ParentLoanID, 1 
+    FROM Loans WHERE ParentLoanID IS NULL
+    UNION ALL
+    SELECT l.CustomerID, l.LoanID, l.ParentLoanID, h.Level + 1
+    FROM Loans l
+    INNER JOIN LoanHierarchy h ON l.ParentLoanID = h.LoanID
+  )
+  SELECT * FROM LoanHierarchy;
+  ```
+
+---
+
+### **🔹 String Manipulation**
+
+* **Keywords:** Text Cleaning, Format, Extract
+* **Common Syntax:** `CONCAT()`, `SUBSTRING()`, `TRIM()`, `LOWER()`, `UPPER()`, `REPLACE()`, `LIKE`
+* **Example:**
+
+  ```sql
+  SELECT CustomerID, CONCAT(UPPER(FirstName), ' ', UPPER(LastName)) AS FullName
+  FROM Customers;
+  ```
+
+---
+
+### **🔹 Conditional Filtering (`EXISTS`, `NOT EXISTS`, `ANY`, `ALL`)**
+
+* **Keywords:** Conditional Checks, Existence
+* **Common Syntax:** `EXISTS`, `NOT EXISTS`, `ANY`, `ALL`
+* **Example:**
+
+  ```sql
+  SELECT CustomerID, CustomerName
+  FROM Customers c
+  WHERE EXISTS (
+      SELECT 1 FROM Loans l WHERE l.CustomerID = c.CustomerID AND l.Amount > 5000
+  );
+  ```
+
+---
+
+### **🔹 Performance Optimization**
+
+* **Keywords:** Indexing, Query Speed, Execution Plan
+* **Common Syntax:** `EXPLAIN`, `ANALYZE`, `INDEX`, `CLUSTERED INDEX`, `NONCLUSTERED INDEX`
+* **Example:**
+
+  ```sql
+  CREATE INDEX idx_customer_loans ON Loans (CustomerID);
+  ```
+
+---
+
+### **🔹 Pivoting & Transposing Data**
+
+* **Keywords:** Reshape, Convert Rows to Columns
+* **Common Syntax:** `PIVOT()`, `UNPIVOT()`
+* **Example (SQL Server Pivot):**
+
+  ```sql
+  SELECT * 
+  FROM (SELECT CustomerID, LoanType, Amount FROM Loans) AS SourceTable
+  PIVOT (
+      SUM(Amount) FOR LoanType IN ([Personal], [Mortgage], [Auto])
+  ) AS PivotTable;
+  ```
+
+---
+
+### **🔹 JSON Handling**
+
+* **Keywords:** JSON, NoSQL-style Data, Semi-Structured Data
+* **Common Syntax:** `JSON_VALUE()`, `JSON_QUERY()`, `JSON_TABLE()`
+* **Example:**
+
+  ```sql
+  SELECT JSON_VALUE(CustomerData, '$.name') AS CustomerName
+  FROM Customers;
+  ```
+
+---
+
+## **🚀 Final Expanded SQL Usage Categories**
+
+| **Category**                    | **Key SQL Concepts**                                                                  |
+| ------------------------------- | ------------------------------------------------------------------------------------- |
+| **Basic Filtering & Selection** | `WHERE`, `DISTINCT`, `LIMIT`, `TOP`, `IN`, `BETWEEN`                                  |
+| **Aggregation & Grouping**      | `SUM()`, `COUNT()`, `AVG()`, `MIN()`, `MAX()`, `GROUP BY`, `HAVING`                   |
+| **Joins & Relationships**       | `INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, `FULL OUTER JOIN`, `SELF JOIN`, `CROSS JOIN` |
+| **Ranking & Ordering**          | `ORDER BY`, `RANK() OVER()`, `DENSE_RANK() OVER()`, `ROW_NUMBER() OVER()`             |
+| **Window Calculations**         | `SUM() OVER()`, `AVG() OVER()`, `LAG()`, `LEAD()`, `PARTITION BY`                     |
+| **Date Calculations**           | `DATEDIFF()`, `DATEADD()`, `EXTRACT()`, `CURRENT_DATE`, `NOW()`, `FORMAT()`           |
+| **Case Statements**             | `CASE WHEN THEN END`, `COALESCE()`, `NULLIF()`                                        |
+| **Subqueries & CTEs**           | `WITH`, `EXISTS`, `IN`, `NOT IN`, `ANY`, `ALL`, `LATERAL`                             |
+| **Recursive Queries**           | `WITH RECURSIVE`                                                                      |
+| **String Manipulation**         | `CONCAT()`, `SUBSTRING()`, `TRIM()`, `UPPER()`, `LOWER()`, `REPLACE()`                |
+| **Conditional Filtering**       | `EXISTS`, `NOT EXISTS`, `ANY`, `ALL`                                                  |
+| **Performance Optimization**    | `EXPLAIN`, `ANALYZE`, `INDEX`                                                         |
+| **Pivoting & Transposing**      | `PIVOT()`, `UNPIVOT()`                                                                |
+| **JSON Handling**               | `JSON_VALUE()`, `JSON_QUERY()`, `JSON_TABLE()`                                        |
+
+---
+
+🚀 **Now your list is fully expanded to cover almost every advanced SQL concept!** 🚀
+
+
+Let's break down this SQL line in detail:
+
+```sql
+RANK() OVER (PARTITION BY CustomerID ORDER BY Amount DESC) AS LoanRank
+```
+
+---
+
+## **Understanding Each Component**
+
+### **1️⃣ RANK() Function**
+
+* `RANK()` is a **window function** that assigns **ranking numbers** to rows based on the **ORDER BY** clause.
+* It assigns the **same rank to duplicate values** but **skips ranks** for ties.
+
+---
+
+### **2️⃣ OVER() Clause**
+
+The `OVER()` clause defines the **window** (subset of data) over which the ranking function operates.
+
+---
+
+### **3️⃣ PARTITION BY CustomerID**
+
+* This **divides** the data into groups based on the `CustomerID`.
+* **Each CustomerID gets ranked separately** (each partition starts its ranking at 1).
+* **Without PARTITION BY**, the ranking would be done over the **entire dataset** instead of per customer.
+
+---
+
+### **4️⃣ ORDER BY Amount DESC**
+
+* Within **each partition** (each `CustomerID` group), the rows are ordered by `Amount` **in descending order**.
+* The loan with the **largest amount** gets `Rank 1`, the second-largest gets `Rank 2`, and so on.
+
+---
+
+## **Example Scenario**
+
+Let's assume we have a **Loans** table:
+
+| LoanID | CustomerID | Amount |
+| ------ | ---------- | -----: |
+| 5001   | 101        |  10000 |
+| 5002   | 101        |   8000 |
+| 5003   | 101        |   8000 |
+| 5004   | 101        |   5000 |
+| 6001   | 102        |  12000 |
+| 6002   | 102        |   9000 |
+| 6003   | 102        |   7000 |
+
+---
+
+## **How the Query Works**
+
+```sql
+SELECT 
+    CustomerID, 
+    LoanID, 
+    Amount, 
+    RANK() OVER (PARTITION BY CustomerID ORDER BY Amount DESC) AS LoanRank
+FROM Loans;
+```
+
+### **Step-by-Step Execution**
+
+1. **Partition Data by `CustomerID`**
+
+   * Customers **101** and **102** get separate ranking groups.
+2. **Sort Loans within Each Partition by `Amount DESC`**
+
+   * **Customer 101:** Loans are ordered as `10000, 8000, 8000, 5000`
+   * **Customer 102:** Loans are ordered as `12000, 9000, 7000`
+3. **Assign Ranks Within Each Partition**
+
+   * Loans **with the same amount get the same rank** (ties are handled).
+   * If two rows have the same amount, the **next rank is skipped** (RANK function behavior).
+
+---
+
+## **Final Output**
+
+| CustomerID | LoanID | Amount | LoanRank |
+| ---------- | ------ | -----: | -------: |
+| 101        | 5001   |  10000 |        1 |
+| 101        | 5002   |   8000 |        2 |
+| 101        | 5003   |   8000 |        2 |
+| 101        | 5004   |   5000 |        4 |
+| 102        | 6001   |  12000 |        1 |
+| 102        | 6002   |   9000 |        2 |
+| 102        | 6003   |   7000 |        3 |
+
+---
+
+## **Key Observations**
+
+* **Customer 101:**
+
+  * The highest amount (`10000`) is **ranked 1**.
+  * The next amount (`8000`) appears **twice**, so both get **rank 2**.
+  * The next available rank after the tie is **rank 4** (rank 3 is skipped).
+* **Customer 102:**
+
+  * Amounts are **all unique**, so ranks are **consecutive** (1, 2, 3).
+
+---
+
+## **Alternative Approaches**
+
+### **🔹 `DENSE_RANK()` Instead of `RANK()`**
+
+If we replace `RANK()` with `DENSE_RANK()`, the ranks will **not skip numbers after ties**:
+
+```sql
+SELECT 
+    CustomerID, 
+    LoanID, 
+    Amount, 
+    DENSE_RANK() OVER (PARTITION BY CustomerID ORDER BY Amount DESC) AS LoanRank
+FROM Loans;
+```
+
+| CustomerID | LoanID | Amount | LoanRank |
+| ---------- | ------ | -----: | -------: |
+| 101        | 5001   |  10000 |        1 |
+| 101        | 5002   |   8000 |        2 |
+| 101        | 5003   |   8000 |        2 |
+| 101        | 5004   |   5000 |        3 |
+| 102        | 6001   |  12000 |        1 |
+| 102        | 6002   |   9000 |        2 |
+| 102        | 6003   |   7000 |        3 |
+
+**Difference?**
+
+* No skipped ranks (`3` instead of `4` after the tie).
+* `DENSE_RANK()` is useful when a **continuous ranking sequence** is needed.
+
+---
+
+## **Final Takeaways**
+
+✅ **`RANK() OVER (PARTITION BY ... ORDER BY ...)`**
+
+* Partitions data **by CustomerID** → Ensures rankings are per customer.
+* Sorts **within each partition** using `ORDER BY Amount DESC`.
+* Assigns **ranks**, but **skips numbers after ties**.
+
+🚀 **Use Cases:**
+
+* Finding **top N items per category** (e.g., highest loan per customer).
+* Ranking **loan amounts, revenue, expenses** within groups.
+* Determining **placement (e.g., 1st, 2nd, 3rd) in competition data**.
+
+---
+
+Let me know if you need more clarity! 🚀
+
+
+Below are **10 SQL questions** tailored for **Upstart’s** fintech and auto loan focus. These questions cover various SQL concepts that a **Data Analyst** might encounter in a live SQL interview.
+
+---
+
+## **1️⃣ Identify Overdue Auto Loans**
+
+👉 **Concepts Covered:** `DATEDIFF()`, `CASE`, `JOIN`
+
+### **Question:**
+
+Find all **auto loans** that are **overdue** (i.e., past the due date and not fully paid). Include `LoanID`, `CustomerID`, `DueDate`, `PaymentDate`, and `DaysOverdue`. Label the loan as **"Overdue"** or **"Paid on Time"**.
+
+#### **Schema:**
+
+**Loans Table**
+
+| LoanID | CustomerID | LoanAmount | LoanDate   | DueDate    | PaymentDate |
+| ------ | ---------- | ---------- | ---------- | ---------- | ----------- |
+| 1001   | 501        | 15000      | 2024-01-01 | 2024-07-01 | 2024-07-05  |
+| 1002   | 502        | 20000      | 2024-02-01 | 2024-08-01 | NULL        |
+
+#### **SQL Solution:**
+
+```sql
+SELECT 
+    LoanID,
+    CustomerID,
+    DueDate,
+    PaymentDate,
+    DATEDIFF(day, DueDate, COALESCE(PaymentDate, CURRENT_DATE)) AS DaysOverdue,
+    CASE 
+        WHEN PaymentDate IS NULL AND CURRENT_DATE > DueDate THEN 'Overdue'
+        WHEN PaymentDate > DueDate THEN 'Overdue'
+        ELSE 'Paid on Time'
+    END AS LoanStatus
+FROM Loans
+WHERE 
+    (PaymentDate IS NULL AND CURRENT_DATE > DueDate) 
+    OR (PaymentDate > DueDate);
+```
+
+#### **Solution Explanation:**
+
+* **Filters overdue loans** where the payment was either **never made (NULL)** or **made late**.
+* **Uses `DATEDIFF()`** to calculate the number of days overdue.
+* **Uses `CASE`** to label loans as "Overdue" or "Paid on Time".
+
+---
+
+## **2️⃣ Find Customers with Multiple Active Auto Loans**
+
+👉 **Concepts Covered:** `COUNT()`, `GROUP BY`, `HAVING`
+
+### **Question:**
+
+Find customers who have **more than one active auto loan**.
+
+#### **SQL Solution:**
+
+```sql
+SELECT 
+    CustomerID, 
+    COUNT(*) AS ActiveLoanCount
+FROM Loans
+WHERE PaymentDate IS NULL  -- Active loans (not paid)
+GROUP BY CustomerID
+HAVING COUNT(*) > 1;
+```
+
+#### **Solution Explanation:**
+
+* **Counts loans per customer** where the `PaymentDate IS NULL` (i.e., active loans).
+* **Filters customers with more than one active loan** using `HAVING COUNT(*) > 1`.
+
+---
+
+## **3️⃣ Ranking Customers by Total Loan Amount**
+
+👉 **Concepts Covered:** `SUM()`, `RANK() OVER(PARTITION BY ...)`
+
+### **Question:**
+
+Rank customers by **total loan amount borrowed**, from highest to lowest.
+
+#### **SQL Solution:**
+
+```sql
+SELECT 
+    CustomerID, 
+    SUM(LoanAmount) AS TotalLoanAmount,
+    RANK() OVER (ORDER BY SUM(LoanAmount) DESC) AS LoanRank
+FROM Loans
+GROUP BY CustomerID;
+```
+
+#### **Solution Explanation:**
+
+* **Aggregates total loan amount per customer** using `SUM()`.
+* **Ranks customers** by total loan amount using `RANK() OVER(ORDER BY SUM(LoanAmount) DESC)`.
+
+---
+
+## **4️⃣ Calculate Average Loan Amount Per Credit Score Bracket**
+
+👉 **Concepts Covered:** `CASE`, `AVG()`, `GROUP BY`
+
+### **Question:**
+
+Find the **average loan amount** for customers in **different credit score brackets**.
+
+#### **Schema:**
+
+**Customers Table**
+
+| CustomerID | Name  | CreditScore |
+| ---------- | ----- | ----------- |
+| 501        | John  | 720         |
+| 502        | Alice | 650         |
+
+#### **SQL Solution:**
+
+```sql
+SELECT 
+    CASE 
+        WHEN CreditScore >= 750 THEN 'Excellent'
+        WHEN CreditScore BETWEEN 700 AND 749 THEN 'Good'
+        WHEN CreditScore BETWEEN 650 AND 699 THEN 'Fair'
+        ELSE 'Poor'
+    END AS CreditBracket,
+    AVG(LoanAmount) AS AvgLoanAmount
+FROM Loans L
+JOIN Customers C ON L.CustomerID = C.CustomerID
+GROUP BY CreditBracket;
+```
+
+#### **Solution Explanation:**
+
+* **Categorizes customers into credit score brackets**.
+* **Calculates average loan amount per bracket**.
+
+---
+
+## **5️⃣ Customers with Rejected Loan Applications**
+
+👉 **Concepts Covered:** `COUNT()`, `HAVING`, `JOIN`
+
+### **Question:**
+
+Find customers who have **more than one rejected loan application**.
+
+#### **Schema:**
+
+**LoanApplications Table**
+
+| ApplicationID | CustomerID | Status   |
+| ------------- | ---------- | -------- |
+| 2001          | 501        | Approved |
+| 2002          | 501        | Rejected |
+| 2003          | 502        | Rejected |
+| 2004          | 502        | Rejected |
+
+#### **SQL Solution:**
+
+```sql
+SELECT 
+    CustomerID,
+    COUNT(*) AS RejectionCount
+FROM LoanApplications
+WHERE Status = 'Rejected'
+GROUP BY CustomerID
+HAVING COUNT(*) > 1;
+```
+
+#### **Solution Explanation:**
+
+* **Counts rejected loan applications per customer**.
+* **Filters customers with more than one rejection** using `HAVING COUNT(*) > 1`.
+
+---
+
+## **6️⃣ Detecting "Loan Churn" (Customers Taking a New Loan Soon After Closing One)**
+
+👉 **Concepts Covered:** `LAG()`, `DATEDIFF()`, `PARTITION BY`
+
+### **SQL Solution:**
+
+```sql
+WITH LoanHistory AS (
+    SELECT 
+        CustomerID,
+        LoanID,
+        LoanDate,
+        PaymentDate,
+        LAG(PaymentDate) OVER (PARTITION BY CustomerID ORDER BY LoanDate) AS PrevLoanEndDate
+    FROM Loans
+    WHERE PaymentDate IS NOT NULL
+)
+SELECT 
+    CustomerID,
+    LoanID AS NewLoanID,
+    LoanDate AS NewLoanDate,
+    PrevLoanEndDate,
+    DATEDIFF(day, PrevLoanEndDate, LoanDate) AS DaysBetweenLoans
+FROM LoanHistory
+WHERE 
+    PrevLoanEndDate IS NOT NULL 
+    AND DATEDIFF(day, PrevLoanEndDate, LoanDate) <= 30;
+```
+
+#### **Solution Explanation:**
+
+* **Uses `LAG()`** to retrieve the **previous loan’s end date**.
+* **Calculates time between loans** using `DATEDIFF()`.
+* **Filters cases where the new loan was taken within 30 days of closing the previous one**.
+
+---
+
+## **7️⃣ Total Monthly Loan Issuance**
+
+👉 **Concepts Covered:** `DATE_TRUNC()`, `SUM()`, `GROUP BY`
+
+### **SQL Solution:**
+
+```sql
+SELECT 
+    DATE_TRUNC('month', LoanDate) AS LoanMonth,
+    SUM(LoanAmount) AS TotalLoansIssued
+FROM Loans
+GROUP BY LoanMonth
+ORDER BY LoanMonth DESC;
+```
+
+#### **Solution Explanation:**
+
+* **Groups loans by month** using `DATE_TRUNC()`.
+* **Sums loan amounts per month**.
+
+---
+
+## **8️⃣ Customers Who Fully Repaid Loans**
+
+👉 **Concepts Covered:** `COUNT()`, `GROUP BY`, `HAVING`
+
+### **SQL Solution:**
+
+```sql
+SELECT 
+    CustomerID, 
+    COUNT(*) AS FullyRepaidLoans
+FROM Loans
+WHERE PaymentDate IS NOT NULL
+GROUP BY CustomerID
+HAVING COUNT(*) > 0;
+```
+
+#### **Solution Explanation:**
+
+* **Finds customers who have made full loan payments** (`PaymentDate IS NOT NULL`).
+
+---
+
+### **🛠️ Final Notes**
+
+🚀 **These SQL questions will help you prepare for Upstart's SQL segment** by covering:
+
+* Loan status tracking
+* Customer risk assessment
+* Loan approval trends
+* Ranking, aggregates, and window functions
+
+Let me know if you need **more practice questions**! 🚀
+

@@ -1,0 +1,924 @@
+We are looking for a strategic and innovative leader to join ASM as the Director of Market Analytics. In this role, you will be at the forefront of driving key business decisions through market opportunity evaluations, competitive intelligence and revenue projections. You will have the opportunity to collaborate with global teams, contribute to product strategy and directly influence the future of ASM's positioning in the semiconductor industry. This is an exciting opportunity to lead high-impact initiatives in a rapidly evolving industry.
+
+Role Responsibilities
+
+Lead efforts to evaluate and size market opportunities across existing and new technologies, focusing on cutting-edge Logic/Foundry, DRAM and NAND markets, while also addressing mature markets such as Power, Analog and CIS. 
+Collaborate with stakeholders from Sales, Business Development, and R&D to align on market assumptions, competitive analysis and potential adoption in key areas. 
+Periodically review, update and maintain market models to reflect the latest industry trends and technology shifts. 
+Lead cross-regional and cross-disciplinary alignment meetings to ensure unified views of market opportunities and competitive positioning, keeping all assumptions up to date. 
+Lead and coach the Red Team for competitive analysis, working closely with cross-functional teams to drive product strategy decisions. Engage across global regions and departments, fostering a collaborative environment that encourages diverse input. 
+Drive competitive analysis for high-value products and segments, collaborating with BU, Field, IP, and R&D teams. Use competitive insights to inform product strategy development and assess risks and opportunities. 
+Provide comprehensive analysis and reports on ASM’s market share, revenue and competitive position. 
+Support company-wide strategic planning, long-range forecasting and investor communications, including for earnings calls and investor days. As well as contribute to external technical marketing communications. 
+Continuously refine and enhance market modeling tools and triangulation techniques. Including leading initiatives to improve modeling methods for mature markets (Foundry, Power, Wafer, Analog, CIS+), while advancing competitive intelligence capabilities. 
+Stay informed on market, customer and competitor developments. Provide timely and relevant insights to support corporate decision-making and strategy development. 
+Support Marketing Communications for quarterly earnings, AGM and other external technical marketing communications across ASM. 
+
+Minimum Qualifications
+
+PhD or Master’s degree in a relevant field (Engineering, Business, or similar), with significant industry experience. 
+10+ years of experience in semiconductor device and manufacturing and/or equipment markets. 
+Demonstrated expertise in market sizing, competitive analysis, and strategic decision-making related to wafer fab equipment product marketing, application, sales or related practices. 
+Proven ability to align and influence cross-functional and global teams (BU, Sales and R&D). 
+Strong data analysis, critical thinking and presentation skills. 
+Experience engaging global teams (Sales, Technologists and BU Marketing) and managing meetings across multiple time zones (Asia, US, EU). 
+Fluency in English with excellent communication skills, including executive-level presentation experience. 
+Flexibility to travel internationally and domestically up to ~30%, is required. 
+
+Preferred Qualifications
+
+Specific focus on FEOL and BEOL deposition technologies, with exposure to leading-edge and/or MTM emerging technologies. 
+Experience in mature markets such as trailing-edge Foundry, Power, Analog and CIS. 
+Deep understanding of how end markets influence semiconductor equipment markets. 
+Familiarity with product development, sales processes and best practices. 
+Proven ability to continuously improve processes and develop new market modeling techniques.
+Understands and articulates the business case of business questions and the estimated value being delivered. Designs dashboards and analyses to be performed, and appropriate visualization and analytics tools to use. Identifies trends and patterns to address identified business questions and provide insights through reporting and data visualization techniques. Works with other data and analytics professionals to optimize, refine, automate and scale analysis into repeatable analytics solutions and decision support tools.
+
+Builds various reporting dashboards using the most appropriate data extraction, data cleaning and data visualisation techniques.
+Provides value through insights, reporting and data visualization techniques. Selects, configures and implements analytics solutions for consistency and repeatability.
+Researches and applies continuous improvement in data visualization by identifying trends and patterns to transform raw data into actionable business insights.
+Works with different teams, management and stakeholders to enhance the usability and aesthetic appeal of data analytics solutions deployed in the organization.
+Translates business needs to technical specifications and evaluates existing data visualization systems in order to improve them.
+Develops data visualizations of "large" amounts of data that facilitate the intuitive presentation of data to decision makers.
+Documents data flow, systems and processes to improve the design, implementation and management of business/group processes.
+Develops tools and delivers training programs for use of reporting tools and self-serve analytics by non-analytical end users; may include delivery of training to audiences.
+Focus is primarily on business/group within BMO; may have broader, enterprise-wide focus.
+Provides specialized consulting, analytical and technical support.
+Exercises judgment to identify, diagnose, and solve problems within given rules.
+Works independently and regularly handles non-routine situations.
+Broader work or accountabilities may be assigned as needed.
+
+Qualifications:
+
+
+Foundational level of proficiency:
+
+Technical design optimization.
+Decision Making.
+Systems Thinking.
+
+
+Intermediate level of proficiency:
+
+Data visualization.
+Data storytelling.
+Data mining.
+Illustration.
+Creative thinking.
+Problem Solving.
+Verbal & written communication skills.
+Collaboration & team skills.
+Analytical and problem solving skills.
+Data driven decision making.
+
+
+Advanced level of proficiency:
+
+Insights design.
+Insights development and reporting.
+Typically between 5 - 7 years of relevant experience and post-secondary degree in related field of study or an equivalent combination of education and experience.
+Deep knowledge and technical proficiency gained through extensive education and business experience.
+
+Teladoc Health is seeking a data-driven and results-oriented Director, Marketing Reporting & Analytics to join our Consumer Marketing team. This high-exposure role will play a critical part in transforming how we plan, execute, and optimize marketing campaigns by embedding analytics into every step of the marketing lifecycle. The ideal candidate is a highly analytical and strategic leader who is equally comfortable diving deep into data, building compelling dashboards, and translating insights into tactical recommendations that drive business growth and improve the member experience.
+
+Essential Duties And Responsibilities
+
+Lead the transformation of Consumer Marketing into a data driven growth engine, using data to deliver timely and actionable campaign insights across digital and offline channels 
+Build and maintain performance dashboards (e.g., Tableau, DOMO) that track KPIs such as ROMI, ROAS, NPS, and registration volume 
+Implement and lead daily, weekly, and monthly business reviews with insight packages, opportunity diagnostics, and strategic guidance 
+Analyze campaign effectiveness, test-and-learn results, and audience trends to guide marketing optimization 
+Contribute to forecasting models and budget performance diagnostics in collaboration with Finance and Strategy 
+Maintain data quality and accuracy across marketing performance reports, coordinating with Data Engineering and Martech teams 
+Educate and empower marketing stakeholders on data literacy and insights self-service tools 
+Build and nurture a high performing team of two business analysts
+
+Supervisory Responsibilities
+
+Yes
+
+Required Qualifications
+
+10+ years of experience in marketing analytics
+10 years of experience creating and executing on roadmaps within a marketing function.
+Advanced SQL skills
+Advanced proficiency with visualization tools like Tableau, DOMO, or Power BI 
+ 5 years of experience with digital marketing metrics (CPM, CPA, CTR, conversion rate) and media measurement techniques 
+Minimum of 3 years building and leading high-performing teams
+Bachelor’s degree in Business, Marketing, Analytics, Economics.
+
+Preferred Qualifications
+
+Master’s Degree
+Healthcare industry experience
+ Has a bias for action and is comfortable working in a fast-paced environment with shifting priorities and high visibility 
+Demonstrated ability to translate complex data into clear narratives and actionable recommendations
+Experience successfully collaborating with cross-functional teams, including Marketing, Data Science, Product, and Finance
+
+The Opportunity
+
+USAA is enhancing its digital experience to better serve our members' evolving needs. To support this, our marketing analytics team is expanding its focus to encompass the entire customer journey, from initial touchpoint to policy acquisition. We’re seeking a Lead Digital Analyst to drive impactful changes. You will be at the heart of digital storytelling and insight delivery – translating member behavior into clear, actionable tests and experience improvements.
+
+This role offers a unique opportunity to influence senior executive leadership on the direction of our digital transformation initiatives. As a Lead Digital Analyst, you'll leverage your expertise to build trust through data and empower decision-making throughout the organization. If you're a strategic thinker with a passion for data and a proven ability to lead, we encourage you to apply.
+
+We offer a flexible work environment that requires an individual to be in the office 4 days per week. This position can be based in one of the following locations: San Antonio, TX, Plano, TX, Phoenix, AZ, Colorado Springs, CO, Charlotte, NC, Chesapeake, VA or Tampa, FL.
+
+Relocation assistance is available for this position.
+
+What You'll Do
+
+Leverages expert business, analytical and technical knowledge to lead discussions with cross functional teams to understand and collaborate highly complex business objectives and influence solution strategies.
+Applies advanced analytical techniques to solve business problems that are typically large scale with significant impact to current and/or future business strategy.
+Organizes and oversees the development of requirements/resources necessary to meet established objectives
+Applies innovative and scientific/quantitative analytical approaches to draw conclusions and make recommendations to answer the business objective and drive the appropriate change. 
+Translates recommendation into communication materials to effectively present to all levels of management.
+Incorporates visualization techniques to support the relevant points of the analysis and ease the understanding for less technical audiences.
+Identifies and gathers the relevant and quality data sources required to fully answer and address the problem for the recommended strategy through testing or exploratory data analysis (EDA).
+Integrates/transforms disparate data sources and determines the appropriate data hygiene techniques to apply.
+Thoroughly documents assumptions, methodology, validation and testing to facilitate peer reviews and compliance requirements.
+Monitors, understands and adopts emerging technology that can affect the application of scientific methodologies and/or quantitative analytical approaches to problem resolutions.
+Succinctly delivers complex analysis/findings in a manner that conveys understanding, influences senior executives, garners support for recommendations, drives business decisions, and influences business strategy.
+Provides subject matter expertise in operationalizing recommendations.
+Researches and pursues the latest and/or industry leading practices in data and analytics, (Ex: Cloud, Data Mining, Python, Neural Networks, Sensor data, IoT, Streaming/NRT data) to advance the overall DSA community knowledge.
+Identifies opportunities to continue to learn in the data and analytics space, whether informal (E.g., Coursera, Udemy, Kaggle, Code Up, etc) or formal (E.g. Certifications or advanced coursework). ). 
+Innovates to create new and emerging data sets, and incorporation (data wrangling, data munging) into new insights.
+Ensures risks associated with business activities are effectively identified, measured, monitored, and controlled in accordance with risk and compliance policies and procedures.
+
+What You Have
+
+Bachelor's degree in quantitative analytics field such as Economics, Finance, Statistics, Mathematics, Actuarial Sciences, Operations Research, Data and/or Business Analysis, Data Science or other quantitative discipline is required; OR 4 years of related statistics, mathematics or quantitative analytics or related experience (in addition to the minimum years of experience required) may be substituted in lieu of degree.
+8 years of data & analytics experience; OR 6 years of data & analytics experience and up to 2 years of progressive functional business relevant experience within the respective industry of responsibility (i.e. P&C, Bank, Finance, Marketing etc.) for a total of 8 years combined experience; OR Advanced degree in quantitative analytics field such as Economics, Finance, Statistics, Mathematics, Actuarial Sciences, Operations Research, Data and/or Business Analysis, Data Science or other quantitative discipline and 6 years of experience in data/analytics or functional business experience within the respective industry of responsibility (i.e. P&C, Bank, Finance, Marketing, etc.).
+3 years of direct and/or indirect management experience.
+Demonstrates expert skills in mathematical and statistical techniques and approaches used to drive fact-based decision-making.
+Expert knowledge of data analysis tools, data visualization, developing analysis queries and procedures in SQL, SAS, BI tools or other analysis software, and relevant industry data & methods and ability to connect external insights to business problems.
+
+What Sets You Apart
+
+5+ years experience in digital analytics, tagging & CRO.
+Analytics: Google analytics, Adobe analytics
+Tagging: Teailum, GTM, etc.
+Journey analysis.
+SQL required and python a plus.
+Predictive modeling experience.
+The Ads Data Science and Engineering team at Netflix’s mission is to help build the foundation of the ads business at Netflix. We conduct analyses and develop analytic tools, build predictive models and algorithms using machine learning, all with the goal of creating more choices and joy for our members. You’ll work closely with partner teams to build workflows, provide recommendations and drive success on end-to-end analytics initiatives in this 0 -1 space.
+
+We are seeking an experienced Manager, Ads Demand Analytics & Insights to lead and manage demand-side analytics, providing insights and strategies to unlock advertising performance and enable sales growth. This pivotal role involves working closely with demand channels, programmatic initiatives, and sales teams to scale revenue growth for the business. The ideal candidate will possess a high level of adtech acumen and a strategic mindset to drive business growth while balancing immediate needs with long-term strategic goals. Join our team and play a key role in shaping the future of our advertising business, where your expertise in demand analytics and insights will drive performance and innovation.
+
+Responsibilities
+
+Hire, inspire, and grow high-performing analytic engineers.
+Lead strong partnerships with stakeholders from across the business - from product management, engineering, consumer insights, content, and strategy.
+Instill an inclusive culture that is innovative and collaborative, both within your team and in the broader organization.
+Develop a team charter and roadmap that optimizes the impact of the team and reflects evolving business needs.
+Act as an ambassador between the Product, Engineering, Strategy, and DSE teams by having a deep knowledge of how the Netflix Ads product works.
+Ensure that your team is producing consistently trustworthy and high-quality technical outputs that influence the business. 
+
+The Ideal Candidate
+
+Proven experience in a similar role, with a strong focus on sales performance and revenue-generating analytics. 
+Demonstrated tenacity, resilience, and leadership experience that enables you to organize and drive cross-functional projects, overcome challenges, and propose solutions. 
+Be both quantitative and qualitative. You should be able to quickly assess and understand complex systems, but also have high EQ, so that you can be a product ambassador to the rest of the organization, and our Sales and global partners. 
+You are a player-coach. You can develop roadmaps and strategy, but also execute on technical work and ensure that your team produces consistent high quality outputs.
+Superb communication skills - You must be able to cultivate strong working relationships, communicate effectively, write meticulously, and give outstanding presentations to both technical and creative audiences. 
+Capacity and passion to translate business objectives into actionable analyses, and analytic results into business and product recommendations. 
+A passion for TV and movies and defining the future of entertainment.
+
+As a part of the Data Analytics function at Cribl, you will lead a team of data professionals dedicated to supporting our Revenue, Marketing, and Finance teams. You will oversee the business intelligence system, data analysis, and data strategy, playing a critical role in driving data-informed decision-making and fostering a culture of analytics excellence. Your ability to balance strategic vision with operational execution will be critical to empower stakeholders across the organization to achieve their goals through actionable insights!
+
+We pride ourselves on fostering a collaborative and innovative culture where team members enjoy working together—whether remotely or over a meal at a foodie hot spot. If you're someone who thrives in an entrepreneurial environment and is eager to contribute to a company poised for legendary success in the tech industry, we want to hear from you!
+
+As An Active Member Of Our Team, You Will…
+
+Lead, mentor, and develop a team of data analysts, fostering a collaborative and growth-oriented environment. 
+Prioritize ad-hoc and planned cross-functional work, execute on planning through creation of a roadmap, and ensure timely delivery of high-quality analytics work by allocating resources effectively.
+Translate high-level business goals into actionable team objectives and individual contributions.
+Collaborate with cross-functional stakeholders to understand their business needs and serve as a bridge between senior leadership and the team, ensuring alignment on priorities and organizational vision.
+Standardize the team’s operations (e.g. workflows, documentation) and improve key team metrics (e.g. data quality, stakeholder satisfaction) 
+Scale our data technology stack by managing data sets into our data warehouse, creating meaningful data transformations, and making data available in our BI tool
+We are a remote-first company and work happens across many time-zones – you may be required to occasionally perform duties outside your standard working hours
+
+
+If You’ve Got It - We Want It 
+
+4+ years of experience managing a data team, demonstrating strong decision-making capabilities that balance the needs of the business and the team. Specializing in sales, marketing or finance data and partnering closely with stakeholders to define and execute a strategic roadmap for technical initiatives.
+Strong communication and organization skills, with experience leading multiple projects simultaneously and balancing short-term deliverables with long-term strategic initiatives.
+Excels in collaborative environments, engaging effectively with peers and stakeholders to achieve goals and actively participate in meetings.
+Possesses a proactive and high degree of ownership, astutely identifying opportunities for improvement, driving new processes, and rallying the team to solutionize problems together. Especially adept at embracing change and resourcefully addressing problems that don’t have clear solutions.
+Proven ability to derive insights, conduct strategic analysis, and create clear and compelling data visualizations from large data sets across multiple sources.
+Familiarity with the modern data tech stack (Snowflake, dbt e.g) and semantic layer BI tools (Looker, Tableau, e.g). Advanced technical expertise in SQL, Python, data modeling, and building dashboards.
+BONUS:
+Working experience at a fast-growing SaaS company
+Excited about the observability space
+
+Upstart’s Credit & Investor Analytics team is at the forefront of AI/ML-driven credit lending across the organization. Our team employs advanced analytical and technical prowess to deliver comprehensive support in Upstart’s lending platform. The Credit Analytics team is building out foundational frameworks and infrastructures on loan performance and forecasting, while the Investor Analytics team plays a pivotal role in securing capital—a critical function that powers our business.
+
+As a Senior Analytics Manager, Technical Lead at Upstart, you will join our Credit & Investor Analytics horizontal team. You’ll take a leadership stance in designing and developing analytics tools, data infrastructure, and analytical frameworks that support insights and decisions concerning credit performance and strategies. You’ll collaborate closely with other Data Analytics, Machine Learning, and Product, and Engineering teams, to spearhead initiatives that support Upstart’s multi-product growth and extend our market leadership in lending.
+
+How You’ll Make An Impact
+
+Lead the development of data-driven analytics solutions for credit risk, portfolio performance, and investor reporting
+Oversee the architecture and development of our data infrastructure, analytics tools, and automated solutions
+Collaborate with analysts, data scientists, engineers, and business stakeholders to drive data initiatives
+Ensure data integrity, scalability, and compliance with regulatory and investor requirements
+Mentor and guide a team of analysts and engineers, fostering a culture of innovation and excellence
+
+Minimum Qualifications
+
+7+ years in data science or engineering, with at least 3 years in a leadership role
+Strong SQL and either Python or R skills; experience with data visualization tools (e.g., Mode, Tableau, Looker, Power BI)
+Proficiency in working with large datasets, ETL processes, and cloud data platforms (e.g., Databricks, DBT, Airflow)
+Deep understanding of credit risk modeling, underwriting, and portfolio performance analysis
+Strong ability to mentor teams and drive strategic initiatives
+Degree in Economics, Statistics, Engineering, Data Science or other quantitative fields
+
+Preferred Qualifications
+
+Experience with structured finance, securitization, or investor reporting
+Demonstrated ability to work collaboratively and in deep partnership with cross-functional colleagues especially in Finance, Product, Data Engineering, ML teams
+Experience in consumer lending strategy, and/or investment experience in consumer credit capital markets, private credit, structured products
+
+Position location This role is available in the following locations: Remote
+
+Time zone requirements The team operates on the West coast time zones.
+
+Travel requirements As a digital first company, the majority of your work can be accomplished remotely. The majority of our employees can live and work anywhere in the U.S but are encouraged to to still spend high quality time in-person collaborating via regular onsites. The in-person sessions’ cadence varies depending on the team and role; most teams meet once or twice per quarter for 2-4 consecutive days at a time.
+
+As a member of our GPS GSi group, you will play a crucial role in the development and maintenance of our data science and business intelligence solutions. This role will specialize in assisting with machine learning, deep learning, and generative AI initiatives that will be utilized by Enabling Area professionals to enhance and expedite decision-making. You will provide expertise within and across business teams, demonstrate the ability to work independently, and apply problem-solving skills to resolve complex issues.
+
+Lead and participate in developing data science products, transforming client needs into quantifiable solutions.
+Independently carry out tasks, using critical thinking and problem-solving skills to devise effective solutions.
+Design, train, and deploy machine learning and deep learning models on platforms like AWS, Databricks, and Dataiku.
+Develop and advise on Large Language Model (LLM) solutions for enterprise-wide documentation, including RAG, CPT, and SFT.
+Utilize MLOps pipelines, including containerization (Docker) and CI/CD, for training and deploying models.
+Write clean, well-commented code for easy collaboration and maintain structured project documentation using GitHub and/or Jira.
+
+Qualifications
+
+Required skills:
+
+Bachelor's Degree in Statistics, Mathematics, Computer Science, Engineering, or another analytical field.
+6+ years of experience in data science, with deep knowledge of Python, machine learning, deep learning, and related packages (e.g., sklearn, TensorFlow, PyTorch). Proven ability to lead data science projects from inception to deployment.
+Strong knowledge of Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG).
+Familiarity with AWS, Databricks, and/or Dataiku platforms.
+Working knowledge of MLOps, including containerization (e.g., Docker).
+Strong organizational skills, with clear project documentation and the ability to write clean code.
+Familiarity with agile project methodology and project development lifecycle.
+Experience with GitHub for version control.
+Ability to manage multiple detailed tasks and responsibilities simultaneously, meeting deadlines and objectives accurately.
+Must be legally authorized to work in the United States without employer sponsorship, now or in the future.
+Ability to travel 10%-25%, on average, based on the work you do and the clients and industries/sectors you serve
+
+Preferred Skills:
+
+Master's Degree in Statistics, Mathematics, Computer Science, Engineering, or another analytical field, or equivalent direct work experience.
+Significant experience with MLOps and associated serving frameworks (e.g., Flask, FastAPI) and orchestration pipelines (e.g., SageMaker Pipelines, Step Functions, Metaflow).
+Significant experience working with open-source LLMs, including serving via TGI/vLLM and performing Continued Pre-training (CPT) and/or Supervised Fine-tuning (SFT).
+Experience using various AWS Services (e.g., Textract, Transcribe, Lambda, etc.).
+Proficiency in basic front-end web development (e.g., Streamlit).
+Knowledge of Object-Oriented Programming (OOP) concepts.
+
+As a Manager, Business Analytics, you lead a team of analysts to drive data-driven decision-making across the organization. You oversee the development and implementation of business analytics strategies that provide actionable insights and recommendations. By collaborating with cross-functional teams, you ensure data is leveraged to optimize business processes, improve performance, and support strategic initiatives. You are responsible for mentoring your team, delivering business intelligence solutions, and supporting leadership in making informed, data-backed decisions.
+
+Our team is passionate, empathetic, hard working, and above all else focused on improving the lives of our service professionals (our Pros). Our success is their success.
+
+What You Do Each Day
+
+Manage and mentor a team of business analysts to ensure effective delivery of analytics projects 
+Collaborate with stakeholders to understand business goals and define data requirements 
+Develop and implement data analysis strategies to support business decision-making 
+Oversee the creation of dashboards, reports, and data visualizations that provide actionable insights 
+Ensure data integrity, accuracy, and consistency across analytics reports and processes 
+Conduct advanced data analysis to identify trends, opportunities, and areas for improvement 
+Work with IT and engineering teams to ensure proper data collection, storage, and accessibility 
+Present data-driven insights and recommendations to senior leadership and key stakeholders 
+Establish key performance indicators (KPIs) and metrics to track the effectiveness of business strategies 
+Stay up-to-date on industry trends and analytics best practices to drive innovation 
+
+Qualifications
+
+5+ years of experience in business analytics or a related field, with at least 1 year of people leadership experience
+Proficiency in data analysis tools (i.e. SQL, Tableau, Power BI)
+Experience with business intelligence software and data visualization tools
+Bachelor’s degree in Business, Data Science, or equivalent work experience
+Strong understanding of statistical analysis, data modeling, and business metrics
+
+What Will Help You Succeed
+
+Strong leadership and team management skills
+Excellent communication and presentation abilities
+Analytical mindset with a focus on problem-solving and critical thinking
+Ability to translate complex data into clear, actionable insights
+Collaboration and adaptability in working with cross-functional teams
+
+Join us in a high-impact role to drive growth at EarnIn. This function plays a critical role in how we use analytics to inform our business & marketing priorities, drive data-backed campaigns, deliver value across the consumer lifecycle and measure performance for future optimizations. You will work closely with our marketing (i.e. brand, growth, product marketing, LCM), product, and engineering teams to establish end-to-end funnel measurement & reporting, rigorous testing methodologies, and deployment of critical analytics tools.
+The US base salary range for this full-time position is $165,000 - $245,000 + equity + benefits. Our salary ranges are determined by role, level, and location. 
+
+
+
+
+What You’ll Do:
+
+
+
+Work closely with the marketing team to drive efficient growth for EarnIn through analysis, experimentation, and operational rigor
+
+Drive day-to-day performance analysis & provide both strategic and tactical recommendations across the marketing funnel
+
+Establish measurement frameworks and drive reporting excellence across various marketing domains (e.g. performance, brand, full-funnel marketing)
+
+Continuously upgrade and evolve our marketing measurement methodology (attribution, MMM, and experimentation)
+
+Partner with marketing leads to identify, design, and execute on experimentation opportunities across new & existing marketing channels and campaigns. Establish a culture of experimentation excellence across the marketing team
+
+Monitor & proactively surface/troubleshoot any problems across the marketing funnel & drive resolution of these issues
+
+
+What We’re Looking For:
+
+
+
+6+ years experience in marketing analytics/data science in a B2C role
+
+Strong understanding of marketing attribution, MMM, LTV/CAC, and ROAS
+
+Deep understanding of performance & measurement across key digital channels – e.g. Social, Search, Web, Television, App, etc.
+
+Experience designing, running, and interpreting experiments. Practical knowledge of testing methodologies and frameworks
+
+Expert experience with SQL and experience with Python or R
+
+Ability to extract insights from large data sets & seamlessly translate into actionable recommendations across the consumer journey
+
+Strong interpersonal skills and can work cross-functionally in team environments
+
+Ability to establish and maintain excellent processes while allowing for creative thinking and flexibility in ambiguous situations
+
+Bachelor's, Master’s or PhD degree in an analytical discipline or equivalent industry experience
+
+Curiosity and passion for deeply understanding analytical problems and translating this to stakeholders
+
+Prior experience managing performance marketing channels is a bonus
+
+Experience with full-funnel marketing/brand measurement is a bonus
+
+Experience in applied econometrics, forecasting, building regression models is a bonus
+
+Experience in Fintech is a bonus
+
+We are looking for a hands-on manager for our marketing analytics team that can split their time equally between team leadership and individual contributions. You will collaborate with marketers, product managers, engineers, and researchers to accelerate learning, make data-informed decisions and define data-inspired solutions to fuel the growth of Strava’s platform. This role reports to the head of data and partners tightly with cross-functional stakeholders throughout the company.
+
+We follow a flexible hybrid model that generally translates to around half your time on-site in either our San Francisco, CA or NYC, NY office —roughly three days per week. 
+
+What You’ll Do:
+
+Lead a team of data analysts to support the diverse needs of a global marketing organization
+Drive strategic analytics initiatives to improve the efficiency and impact of the growth of Strava’s community and subscription product
+Establish a learning agenda to create a foundation for robust marketing and product strategies
+Partner with product and marketing teams to design and interpret A/B tests to drive explainable subscription and user retention outcomes
+Collaborate with the broader data community at Strava (Data Science, Machine Learning, Data Platform, etc) to collectively improve our technological craftsmanship
+
+
+You Will Be Successful Here By:
+
+Applying your quantitative skillset and background in paid media to be a hands-on collaborator with our Growth Marketing team
+Thinking about scalability, building reusable data sets, and designing self-service tools to empower your collaborators to learn along with you
+Not being afraid to ask questions, learn, share and iterate on ways of working, your business area, and analytics capabilities
+
+
+What You’ll Bring to the Team:
+
+You have 5+ years of full-time experience in analytics, data science, or other quantitative domains and have supported growth marketing teams
+You have 2+ years of experience leading high-functioning analytics teams
+You are highly proficient with SQL and have experience with Business Intelligence tools (e.g. Tableau)
+You have experience with using experimentation and other statistical methods to estimate incremental impact of marketing campaigns (e.g. time-series modeling, econometric methods)
+You have hands-on experience working with statistical programming languages (e.g. R, Python)
+You have an understanding of data pipeline concepts (e.g. ETL, scripting common analysis workflows)
+
+
+Mozilla Corporation is the non-profit-backed technology company that has shaped the internet for the better over the last 25 years. We make pioneering brands like Firefox, the privacy-minded web browser. Now, with more than 225 million people around the world using our products each month, we’re shaping the next 25 years of technology and helping to reclaim an internet built for people, not companies. Our work focuses on diverse areas including AI, social media, security and more. And we’re doing this while never losing our focus on our core mission – to make the internet better for people.
+
+The Mozilla Corporation is wholly owned by the non-profit 501(c) Mozilla Foundation. This means we aren’t beholden to any shareholders — only to our mission. Along with thousands of volunteer contributors and collaborators all over the world, Mozillians design, build and distribute open-source software that enables people to enjoy the internet on their terms.
+
+About This Team And Role
+
+We’re looking for a data science leader to guide and grow a high-impact team focused on Mozilla’s expanding portfolio of monetized products and services. This role is central to shaping a monetization strategy that aligns with our core values - protecting user privacy, delivering meaningful value to users, and ensuring the long-term financial health of Mozilla.
+
+What You’ll Do
+
+Lead and scale a high-performing data science team, driving strategy and execution across monetized features and surfaces.
+Balance business goals and user trust by defining a monetization framework that supports privacy and user-first principles.
+Translate data into impact through deep analysis, clear insights, and the development of metrics, dashboards, and self-serve reporting tools that enable stakeholders to make informed decisions.
+Drive measurement rigor by designing and evolving experimentation and evaluation frameworks for testing and optimizing monetization features.
+Collaborate cross-functionally with Product, Engineering, and Advertising teams to define and deliver on our product and monetization roadmap.
+
+What You’ll Bring
+
+6+ years of experience in data science with a strong focus on monetization. Experience in ad tech, programmatic advertising, search and recommendation systems is a strong plus.
+3+ years of experience leading and scaling data science teams.
+Deep expertise in machine learning, statistical modeling, and applied data analytics. Proficiency in Python, as well as SQL.
+Strong understanding of privacy-preserving technologies and how they can be applied within advertising or monetization contexts.
+Excellent communication skills, with the ability to distill complex data into clear, actionable insights for both technical and non-technical stakeholders.
+A collaborative mindset and a track record of influencing cross-functional teams and senior leaders.
+Commitment to our values:
+Welcoming differences
+Being relationship-minded
+Practicing responsible participation
+Having grit
+What You’ll Get
+
+Generous performance-based bonus plans to all eligible employees - we share in our success as one team
+Rich medical, dental, and vision coverage
+Generous retirement contributions with 100% immediate vesting (regardless of whether you contribute)
+Quarterly all-company wellness days where everyone takes a pause together
+Country specific holidays plus a day off for your birthday
+One-time home office stipend
+Annual professional development budget
+Quarterly well-being stipend
+Considerable paid parental leave
+Employee referral bonus program
+Other benefits (life/AD&D, disability, EAP, etc. - varies by country)
+As an Analytics Manager, you will work closely with Paytient's data, product, engineering, and marketing teams to drive data disbursement and innovation. In this new role focused on our growing Medicare business, you will also partner directly with the health plan and PBMs we serve to operationalize data strategy for the Medicare Prescription Payment Plan (M3P) in 2025 and beyond.
+
+The ideal candidate will be a motivated self-starter who thrives in a fast-paced environment and has previous experience in data analytics, data engineering, and data product management, along with a proven track record of thriving in greenfield environments.
+
+Since its founding in 2018, Paytient has ensured access and affordability to healthcare. This role is crucial to Paytient's growth and ability to serve millions of Medicare beneficiaries through the M3P program.
+
+Our "remote with roots" model allows us to work where we thrive and gather as needed, often in our home office in Columbia, Missouri. This role can be performed anywhere in the continental U.S. except Montana.
+
+What You'll Do
+
+Lead a small full-stack analytics engineering team - we use dbt, Python, SQL, and Looker to transform raw data from application databases, public datasets, and other platforms into actionable reports and datasets for clients and cross-functional teams
+Collaborate with our health plan clients and cross-functional teams to define project requirements and priorities
+Drive best practices in analytics engineering to maintain consistent delivery, high-quality reports, and scalable solutions
+Recruit and onboard new team members, fostering their growth and development
+
+What You'll Bring
+
+Healthcare industry experience, bonus points for working directly with health plans and PBMs
+5+ years of experience in data analytics, engineering, or related fields, with 2+ years of experience in a leadership role
+Expertise in Python, dbt, and SQL - we use BigQuery as our data warehouse
+Professional experience with Looker
+Familiarity with AWS and/or GCP
+Knowledge of the analytics engineering development process (modeling, change management, and other best practices)
+Strong written and verbal communication skills to effectively relate data to colleagues and partners
+Excellent critical thinking skills to help solve business problems and make decisions
+
+We're seeking a Director of Analytics to lead and scale our analytics organization, overseeing both our analytics product development and embedded service teams. This leader will manage multiple teams building data-driven solutions that power our healthcare revenue cycle management products while providing critical insights across Product, Data Science and other company service lines including Finance, Customer Success, and Clinical Operations. The ideal candidate combines tactical know-how with hands-on analytics expertise and a long term vision, thriving in fast-paced environments where insight-driven decision making directly impacts business outcomes. The role reports to the Head of Data.
+
+SmarterDx builds clinical AI that empowers hospitals to analyze the complete record of every patient to fully capture the value of care delivered. Founded by physicians in 2020, its proprietary AI platform understands the nuances of clinical reasoning, enabling hospitals to true the patient record for every discharge. By doing so, hospitals can recover millions in earned revenue, enhance care quality metrics, and optimize healthcare operations. Become a Smartian and help optimize the way the healthcare system works for everyone. Learn more at smarterdx.com/careers.
+
+This role is fully remote within the US**
+
+What You'll Do
+
+Lead & Scale the Analytics Organization: Oversee and rapidly grow a team of managers and data analysts while maintaining high performance standards
+Drive Strategic Vision: Develop and execute a comprehensive analytics strategy that aligns centralized product analytics teams with distributed, embedded service analysts across the organization
+Expand Product Capabilities: Guide the analytics product team in developing new capabilities for additional healthcare verticals while ensuring scalability and quality
+Foster Cross-Functional Excellence: Partner with company leaders to ensure analytics initiatives directly support business objectives
+Champion Technical Excellence: Establish best practices for analysis, data visualization, and data analytics pipeline development across the SmarterDx data stack
+Build High-Performance Culture: Coach and develop analytics leaders, creating career pathways and fostering a culture of innovation, accountability, and continuous learning
+Drive Business Impact: Oversee mission-critical analytics projects with enterprise-wide implications, ensuring delivery aligns with company OKRs and strategic initiatives
+
+What You Bring
+
+10+ years of analytics/data science experience with deep expertise in healthcare and/or revenue cycle management
+5+ years of management experience with 2+ years managing managers and/or leading both centralized and distributed teams
+Proven track record of scaling analytics within rapidly growing organizations
+Well established proficiency in SQL, Python, and statistical analysis with hands-on experience in modern data stacks
+Demonstrated success building and launching analytics products that drive significant business value
+Experience with cloud data platforms (Snowflake preferred) and analytics tools (Hex, DBT, or similar)
+Strong business acumen with ability to translate complex analytics into actionable insights for C-suite executives
+Exceptional communication skills with proven ability to influence stakeholders at all organizational levels
+Bachelor's or Master's in an analytics or data science related field; advanced degree preferred
+
+Nice To Haves
+
+Previous experience as a founder or early analytics leader at a high-growth startup
+Domain expertise in healthcare revenue cycle management, claims processing, or medical billing
+Experience with healthcare data standards (HL7, FHIR) and regulatory requirements (HIPAA)
+Track record of building self-service analytics platforms and data democratization initiatives
+Experience managing both centralized and embedded analytics teams simultaneously
+
+Our stack
+
+Hex, DBT, Snowflake, AWS, Python, SQL
+
+We’re looking for an intelligent, driven professional to join our Quantitative Research team. Quantitative Research is a part of the broader Quantitative Markets team, which is responsible for structuring and pricing Affirm’s debt funding deals and researching and building data-driven models to analyze and predict the performance of Affirm’s consumer loans.
+
+In this role, you will be primarily focused on analytical tools development, working with engineers and data scientists around the company to improve the usability of the take-up and loan cashflow models. Over time, you would proactively engage with other stakeholders around Affirm to tailor models to the needs of Merchant Pricing, Credit, Applied Machine Learning, Finance, and other stakeholders.The ideal candidate will have strong analytical and problem solving skills with solid knowledge of analytical tools, as well as interpersonal skills to work cross-functionally and drive forward recommendations.
+
+This is an individual contributor position. 
+
+What you’ll do
+
+Architect, build, refine and increase automation and research infrastructure for modeling the performance of existing collateral and simulation frameworks for future loan originations 
+Collaborate with platform (Machine Learning and Engineering) teams to implement framework for automating and presenting analytics, reports, and monitoring 
+Collaborate with firm-wide analytics teams to deliver analyses and tools to users across the firm 
+Review implementation of models focusing on requirement verification and code quality. Conduct code review for different members of the team. 
+
+What we look for
+
+Undergraduate, Masters, or PhD in Computer Science or other quantitative discipline 
+3-7 years of professional experience developing quantitative infrastructure tools and platforms 
+Solid background in math/statistics/finance and familiarity with quantitative research methodologies and machine learning algorithms 
+Analyze unique business operational requirements and conduct research in order to design appropriate technical solutions to accommodate those functional needs 
+Ability to contribute to the analytics, research, and model development process 
+Curiosity to learn about data, models and algorithms and proven track record in analytical and problem solving skills 
+Ability to develop strong relationships and work across all organizational levels 
+Desire to understand the broader context of business decisions 
+Github experience preferred. Existing github presence a plus 
+
+Pay Grade - Q
+
+Equity Grade - 14
+
+Employees new to Affirm typically come in at the start of the pay range. Affirm focuses on providing a simple and transparent pay structure which is based on a variety of factors, including location, experience and job-related skills.
+
+Base pay is part of a total compensation package that may include equity rewards, monthly stipends for health, wellness and tech spending, and benefits (including 100% subsidized medical coverage, dental and vision for you and your dependents.)
+
+USA base pay range (CA, WA, NY, NJ, CT) per year: $180000 - $230000
+
+USA base pay range (all other U.S. states) per year: $160000 - $210000
+
+Affirm is proud to be a remote-first company! The majority of our roles are remote and you can work almost anywhere within the country of employment. Affirmers in proximal roles have the flexibility to work remotely, but will occasionally be required to work out of their assigned Affirm office. A limited number of roles remain office-based due to the nature of their job responsibilities.
+
+Benefits
+
+We’re extremely proud to offer competitive benefits that are anchored to our core value of people come first. Some key highlights of our benefits package include:
+
+Health care coverage - Affirm covers all premiums for all levels of coverage for you and your dependents 
+Flexible Spending Wallets - generous stipends for spending on Technology, Food, various Lifestyle needs, and family forming expenses
+Time off - competitive vacation and holiday schedules allowing you to take time off to rest and recharge
+ESPP - An employee stock purchase plan enabling you to buy shares of Affirm at a discount
+The Dropbox Data Science team transforms data into powerful insights that inform everything we do at Dropbox. Combining applied analytics techniques with deep business insights, we investigate user behavior, product performance, and market trends to uncover new opportunities for growth, optimization, and innovation. Our work is highly collaborative: we work closely with Revenue, Product, and Marketing teams to enable data-driven development and personalized customer solutions. It’s also highly creative, as we experiment to develop tools and dashboards that democratize insights across Dropbox. If you are driven by solving challenging problems and using the power of data to deliver impactful, user-centered products and services, join our Data Sciences team. Areas of work include Applied Analytics, Experimentation, Data Engineering, Machine Learning, Business Intelligence, Data Visualization, and Statistical Modeling.
+
+Role Description
+
+We're looking for a Senior/Staff Data Scientist to partner with Marketing, Brand, Product and Finance teams to answer key questions about the effectiveness of marketing across all our paid and owned channels. We solve challenging problems and boost business growth through a deep understanding of user behaviors with applied analytics techniques and business insights. An ideal candidate should have robust knowledge of marketing measurement methods (eg. causal inference, attribution, MMM) and strong technical fluency in scripting(Python/R) and querying(SQL)
+
+Responsibilities
+
+Evaluate and improve our marketing measurement leveraging techniques such as MMM(Marketing Mix Modeling), MTA(Multi touch attribution) and incrementality testing
+Perform analytical deep-dives to analyze problems and opportunities, identify the hypothesis and design & execute experiments
+Inform future experimentation design and roadmaps by performing exploratory analysis to understand user engagement behavior and derive insights
+Create personalized segmentation strategies leveraging propensity models to enable targeting of offers and experiences based on user attributes
+Identify key trends and build automated reporting & executive-facing dashboards to track the progress of acquisition, monetization, and engagement trends.
+Extract actionable insights through analyzing large, complex, multi-dimensional customer behavior data sets
+Monitor and analyze a high volume of experiments designed to optimize the product for user experience and revenue & promote best practices for multivariate experiments
+Translate complex concepts into implications for the business via excellent communication skills, both verbal and written
+Understand what matters most and prioritize ruthlessly
+Work with cross-functional teams (including Data Science, Marketing, Product, Engineering, Design, User Research, and senior executives) to rapidly execute and iterate
+
+Requirements
+
+Bachelors’ or above in quantitative discipline: Statistics, Applied Mathematics, Economics, Computer Science, Engineering, or related field
+5-8+ years experience using analytics to drive key business decisions; examples include business/product/marketing analytics, business intelligence, strategy consulting
+Proven track record of being able to work independently and proactively engage with business stakeholders with minimal direction
+Significant experience with SQL and large unstructured datasets such as Hadoop
+Deep understanding of statistical analysis, experimentation design, and common analytical techniques like regression, decision trees
+Solid background in running multivariate experiments to optimize a product or revenue flow
+Strong verbal and written communication skills
+Proficiency in programming/scripting and knowledge of statistical packages like R or Python
+
+Preferred Qualifications
+
+Experience in using open source packages for incrementality tests(e.g. Meta’s Geolift, Google’s Causal Impact) and MMM (Google’s Meridian, Lightweight MMM or Meta’s Robyn)
+Master's or Ph.D. Degree in a quantitative field
+Experience with predictive modeling, machine learning, and experimentation/causal inference methods.
+
+We are partnering with an exciting tech company focused on helping people get great sleep. It's a wellness brand known for their physical and digital products that help improve focus, every and performance.
+
+
+Please note the MUSTs for this role:
+While the role is fully remote, candidates MUST be able to work West Coast hours (PT)
+SQL Coding
+Analyst specifically within growth marketing teams (ability to identify opportunities to optimize channels, develop experimentation and tests)
+Based in the United States or Canada
+
+
+The Opportunity
+
+As the strategic thought‑partner to our executive team, you will translate market signals, customer trends, and financial realities into decisive growth plays. You’ll own the end‑to‑end insight cycle—sizing opportunities, shaping go‑to‑market bets, and measuring business impac —so that every marketing dollar and product initiative ladders up to sustainable enterprise value. 
+
+
+
+You will partner with leaders across the organization as you work on mission critical projects. This role will challenge you to think strategically and contribute to high-level discussions across the organization. This role will report to the Head of Acquisition marketing.
+
+
+What You’ll Do In Your First 45 Days
+Master the landscape. Absorb our annual operating plan and LRP, competitive positioning, and P&L targets until you can cite them from memory.
+Pressure‑test assumptions. Audit current marketing performance against goals; flag blind spots and quick‑win efficiencies.
+Frame the right questions. Define the 3–5 strategic hypotheses that will unlock outsized growth and craft high‑level test plans.
+Influence early. Join leadership forums as the voice of marketing, ensuring marketing decisions align with broader business objectives.
+
+
+By 90 days
+Guide investment mix. Synthesize insights from marketing platform data, sales channel data, test results, and competitive intel into clear recommendations on channel budgeting and scaling.
+Operationalize learning loops. Embed a cadence of strategic reviews—monthly performance readouts, and tests‑and‑learn roadmaps—so that insights translate into action.
+
+
+After Your First Year
+Shape long‑range strategy. Co‑lead annual planning, setting bold yet attainable growth targets and scenario models for new markets, partnerships, and product lines.
+Be the insight evangelist. Package complex findings into crisp board‑level narratives that drive alignment and accelerate decision‑making.
+Deliver outsized impact. Demonstrably lift revenue, margin, and marketing efficiency through your strategic guidance and cross‑functional leadership.
+
+
+What You’ll Bring
+6+ years steering growth strategy, corporate strategy, or marketing leadership within high‑growth consumer or e‑commerce companies.
+Proven record of crafting multi‑channel growth playbooks and influencing C‑suite decisions that accelerate both revenue and profitability.
+Mastery of the core marketing levers of growth—market & audience expansion, channel‑mix optimization, and conversion‑rate uplift—and of building quantitative models that steer marketing investment.
+Expert experimenter: hands‑on experience designing, launching, and analyzing marketing tests at the campaign, channel, geo, and audience levels.
+Adept at translating quantitative analysis and qualitative insight into compelling strategic narratives that drive action.
+Executive presence & storytelling finesse; you slice through complexity, crystallize choices, and mobilize cross‑functional teams.
+Growth mindset & relentless curiosity; you continually scan the landscape for emerging opportunities, competitive moves, and disruptive business models.
+Data‑savvy and self‑sufficient: comfortable writing SQL, an advanced power‑user of Excel/Google Sheets, and quick to master new BI platforms.
+
+As a Lead Analyst, Marketing Analytics at StockX, you’ll be a key player in transforming our data on a global audience of 220 million annual visitors across 200+ countries. We are seeking a highly motivated and experienced Lead Analyst, Marketing Analytics, to join our dynamic Analytics team. This role will be pivotal in driving data-driven decisions that optimize our marketing strategies and improve ROI. The ideal candidate will possess a strong analytical mindset, a deep understanding of marketing metrics, and the ability to translate complex data into actionable insights. You will lead the development and implementation of advanced analytics solutions, empowering the marketing team to achieve its goals.
+
+What You’ll Do
+
+As a Lead Analyst for the Marketing Analytics team, you will partner with Marketing, Finance, Product and Data Engineering to leverage experimentation, predictive modeling and data storytelling to help optimize our marketing activities and overall user experience. In this role, you will be responsible for collecting, analyzing, and interpreting marketing data to provide actionable insights that drive campaign optimization and improve marketing ROI. You will work closely with marketing managers and other stakeholders to understand their analytical needs and ensure that our marketing efforts are data-driven and aligned with business objectives. Key responsibilities include:
+
+Data Analysis & Reporting:
+Lead marketing analytics projects, ensuring timely delivery and high-quality results.
+Develop and maintain comprehensive marketing dashboards and reports to track key performance indicators (KPIs) across various channels (e.g., paid shopping, paid social, affiliate).
+Conduct in-depth analysis of marketing campaign performance, identifying trends, patterns, and opportunities for optimization.
+Analyze customer behavior and segmentation to understand audience preferences and tailor marketing strategies.
+Perform A/B testing and multivariate analysis to evaluate channel effectiveness and optimize conversion rates.
+Provide regular updates and insights to marketing leadership, highlighting key findings and recommendations.
+Strategic Insights & Recommendations:
+Translate complex data into clear, actionable insights that inform marketing strategy and decision-making.
+Develop and present data-driven recommendations to optimize marketing spend and improve ROI.
+Collaborate with cross-functional teams (e.g., product, engineering, finance) to align marketing analytics with overall business objectives.
+Proactively identify opportunities to leverage data and analytics to enhance marketing effectiveness.
+Forecast future marketing performance based on historical data and market trends.
+About You
+
+Bachelor's degree in Statistics, Mathematics, Economics, Marketing, or a related field (Master's degree preferred).
+5+ years of experience in marketing analytics and experimentation, with a proven track record of driving data-driven results.
+Strong proficiency in data analysis tools and techniques, including SQL, Python, R, and data visualization tools (e.g., Tableau, Looker).
+Expertise in web analytics platforms (e.g., Segment, Google Analytics, Adobe Analytics).
+Excellent understanding of marketing metrics and KPIs (e.g., CAC, LTV, ROAS, conversion rates).
+Strong analytical and problem-solving skills, with the ability to translate complex data into actionable insights.
+Excellent communication and presentation skills, with the ability to convey technical information to non-technical audiences. 
+Ability to work independently and as part of a team in a fast-paced environment. 
+Experience with statistical modeling and machine learning is a plus.
+We are looking for a data-driven professional to join our Marketing Analytics team. The Marketing Analytics Lead is responsible for driving business growth by providing analytical insights and creating dashboards to improve targeting, segmentation, profitability, and forecasting. The ideal candidate has analytical experience in marketing credit cards through multiple channels, specifically Direct Mail, Digital and Email. This is the perfect opportunity for someone who is seeking to grow in a challenging environment, to work on a fast-paced and exciting team and to develop data driven decisions. This individual will report to the Senior Manager, Analytics & Data Science, have visibility to the senior team and will be a key influencer driving the growth of Marketing at Prosper.
+
+Problems You Will Solve
+
+Identify and build new marketing strategies and influence key decisions through robust data analysis, modeling and presenting actionable insights
+Create optimal test designs to help quantify the performance of new marketing initiatives
+Support Marketing in determining the cadence and sequence of customer touch points across channels
+Establish dashboards and automated reports with KPIs to support data-driven business decisions
+Present and share analysis and recommendations to stakeholders including marketing and business leads
+Provide technical expertise and oversight, and leverage data and modeling to drive the business
+
+About You
+
+Bachelor’s Degree in a quantitative (STEM) field with 8+ years of analytics experience, or Master's degree with 6 years of analytics experience
+Experience in financial services or fintech space
+Previous experience in credit card marketing and analytics preferred. Direct Mail experience a plus
+Fluency in SQL and Python; Advanced Excel skills
+Experience with cleaning, engineering and analyzing large datasets
+Experience working with visualization tools such as Looker, Tableau etc. preferred
+Business and technical understanding of hypothesis testing, statistical analysis and design of experiments
+Experience working with Google Cloud Suite - BigQuery, GCS, dbt, AI Platform etc.
+Attention to detail and enhanced focus on accuracy of results
+Effective in presenting complex data analysis, insights and recommendations to leadership
+Comfortable working in a fast-paced environment with quickly changing priorities
+Able to work independently with minimal supervision, manage several simultaneous projects, and proactively deliver key analytical projects
+
+
+We are seeking a Marketing Analytics Manager to join our Growth Marketing team, reporting directly to the VP of Growth. In this role, you will lead quantitative analysis, data visualization, and advanced analytics to drive insights and optimize the company’s B2B marketing initiatives.
+
+Location
+
+Remote
+
+What you’ll do
+
+Develop and maintain dashboards and reporting to track funnel performance, marketing’s impact on the overall business
+Regularly communicate marketing performance to executives, providing clear and concise insights to inform strategic decision-making
+Regularly audit pipeline to ensure clear marketing attribution and be the POC on opportunity pipeline progress and potential business impact
+Track media performance by partnering closely with external media partners
+Ensure clear, compelling data storytelling by translating complex insights into actionable recommendations that connect marketing performance with business goals.
+Prepare reporting for cross functional and strategic meetings including monthly and quarterly business reviews
+Support key marketing data and analytics programs such as lead scoring, account scoring, attribution, new data pipelines, etc.
+Partner with Data Engineering to optimize data tracking/quality and drive data warehouse improvements to ensure reliable data pipelines and best in class marketing data models
+Enhance & support the data team to implement multi-touch attribution model for B2B business to better understand the overall customer journey
+Run ad-hoc data analyses as needed
+
+What you bring
+
+3+ years of marketing analytics and/or data analytics experience in an enterprise B2B environment
+Proven ability to handle large sets of data, translate complex data into clear, actionable insights to drive marketing decisions and communicate findings effectively to stakeholders.
+Solid understanding of B2B marketing strategies, including lead generation, digital paid advertising, email marketing, and content marketing
+Advanced Excel skills with pivot table, macro, and VBA experience
+Deep experience in SQL & working with databases, data visualization tools (i.e. PowerBi, Looker, Tableau), CRM systems (i.e. Hubspot, SFDC), web analytics (i.e. Mixpanel, Google Analytics)
+Functional coding experience utilizing Python and/or R a plus
+Experience with attribution methodologies such as Marketing Mix Modeling (MMM), multi-touch attribution, or position-based attribution is a strong plus.
+Extreme attention to detail and a high standard for analytical deliverables to ensure consistent data integrity and hygiene.
+Excellent multi-tasking, time, and project management skills, with the ability to plan in advance and meet deadlines.
+Able to work with a high degree of autonomy in a fast-moving startup or a hyper growth environment
+We have created the Factors of Growth & Impact to help Villagers better measure impact and articulate coaching, feedback, and the rich and rewarding learning that happens while exploring, developing, and mastering the capabilities and contributions within and outside of the Marketing Analyst role:
+
+Technical Skills:
+
+Has a deep understanding of Salesforce and marketing analytics tooling and a working knowledge of financial services, Fintech, or crypto.
+Uses analytical and problem-solving skills to identify root causes of campaign performance.
+
+
+Complexity and Impact of Work:
+
+Defines marketing analytics priorities and applies problem-solving skills with minimal supervision.
+Responsible for the full lifecycle of campaign tracking, dashboard development, and reporting back to business lines.
+Works on diverse challenges requiring thoughtful analysis and decision-making.
+
+
+Organizational Knowledge:
+
+Understands Anchorage’s strategic goals and integrates them into analytics planning and goal-setting.
+
+
+Communication and Influence:
+
+Builds strong team relationships and embodies our culture pillars.
+Collaborates across teams, mentors others, and contributes to cross-functional initiatives.
+Adapts communication styles effectively and gains buy-in from others.
+Engages with senior internal and external stakeholders in their area of expertise.
+
+
+You may be a fit for this role if you have: 
+
+Experience as a Salesforce administrator
+Skills in developing dashboards and tracking performance marketing data across a range of SaaS tools
+Self starter and strong drive to grow the business within a market leading company.
+This is a key role, responsible for managing cross-functional teams, overseeing analytics infrastructure and strategy, and representing analytics in senior-level client engagements. 
+
+
+
+Why you should join us!
+
+Competitive salary, health and dental insurance, life and disability, 401K, supplemental insurance, FSAs, flexible paid vacation days/Holidays and much more!
+Collaborative, inclusive, and innovation-driven culture
+This position is 100% remote and salary expectations are $100k - $140k, determined by factors such as location, experience, and expertise.
+
+
+Key Responsibilities:
+
+Strategic Leadership 
+
+Own and evolve the analytics vision and roadmap across all client and internal initiatives.
+Serve as a strategic advisor to the executive team on all things related to marketing effectiveness, consumer behavior, and business growth opportunities.
+Define and drive key performance indicators (KPIs) aligned with strategic business outcomes across marketing, media, and operations.
+
+
+Team & Organizational Management 
+
+Lead, mentor, and grow a high-performing analytics team, fostering a culture of innovation, ownership, and cross-functional collaboration.
+Establish frameworks and best practices for data governance, modeling, and visualization to support scalable insights delivery.
+Champion the adoption of analytics across departments including Media, Product, Client Services, and Business Development.
+
+
+Client Strategy & Insights
+
+Lead executive-level client presentations, providing data-backed narratives that influence client strategy and budget decisions.
+Develop sophisticated customer segmentation, attribution, and media mix modeling strategies to optimize campaign performance.
+Spearhead the creation of A/B testing frameworks and causal inference models to validate campaign impact and incremental lift.
+
+
+Technical Direction
+
+Oversee the development and deployment of dashboards and tools (DOMO, Tableau, etc.) to ensure timely and accurate reporting.
+Guide the integration and use of third-party data sources (e.g., Mintel, Placer.ai, SEMrush) and internal data platforms.
+Direct SQL and Python-based analytics efforts that support advanced modeling, customer behavior analysis, and ROI tracking.
+
+
+Preferred Qualifications
+
+Bachelor’s or Master’s degree in a Quant field such as, Marketing Analytics, Statistics, Economics, or a related field.
+8+ years of experience in marketing or business analytics, with 5+ years in a senior leadership or executive role.
+Demonstrated expertise in SQL, Python, advanced Excel, and at least one data visualization platform (DOMO preferred).
+Must be agile in using PowerPoint for client decks and simplified presentation of findings
+Executive presence with exceptional communication skills to influence internal stakeholders and client executives.
+Proven experience in omnichannel marketing environments, including programmatic, digital, social, OOH, and traditional media.
+Deep understanding of industry and consumer insights, trend analysis, and predictive modeling.
+Experience in fitness, wellness, or health club industries a strong plus.
+Familiarity with Mintel, Placer. Ai and SEM Rush is a plus
+Strong organizational skills with the ability to manage multiple projects simultaneously.
+Excellent written and oral communication skills
+Excellent interpersonal skills
+Strong at conducting research into consumer and industry trends
+A Visionary and Learner with an entrepreneurial mindset and passion for innovation.
+Responsibilities
+
+Own and develop analytics models to deeply assess pipeline health, optimize conversion rates, and reduce cycle time across the entire sales pipeline (MQL → SAL → CW).
+Leverage SQL, Python, AI-powered tools, and other analytical methodologies to uncover insights, define key KPIs and create actionable dashboards and executive-level reporting to monitor pipeline performance.
+Drive pipeline forecasting and actionable recommendations by examining metrics such as MQLs, SALs, SQLs, conversion rates, and pipeline velocity.
+Provide strategic recommendations that address identified pipeline & funnel risks and escalate actionable insights to executive stakeholders.
+Partner across Marketing (including Cross-sell, Lifecycle Marketing, Outbound, ABM), Sales, and Partner Development teams to identify, implement, and evaluate strategic growth initiatives.
+Play a pivotal role driving AI alignment across pipeline operations and campaign effectiveness analysis.
+Communicate findings, insights, and recommendations clearly and effectively across weekly, monthly, and quarterly business reviews with cross-functional stakeholders and senior leadership.
+
+
+Qualifications
+
+Highly experienced in B2B analytics with significant experience establishing and evolving analytics frameworks, pipeline optimization techniques, and data-driven decision-making within marketing-sales pipeline environments.
+Proficiency with Business Intelligence (BI) tools, Looker Studio + BigQuery preferred
+Advanced proficiency in SQL; proven ability to manage complex data extracts, perform rigorous analysis, and derive clear, impactful insights.
+Experience in Python or other scripting languages; familiarity with analytics automation and AI-driven analytical tools strongly preferred.
+Strong experience working with B2B marketing-sales teams and understanding core pipeline metrics (MQLs, SALs, CW conversion, etc.).
+History of effectively communicating complex analytical insights to diverse stakeholders while influencing strategic business decisions.
+Ability to thrive comfortably in chaos, ambiguity, and an exceptionally fast-moving work environment.
+Growth mindset and an innate eagerness to continuously learn, experiment, and leverage new technologies and methods.
+Exceptional attention to detail, organizational skills and the capability to manage multiple analytical projects end-to-end.
+Proven track record in data analytics, management consulting, business intelligence, FP&A, operations analytics, or similar fields.
+Experience in tech, fintech, or SaaS business models preferred.
+
+
+Bonus Points
+
+Experienced implementing AI or machine learning models in a marketing and sales pipeline context
+Experience with Salesforce reporting and data infrastructure
+Experience juggling multiple high-impact projects
+Experience identifying opportunities and rallying teams behind building a solution
+
+
+The Opportunity - GTM Insights & Analytics Manager (Remote - USA / CANADA)
+
+We’re looking for a strategic and analytical GTM Insights & Analytics Manager to join our Revenue Operations team. Reporting to the Director of Revenue operations, you’ll play a critical role in shaping how we define, measure and optimize performance metrics across Sales, Marketing and Client Operations. This role is perfect for someone who loves turning data into actionable insights, building dashboards and driving cross-functional alignment. You’ll be a force behind our GTM data strategy - ensuring data integrity, uncovering growth opportunities and empowering teams with the tools and insights they need to make smart, data driven decisions.
+
+What You'll Do
+
+Define and standardize core GTM performance metrics, establishing a ”data dictionary” of key filters, metrics, and terms for Sales, Marketing, and Client Operations data. 
+Ensure data integrity and accuracy across our systems and act as a champion for data governance within GTM teams.
+Conduct deep-dive analyses to identify key drivers of revenue growth, conversion, and customer retention. 
+Identify trends and outliers to provide actionable insights that drive growth and improve operational efficiency.
+Design, build, and maintain robust dashboards and reports that provide real-time visibility into GTM funnel, campaign performance, and customer health KPIs.
+Provide insights and recommendations to guide decision-making and support new initiatives, including GTM target setting (Sales and Marketing), hiring goals, help improve forecasting models to increase predictive accuracy.
+Work closely with Data Engineering to ensure relevant GTM data (from Salesforce, Marketo, Gainsight, etc.) is captured and modeled correctly.
+Partner with GTM team members to support ad-hoc requests and deep dives. Enable a self-service analytics culture by driving adoption of our our BI tools and core dashboards to make insights consistent and accessible.
+Proactively identify opportunities to improve our go-to-market motions and work with Sales, Marketing, Client Operations, Finance, and Product teams to execute high-impact projects.
+
+What You'll Have
+
+5+ years in business analytics, strategy, or operations roles within high-growth B2B SaaS or similar companies. 
+Demonstrated understanding of business performance drivers and ability to diagnose GTM challenges through data.
+Bachelor’s degree in Finance, Economics, Statistics, Engineering, Data Science, or a related field (or equivalent practical experience in analytics).
+Able to independently manipulate large datasets in SQL and Excel. Experience with scripting languages (e.g. Python) for data analysis or automation is a plus.
+Hands-on experience with business intelligence and data visualization tools (e.g. Omni, Looker) to build dashboards and reports. 
+Ability to present data in a visually compelling way for various audiences.
+Familiarity with GTM systems and data sources including Salesforce, Marketo, and Gainsight and how to model their data for analytics.
+Excellent communication skills with the ability to distill complex data into clear insights and actionable recommendations. 
+Proven track record of influencing cross-functional stakeholders and driving alignment using data.
+Self-starter who excels in an agile, fast-paced environment. 
+Highly organized and able to effectively manage multiple priorities and projects at once.
+
+
+
+Product Growth Analyst Responsibilities:
+
+Lead growth strategy across a large product area and drive cross-team alignment
+Drive long term growth of Meta Inc products through a combination of data analysis, product ideation, and experimentation to optimize product experiences
+Understand trends in user behavior and product usage to influence growth strategy
+Identify opportunities to drive growth and prioritize them to maximize long-term growth
+Execute on projects by working closely with engineering and other members of product teams to land impact on product goals. Lead experimentation from designing tests to analyzing results that lead to launch decisions
+
+Minimum Qualifications:
+
+Bachelor's degree in a directly related field, or equivalent practical experience.
+8+ years experience working in an analytical or product role
+Proven to effectively collaborate across variety of technical and non-technical functions to drive towards common product goals
+Experience working with and influencing multi disciplinary product teams consisting but not limited to software engineers, designers, product managers and data scientists
+Proficiency in quantitative analysis geared towards drawing actionable insights from complex datasets
+Experience performing exploratory analysis with minimal direction to answer ambiguous open ended questions
+Experimentation experience to design multivariate tests, synthesize test results and build frameworks to make data-informed launch decisions
+Product ideation skills to apply growth tactics broadly to different product areas and think through detailed elements of a product experience
+Experience with data querying languages (e.g. SQL)
+Experience working on a product or service used by a wide-range of communities
+Data Science Manager, Analytics Responsibilities:
+
+Lead a team of data scientists to develop strategies for our products that serve billions of people and hundreds of millions of businesses, creators, and partners around the world.
+Drive analytics projects end-to-end in partnership with Product, Engineering, and cross-functional teams to inform, influence, support, and execute product strategy and investment decisions.
+Influence product direction through clear and compelling presentations to leadership.
+Work with large and complex data sets to solve a wide array of challenging problems using different analytical and statistical approaches.
+Identify and measure success of product efforts through goal setting, forecasting, and monitoring of key product metrics to understand trends.
+Define, understand, and test opportunities and levers to improve the product, and drive roadmaps through your insights and recommendations.
+Contribute towards advancing the Data Science discipline at Meta, including but not limited to driving data best practices (e.g. analysis, goaling, experimentation), improving analytical processes, scaling knowledge and tools, and mentoring other data scientists.
+
+Minimum Qualifications:
+
+Currently has, or is in the process of obtaining, a Bachelor's degree or equivalent practical experience. Degree must be completed prior to joining Meta.
+A minimum of 4 years of work experience (2+ years with a Ph.D.) in applied analytics, including a minimum of 2 years of experience managing analytics teams.
+Experience with data querying languages (e.g. SQL), scripting languages (e.g. Python), and/or statistical/mathematical software (e.g. R).
+Experience initiating and completing analytical projects with minimal guidance.
+Experience communicating results of analysis to senior leadership.
+
+Preferred Qualifications:
+
+Master’s or Ph.D. degree in Mathematics, Statistics, Computer Science, Engineering, Economics, or another quantitative field.
+Experience working in technology, consulting, or finance.
+Proven track record of leading high-performing analytics teams.
+
+
+

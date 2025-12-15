@@ -1,0 +1,760 @@
+Absolutely — let’s get you well-prepared for that interview at Gusto. Since the focus is on **SQL** and **Tableau**, and the role is for **Head of Marketing Analytics**, the interview is likely to test both hands-on technical fluency *and* your ability to reason about data in a marketing context.
+
+---
+
+### ✅ SQL Preparation
+
+#### Core SQL Concepts to Review
+
+As a leader, they'll expect mastery across:
+
+1. **Data Manipulation**
+
+   * `SELECT`, `WHERE`, `GROUP BY`, `HAVING`, `ORDER BY`
+   * Aggregate functions: `SUM()`, `AVG()`, `COUNT()`, etc.
+
+2. **Joins**
+
+   * Inner, Left, Right, Full joins
+   * Handling NULLs in joins
+
+3. **Window Functions**
+
+   * `ROW_NUMBER()`, `RANK()`, `DENSE_RANK()`
+   * `LAG()`, `LEAD()`, `FIRST_VALUE()`, `LAST_VALUE()`
+   * Running totals with `SUM() OVER (...)`
+
+4. **Subqueries & CTEs**
+
+   * Especially for breaking complex logic into readable steps
+   * Recursive CTEs (if applicable)
+
+5. **Marketing Analytics Specific Patterns**
+
+   * Funnel conversion queries
+   * Attribution models (first-touch, last-touch, linear, etc.)
+   * Time-based retention / cohort analysis
+   * Marketing spend ROI, CAC, LTV metrics
+
+6. **Optimization & Best Practices**
+
+   * Indexing (conceptually – may not be needed in the code)
+   * Avoiding N+1 joins or Cartesian joins
+   * Explain plans (optional, but good to mention)
+
+#### Practice Example
+
+```sql
+-- Find the top 5 performing marketing channels by CAC (lowest first)
+WITH customer_costs AS (
+  SELECT
+    channel,
+    SUM(cost) AS total_spend,
+    COUNT(DISTINCT user_id) AS new_customers
+  FROM marketing_spend
+  WHERE date BETWEEN '2024-01-01' AND '2024-03-31'
+  GROUP BY channel
+)
+SELECT
+  channel,
+  total_spend / NULLIF(new_customers, 0) AS cac
+FROM customer_costs
+ORDER BY cac ASC
+LIMIT 5;
+```
+
+---
+
+### ✅ Tableau Preparation
+
+#### Core Skills to Demonstrate
+
+1. **Data Prep & Modeling**
+
+   * Connecting to multiple data sources
+   * Creating relationships (vs. joins)
+   * Extract vs. live connections
+
+2. **Calculated Fields**
+
+   * Conditional logic (`IF`, `CASE`, `ISNULL`, etc.)
+   * Date calculations, e.g., YTD, MoM, rolling averages
+
+3. **Table Calculations**
+
+   * `LOOKUP()`, `WINDOW_SUM()`, `RANK()`, etc.
+   * Sorting or filtering based on table calcs
+
+4. **Parameters and Interactivity**
+
+   * Dynamic filters or "what-if" analysis
+   * Toggle between metrics or date ranges
+
+5. **Visual Best Practices**
+
+   * Avoiding cluttered dashboards
+   * Using color, size, labels effectively
+   * Designing for executive-level consumption
+
+6. **Marketing Use Cases to Be Familiar With**
+
+   * Campaign performance dashboard
+   * Funnel or drop-off visualizations
+   * Channel attribution breakdown
+   * Multi-touch campaign impact over time
+   * LTV:CAC ratio visualization
+
+#### Scenario Example
+
+You may be asked:
+
+> "How would you visualize the performance of multiple campaigns across different channels, segmented by acquisition cost and conversion rate?"
+
+Talk about:
+
+* A scatter plot with `CAC` on X-axis and `Conversion Rate` on Y-axis
+* Use size for budget or spend
+* Color by campaign/channel
+* Add filters for time range and campaign type
+* Include a summary KPI panel above the main chart
+
+---
+
+### 🎯 Final Tips for Interview
+
+* **Tie back technical decisions to business value**: As a Head of Analytics, your answers should reflect not just technical know-how but strategic alignment.
+* **Have a story**: Prepare 1–2 stories where you used SQL or Tableau to solve a complex marketing problem.
+* **Mention tooling ecosystem**: If you’ve used dbt, BigQuery, or data pipelines for Tableau sources, bring that up — especially if it helped scale reporting.
+
+---
+
+Would you like me to:
+
+* Share mock SQL interview questions with answers?
+* Provide Tableau dashboards you can describe verbally?
+* Help with story-based (STAR) framing of past SQL/Tableau projects?
+
+Let’s drill in however you'd like.
+
+
+
+
+Great — let’s build a few **Tableau dashboard concepts** that you can confidently **describe out loud** in an interview. These will highlight your ability to combine **visual best practices**, **marketing performance measurement**, and **executive storytelling**.
+
+---
+
+### 📊 1. **Full-Funnel Marketing Performance Dashboard**
+
+**Goal**: Show how users move through the acquisition funnel from awareness to conversion.
+
+**Structure**:
+
+* **Top KPIs Panel**:
+
+  * Impressions, Clicks, Leads, Signups, Conversions
+  * CTR, CVR, CAC, ROAS
+
+* **Funnel Visualization**:
+
+  * Horizontal or vertical funnel chart showing drop-offs between stages
+  * Color-coded bars (e.g. red = drop-off, green = conversion)
+
+* **Campaign-Level Table**:
+
+  * Campaign name, Spend, Conversions, CPA, ROAS
+  * Include filters for date range, channel, region
+
+* **Conversion Rate Trend Line**:
+
+  * Time-series showing daily or weekly conversion rate
+  * Filterable by campaign/channel
+
+**Verbal Hook**:
+
+> “I designed this dashboard to allow our marketing team and execs to visualize where we lose prospects in the funnel, and optimize high-drop-off points. It helps prioritize which campaigns to scale or pause.”
+
+---
+
+### 📈 2. **LTV vs. CAC Channel Efficiency Dashboard**
+
+**Goal**: Compare acquisition efficiency across marketing channels.
+
+**Structure**:
+
+* **Scatter Plot**:
+
+  * X-axis = CAC, Y-axis = LTV
+  * Each dot = a channel or campaign
+  * Color by platform (Google, Meta, etc.), size by spend
+
+* **Quadrant Analysis**:
+
+  * Top left = Low CAC, High LTV (ideal)
+  * Bottom right = High CAC, Low LTV (inefficient)
+
+* **Bar Chart**:
+
+  * LTV:CAC ratio by channel
+
+* **Interactive Parameters**:
+
+  * Timeframe selector
+  * Toggle between first-touch vs. last-touch attribution
+
+**Verbal Hook**:
+
+> “This view lets leadership instantly assess which channels are efficient. The LTV:CAC scatter makes it easy to visualize tradeoffs and determine whether to increase or reallocate budget.”
+
+---
+
+### 📆 3. **Campaign Cohort & Retention Dashboard**
+
+**Goal**: Show user retention over time by acquisition campaign.
+
+**Structure**:
+
+* **Heatmap Cohort Table**:
+
+  * Rows = acquisition week
+  * Columns = week since signup
+  * Cells = % retained (with color gradient)
+
+* **Retention Curve Line Chart**:
+
+  * Each line = campaign or cohort
+  * X = weeks since signup, Y = retention %
+
+* **Filters**:
+
+  * Campaign, channel, region, signup device
+
+**Verbal Hook**:
+
+> “I built this dashboard to help understand long-term impact of campaigns beyond the first conversion. It allowed us to identify campaigns with strong stickiness vs. short-term boosts.”
+
+---
+
+### 📉 4. **Attribution Insights Dashboard**
+
+**Goal**: Break down how users were influenced by multiple touchpoints before conversion.
+
+**Structure**:
+
+* **Sankey Diagram or Flow Chart** (if available via extensions):
+
+  * Shows common multi-touch paths (e.g., Google Ads → Email → Direct → Signup)
+
+* **Bar Chart**:
+
+  * Conversions attributed to each channel under different models:
+
+    * First-touch, Last-touch, Linear
+
+* **Custom Attribution Model Toggle**:
+
+  * Parameter lets user switch model
+  * Tableau recalculates channel contribution accordingly
+
+**Verbal Hook**:
+
+> “This gave the growth team clarity on which platforms actually influenced users, especially in a multi-channel journey. We made smarter investment decisions after realizing how often email or retargeting played a closer role.”
+
+---
+
+### 📍 5. **Geo + Device + Channel Breakdown Dashboard**
+
+**Goal**: Slice campaign performance across geography, device type, and channel.
+
+**Structure**:
+
+* **Map Visualization**:
+
+  * Colored regions by conversion rate or spend
+
+* **Stacked Bar Chart**:
+
+  * Device type (Mobile, Desktop, Tablet) by conversions
+
+* **Treemap**:
+
+  * Channel hierarchy: Paid > Search/Display/Social with metrics inside
+
+* **Dropdown filters**:
+
+  * Channel, Device, Region, Campaign Type
+
+**Verbal Hook**:
+
+> “This dashboard helped us see regional conversion discrepancies — for example, we found mobile campaigns underperforming in the Midwest, which led to landing page optimizations tailored to mobile.”
+
+---
+
+Would you like me to:
+
+* Sketch a layout (you can use as visual notes)?
+* Create a Tableau mock-up for you to reference?
+* Help you describe one of your past dashboards using this format?
+
+Let me know what you'd like to focus on next — you’re doing great so far.
+
+
+Absolutely. Let's jump into a **SQL mock interview**, designed for a **Head of Marketing Analytics** role — meaning questions will test both your **hands-on skills** and **analytical thinking** in a **marketing context**.
+
+---
+
+## ⚡️ SQL Mock Interview — Part 1: Intermediate to Advanced Questions
+
+### 🔹 Q1: CAC by Channel with a Safeguard for Division by Zero
+
+> Write a query to calculate Customer Acquisition Cost (CAC) for each marketing channel in Q1 2024. The table `marketing_spend` has `channel`, `cost`, and `date`. The table `conversions` has `user_id`, `channel`, and `conversion_date`.
+
+**Expectation**:
+
+* Group by channel
+* Sum cost, count unique converted users
+* Avoid division by zero
+
+```sql
+WITH spend_summary AS (
+  SELECT
+    channel,
+    SUM(cost) AS total_spend
+  FROM marketing_spend
+  WHERE date BETWEEN '2024-01-01' AND '2024-03-31'
+  GROUP BY channel
+),
+conversion_summary AS (
+  SELECT
+    channel,
+    COUNT(DISTINCT user_id) AS new_customers
+  FROM conversions
+  WHERE conversion_date BETWEEN '2024-01-01' AND '2024-03-31'
+  GROUP BY channel
+)
+SELECT
+  s.channel,
+  total_spend,
+  new_customers,
+  ROUND(
+    total_spend / NULLIF(new_customers, 0),
+    2
+  ) AS cac
+FROM spend_summary s
+LEFT JOIN conversion_summary c
+  ON s.channel = c.channel;
+```
+
+---
+
+### 🔹 Q2: Marketing Funnel Drop-Off Analysis
+
+> You have a table `user_funnel` with `user_id`, `stage` (values: 'visit', 'signup', 'onboarding', 'payment'), and `event_time`. Find the % drop-off between each stage.
+
+**Key Ideas**:
+
+* Pivot by stage
+* Count distinct users per stage
+* Calculate drop-offs and % changes
+
+```sql
+WITH funnel_counts AS (
+  SELECT
+    stage,
+    COUNT(DISTINCT user_id) AS user_count
+  FROM user_funnel
+  GROUP BY stage
+),
+ordered_funnel AS (
+  SELECT
+    stage,
+    user_count,
+    LAG(user_count) OVER (ORDER BY
+      CASE stage
+        WHEN 'visit' THEN 1
+        WHEN 'signup' THEN 2
+        WHEN 'onboarding' THEN 3
+        WHEN 'payment' THEN 4
+      END
+    ) AS prev_count
+  FROM funnel_counts
+)
+SELECT
+  stage,
+  user_count,
+  prev_count,
+  ROUND(
+    100.0 * (1 - user_count / NULLIF(prev_count, 0)),
+    2
+  ) AS pct_dropoff
+FROM ordered_funnel;
+```
+
+---
+
+### 🔹 Q3: First-Touch Attribution
+
+> Assign each converted user to their **first channel touch**. The table `user_events` has `user_id`, `channel`, and `event_time`. The table `conversions` has `user_id`.
+
+```sql
+WITH first_touch AS (
+  SELECT
+    user_id,
+    channel,
+    event_time,
+    ROW_NUMBER() OVER (
+      PARTITION BY user_id
+      ORDER BY event_time
+    ) AS rn
+  FROM user_events
+)
+SELECT
+  ft.user_id,
+  ft.channel AS first_touch_channel
+FROM first_touch ft
+JOIN conversions c
+  ON ft.user_id = c.user_id
+WHERE ft.rn = 1;
+```
+
+---
+
+### 🔹 Q4: ROAS Calculation for Top 5 Campaigns
+
+> You have `campaign_data` with `campaign_id`, `spend`, `revenue`, `date`. Get top 5 campaigns by **Return on Ad Spend (ROAS)** over the past 30 days.
+
+```sql
+SELECT
+  campaign_id,
+  SUM(revenue) AS total_revenue,
+  SUM(spend) AS total_spend,
+  ROUND(SUM(revenue) / NULLIF(SUM(spend), 0), 2) AS roas
+FROM campaign_data
+WHERE date >= CURRENT_DATE - INTERVAL '30' DAY
+GROUP BY campaign_id
+ORDER BY roas DESC
+LIMIT 5;
+```
+
+---
+
+### 🔹 Q5: Retention Cohort by Signup Week
+
+> Given a table `events` with `user_id`, `event_date`, and `event_type`, and a separate `signups` table with `user_id`, `signup_date`, return weekly retention by cohort (i.e., signup week vs. week since signup).
+
+This one's hard — worth walking through the logic out loud.
+
+```sql
+WITH signup_weeks AS (
+  SELECT
+    user_id,
+    DATE_TRUNC(signup_date, WEEK) AS cohort_week
+  FROM signups
+),
+activity_weeks AS (
+  SELECT
+    e.user_id,
+    DATE_TRUNC(e.event_date, WEEK) AS activity_week
+  FROM events e
+  JOIN signups s ON e.user_id = s.user_id
+),
+joined AS (
+  SELECT
+    s.cohort_week,
+    a.activity_week,
+    DATE_DIFF(a.activity_week, s.cohort_week, WEEK) AS weeks_since_signup,
+    a.user_id
+  FROM signup_weeks s
+  JOIN activity_weeks a ON s.user_id = a.user_id
+)
+SELECT
+  cohort_week,
+  weeks_since_signup,
+  COUNT(DISTINCT user_id) AS retained_users
+FROM joined
+GROUP BY cohort_week, weeks_since_signup
+ORDER BY cohort_week, weeks_since_signup;
+```
+
+---
+
+## ✅ What to Practice / Say Out Loud
+
+* Walk through assumptions (e.g., “I’m assuming one row per cost entry in `marketing_spend`…”)
+* Say how you'd validate (e.g., “I’d check NULLs, validate distinct user_id counts…”)
+* Mention index or performance notes (“If conversion table is large, I’d pre-aggregate by channel”)
+
+---
+
+Would you like:
+
+* A timed SQL challenge simulation?
+* A few conceptual questions (e.g., anti-joins, windowing edge cases)?
+* Marketing-specific KPIs as SQL queries to describe?
+
+Let’s keep practicing.
+
+
+
+Good instincts — you're very close! But there are a few important issues with that query that could lead to **incorrect CAC values**, especially in real-world data.
+
+Let’s break it down and evaluate it step by step.
+
+---
+
+### 🧠 Theoretical Understanding
+
+**Customer Acquisition Cost (CAC)** is defined as:
+
+> CAC = Total Spend / Number of New Customers Acquired
+
+So for each **channel**, we want:
+
+* `SUM(cost)` — total marketing spend for the channel
+* `COUNT(DISTINCT user_id)` — the number of *unique customers* acquired
+
+---
+
+### 🔍 Your Query:
+
+```sql
+SELECT
+  c.channel,
+  CAST(SUM(cost)/COUNT(user_id) AS FLOAT) AS CAC
+FROM marketing_spend m
+INNER JOIN conversions c
+  ON m.channel = c.channel
+WHERE date BETWEEN 2024-01-01 AND 2024-03-31
+  AND conversion_date BETWEEN 2024-01-01 AND 2024-03-31
+GROUP BY c.channel;
+```
+
+### ⚠️ Issues in This Query
+
+#### 1. **Overcounting Cost** due to Cartesian Multiplication
+
+If there are multiple conversions per channel and multiple spend entries, your `JOIN` will **multiply rows**, leading to **inflated `SUM(cost)`**.
+
+**Fix**: Aggregate cost and conversions **separately**, then join.
+
+#### 2. **Not Using `DISTINCT` on `user_id`**
+
+If a user converted multiple times (multi-touch, re-signups), they’ll be **double-counted** in `COUNT(user_id)`.
+
+**Fix**: Use `COUNT(DISTINCT user_id)`
+
+#### 3. **Implicit JOIN May Ignore Channels with Spend but No Conversions**
+
+An `INNER JOIN` would exclude valid spend-only channels with zero conversions, masking CAC inefficiencies.
+
+**Fix**: Use `LEFT JOIN` if you want to include all spend activity (and `NULLIF()` for divide-by-zero safety)
+
+---
+
+### ✅ Corrected Version
+
+Here’s the revised query:
+
+```sql
+WITH spend_summary AS (
+  SELECT
+    channel,
+    SUM(cost) AS total_spend
+  FROM marketing_spend
+  WHERE date BETWEEN '2024-01-01' AND '2024-03-31'
+  GROUP BY channel
+),
+conversion_summary AS (
+  SELECT
+    channel,
+    COUNT(DISTINCT user_id) AS new_customers
+  FROM conversions
+  WHERE conversion_date BETWEEN '2024-01-01' AND '2024-03-31'
+  GROUP BY channel
+)
+SELECT
+  s.channel,
+  total_spend,
+  new_customers,
+  ROUND(
+    total_spend / NULLIF(new_customers, 0),
+    2
+  ) AS cac
+FROM spend_summary s
+LEFT JOIN conversion_summary c
+  ON s.channel = c.channel;
+```
+
+---
+
+### 🗣 Verbal Tip for Interview
+
+If you're asked to write it out or review someone else's, say:
+
+> “I’d avoid a direct join of `spend` and `conversions` by channel without aggregating first — that risks duplicating cost values if there are multiple conversion rows. Also, I’d guard against divide-by-zero and use `COUNT(DISTINCT)` to avoid inflating the customer count.”
+
+---
+
+Want to go over a **multi-touch attribution CAC** example next? Or jump into a more complex window-function use case?
+
+
+Good instincts — you're very close! But there are a few important issues with that query that could lead to **incorrect CAC values**, especially in real-world data.
+
+Let’s break it down and evaluate it step by step.
+
+---
+
+### 🧠 Theoretical Understanding
+
+**Customer Acquisition Cost (CAC)** is defined as:
+
+> CAC = Total Spend / Number of New Customers Acquired
+
+So for each **channel**, we want:
+
+* `SUM(cost)` — total marketing spend for the channel
+* `COUNT(DISTINCT user_id)` — the number of *unique customers* acquired
+
+---
+
+### 🔍 Your Query:
+
+```sql
+SELECT
+  c.channel,
+  CAST(SUM(cost)/COUNT(user_id) AS FLOAT) AS CAC
+FROM marketing_spend m
+INNER JOIN conversions c
+  ON m.channel = c.channel
+WHERE date BETWEEN 2024-01-01 AND 2024-03-31
+  AND conversion_date BETWEEN 2024-01-01 AND 2024-03-31
+GROUP BY c.channel;
+```
+
+### ⚠️ Issues in This Query
+
+#### 1. **Overcounting Cost** due to Cartesian Multiplication
+
+If there are multiple conversions per channel and multiple spend entries, your `JOIN` will **multiply rows**, leading to **inflated `SUM(cost)`**.
+
+**Fix**: Aggregate cost and conversions **separately**, then join.
+
+#### 2. **Not Using `DISTINCT` on `user_id`**
+
+If a user converted multiple times (multi-touch, re-signups), they’ll be **double-counted** in `COUNT(user_id)`.
+
+**Fix**: Use `COUNT(DISTINCT user_id)`
+
+#### 3. **Implicit JOIN May Ignore Channels with Spend but No Conversions**
+
+An `INNER JOIN` would exclude valid spend-only channels with zero conversions, masking CAC inefficiencies.
+
+**Fix**: Use `LEFT JOIN` if you want to include all spend activity (and `NULLIF()` for divide-by-zero safety)
+
+---
+
+### ✅ Corrected Version
+
+Here’s the revised query:
+
+```sql
+WITH spend_summary AS (
+  SELECT
+    channel,
+    SUM(cost) AS total_spend
+  FROM marketing_spend
+  WHERE date BETWEEN '2024-01-01' AND '2024-03-31'
+  GROUP BY channel
+),
+conversion_summary AS (
+  SELECT
+    channel,
+    COUNT(DISTINCT user_id) AS new_customers
+  FROM conversions
+  WHERE conversion_date BETWEEN '2024-01-01' AND '2024-03-31'
+  GROUP BY channel
+)
+SELECT
+  s.channel,
+  total_spend,
+  new_customers,
+  ROUND(
+    total_spend / NULLIF(new_customers, 0),
+    2
+  ) AS cac
+FROM spend_summary s
+LEFT JOIN conversion_summary c
+  ON s.channel = c.channel;
+```
+
+---
+
+### 🗣 Verbal Tip for Interview
+
+If you're asked to write it out or review someone else's, say:
+
+> “I’d avoid a direct join of `spend` and `conversions` by channel without aggregating first — that risks duplicating cost values if there are multiple conversion rows. Also, I’d guard against divide-by-zero and use `COUNT(DISTINCT)` to avoid inflating the customer count.”
+
+---
+
+Want to go over a **multi-touch attribution CAC** example next? Or jump into a more complex window-function use case?
+
+Excellent question — and you're absolutely right to think about **SQL evaluation order**, especially for named columns (like `roas`) used in `ORDER BY`.
+
+Let’s unpack it.
+
+---
+
+### ❓ Can You Use an Alias (`roas`) in `ORDER BY`?
+
+Yes — **you can use a column alias in `ORDER BY`**, even though SQL logically processes `SELECT` **after** `ORDER BY`.
+
+This is one of the few exceptions to SQL’s logical evaluation order. While the query engine processes:
+
+```
+FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT
+```
+
+**`ORDER BY` is allowed to reference aliases** defined in the `SELECT` clause. This is true in:
+
+* **Standard SQL (ANSI)**
+* **PostgreSQL**
+* **MySQL**
+* **BigQuery**
+* **SQL Server** and others
+
+So this is **valid**:
+
+```sql
+SELECT
+  campaign_id,
+  SUM(revenue) AS total_revenue,
+  SUM(spend) AS total_spend,
+  ROUND(SUM(revenue) / NULLIF(SUM(spend), 0), 2) AS roas
+FROM campaign_data
+WHERE date >= CURRENT_DATE - INTERVAL '30' DAY
+GROUP BY campaign_id
+ORDER BY roas DESC
+LIMIT 5;
+```
+
+---
+
+### ✅ Alternative: Use Column Position in `ORDER BY`
+
+Some teams prefer using column index for clarity in quick scripts:
+
+```sql
+ORDER BY 4 DESC  -- roas is the 4th selected column
+```
+
+But: **readability suffers**, and **aliases are preferred** for production or reviewed SQL.
+
+---
+
+### 🧠 Interview Tip
+
+If they ask about SQL order of execution or edge cases like this, you can say:
+
+> "Even though `ORDER BY` is logically evaluated after `SELECT`, most SQL dialects allow alias use there. If needed for reusability, I’d consider using a CTE or subquery."
+
+Let me know if you'd like a breakdown of SQL's execution order using an example with CTEs, HAVING, or analytic functions next!

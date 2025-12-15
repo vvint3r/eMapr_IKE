@@ -1,0 +1,76 @@
+Solve enough SQL interview questions, and you’ll start to see the same patterns come up over-and-over again. As the author of Ace the Data Science Interview, and founder of SQL interview platform DataLemur, I’ve solved over 300 SQL interview questions myself and seen just about every type of SQL interview question that gets asked.
+
+To save you time, I put together this guide on the top patterns you’ll find in SQL interview questions:
+
+Give Me All X, BUT Filter It Down
+Compute a Rolling Average
+Analyze Pairs Of Things With Self-Joins
+Find Top X Things (Rank Functions)
+Optimizing Query Performance
+Scroll down to dive into each pattern👇👇
+
+SQL Interview Patterns
+
+SQL Interview Pattern 1: Give Me All X, BUT Filter It Down.
+To answer the “gimme all X BUT make sure they’re Y and Z” questions, you’ll have to SELECT all records that match a certain condition. Sometimes, instead of simply SELECT’ing records, you might have to give the count, average, or sum of all the records that match some condition but the logic is mostly the same.
+
+Irregarldess, the crux of the question is about filtering down the dataset correctly based on one or several of these conditions: Filter based on data in another table (via join) Filter based on string matching (tests your use of regex and LIKE syntax) Filter based on timestamps (tests your ability to use date/time operators)
+
+An example Meta interview question would be: “-For each month, find me the count of all facebook users who created their account that month-”
+
+Your solution use the following snippet:
+
+  EXTRACT(
+    MONTH FROM created_at
+    ) AS "Month";
+While date/time commands aren’t as common in SQL interviews (since the syntax varies so greatly between different SQL flavors), in my sql interview guide I shortlisted some of the most important PostgreSQL date/time functions for interviews.
+
+SQL Interview Pattern 2: Rolling Average
+You’ll be asked to find the rolling average, or trailing average for some set of data. While it’s common to have some type of orders, purchases, or transaction type dataset, for Product Data Science roles you might get a user analytics question like “What’s the 7-day rolling average Daily Active User count (DAU)”.
+
+You could use a query like the following:
+
+SELECT date, active_users,
+       AVG(active_users) OVER (ORDER BY date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS rolling_average
+FROM daily_active_users
+These questions are popular SQL interview questions because in-real world analytics, there is so much seasonality in day-to-day metrics. That’s why accounting for weekend effects, most of the time you're asked to create a rolling 7-day or 28-day metric.
+
+Fun fact: using a 30-day rolling average (aka a monthly rolling average) isn’t a great idea at the biggest tech companies, because weekday vs. weekend behavior is super different. And unfortunately, in a 30-day period there might be 4 weekends, 5 weekends, or 4.5 weekends, which can throw off your numbers completely. Source: worked at FB’s growth team, and messed up an important analysis this way…..woops.
+
+SQL Interview Pattern 3: Analyze Pairs Of Things With Self-Joins
+Frequently you’ll be asked to analyze pairs of things – maybe pairs of social media users (to see how much they message each other), or pairs of products (to see how often they are bough together), etc.
+
+For these SQL questions, always think of self-joins (where you join a table to itself).
+
+For example, say you had website visitor data exported from a company's Google Analytics account, and you had to analyze pairs of pages for UX or navigational issues. As part of that analysis, you wanted to generate all pairs of URLs, but needed to avoid pairs where both the URLs were the same since that's not a valid pair.
+
+The self-join query would look like the following:
+
+SELECT page1.url AS page_url, page2.url AS referred_from
+FROM google_analytics AS page1
+JOIN google_analytics AS page2 ON page1.referrer_id = page2.id
+WHERE page1.id <> page2.id;
+This query returns the url of each page (page1.url) along with the url of the page that referred to it (page2.url). The self-join is performed using the referrer_id field, which specifies the id of the page that referred the visitor to the current page, and avoids any pages that referred themself (aka data anomalies).
+
+To try a self-join yourself, try this real SQL question from a Walmart interview about finding frequently purchased pairs of items!
+
+Walmart SQL Interview Question: Frequent Pairs of Items
+
+SQL Interview Pattern 4: Find Top X Things
+Another common SQL interview question pattern is being asked to find the top X things. For example:
+
+find me the top 3 employee salaries in each department
+find me the 2nd most sold product in each Amazon category
+find me the 3rd transaction made for every Uber rider
+For these questions, you’ll want to immediately think of window functions like RANK() and ROW_NUMBER().
+
+To test this pattern out yourself, checkout this Uber SQL Assessment Question about selecting a user's 3rd transaction made on the Uber platform.Uber SQL Interview Window Function Assessment
+
+SQL Interview Pattern 5: Optimizing Query Performance
+Usually, for Data Analysts and Data Scientists, questions about improving SQL query performance aren’t asked by themself. Instead, after you write a query to solve an earlier problem, the interviewer will follow-up and ask you to optimize your SQL query.
+
+Here they are testing to see how deep your knowledge of database internals goes – are you used to writing simple queries, or have you had to analyze performance bottlenecks in complex SQL queries, and truly understand the DBMS you’re working on top of?
+
+While there’s a ton of info out there on SQL query optimization tips, for 90% of Data Analyst and Data Science interviews, you’ll pass by mentioning these three things: Don’t SELECT * random fields - only get the columns you need Try to use database indexes Avoid joins if possible – try denormalizing your database
+
+Of course, for proper Data Engineering and Database Administration roles, you’ll need to have more in-depth answers for which you can prep for by reading our guide on database design interview questions and by reading the classic book Database Design for Mere Mortals

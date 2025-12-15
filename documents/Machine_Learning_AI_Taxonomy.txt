@@ -1,0 +1,557 @@
+MACHINE LEARNING & AI - COMPREHENSIVE TAXONOMY
+
+Level 1	Level 2	Level 3	Level 4	Level 5	Level 6
+Machine Learning Fundamentals	ML Core Concepts	Learning Types	Supervised Learning	Classification	Binary Classification
+Machine Learning Fundamentals	ML Core Concepts	Learning Types	Supervised Learning	Classification	Multi-class Classification
+Machine Learning Fundamentals	ML Core Concepts	Learning Types	Supervised Learning	Regression	Linear Regression
+Machine Learning Fundamentals	ML Core Concepts	Learning Types	Supervised Learning	Regression	Polynomial Regression
+Machine Learning Fundamentals	ML Core Concepts	Learning Types	Supervised Learning	Regression	Logistic Regression
+Machine Learning Fundamentals	ML Core Concepts	Learning Types	Unsupervised Learning	Clustering	K-Means Clustering
+Machine Learning Fundamentals	ML Core Concepts	Learning Types	Unsupervised Learning	Clustering	Hierarchical Clustering
+Machine Learning Fundamentals	ML Core Concepts	Learning Types	Unsupervised Learning	Clustering	DBSCAN
+Machine Learning Fundamentals	ML Core Concepts	Learning Types	Unsupervised Learning	Dimensionality Reduction	PCA (Principal Component Analysis)
+Machine Learning Fundamentals	ML Core Concepts	Learning Types	Unsupervised Learning	Dimensionality Reduction	t-SNE
+Machine Learning Fundamentals	ML Core Concepts	Learning Types	Unsupervised Learning	Association Rules	Apriori Algorithm
+Machine Learning Fundamentals	ML Core Concepts	Learning Types	Unsupervised Learning	Association Rules	ECLAT Algorithm
+Machine Learning Fundamentals	ML Core Concepts	Learning Types	Semi-Supervised Learning	Hybrid Approaches	Self-Training
+Machine Learning Fundamentals	ML Core Concepts	Learning Types	Semi-Supervised Learning	Hybrid Approaches	Co-Training
+Machine Learning Fundamentals	ML Core Concepts	Learning Types	Self-Supervised Learning	Representation Learning	Contrastive Learning
+Machine Learning Fundamentals	ML Core Concepts	Learning Types	Self-Supervised Learning	Representation Learning	Predictive Coding
+Machine Learning Fundamentals	Classical Algorithms	Linear Models	Regression Algorithms	Simple Regression	Ordinary Least Squares
+Machine Learning Fundamentals	Classical Algorithms	Linear Models	Regression Algorithms	Regularized Regression	Ridge Regression
+Machine Learning Fundamentals	Classical Algorithms	Linear Models	Regression Algorithms	Regularized Regression	Lasso Regression
+Machine Learning Fundamentals	Classical Algorithms	Linear Models	Regression Algorithms	Regularized Regression	Elastic Net
+Machine Learning Fundamentals	Classical Algorithms	Tree-Based Models	Decision Trees	Classification Trees	CART Algorithm
+Machine Learning Fundamentals	Classical Algorithms	Tree-Based Models	Decision Trees	Regression Trees	Pruning Techniques
+Machine Learning Fundamentals	Classical Algorithms	Tree-Based Models	Ensemble Methods	Bagging	Random Forest
+Machine Learning Fundamentals	Classical Algorithms	Tree-Based Models	Ensemble Methods	Boosting	AdaBoost
+Machine Learning Fundamentals	Classical Algorithms	Tree-Based Models	Ensemble Methods	Boosting	Gradient Boosting
+Machine Learning Fundamentals	Classical Algorithms	Tree-Based Models	Ensemble Methods	Boosting	XGBoost
+Machine Learning Fundamentals	Classical Algorithms	Tree-Based Models	Ensemble Methods	Boosting	LightGBM
+Machine Learning Fundamentals	Classical Algorithms	Tree-Based Models	Ensemble Methods	Boosting	CatBoost
+Machine Learning Fundamentals	Classical Algorithms	Support Vector Machines	SVM Types	Classification SVM	Linear SVM
+Machine Learning Fundamentals	Classical Algorithms	Support Vector Machines	SVM Types	Classification SVM	Non-linear SVM
+Machine Learning Fundamentals	Classical Algorithms	Support Vector Machines	SVM Types	Regression SVM	Support Vector Regression
+Machine Learning Fundamentals	Classical Algorithms	Support Vector Machines	Kernel Methods	Kernel Functions	RBF Kernel
+Machine Learning Fundamentals	Classical Algorithms	Support Vector Machines	Kernel Methods	Kernel Functions	Polynomial Kernel
+Machine Learning Fundamentals	Classical Algorithms	Probabilistic Models	Naive Bayes	Naive Bayes Types	Gaussian Naive Bayes
+Machine Learning Fundamentals	Classical Algorithms	Probabilistic Models	Naive Bayes	Naive Bayes Types	Multinomial Naive Bayes
+Machine Learning Fundamentals	Classical Algorithms	Instance-Based Learning	Nearest Neighbors	KNN Variants	K-Nearest Neighbors
+Machine Learning Fundamentals	Classical Algorithms	Instance-Based Learning	Nearest Neighbors	Distance Metrics	Euclidean Distance
+Machine Learning Fundamentals	Classical Algorithms	Instance-Based Learning	Nearest Neighbors	Distance Metrics	Manhattan Distance
+Machine Learning Fundamentals	Model Evaluation	Performance Metrics	Classification Metrics	Accuracy Measures	Precision
+Machine Learning Fundamentals	Model Evaluation	Performance Metrics	Classification Metrics	Accuracy Measures	Recall
+Machine Learning Fundamentals	Model Evaluation	Performance Metrics	Classification Metrics	Accuracy Measures	F1 Score
+Machine Learning Fundamentals	Model Evaluation	Performance Metrics	Classification Metrics	Visual Metrics	Confusion Matrix
+Machine Learning Fundamentals	Model Evaluation	Performance Metrics	Classification Metrics	Visual Metrics	ROC Curve
+Machine Learning Fundamentals	Model Evaluation	Performance Metrics	Classification Metrics	Visual Metrics	AUC Score
+Machine Learning Fundamentals	Model Evaluation	Performance Metrics	Regression Metrics	Error Metrics	Mean Squared Error (MSE)
+Machine Learning Fundamentals	Model Evaluation	Performance Metrics	Regression Metrics	Error Metrics	Root Mean Squared Error (RMSE)
+Machine Learning Fundamentals	Model Evaluation	Performance Metrics	Regression Metrics	Error Metrics	Mean Absolute Error (MAE)
+Machine Learning Fundamentals	Model Evaluation	Performance Metrics	Regression Metrics	Correlation Metrics	R-Squared
+Machine Learning Fundamentals	Model Evaluation	Validation Techniques	Cross-Validation	CV Methods	K-Fold Cross-Validation
+Machine Learning Fundamentals	Model Evaluation	Validation Techniques	Cross-Validation	CV Methods	Stratified K-Fold
+Machine Learning Fundamentals	Model Evaluation	Validation Techniques	Cross-Validation	CV Methods	Leave-One-Out CV
+Machine Learning Fundamentals	Model Evaluation	Validation Techniques	Data Splitting	Split Strategies	Train-Test Split
+Machine Learning Fundamentals	Model Evaluation	Validation Techniques	Data Splitting	Split Strategies	Train-Validation-Test Split
+Machine Learning Fundamentals	Model Optimization	Hyperparameter Tuning	Tuning Methods	Search Strategies	Grid Search
+Machine Learning Fundamentals	Model Optimization	Hyperparameter Tuning	Tuning Methods	Search Strategies	Random Search
+Machine Learning Fundamentals	Model Optimization	Hyperparameter Tuning	Tuning Methods	Search Strategies	Bayesian Optimization
+Machine Learning Fundamentals	Model Optimization	Regularization	Regularization Techniques	Penalty Methods	L1 Regularization
+Machine Learning Fundamentals	Model Optimization	Regularization	Regularization Techniques	Penalty Methods	L2 Regularization
+Machine Learning Fundamentals	Model Optimization	Regularization	Regularization Techniques	Penalty Methods	Dropout
+Machine Learning Fundamentals	Model Optimization	Model Issues	Overfitting	Prevention Techniques	Early Stopping
+Machine Learning Fundamentals	Model Optimization	Model Issues	Overfitting	Prevention Techniques	Data Augmentation
+Machine Learning Fundamentals	Model Optimization	Model Issues	Underfitting	Solutions	Feature Engineering
+Machine Learning Fundamentals	Model Optimization	Model Issues	Bias-Variance Tradeoff	Balance Concepts	Bias Reduction
+Machine Learning Fundamentals	Model Optimization	Model Issues	Bias-Variance Tradeoff	Balance Concepts	Variance Reduction
+Deep Learning	Neural Network Fundamentals	Network Architectures	Feedforward Networks	Basic Networks	Multilayer Perceptron (MLP)
+Deep Learning	Neural Network Fundamentals	Network Architectures	Feedforward Networks	Basic Networks	Deep Neural Networks (DNN)
+Deep Learning	Neural Network Fundamentals	Network Architectures	Feedforward Networks	Activation Functions	ReLU
+Deep Learning	Neural Network Fundamentals	Network Architectures	Feedforward Networks	Activation Functions	Sigmoid
+Deep Learning	Neural Network Fundamentals	Network Architectures	Feedforward Networks	Activation Functions	Tanh
+Deep Learning	Neural Network Fundamentals	Network Architectures	Feedforward Networks	Activation Functions	Leaky ReLU
+Deep Learning	Neural Network Fundamentals	Network Architectures	Feedforward Networks	Activation Functions	Softmax
+Deep Learning	Neural Network Fundamentals	Training Methods	Optimization	Optimizers	Stochastic Gradient Descent (SGD)
+Deep Learning	Neural Network Fundamentals	Training Methods	Optimization	Optimizers	Adam
+Deep Learning	Neural Network Fundamentals	Training Methods	Optimization	Optimizers	RMSprop
+Deep Learning	Neural Network Fundamentals	Training Methods	Optimization	Optimizers	AdaGrad
+Deep Learning	Neural Network Fundamentals	Training Methods	Loss Functions	Classification Loss	Cross-Entropy Loss
+Deep Learning	Neural Network Fundamentals	Training Methods	Loss Functions	Classification Loss	Binary Cross-Entropy
+Deep Learning	Neural Network Fundamentals	Training Methods	Loss Functions	Regression Loss	Mean Squared Error Loss
+Deep Learning	Neural Network Fundamentals	Training Methods	Backpropagation	Gradient Computation	Forward Pass
+Deep Learning	Neural Network Fundamentals	Training Methods	Backpropagation	Gradient Computation	Backward Pass
+Deep Learning	Neural Network Fundamentals	Training Methods	Gradient Issues	Gradient Problems	Vanishing Gradient
+Deep Learning	Neural Network Fundamentals	Training Methods	Gradient Issues	Gradient Problems	Exploding Gradient
+Deep Learning	Convolutional Neural Networks	CNN Architecture	Convolutional Layers	Layer Types	2D Convolution
+Deep Learning	Convolutional Neural Networks	CNN Architecture	Convolutional Layers	Layer Types	3D Convolution
+Deep Learning	Convolutional Neural Networks	CNN Architecture	Pooling Layers	Pooling Methods	Max Pooling
+Deep Learning	Convolutional Neural Networks	CNN Architecture	Pooling Layers	Pooling Methods	Average Pooling
+Deep Learning	Convolutional Neural Networks	CNN Architecture	Pooling Layers	Pooling Methods	Global Average Pooling
+Deep Learning	Convolutional Neural Networks	CNN Architecture	Advanced Layers	Modern Components	Batch Normalization
+Deep Learning	Convolutional Neural Networks	CNN Architecture	Advanced Layers	Modern Components	Layer Normalization
+Deep Learning	Convolutional Neural Networks	CNN Models	Classic Architectures	Foundational Models	LeNet
+Deep Learning	Convolutional Neural Networks	CNN Models	Classic Architectures	Foundational Models	AlexNet
+Deep Learning	Convolutional Neural Networks	CNN Models	Classic Architectures	Foundational Models	VGGNet
+Deep Learning	Convolutional Neural Networks	CNN Models	Modern Architectures	Advanced Models	ResNet
+Deep Learning	Convolutional Neural Networks	CNN Models	Modern Architectures	Advanced Models	Inception (GoogLeNet)
+Deep Learning	Convolutional Neural Networks	CNN Models	Modern Architectures	Advanced Models	DenseNet
+Deep Learning	Convolutional Neural Networks	CNN Models	Modern Architectures	Advanced Models	EfficientNet
+Deep Learning	Convolutional Neural Networks	CNN Models	Modern Architectures	Advanced Models	MobileNet
+Deep Learning	Convolutional Neural Networks	CNN Applications	Image Tasks	Recognition Tasks	Image Classification
+Deep Learning	Convolutional Neural Networks	CNN Applications	Image Tasks	Recognition Tasks	Object Recognition
+Deep Learning	Convolutional Neural Networks	CNN Applications	Image Tasks	Detection Tasks	Object Detection
+Deep Learning	Convolutional Neural Networks	CNN Applications	Image Tasks	Detection Tasks	Face Detection
+Deep Learning	Recurrent Neural Networks	RNN Architecture	Basic RNNs	RNN Types	Vanilla RNN
+Deep Learning	Recurrent Neural Networks	RNN Architecture	Basic RNNs	RNN Components	Hidden State
+Deep Learning	Recurrent Neural Networks	RNN Architecture	Basic RNNs	RNN Components	Sequence Processing
+Deep Learning	Recurrent Neural Networks	RNN Variants	LSTM Networks	LSTM Components	Input Gate
+Deep Learning	Recurrent Neural Networks	RNN Variants	LSTM Networks	LSTM Components	Forget Gate
+Deep Learning	Recurrent Neural Networks	RNN Variants	LSTM Networks	LSTM Components	Output Gate
+Deep Learning	Recurrent Neural Networks	RNN Variants	LSTM Networks	LSTM Components	Cell State
+Deep Learning	Recurrent Neural Networks	RNN Variants	GRU Networks	GRU Components	Update Gate
+Deep Learning	Recurrent Neural Networks	RNN Variants	GRU Networks	GRU Components	Reset Gate
+Deep Learning	Recurrent Neural Networks	RNN Variants	Bidirectional RNN	Bidirectional Types	Bidirectional LSTM
+Deep Learning	Recurrent Neural Networks	RNN Variants	Bidirectional RNN	Bidirectional Types	Bidirectional GRU
+Deep Learning	Recurrent Neural Networks	RNN Applications	Sequential Tasks	Text Tasks	Text Generation
+Deep Learning	Recurrent Neural Networks	RNN Applications	Sequential Tasks	Text Tasks	Language Modeling
+Deep Learning	Recurrent Neural Networks	RNN Applications	Sequential Tasks	Time Series	Time Series Prediction
+Deep Learning	Recurrent Neural Networks	RNN Applications	Sequential Tasks	Time Series	Stock Price Forecasting
+Deep Learning	Recurrent Neural Networks	RNN Applications	Sequential Tasks	Speech	Speech Recognition
+Deep Learning	Transformer Architecture	Transformer Components	Attention Mechanism	Attention Types	Self-Attention
+Deep Learning	Transformer Architecture	Transformer Components	Attention Mechanism	Attention Types	Multi-Head Attention
+Deep Learning	Transformer Architecture	Transformer Components	Attention Mechanism	Attention Types	Scaled Dot-Product Attention
+Deep Learning	Transformer Architecture	Transformer Components	Positional Encoding	Position Information	Sinusoidal Encoding
+Deep Learning	Transformer Architecture	Transformer Components	Positional Encoding	Position Information	Learned Positional Embeddings
+Deep Learning	Transformer Architecture	Encoder-Decoder	Transformer Structure	Encoder Stack	Encoder Layers
+Deep Learning	Transformer Architecture	Encoder-Decoder	Transformer Structure	Decoder Stack	Decoder Layers
+Deep Learning	Transformer Architecture	Encoder-Decoder	Transformer Structure	Decoder Stack	Masked Self-Attention
+Deep Learning	Transformer Architecture	Vision Transformers	ViT Models	Image Transformers	Vision Transformer (ViT)
+Deep Learning	Transformer Architecture	Vision Transformers	ViT Models	Image Transformers	Swin Transformer
+Deep Learning	Transformer Architecture	Vision Transformers	ViT Models	Applications	Image Classification with ViT
+Deep Learning	Generative Models	Generative Adversarial Networks	GAN Architecture	GAN Components	Generator Network
+Deep Learning	Generative Models	Generative Adversarial Networks	GAN Architecture	GAN Components	Discriminator Network
+Deep Learning	Generative Models	Generative Adversarial Networks	GAN Variants	Advanced GANs	DCGAN
+Deep Learning	Generative Models	Generative Adversarial Networks	GAN Variants	Advanced GANs	StyleGAN
+Deep Learning	Generative Models	Generative Adversarial Networks	GAN Variants	Advanced GANs	CycleGAN
+Deep Learning	Generative Models	Generative Adversarial Networks	GAN Variants	Advanced GANs	Pix2Pix
+Deep Learning	Generative Models	Generative Adversarial Networks	GAN Applications	Image Generation	Synthetic Image Creation
+Deep Learning	Generative Models	Generative Adversarial Networks	GAN Applications	Image Generation	Image-to-Image Translation
+Deep Learning	Generative Models	Variational Autoencoders	VAE Architecture	VAE Components	Encoder
+Deep Learning	Generative Models	Variational Autoencoders	VAE Architecture	VAE Components	Decoder
+Deep Learning	Generative Models	Variational Autoencoders	VAE Architecture	VAE Components	Latent Space
+Deep Learning	Generative Models	Variational Autoencoders	VAE Applications	Representation Learning	Feature Learning
+Deep Learning	Generative Models	Variational Autoencoders	VAE Applications	Representation Learning	Data Compression
+Deep Learning	Generative Models	Diffusion Models	Diffusion Types	Model Variants	Denoising Diffusion
+Deep Learning	Generative Models	Diffusion Models	Diffusion Types	Model Variants	Stable Diffusion
+Deep Learning	Generative Models	Diffusion Models	Diffusion Applications	Content Creation	Text-to-Image Generation
+Deep Learning	Generative Models	Autoencoder Variants	Autoencoder Types	AE Architectures	Standard Autoencoder
+Deep Learning	Generative Models	Autoencoder Variants	Autoencoder Types	AE Architectures	Denoising Autoencoder
+Deep Learning	Generative Models	Autoencoder Variants	Autoencoder Types	AE Architectures	Sparse Autoencoder
+Deep Learning	Graph Neural Networks	GNN Types	GNN Architectures	Graph Networks	Graph Convolutional Network (GCN)
+Deep Learning	Graph Neural Networks	GNN Types	GNN Architectures	Graph Networks	Graph Attention Network (GAT)
+Deep Learning	Graph Neural Networks	GNN Types	GNN Architectures	Graph Networks	GraphSAGE
+Deep Learning	Graph Neural Networks	GNN Applications	Graph Tasks	Node Tasks	Node Classification
+Deep Learning	Graph Neural Networks	GNN Applications	Graph Tasks	Edge Tasks	Link Prediction
+Deep Learning	Graph Neural Networks	GNN Applications	Graph Tasks	Graph Tasks	Graph Classification
+Natural Language Processing	NLP Fundamentals	Text Preprocessing	Tokenization	Token Types	Word Tokenization
+Natural Language Processing	NLP Fundamentals	Text Preprocessing	Tokenization	Token Types	Sentence Tokenization
+Natural Language Processing	NLP Fundamentals	Text Preprocessing	Tokenization	Token Types	Subword Tokenization
+Natural Language Processing	NLP Fundamentals	Text Preprocessing	Tokenization	Modern Tokenizers	BPE (Byte Pair Encoding)
+Natural Language Processing	NLP Fundamentals	Text Preprocessing	Tokenization	Modern Tokenizers	WordPiece
+Natural Language Processing	NLP Fundamentals	Text Preprocessing	Tokenization	Modern Tokenizers	SentencePiece
+Natural Language Processing	NLP Fundamentals	Text Preprocessing	Text Normalization	Normalization Steps	Lowercasing
+Natural Language Processing	NLP Fundamentals	Text Preprocessing	Text Normalization	Normalization Steps	Stemming
+Natural Language Processing	NLP Fundamentals	Text Preprocessing	Text Normalization	Normalization Steps	Lemmatization
+Natural Language Processing	NLP Fundamentals	Text Preprocessing	Text Normalization	Normalization Steps	Stop Word Removal
+Natural Language Processing	NLP Fundamentals	Text Representation	Word Embeddings	Static Embeddings	Word2Vec
+Natural Language Processing	NLP Fundamentals	Text Representation	Word Embeddings	Static Embeddings	GloVe
+Natural Language Processing	NLP Fundamentals	Text Representation	Word Embeddings	Static Embeddings	FastText
+Natural Language Processing	NLP Fundamentals	Text Representation	Contextual Embeddings	Dynamic Embeddings	ELMo
+Natural Language Processing	NLP Fundamentals	Text Representation	Traditional Methods	Bag-of-Words	TF-IDF
+Natural Language Processing	NLP Fundamentals	Text Representation	Traditional Methods	Bag-of-Words	Count Vectorization
+Natural Language Processing	NLP Fundamentals	Linguistic Analysis	Syntax Analysis	Syntactic Parsing	Part-of-Speech (POS) Tagging
+Natural Language Processing	NLP Fundamentals	Linguistic Analysis	Syntax Analysis	Syntactic Parsing	Dependency Parsing
+Natural Language Processing	NLP Fundamentals	Linguistic Analysis	Syntax Analysis	Syntactic Parsing	Constituency Parsing
+Natural Language Processing	NLP Fundamentals	Linguistic Analysis	Named Entity Recognition	NER Types	Person Recognition
+Natural Language Processing	NLP Fundamentals	Linguistic Analysis	Named Entity Recognition	NER Types	Location Recognition
+Natural Language Processing	NLP Fundamentals	Linguistic Analysis	Named Entity Recognition	NER Types	Organization Recognition
+Natural Language Processing	Transformer Language Models	BERT Family	BERT Models	BERT Variants	BERT-Base
+Natural Language Processing	Transformer Language Models	BERT Family	BERT Models	BERT Variants	BERT-Large
+Natural Language Processing	Transformer Language Models	BERT Family	BERT Models	BERT Training	Masked Language Modeling
+Natural Language Processing	Transformer Language Models	BERT Family	BERT Models	BERT Training	Next Sentence Prediction
+Natural Language Processing	Transformer Language Models	BERT Family	BERT Derivatives	Improved Models	RoBERTa
+Natural Language Processing	Transformer Language Models	BERT Family	BERT Derivatives	Improved Models	ALBERT
+Natural Language Processing	Transformer Language Models	BERT Family	BERT Derivatives	Improved Models	DistilBERT
+Natural Language Processing	Transformer Language Models	BERT Family	BERT Derivatives	Improved Models	ELECTRA
+Natural Language Processing	Transformer Language Models	GPT Family	GPT Models	GPT Versions	GPT-1
+Natural Language Processing	Transformer Language Models	GPT Family	GPT Models	GPT Versions	GPT-2
+Natural Language Processing	Transformer Language Models	GPT Family	GPT Models	GPT Versions	GPT-3
+Natural Language Processing	Transformer Language Models	GPT Family	GPT Models	GPT Versions	GPT-4
+Natural Language Processing	Transformer Language Models	GPT Family	GPT Training	Training Method	Autoregressive Language Modeling
+Natural Language Processing	Transformer Language Models	GPT Family	GPT Training	Training Method	Causal Language Modeling
+Natural Language Processing	Transformer Language Models	Other Transformer Models	T5 Family	Text-to-Text Models	T5 (Text-to-Text Transfer Transformer)
+Natural Language Processing	Transformer Language Models	Other Transformer Models	T5 Family	Text-to-Text Models	T5 Variants
+Natural Language Processing	Transformer Language Models	Other Transformer Models	XLNet	Permutation Models	XLNet Architecture
+Natural Language Processing	Transformer Language Models	Other Transformer Models	Other Models	Additional Models	Llama
+Natural Language Processing	Transformer Language Models	Other Transformer Models	Other Models	Additional Models	Claude
+Natural Language Processing	Transformer Language Models	Other Transformer Models	Other Models	Additional Models	Gemini
+Natural Language Processing	NLP Tasks	Text Classification	Classification Types	Sentiment Analysis	Binary Sentiment
+Natural Language Processing	NLP Tasks	Text Classification	Classification Types	Sentiment Analysis	Multi-class Sentiment
+Natural Language Processing	NLP Tasks	Text Classification	Classification Types	Topic Classification	Document Classification
+Natural Language Processing	NLP Tasks	Text Classification	Classification Types	Intent Classification	Chatbot Intent Detection
+Natural Language Processing	NLP Tasks	Text Classification	Classification Types	Spam Detection	Email Spam Filtering
+Natural Language Processing	NLP Tasks	Sequence-to-Sequence	Machine Translation	Translation Types	Neural Machine Translation
+Natural Language Processing	NLP Tasks	Sequence-to-Sequence	Machine Translation	Translation Types	Multilingual Translation
+Natural Language Processing	NLP Tasks	Sequence-to-Sequence	Text Summarization	Summarization Types	Extractive Summarization
+Natural Language Processing	NLP Tasks	Sequence-to-Sequence	Text Summarization	Summarization Types	Abstractive Summarization
+Natural Language Processing	NLP Tasks	Question Answering	QA Systems	QA Types	Extractive QA
+Natural Language Processing	NLP Tasks	Question Answering	QA Systems	QA Types	Open-Domain QA
+Natural Language Processing	NLP Tasks	Question Answering	QA Systems	QA Types	Closed-Domain QA
+Natural Language Processing	NLP Tasks	Text Generation	Generation Tasks	Creative Writing	Story Generation
+Natural Language Processing	NLP Tasks	Text Generation	Generation Tasks	Code Generation	Code Synthesis
+Natural Language Processing	NLP Tasks	Text Generation	Generation Tasks	Dialogue	Conversational AI
+Natural Language Processing	NLP Tasks	Text Generation	Generation Tasks	Dialogue	Chatbots
+Natural Language Processing	NLP Tasks	Information Extraction	Extraction Types	Relation Extraction	Entity Relationship Extraction
+Natural Language Processing	NLP Tasks	Information Extraction	Extraction Types	Event Extraction	Event Detection
+Natural Language Processing	Advanced NLP	Prompt Engineering	Prompting Techniques	Basic Prompting	Zero-Shot Learning
+Natural Language Processing	Advanced NLP	Prompt Engineering	Prompting Techniques	Basic Prompting	Few-Shot Learning
+Natural Language Processing	Advanced NLP	Prompt Engineering	Prompting Techniques	Basic Prompting	One-Shot Learning
+Natural Language Processing	Advanced NLP	Prompt Engineering	Prompting Techniques	Advanced Prompting	Chain-of-Thought Prompting
+Natural Language Processing	Advanced NLP	Prompt Engineering	Prompting Techniques	Advanced Prompting	Self-Consistency
+Natural Language Processing	Advanced NLP	Fine-Tuning	Fine-Tuning Methods	Training Approaches	Full Fine-Tuning
+Natural Language Processing	Advanced NLP	Fine-Tuning	Fine-Tuning Methods	Training Approaches	Parameter-Efficient Fine-Tuning (PEFT)
+Natural Language Processing	Advanced NLP	Fine-Tuning	Fine-Tuning Methods	Training Approaches	LoRA (Low-Rank Adaptation)
+Natural Language Processing	Advanced NLP	Fine-Tuning	Fine-Tuning Methods	Training Approaches	Adapter Layers
+Natural Language Processing	Advanced NLP	Retrieval-Augmented Generation	RAG Components	RAG Architecture	Retriever
+Natural Language Processing	Advanced NLP	Retrieval-Augmented Generation	RAG Components	RAG Architecture	Generator
+Natural Language Processing	Advanced NLP	Retrieval-Augmented Generation	RAG Components	RAG Architecture	Knowledge Base
+Computer Vision	CV Fundamentals	Image Processing	Image Operations	Basic Operations	Image Resizing
+Computer Vision	CV Fundamentals	Image Processing	Image Operations	Basic Operations	Image Cropping
+Computer Vision	CV Fundamentals	Image Processing	Image Operations	Basic Operations	Image Rotation
+Computer Vision	CV Fundamentals	Image Processing	Image Operations	Enhancement	Brightness Adjustment
+Computer Vision	CV Fundamentals	Image Processing	Image Operations	Enhancement	Contrast Enhancement
+Computer Vision	CV Fundamentals	Image Processing	Image Operations	Enhancement	Noise Reduction
+Computer Vision	CV Fundamentals	Image Processing	Image Filtering	Filter Types	Gaussian Filter
+Computer Vision	CV Fundamentals	Image Processing	Image Filtering	Filter Types	Median Filter
+Computer Vision	CV Fundamentals	Image Processing	Image Filtering	Filter Types	Sobel Filter
+Computer Vision	CV Fundamentals	Feature Extraction	Traditional Features	Feature Detectors	SIFT (Scale-Invariant Feature Transform)
+Computer Vision	CV Fundamentals	Feature Extraction	Traditional Features	Feature Detectors	SURF
+Computer Vision	CV Fundamentals	Feature Extraction	Traditional Features	Feature Detectors	HOG (Histogram of Oriented Gradients)
+Computer Vision	CV Fundamentals	Feature Extraction	Traditional Features	Feature Detectors	ORB
+Computer Vision	CV Fundamentals	Feature Extraction	Deep Features	CNN Features	Feature Maps
+Computer Vision	CV Fundamentals	Feature Extraction	Deep Features	CNN Features	Learned Representations
+Computer Vision	Object Detection	Detection Architectures	Two-Stage Detectors	Region-Based Methods	R-CNN
+Computer Vision	Object Detection	Detection Architectures	Two-Stage Detectors	Region-Based Methods	Fast R-CNN
+Computer Vision	Object Detection	Detection Architectures	Two-Stage Detectors	Region-Based Methods	Faster R-CNN
+Computer Vision	Object Detection	Detection Architectures	Two-Stage Detectors	Region-Based Methods	Mask R-CNN
+Computer Vision	Object Detection	Detection Architectures	Single-Stage Detectors	YOLO Family	YOLO (You Only Look Once)
+Computer Vision	Object Detection	Detection Architectures	Single-Stage Detectors	YOLO Family	YOLOv2
+Computer Vision	Object Detection	Detection Architectures	Single-Stage Detectors	YOLO Family	YOLOv3
+Computer Vision	Object Detection	Detection Architectures	Single-Stage Detectors	YOLO Family	YOLOv4
+Computer Vision	Object Detection	Detection Architectures	Single-Stage Detectors	YOLO Family	YOLOv5
+Computer Vision	Object Detection	Detection Architectures	Single-Stage Detectors	YOLO Family	YOLOv7
+Computer Vision	Object Detection	Detection Architectures	Single-Stage Detectors	YOLO Family	YOLOv8
+Computer Vision	Object Detection	Detection Architectures	Single-Stage Detectors	YOLO Family	YOLOv9
+Computer Vision	Object Detection	Detection Architectures	Single-Stage Detectors	YOLO Family	YOLOv10
+Computer Vision	Object Detection	Detection Architectures	Single-Stage Detectors	YOLO Family	YOLO11
+Computer Vision	Object Detection	Detection Architectures	Single-Stage Detectors	SSD Family	SSD (Single Shot Detector)
+Computer Vision	Object Detection	Detection Architectures	Single-Stage Detectors	Other Detectors	RetinaNet
+Computer Vision	Object Detection	Detection Components	Detection Elements	Bounding Boxes	Box Coordinates
+Computer Vision	Object Detection	Detection Components	Detection Elements	Bounding Boxes	Anchor Boxes
+Computer Vision	Object Detection	Detection Components	Detection Elements	Bounding Boxes	Anchor-Free Detection
+Computer Vision	Object Detection	Detection Components	Detection Metrics	Evaluation Metrics	Intersection over Union (IoU)
+Computer Vision	Object Detection	Detection Components	Detection Metrics	Evaluation Metrics	Mean Average Precision (mAP)
+Computer Vision	Object Detection	Detection Components	Detection Metrics	Evaluation Metrics	Non-Maximum Suppression (NMS)
+Computer Vision	Image Segmentation	Segmentation Types	Semantic Segmentation	Pixel Classification	FCN (Fully Convolutional Network)
+Computer Vision	Image Segmentation	Segmentation Types	Semantic Segmentation	Pixel Classification	U-Net
+Computer Vision	Image Segmentation	Segmentation Types	Semantic Segmentation	Pixel Classification	DeepLab
+Computer Vision	Image Segmentation	Segmentation Types	Instance Segmentation	Object Instances	Mask R-CNN
+Computer Vision	Image Segmentation	Segmentation Types	Instance Segmentation	Object Instances	YOLACT
+Computer Vision	Image Segmentation	Segmentation Types	Panoptic Segmentation	Combined Segmentation	Panoptic FPN
+Computer Vision	Image Segmentation	Segmentation Models	Modern Segmentation	Advanced Models	Segment Anything Model (SAM)
+Computer Vision	Image Segmentation	Segmentation Models	Modern Segmentation	Advanced Models	SAM 2
+Computer Vision	Image Segmentation	Segmentation Metrics	Segmentation Evaluation	Metrics	Dice Coefficient
+Computer Vision	Image Segmentation	Segmentation Metrics	Segmentation Evaluation	Metrics	IoU for Segmentation
+Computer Vision	Face Recognition	Face Detection	Detection Methods	Face Detectors	Haar Cascades
+Computer Vision	Face Recognition	Face Detection	Detection Methods	Face Detectors	MTCNN
+Computer Vision	Face Recognition	Face Detection	Detection Methods	Face Detectors	RetinaFace
+Computer Vision	Face Recognition	Face Identification	Recognition Methods	Face Recognition Systems	FaceNet
+Computer Vision	Face Recognition	Face Identification	Recognition Methods	Face Recognition Systems	DeepFace
+Computer Vision	Face Recognition	Face Identification	Recognition Methods	Face Recognition Systems	ArcFace
+Computer Vision	Face Recognition	Face Analysis	Face Attributes	Attribute Detection	Age Estimation
+Computer Vision	Face Recognition	Face Analysis	Face Attributes	Attribute Detection	Gender Recognition
+Computer Vision	Face Recognition	Face Analysis	Face Attributes	Attribute Detection	Emotion Recognition
+Computer Vision	Pose Estimation	Pose Types	Human Pose	2D Pose Estimation	OpenPose
+Computer Vision	Pose Estimation	Pose Types	Human Pose	2D Pose Estimation	PoseNet
+Computer Vision	Pose Estimation	Pose Types	Human Pose	3D Pose Estimation	3D Pose Networks
+Computer Vision	Pose Estimation	Pose Types	Hand Pose	Hand Tracking	Hand Keypoint Detection
+Computer Vision	Pose Estimation	Pose Types	Body Parts	Keypoint Detection	Body Keypoints
+Computer Vision	Image Generation	Generation Methods	Style Transfer	Style Techniques	Neural Style Transfer
+Computer Vision	Image Generation	Generation Methods	Style Transfer	Style Techniques	Fast Style Transfer
+Computer Vision	Image Generation	Generation Methods	Image Synthesis	Synthesis Methods	Conditional Generation
+Computer Vision	Image Generation	Generation Methods	Image Synthesis	Synthesis Methods	Text-to-Image
+Computer Vision	Optical Character Recognition	OCR Methods	Text Detection	Detection Approaches	Text Region Detection
+Computer Vision	Optical Character Recognition	OCR Methods	Text Recognition	Recognition Approaches	Character Recognition
+Computer Vision	Optical Character Recognition	OCR Methods	Text Recognition	Recognition Approaches	Handwriting Recognition
+Computer Vision	Video Analysis	Video Processing	Video Tasks	Action Recognition	Activity Recognition
+Computer Vision	Video Analysis	Video Processing	Video Tasks	Action Recognition	Gesture Recognition
+Computer Vision	Video Analysis	Video Processing	Video Tasks	Tracking	Object Tracking
+Computer Vision	Video Analysis	Video Processing	Video Tasks	Tracking	Multi-Object Tracking
+Computer Vision	3D Vision	3D Reconstruction	Reconstruction Methods	3D Techniques	Structure from Motion
+Computer Vision	3D Vision	3D Reconstruction	Reconstruction Methods	3D Techniques	Depth Estimation
+Computer Vision	3D Vision	3D Reconstruction	Reconstruction Methods	3D Techniques	Point Cloud Processing
+Computer Vision	3D Vision	Point Clouds	Point Cloud Methods	Processing Techniques	PointNet
+Computer Vision	3D Vision	Point Clouds	Point Cloud Methods	Processing Techniques	PointNet++
+Reinforcement Learning	RL Fundamentals	Core Concepts	RL Framework	RL Components	Agent
+Reinforcement Learning	RL Fundamentals	Core Concepts	RL Framework	RL Components	Environment
+Reinforcement Learning	RL Fundamentals	Core Concepts	RL Framework	RL Components	State
+Reinforcement Learning	RL Fundamentals	Core Concepts	RL Framework	RL Components	Action
+Reinforcement Learning	RL Fundamentals	Core Concepts	RL Framework	RL Components	Reward
+Reinforcement Learning	RL Fundamentals	Core Concepts	RL Framework	RL Components	Policy
+Reinforcement Learning	RL Fundamentals	Core Concepts	RL Framework	RL Components	Value Function
+Reinforcement Learning	RL Fundamentals	Mathematical Foundation	RL Theory	Core Concepts	Markov Decision Process (MDP)
+Reinforcement Learning	RL Fundamentals	Mathematical Foundation	RL Theory	Core Concepts	Bellman Equation
+Reinforcement Learning	RL Fundamentals	Mathematical Foundation	RL Theory	Core Concepts	Return
+Reinforcement Learning	RL Fundamentals	Mathematical Foundation	RL Theory	Core Concepts	Discount Factor
+Reinforcement Learning	RL Fundamentals	Exploration vs Exploitation	Exploration Strategies	Exploration Methods	Epsilon-Greedy
+Reinforcement Learning	RL Fundamentals	Exploration vs Exploitation	Exploration Strategies	Exploration Methods	Upper Confidence Bound (UCB)
+Reinforcement Learning	RL Fundamentals	Exploration vs Exploitation	Exploration Strategies	Exploration Methods	Thompson Sampling
+Reinforcement Learning	Value-Based Methods	Value Functions	Value Estimation	Value Types	State-Value Function (V)
+Reinforcement Learning	Value-Based Methods	Value Functions	Value Estimation	Value Types	Action-Value Function (Q)
+Reinforcement Learning	Value-Based Methods	Q-Learning	Q-Learning Variants	Tabular Methods	Q-Learning Algorithm
+Reinforcement Learning	Value-Based Methods	Q-Learning	Q-Learning Variants	Tabular Methods	SARSA
+Reinforcement Learning	Value-Based Methods	Deep Q-Networks	DQN Variants	Deep RL	Deep Q-Network (DQN)
+Reinforcement Learning	Value-Based Methods	Deep Q-Networks	DQN Variants	Deep RL	Double DQN
+Reinforcement Learning	Value-Based Methods	Deep Q-Networks	DQN Variants	Deep RL	Dueling DQN
+Reinforcement Learning	Value-Based Methods	Deep Q-Networks	DQN Variants	Deep RL	Rainbow DQN
+Reinforcement Learning	Policy-Based Methods	Policy Gradients	Policy Optimization	Gradient Methods	REINFORCE
+Reinforcement Learning	Policy-Based Methods	Policy Gradients	Policy Optimization	Gradient Methods	Policy Gradient Theorem
+Reinforcement Learning	Policy-Based Methods	Actor-Critic	Actor-Critic Methods	AC Algorithms	Advantage Actor-Critic (A2C)
+Reinforcement Learning	Policy-Based Methods	Actor-Critic	Actor-Critic Methods	AC Algorithms	Asynchronous Actor-Critic (A3C)
+Reinforcement Learning	Policy-Based Methods	Advanced Policy Methods	Modern Algorithms	State-of-the-Art	Proximal Policy Optimization (PPO)
+Reinforcement Learning	Policy-Based Methods	Advanced Policy Methods	Modern Algorithms	State-of-the-Art	Trust Region Policy Optimization (TRPO)
+Reinforcement Learning	Policy-Based Methods	Advanced Policy Methods	Modern Algorithms	State-of-the-Art	Soft Actor-Critic (SAC)
+Reinforcement Learning	Model-Based RL	Model Learning	Environment Models	Model Types	Dynamics Model
+Reinforcement Learning	Model-Based RL	Model Learning	Environment Models	Model Types	Transition Model
+Reinforcement Learning	Model-Based RL	Planning	Planning Methods	Planning Algorithms	Monte Carlo Tree Search (MCTS)
+Reinforcement Learning	Model-Based RL	Planning	Planning Methods	Planning Algorithms	Model Predictive Control
+Reinforcement Learning	Advanced RL	Multi-Agent RL	MARL	Multi-Agent Systems	Cooperative Learning
+Reinforcement Learning	Advanced RL	Multi-Agent RL	MARL	Multi-Agent Systems	Competitive Learning
+Reinforcement Learning	Advanced RL	Hierarchical RL	HRL	Hierarchical Methods	Options Framework
+Reinforcement Learning	Advanced RL	Hierarchical RL	HRL	Hierarchical Methods	Feudal RL
+Reinforcement Learning	Advanced RL	Imitation Learning	Learning from Demonstrations	Imitation Methods	Behavioral Cloning
+Reinforcement Learning	Advanced RL	Imitation Learning	Learning from Demonstrations	Imitation Methods	Inverse Reinforcement Learning
+Reinforcement Learning	Advanced RL	Meta-Learning	Learning to Learn	Meta RL	Model-Agnostic Meta-Learning (MAML)
+Reinforcement Learning	Advanced RL	Transfer Learning	Knowledge Transfer	Transfer Methods	Domain Adaptation
+Reinforcement Learning	RL Applications	Game Playing	Game AI	Games	Atari Games
+Reinforcement Learning	RL Applications	Game Playing	Game AI	Games	Board Games (Go, Chess)
+Reinforcement Learning	RL Applications	Robotics	Robot Learning	Robotic Tasks	Robot Manipulation
+Reinforcement Learning	RL Applications	Robotics	Robot Learning	Robotic Tasks	Robot Navigation
+Reinforcement Learning	RL Applications	Autonomous Vehicles	Self-Driving	Driving Tasks	Path Planning
+Reinforcement Learning	RL Applications	Autonomous Vehicles	Self-Driving	Driving Tasks	Decision Making
+Reinforcement Learning	RL Applications	Resource Management	Optimization	Resource Tasks	Energy Management
+Reinforcement Learning	RL Applications	Resource Management	Optimization	Resource Tasks	Traffic Control
+MLOps & Production	MLOps Fundamentals	MLOps Concepts	Core Principles	MLOps Lifecycle	Model Development
+MLOps & Production	MLOps Fundamentals	MLOps Concepts	Core Principles	MLOps Lifecycle	Model Training
+MLOps & Production	MLOps Fundamentals	MLOps Concepts	Core Principles	MLOps Lifecycle	Model Validation
+MLOps & Production	MLOps Fundamentals	MLOps Concepts	Core Principles	MLOps Lifecycle	Model Deployment
+MLOps & Production	MLOps Fundamentals	MLOps Concepts	Core Principles	MLOps Lifecycle	Model Monitoring
+MLOps & Production	MLOps Fundamentals	MLOps Concepts	Core Principles	MLOps Lifecycle	Model Retraining
+MLOps & Production	MLOps Fundamentals	MLOps Concepts	MLOps vs DevOps	Differences	ML-Specific Challenges
+MLOps & Production	MLOps Fundamentals	MLOps Concepts	MLOps vs DevOps	Differences	Data Versioning
+MLOps & Production	MLOps Fundamentals	MLOps Concepts	MLOps vs DevOps	Differences	Model Versioning
+MLOps & Production	Model Development	Experiment Tracking	Tracking Tools	Experiment Management	MLflow
+MLOps & Production	Model Development	Experiment Tracking	Tracking Tools	Experiment Management	Weights & Biases
+MLOps & Production	Model Development	Experiment Tracking	Tracking Tools	Experiment Management	Neptune.ai
+MLOps & Production	Model Development	Experiment Tracking	Tracking Tools	Experiment Management	TensorBoard
+MLOps & Production	Model Development	Version Control	Versioning Systems	Version Tools	DVC (Data Version Control)
+MLOps & Production	Model Development	Version Control	Versioning Systems	Version Tools	Git for ML
+MLOps & Production	Model Development	Version Control	Versioning Systems	Version Tools	Model Registries
+MLOps & Production	Model Development	Feature Engineering	Feature Management	Feature Tools	Feature Stores
+MLOps & Production	Model Development	Feature Engineering	Feature Management	Feature Tools	Feature Pipelines
+MLOps & Production	Model Deployment	Deployment Strategies	Deployment Methods	Deployment Types	Batch Deployment
+MLOps & Production	Model Deployment	Deployment Strategies	Deployment Methods	Deployment Types	Real-Time Deployment
+MLOps & Production	Model Deployment	Deployment Strategies	Deployment Methods	Deployment Types	Edge Deployment
+MLOps & Production	Model Deployment	Deployment Strategies	Deployment Patterns	Rollout Strategies	Blue-Green Deployment
+MLOps & Production	Model Deployment	Deployment Strategies	Deployment Patterns	Rollout Strategies	Canary Deployment
+MLOps & Production	Model Deployment	Deployment Strategies	Deployment Patterns	Rollout Strategies	A/B Testing
+MLOps & Production	Model Deployment	Deployment Strategies	Deployment Patterns	Rollout Strategies	Shadow Deployment
+MLOps & Production	Model Deployment	Serving Infrastructure	Model Serving	Serving Platforms	TensorFlow Serving
+MLOps & Production	Model Deployment	Serving Infrastructure	Model Serving	Serving Platforms	TorchServe
+MLOps & Production	Model Deployment	Serving Infrastructure	Model Serving	Serving Platforms	Seldon Core
+MLOps & Production	Model Deployment	Serving Infrastructure	Model Serving	Serving Platforms	KServe
+MLOps & Production	Model Deployment	Containerization	Container Technologies	Containers	Docker
+MLOps & Production	Model Deployment	Containerization	Container Technologies	Containers	Kubernetes
+MLOps & Production	Model Deployment	Containerization	Container Technologies	Containers	Docker Compose
+MLOps & Production	Model Monitoring	Performance Monitoring	Monitoring Systems	Monitoring Aspects	Model Performance Tracking
+MLOps & Production	Model Monitoring	Performance Monitoring	Monitoring Systems	Monitoring Aspects	Latency Monitoring
+MLOps & Production	Model Monitoring	Performance Monitoring	Monitoring Systems	Monitoring Aspects	Throughput Monitoring
+MLOps & Production	Model Monitoring	Model Drift	Drift Detection	Drift Types	Data Drift
+MLOps & Production	Model Monitoring	Model Drift	Drift Detection	Drift Types	Concept Drift
+MLOps & Production	Model Monitoring	Model Drift	Drift Detection	Drift Types	Prediction Drift
+MLOps & Production	Model Monitoring	Model Drift	Drift Management	Drift Response	Automated Retraining
+MLOps & Production	Model Monitoring	Model Drift	Drift Management	Drift Response	Alert Systems
+MLOps & Production	Model Monitoring	Observability	Monitoring Tools	Observability Platforms	Prometheus
+MLOps & Production	Model Monitoring	Observability	Monitoring Tools	Observability Platforms	Grafana
+MLOps & Production	Model Monitoring	Observability	Monitoring Tools	Observability Platforms	ELK Stack
+MLOps & Production	Model Monitoring	Data Quality	Quality Monitoring	Data Checks	Data Validation
+MLOps & Production	Model Monitoring	Data Quality	Quality Monitoring	Data Checks	Schema Validation
+MLOps & Production	Model Monitoring	Data Quality	Quality Monitoring	Data Checks	Anomaly Detection
+MLOps & Production	ML Pipelines	Pipeline Orchestration	Orchestration Tools	Pipeline Platforms	Apache Airflow
+MLOps & Production	ML Pipelines	Pipeline Orchestration	Orchestration Tools	Pipeline Platforms	Kubeflow
+MLOps & Production	ML Pipelines	Pipeline Orchestration	Orchestration Tools	Pipeline Platforms	Prefect
+MLOps & Production	ML Pipelines	Pipeline Orchestration	Orchestration Tools	Pipeline Platforms	Metaflow
+MLOps & Production	ML Pipelines	Pipeline Orchestration	Orchestration Tools	Pipeline Platforms	MLflow Pipelines
+MLOps & Production	ML Pipelines	CI/CD for ML	Continuous Integration	CI/CD Tools	GitHub Actions
+MLOps & Production	ML Pipelines	CI/CD for ML	Continuous Integration	CI/CD Tools	GitLab CI
+MLOps & Production	ML Pipelines	CI/CD for ML	Continuous Integration	CI/CD Tools	Jenkins
+MLOps & Production	ML Pipelines	CI/CD for ML	Continuous Deployment	CD Practices	Automated Testing
+MLOps & Production	ML Pipelines	CI/CD for ML	Continuous Deployment	CD Practices	Automated Deployment
+MLOps & Production	ML Platforms	End-to-End Platforms	ML Platforms	Platform Solutions	AWS SageMaker
+MLOps & Production	ML Platforms	End-to-End Platforms	ML Platforms	Platform Solutions	Google Vertex AI
+MLOps & Production	ML Platforms	End-to-End Platforms	ML Platforms	Platform Solutions	Azure ML
+MLOps & Production	ML Platforms	End-to-End Platforms	ML Platforms	Platform Solutions	Databricks
+MLOps & Production	ML Platforms	Open-Source Platforms	OSS Platforms	Open Solutions	Kubeflow Pipelines
+MLOps & Production	ML Platforms	Open-Source Platforms	OSS Platforms	Open Solutions	MLflow
+MLOps & Production	Model Optimization	Model Compression	Compression Techniques	Optimization Methods	Quantization
+MLOps & Production	Model Optimization	Model Compression	Compression Techniques	Optimization Methods	Pruning
+MLOps & Production	Model Optimization	Model Compression	Compression Techniques	Optimization Methods	Knowledge Distillation
+MLOps & Production	Model Optimization	Inference Optimization	Inference Methods	Speed Optimization	Model Optimization
+MLOps & Production	Model Optimization	Inference Optimization	Inference Methods	Speed Optimization	Hardware Acceleration
+MLOps & Production	Model Optimization	Inference Optimization	Inference Methods	Speed Optimization	ONNX Runtime
+AI Ethics & Governance	Responsible AI	Fairness	Fairness Principles	Bias Mitigation	Algorithmic Fairness
+AI Ethics & Governance	Responsible AI	Fairness	Fairness Principles	Bias Mitigation	Demographic Parity
+AI Ethics & Governance	Responsible AI	Fairness	Fairness Principles	Bias Mitigation	Equal Opportunity
+AI Ethics & Governance	Responsible AI	Fairness	Bias Detection	Bias Types	Data Bias
+AI Ethics & Governance	Responsible AI	Fairness	Bias Detection	Bias Types	Algorithmic Bias
+AI Ethics & Governance	Responsible AI	Fairness	Bias Detection	Bias Types	Selection Bias
+AI Ethics & Governance	Responsible AI	Transparency	Model Transparency	Transparency Requirements	Model Documentation
+AI Ethics & Governance	Responsible AI	Transparency	Model Transparency	Transparency Requirements	Decision Transparency
+AI Ethics & Governance	Responsible AI	Transparency	Model Transparency	Transparency Requirements	Audit Trails
+AI Ethics & Governance	Responsible AI	Explainability	Interpretability	Explainability Methods	LIME (Local Interpretable Model-agnostic Explanations)
+AI Ethics & Governance	Responsible AI	Explainability	Interpretability	Explainability Methods	SHAP (SHapley Additive exPlanations)
+AI Ethics & Governance	Responsible AI	Explainability	Interpretability	Explainability Methods	Feature Importance
+AI Ethics & Governance	Responsible AI	Explainability	Interpretability	Explainability Methods	Attention Visualization
+AI Ethics & Governance	Responsible AI	Explainability	Interpretable Models	Model Types	Decision Tree Interpretability
+AI Ethics & Governance	Responsible AI	Explainability	Interpretable Models	Model Types	Linear Model Interpretability
+AI Ethics & Governance	Responsible AI	Accountability	AI Accountability	Responsibility	Model Ownership
+AI Ethics & Governance	Responsible AI	Accountability	AI Accountability	Responsibility	Decision Accountability
+AI Ethics & Governance	Responsible AI	Privacy	Data Privacy	Privacy Techniques	Differential Privacy
+AI Ethics & Governance	Responsible AI	Privacy	Data Privacy	Privacy Techniques	Federated Learning
+AI Ethics & Governance	Responsible AI	Privacy	Data Privacy	Privacy Techniques	Homomorphic Encryption
+AI Ethics & Governance	Responsible AI	Privacy	Data Privacy	Privacy Techniques	Secure Multi-Party Computation
+AI Ethics & Governance	AI Governance	Governance Frameworks	Regulatory Compliance	Compliance Standards	GDPR Compliance
+AI Ethics & Governance	AI Governance	Governance Frameworks	Regulatory Compliance	Compliance Standards	EU AI Act
+AI Ethics & Governance	AI Governance	Governance Frameworks	Regulatory Compliance	Compliance Standards	NIST AI Risk Management Framework
+AI Ethics & Governance	AI Governance	Governance Frameworks	Regulatory Compliance	Compliance Standards	ISO/IEC 42001
+AI Ethics & Governance	AI Governance	Model Governance	Model Management	Governance Practices	Model Inventory
+AI Ethics & Governance	AI Governance	Model Governance	Model Management	Governance Practices	Model Risk Assessment
+AI Ethics & Governance	AI Governance	Model Governance	Model Management	Governance Practices	Model Retirement
+AI Ethics & Governance	AI Governance	Risk Management	AI Risk	Risk Categories	Operational Risk
+AI Ethics & Governance	AI Governance	Risk Management	AI Risk	Risk Categories	Reputational Risk
+AI Ethics & Governance	AI Governance	Risk Management	AI Risk	Risk Categories	Compliance Risk
+AI Ethics & Governance	AI Governance	Risk Management	AI Risk	Risk Categories	Security Risk
+AI Ethics & Governance	AI Governance	Audit & Compliance	Auditing Practices	Audit Types	Model Audits
+AI Ethics & Governance	AI Governance	Audit & Compliance	Auditing Practices	Audit Types	Data Audits
+AI Ethics & Governance	AI Governance	Audit & Compliance	Auditing Practices	Audit Types	Compliance Audits
+AI Ethics & Governance	Safety & Robustness	AI Safety	Safety Concepts	Safety Measures	Adversarial Robustness
+AI Ethics & Governance	Safety & Robustness	AI Safety	Safety Concepts	Safety Measures	Model Testing
+AI Ethics & Governance	Safety & Robustness	AI Safety	Safety Concepts	Safety Measures	Failure Mode Analysis
+AI Ethics & Governance	Safety & Robustness	Adversarial ML	Adversarial Attacks	Attack Types	Adversarial Examples
+AI Ethics & Governance	Safety & Robustness	Adversarial ML	Adversarial Attacks	Attack Types	Evasion Attacks
+AI Ethics & Governance	Safety & Robustness	Adversarial ML	Adversarial Attacks	Attack Types	Poisoning Attacks
+AI Ethics & Governance	Safety & Robustness	Adversarial ML	Defense Methods	Defense Techniques	Adversarial Training
+AI Ethics & Governance	Safety & Robustness	Adversarial ML	Defense Methods	Defense Techniques	Certified Defenses
+AI Applications & Domains	Healthcare AI	Medical Imaging	Imaging Applications	Medical Diagnosis	Disease Detection
+AI Applications & Domains	Healthcare AI	Medical Imaging	Imaging Applications	Medical Diagnosis	Tumor Detection
+AI Applications & Domains	Healthcare AI	Medical Imaging	Imaging Applications	Medical Diagnosis	X-Ray Analysis
+AI Applications & Domains	Healthcare AI	Medical Imaging	Imaging Applications	Medical Diagnosis	MRI Analysis
+AI Applications & Domains	Healthcare AI	Clinical Decision Support	Clinical AI	Decision Systems	Diagnosis Assistance
+AI Applications & Domains	Healthcare AI	Clinical Decision Support	Clinical AI	Decision Systems	Treatment Recommendation
+AI Applications & Domains	Healthcare AI	Drug Discovery	Pharmaceutical AI	Drug Development	Molecule Generation
+AI Applications & Domains	Healthcare AI	Drug Discovery	Pharmaceutical AI	Drug Development	Drug Screening
+AI Applications & Domains	Finance AI	Financial Analysis	Trading & Investment	Financial Applications	Algorithmic Trading
+AI Applications & Domains	Finance AI	Financial Analysis	Trading & Investment	Financial Applications	Portfolio Management
+AI Applications & Domains	Finance AI	Financial Analysis	Trading & Investment	Financial Applications	Risk Assessment
+AI Applications & Domains	Finance AI	Fraud Detection	Fraud Prevention	Detection Systems	Transaction Fraud Detection
+AI Applications & Domains	Finance AI	Fraud Detection	Fraud Prevention	Detection Systems	Credit Card Fraud
+AI Applications & Domains	Finance AI	Credit Scoring	Credit Assessment	Scoring Systems	Credit Risk Modeling
+AI Applications & Domains	Retail & E-commerce	Recommendation Systems	Recommender Types	Recommendation Methods	Collaborative Filtering
+AI Applications & Domains	Retail & E-commerce	Recommendation Systems	Recommender Types	Recommendation Methods	Content-Based Filtering
+AI Applications & Domains	Retail & E-commerce	Recommendation Systems	Recommender Types	Recommendation Methods	Hybrid Recommenders
+AI Applications & Domains	Retail & E-commerce	Customer Analytics	Customer Intelligence	Analytics Applications	Customer Segmentation
+AI Applications & Domains	Retail & E-commerce	Customer Analytics	Customer Intelligence	Analytics Applications	Churn Prediction
+AI Applications & Domains	Retail & E-commerce	Customer Analytics	Customer Intelligence	Analytics Applications	Lifetime Value Prediction
+AI Applications & Domains	Retail & E-commerce	Demand Forecasting	Forecasting Methods	Forecast Applications	Sales Forecasting
+AI Applications & Domains	Retail & E-commerce	Demand Forecasting	Forecasting Methods	Forecast Applications	Inventory Optimization
+AI Applications & Domains	Manufacturing AI	Predictive Maintenance	Maintenance Systems	Maintenance Applications	Equipment Failure Prediction
+AI Applications & Domains	Manufacturing AI	Predictive Maintenance	Maintenance Systems	Maintenance Applications	Anomaly Detection
+AI Applications & Domains	Manufacturing AI	Quality Control	Quality Systems	QC Applications	Defect Detection
+AI Applications & Domains	Manufacturing AI	Quality Control	Quality Systems	QC Applications	Visual Inspection
+AI Applications & Domains	Manufacturing AI	Supply Chain	Supply Chain AI	Supply Applications	Demand Planning
+AI Applications & Domains	Manufacturing AI	Supply Chain	Supply Chain AI	Supply Applications	Route Optimization
+AI Applications & Domains	Autonomous Systems	Self-Driving Cars	Autonomous Vehicles	Driving Components	Perception
+AI Applications & Domains	Autonomous Systems	Self-Driving Cars	Autonomous Vehicles	Driving Components	Planning
+AI Applications & Domains	Autonomous Systems	Self-Driving Cars	Autonomous Vehicles	Driving Components	Control
+AI Applications & Domains	Autonomous Systems	Drones & Robotics	Autonomous Robots	Robot Applications	Warehouse Automation
+AI Applications & Domains	Autonomous Systems	Drones & Robotics	Autonomous Robots	Robot Applications	Delivery Robots
+AI Applications & Domains	Cybersecurity AI	Threat Detection	Security Systems	Threat Applications	Intrusion Detection
+AI Applications & Domains	Cybersecurity AI	Threat Detection	Security Systems	Threat Applications	Malware Detection
+AI Applications & Domains	Cybersecurity AI	Security Analysis	Security Intelligence	Analysis Applications	Vulnerability Assessment
+AI Applications & Domains	Cybersecurity AI	Security Analysis	Security Intelligence	Analysis Applications	Security Monitoring
+AI Applications & Domains	Education AI	Personalized Learning	Adaptive Learning	Learning Systems	Adaptive Tutoring
+AI Applications & Domains	Education AI	Personalized Learning	Adaptive Learning	Learning Systems	Learning Path Optimization
+AI Applications & Domains	Education AI	Assessment	Automated Grading	Assessment Systems	Essay Grading
+AI Applications & Domains	Education AI	Assessment	Automated Grading	Assessment Systems	Automated Feedback
+AI Frameworks & Tools	Deep Learning Frameworks	Major Frameworks	Framework Platforms	Popular Frameworks	TensorFlow
+AI Frameworks & Tools	Deep Learning Frameworks	Major Frameworks	Framework Platforms	Popular Frameworks	PyTorch
+AI Frameworks & Tools	Deep Learning Frameworks	Major Frameworks	Framework Platforms	Popular Frameworks	Keras
+AI Frameworks & Tools	Deep Learning Frameworks	Major Frameworks	Framework Platforms	Popular Frameworks	JAX
+AI Frameworks & Tools	Deep Learning Frameworks	Major Frameworks	Framework Platforms	Popular Frameworks	MXNet
+AI Frameworks & Tools	Deep Learning Frameworks	Framework Components	High-Level APIs	API Tools	TensorFlow Keras
+AI Frameworks & Tools	Deep Learning Frameworks	Framework Components	High-Level APIs	API Tools	PyTorch Lightning
+AI Frameworks & Tools	ML Libraries	Classical ML	Library Tools	Scikit-Learn	Classification Tools
+AI Frameworks & Tools	ML Libraries	Classical ML	Library Tools	Scikit-Learn	Regression Tools
+AI Frameworks & Tools	ML Libraries	Classical ML	Library Tools	Scikit-Learn	Clustering Tools
+AI Frameworks & Tools	ML Libraries	Gradient Boosting	Boosting Libraries	GB Frameworks	XGBoost Library
+AI Frameworks & Tools	ML Libraries	Gradient Boosting	Boosting Libraries	GB Frameworks	LightGBM Library
+AI Frameworks & Tools	ML Libraries	Gradient Boosting	Boosting Libraries	GB Frameworks	CatBoost Library
+AI Frameworks & Tools	Data Processing	Data Libraries	Processing Tools	Data Manipulation	Pandas
+AI Frameworks & Tools	Data Processing	Data Libraries	Processing Tools	Data Manipulation	NumPy
+AI Frameworks & Tools	Data Processing	Data Libraries	Processing Tools	Data Manipulation	Polars
+AI Frameworks & Tools	Data Processing	Visualization	Viz Libraries	Visualization Tools	Matplotlib
+AI Frameworks & Tools	Data Processing	Visualization	Viz Libraries	Visualization Tools	Seaborn
+AI Frameworks & Tools	Data Processing	Visualization	Viz Libraries	Visualization Tools	Plotly
+AI Frameworks & Tools	Model Libraries	Pre-trained Models	Model Hubs	Model Repositories	Hugging Face Hub
+AI Frameworks & Tools	Model Libraries	Pre-trained Models	Model Hubs	Model Repositories	TensorFlow Hub
+AI Frameworks & Tools	Model Libraries	Pre-trained Models	Model Hubs	Model Repositories	PyTorch Hub
+AI Frameworks & Tools	NLP Libraries	NLP Tools	NLP Frameworks	Text Processing	spaCy
+AI Frameworks & Tools	NLP Libraries	NLP Tools	NLP Frameworks	Text Processing	NLTK
+AI Frameworks & Tools	NLP Libraries	NLP Tools	NLP Frameworks	Transformers	Hugging Face Transformers
+AI Frameworks & Tools	Computer Vision Libraries	CV Tools	CV Frameworks	Vision Processing	OpenCV
+AI Frameworks & Tools	Computer Vision Libraries	CV Tools	CV Frameworks	Vision Processing	Pillow (PIL)
+AI Frameworks & Tools	Computer Vision Libraries	CV Tools	CV Frameworks	Vision Processing	scikit-image
+Emerging AI Technologies	Multimodal AI	Multimodal Learning	Multimodal Systems	Integration Types	Vision-Language Models
+Emerging AI Technologies	Multimodal AI	Multimodal Learning	Multimodal Systems	Integration Types	Audio-Visual Models
+Emerging AI Technologies	Multimodal AI	Multimodal Learning	Multimodal Systems	Integration Types	Text-Image Models
+Emerging AI Technologies	Multimodal AI	Multimodal Models	MM Architectures	Model Examples	CLIP (OpenAI)
+Emerging AI Technologies	Multimodal AI	Multimodal Models	MM Architectures	Model Examples	DALL-E
+Emerging AI Technologies	Multimodal AI	Multimodal Models	MM Architectures	Model Examples	Flamingo
+Emerging AI Technologies	Edge AI	Edge Computing	Edge Deployment	Edge Technologies	On-Device ML
+Emerging AI Technologies	Edge AI	Edge Computing	Edge Deployment	Edge Technologies	Mobile ML
+Emerging AI Technologies	Edge AI	Edge Computing	Edge Deployment	Edge Technologies	IoT AI
+Emerging AI Technologies	Edge AI	Edge Frameworks	Edge Tools	Mobile Frameworks	TensorFlow Lite
+Emerging AI Technologies	Edge AI	Edge Frameworks	Edge Tools	Mobile Frameworks	Core ML
+Emerging AI Technologies	Edge AI	Edge Frameworks	Edge Tools	Mobile Frameworks	ONNX Runtime Mobile
+Emerging AI Technologies	Quantum ML	Quantum Computing	Quantum AI	Quantum Methods	Quantum Neural Networks
+Emerging AI Technologies	Quantum ML	Quantum Computing	Quantum AI	Quantum Methods	Variational Quantum Eigensolver
+Emerging AI Technologies	Neural Architecture Search	AutoML	NAS Methods	Architecture Search	Automated Neural Architecture Search
+Emerging AI Technologies	Neural Architecture Search	AutoML	NAS Methods	Architecture Search	Hyperparameter Optimization
+Emerging AI Technologies	Continual Learning	Lifelong Learning	Learning Approaches	Continual Methods	Incremental Learning
+Emerging AI Technologies	Continual Learning	Lifelong Learning	Learning Approaches	Continual Methods	Catastrophic Forgetting Prevention
+Emerging AI Technologies	Neuro-Symbolic AI	Hybrid Systems	Integration Methods	Symbolic-Neural	Knowledge Graphs with Neural Networks
+Emerging AI Technologies	Neuro-Symbolic AI	Hybrid Systems	Integration Methods	Symbolic-Neural	Logic-based Learning
+Emerging AI Technologies	Green AI	Sustainable AI	Energy Efficiency	Eco-Friendly AI	Energy-Efficient Training
+Emerging AI Technologies	Green AI	Sustainable AI	Energy Efficiency	Eco-Friendly AI	Carbon Footprint Reduction
+Emerging AI Technologies	Green AI	Sustainable AI	Energy Efficiency	Eco-Friendly AI	Model Efficiency

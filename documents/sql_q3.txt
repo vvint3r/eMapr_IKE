@@ -1,0 +1,231 @@
+Top 30 SQL Interview Questions and Answers (With Quiz)
+Ekene Eze
+In this guide, I’ll walk you through 30 essential questions, from basic joins to advanced window functions, and share practical tips for writing and debugging queries on the spot. Each answer includes simple, practical examples (such as customer analysis and inventory tracking) so you’ll learn the syntax and know when and why to use it. By the end, you’ll have the confidence to tackle any live SQL test and the know-how to put these patterns to work.
+To help you prepare and practice more effectively, I’ve included a collection of flashcards that make self-testing easier. Check out the SQL roadmap for an even deeper dive into the topics covered in this guide.
+Getting ready for your SQL interview
+You’ve probably heard the saying, “Failure to prepare is preparing to fail.” It couldn’t be more true when it comes to interviews. Before practicing questions, ensure you’ve got the basics covered. Here are a few key areas you’ll want to brush up on before heading into your interview:
+Read up on core SQL concepts like data types, statements, and clauses.
+Practice working with tables. Joining tables using different types of joins, along with clauses like ON and USING , is key to retrieving and aggregating data.
+Get comfortable with data manipulation tasks like inserting, updating, and deleting records.
+Learn the fundamentals of database design, including normalization, constraints, and performance tuning.
+Beyond syntax, sharpen your problem-solving, logical thinking, and communication skills. Interviews often test how clearly you explain your thought process, not just how well you write code.
+Icebreaker SQL questions
+Before exploring technical questions, some interviewers might start with general ones like “How long have you been working with SQL?”, “How would you rate your proficiency in SQL on a scale?”, or “What are some common SQL syntax used for data manipulation?” These questions often help start the conversation and make you feel more comfortable.
+Even if this information is already in your CV or resume, be ready to speak about it. Practice giving crisp and honest answers that capture your SQL experience.
+With that covered, let’s explore the questions you need to get familiar with as you prepare for your interview.
+Test yourself with Flashcards
+You can either use these flashcards or jump to the questions list section below to see them in a list format.
+0 / 30 Knew 0 Items Learnt 0 Items Skipped 0 Items Beginners
+How is SQL different from other programming languages?
+SQL is a declarative language. You tell the database what you want (for example, "Get me a list of all active customers") without writing out the step-by-step logic to retrieve it. The database engine figures out how to execute your request.
+In contrast, languages like Java or Python are imperative; you write code that explains how to do something, including loops, conditions, and memory management.
+sql -- Declarative: I want all active customers SELECT * FROM customers WHERE status = 'active';
+Questions List
+If you prefer to see the questions in a list format, you can find them below.
+Beginner Level
+How is SQL different from other programming languages?
+SQL is a declarative language. You tell the database what you want (for example, "Get me a list of all active customers") without writing out the step-by-step logic to retrieve it. The database engine figures out how to execute your request.
+In contrast, languages like Java or Python are imperative; you write code that explains how to do something, including loops, conditions, and memory management.
+sql -- Declarative: I want all active customers SELECT * FROM customers WHERE status = 'active';
+What are SQL dialects?
+SQL dialects are different implementations of SQL provided by various database systems. They all follow the SQL standard used for working with data stored in multiple tables, but may include extra features or slightly different syntax.
+Some common SQL dialects are:
+MySQL: Popular for web applications.
+PostgreSQL: Known for its advanced features and standards compliance.
+Microsoft SQL Server: Common in enterprise environments.
+SQLite: Lightweight and used in mobile or embedded applications.
+While the core syntax is similar, features like aggregate and scalar functions, JSON handling, or full-text search may vary slightly.
+After answering the question, feel free to ask which dialect the company uses; it's a great way to learn more about their stack and how they work.
+What are the types of SQL subsets, and how are they different?
+SQL is divided into several functional subsets:
+Data Definition Language (DDL): Used to define or modify database structure. This includes commands like CREATE , ALTER , and DROP . For example, the ALTER table statement can be used to add, rename, and remove columns in a table.
+Data Manipulation Language (DML): Used to insert, update, delete, or retrieve data. This includes commands like SELECT , INSERT , UPDATE , and DELETE . For example, the UPDATE statement can be used to change a user's email based on their ID
+Data Control Language (DCL): Manages access to data by granting or revoking permissions. This includes commands like GRANT and REVOKE . For example, the GRANT statement can be used to give a user permission to select data from a table.
+The major difference between these subsets lies in their purpose:
+DDL affects the structure of the database.
+DML interacts with the data itself.
+DCL governs who can do what within the database system.
+What is a primary key?
+A primary key uniquely identifies each row in a table and is defined by a primary key constraint. It must be unique and cannot contain NULL values. Every table should have one primary key to ensure each record is identifiable.
+For example, a user table can have a unique id that serves as the primary key:
+sql CREATE TABLE users ( id INT PRIMARY KEY, name VARCHAR(100) ); -- 'id' must be unique and non-null for every row.
+Explain SQL constraints like NOT NULL, UNIQUE, and CHECK.
+SQL constraints are rules that help keep data accurate and consistent.
+NOT NULL : Prevents a column from having empty values.
+UNIQUE : Makes sure all values in a column are different.
+CHECK : Adds a condition that the values in a column must meet.
+Use case: If you're storing product prices, you can use a CHECK constraint to prevent negative values as shown in the snippet below:
+sql CREATE TABLE products ( id INT PRIMARY KEY, name VARCHAR(50) NOT NULL, price DECIMAL(10, 2) CHECK (price >= 0) );
+What is the difference between WHERE and HAVING?
+You use WHERE for filtering rows before applying any grouping or aggregation. The code snippet below illustrates the use of WHERE. It filters the Users table for rows where the Age is greater than 18.
+sql SELECT * FROM Users WHERE Age > 18;
+The result of the query is similar to the table below.
+userId
+firstName
+lastName
+age
+1
+John
+Doe
+30
+2
+Jane
+Don
+31
+3
+Will
+Liam
+25
+4
+Wade
+Great
+32
+5
+Peter
+Smith
+27
+On the other hand, you use HAVING to filter groups after performing grouping and aggregation. You apply it to the result of aggregate functions, and it is mostly used with the GROUP BY clause.
+sql SELECT FirstName, Age FROM Users GROUP BY FirstName, Age HAVING Age > 30;
+The code above selects the FirstName and Age columns, then groups by the FirstName and Age , and finally gets entries with age greater than 30. The result of the query looks like this:
+firstName
+age
+Wade
+32
+Jane
+31
+What is a foreign key?
+A foreign key is a column (or a combination of columns) that references the primary key of another table. It's used to establish a relationship between two tables, helping maintain referential integrity and ensuring data integrity by making sure the linked data stays consistent across both tables.
+A table with a foreign key constraint helps prevent unmatched records and keeps data consistent across related tables.
+Intermediate Level
+What are the different types of JOINs in SQL?
+JOINs let you combine rows from two or more tables based on a related column. These are the most common types:
+INNER JOIN : Returns only rows that match in both tables.
+LEFT JOIN : Returns all rows from the left table and matching rows from the right.
+RIGHT JOIN : Returns all rows from the right table and matching rows from the left.
+FULL JOIN : Returns all rows when there's a match in either table.
+Example using LEFT JOIN :
+sql -- Get users and their orders (even if they have none) SELECT users.name, orders.amount FROM users LEFT JOIN orders ON users.id = orders.user_id;
+Think of JOIN operations like combining spreadsheets based on related information.
+How do you use a subquery?
+A subquery is a query inside another query. It helps when you want to:
+Filter using aggregated data.
+Compare a value against a dynamic list.
+Create a temporary table for use in your main query.
+Use cases include checking which employees work in a particular location or identifying orders above a calculated average.
+sql -- Subquery in WHERE clause SELECT name FROM employees WHERE department_id IN ( SELECT id FROM departments WHERE location = 'New York' );
+What is an index and why is it useful?
+An index helps the database find data faster. It works like a book index, pointing to rows that match a query without scanning the entire table.
+For example, you can create an index on the last name column so that you can retrieve users faster based on their last name:
+sql -- Create an index on the last_name column CREATE INDEX idx_employee_last_name ON employees (last_name);
+Indexes are great for speeding up searches, data retrieval, and JOIN operations. They're also useful for maintaining performance in large SQL databases where quick lookups matter.
+What is the difference between UNION and UNION ALL?
+Both combine results from two or more SELECT queries. The key difference is:
+UNION removes duplicate rows from a table.
+UNION ALL keeps all rows, including duplicates.
+UNION ALL is faster because it skips the deduplication step. Use UNION when you want a clean list of unique values.
+What is the difference between RANK(), DENSE_RANK(), and ROW_NUMBER()?
+These functions assign ranks or row numbers based on ordering criteria. They behave differently when there are ties:
+ROW_NUMBER() assigns a unique number to each row, even if the values are the same.
+RANK() gives the same rank to tied rows and skips the next rank.
+DENSE_RANK() also gives the same rank to ties but doesn't skip any numbers.
+They're helpful in tasks like leaderboard generation or identifying top performers by region or category.
+What is a correlated subquery?
+A correlated subquery uses values from the outer query and runs once for each row in the outer query. It can't run on its own because it depends on values outside its scope.
+Use it when comparing each row to a related value, such as finding employees who earn more than the average salary in their department.
+How can you find duplicate records in a table?
+You can find duplicates by grouping by the columns that should be unique, counting how many times each group appears, and filtering out any that appear more than once.
+For example, you can find duplicate emails in a user table by grouping all rows by the email column.
+sql SELECT email, COUNT(*) FROM users GROUP BY email HAVING COUNT(*) > 1;
+This is useful during data cleaning or when validating records before import.
+What is a view?
+A view is a virtual table defined by a query. It simplifies complex joins or enforces read‑only access.
+sql CREATE VIEW active_users AS SELECT * FROM users WHERE status = 'active';
+Views are useful when you want to abstract complexity from end users or create role-based access to specific slices of your data.
+What is SQL injection, and how do you prevent it?
+SQL injection is a security issue where attackers insert malicious code or SQL statements into a query. This can expose or damage your data.
+To prevent it, use parameterized queries or ORM tools that handle user input safely.
+Advanced Level
+What are the advantages of stored procedures?
+Stored procedures are like saved functions in your SQL code that you write once and can run repeatedly. They're stored directly in the database, which gives them a few benefits:
+Performance: Since they're precompiled, they often run faster than regular SQL queries.
+Security: You can control who gets to run them and avoid exposing raw queries.
+Less network traffic: Instead of sending multiple queries from your app to the database, you just call the procedure.
+Reusable logic: You can call the same procedure from different apps or parts of your system.
+Easier to manage: Business logic lives in one place, which helps with maintenance.
+For example, if you have an application that constantly pulls employee data, you can create a stored procedure for it to optimize the process.
+sql -- Create a stored procedure to get employees by department CREATE PROCEDURE GetEmployeesByDepartment @DepartmentID INT AS BEGIN SELECT name, hire_date, salary FROM employees WHERE department_id = @DepartmentID ORDER BY hire_date DESC; END; -- Call the procedure EXEC GetEmployeesByDepartment @DepartmentID = 3;
+Stored procedures are especially useful in enterprise systems where performance, security, and consistent logic are important.
+What is database normalization, and why is it important?
+Normalization is a way to organize your database so you don't repeat data unnecessarily. It helps keep your data clean, avoids update issues, and makes the structure easier to manage as your app grows.
+The main goals:
+Avoid repeating the same data in different places.
+Make updates and insert more reliably.
+Keep queries simple and logical.
+Make it easier to adjust your schema later.
+Before normalization:
+sql CREATE TABLE orders_unnormalized ( order_id INT, product_name VARCHAR(100), product_category VARCHAR(50), product_price DECIMAL(10,2), customer_name VARCHAR(100), customer_email VARCHAR(100), customer_address VARCHAR(200) );
+After normalization:
+sql CREATE TABLE customers ( customer_id INT PRIMARY KEY, name VARCHAR(100), email VARCHAR(100), address VARCHAR(200) ); CREATE TABLE products ( product_id INT PRIMARY KEY, name VARCHAR(100), category VARCHAR(50), price DECIMAL(10,2) ); CREATE TABLE orders ( order_id INT PRIMARY KEY, customer_id INT REFERENCES customers(customer_id), product_id INT REFERENCES products(product_id), order_date DATE );
+While normalization offers many benefits, if you normalize too much, you might end up with too many small tables and lots of joins, which can slow down performance in read-heavy systems.
+How do you handle database transactions in SQL?
+A transaction is a group of actions that should be treated as one. Either everything in the transaction succeeds, or nothing does. This helps keep your data accurate, especially when making multiple changes at once.
+sql -- Basic transaction syntax BEGIN TRANSACTION; UPDATE accounts SET balance = balance - 100 WHERE account_id = 123; UPDATE accounts SET balance = balance + 100 WHERE account_id = 456; -- If both updates succeed COMMIT; -- If there's a problem ROLLBACK;
+Transactions follow ACID properties:
+Atomicity: All steps succeed or none at all.
+Consistency: The database stays valid before and after.
+Isolation: Transactions don't interfere with each other.
+Durability: Once committed, the changes are saved permanently.
+If you're dealing with things like financial transfers or inventory updates, using transactions is a must.
+What is the difference between clustered and non-clustered indexes?
+This is a concept that often confuses people, but comes up a lot in interviews. Indexes help your database find data faster (similar to an index in a book).
+Clustered index: Determines the physical order of rows in a table, and only one clustered index can exist per table. It's like having the book's pages arranged by one specific topic.
+Non-clustered index: Doesn't affect how rows are stored. It's a separate lookup table that points to the actual data. You can have several non-clustered indexes.
+sql -- Creating a clustered index (usually on the primary key) CREATE CLUSTERED INDEX idx_employees_id ON employees(employee_id); -- Creating a non-clustered index CREATE NONCLUSTERED INDEX idx_employees_dept ON employees(department_id);
+Choosing the right index type depends on how you're querying the data; range queries often benefit from clustered indexes, while exact lookups do well with non-clustered ones.
+How do you optimize a slow-performing query?
+Speed matters, especially when working with large datasets. Here's how to approach a slow query:
+Check the query plan: See where the time is being spent.
+Review indexes: Are the right columns indexed?
+Rewrite the query: Try different approaches or break things into smaller parts.
+Simplify joins: Double-check the join logic and order.
+Limit data: Only return the columns and rows you actually need.
+Watch data types: Make sure comparisons aren't causing slowdowns.
+Use partitioning: For really big tables, splitting them can help.
+Before optimization:
+sql SELECT c.name, o.order_date, p.product_name, p.price FROM customers c, orders o, order_items oi, products p WHERE c.id = o.customer_id AND o.id = oi.order_id AND oi.product_id = p.id AND o.order_date > '2022-01-01';
+After optimization:
+sql SELECT c.name, o.order_date, p.product_name, p.price FROM orders o JOIN customers c ON o.customer_id = c.id JOIN order_items oi ON o.id = oi.order_id JOIN products p ON oi.product_id = p.id WHERE o.order_date > '2022-01-01';
+The specific optimization techniques will vary based on your database system and performance bottlenecks.
+How would you implement pagination in SQL?
+When you're dealing with lots of data, it's not practical to load everything at once. Pagination helps you break results into smaller chunks.
+Option 1: Simple offset-based pagination
+sql SELECT * FROM products ORDER BY name LIMIT 10 OFFSET 20; -- Get records 21-30
+Option 2: Keyset pagination (more efficient for big data)
+sql SELECT * FROM products WHERE (price, id) > (100.00, 12345) -- Based on last record from previous page ORDER BY price ASC, id ASC LIMIT 10;
+Offset-based pagination is easy to use, but it gets slower as the offset increases. Keyset pagination is better for deep scrolling or infinite lists.
+Want a deeper dive? Our SQL Mastery Course covers indexing, transactions, and other advanced security patterns.
+Practical Queries
+How many patients have registered in the past 6 months?
+sql SELECT COUNT(*) AS recent_patients FROM patients WHERE registration_date >= CURRENT_DATE - INTERVAL '6 months';
+Say that you're filtering the patient records based on their registration_date , using a dynamic 6-month window. This way, the query always gives an up-to-date count. Point out that COUNT(*) gives you the total number of new patients.
+What's the average treatment cost per appointment?
+sql SELECT appointment_id, AVG(cost) AS avg_treatment_cost FROM treatments GROUP BY appointment_id;
+Mention that treatments are tied to appointments, so grouping by appointment_id lets you calculate the average cost for each visit. This kind of breakdown could help with billing or identifying unusually expensive sessions.
+List patients who had more than 3 appointments.
+sql SELECT p.patient_id, p.first_name, p.last_name, COUNT(a.appointment_id) AS total_appointments FROM patients p JOIN appointments a ON p.patient_id = a.patient_id GROUP BY p.patient_id, p.first_name, p.last_name HAVING COUNT(a.appointment_id) > 3;
+Talk about how you're using a JOIN to connect patients to their appointments, then grouping the results to count how many appointments each patient had. Use HAVING to filter for those with more than three. This kind of query helps track highly engaged or frequent patients.
+Which doctor has treated the highest number of unique patients?
+sql SELECT d.full_name, COUNT(DISTINCT a.patient_id) AS unique_patients FROM doctors d JOIN appointments a ON d.doctor_id = a.doctor_id GROUP BY d.full_name ORDER BY unique_patients DESC LIMIT 1;
+Explain that COUNT(DISTINCT patient_id) helps you avoid counting the same patient twice. Ordering by the count and limiting the result to 1 gives you the doctor who's seen the widest variety of patients.
+What's the total revenue generated from treatments last month?
+sql SELECT SUM(t.cost) AS total_revenue FROM treatments t JOIN appointments a ON t.appointment_id = a.appointment_id WHERE a.appointment_date >= date_trunc('month', CURRENT_DATE - INTERVAL '1 month') AND a.appointment_date < date_trunc('month', CURRENT_DATE);
+Say that you're using date_trunc to set a clean date range for last month, then joining appointments and treatments to add up the costs. This shows the hospital's treatment-related income for the previous month.
+Find the most common diagnosis.
+sql SELECT diagnosis, COUNT(*) AS diagnosis_count FROM appointments WHERE diagnosis IS NOT NULL GROUP BY diagnosis ORDER BY diagnosis_count DESC LIMIT 1;
+Mention that you're excluding NULL values since they don't represent valid data, then grouping by diagnosis to see which one appears the most. Sorting in descending order and limiting to 1 gives you the most frequent condition.
+Which appointments were scheduled but never had a treatment recorded?
+sql SELECT a.appointment_id, a.patient_id, a.appointment_date FROM appointments a LEFT JOIN treatments t ON a.appointment_id = t.appointment_id WHERE t.treatment_id IS NULL AND a.status = 'completed';
+Say you're using a LEFT JOIN to find appointments without a matching treatment. Filtering for treatment_id IS NULL isolates those cases. Checking the appointment status keeps the focus on visits that actually happened.
+Which patients haven't visited in over a year?
+sql SELECT p.patient_id, p.first_name, p.last_name FROM patients p LEFT JOIN ( SELECT patient_id, MAX(appointment_date) AS last_visit FROM appointments GROUP BY patient_id ) a ON p.patient_id = a.patient_id WHERE last_visit IS NULL OR last_visit < CURRENT_DATE - INTERVAL '1 year';
+Walk through how you first create a subquery to find each patient's most recent appointment. Then, join that with the patient table and filter for those who haven't visited in over a year, or never visited at all.

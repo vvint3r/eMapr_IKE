@@ -1,0 +1,230 @@
+This is a comprehensive, structural breakdown of the Marketing Analytics landscape. It is designed as a curriculum or a master ontology, covering the discipline from high-level strategy down to granular statistical implementation.
+
+The structure flows logically from **Foundations** $\rightarrow$ **Data Architecture** $\rightarrow$ **Methodologies (Math/Stats)** $\rightarrow$ **Execution (Channels/Tactics)** $\rightarrow$ **Synthesis (Reporting/Org).**
+
+***
+
+# The Master Outline: Marketing Analytics
+
+## 1.0 Strategic Foundations & Frameworks
+*   **1.1 The Role of Analytics in Business**
+    *   1.1.1 Decision Support Systems
+    *   1.1.2 Performance Evaluation
+    *   1.1.3 Predictive Planning
+*   **1.2 Maturity Models**
+    *   1.2.1 Descriptive (What happened?)
+    *   1.2.2 Diagnostic (Why did it happen?)
+    *   1.2.3 Predictive (What will happen?)
+    *   1.2.4 Prescriptive (How can we make it happen?)
+*   **1.3 Goal Setting Frameworks**
+    *   1.3.1 OKRs (Objectives and Key Results)
+    *   1.3.2 SMART Goals
+    *   1.3.3 The Measurement Plan
+        *   1.3.3.1 Business Objective Definition
+        *   1.3.3.2 Marketing Goal Alignment
+        *   1.3.3.3 KPI Selection
+        *   1.3.3.4 Target/Benchmark Setting
+
+## 2.0 Data Infrastructure & Engineering (The "Plumbing")
+*   **2.1 Data Sources**
+    *   2.1.1 Zero-Party Data (Preferences, Surveys)
+    *   2.1.2 First-Party Data (CRM, Transactional, Site Behavior)
+    *   2.1.3 Second-Party Data (Partner Sharing)
+    *   2.1.4 Third-Party Data (Enrichment, DMP)
+*   **2.2 Data Collection Methods**
+    *   2.2.1 Client-Side Tracking
+        *   2.2.1.1 JavaScript Tags / Pixels
+        *   2.2.1.2 Cookies (First vs. Third party)
+        *   2.2.1.3 Tag Management Systems (GTM, Tealium)
+            *   2.2.1.3.1 Data Layer Architecture
+            *   2.2.1.3.2 Trigger Logic
+    *   2.2.2 Server-Side Tracking (CAPI)
+    *   2.2.3 Mobile SDKs
+*   **2.3 Data Warehousing & ETL**
+    *   2.3.1 Extraction, Transformation, Loading (ETL) vs. ELT
+    *   2.3.2 Cloud Warehouses (Snowflake, BigQuery, Redshift)
+    *   2.3.3 Data Modeling Schemas
+        *   2.3.3.1 Star Schema
+        *   2.3.3.2 Snowflake Schema
+*   **2.4 Identity Resolution**
+    *   2.4.1 Deterministic Matching (Email, Phone, User ID)
+    *   2.4.2 Probabilistic Matching (Device fingerprinting, IP)
+    *   2.4.3 Identity Graphs
+    *   2.4.4 Customer Data Platforms (CDP)
+
+## 3.0 Core Metrics & KPIs
+*   **3.1 Top-of-Funnel (Awareness/Brand)**
+    *   3.1.1 Reach & Impressions
+    *   3.1.2 Share of Voice (SOV)
+    *   3.1.3 Brand Recall / Lift
+    *   3.1.4 Sentiment Analysis (NLP)
+*   **3.2 Mid-Funnel (Consideration/Engagement)**
+    *   3.2.1 Traffic (Sessions, Users)
+    *   3.2.2 Engagement Rate / Bounce Rate
+    *   3.2.3 Time on Page / Scroll Depth
+    *   3.2.4 Micro-Conversions (Newsletter signups, PDF downloads)
+*   **3.3 Bottom-of-Funnel (Conversion/Sales)**
+    *   3.3.1 Conversion Rate (CVR)
+    *   3.3.2 Cost Per Acquisition (CPA) / Cost Per Lead (CPL)
+    *   3.3.3 Cart Abandonment Rate
+    *   3.3.4 Sales Qualified Leads (SQL) vs. MQLs
+*   **3.4 Financial & Efficiency Metrics**
+    *   3.4.1 Return on Ad Spend (ROAS)
+    *   3.4.2 Return on Investment (ROI)
+        *   3.4.2.1 Simple ROI
+        *   3.4.2.2 Marginal ROI (mROI)
+    *   3.4.3 Customer Acquisition Cost (CAC)
+        *   3.4.3.1 Blended CAC
+        *   3.4.3.2 Paid CAC
+    *   3.4.4 Payback Period
+
+## 4.0 Customer Analytics (The "Who")
+*   **4.1 Customer Lifetime Value (CLV/LTV)**
+    *   4.1.1 Historic CLV
+    *   4.1.2 Predictive CLV Models
+        *   4.1.2.1 Buy 'til You Die (BTYD) models
+        *   4.1.2.2 Pareto/NBD Model
+    *   4.1.3 LTV:CAC Ratio
+*   **4.2 Segmentation & Clustering**
+    *   4.2.1 Demographic/Psychographic
+    *   4.2.2 Behavioral Segmentation
+    *   4.2.3 RFM Analysis (Recency, Frequency, Monetary)
+    *   4.2.4 K-Means Clustering Algorithms
+*   **4.3 Retention & Churn**
+    *   4.3.1 Churn Rate (Logo Churn vs. Revenue Churn)
+    *   4.3.2 Retention Curves
+    *   4.3.3 Survival Analysis (Kaplan-Meier Estimator)
+    *   4.3.4 Cohort Analysis
+        *   4.3.4.1 Time-based cohorts
+        *   4.3.4.2 Acquisition-channel cohorts
+
+## 5.0 Statistical Methods & Data Science (The "Math")
+*   **5.1 Descriptive Statistics**
+    *   5.1.1 Measures of Central Tendency (Mean, Median, Mode)
+    *   5.1.2 Measures of Dispersion (Standard Deviation, Variance)
+    *   5.1.3 Distributions (Normal, Binomial, Poisson)
+*   **5.2 Inferential Statistics & Hypothesis Testing**
+    *   5.2.1 Null vs. Alternative Hypothesis
+    *   5.2.2 Statistical Significance (p-values, alpha)
+    *   5.2.3 Confidence Intervals
+    *   5.2.4 Power Analysis & Sample Size Calculation
+    *   5.2.5 Errors
+        *   5.2.5.1 Type I (False Positive)
+        *   5.2.5.2 Type II (False Negative)
+*   **5.3 Experimentation (A/B & Multivariate)**
+    *   5.3.1 Randomization Mechanisms
+    *   5.3.2 Frequentist Approaches
+    *   5.3.3 Bayesian Approaches
+        *   5.3.3.1 Priors and Posteriors
+        *   5.3.3.2 Loss Functions
+    *   5.3.4 Multi-Armed Bandits
+        *   5.3.4.1 Exploration vs. Exploitation
+*   **5.4 Regression & Correlation**
+    *   5.4.1 Correlation Coefficients (Pearson, Spearman)
+    *   5.4.2 Linear Regression (Simple vs. Multiple)
+        *   5.4.2.1 R-Squared / Adjusted R-Squared
+        *   5.4.2.2 Multicollinearity (VIF)
+        *   5.4.2.3 Heteroskedasticity
+    *   5.4.3 Logistic Regression (Binary Classification)
+
+## 6.0 Attribution & Advanced Modeling
+*   **6.1 Heuristic/Rule-Based Attribution**
+    *   6.1.1 Last Click / First Click
+    *   6.1.2 Linear
+    *   6.1.3 Time Decay
+    *   6.1.4 Position Based (U-Shape)
+*   **6.2 Algorithmic/Data-Driven Attribution (MTA)**
+    *   6.2.1 Markov Chains
+        *   6.2.1.1 Transition Matrices
+        *   6.2.1.2 Removal Effects
+    *   6.2.2 Game Theory
+        *   6.2.2.1 Shapley Values
+    *   6.2.3 Limitations of MTA (Walled Gardens, Cookie Loss)
+*   **6.3 Marketing Mix Modeling (MMM)**
+    *   6.3.1 Econometric Foundations
+    *   6.3.2 Components
+        *   6.3.2.1 Baseline Sales
+        *   6.3.2.2 Seasonality & Trend
+        *   6.3.2.3 Adstock (Memory Effect/Carryover)
+            *   6.3.2.3.1 Geometric Adstock
+            *   6.3.2.3.2 Weibull Adstock
+        *   6.3.2.4 Diminishing Returns (Saturation Curves)
+            *   6.3.2.4.1 Power/Exponential/Hill Functions
+    *   6.3.3 Calibration via Incrementality
+*   **6.4 Incrementality Testing (Causal Inference)**
+    *   6.4.1 Geo-Lift Experiments
+        *   6.4.1.1 Matched Market Selection
+        *   6.4.1.2 Synthetic Control Methods
+    *   6.4.2 User-Level Holdouts (Ghost Ads/PSAs)
+    *   6.4.3 Regression Discontinuity Design
+
+## 7.0 Channel-Specific Analytics
+*   **7.1 Digital Web Analytics (e.g., GA4, Adobe)**
+    *   7.1.1 Event-based Data Models
+    *   7.1.2 Path Exploration / User Flows
+    *   7.1.3 Funnel Analysis
+    *   7.1.4 Site Speed & Core Web Vitals
+*   **7.2 SEO Analytics**
+    *   7.2.1 Keyword Ranking & Volatility
+    *   7.2.2 Backlink Profile Analysis (Domain Authority)
+    *   7.2.3 Organic CTR Curves
+    *   7.2.4 Share of Search
+*   **7.3 Paid Media Analytics (PPC/Social)**
+    *   7.3.1 Quality Score (Google Ads)
+    *   7.3.2 Frequency & Reach Capping
+    *   7.3.3 Viewability Standards (MRC)
+    *   7.3.4 Video Metrics (Quartile completion, Sound on/off)
+*   **7.4 Product Analytics**
+    *   7.4.1 Feature Adoption Rates
+    *   7.4.2 Active Users (DAU/WAU/MAU)
+    *   7.4.3 Stickiness (DAU/MAU Ratio)
+    *   7.4.4 Viral Coefficient (K-factor)
+
+## 8.0 Visualization, Reporting & Design
+*   **8.1 Information Design Principles**
+    *   8.1.1 Gestalt Principles in Dashboarding
+    *   8.1.2 Preattentive Attributes (Color, Size, Position)
+    *   8.1.3 Data-Ink Ratio (Tufte)
+*   **8.2 Dashboard Types**
+    *   8.2.1 Strategic (Executive, High-level KPI)
+    *   8.2.2 Operational (Real-time, Tactical)
+    *   8.2.3 Analytical (Exploratory, Filtering)
+*   **8.3 Storytelling with Data**
+    *   8.3.1 Narrative Structure (Context, Climax, Conclusion)
+    *   8.3.2 Handling Cognitive Load
+    *   8.3.3 Actionability (The "So What?")
+*   **8.4 Tools & Tech**
+    *   8.4.1 BI Platforms (Tableau, PowerBI, Looker)
+    *   8.4.2 Notebooks (Jupyter, R Markdown)
+
+## 9.0 Governance, Privacy & Ethics
+*   **9.1 Privacy Regulations**
+    *   9.1.1 GDPR (Europe)
+    *   9.1.2 CCPA/CPRA (California)
+    *   9.1.3 Consent Management Platforms (CMP)
+*   **9.2 Browser Privacy & Tech Changes**
+    *   9.2.1 ITP (Intelligent Tracking Prevention - Safari)
+    *   9.2.2 ETP (Enhanced Tracking Protection - Firefox)
+    *   9.2.3 Third-Party Cookie Deprecation (Chrome Sandbox)
+*   **9.3 Data Governance**
+    *   9.3.1 Data Lineage & Dictionary
+    *   9.3.2 Access Control & Security (PII Handling)
+    *   9.3.3 Data Quality Assurance (Automated Testing)
+*   **9.4 Algorithmic Ethics**
+    *   9.4.1 Bias in Targeting Algorithms
+    *   9.4.2 Fairness in Machine Learning Models
+
+## 10.0 Organizational Structure & Responsibilities
+*   **10.1 Roles & Personas**
+    *   10.1.1 Marketing Analyst (Business logic, Reporting)
+    *   10.1.2 Marketing Data Scientist (Predictive models, Algorithms)
+    *   10.1.3 Analytics Engineer (Data pipeline, dbt, SQL)
+    *   10.1.4 Marketing Technologist (Tool implementation)
+*   **10.2 Operating Models**
+    *   10.2.1 Centralized (Center of Excellence)
+    *   10.2.2 Decentralized (Embedded Analysts)
+    *   10.2.3 Hub and Spoke
+*   **10.3 Stakeholder Management**
+    *   10.3.1 Translation (Technical to Business)
+    *   10.3.2 Requirement Gathering
+    *   10.3.3 Finance Collaboration (Reconciling Ad Platforms vs. Bank)

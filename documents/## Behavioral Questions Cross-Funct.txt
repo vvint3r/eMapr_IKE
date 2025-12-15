@@ -1,0 +1,138 @@
+## Behavioral Questions: Cross-Functional Partnerships & Communication
+
+**Candidate:** Vasily Souzdenkov  
+**Position:** Marketing Analytics Manager  
+**Interviewer:** Growth Team Cross-Functional Partner  
+**Date:** November 2025
+
+---
+
+## Cross-Functional Collaboration & Partnership
+
+**1. Tell me about a time when you had to work with multiple teams (like Product, Engineering, and Marketing) who had conflicting priorities. How did you navigate this?**
+
+**2. Describe a situation where you had to influence a cross-functional team to adopt a new analytics approach or methodology when you had no direct authority over them.**
+
+**3. Give me an example of when you had to partner with a non-technical team to implement a complex analytics solution. How did you ensure alignment?**
+
+**4. Tell me about a time when a cross-functional partner disagreed with your data interpretation or recommendations. How did you handle it?**
+
+**5. Describe a project where you had to coordinate with multiple stakeholders across different time zones or locations. What challenges did you face?**
+
+**6. Share an example of when you had to adapt your working style to better collaborate with a team that had a very different culture or approach than yours.**
+
+**7. Tell me about a time when you had to build a relationship with a difficult or skeptical cross-functional partner.**
+
+---
+
+## Communication & Data Storytelling
+
+**8. Describe a time when you had to present complex attribution modeling or MMM results to executives who weren't familiar with these concepts. How did you make it accessible?**
+
+**9. Tell me about a situation where your initial data presentation didn't land well with stakeholders. How did you adjusted your approach?**
+
+**10. Give me an example of when you had to communicate bad news or disappointing results to a cross-functional team. How did you handle it?**
+
+**11. Describe a time when you had to translate business requirements from a Growth team into technical analytics specifications for your team.**
+
+**12. Tell me about when you had to defend your analytics methodology or findings to skeptical stakeholders.**
+
+**13. Share an example of how you've made complex data actionable for teams that need to make quick decisions.**
+
+**14. Describe a time when you had to communicate the limitations or uncertainty in your data to business partners who wanted definitive answers.**
+
+---
+
+## Conflict Resolution & Problem-Solving
+
+**15. Tell me about a time when different teams had competing requests for your analytics resources. How did you prioritize and communicate your decision?**
+
+**16. Describe a situation where a cross-functional partner blamed analytics for a failed campaign or initiative. How did you handle it?**
+
+**17. Give me an example of when you discovered an error in your analysis after it had already been shared with cross-functional teams. How did you address it?**
+
+**18. Tell me about a time when you had to push back on unrealistic timelines or requests from a Growth team while maintaining a good relationship.**
+
+**19. Describe a situation where you had to mediate between teams that had different interpretations of the same data.**
+
+---
+
+## Growth-Specific Scenarios
+
+**20. Tell me about a time when you identified an optimization opportunity that required buy-in from multiple teams (Product, Engineering, Marketing) to implement.**
+
+**21. Describe how you've worked with Growth teams to design and analyze experiments that span multiple channels or touchpoints.**
+
+**22. Give me an example of when you had to balance short-term Growth metrics with long-term brand or customer experience considerations.**
+
+**23. Tell me about a time when you had to help a Growth team understand why their quick-win ideas weren't feasible from an analytics or measurement perspective.**
+
+**24. Describe a situation where you had to work with Growth teams to establish new KPIs or success metrics for an experimental initiative.**
+
+---
+
+## Leadership & Influence
+
+**25. Tell me about a time when you had to get organizational buy-in for a major change in how marketing performance was measured or attributed.**
+
+**26. Describe a situation where you mentored or developed someone from a different functional area.**
+
+**27. Give me an example of when you had to advocate for additional resources or tools that would benefit multiple teams.**
+
+**28. Tell me about a time when you had to lead a cross-functional initiative without being the formal project manager.**
+
+---
+
+## Adaptability & Learning
+
+**29. Describe a time when you had to quickly learn about a new business area or product to support a cross-functional team effectively.**
+
+**30. Tell me about when you had to adjust your analytics approach based on feedback from business partners.**
+
+**31. Give me an example of when you had to work with incomplete or imperfect data to still provide value to a Growth team.**
+
+**32. Describe a time when business priorities shifted rapidly and you had to realign your analytics focus across multiple teams.**
+
+---
+
+## Interview Preparation Tips
+
+### STAR Method Framework
+For each answer, structure your response using:
+- **Situation:** Set the context
+- **Task:** Explain the challenge or responsibility
+- **Action:** Describe specific steps you took
+- **Result:** Share measurable outcomes and learnings
+
+### Key Themes to Emphasize
+- **Quantifiable Impact:** Reference your $800M revenue generation at Adobe, $2.5M at Shopify, and team leadership experience
+- **Technical + Business Balance:** Show how you bridge complex analytics with business pragmatism
+- **Trust Building:** Demonstrate transparency about data limitations while maintaining confidence
+- **Scalability:** Highlight your experience scaling processes across teams and organizations
+
+### Relevant Experience from Your Background
+
+**Adobe (Group Manager, 2019-2023):**
+- Led team of 7 generating $800M incremental revenue
+- Implemented advanced attribution (MTA) and media mix models (MMM)
+- 85% YoY organic channel revenue increase
+- Automated end-to-end measurement strategies
+
+**Self-Employed Consultant (2023-2024):**
+- Drove $2.5M incremental revenue for Shopify (165% ROAS)
+- 25% CAC reduction for Course Hero
+- Architected attribution models ensuring data integrity
+- Delivered executive business reviews with actionable insights
+
+**Credit Sesame (Director, 2012-2019):**
+- Scaled user base from 30M to 70M users
+- 140% monthly revenue growth over 5 years
+- Optimized $1.5M average monthly marketing spend
+- Grew subscriptions from 10M to 100M+ users
+
+### Remember to Showcase
+✓ Your ability to influence without authority  
+✓ Experience translating technical concepts for business audiences  
+✓ Track record of building trust with cross-functional partners  
+✓ Comfort navigating ambiguity and imperfect data  
+✓ Leadership in driving organizational change  

@@ -1,0 +1,222 @@
+8 Upstart SQL Interview Questions (Updated 2025)
+
+By
+Nick Singh
+
+(Ex-Facebook & Best-Selling Data Science Author)
+
+
+
+
+Updated on
+
+January 10, 2025
+
+At Upstart, SQL is often used for analyzing loan databases for risk assessment, and for customer analytics. That's the reason behind why Upstart almost always asks SQL query questions during interviews for Data Analytics, Data Science, and Data Engineering jobs.
+
+As such, to help you prepare for the Upstart SQL interview, this blog covers 8 Upstart SQL interview questions – able to solve them?
+
+8 Upstart SQL Interview Questions
+SQL Question 1: Calculate Monthly Average Loan Amount
+Upstart, being an online lending platform, wants to understand how their average loan amount changes over time. This could help them identify any trends or seasonality in their loans business to make better business decisions. They specifically want to understand the monthly average loan amount for each unique loan purpose over the last year.
+
+You're provided with a loans table with the following schema:
+
+loans Example Input:
+loan_id	loan_purpose	loan_amount	loan_date
+2345	Car	18000	2019-03-23
+3782	Investment	15000	2019-03-23
+8542	Education	25000	2019-04-14
+9529	Investment	20000	2019-04-14
+1654	Car	12000	2019-04-14
+Write a SQL query to get the monthly average loan amount for each unique loan purpose over the last year. The output should include the year, the month, the loan purpose, and the relevant monthly average loan amount.
+
+The output of the SQL query should look like this:
+
+Example Output:
+yr	mth	purpose	avg_loan_amount
+2019	03	Car	18000.00
+2019	03	Investment	15000.00
+2019	04	Car	12000.00
+2019	04	Investment	20000.00
+2019	04	Education	25000.00
+Answer:
+SELECT 
+    EXTRACT(YEAR FROM loan_date) AS yr,
+    EXTRACT(MONTH FROM loan_date) AS mth,
+    loan_purpose AS purpose,
+    AVG(loan_amount) AS avg_loan_amount
+FROM 
+    loans 
+WHERE 
+    loan_date >= NOW() - INTERVAL '1 year'
+GROUP BY 
+    yr,
+    mth,
+    purpose
+ORDER BY 
+    yr,
+    mth,
+    purpose;
+This SQL query uses the EXTRACT function to break down the loan_date into yr and mth. The AVG is then used as our window function to compute the average loan_amount for each combination of yr, mth, and purpose. The WHERE clause limits our data to the last year. Grouping and ordering is done by yr, mth, and purpose to break down the average loan amounts as per the requirements.
+
+For more window function practice, try this Uber SQL problem on DataLemur's online SQL code editor:
+
+Uber Data Science SQL Interview Question
+
+SQL Question 2: Loan Distribution Analysis
+Upstart is a leading AI lending platform that partners with banks to improve access to affordable credit. A part of their business is to understand how their loans are distributed among different customers in terms of loan size, occupation. They have two tables borrowers and loans.
+
+borrowers table:
+This table contains information about each borrower who took a loan with upstart.
+
+borrower_id	age	occupation
+101	25	Engineer
+102	32	Teacher
+103	28	Doctor
+104	35	Engineer
+105	30	Teacher
+loans table:
+This table contains information about the loans taken by the borrowers.
+
+loan_id	borrower_id	loan_size
+201	101	10000
+202	102	15000
+203	103	8000
+204	104	20000
+205	105	5000
+The business problem: Upstart wants to know the average loan size by occupation of borrowers and their age. They want to check if occupation and age are factors that determine the size of the loan a customer takes.
+
+Answer:
+We can solve this problem by joining the two tables on 'borrower_id' and then grouping by 'occupation' and 'age' to calculate the average loan size.
+
+SELECT b.occupation, b.age, AVG(l.loan_size) AS avg_loan_size
+FROM borrowers AS b
+JOIN loans AS l
+ON b.borrower_id = l.borrower_id
+GROUP BY b.occupation, b.age
+This query will return a table with each row representing a unique combination of occupation and age, and a column representing the average loan size for that combination. This will allow Upstart to analyze whether certain occupations or age groups tend to take out larger loans.
+
+SQL Question 3: What sets a cross join apart from a natural join?
+Imagine you are organizing a party and have two database tables: one table of people you want to invite and another list of food items you want to serve.
+
+A cross join would be like inviting every person on your list to the party and serving them every food item on the menu, regardless of whether they like the food or not. So, if you had 10 people on your invite list and 5 food items on the menu, you would generate all 50 different combinations of people and food (10 x 5 = 50).
+
+On the other hand, a natural join would be like inviting only the people who like the food items on the menu (based on doing a inner/left/right/outer JOIN on a common key like food_id).
+
+Upstart SQL Interview Questions
+
+SQL Question 4: Calculating Product View to Cart Conversion Rate
+Upstart wants to understand the click-through-rate from viewing a product to adding a product to the cart. They have two tables:
+
+product_views table, which records every time a user views a product.
+cart_adds table, which records every time a user adds a product to their cart.
+Calculate the conversion rate from viewing a product to adding a product to cart, for each product.
+
+product_views Example Input:
+view_id	user_id	product_id	time_stamp
+8171	123	10001	06/08/2022 00:00:00
+5802	265	20002	06/10/2022 00:00:00
+8293	362	10001	06/18/2022 00:00:00
+9352	192	30003	07/26/2022 00:00:00
+9517	981	20002	07/05/2022 00:00:00
+cart_adds Example Input:
+add_id	user_id	product_id	time_stamp
+4171	123	10001	06/08/2022 00:01:00
+2802	265	20002	06/10/2022 00:01:00
+6293	362	10001	06/18/2022 00:01:00
+8352	981	20002	07/05/2022 00:01:00
+Answer:
+SELECT 
+  pv.product_id,
+  COUNT(DISTINCT pv.user_id) as view_count,
+  COUNT(DISTINCT ca.user_id) as add_to_cart_count,
+  COUNT(DISTINCT ca.user_id)::float / GREATEST(COUNT(DISTINCT pv.user_id)::float, 1) as conversion_rate
+FROM
+  product_views pv
+LEFT JOIN 
+  cart_adds ca
+ON 
+  pv.user_id = ca.user_id AND pv.product_id = ca.product_id
+GROUP BY 
+  pv.product_id;
+This query counts the distinct users who viewed and added each product to their cart. We make a LEFT JOIN from product_views to cart_adds on user_id and product_id to see which product views led to adds. The conversion rate is then calculated by dividing add_to_cart_count by view_count. We use GREATEST function to avoid division by zero.
+
+To solve a similar SQL problem on DataLemur's free interactive SQL code editor, try this SQL interview question asked by Facebook:SQL interview question asked by Facebook
+
+SQL Question 5: In database normalization, what's the distinction between 1NF, 2NF, and 3NF?
+Normal forms are guidelines that are used to help design a relational database in a way that minimizes redundancy and ensures the integrity of the data. The 3 most commonly use normal forms are the 1st, 2nd, and 3rd normal forms. Here's a brief explanation of each:
+
+1st Normal Form (1NF) is all about keeping it simple - each column should only have one value and there should be no repeating groups of data.
+
+2nd Normal Form (2NF) is about organization - your database should already be in 1NF and all the non-key columns should depend on the primary key. This means that each non-key column should be completely dependent on the entire primary key, not just part of it.
+
+3rd Normal Form (3NF) is about independence - if your database is already in 2NF, then all the non-key columns should not depend on each other. They should be self-sufficient and not rely on other non-key columns.
+
+SQL Question 6: Calculate Average Loan Amount by State
+Upstart provides personal loans to customers. The loans table contains information about each loan issued by Upstart, including the loan ID, the customer ID, the loan amount, and the date the loan was issued. The customers table contains data about each customer, including their state of residence.
+
+Given the loans and customers tables, write a SQL query to calculate the average loan amount by state for the past year.
+
+Here are the sample tables:
+
+loans Example Input:
+loan_id	customer_id	loan_amount	loan_date
+6171	123	7000	09/05/2021
+7802	265	5000	11/20/2021
+5293	362	9000	12/10/2021
+6352	192	8000	04/25/2021
+4517	981	6000	07/15/2021
+customers Example Input:
+customer_id	state
+123	NY
+265	CA
+362	TX
+192	NY
+981	CA
+Answer:
+SELECT c.state, AVG(l.loan_amount) as average_loan_amount 
+FROM loans l 
+JOIN customers c ON c.customer_id = l.customer_id
+WHERE l.loan_date >= '2021-01-01' AND l.loan_date <= '2021-12-31'
+GROUP BY c.state;
+This query joins the loans and customers tables on customer_id, and then selects the state and average_loan_amount after grouping the data by state. The WHERE clause filters the data to include only loans issued in the past year.
+
+Because join questions come up routinely during SQL interviews, take a stab at this Spotify JOIN SQL question:Spotify JOIN SQL question
+
+SQL Question 7: What is denormalization, and in what situations might it be a useful?
+Denormalization is the practice of altering a database schema in a way that breaks the normalization rules (1st, 2nd, 3rd normal forms).
+
+For example, in a database that stores Upstart sales analytics data, you might have separate tables for "customers," "orders," and "products," with foreign key constraints linking the tables together. This helps to ensure the integrity of the data and reduces redundancy, but it can also make queries that involve multiple tables more complex and slower to execute.
+
+By de-normalizing the database, you can combine some of the data from separate tables into a single table, which can reduce the number of joins that are required to retrieve the data you need. This can speed up queries and improve the performance of your database.
+
+However, it's important to carefully consider the trade-offs of de-normalization before making any changes to your database. De-normalization can make it more difficult to maintain the integrity and reliability of your data, and can also increase the risk of data redundancy. It's generally best to use de-normalization as a performance optimization technique only when necessary, and to carefully evaluate the benefits and drawbacks in the context of your specific database and workload.
+
+SQL Question 8: Average Loan Amount by Month
+As an analyst at Upstart, a company providing personal loans online, you have been tasked to monitor the average loan amount provided per month. Given a table 'loans', create a SQL query to find the average loan amount for each month.
+
+loans Example Input:
+loan_id	user_id	loan_date	loan_amount
+6789	345	01/22/2022 00:00:00	15000
+7980	256	03/10/2022 00:00:00	22000
+3284	563	03/25/2022 00:00:00	18000
+5382	785	07/19/2022 00:00:00	30000
+1478	143	10/09/2022 00:00:00	24000
+Example Output:
+month	average_loan_amount
+1	15000.00
+3	20000.00
+7	30000.00
+10	24000.00
+Answer:
+SELECT 
+  EXTRACT(MONTH FROM loan_date) AS month, 
+  AVG(loan_amount) AS average_loan_amount
+FROM 
+  loans
+GROUP BY 
+  EXTRACT(MONTH FROM loan_date)
+ORDER BY 
+  month
+In this query, we use the PostgreSQL specific EXTRACT function to get the month from loan_date. The AVG() function is used to calculate average loan amount for each month. We then GROUP BY month to find average loan amount for each distinct month. Finally, we ORDER BY month to provide a chronologically ordered output.

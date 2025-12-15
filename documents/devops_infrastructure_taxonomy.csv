@@ -1,0 +1,691 @@
+Level_1	Level_2	Level_3	Level_4	Level_5	Level_6
+DEVOPS & INFRASTRUCTURE					
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services				
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)			
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Compute Services		
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Compute Services	EC2 (Elastic Compute Cloud)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Compute Services	Lambda (Serverless Computing)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Compute Services	ECS (Elastic Container Service)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Compute Services	EKS (Elastic Kubernetes Service)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Compute Services	Fargate (Serverless Containers)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Storage Services		
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Storage Services	S3 (Simple Storage Service)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Storage Services	EBS (Elastic Block Store)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Storage Services	EFS (Elastic File System)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Storage Services	Glacier (Archival Storage)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Database Services		
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Database Services	RDS (Relational Database Service)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Database Services	DynamoDB (NoSQL)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Database Services	Redshift (Data Warehouse)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Database Services	Aurora (MySQL/PostgreSQL)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Data Analytics Services		
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Data Analytics Services	EMR (Elastic MapReduce)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Data Analytics Services	Athena (Serverless Query)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Data Analytics Services	Kinesis (Real-time Streaming)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Data Analytics Services	Glue (ETL Service)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Networking Services		
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Networking Services	VPC (Virtual Private Cloud)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Networking Services	Route 53 (DNS Service)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Networking Services	CloudFront (CDN)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Security & Identity		
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Security & Identity	IAM (Identity & Access Management)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Security & Identity	KMS (Key Management Service)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	AWS (Amazon Web Services)	Security & Identity	Secrets Manager	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)			
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	Compute Services		
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	Compute Services	Virtual Machines	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	Compute Services	Azure Functions (Serverless)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	Compute Services	AKS (Azure Kubernetes Service)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	Compute Services	Container Instances	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	Storage Services		
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	Storage Services	Blob Storage	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	Storage Services	Azure Data Lake Storage	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	Storage Services	Azure Files	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	Database Services		
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	Database Services	Azure SQL Database	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	Database Services	Cosmos DB (NoSQL)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	Database Services	Azure Synapse Analytics	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	Data Analytics Services		
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	Data Analytics Services	Azure Databricks	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	Data Analytics Services	HDInsight (Big Data)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	Data Analytics Services	Stream Analytics	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	Data Analytics Services	Azure Data Factory	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	DevOps Services		
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	DevOps Services	Azure DevOps Pipelines	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	DevOps Services	Azure Repos	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Azure (Microsoft Azure)	DevOps Services	Azure Boards	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)			
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	Compute Services		
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	Compute Services	Compute Engine	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	Compute Services	Cloud Functions	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	Compute Services	GKE (Google Kubernetes Engine)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	Compute Services	Cloud Run	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	Storage Services		
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	Storage Services	Cloud Storage (GCS)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	Storage Services	Persistent Disk	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	Storage Services	Filestore	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	Database Services		
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	Database Services	Cloud SQL	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	Database Services	Cloud Spanner	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	Database Services	Firestore (NoSQL)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	Database Services	Bigtable	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	Data Analytics Services		
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	Data Analytics Services	BigQuery (Data Warehouse)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	Data Analytics Services	Dataflow (Stream/Batch Processing)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	Data Analytics Services	Dataproc (Managed Hadoop/Spark)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	Data Analytics Services	Pub/Sub (Messaging)	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	AI/ML Services		
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	AI/ML Services	Vertex AI	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	GCP (Google Cloud Platform)	AI/ML Services	TensorFlow on GCP	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Multi-Cloud & Hybrid Cloud			
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Multi-Cloud & Hybrid Cloud	Multi-Cloud Strategy		
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Multi-Cloud & Hybrid Cloud	Multi-Cloud Strategy	Cross-Cloud Architecture	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Multi-Cloud & Hybrid Cloud	Multi-Cloud Strategy	Cloud Provider Selection	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Multi-Cloud & Hybrid Cloud	Multi-Cloud Strategy	Vendor Lock-in Avoidance	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Multi-Cloud & Hybrid Cloud	Hybrid Cloud Solutions		
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Multi-Cloud & Hybrid Cloud	Hybrid Cloud Solutions	AWS Outposts	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Multi-Cloud & Hybrid Cloud	Hybrid Cloud Solutions	Azure Arc	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Multi-Cloud & Hybrid Cloud	Hybrid Cloud Solutions	Google Anthos	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Multi-Cloud & Hybrid Cloud	Cloud Migration		
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Multi-Cloud & Hybrid Cloud	Cloud Migration	Lift and Shift	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Multi-Cloud & Hybrid Cloud	Cloud Migration	Re-platforming	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Multi-Cloud & Hybrid Cloud	Cloud Migration	Re-architecting	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Cloud Cost Management			
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Cloud Cost Management	Cost Optimization		
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Cloud Cost Management	Cost Optimization	Reserved Instances	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Cloud Cost Management	Cost Optimization	Spot Instances	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Cloud Cost Management	Cost Optimization	Right-sizing Resources	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Cloud Cost Management	Cost Monitoring		
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Cloud Cost Management	Cost Monitoring	Billing Alerts	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Cloud Cost Management	Cost Monitoring	Cost Explorer	
+DEVOPS & INFRASTRUCTURE	Cloud Platforms & Services	Cloud Cost Management	Cost Monitoring	Tagging Strategy	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration				
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Container Technology			
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Container Technology	Docker		
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Container Technology	Docker	Docker Images	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Container Technology	Docker	Dockerfile Best Practices	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Container Technology	Docker	Docker Compose	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Container Technology	Docker	Container Registries	Docker Hub
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Container Technology	Docker	Container Registries	Amazon ECR
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Container Technology	Docker	Container Registries	Azure Container Registry
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Container Technology	Docker	Container Registries	Google Container Registry
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Container Technology	Docker	Multi-stage Builds	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Container Technology	Docker	Container Security	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Container Technology	Container Runtime		
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Container Technology	Container Runtime	containerd	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Container Technology	Container Runtime	CRI-O	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Container Technology	Container Runtime	Podman	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)			
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Core Concepts		
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Core Concepts	Pods	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Core Concepts	Deployments	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Core Concepts	Services	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Core Concepts	ConfigMaps & Secrets	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Core Concepts	Namespaces	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Core Concepts	Persistent Volumes	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Workload Management		
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Workload Management	StatefulSets	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Workload Management	DaemonSets	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Workload Management	Jobs & CronJobs	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Workload Management	ReplicaSets	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Networking		
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Networking	Ingress Controllers	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Networking	Network Policies	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Networking	Service Mesh	Istio
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Networking	Service Mesh	Linkerd
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Networking	Load Balancing	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Storage		
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Storage	Persistent Volume Claims	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Storage	Storage Classes	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Storage	Dynamic Provisioning	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Scaling & Autoscaling		
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Scaling & Autoscaling	Horizontal Pod Autoscaler	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Scaling & Autoscaling	Vertical Pod Autoscaler	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Scaling & Autoscaling	Cluster Autoscaler	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Security		
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Security	RBAC (Role-Based Access Control)	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Security	Pod Security Policies	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Security	Security Contexts	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Security	Network Security	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Managed Kubernetes Services		
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Managed Kubernetes Services	EKS (Amazon)	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Managed Kubernetes Services	AKS (Azure)	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Kubernetes (K8s)	Managed Kubernetes Services	GKE (Google)	
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Other Orchestration Tools			
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Other Orchestration Tools	Docker Swarm		
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Other Orchestration Tools	Apache Mesos		
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Other Orchestration Tools	HashiCorp Nomad		
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Other Orchestration Tools	OpenShift		
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Container Management			
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Container Management	Rancher		
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Container Management	Portainer		
+DEVOPS & INFRASTRUCTURE	Containerization & Orchestration	Container Management	Lens IDE		
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines				
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)			
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Fundamentals		
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Fundamentals	Build Automation	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Fundamentals	Automated Testing	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Fundamentals	Code Quality Checks	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Fundamentals	Integration Testing	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Fundamentals	Build Triggers	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Tools		
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Tools	Jenkins	Pipeline Configuration
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Tools	Jenkins	Jenkinsfile
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Tools	Jenkins	Plugin Management
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Tools	Jenkins	Distributed Builds
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Tools	GitLab CI/CD	.gitlab-ci.yml Configuration
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Tools	GitLab CI/CD	GitLab Runners
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Tools	GitLab CI/CD	Pipeline Stages
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Tools	GitHub Actions	Workflow Configuration
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Tools	GitHub Actions	Action Marketplace
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Tools	GitHub Actions	Self-hosted Runners
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Tools	CircleCI	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Tools	Travis CI	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Tools	Azure DevOps Pipelines	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Tools	Bamboo	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Integration (CI)	CI Tools	TeamCity	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Delivery/Deployment (CD)			
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Delivery/Deployment (CD)	CD Fundamentals		
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Delivery/Deployment (CD)	CD Fundamentals	Deployment Strategies	Blue-Green Deployment
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Delivery/Deployment (CD)	CD Fundamentals	Deployment Strategies	Canary Releases
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Delivery/Deployment (CD)	CD Fundamentals	Deployment Strategies	Rolling Deployments
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Delivery/Deployment (CD)	CD Fundamentals	Deployment Strategies	A/B Testing Deployments
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Delivery/Deployment (CD)	CD Fundamentals	Release Management	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Delivery/Deployment (CD)	CD Fundamentals	Rollback Strategies	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Delivery/Deployment (CD)	CD Fundamentals	Environment Management	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Delivery/Deployment (CD)	CD Tools		
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Delivery/Deployment (CD)	CD Tools	ArgoCD (GitOps)	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Delivery/Deployment (CD)	CD Tools	Flux (GitOps)	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Delivery/Deployment (CD)	CD Tools	Spinnaker	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Continuous Delivery/Deployment (CD)	CD Tools	Harness	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Pipeline Architecture			
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Pipeline Architecture	Pipeline Design		
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Pipeline Architecture	Pipeline Design	Pipeline as Code	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Pipeline Architecture	Pipeline Design	Multi-stage Pipelines	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Pipeline Architecture	Pipeline Design	Parallel Execution	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Pipeline Architecture	Pipeline Design	Conditional Stages	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Pipeline Architecture	Pipeline Optimization		
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Pipeline Architecture	Pipeline Optimization	Build Caching	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Pipeline Architecture	Pipeline Optimization	Artifact Management	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Pipeline Architecture	Pipeline Optimization	Pipeline Performance	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Pipeline Architecture	Pipeline Security		
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Pipeline Architecture	Pipeline Security	Secret Management	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Pipeline Architecture	Pipeline Security	Credential Scanning	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Pipeline Architecture	Pipeline Security	Container Scanning	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Pipeline Architecture	Pipeline Security	Dependency Scanning	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Data Pipeline CI/CD			
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Data Pipeline CI/CD	Data Pipeline Testing		
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Data Pipeline CI/CD	Data Pipeline Testing	Data Quality Tests	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Data Pipeline CI/CD	Data Pipeline Testing	Schema Validation	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Data Pipeline CI/CD	Data Pipeline Testing	Integration Testing	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Data Pipeline CI/CD	Data Pipeline Deployment		
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Data Pipeline CI/CD	Data Pipeline Deployment	Pipeline Versioning	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Data Pipeline CI/CD	Data Pipeline Deployment	Environment Promotion	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Data Pipeline CI/CD	Data Pipeline Deployment	Blue-Green Data Pipelines	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Artifact Management			
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Artifact Management	Artifact Repositories		
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Artifact Management	Artifact Repositories	JFrog Artifactory	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Artifact Management	Artifact Repositories	Nexus Repository	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Artifact Management	Artifact Repositories	AWS CodeArtifact	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Artifact Management	Binary Management		
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Artifact Management	Binary Management	Version Control	
+DEVOPS & INFRASTRUCTURE	CI/CD Pipelines	Artifact Management	Binary Management	Artifact Promotion	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)				
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Fundamentals			
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Fundamentals	IaC Principles		
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Fundamentals	IaC Principles	Declarative vs Imperative	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Fundamentals	IaC Principles	Idempotency	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Fundamentals	IaC Principles	Immutable Infrastructure	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Fundamentals	IaC Principles	Version Control for Infrastructure	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Fundamentals	IaC Benefits		
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Fundamentals	IaC Benefits	Reproducibility	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Fundamentals	IaC Benefits	Consistency	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Fundamentals	IaC Benefits	Scalability	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Fundamentals	IaC Benefits	Documentation as Code	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Provisioning Tools			
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Provisioning Tools	Terraform		
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Provisioning Tools	Terraform	HCL (HashiCorp Configuration Language)	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Provisioning Tools	Terraform	Terraform State Management	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Provisioning Tools	Terraform	Terraform Modules	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Provisioning Tools	Terraform	Terraform Providers	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Provisioning Tools	Terraform	Terraform Workspaces	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Provisioning Tools	Terraform	Remote State Backend	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Provisioning Tools	Terraform	Terraform Plan & Apply	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Provisioning Tools	AWS CloudFormation		
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Provisioning Tools	AWS CloudFormation	Templates (YAML/JSON)	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Provisioning Tools	AWS CloudFormation	Stacks	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Provisioning Tools	AWS CloudFormation	Change Sets	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Provisioning Tools	AWS CloudFormation	StackSets	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Provisioning Tools	Azure Resource Manager (ARM)		
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Provisioning Tools	Azure Resource Manager (ARM)	ARM Templates	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Provisioning Tools	Azure Resource Manager (ARM)	Azure Bicep	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Provisioning Tools	Google Cloud Deployment Manager		
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Provisioning Tools	Pulumi		
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Provisioning Tools	Pulumi	Multi-language Support	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Provisioning Tools	Pulumi	Pulumi State	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Configuration Management			
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Configuration Management	Ansible		
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Configuration Management	Ansible	Playbooks (YAML)	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Configuration Management	Ansible	Ansible Roles	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Configuration Management	Ansible	Ansible Modules	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Configuration Management	Ansible	Inventory Management	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Configuration Management	Ansible	Ansible Vault (Secrets)	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Configuration Management	Chef		
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Configuration Management	Chef	Recipes & Cookbooks	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Configuration Management	Chef	Chef Server	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Configuration Management	Puppet		
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Configuration Management	Puppet	Puppet Manifests	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Configuration Management	Puppet	Puppet Master	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	Configuration Management	SaltStack		
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Best Practices			
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Best Practices	Code Organization		
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Best Practices	Code Organization	Modular Design	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Best Practices	Code Organization	Reusable Components	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Best Practices	Code Organization	Directory Structure	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Best Practices	Testing & Validation		
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Best Practices	Testing & Validation	Syntax Validation	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Best Practices	Testing & Validation	Dry Runs	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Best Practices	Testing & Validation	Terratest	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Best Practices	Testing & Validation	Policy as Code	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Best Practices	State Management		
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Best Practices	State Management	State Locking	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Best Practices	State Management	State Backup	
+DEVOPS & INFRASTRUCTURE	Infrastructure as Code (IaC)	IaC Best Practices	State Management	Drift Detection	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability				
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Monitoring Fundamentals			
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Monitoring Fundamentals	Observability Pillars		
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Monitoring Fundamentals	Observability Pillars	Metrics	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Monitoring Fundamentals	Observability Pillars	Logs	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Monitoring Fundamentals	Observability Pillars	Traces	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Monitoring Fundamentals	Key Metrics		
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Monitoring Fundamentals	Key Metrics	Infrastructure Metrics	CPU, Memory, Disk
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Monitoring Fundamentals	Key Metrics	Infrastructure Metrics	Network Metrics
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Monitoring Fundamentals	Key Metrics	Application Metrics	Response Time
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Monitoring Fundamentals	Key Metrics	Application Metrics	Throughput
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Monitoring Fundamentals	Key Metrics	Application Metrics	Error Rates
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Monitoring Fundamentals	Key Metrics	Data Pipeline Metrics	Pipeline Execution Time
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Monitoring Fundamentals	Key Metrics	Data Pipeline Metrics	Data Volume Processed
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Monitoring Fundamentals	Key Metrics	Data Pipeline Metrics	Pipeline Failures
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Monitoring Fundamentals	Key Metrics	Data Pipeline Metrics	Data Quality Metrics
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization			
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	Prometheus		
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	Prometheus	PromQL (Query Language)	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	Prometheus	Metric Types	Counter
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	Prometheus	Metric Types	Gauge
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	Prometheus	Metric Types	Histogram
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	Prometheus	Metric Types	Summary
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	Prometheus	Exporters	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	Prometheus	Service Discovery	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	Prometheus	Alerting Rules	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	Grafana		
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	Grafana	Dashboard Creation	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	Grafana	Data Source Integration	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	Grafana	Visualization Types	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	Grafana	Alert Configuration	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	Grafana	Dashboard Templates	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	Datadog		
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	Datadog	APM (Application Performance Monitoring)	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	Datadog	Infrastructure Monitoring	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	Datadog	Log Management	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	Datadog	Synthetic Monitoring	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	New Relic		
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Metrics Collection & Visualization	Dynatrace		
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Logging Systems			
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Logging Systems	Centralized Logging		
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Logging Systems	Centralized Logging	Log Aggregation	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Logging Systems	Centralized Logging	Structured Logging	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Logging Systems	Centralized Logging	Log Retention Policies	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Logging Systems	ELK Stack		
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Logging Systems	ELK Stack	Elasticsearch	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Logging Systems	ELK Stack	Logstash	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Logging Systems	ELK Stack	Kibana	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Logging Systems	ELK Stack	Filebeat	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Logging Systems	Loki (Grafana)		
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Logging Systems	Loki (Grafana)	LogQL	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Logging Systems	Loki (Grafana)	Promtail	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Logging Systems	Splunk		
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Logging Systems	Splunk	SPL (Search Processing Language)	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Logging Systems	Splunk	Data Inputs	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Logging Systems	Cloud-Native Logging		
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Logging Systems	Cloud-Native Logging	AWS CloudWatch Logs	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Logging Systems	Cloud-Native Logging	Azure Monitor Logs	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Logging Systems	Cloud-Native Logging	Google Cloud Logging	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Distributed Tracing			
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Distributed Tracing	Tracing Concepts		
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Distributed Tracing	Tracing Concepts	Spans	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Distributed Tracing	Tracing Concepts	Trace Context	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Distributed Tracing	Tracing Concepts	Service Dependencies	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Distributed Tracing	Tracing Tools		
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Distributed Tracing	Tracing Tools	Jaeger	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Distributed Tracing	Tracing Tools	Zipkin	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Distributed Tracing	Tracing Tools	OpenTelemetry	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Distributed Tracing	Tracing Tools	AWS X-Ray	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Alerting & Incident Management			
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Alerting & Incident Management	Alert Configuration		
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Alerting & Incident Management	Alert Configuration	Alert Thresholds	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Alerting & Incident Management	Alert Configuration	Alert Routing	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Alerting & Incident Management	Alert Configuration	Alert Fatigue Prevention	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Alerting & Incident Management	Alert Configuration	Escalation Policies	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Alerting & Incident Management	Incident Management Tools		
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Alerting & Incident Management	Incident Management Tools	PagerDuty	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Alerting & Incident Management	Incident Management Tools	Opsgenie	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Alerting & Incident Management	Incident Management Tools	VictorOps	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Alerting & Incident Management	On-Call Management		
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Alerting & Incident Management	On-Call Management	Rotation Schedules	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Alerting & Incident Management	On-Call Management	Incident Response Procedures	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Data Pipeline Observability			
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Data Pipeline Observability	Pipeline Monitoring		
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Data Pipeline Observability	Pipeline Monitoring	Job Execution Tracking	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Data Pipeline Observability	Pipeline Monitoring	Data Lineage Tracking	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Data Pipeline Observability	Pipeline Monitoring	Pipeline Dependencies	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Data Pipeline Observability	Data Quality Monitoring		
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Data Pipeline Observability	Data Quality Monitoring	Great Expectations	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Data Pipeline Observability	Data Quality Monitoring	Anomaly Detection	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Data Pipeline Observability	Data Quality Monitoring	Data Validation	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Data Pipeline Observability	Pipeline Orchestration Monitoring		
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Data Pipeline Observability	Pipeline Orchestration Monitoring	Airflow Metrics	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Data Pipeline Observability	Pipeline Orchestration Monitoring	Spark Metrics	
+DEVOPS & INFRASTRUCTURE	Monitoring & Observability	Data Pipeline Observability	Pipeline Orchestration Monitoring	Databricks Monitoring	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration				
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git & Version Control			
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git & Version Control	Git Fundamentals		
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git & Version Control	Git Fundamentals	Branching Strategies	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git & Version Control	Git Fundamentals	Merge vs Rebase	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git & Version Control	Git Fundamentals	Commit Best Practices	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git & Version Control	Git Fundamentals	Git Workflows	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git & Version Control	Branching Models		
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git & Version Control	Branching Models	GitFlow	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git & Version Control	Branching Models	GitHub Flow	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git & Version Control	Branching Models	Trunk-Based Development	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git & Version Control	Branching Models	Feature Branch Workflow	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git Platforms			
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git Platforms	GitHub		
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git Platforms	GitHub	Pull Requests	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git Platforms	GitHub	Code Reviews	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git Platforms	GitHub	GitHub Actions	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git Platforms	GitHub	Branch Protection	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git Platforms	GitLab		
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git Platforms	GitLab	Merge Requests	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git Platforms	GitLab	GitLab CI/CD	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git Platforms	GitLab	Code Quality	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git Platforms	Bitbucket		
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git Platforms	Bitbucket	Bitbucket Pipelines	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git Platforms	Bitbucket	Jira Integration	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Git Platforms	Azure Repos		
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Code Quality & Review			
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Code Quality & Review	Code Review Practices		
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Code Quality & Review	Code Review Practices	Peer Review Process	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Code Quality & Review	Code Review Practices	Review Guidelines	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Code Quality & Review	Code Review Practices	Automated Reviews	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Code Quality & Review	Static Analysis		
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Code Quality & Review	Static Analysis	SonarQube	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Code Quality & Review	Static Analysis	CodeClimate	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Code Quality & Review	Static Analysis	Checkmarx	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Code Quality & Review	Linting		
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Code Quality & Review	Linting	Language-specific Linters	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	Code Quality & Review	Linting	Code Formatting	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	GitOps			
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	GitOps	GitOps Principles		
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	GitOps	GitOps Principles	Git as Source of Truth	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	GitOps	GitOps Principles	Declarative Infrastructure	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	GitOps	GitOps Principles	Pull-Based Deployment	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	GitOps	GitOps Tools		
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	GitOps	GitOps Tools	ArgoCD	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	GitOps	GitOps Tools	Flux	
+DEVOPS & INFRASTRUCTURE	Version Control & Collaboration	GitOps	GitOps Tools	Jenkins X	
+DEVOPS & INFRASTRUCTURE	Security & Compliance				
+DEVOPS & INFRASTRUCTURE	Security & Compliance	DevSecOps			
+DEVOPS & INFRASTRUCTURE	Security & Compliance	DevSecOps	Security Fundamentals		
+DEVOPS & INFRASTRUCTURE	Security & Compliance	DevSecOps	Security Fundamentals	Shift-Left Security	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	DevSecOps	Security Fundamentals	Security as Code	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	DevSecOps	Security Fundamentals	Threat Modeling	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	DevSecOps	Security Fundamentals	Security Culture	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	DevSecOps	Application Security		
+DEVOPS & INFRASTRUCTURE	Security & Compliance	DevSecOps	Application Security	SAST (Static Application Security Testing)	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	DevSecOps	Application Security	DAST (Dynamic Application Security Testing)	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	DevSecOps	Application Security	Dependency Scanning	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	DevSecOps	Application Security	Vulnerability Management	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	DevSecOps	Container Security		
+DEVOPS & INFRASTRUCTURE	Security & Compliance	DevSecOps	Container Security	Image Scanning	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	DevSecOps	Container Security	Runtime Security	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	DevSecOps	Container Security	Container Hardening	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	DevSecOps	Container Security	Aqua Security	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	DevSecOps	Container Security	Twistlock/Prisma Cloud	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Identity & Access Management			
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Identity & Access Management	IAM Principles		
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Identity & Access Management	IAM Principles	Least Privilege	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Identity & Access Management	IAM Principles	Role-Based Access Control (RBAC)	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Identity & Access Management	IAM Principles	Multi-Factor Authentication (MFA)	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Identity & Access Management	IAM Principles	Zero Trust Architecture	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Identity & Access Management	IAM Tools		
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Identity & Access Management	IAM Tools	Okta	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Identity & Access Management	IAM Tools	Auth0	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Identity & Access Management	IAM Tools	AWS IAM	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Identity & Access Management	IAM Tools	Azure Active Directory	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Secrets Management			
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Secrets Management	Secrets Tools		
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Secrets Management	Secrets Tools	HashiCorp Vault	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Secrets Management	Secrets Tools	AWS Secrets Manager	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Secrets Management	Secrets Tools	Azure Key Vault	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Secrets Management	Secrets Tools	Google Secret Manager	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Secrets Management	Best Practices		
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Secrets Management	Best Practices	Secret Rotation	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Secrets Management	Best Practices	Secret Encryption	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Secrets Management	Best Practices	Access Auditing	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Compliance & Governance			
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Compliance & Governance	Compliance Frameworks		
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Compliance & Governance	Compliance Frameworks	GDPR	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Compliance & Governance	Compliance Frameworks	HIPAA	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Compliance & Governance	Compliance Frameworks	SOC 2	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Compliance & Governance	Compliance Frameworks	ISO 27001	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Compliance & Governance	Compliance Frameworks	PCI DSS	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Compliance & Governance	Compliance Frameworks	NIST	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Compliance & Governance	Compliance Automation		
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Compliance & Governance	Compliance Automation	Compliance as Code	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Compliance & Governance	Compliance Automation	Policy Enforcement	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Compliance & Governance	Compliance Automation	Audit Trails	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Compliance & Governance	Compliance Tools		
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Compliance & Governance	Compliance Tools	Drata	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Compliance & Governance	Compliance Tools	Vanta	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Compliance & Governance	Compliance Tools	OneTrust	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Compliance & Governance	Data Governance		
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Compliance & Governance	Data Governance	Data Classification	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Compliance & Governance	Data Governance	Data Encryption	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Compliance & Governance	Data Governance	Data Retention Policies	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Compliance & Governance	Data Governance	Privacy Controls	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Network Security			
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Network Security	Firewalls & Security Groups		
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Network Security	Firewalls & Security Groups	Network Segmentation	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Network Security	Firewalls & Security Groups	Security Group Rules	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Network Security	Firewalls & Security Groups	Web Application Firewall (WAF)	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Network Security	DDoS Protection		
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Network Security	DDoS Protection	AWS Shield	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Network Security	DDoS Protection	Cloudflare	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Network Security	VPN & Private Connectivity		
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Network Security	VPN & Private Connectivity	Site-to-Site VPN	
+DEVOPS & INFRASTRUCTURE	Security & Compliance	Network Security	VPN & Private Connectivity	Private Link/Endpoint	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure				
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Workflow Orchestration			
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Workflow Orchestration	Apache Airflow		
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Workflow Orchestration	Apache Airflow	DAG (Directed Acyclic Graph)	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Workflow Orchestration	Apache Airflow	Operators	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Workflow Orchestration	Apache Airflow	Executors	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Workflow Orchestration	Apache Airflow	Task Dependencies	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Workflow Orchestration	Apache Airflow	Airflow Scheduler	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Workflow Orchestration	Apache Airflow	XComs	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Workflow Orchestration	Prefect		
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Workflow Orchestration	Prefect	Flow Configuration	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Workflow Orchestration	Prefect	Task Runners	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Workflow Orchestration	Luigi		
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Workflow Orchestration	Dagster		
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Workflow Orchestration	Dagster	Asset-based Orchestration	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Workflow Orchestration	Dagster	Software-defined Assets	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Workflow Orchestration	Argo Workflows		
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Stream Processing			
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Stream Processing	Apache Kafka		
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Stream Processing	Apache Kafka	Kafka Topics	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Stream Processing	Apache Kafka	Kafka Producers & Consumers	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Stream Processing	Apache Kafka	Kafka Connect	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Stream Processing	Apache Kafka	Kafka Streams	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Stream Processing	Apache Kafka	Schema Registry	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Stream Processing	Apache Flink		
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Stream Processing	Apache Flink	Flink Jobs	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Stream Processing	Apache Flink	State Management	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Stream Processing	Apache Spark Streaming		
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Stream Processing	Apache Spark Streaming	Structured Streaming	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Stream Processing	Apache Spark Streaming	Micro-batching	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Batch Processing			
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Batch Processing	Apache Spark		
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Batch Processing	Apache Spark	Spark Core	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Batch Processing	Apache Spark	Spark SQL	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Batch Processing	Apache Spark	DataFrames & Datasets	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Batch Processing	Apache Spark	Spark Configuration	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Batch Processing	Apache Spark	Cluster Management	YARN
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Batch Processing	Apache Spark	Cluster Management	Mesos
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Batch Processing	Apache Spark	Cluster Management	Standalone
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Batch Processing	Apache Hadoop		
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Batch Processing	Apache Hadoop	HDFS	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Batch Processing	Apache Hadoop	MapReduce	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Data Integration			
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Data Integration	ETL/ELT Tools		
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Data Integration	ETL/ELT Tools	dbt (Data Build Tool)	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Data Integration	ETL/ELT Tools	Airbyte	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Data Integration	ETL/ELT Tools	Fivetran	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Data Integration	ETL/ELT Tools	Stitch	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Data Integration	ETL/ELT Tools	Talend	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Data Integration	Change Data Capture (CDC)		
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Data Integration	Change Data Capture (CDC)	Debezium	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	Data Integration	Change Data Capture (CDC)	Database Replication	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	DataOps			
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	DataOps	DataOps Principles		
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	DataOps	DataOps Principles	Data Pipeline Automation	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	DataOps	DataOps Principles	Continuous Integration for Data	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	DataOps	DataOps Principles	Data Testing	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	DataOps	DataOps Principles	Data Version Control	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	DataOps	Data Quality		
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	DataOps	Data Quality	Data Validation	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	DataOps	Data Quality	Data Profiling	
+DEVOPS & INFRASTRUCTURE	Data Pipeline Infrastructure	DataOps	Data Quality	Data Lineage	
+DEVOPS & INFRASTRUCTURE	Automation & Scripting				
+DEVOPS & INFRASTRUCTURE	Automation & Scripting	Scripting Languages			
+DEVOPS & INFRASTRUCTURE	Automation & Scripting	Scripting Languages	Python		
+DEVOPS & INFRASTRUCTURE	Automation & Scripting	Scripting Languages	Python	Boto3 (AWS SDK)	
+DEVOPS & INFRASTRUCTURE	Automation & Scripting	Scripting Languages	Python	Azure SDK	
+DEVOPS & INFRASTRUCTURE	Automation & Scripting	Scripting Languages	Python	Google Cloud Client Libraries	
+DEVOPS & INFRASTRUCTURE	Automation & Scripting	Scripting Languages	Python	Automation Scripts	
+DEVOPS & INFRASTRUCTURE	Automation & Scripting	Scripting Languages	Bash/Shell		
+DEVOPS & INFRASTRUCTURE	Automation & Scripting	Scripting Languages	Bash/Shell	Shell Scripting Best Practices	
+DEVOPS & INFRASTRUCTURE	Automation & Scripting	Scripting Languages	Bash/Shell	Command-line Tools	
+DEVOPS & INFRASTRUCTURE	Automation & Scripting	Scripting Languages	PowerShell		
+DEVOPS & INFRASTRUCTURE	Automation & Scripting	Scripting Languages	PowerShell	Azure PowerShell	
+DEVOPS & INFRASTRUCTURE	Automation & Scripting	Scripting Languages	PowerShell	AWS PowerShell	
+DEVOPS & INFRASTRUCTURE	Automation & Scripting	Infrastructure Automation			
+DEVOPS & INFRASTRUCTURE	Automation & Scripting	Infrastructure Automation	Automated Provisioning		
+DEVOPS & INFRASTRUCTURE	Automation & Scripting	Infrastructure Automation	Automated Provisioning	Server Provisioning	
+DEVOPS & INFRASTRUCTURE	Automation & Scripting	Infrastructure Automation	Automated Provisioning	Network Configuration	
+DEVOPS & INFRASTRUCTURE	Automation & Scripting	Infrastructure Automation	Automated Provisioning	Storage Setup	
+DEVOPS & INFRASTRUCTURE	Automation & Scripting	Infrastructure Automation	Task Scheduling		
+DEVOPS & INFRASTRUCTURE	Automation & Scripting	Infrastructure Automation	Task Scheduling	Cron Jobs	
+DEVOPS & INFRASTRUCTURE	Automation & Scripting	Infrastructure Automation	Task Scheduling	Scheduled Tasks	
+DEVOPS & INFRASTRUCTURE	Automation & Scripting	Infrastructure Automation	Task Scheduling	Job Orchestration	
+DEVOPS & INFRASTRUCTURE	Networking & Storage				
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Network Architecture			
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Network Architecture	Virtual Networks		
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Network Architecture	Virtual Networks	VPC/VNET Configuration	
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Network Architecture	Virtual Networks	Subnets	
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Network Architecture	Virtual Networks	Routing Tables	
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Network Architecture	Virtual Networks	NAT Gateways	
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Network Architecture	Load Balancing		
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Network Architecture	Load Balancing	Application Load Balancer	
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Network Architecture	Load Balancing	Network Load Balancer	
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Network Architecture	Load Balancing	Load Balancer Configuration	
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Network Architecture	DNS Management		
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Network Architecture	DNS Management	DNS Records	
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Network Architecture	DNS Management	DNS Routing Policies	
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Network Architecture	Content Delivery		
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Network Architecture	Content Delivery	CDN Configuration	
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Network Architecture	Content Delivery	Edge Locations	
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Storage Solutions			
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Storage Solutions	Object Storage		
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Storage Solutions	Object Storage	Storage Buckets	
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Storage Solutions	Object Storage	Lifecycle Policies	
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Storage Solutions	Object Storage	Versioning	
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Storage Solutions	Object Storage	Access Control	
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Storage Solutions	Block Storage		
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Storage Solutions	Block Storage	Volume Types	
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Storage Solutions	Block Storage	Snapshots	
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Storage Solutions	Block Storage	Volume Encryption	
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Storage Solutions	File Storage		
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Storage Solutions	File Storage	NFS Configuration	
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Storage Solutions	File Storage	SMB/CIFS	
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Storage Solutions	Archive Storage		
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Storage Solutions	Archive Storage	Cold Storage	
+DEVOPS & INFRASTRUCTURE	Networking & Storage	Storage Solutions	Archive Storage	Glacier Configuration	
+DEVOPS & INFRASTRUCTURE	Performance & Optimization				
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Infrastructure Performance			
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Infrastructure Performance	Resource Optimization		
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Infrastructure Performance	Resource Optimization	Instance Sizing	
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Infrastructure Performance	Resource Optimization	Autoscaling Configuration	
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Infrastructure Performance	Resource Optimization	Performance Tuning	
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Infrastructure Performance	Capacity Planning		
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Infrastructure Performance	Capacity Planning	Growth Forecasting	
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Infrastructure Performance	Capacity Planning	Resource Allocation	
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Infrastructure Performance	Performance Testing		
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Infrastructure Performance	Performance Testing	Load Testing	
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Infrastructure Performance	Performance Testing	Stress Testing	
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Infrastructure Performance	Performance Testing	Benchmark Testing	
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Data Pipeline Optimization			
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Data Pipeline Optimization	Query Optimization		
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Data Pipeline Optimization	Query Optimization	Query Performance Tuning	
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Data Pipeline Optimization	Query Optimization	Indexing Strategies	
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Data Pipeline Optimization	Query Optimization	Query Caching	
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Data Pipeline Optimization	Pipeline Efficiency		
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Data Pipeline Optimization	Pipeline Efficiency	Parallel Processing	
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Data Pipeline Optimization	Pipeline Efficiency	Partitioning Strategies	
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Data Pipeline Optimization	Pipeline Efficiency	Resource Allocation	
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Data Pipeline Optimization	Pipeline Efficiency	Pipeline Scheduling	
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Cost Optimization			
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Cost Optimization	Resource Management		
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Cost Optimization	Resource Management	Idle Resource Identification	
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Cost Optimization	Resource Management	Resource Tagging	
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Cost Optimization	Resource Management	Unused Resource Cleanup	
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Cost Optimization	Storage Optimization		
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Cost Optimization	Storage Optimization	Storage Tiering	
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Cost Optimization	Storage Optimization	Data Compression	
+DEVOPS & INFRASTRUCTURE	Performance & Optimization	Cost Optimization	Storage Optimization	Archival Strategies	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity				
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Backup Strategies			
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Backup Strategies	Backup Planning		
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Backup Strategies	Backup Planning	Backup Schedule	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Backup Strategies	Backup Planning	Retention Policies	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Backup Strategies	Backup Planning	Backup Validation	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Backup Strategies	Backup Types		
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Backup Strategies	Backup Types	Full Backups	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Backup Strategies	Backup Types	Incremental Backups	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Backup Strategies	Backup Types	Differential Backups	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Backup Strategies	Backup Storage		
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Backup Strategies	Backup Storage	Backup Repositories	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Backup Strategies	Backup Storage	Off-site Backups	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Disaster Recovery			
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Disaster Recovery	DR Planning		
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Disaster Recovery	DR Planning	Recovery Time Objective (RTO)	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Disaster Recovery	DR Planning	Recovery Point Objective (RPO)	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Disaster Recovery	DR Planning	DR Testing	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Disaster Recovery	DR Strategies		
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Disaster Recovery	DR Strategies	Active-Passive	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Disaster Recovery	DR Strategies	Active-Active	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Disaster Recovery	DR Strategies	Pilot Light	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Disaster Recovery	DR Strategies	Warm Standby	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Disaster Recovery	Failover Mechanisms		
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Disaster Recovery	Failover Mechanisms	Automated Failover	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Disaster Recovery	Failover Mechanisms	Manual Failover	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	Disaster Recovery	Failover Mechanisms	Failback Procedures	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	High Availability			
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	High Availability	HA Architecture		
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	High Availability	HA Architecture	Multi-AZ Deployment	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	High Availability	HA Architecture	Multi-Region Deployment	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	High Availability	HA Architecture	Redundancy Configuration	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	High Availability	HA Patterns		
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	High Availability	HA Patterns	Load Distribution	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	High Availability	HA Patterns	Health Checks	
+DEVOPS & INFRASTRUCTURE	Disaster Recovery & Business Continuity	High Availability	HA Patterns	Circuit Breakers

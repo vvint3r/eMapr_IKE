@@ -1,0 +1,257 @@
+Category,Subcategory,Label_Type
+1. Text Classification & Categorization,1.1 Sentiment Analysis,Polarity classification (positive/negative/neutral)
+1. Text Classification & Categorization,1.1 Sentiment Analysis,"Emotion detection (joy, anger, sadness, fear, etc.)"
+1. Text Classification & Categorization,1.1 Sentiment Analysis,Sarcasm detection
+1. Text Classification & Categorization,1.1 Sentiment Analysis,Subjectivity vs objectivity
+1. Text Classification & Categorization,1.1 Sentiment Analysis,Aspect-based sentiment (sentiment per product feature)
+1. Text Classification & Categorization,1.1 Sentiment Analysis,Fine-grained sentiment (5-point scale)
+1. Text Classification & Categorization,1.1 Sentiment Analysis,"Valence, arousal, dominance scores"
+1. Text Classification & Categorization,1.2 Intent Classification,"User intent categories (informational, transactional, navigational)"
+1. Text Classification & Categorization,1.2 Intent Classification,Question vs statement classification
+1. Text Classification & Categorization,1.2 Intent Classification,Speech act classification
+1. Text Classification & Categorization,1.2 Intent Classification,Query classification
+1. Text Classification & Categorization,1.3 Topic & Document Classification,Topic labels/categories
+1. Text Classification & Categorization,1.3 Topic & Document Classification,"Genre classification (news, blog, academic, review, etc.)"
+1. Text Classification & Categorization,1.3 Topic & Document Classification,"Domain classification (sports, politics, technology, etc.)"
+1. Text Classification & Categorization,1.3 Topic & Document Classification,Multi-label classification
+1. Text Classification & Categorization,1.3 Topic & Document Classification,Hierarchical classification
+1. Text Classification & Categorization,1.3 Topic & Document Classification,"Document type (invoice, contract, report, email, etc.)"
+1. Text Classification & Categorization,1.4 Content Characteristics,Language identification
+1. Text Classification & Categorization,1.4 Content Characteristics,Toxicity/hate speech classification
+1. Text Classification & Categorization,1.4 Content Characteristics,Spam/not spam
+1. Text Classification & Categorization,1.4 Content Characteristics,Formality level
+1. Text Classification & Categorization,1.4 Content Characteristics,Reading level/grade level
+1. Text Classification & Categorization,1.4 Content Characteristics,Fact vs opinion
+2. Entity-Level Annotations,2.1 Named Entity Recognition (NER),Person names
+2. Entity-Level Annotations,2.1 Named Entity Recognition (NER),Organizations
+2. Entity-Level Annotations,2.1 Named Entity Recognition (NER),"Locations (GPE, facilities)"
+2. Entity-Level Annotations,2.1 Named Entity Recognition (NER),Dates and times (temporal expressions)
+2. Entity-Level Annotations,2.1 Named Entity Recognition (NER),Monetary values and percentages
+2. Entity-Level Annotations,2.1 Named Entity Recognition (NER),Product names
+2. Entity-Level Annotations,2.1 Named Entity Recognition (NER),Events
+2. Entity-Level Annotations,2.1 Named Entity Recognition (NER),"Custom domain entities (medical terms, legal concepts, etc.)"
+2. Entity-Level Annotations,2.2 Entity Attributes,Entity types/categories
+2. Entity-Level Annotations,2.2 Entity Attributes,Entity linking (to knowledge base IDs)
+2. Entity-Level Annotations,2.2 Entity Attributes,Entity disambiguation
+2. Entity-Level Annotations,2.2 Entity Attributes,Coreference resolution chains
+2. Entity-Level Annotations,2.2 Entity Attributes,Entity salience/importance scores
+2. Entity-Level Annotations,2.3 Keyphrase & Keyword Annotation,Keyphrase extraction tags
+2. Entity-Level Annotations,2.3 Keyphrase & Keyword Annotation,Keyword importance scores
+2. Entity-Level Annotations,2.3 Keyphrase & Keyword Annotation,Domain-specific terminology tags
+2. Entity-Level Annotations,2.3 Keyphrase & Keyword Annotation,Acronym identification and expansion
+3. Linguistic & Syntactic Annotations,3.1 Part-of-Speech (POS) Tagging,"Nouns, verbs, adjectives, adverbs"
+3. Linguistic & Syntactic Annotations,3.1 Part-of-Speech (POS) Tagging,"Determiners, prepositions, conjunctions"
+3. Linguistic & Syntactic Annotations,3.1 Part-of-Speech (POS) Tagging,Punctuation marks
+3. Linguistic & Syntactic Annotations,3.1 Part-of-Speech (POS) Tagging,"Fine-grained POS tags (e.g., Penn Treebank tagset)"
+3. Linguistic & Syntactic Annotations,3.2 Syntactic Parsing,Constituency parse trees
+3. Linguistic & Syntactic Annotations,3.2 Syntactic Parsing,Dependency parse trees
+3. Linguistic & Syntactic Annotations,3.2 Syntactic Parsing,Head-dependent relations
+3. Linguistic & Syntactic Annotations,3.2 Syntactic Parsing,"Grammatical role labels (subject, object, modifier)"
+3. Linguistic & Syntactic Annotations,3.3 Morphological Features,Lemmas (base forms)
+3. Linguistic & Syntactic Annotations,3.3 Morphological Features,Stems
+3. Linguistic & Syntactic Annotations,3.3 Morphological Features,"Morphological tags (tense, number, gender, case)"
+3. Linguistic & Syntactic Annotations,3.3 Morphological Features,Inflectional patterns
+4. Semantic & Discourse Annotations,4.1 Semantic Role Labeling,Predicate-argument structures
+4. Semantic & Discourse Annotations,4.1 Semantic Role Labeling,"Agent, patient, instrument roles"
+4. Semantic & Discourse Annotations,4.1 Semantic Role Labeling,Frame semantic labels (FrameNet)
+4. Semantic & Discourse Annotations,4.1 Semantic Role Labeling,PropBank annotations
+4. Semantic & Discourse Annotations,4.2 Relation Extraction,Binary relations between entities
+4. Semantic & Discourse Annotations,4.2 Relation Extraction,"Relation types (works-for, located-in, part-of, etc.)"
+4. Semantic & Discourse Annotations,4.2 Relation Extraction,Event-entity relations
+4. Semantic & Discourse Annotations,4.2 Relation Extraction,Temporal relations
+4. Semantic & Discourse Annotations,4.3 Discourse Structure,Discourse markers identification
+4. Semantic & Discourse Annotations,4.3 Discourse Structure,Rhetorical structure relations (RST)
+4. Semantic & Discourse Annotations,4.3 Discourse Structure,"Coherence relations (cause, contrast, elaboration)"
+4. Semantic & Discourse Annotations,4.3 Discourse Structure,Argumentation structure
+4. Semantic & Discourse Annotations,4.3 Discourse Structure,Topic segmentation boundaries
+4. Semantic & Discourse Annotations,4.4 Question Answering Labels,"Question type (who, what, when, where, why, how)"
+4. Semantic & Discourse Annotations,4.4 Question Answering Labels,Answer spans
+4. Semantic & Discourse Annotations,4.4 Question Answering Labels,Question-answer pairs
+4. Semantic & Discourse Annotations,4.4 Question Answering Labels,Supporting evidence passages
+5. Metadata & Document-Level Labels,5.1 Bibliographic Metadata,Author(s)
+5. Metadata & Document-Level Labels,5.1 Bibliographic Metadata,Title
+5. Metadata & Document-Level Labels,5.1 Bibliographic Metadata,Publication date/year
+5. Metadata & Document-Level Labels,5.1 Bibliographic Metadata,Journal/venue
+5. Metadata & Document-Level Labels,5.1 Bibliographic Metadata,DOI/identifiers
+5. Metadata & Document-Level Labels,5.1 Bibliographic Metadata,Abstract
+5. Metadata & Document-Level Labels,5.1 Bibliographic Metadata,Keywords (author-provided)
+5. Metadata & Document-Level Labels,5.1 Bibliographic Metadata,Affiliations
+5. Metadata & Document-Level Labels,5.1 Bibliographic Metadata,Citation count
+5. Metadata & Document-Level Labels,5.2 Document Structure,"Section labels (abstract, introduction, methods, results, etc.)"
+5. Metadata & Document-Level Labels,5.2 Document Structure,Heading hierarchy levels
+5. Metadata & Document-Level Labels,5.2 Document Structure,Paragraph boundaries
+5. Metadata & Document-Level Labels,5.2 Document Structure,"List detection (bulleted, numbered)"
+5. Metadata & Document-Level Labels,5.2 Document Structure,Table captions and structure
+5. Metadata & Document-Level Labels,5.2 Document Structure,Figure captions
+5. Metadata & Document-Level Labels,5.2 Document Structure,Footnotes and references
+5. Metadata & Document-Level Labels,5.2 Document Structure,Header/footer regions
+5. Metadata & Document-Level Labels,5.3 Format & Layout,Page numbers
+5. Metadata & Document-Level Labels,5.3 Format & Layout,"Column layout (single, multi-column)"
+5. Metadata & Document-Level Labels,5.3 Format & Layout,"Font styles (bold, italic, size)"
+5. Metadata & Document-Level Labels,5.3 Format & Layout,Text blocks vs non-text regions
+5. Metadata & Document-Level Labels,5.3 Format & Layout,Reading order
+5. Metadata & Document-Level Labels,5.3 Format & Layout,Bounding box coordinates
+6. Quantitative Text Statistics,6.1 Lexical Features,Total word count (tokens)
+6. Quantitative Text Statistics,6.1 Lexical Features,Unique word count (types)
+6. Quantitative Text Statistics,6.1 Lexical Features,Type-Token Ratio (TTR)
+6. Quantitative Text Statistics,6.1 Lexical Features,Measure of Textual Lexical Diversity (MTLD)
+6. Quantitative Text Statistics,6.1 Lexical Features,Moving-Average Type-Token Ratio (MATTR)
+6. Quantitative Text Statistics,6.1 Lexical Features,"Vocabulary richness indices (D, HD-D, Maas)"
+6. Quantitative Text Statistics,6.1 Lexical Features,Average word length (characters)
+6. Quantitative Text Statistics,6.1 Lexical Features,Average word frequency
+6. Quantitative Text Statistics,6.1 Lexical Features,Hapax legomena count (words occurring once)
+6. Quantitative Text Statistics,6.1 Lexical Features,Out-of-vocabulary (OOV) rate
+6. Quantitative Text Statistics,6.2 Readability Metrics,Flesch Reading Ease score
+6. Quantitative Text Statistics,6.2 Readability Metrics,Flesch-Kincaid Grade Level
+6. Quantitative Text Statistics,6.2 Readability Metrics,Gunning Fog Index
+6. Quantitative Text Statistics,6.2 Readability Metrics,SMOG Index
+6. Quantitative Text Statistics,6.2 Readability Metrics,Dale-Chall Readability Score
+6. Quantitative Text Statistics,6.2 Readability Metrics,Coleman-Liau Index
+6. Quantitative Text Statistics,6.2 Readability Metrics,Automated Readability Index (ARI)
+6. Quantitative Text Statistics,6.2 Readability Metrics,LIX (Läsbarhetsindex)
+6. Quantitative Text Statistics,6.2 Readability Metrics,Average sentence length
+6. Quantitative Text Statistics,6.2 Readability Metrics,Percentage of complex words
+6. Quantitative Text Statistics,6.2 Readability Metrics,Syllable count per word
+6. Quantitative Text Statistics,6.3 Structural Statistics,Sentence count
+6. Quantitative Text Statistics,6.3 Structural Statistics,Paragraph count
+6. Quantitative Text Statistics,6.3 Structural Statistics,Average words per sentence
+6. Quantitative Text Statistics,6.3 Structural Statistics,Average sentences per paragraph
+6. Quantitative Text Statistics,6.3 Structural Statistics,Character count (with/without spaces)
+6. Quantitative Text Statistics,6.3 Structural Statistics,Line count
+6. Quantitative Text Statistics,6.3 Structural Statistics,Section count
+7. Statistical & Probabilistic Measures,7.1 Information Theory Metrics,"Shannon entropy (character-level, word-level)"
+7. Statistical & Probabilistic Measures,7.1 Information Theory Metrics,Cross-entropy
+7. Statistical & Probabilistic Measures,7.1 Information Theory Metrics,Perplexity score
+7. Statistical & Probabilistic Measures,7.1 Information Theory Metrics,Mutual information
+7. Statistical & Probabilistic Measures,7.1 Information Theory Metrics,Kullback-Leibler divergence
+7. Statistical & Probabilistic Measures,7.1 Information Theory Metrics,Conditional entropy
+7. Statistical & Probabilistic Measures,7.2 Language Model Scores,"N-gram probabilities (unigram, bigram, trigram, etc.)"
+7. Statistical & Probabilistic Measures,7.2 Language Model Scores,Log-likelihood scores
+7. Statistical & Probabilistic Measures,7.2 Language Model Scores,Language model confidence scores
+7. Statistical & Probabilistic Measures,7.2 Language Model Scores,Surprisal values
+7. Statistical & Probabilistic Measures,7.2 Language Model Scores,Embedding-based perplexity
+7. Statistical & Probabilistic Measures,7.3 Frequency-Based Features,Term frequency (TF)
+7. Statistical & Probabilistic Measures,7.3 Frequency-Based Features,Inverse document frequency (IDF)
+7. Statistical & Probabilistic Measures,7.3 Frequency-Based Features,TF-IDF scores per term
+7. Statistical & Probabilistic Measures,7.3 Frequency-Based Features,Document frequency
+7. Statistical & Probabilistic Measures,7.3 Frequency-Based Features,Collection frequency
+7. Statistical & Probabilistic Measures,7.3 Frequency-Based Features,Relative frequency distributions
+8. N-gram & Pattern Features,8.1 Character N-grams,"Character bigrams, trigrams, 4-grams"
+8. N-gram & Pattern Features,8.1 Character N-grams,Character n-gram frequencies
+8. N-gram & Pattern Features,8.1 Character N-grams,Character n-gram diversity
+8. N-gram & Pattern Features,8.2 Word N-grams,"Word bigrams, trigrams, 4-grams"
+8. N-gram & Pattern Features,8.2 Word N-grams,N-gram frequency counts
+8. N-gram & Pattern Features,8.2 Word N-grams,"Collocation strength measures (PMI, chi-square)"
+8. N-gram & Pattern Features,8.2 Word N-grams,Skip-grams (with gaps)
+8. N-gram & Pattern Features,8.3 Stylometric Features,Function word frequencies
+8. N-gram & Pattern Features,8.3 Stylometric Features,Punctuation usage patterns
+8. N-gram & Pattern Features,8.3 Stylometric Features,Capitalization patterns
+8. N-gram & Pattern Features,8.3 Stylometric Features,Digit and number frequencies
+8. N-gram & Pattern Features,8.3 Stylometric Features,Special character usage
+8. N-gram & Pattern Features,8.3 Stylometric Features,Contraction frequencies
+8. N-gram & Pattern Features,8.3 Stylometric Features,Sentence-initial word patterns
+9. Semantic Representation Features,9.1 Word Embeddings,"Word2Vec vectors (CBOW, Skip-gram)"
+9. Semantic Representation Features,9.1 Word Embeddings,GloVe vectors
+9. Semantic Representation Features,9.1 Word Embeddings,FastText vectors
+9. Semantic Representation Features,9.1 Word Embeddings,"Contextualized embeddings (BERT, GPT)"
+9. Semantic Representation Features,9.1 Word Embeddings,Vector dimensionality
+9. Semantic Representation Features,9.1 Word Embeddings,Embedding norm/magnitude
+9. Semantic Representation Features,9.2 Document Embeddings,Doc2Vec representations
+9. Semantic Representation Features,9.2 Document Embeddings,Sentence embeddings (Sentence-BERT)
+9. Semantic Representation Features,9.2 Document Embeddings,Paragraph embeddings
+9. Semantic Representation Features,9.2 Document Embeddings,Document-level dense vectors
+9. Semantic Representation Features,9.2 Document Embeddings,Latent Dirichlet Allocation (LDA) topic distributions
+9. Semantic Representation Features,9.2 Document Embeddings,Topic mixture proportions
+9. Semantic Representation Features,9.3 Similarity & Distance Metrics,Cosine similarity scores
+9. Semantic Representation Features,9.3 Similarity & Distance Metrics,Euclidean distance
+9. Semantic Representation Features,9.3 Similarity & Distance Metrics,Manhattan distance
+9. Semantic Representation Features,9.3 Similarity & Distance Metrics,Jaccard similarity
+9. Semantic Representation Features,9.3 Similarity & Distance Metrics,Semantic coherence scores (local and global)
+9. Semantic Representation Features,9.3 Similarity & Distance Metrics,Semantic relatedness measures
+10. Temporal & Sequential Features,10.1 Temporal Expressions,Absolute dates (YYYY-MM-DD)
+10. Temporal & Sequential Features,10.1 Temporal Expressions,"Relative time expressions (yesterday, next week)"
+10. Temporal & Sequential Features,10.1 Temporal Expressions,Time ranges and durations
+10. Temporal & Sequential Features,10.1 Temporal Expressions,Temporal anchors
+10. Temporal & Sequential Features,10.1 Temporal Expressions,Event timestamps
+10. Temporal & Sequential Features,10.1 Temporal Expressions,Publication timestamps
+10. Temporal & Sequential Features,10.2 Time-Based Attributes,Document age/recency
+10. Temporal & Sequential Features,10.2 Time-Based Attributes,Time since creation
+10. Temporal & Sequential Features,10.2 Time-Based Attributes,Update frequency
+10. Temporal & Sequential Features,10.2 Time-Based Attributes,"Temporal patterns (day of week, month, season)"
+10. Temporal & Sequential Features,10.2 Time-Based Attributes,Time zone information
+10. Temporal & Sequential Features,10.3 Sequential Patterns,Sequence order labels
+10. Temporal & Sequential Features,10.3 Sequential Patterns,"Position in document (beginning, middle, end)"
+10. Temporal & Sequential Features,10.3 Sequential Patterns,Relative position ratios
+10. Temporal & Sequential Features,10.3 Sequential Patterns,Transition probabilities between states
+11. Table & Structured Data Labels,11.1 Table Structure,Table detection (is table/not table)
+11. Table & Structured Data Labels,11.1 Table Structure,Row and column count
+11. Table & Structured Data Labels,11.1 Table Structure,Cell boundaries
+11. Table & Structured Data Labels,11.1 Table Structure,Header row identification
+11. Table & Structured Data Labels,11.1 Table Structure,Header column identification
+11. Table & Structured Data Labels,11.1 Table Structure,Merged cell annotations
+11. Table & Structured Data Labels,11.1 Table Structure,Table caption association
+11. Table & Structured Data Labels,11.2 Table Semantics,"Column type annotations (numerical, categorical, date, etc.)"
+11. Table & Structured Data Labels,11.2 Table Semantics,Column header labels
+11. Table & Structured Data Labels,11.2 Table Semantics,Cell data types
+11. Table & Structured Data Labels,11.2 Table Semantics,Entity columns vs property columns
+11. Table & Structured Data Labels,11.2 Table Semantics,Property-value pairs
+11. Table & Structured Data Labels,11.2 Table Semantics,Table-to-knowledge-base mappings
+11. Table & Structured Data Labels,11.3 CSV/JSON Specific,Field names/keys
+11. Table & Structured Data Labels,11.3 CSV/JSON Specific,Data schema annotations
+11. Table & Structured Data Labels,11.3 CSV/JSON Specific,Nested structure depth (JSON)
+11. Table & Structured Data Labels,11.3 CSV/JSON Specific,Array vs object distinctions
+11. Table & Structured Data Labels,11.3 CSV/JSON Specific,Null value handling labels
+11. Table & Structured Data Labels,11.3 CSV/JSON Specific,Delimiter types
+12. Authorship & Provenance Labels,12.1 Authorship Attribution,Author identity labels
+12. Authorship & Provenance Labels,12.1 Authorship Attribution,Authorship probability scores
+12. Authorship & Provenance Labels,12.1 Authorship Attribution,Writing style fingerprints
+12. Authorship & Provenance Labels,12.1 Authorship Attribution,"Author profiling (age, gender, education)"
+12. Authorship & Provenance Labels,12.1 Authorship Attribution,Anonymous vs attributed
+12. Authorship & Provenance Labels,12.2 Source Provenance,Original source URL
+12. Authorship & Provenance Labels,12.2 Source Provenance,Copyright/license information
+12. Authorship & Provenance Labels,12.2 Source Provenance,Creation date vs modification date
+12. Authorship & Provenance Labels,12.2 Source Provenance,Version labels
+12. Authorship & Provenance Labels,12.2 Source Provenance,Authoritativeness scores
+12. Authorship & Provenance Labels,12.2 Source Provenance,Credibility ratings
+12. Authorship & Provenance Labels,12.3 Generated Content Detection,Human-written vs AI-generated labels
+12. Authorship & Provenance Labels,12.3 Generated Content Detection,LLM attribution (which model generated it)
+12. Authorship & Provenance Labels,12.3 Generated Content Detection,Generation confidence scores
+12. Authorship & Provenance Labels,12.3 Generated Content Detection,Synthetic text markers
+13. Citation & Reference Features,13.1 Citation Extraction,In-text citation mentions
+13. Citation & Reference Features,13.1 Citation Extraction,Reference list entries
+13. Citation & Reference Features,13.1 Citation Extraction,Citation context (sentences around citation)
+13. Citation & Reference Features,13.1 Citation Extraction,"Citation intent (background, method, comparison)"
+13. Citation & Reference Features,13.1 Citation Extraction,Citation count per document
+13. Citation & Reference Features,13.2 Bibliometric Measures,Number of references
+13. Citation & Reference Features,13.2 Bibliometric Measures,Number of citations received
+13. Citation & Reference Features,13.2 Bibliometric Measures,Co-citation patterns
+13. Citation & Reference Features,13.2 Bibliometric Measures,Bibliographic coupling
+13. Citation & Reference Features,13.2 Bibliometric Measures,Citation network position
+13. Citation & Reference Features,13.2 Bibliometric Measures,h-index (for authors)
+13. Citation & Reference Features,13.2 Bibliometric Measures,Impact factor (for journals)
+14. Quality & Completeness Indicators,14.1 Text Quality Scores,Grammar error count/score
+14. Quality & Completeness Indicators,14.1 Text Quality Scores,Spelling error count/score
+14. Quality & Completeness Indicators,14.1 Text Quality Scores,Coherence score
+14. Quality & Completeness Indicators,14.1 Text Quality Scores,Fluency rating
+14. Quality & Completeness Indicators,14.1 Text Quality Scores,Clarity rating
+14. Quality & Completeness Indicators,14.1 Text Quality Scores,Text informativeness
+14. Quality & Completeness Indicators,14.2 Completeness Features,Missing value indicators
+14. Quality & Completeness Indicators,14.2 Completeness Features,Truncation markers
+14. Quality & Completeness Indicators,14.2 Completeness Features,Completeness percentage
+14. Quality & Completeness Indicators,14.2 Completeness Features,Field population rate (for structured data)
+14. Quality & Completeness Indicators,14.2 Completeness Features,OCR quality score (for scanned documents)
+15. Domain-Specific Labels,15.1 Legal Domain,Legal citation detection
+15. Domain-Specific Labels,15.1 Legal Domain,Contract clause types
+15. Domain-Specific Labels,15.1 Legal Domain,Legal entity types
+15. Domain-Specific Labels,15.1 Legal Domain,Obligation/permission/prohibition markers
+15. Domain-Specific Labels,15.1 Legal Domain,Jurisdiction labels
+15. Domain-Specific Labels,15.2 Medical Domain,"Medical entity types (disease, drug, symptom, procedure)"
+15. Domain-Specific Labels,15.2 Medical Domain,UMLS concept IDs
+15. Domain-Specific Labels,15.2 Medical Domain,ICD/CPT codes
+15. Domain-Specific Labels,15.2 Medical Domain,Negation/uncertainty markers
+15. Domain-Specific Labels,15.2 Medical Domain,"Temporal expressions (onset, duration)"
+15. Domain-Specific Labels,15.3 Financial Domain,"Financial entity types (ticker symbols, companies)"
+15. Domain-Specific Labels,15.3 Financial Domain,"Numerical value types (revenue, profit, loss)"
+15. Domain-Specific Labels,15.3 Financial Domain,Financial sentiment
+15. Domain-Specific Labels,15.3 Financial Domain,Risk indicators
+15. Domain-Specific Labels,15.3 Financial Domain,Regulatory compliance markers

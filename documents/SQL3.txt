@@ -1,0 +1,1494 @@
+SQL 
+I'll help you prepare for your Airbnb SQL interview by creating 10 relevant practice questions 
+that cover the key concepts mentioned. These questions progressively increase in complexity 
+and reflect real Airbnb business scenarios. 
+SQL Practice Questions for Airbnb Interview 
+Question 1: Basic Filtering and Aggregation 
+Scenario: Find top performing listings in a specific city -- Given tables: listings (listing_id, host_id, city, price_per_night, property_type, created_date) -- Write a query to find all listings in Paris with price > $100 per night,  -- showing the average price by property_type, ordered by average price descending 
+Question 2: Simple JOIN 
+Scenario: Match hosts with their booking performance -- Given tables:  -- hosts (host_id, host_name, join_date, host_status) -- bookings (booking_id, listing_id, host_id, guest_id, check_in_date, check_out_date, 
+total_price) -- Find all hosts who joined in 2024 and their total booking revenue 
+Question 3: Multiple JOINs with Aggregation 
+Scenario: Analyze guest booking patterns and satisfaction -- Given tables: -- bookings (booking_id, guest_id, listing_id, check_in_date, nights_stayed, total_paid) -- reviews (review_id, booking_id, rating, review_date) 
+-- guests (guest_id, signup_date, country) -- Find the average rating by guest country for bookings in the last 90 days 
+Question 4: Subquery - Identifying High-Value Guests 
+Scenario: Find guests who spend above average -- Using the bookings table, identify guests whose average booking value  -- is higher than the overall average booking value -- Show guest_id and their average booking value 
+Question 5: Self-JOIN - Finding Repeat Guests 
+Scenario: Identify guests who rebooked within 30 days -- Given bookings table, find all instances where the same guest  -- made another booking within 30 days of their previous checkout -- Show both booking IDs and the gap in days 
+Question 6: Window Functions - Ranking 
+Scenario: Rank hosts by revenue within each city -- Given bookings and listings tables, rank hosts by their total revenue  -- within each city using ROW_NUMBER() or RANK() -- Show only the top 3 hosts per city 
+Question 7: Window Functions - Running Totals 
+Scenario: Calculate cumulative bookings for marketing campaign analysis -- Given tables: -- bookings (booking_id, booking_date, channel_source) 
+-- marketing_campaigns (campaign_id, channel_source, start_date, end_date, budget) -- Calculate daily bookings and cumulative bookings by channel_source  -- for the last 30 days using window functions 
+Question 8: Complex Subquery with EXISTS 
+Scenario: Find hosts who've never received a bad review -- Find all hosts who have at least 10 bookings but have never  -- received a review with rating < 4 -- Use EXISTS or NOT EXISTS in your solution 
+Question 9: Advanced Window Function - Lead/Lag 
+Scenario: Analyze pricing changes and occupancy -- Given tables: -- listing_calendar (listing_id, date, price, available) -- Calculate the price change from previous day for each listing -- and identify dates where price increased by more than 20% -- Also show the occupancy rate (7-day moving average) using window functions 
+Question 10: Comprehensive Business Question 
+Scenario: Marketing Attribution and Customer Lifetime Value -- Given tables: -- users (user_id, signup_date, acquisition_channel, first_booking_date) -- bookings (booking_id, user_id, booking_date, total_value, booking_status) -- marketing_spend (date, channel, daily_spend) -- Calculate: 
+-- 1. Customer acquisition cost (CAC) by channel for Q1 2024 -- 2. Average customer lifetime value (CLV) by acquisition channel -- 3. The ratio of CLV to CAC by channel -- 4. Identify channels where CLV/CAC > 3 -- Use CTEs or subqueries to build this analysis step by step 
+Key SQL Concepts to Review: 
+Essential Functions: 
+● GROUP BY with HAVING 
+● CASE WHEN statements 
+● Date functions (DATE_DIFF, DATE_ADD, DATE_TRUNC) 
+● String functions (CONCAT, SUBSTRING, REGEXP) 
+Window Functions: 
+● ROW_NUMBER(), RANK(), DENSE_RANK() 
+● LAG(), LEAD() 
+● SUM() OVER(), AVG() OVER() 
+● Partition and ordering clauses 
+Performance Considerations: 
+● When to use CTEs vs subqueries 
+● Index usage implications 
+● Query optimization basics 
+Tips for the Interview: 
+1. Think out loud - Explain your approach before writing SQL 
+2. Start simple - Build complexity incrementally 
+3. Consider edge cases - NULLs, duplicates, date boundaries 
+4. Validate assumptions - Ask about data quality, table relationships 
+5. Business context - Connect your queries to business impact 
+I'll provide detailed solutions for all 10 questions with explanations and alternative approaches 
+where relevant. 
+SQL Solutions for Airbnb Interview Practice 
+Question 1: Basic Filtering and Aggregation -- Solution: 
+SELECT  
+property_type, 
+AVG(price_per_night) as avg_price, 
+COUNT(*) as listing_count 
+FROM listings 
+WHERE city = 'Paris'  
+AND price_per_night > 100 
+GROUP BY property_type 
+ORDER BY avg_price DESC; -- Alternative with ROUND for cleaner output: 
+SELECT  
+property_type, 
+ROUND(AVG(price_per_night), 2) as avg_price, 
+COUNT(*) as listing_count, 
+MIN(price_per_night) as min_price, 
+MAX(price_per_night) as max_price 
+FROM listings 
+WHERE city = 'Paris'  
+AND price_per_night > 100 
+GROUP BY property_type 
+HAVING COUNT(*) >= 5  -- Only show property types with at least 5 listings 
+ORDER BY avg_price DESC; 
+ 
+Question 2: Simple JOIN -- Solution: 
+SELECT  
+    h.host_id, 
+    h.host_name, 
+    h.join_date, 
+    COUNT(DISTINCT b.booking_id) as total_bookings, 
+    SUM(b.total_price) as total_revenue 
+FROM hosts h 
+LEFT JOIN bookings b  
+    ON h.host_id = b.host_id 
+WHERE YEAR(h.join_date) = 2024 
+GROUP BY h.host_id, h.host_name, h.join_date 
+ORDER BY total_revenue DESC; 
+ -- Note: Using LEFT JOIN to include hosts with no bookings yet -- Could use COALESCE to handle NULL values: 
+SELECT  
+    h.host_id, 
+    h.host_name, 
+    h.join_date, 
+    COALESCE(COUNT(DISTINCT b.booking_id), 0) as total_bookings, 
+    COALESCE(SUM(b.total_price), 0) as total_revenue 
+FROM hosts h 
+LEFT JOIN bookings b  
+    ON h.host_id = b.host_id 
+WHERE YEAR(h.join_date) = 2024 
+GROUP BY h.host_id, h.host_name, h.join_date 
+ORDER BY total_revenue DESC; 
+ 
+Question 3: Multiple JOINs with Aggregation -- Solution: 
+SELECT  
+    g.country, 
+    COUNT(DISTINCT b.booking_id) as total_bookings, 
+    AVG(r.rating) as avg_rating, 
+    COUNT(DISTINCT r.review_id) as total_reviews 
+FROM bookings b 
+INNER JOIN reviews r  
+    ON b.booking_id = r.booking_id 
+INNER JOIN guests g  
+    ON b.guest_id = g.guest_id 
+WHERE b.check_in_date >= CURRENT_DATE - INTERVAL '90 days' 
+    -- Or: WHERE b.check_in_date >= DATE_SUB(CURRENT_DATE, INTERVAL 90 DAY) 
+GROUP BY g.country 
+HAVING COUNT(DISTINCT b.booking_id) >= 10  -- Countries with meaningful sample size 
+ORDER BY avg_rating DESC; 
+ -- Alternative with review completion rate: 
+SELECT  
+    g.country, 
+    COUNT(DISTINCT b.booking_id) as total_bookings, 
+    ROUND(AVG(r.rating), 2) as avg_rating, 
+    COUNT(DISTINCT r.review_id) as total_reviews, 
+ROUND(100.0 * COUNT(DISTINCT r.review_id) / COUNT(DISTINCT b.booking_id), 1) as 
+review_rate 
+FROM bookings b 
+LEFT JOIN reviews r  
+ON b.booking_id = r.booking_id 
+INNER JOIN guests g  
+ON b.guest_id = g.guest_id 
+WHERE b.check_in_date >= CURRENT_DATE - INTERVAL '90 days' 
+GROUP BY g.country 
+ORDER BY avg_rating DESC; 
+Question 4: Subquery - Identifying High-Value Guests -- Solution using subquery in WHERE: 
+SELECT  
+guest_id, 
+AVG(total_paid) as avg_booking_value, 
+COUNT(*) as booking_count 
+FROM bookings 
+GROUP BY guest_id 
+HAVING AVG(total_paid) > ( 
+SELECT AVG(total_paid)  
+FROM bookings 
+) 
+ORDER BY avg_booking_value DESC; -- Alternative using CTE (often clearer): 
+WITH overall_metrics AS ( 
+SELECT AVG(total_paid) as overall_avg 
+    FROM bookings 
+) 
+SELECT  
+    b.guest_id, 
+    AVG(b.total_paid) as avg_booking_value, 
+    COUNT(*) as booking_count, 
+    om.overall_avg, 
+    ROUND(AVG(b.total_paid) - om.overall_avg, 2) as diff_from_avg 
+FROM bookings b 
+CROSS JOIN overall_metrics om 
+GROUP BY b.guest_id, om.overall_avg 
+HAVING AVG(b.total_paid) > om.overall_avg 
+ORDER BY avg_booking_value DESC; 
+ 
+Question 5: Self-JOIN - Finding Repeat Guests -- Solution: 
+SELECT  
+    b1.guest_id, 
+    b1.booking_id as first_booking, 
+    b2.booking_id as repeat_booking, 
+    b1.check_in_date as first_checkin, 
+    b2.check_in_date as repeat_checkin, 
+    DATEDIFF(b2.check_in_date, DATE_ADD(b1.check_in_date, INTERVAL b1.nights_stayed 
+DAY)) as days_between 
+FROM bookings b1 
+INNER JOIN bookings b2 
+    ON b1.guest_id = b2.guest_id 
+    AND b1.booking_id < b2.booking_id  -- Ensure we don't duplicate pairs 
+    AND b2.check_in_date <= DATE_ADD(b1.check_in_date, INTERVAL b1.nights_stayed + 30 
+DAY) 
+    AND b2.check_in_date > DATE_ADD(b1.check_in_date, INTERVAL b1.nights_stayed DAY) 
+ORDER BY b1.guest_id, b1.check_in_date; 
+ -- Alternative with more details: 
+SELECT  
+    b1.guest_id, 
+    b1.booking_id as first_booking, 
+    b2.booking_id as repeat_booking, 
+    b1.check_in_date as first_checkin, 
+    DATE_ADD(b1.check_in_date, INTERVAL b1.nights_stayed DAY) as first_checkout, 
+    b2.check_in_date as repeat_checkin, 
+    DATEDIFF(b2.check_in_date, DATE_ADD(b1.check_in_date, INTERVAL b1.nights_stayed 
+DAY)) as gap_days 
+FROM bookings b1 
+INNER JOIN bookings b2 
+    ON b1.guest_id = b2.guest_id 
+WHERE b2.check_in_date BETWEEN  
+    DATE_ADD(b1.check_in_date, INTERVAL b1.nights_stayed DAY) 
+    AND DATE_ADD(b1.check_in_date, INTERVAL b1.nights_stayed + 30 DAY) 
+    AND b1.booking_id < b2.booking_id 
+ORDER BY gap_days ASC; 
+ 
+Question 6: Window Functions - Ranking -- Solution: 
+WITH host_revenue AS ( 
+    SELECT  
+        l.city, 
+        b.host_id, 
+        SUM(b.total_paid) as total_revenue, 
+        COUNT(DISTINCT b.booking_id) as total_bookings 
+    FROM bookings b 
+    INNER JOIN listings l  
+        ON b.listing_id = l.listing_id 
+    GROUP BY l.city, b.host_id 
+), 
+ranked_hosts AS ( 
+    SELECT  
+        city, 
+        host_id, 
+        total_revenue, 
+        total_bookings, 
+        ROW_NUMBER() OVER (PARTITION BY city ORDER BY total_revenue DESC) as 
+revenue_rank, 
+        RANK() OVER (PARTITION BY city ORDER BY total_revenue DESC) as 
+revenue_rank_with_ties, 
+        DENSE_RANK() OVER (PARTITION BY city ORDER BY total_revenue DESC) as 
+dense_revenue_rank 
+    FROM host_revenue 
+) 
+SELECT  
+    city, 
+    host_id, 
+    total_revenue, 
+    total_bookings, 
+    revenue_rank 
+FROM ranked_hosts 
+WHERE revenue_rank <= 3 
+ORDER BY city, revenue_rank; 
+ -- Simpler version without CTE: 
+SELECT * FROM ( 
+    SELECT  
+        l.city, 
+        b.host_id, 
+        SUM(b.total_paid) as total_revenue, 
+        COUNT(*) as booking_count, 
+        ROW_NUMBER() OVER (PARTITION BY l.city ORDER BY SUM(b.total_paid) DESC) as 
+rank 
+    FROM bookings b 
+    INNER JOIN listings l ON b.listing_id = l.listing_id 
+    GROUP BY l.city, b.host_id 
+) ranked 
+WHERE rank <= 3 
+ORDER BY city, rank; 
+ 
+Question 7: Window Functions - Running Totals -- Solution: 
+WITH daily_bookings AS ( 
+    SELECT  
+        DATE(booking_date) as booking_day, 
+        channel_source, 
+        COUNT(*) as daily_count 
+    FROM bookings 
+    WHERE booking_date >= CURRENT_DATE - INTERVAL '30 days' 
+    GROUP BY DATE(booking_date), channel_source 
+) 
+SELECT  
+    booking_day, 
+    channel_source, 
+    daily_count, 
+    SUM(daily_count) OVER ( 
+        PARTITION BY channel_source  
+        ORDER BY booking_day  
+        ROWS UNBOUNDED PRECEDING 
+    ) as cumulative_bookings, 
+    AVG(daily_count) OVER ( 
+        PARTITION BY channel_source  
+        ORDER BY booking_day  
+        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW 
+    ) as moving_avg_7day 
+FROM daily_bookings 
+ORDER BY channel_source, booking_day; 
+ -- Alternative with campaign budget utilization: 
+WITH daily_metrics AS ( 
+    SELECT  
+        DATE(b.booking_date) as booking_day, 
+        b.channel_source, 
+        COUNT(*) as daily_bookings, 
+        SUM(b.total_paid) as daily_revenue, 
+        MAX(mc.budget) as campaign_budget 
+    FROM bookings b 
+    LEFT JOIN marketing_campaigns mc 
+        ON b.channel_source = mc.channel_source 
+        AND DATE(b.booking_date) BETWEEN mc.start_date AND mc.end_date 
+    WHERE b.booking_date >= CURRENT_DATE - INTERVAL '30 days' 
+    GROUP BY DATE(b.booking_date), b.channel_source 
+) 
+SELECT  
+    booking_day, 
+    channel_source, 
+    daily_bookings, 
+    daily_revenue, 
+    SUM(daily_bookings) OVER (PARTITION BY channel_source ORDER BY booking_day) as 
+cumulative_bookings, 
+    SUM(daily_revenue) OVER (PARTITION BY channel_source ORDER BY booking_day) as 
+cumulative_revenue, 
+    campaign_budget, 
+    ROUND(100.0 * SUM(daily_revenue) OVER (PARTITION BY channel_source ORDER BY 
+booking_day) / campaign_budget, 2) as budget_utilization_pct 
+FROM daily_metrics 
+ORDER BY channel_source, booking_day; 
+ 
+Question 8: Complex Subquery with EXISTS -- Solution using NOT EXISTS: 
+SELECT  
+    h.host_id, 
+    COUNT(DISTINCT b.booking_id) as total_bookings, 
+    AVG(r.rating) as avg_rating 
+FROM hosts h 
+INNER JOIN bookings b ON h.host_id = b.host_id 
+LEFT JOIN reviews r ON b.booking_id = r.booking_id 
+WHERE NOT EXISTS ( 
+    SELECT 1 
+    FROM bookings b2 
+    INNER JOIN reviews r2 ON b2.booking_id = r2.booking_id 
+    WHERE b2.host_id = h.host_id 
+        AND r2.rating < 4 
+) 
+GROUP BY h.host_id 
+HAVING COUNT(DISTINCT b.booking_id) >= 10 
+ORDER BY avg_rating DESC, total_bookings DESC; 
+ -- Alternative using subquery in WHERE: 
+SELECT  
+    host_id, 
+    total_bookings, 
+    avg_rating, 
+    min_rating 
+FROM ( 
+    SELECT  
+        b.host_id, 
+        COUNT(DISTINCT b.booking_id) as total_bookings, 
+        AVG(r.rating) as avg_rating, 
+        MIN(r.rating) as min_rating 
+    FROM bookings b 
+    LEFT JOIN reviews r ON b.booking_id = r.booking_id 
+    GROUP BY b.host_id 
+    HAVING COUNT(DISTINCT b.booking_id) >= 10 
+) host_stats 
+WHERE min_rating >= 4 OR min_rating IS NULL  -- Include hosts with no reviews yet 
+ORDER BY avg_rating DESC, total_bookings DESC; 
+ 
+Question 9: Advanced Window Function - Lead/Lag -- Solution: 
+WITH pricing_analysis AS ( 
+    SELECT  
+        listing_id, 
+        date, 
+        price, 
+        available, 
+        LAG(price, 1) OVER (PARTITION BY listing_id ORDER BY date) as prev_price, 
+        LEAD(price, 1) OVER (PARTITION BY listing_id ORDER BY date) as next_price, 
+        -- Calculate 7-day occupancy rate 
+        AVG(CASE WHEN available = FALSE THEN 1 ELSE 0 END) OVER ( 
+            PARTITION BY listing_id  
+            ORDER BY date  
+            ROWS BETWEEN 3 PRECEDING AND 3 FOLLOWING 
+        ) as occupancy_rate_7day 
+    FROM listing_calendar 
+) 
+SELECT  
+    listing_id, 
+    date, 
+    price, 
+    prev_price, 
+    ROUND((price - prev_price) * 100.0 / prev_price, 2) as price_change_pct, 
+    ROUND(occupancy_rate_7day * 100, 2) as occupancy_pct, 
+    CASE  
+        WHEN (price - prev_price) * 100.0 / prev_price > 20 THEN 'Surge Pricing' 
+        WHEN (price - prev_price) * 100.0 / prev_price < -20 THEN 'Deep Discount' 
+        ELSE 'Normal' 
+    END as pricing_strategy 
+FROM pricing_analysis 
+WHERE prev_price IS NOT NULL 
+    AND (price - prev_price) * 100.0 / prev_price > 20  -- Filter for >20% increases 
+ORDER BY listing_id, date; 
+ -- Alternative with more insights: 
+WITH calendar_metrics AS ( 
+    SELECT  
+        listing_id, 
+        date, 
+        price, 
+        available, 
+        LAG(price, 1) OVER (PARTITION BY listing_id ORDER BY date) as prev_day_price, 
+        LAG(price, 7) OVER (PARTITION BY listing_id ORDER BY date) as prev_week_price, 
+        AVG(price) OVER ( 
+            PARTITION BY listing_id  
+            ORDER BY date  
+            ROWS BETWEEN 6 PRECEDING AND CURRENT ROW 
+        ) as avg_price_7day, 
+        SUM(CASE WHEN available = FALSE THEN 1 ELSE 0 END) OVER ( 
+            PARTITION BY listing_id  
+            ORDER BY date  
+            ROWS BETWEEN 6 PRECEDING AND CURRENT ROW 
+        ) * 100.0 / 7 as occupancy_rate_7day 
+    FROM listing_calendar 
+) 
+SELECT  
+    listing_id, 
+    date, 
+    price, 
+    prev_day_price, 
+    ROUND((price - prev_day_price) * 100.0 / NULLIF(prev_day_price, 0), 2) as 
+daily_price_change_pct, 
+    ROUND((price - prev_week_price) * 100.0 / NULLIF(prev_week_price, 0), 2) as 
+weekly_price_change_pct, 
+    ROUND(price - avg_price_7day, 2) as diff_from_7day_avg, 
+    ROUND(occupancy_rate_7day, 1) as occupancy_pct 
+FROM calendar_metrics 
+WHERE date >= CURRENT_DATE - INTERVAL '30 days' 
+    AND prev_day_price IS NOT NULL 
+ORDER BY listing_id, date DESC; 
+ 
+Question 10: Comprehensive Business Question -- Solution: 
+WITH user_cohorts AS ( 
+    -- Get users who signed up in Q1 2024 
+    SELECT  
+        user_id, 
+        acquisition_channel, 
+        signup_date, 
+        first_booking_date 
+    FROM users 
+    WHERE signup_date BETWEEN '2024-01-01' AND '2024-03-31' 
+), 
+channel_acquisitions AS ( 
+    -- Count acquisitions by channel 
+    SELECT  
+        acquisition_channel, 
+        COUNT(DISTINCT user_id) as users_acquired, 
+        COUNT(DISTINCT CASE WHEN first_booking_date IS NOT NULL THEN user_id END) as 
+users_with_bookings 
+    FROM user_cohorts 
+    GROUP BY acquisition_channel 
+), 
+channel_spending AS ( 
+    -- Calculate total spend by channel for Q1 2024 
+    SELECT  
+        channel, 
+        SUM(daily_spend) as total_spend 
+    FROM marketing_spend 
+    WHERE date BETWEEN '2024-01-01' AND '2024-03-31' 
+    GROUP BY channel 
+), 
+user_ltv AS ( 
+    -- Calculate LTV for each user 
+    SELECT  
+        u.user_id, 
+        u.acquisition_channel, 
+        COUNT(b.booking_id) as total_bookings, 
+        SUM(b.total_value) as lifetime_value 
+    FROM user_cohorts u 
+    LEFT JOIN bookings b 
+        ON u.user_id = b.user_id 
+        AND b.booking_status = 'completed' 
+    GROUP BY u.user_id, u.acquisition_channel 
+), 
+channel_ltv AS ( 
+    -- Average LTV by channel 
+    SELECT  
+        acquisition_channel, 
+        AVG(lifetime_value) as avg_ltv, 
+        PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY lifetime_value) as median_ltv, 
+        AVG(total_bookings) as avg_bookings_per_user 
+    FROM user_ltv 
+    GROUP BY acquisition_channel 
+), 
+final_metrics AS ( 
+    -- Combine all metrics 
+    SELECT  
+        ca.acquisition_channel, 
+        ca.users_acquired, 
+        ca.users_with_bookings, 
+        ROUND(100.0 * ca.users_with_bookings / ca.users_acquired, 2) as conversion_rate, 
+        cs.total_spend, 
+        ROUND(cs.total_spend / ca.users_acquired, 2) as cac, 
+        ROUND(cl.avg_ltv, 2) as avg_ltv, 
+        ROUND(cl.median_ltv, 2) as median_ltv, 
+        ROUND(cl.avg_ltv / NULLIF(cs.total_spend / ca.users_acquired, 0), 2) as ltv_cac_ratio, 
+        cl.avg_bookings_per_user 
+    FROM channel_acquisitions ca 
+    LEFT JOIN channel_spending cs ON ca.acquisition_channel = cs.channel 
+    LEFT JOIN channel_ltv cl ON ca.acquisition_channel = cl.acquisition_channel 
+) -- Final output with channels where LTV/CAC > 3 
+SELECT  
+    acquisition_channel, 
+    users_acquired, 
+    conversion_rate, 
+    cac, 
+    avg_ltv, 
+    median_ltv, 
+    ltv_cac_ratio, 
+    CASE  
+        WHEN ltv_cac_ratio > 3 THEN 'High Performance' 
+        WHEN ltv_cac_ratio > 2 THEN 'Good Performance' 
+        WHEN ltv_cac_ratio > 1 THEN 'Breaking Even' 
+        ELSE 'Underperforming' 
+    END as channel_status 
+FROM final_metrics 
+WHERE ltv_cac_ratio IS NOT NULL 
+ORDER BY ltv_cac_ratio DESC; 
+ -- Simpler version focusing on key metrics: 
+WITH q1_metrics AS ( 
+    SELECT  
+        u.acquisition_channel, 
+        COUNT(DISTINCT u.user_id) as users_acquired, 
+        SUM(ms.daily_spend) as total_spend, 
+        SUM(b.total_value) as total_revenue 
+    FROM users u 
+    LEFT JOIN bookings b  
+        ON u.user_id = b.user_id  
+        AND b.booking_status = 'completed' 
+    LEFT JOIN marketing_spend ms  
+        ON u.acquisition_channel = ms.channel  
+        AND ms.date BETWEEN '2024-01-01' AND '2024-03-31' 
+    WHERE u.signup_date BETWEEN '2024-01-01' AND '2024-03-31' 
+    GROUP BY u.acquisition_channel 
+) 
+SELECT  
+    acquisition_channel, 
+    users_acquired, 
+    ROUND(total_spend / NULLIF(users_acquired, 0), 2) as cac, 
+    ROUND(total_revenue / NULLIF(users_acquired, 0), 2) as avg_ltv, 
+    ROUND(total_revenue / NULLIF(total_spend, 0), 2) as roi 
+FROM q1_metrics 
+WHERE total_revenue / NULLIF(total_spend, 0) > 3 
+ORDER BY roi DESC; 
+ 
+Key Takeaways and Tips: 
+1. Always handle NULLs - Use COALESCE, NULLIF, or explicit NULL checks 
+2. Consider performance - CTEs are often more readable than nested subqueries 
+3. Window functions - Know when to use ROWS vs RANGE in window frames 
+4. Business context - Always think about what the metric means for Airbnb's business 
+5. Edge cases - Consider scenarios like new users with no bookings, hosts with no 
+reviews, etc. 
+Remember during the interview: 
+● Start with a simple version, then add complexity 
+● Explain your assumptions about the data 
+● Mention alternative approaches when relevant 
+● Think about query performance for large datasets 
+Comprehensive SQL Interview Questions 
+Guide 
+Table of Contents 
+1. Sample Database Schema 
+2. Basic SELECT Queries 
+3. Filtering and Conditional Logic 
+4. JOIN Operations 
+5. Aggregations and GROUP BY 
+6. Subqueries 
+7. Window Functions 
+8. Common Table Expressions (CTEs) 
+9. Data Modification 
+10. Advanced Patterns 
+Sample Database Schema 
+Let's work with a company database containing employees, departments, projects, and sales 
+data: 
+-- Employees table 
+CREATE TABLE employees ( 
+employee_id INT PRIMARY KEY, 
+f
+ irst_name VARCHAR(50), 
+last_name VARCHAR(50), 
+email VARCHAR(100), 
+phone_number VARCHAR(20), 
+hire_date DATE, 
+job_title VARCHAR(50), 
+salary DECIMAL(10, 2), 
+manager_id INT, 
+department_id INT 
+); -- Sample data 
+INSERT INTO employees VALUES 
+(1, 'John', 'Smith', 'john.smith@company.com', '555-0101', '2020-01-15', 'Software Engineer', 
+75000, 5, 1), 
+(2, 'Sarah', 'Johnson', 'sarah.j@company.com', '555-0102', '2019-03-22', 'Senior Software 
+Engineer', 95000, 5, 1), 
+(3, 'Michael', 'Brown', 'michael.b@company.com', '555-0103', '2021-06-01', 'Data Analyst', 
+65000, 6, 2), 
+(4, 'Emily', 'Davis', 'emily.d@company.com', '555-0104', '2020-09-15', 'Marketing Manager', 
+80000, 7, 3), 
+(5, 'David', 'Wilson', 'david.w@company.com', '555-0105', '2018-02-01', 'Engineering 
+Manager', 110000, NULL, 1), 
+(6, 'Lisa', 'Anderson', 'lisa.a@company.com', '555-0106', '2019-07-10', 'Analytics Manager', 
+95000, NULL, 2), 
+(7, 'James', 'Taylor', 'james.t@company.com', '555-0107', '2017-05-15', 'Marketing Director', 
+120000, NULL, 3), 
+(8, 'Jennifer', 'Martinez', 'jennifer.m@company.com', '555-0108', '2022-01-10', 'Junior 
+Developer', 60000, 2, 1), 
+(9, 'Robert', 'Lee', 'robert.l@company.com', '555-0109', '2021-11-01', 'Sales Representative', 
+55000, 10, 4), 
+(10, 'Maria', 'Garcia', 'maria.g@company.com', '555-0110', '2018-08-20', 'Sales Manager', 
+90000, NULL, 4); -- Departments table 
+CREATE TABLE departments ( 
+department_id INT PRIMARY KEY, 
+department_name VARCHAR(50), 
+location VARCHAR(100) 
+); 
+INSERT INTO departments VALUES 
+(1, 'Engineering', 'San Francisco'), 
+(2, 'Analytics', 'New York'), 
+(3, 'Marketing', 'Los Angeles'), 
+(4, 'Sales', 'Chicago'), 
+(5, 'HR', 'Boston'); -- Projects table 
+CREATE TABLE projects ( 
+project_id INT PRIMARY KEY, 
+project_name VARCHAR(100), 
+start_date DATE, 
+end_date DATE, 
+budget DECIMAL(12, 2) 
+); 
+INSERT INTO projects VALUES 
+(1, 'Mobile App Development', '2023-01-01', '2023-06-30', 500000), 
+(2, 'Data Warehouse Migration', '2023-03-15', '2023-09-15', 750000), 
+(3, 'Marketing Campaign Q2', '2023-04-01', '2023-06-30', 200000), 
+(4, 'Customer Portal', '2023-02-01', '2023-08-31', 600000); -- Employee_Projects table (many-to-many relationship) 
+CREATE TABLE employee_projects ( 
+employee_id INT, 
+project_id INT, 
+role VARCHAR(50), 
+hours_allocated INT, 
+PRIMARY KEY (employee_id, project_id) 
+); 
+INSERT INTO employee_projects VALUES 
+(1, 1, 'Developer', 500), 
+(1, 4, 'Developer', 300), 
+(2, 1, 'Lead Developer', 600), 
+(2, 2, 'Consultant', 200), 
+(3, 2, 'Data Analyst', 800), 
+(4, 3, 'Project Manager', 400), 
+(5, 1, 'Technical Lead', 300), 
+(8, 4, 'Developer', 700); -- Sales table 
+CREATE TABLE sales ( 
+sale_id INT PRIMARY KEY, 
+employee_id INT, 
+sale_date DATE, 
+amount DECIMAL(10, 2), 
+product_category VARCHAR(50) 
+); 
+INSERT INTO sales VALUES 
+(1, 9, '2023-01-15', 15000, 'Software'), 
+(2, 9, '2023-01-20', 8000, 'Services'), 
+(3, 10, '2023-01-22', 25000, 'Software'), 
+(4, 9, '2023-02-10', 12000, 'Hardware'), 
+(5, 10, '2023-02-15', 30000, 'Software'), 
+(6, 9, '2023-03-01', 18000, 'Services'), 
+(7, 10, '2023-03-10', 22000, 'Hardware'), 
+(8, 9, '2023-03-15', 9000, 'Software'); 
+Basic SELECT Queries 
+Question 1: Select all employees 
+Question: Retrieve all employee information from the employees table. 
+Answer: 
+SELECT * FROM employees; 
+Question 2: Select specific columns 
+Question: Get the first name, last name, and salary of all employees. 
+Answer: 
+SELECT first_name, last_name, salary  
+FROM employees; 
+Question 3: Using aliases 
+Question: Display employee names with their annual salary (use meaningful column aliases). 
+Answer: 
+SELECT  
+f
+ irst_name + ' ' + last_name AS full_name, 
+salary AS monthly_salary, 
+salary * 12 AS annual_salary 
+FROM employees; -- For MySQL/PostgreSQL use CONCAT: 
+SELECT  
+CONCAT(first_name, ' ', last_name) AS full_name, 
+salary AS monthly_salary, 
+salary * 12 AS annual_salary 
+FROM employees; 
+Question 4: DISTINCT values 
+Question: Find all unique job titles in the company. 
+Answer: 
+SELECT DISTINCT job_title  
+FROM employees 
+ORDER BY job_title; 
+Filtering and Conditional Logic 
+Question 5: WHERE clause 
+Question: Find all employees earning more than $80,000. 
+Answer: 
+SELECT first_name, last_name, salary 
+FROM employees 
+WHERE salary > 80000 
+ORDER BY salary DESC; 
+Question 6: Multiple conditions 
+Question: Find employees in the Engineering department (id=1) earning between $70,000 and 
+$100,000. 
+Answer: 
+SELECT first_name, last_name, salary, department_id 
+FROM employees 
+WHERE department_id = 1  
+AND salary BETWEEN 70000 AND 100000 
+ORDER BY salary; 
+Question 7: Pattern matching with LIKE 
+Question: Find all employees whose email starts with 'j'. 
+Answer: 
+SELECT first_name, last_name, email 
+FROM employees 
+WHERE email LIKE 'j%'; 
+Question 8: IN operator 
+Question: Find employees who are either managers or directors. 
+Answer: 
+SELECT first_name, last_name, job_title 
+FROM employees 
+WHERE job_title IN ('Engineering Manager', 'Marketing Director', 'Sales Manager', 'Analytics 
+Manager') 
+ORDER BY job_title; 
+Question 9: NULL handling 
+Question: Find all employees who don't have a manager (top-level employees). 
+Answer: 
+SELECT first_name, last_name, job_title 
+FROM employees 
+WHERE manager_id IS NULL; 
+Question 10: CASE statements 
+Question: Categorize employees by salary ranges. 
+Answer: 
+SELECT  
+f
+ irst_name, 
+last_name, 
+salary, 
+    CASE  
+        WHEN salary < 60000 THEN 'Entry Level' 
+        WHEN salary BETWEEN 60000 AND 80000 THEN 'Mid Level' 
+        WHEN salary BETWEEN 80001 AND 100000 THEN 'Senior Level' 
+        ELSE 'Executive Level' 
+    END AS salary_category 
+FROM employees 
+ORDER BY salary; 
+ 
+ 
+JOIN Operations 
+Question 11: INNER JOIN 
+Question: List all employees with their department names. 
+Answer: 
+SELECT  
+    e.first_name, 
+    e.last_name, 
+    e.job_title, 
+    d.department_name, 
+    d.location 
+FROM employees e 
+INNER JOIN departments d ON e.department_id = d.department_id 
+ORDER BY d.department_name, e.last_name; 
+ 
+Question 12: LEFT JOIN 
+Question: Show all departments and their employees (including departments with no 
+employees). 
+Answer: 
+SELECT  
+d.department_name, 
+d.location, 
+e.first_name, 
+e.last_name 
+FROM departments d 
+LEFT JOIN employees e ON d.department_id = e.department_id 
+ORDER BY d.department_name, e.last_name; 
+Question 13: Self JOIN 
+Question: List all employees with their manager's name. 
+Answer: 
+SELECT  
+e.first_name + ' ' + e.last_name AS employee_name, 
+e.job_title, 
+m.first_name + ' ' + m.last_name AS manager_name 
+FROM employees e 
+LEFT JOIN employees m ON e.manager_id = m.employee_id 
+ORDER BY manager_name, employee_name; 
+Question 14: Multiple JOINs 
+Question: Show employees with their department and project information. 
+Answer: 
+SELECT  
+    e.first_name, 
+    e.last_name, 
+    d.department_name, 
+    p.project_name, 
+    ep.role, 
+    ep.hours_allocated 
+FROM employees e 
+INNER JOIN departments d ON e.department_id = d.department_id 
+INNER JOIN employee_projects ep ON e.employee_id = ep.employee_id 
+INNER JOIN projects p ON ep.project_id = p.project_id 
+ORDER BY e.last_name, p.project_name; 
+ 
+Question 15: FULL OUTER JOIN (or simulation) 
+Question: Find all employees and all departments, showing matches where they exist. 
+Answer: -- For databases supporting FULL OUTER JOIN: 
+SELECT  
+    e.first_name, 
+    e.last_name, 
+    d.department_name 
+FROM employees e 
+FULL OUTER JOIN departments d ON e.department_id = d.department_id; 
+ -- For MySQL (doesn't support FULL OUTER JOIN): 
+SELECT  
+    e.first_name, 
+e.last_name, 
+d.department_name 
+FROM employees e 
+LEFT JOIN departments d ON e.department_id = d.department_id 
+UNION 
+SELECT  
+e.first_name, 
+e.last_name, 
+d.department_name 
+FROM employees e 
+RIGHT JOIN departments d ON e.department_id = d.department_id; 
+Aggregations and GROUP BY 
+Question 16: Basic aggregation 
+Question: Find the average, minimum, and maximum salary in the company. 
+Answer: 
+SELECT  
+AVG(salary) AS avg_salary, 
+MIN(salary) AS min_salary, 
+MAX(salary) AS max_salary, 
+COUNT(*) AS total_employees 
+FROM employees; 
+Question 17: GROUP BY with COUNT 
+Question: Count the number of employees in each department. 
+Answer: 
+SELECT  
+d.department_name, 
+COUNT(e.employee_id) AS employee_count 
+FROM departments d 
+LEFT JOIN employees e ON d.department_id = e.department_id 
+GROUP BY d.department_id, d.department_name 
+ORDER BY employee_count DESC; 
+Question 18: GROUP BY with HAVING 
+Question: Find departments with average salary above $80,000. 
+Answer: 
+SELECT  
+d.department_name, 
+AVG(e.salary) AS avg_salary, 
+COUNT(e.employee_id) AS employee_count 
+FROM departments d 
+INNER JOIN employees e ON d.department_id = e.department_id 
+GROUP BY d.department_id, d.department_name 
+HAVING AVG(e.salary) > 80000 
+ORDER BY avg_salary DESC; 
+Question 19: Multiple aggregations 
+Question: For each department, show total salary expense and average salary. 
+Answer: 
+SELECT  
+d.department_name, 
+COUNT(e.employee_id) AS num_employees, 
+SUM(e.salary) AS total_salary_expense, 
+AVG(e.salary) AS average_salary, 
+MIN(e.salary) AS min_salary, 
+MAX(e.salary) AS max_salary 
+FROM departments d 
+LEFT JOIN employees e ON d.department_id = e.department_id 
+GROUP BY d.department_id, d.department_name 
+ORDER BY total_salary_expense DESC; 
+Question 20: GROUP BY with multiple columns 
+Question: Find the number of employees by department and job title. 
+Answer: 
+SELECT  
+d.department_name, 
+e.job_title, 
+COUNT(*) AS employee_count, 
+AVG(e.salary) AS avg_salary 
+FROM employees e 
+INNER JOIN departments d ON e.department_id = d.department_id 
+GROUP BY d.department_name, e.job_title 
+ORDER BY d.department_name, employee_count DESC; 
+Subqueries 
+Question 21: Subquery in WHERE clause 
+Question: Find employees who earn more than the average salary. 
+Answer: 
+SELECT  
+    first_name, 
+    last_name, 
+    salary 
+FROM employees 
+WHERE salary > (SELECT AVG(salary) FROM employees) 
+ORDER BY salary DESC; 
+ 
+Question 22: Subquery with IN 
+Question: Find employees who work on projects with budget over $600,000. 
+Answer: 
+SELECT DISTINCT 
+    e.first_name, 
+    e.last_name 
+FROM employees e 
+WHERE e.employee_id IN ( 
+    SELECT ep.employee_id 
+    FROM employee_projects ep 
+    INNER JOIN projects p ON ep.project_id = p.project_id 
+    WHERE p.budget > 600000 
+) 
+ORDER BY e.last_name; 
+ 
+Question 23: Correlated subquery 
+Question: Find employees who earn more than the average salary in their department. 
+Answer: 
+SELECT  
+    e1.first_name, 
+    e1.last_name, 
+    e1.salary, 
+    e1.department_id 
+FROM employees e1 
+WHERE e1.salary > ( 
+    SELECT AVG(e2.salary) 
+    FROM employees e2 
+    WHERE e2.department_id = e1.department_id 
+) 
+ORDER BY e1.department_id, e1.salary DESC; 
+ 
+Question 24: EXISTS clause 
+Question: Find departments that have at least one employee earning over $100,000. 
+Answer: 
+SELECT  
+    d.department_name, 
+    d.location 
+FROM departments d 
+WHERE EXISTS ( 
+    SELECT 1 
+    FROM employees e 
+    WHERE e.department_id = d.department_id 
+      AND e.salary > 100000 
+); 
+ 
+Question 25: Subquery in SELECT clause 
+Question: Show each employee with their department's average salary. 
+Answer: 
+SELECT  
+    e.first_name, 
+    e.last_name, 
+    e.salary, 
+    (SELECT AVG(salary)  
+     FROM employees e2  
+     WHERE e2.department_id = e.department_id) AS dept_avg_salary, 
+    e.salary - (SELECT AVG(salary)  
+                FROM employees e2  
+                WHERE e2.department_id = e.department_id) AS salary_diff 
+FROM employees e 
+ORDER BY e.department_id, salary_diff DESC; 
+ 
+ 
+Window Functions 
+Question 26: ROW_NUMBER() 
+Question: Rank employees by salary within each department. 
+Answer: 
+SELECT  
+    first_name, 
+    last_name, 
+    department_id, 
+    salary, 
+    ROW_NUMBER() OVER (PARTITION BY department_id ORDER BY salary DESC) AS 
+salary_rank 
+FROM employees 
+ORDER BY department_id, salary_rank; 
+ 
+Question 27: RANK() vs DENSE_RANK() 
+Question: Show the difference between RANK and DENSE_RANK for employee salaries. 
+Answer: 
+SELECT  
+    first_name, 
+    last_name, 
+    salary, 
+    RANK() OVER (ORDER BY salary DESC) AS rank, 
+    DENSE_RANK() OVER (ORDER BY salary DESC) AS dense_rank, 
+    ROW_NUMBER() OVER (ORDER BY salary DESC) AS row_num 
+FROM employees 
+ORDER BY salary DESC; 
+ 
+Question 28: Running totals 
+Question: Calculate running total of sales by date. 
+Answer: 
+SELECT  
+    sale_date, 
+    employee_id, 
+    amount, 
+    SUM(amount) OVER (ORDER BY sale_date) AS running_total, 
+    SUM(amount) OVER (PARTITION BY employee_id ORDER BY sale_date) AS 
+running_total_by_employee 
+FROM sales 
+ORDER BY sale_date; 
+ 
+Question 29: LAG and LEAD 
+Question: Compare each sale with the previous and next sale. 
+Answer: 
+SELECT  
+    sale_id, 
+    sale_date, 
+    amount, 
+    LAG(amount, 1) OVER (ORDER BY sale_date) AS previous_sale, 
+    LEAD(amount, 1) OVER (ORDER BY sale_date) AS next_sale, 
+    amount - LAG(amount, 1) OVER (ORDER BY sale_date) AS diff_from_previous 
+FROM sales 
+ORDER BY sale_date; 
+ 
+Question 30: Moving averages 
+Question: Calculate 3-month moving average of sales. 
+Answer: 
+SELECT  
+    sale_date, 
+    amount, 
+    AVG(amount) OVER ( 
+        ORDER BY sale_date  
+        ROWS BETWEEN 2 PRECEDING AND CURRENT ROW 
+    ) AS moving_avg_3 
+FROM sales 
+ORDER BY sale_date; 
+ 
+Question 31: NTILE 
+Question: Divide employees into salary quartiles. 
+Answer: 
+SELECT  
+    first_name, 
+    last_name, 
+    salary, 
+    NTILE(4) OVER (ORDER BY salary) AS salary_quartile 
+FROM employees 
+ORDER BY salary; 
+ 
+ 
+Common Table Expressions (CTEs) 
+Question 32: Basic CTE 
+Question: Use a CTE to find high-earning employees (top 25%). 
+Answer: 
+WITH salary_stats AS ( 
+    SELECT  
+        PERCENTILE_CONT(0.75) WITHIN GROUP (ORDER BY salary) AS percentile_75 
+    FROM employees 
+) 
+SELECT  
+    e.first_name, 
+    e.last_name, 
+    e.salary 
+FROM employees e, salary_stats s 
+WHERE e.salary >= s.percentile_75 
+ORDER BY e.salary DESC; 
+ -- Alternative using subquery for databases without PERCENTILE_CONT: 
+WITH salary_ranked AS ( 
+    SELECT  
+        first_name, 
+        last_name, 
+        salary, 
+        NTILE(4) OVER (ORDER BY salary DESC) AS quartile 
+    FROM employees 
+) 
+SELECT  
+    first_name, 
+    last_name, 
+    salary 
+FROM salary_ranked 
+WHERE quartile = 1 
+ORDER BY salary DESC; 
+ 
+Question 33: Multiple CTEs 
+Question: Calculate department statistics and identify departments above average. 
+Answer: 
+WITH dept_stats AS ( 
+    SELECT  
+        department_id, 
+        COUNT(*) AS employee_count, 
+        AVG(salary) AS avg_salary, 
+        SUM(salary) AS total_salary 
+    FROM employees 
+    GROUP BY department_id 
+), 
+company_avg AS ( 
+    SELECT AVG(avg_salary) AS overall_avg_salary 
+    FROM dept_stats 
+) 
+SELECT  
+    d.department_name, 
+    ds.employee_count, 
+    ds.avg_salary, 
+    ca.overall_avg_salary, 
+    ds.avg_salary - ca.overall_avg_salary AS diff_from_company_avg 
+FROM dept_stats ds 
+CROSS JOIN company_avg ca 
+INNER JOIN departments d ON ds.department_id = d.department_id 
+WHERE ds.avg_salary > ca.overall_avg_salary 
+ORDER BY diff_from_company_avg DESC; 
+ 
+Question 34: Recursive CTE 
+Question: Build an employee hierarchy tree showing reporting structure. 
+Answer: 
+WITH RECURSIVE emp_hierarchy AS ( 
+    -- Anchor: top-level employees 
+    SELECT  
+        employee_id, 
+        first_name, 
+        last_name, 
+        manager_id, 
+        job_title, 
+        0 AS level, 
+        CAST(employee_id AS VARCHAR(200)) AS path 
+    FROM employees 
+    WHERE manager_id IS NULL 
+     
+    UNION ALL 
+     
+    -- Recursive part 
+    SELECT  
+        e.employee_id, 
+        e.first_name, 
+        e.last_name, 
+        e.manager_id, 
+        e.job_title, 
+        h.level + 1, 
+        CONCAT(h.path, '->', e.employee_id) 
+    FROM employees e 
+    INNER JOIN emp_hierarchy h ON e.manager_id = h.employee_id 
+) 
+SELECT  
+    level, 
+    REPEAT('  ', level) || first_name || ' ' || last_name AS employee_name, 
+    job_title, 
+    path 
+FROM emp_hierarchy 
+ORDER BY path; 
+ 
+ 
+Data Modification 
+Question 35: INSERT with SELECT 
+Question: Create a backup of high-salary employees. 
+Answer: -- First create the backup table 
+CREATE TABLE high_earners_backup AS 
+SELECT * FROM employees WHERE 1=0; -- Structure only 
+ -- Insert high earners 
+INSERT INTO high_earners_backup 
+SELECT *  
+FROM employees 
+WHERE salary > 90000; 
+Question 36: UPDATE with JOIN 
+Question: Give a 10% raise to all employees in the Engineering department. 
+Answer: 
+UPDATE employees e 
+SET e.salary = e.salary * 1.10 
+WHERE e.department_id IN ( 
+SELECT department_id  
+FROM departments  
+WHERE department_name = 'Engineering' 
+); -- Alternative with JOIN (MySQL syntax): 
+UPDATE employees e 
+INNER JOIN departments d ON e.department_id = d.department_id 
+SET e.salary = e.salary * 1.10 
+WHERE d.department_name = 'Engineering'; 
+Question 37: DELETE with subquery 
+Question: Delete employees who haven't been assigned to any projects. 
+Answer: 
+DELETE FROM employees 
+WHERE employee_id NOT IN ( 
+SELECT DISTINCT employee_id  
+FROM employee_projects 
+); 
+ -- Alternative using NOT EXISTS: 
+DELETE FROM employees e 
+WHERE NOT EXISTS ( 
+    SELECT 1  
+    FROM employee_projects ep  
+    WHERE ep.employee_id = e.employee_id 
+); 
+ 
+Question 38: MERGE/UPSERT 
+Question: Update or insert employee records based on a staging table. 
+Answer: -- SQL Server / Oracle MERGE syntax: 
+MERGE employees AS target 
+USING staging_employees AS source 
+ON target.employee_id = source.employee_id 
+WHEN MATCHED THEN 
+    UPDATE SET  
+        target.salary = source.salary, 
+        target.job_title = source.job_title 
+WHEN NOT MATCHED THEN 
+    INSERT (employee_id, first_name, last_name, salary, job_title) 
+    VALUES (source.employee_id, source.first_name, source.last_name,  
+            source.salary, source.job_title); 
+ -- MySQL UPSERT: 
+INSERT INTO employees (employee_id, first_name, last_name, salary) 
+VALUES (1, 'John', 'Smith', 80000) 
+ON DUPLICATE KEY UPDATE 
+salary = VALUES(salary); -- PostgreSQL UPSERT: 
+INSERT INTO employees (employee_id, first_name, last_name, salary) 
+VALUES (1, 'John', 'Smith', 80000) 
+ON CONFLICT (employee_id) DO UPDATE 
+SET salary = EXCLUDED.salary; 
+Advanced Patterns 
+Question 39: Finding duplicates 
+Question: Find duplicate email addresses in the employees table. 
+Answer: -- Method 1: Using GROUP BY and HAVING 
+SELECT  
+email, 
+COUNT(*) AS duplicate_count 
+FROM employees 
+GROUP BY email 
+HAVING COUNT(*) > 1; -- Method 2: Using Window Functions 
+WITH email_counts AS ( 
+    SELECT  
+        *, 
+        COUNT(*) OVER (PARTITION BY email) AS email_count 
+    FROM employees 
+) 
+SELECT * 
+FROM email_counts 
+WHERE email_count > 1 
+ORDER BY email, employee_id; 
+ 
+Question 40: Gaps and Islands 
+Question: Find gaps in employee IDs. 
+Answer: 
+WITH id_gaps AS ( 
+    SELECT  
+        employee_id, 
+        LEAD(employee_id) OVER (ORDER BY employee_id) AS next_id 
+    FROM employees 
+) 
+SELECT  
+    employee_id + 1 AS gap_start, 
+    next_id - 1 AS gap_end 
+FROM id_gaps 
+WHERE next_id - employee_id > 1; 
+ 
+Question 41: Pivot table 
+Question: Create a pivot table showing employee count by department and job title. 
+Answer: -- Using CASE statements (works in all databases): 
+SELECT  
+    job_title, 
+    SUM(CASE WHEN department_id = 1 THEN 1 ELSE 0 END) AS Engineering, 
+    SUM(CASE WHEN department_id = 2 THEN 1 ELSE 0 END) AS Analytics, 
+    SUM(CASE WHEN department_id = 3 THEN 1 ELSE 0 END) AS Marketing, 
+    SUM(CASE WHEN department_id = 4 THEN 1 ELSE 0 END) AS Sales 
+FROM employees 
+GROUP BY job_title; 
+ -- SQL Server PIVOT syntax: 
+SELECT * 
+FROM ( 
+    SELECT job_title, department_id 
+    FROM employees 
+) AS source_table 
+PIVOT ( 
+    COUNT(department_id) 
+    FOR department_id IN ([1], [2], [3], [4]) 
+) AS pivot_table; 
+ 
+Question 42: Cumulative percentage 
+Question: Calculate cumulative percentage of total salary by employee. 
+Answer: 
+WITH salary_ordered AS ( 
+    SELECT  
+        first_name, 
+        last_name, 
+        salary, 
+        SUM(salary) OVER (ORDER BY salary DESC) AS cumulative_salary, 
+        SUM(salary) OVER () AS total_salary 
+    FROM employees 
+) 
+SELECT  
+    first_name, 
+    last_name, 
+    salary, 
+    cumulative_salary, 
+    ROUND(100.0 * cumulative_salary / total_salary, 2) AS cumulative_percentage 
+FROM salary_ordered 
+ORDER BY salary DESC; 
+ 
+Question 43: Top N per group 
+Question: Find the top 2 highest-paid employees in each department. 
+Answer: -- Using ROW_NUMBER() 
+WITH ranked_employees AS ( 
+    SELECT  
+        e.*, 
+        d.department_name, 
+        ROW_NUMBER() OVER (PARTITION BY e.department_id ORDER BY e.salary DESC) AS 
+rank 
+    FROM employees e 
+    INNER JOIN departments d ON e.department_id = d.department_id 
+) 
+SELECT  
+    department_name, 
+    first_name, 
+    last_name, 
+    salary, 
+    rank 
+FROM ranked_employees 
+WHERE rank <= 2 
+ORDER BY department_name, rank; 
+ 
+Question 44: Year-over-Year comparison 
+Question: Compare monthly sales with the same month from the previous year. 
+Answer: 
+WITH monthly_sales AS ( 
+    SELECT  
+        DATE_FORMAT(sale_date, '%Y-%m') AS month, 
+        SUM(amount) AS total_sales 
+    FROM sales 
+    GROUP BY DATE_FORMAT(sale_date, '%Y-%m') 
+), 
+yoy_comparison AS ( 
+    SELECT  
+        month, 
+        total_sales, 
+        LAG(total_sales, 12) OVER (ORDER BY month) AS prev_year_sales 
+    FROM monthly_sales 
+) 
+SELECT  
+    month, 
+    total_sales, 
+    prev_year_sales, 
+    ROUND(100.0 * (total_sales - prev_year_sales) / prev_year_sales, 2) AS yoy_growth_percent 
+FROM yoy_comparison 
+WHERE prev_year_sales IS NOT NULL; 
+ 
+Question 45: Finding consecutive records 
+Question: Find employees hired on consecutive days. 
+Answer: 
+WITH consecutive_hires AS ( 
+    SELECT  
+        e1.first_name AS emp1_first, 
+        e1.last_name AS emp1_last, 
+        e1.hire_date AS emp1_hire_date, 
+        e2.first_name AS emp2_first, 
+        e2.last_name AS emp2_last, 
+        e2.hire_date AS emp2_hire_date 
+    FROM employees e1 
+    INNER JOIN employees e2  
+        ON e2.hire_date = DATE_ADD(e1.hire_date, INTERVAL 1 DAY) 
+) 
+SELECT * FROM consecutive_hires 
+ORDER BY emp1_hire_date; 
+ 
+Question 46: Hierarchical queries 
+Question: Show the complete reporting chain for each employee. 
+Answer: 
+WITH RECURSIVE reporting_chain AS ( 
+    SELECT  
+        e.employee_id, 
+        e.first_name, 
+        e.last_name, 
+        e.manager_id, 
+        e.first_name || ' ' || e.last_name AS reporting_chain, 
+        1 AS chain_level 
+    FROM employees e 
+     
+    UNION ALL 
+     
+    SELECT  
+        rc.employee_id, 
+        rc.first_name, 
+        rc.last_name, 
+        e.manager_id, 
+        e.first_name || ' ' || e.last_name || ' -> ' || rc.reporting_chain AS reporting_chain, 
+        rc.chain_level + 1 
+    FROM reporting_chain rc 
+    INNER JOIN employees e ON rc.manager_id = e.employee_id 
+    WHERE e.manager_id IS NOT NULL 
+) 
+SELECT  
+    employee_id, 
+    first_name || ' ' || last_name AS employee_name, 
+    reporting_chain, 
+    chain_level 
+FROM reporting_chain 
+WHERE manager_id IS NULL 
+ORDER BY employee_id; 
+ 
+Question 47: Data validation queries 
+Question: Find data quality issues in the employees table. 
+Answer: -- Check for various data quality issues 
+WITH data_issues AS ( 
+    -- Check for null values in required fields 
+    SELECT 'NULL in required field' AS issue_type, COUNT(*) AS issue_count 
+    FROM employees 
+    WHERE first_name IS NULL OR last_name IS NULL OR email IS NULL 
+     
+    UNION ALL 
+     
+    -- Check for duplicate emails 
+    SELECT 'Duplicate email' AS issue_type, COUNT(*) - COUNT(DISTINCT email) AS 
+issue_count 
+    FROM employees 
+     
+    UNION ALL 
+     
+    -- Check for invalid salary values 
+    SELECT 'Invalid salary' AS issue_type, COUNT(*) AS issue_count 
+    FROM employees 
+    WHERE salary <= 0 OR salary > 1000000 
+     
+    UNION ALL 
+     
+    -- Check for future hire dates 
+    SELECT 'Future hire date' AS issue_type, COUNT(*) AS issue_count 
+    FROM employees 
+    WHERE hire_date > CURRENT_DATE 
+     
+    UNION ALL 
+     
+    -- Check for employees reporting to themselves 
+    SELECT 'Self-reporting' AS issue_type, COUNT(*) AS issue_count 
+    FROM employees 
+    WHERE employee_id = manager_id 
+) 
+SELECT * FROM data_issues 
+WHERE issue_count > 0; 
+ 
+Question 48: Complex date calculations 
+Question: Calculate employee tenure and categorize by experience level. 
+Answer: 
+SELECT  
+    first_name, 
+    last_name, 
+    hire_date, 
+    DATEDIFF(CURRENT_DATE, hire_date) AS days_employed, 
+    FLOOR(DATEDIFF(CURRENT_DATE, hire_date) / 365.25) AS years_employed, 
+    FLOOR((DATEDIFF(CURRENT_DATE, hire_date) % 365.25) / 30) AS months_employed, 
+    CASE  
+        WHEN DATEDIFF(CURRENT_DATE, hire_date) < 365 THEN 'New Employee (<1 year)' 
+        WHEN DATEDIFF(CURRENT_DATE, hire_date) < 365 * 3 THEN 'Junior (1-3 years)' 
+        WHEN DATEDIFF(CURRENT_DATE, hire_date) < 365 * 5 THEN 'Mid-level (3-5 years)' 
+        ELSE 'Senior (5+ years)' 
+    END AS experience_level 
+FROM employees 
+ORDER BY days_employed DESC; 
+ 
+Question 49: String manipulation 
+Question: Parse and clean employee email addresses. 
+Answer: 
+SELECT  
+    email, 
+    SUBSTRING_INDEX(email, '@', 1) AS username, 
+    SUBSTRING_INDEX(email, '@', -1) AS domain, 
+    UPPER(LEFT(first_name, 1)) || LOWER(SUBSTRING(first_name, 2)) AS proper_first_name, 
+    LENGTH(email) - LENGTH(REPLACE(email, '.', '')) AS dot_count, 
+    CASE  
+        WHEN email REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'  
+        THEN 'Valid'  
+ELSE 'Invalid'  
+END AS email_validation 
+FROM employees; 
+Question 50: Performance optimization patterns 
+Question: Rewrite this inefficient query to find employees not assigned to projects. 
+Inefficient Query: 
+SELECT * FROM employees  
+WHERE employee_id NOT IN (SELECT employee_id FROM employee_projects); 
+Optimized Answer: -- Method 1: Using NOT EXISTS (typically fastest) 
+SELECT e.* 
+FROM employees e 
+WHERE NOT EXISTS ( 
+SELECT 1  
+FROM employee_projects ep  
+WHERE ep.employee_id = e.employee_id 
+); -- Method 2: Using LEFT JOIN 
+SELECT e.* 
+FROM employees e 
+LEFT JOIN employee_projects ep ON e.employee_id = ep.employee_id 
+WHERE ep.employee_id IS NULL; -- Method 3: Using EXCEPT (PostgreSQL/SQL Server) 
+SELECT employee_id, first_name, last_name 
+FROM employees 
+EXCEPT 
+SELECT e.employee_id, e.first_name, e.last_name 
+FROM employees e 
+INNER JOIN employee_projects ep ON e.employee_id = ep.employee_id; 
+Common Interview Patterns to Remember 
+1. Ranking Patterns 
+● ROW_NUMBER(): Unique ranking 
+● RANK(): Allows ties, skips numbers 
+● DENSE_RANK(): Allows ties, no gaps 
+● NTILE(): Divides into buckets 
+2. Comparison Patterns 
+● Self-joins for comparing rows 
+● LAG/LEAD for sequential comparisons 
+● Correlated subqueries for group comparisons 
+3. Aggregation Patterns 
+● GROUP BY for summaries 
+● Window functions for running totals 
+● CTEs for multi-level aggregations 
+4. Data Quality Patterns 
+● Finding duplicates 
+● Identifying NULL values 
+● Data validation checks 
+● Consistency checks across tables 
+5. Performance Patterns 
+● EXISTS vs IN for better performance 
+● Proper indexing considerations 
+● Avoiding SELECT * 
+● Using appropriate JOIN types 
+6. Date/Time Patterns 
+● Date arithmetic 
+● Extracting date parts 
+● Period-over-period comparisons 
+● Finding gaps in date sequences 
+Key Tips for Interviews: 
+1. Always clarify requirements before writing SQL 
+2. Consider edge cases (NULLs, duplicates, empty results) 
+3. Think about performance for large datasets 
+4. Use CTEs for readability in complex queries 
+5. Test with sample data mentally as you write 
+6. Know the differences between database systems (MySQL vs PostgreSQL vs SQL 
+Server) 
+7. Practice explaining your approach while coding 

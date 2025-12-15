@@ -1,0 +1,506 @@
+SQL Interview Questions
+1 What is the difference between SQL and MySQL?
+2 What are the different subsets of SQL?
+3 What do you mean by DBMS? What are its different types?
+4 What do you mean by table and field in SQL?
+5 What are joins in SQL?
+6 What is the difference between CHAR and VARCHAR2 datatype in SQL?
+7 What is the Primary key?
+8 What are Constraints?
+9 What is the difference between DELETE and TRUNCATE statements?
+10 What is a Unique key?
+Basic SQL Interview Questions
+Q1. What is the difference between SQL and MySQL?
+SQL vs MySQL
+SQLMySQLSQL is a standard language which stands for Structured Query Language based on the English languageMySQL is a database management system. SQL is the core of the relational database which is used for accessing and managing database
+MySQL is an RDMS (Relational Database Management System) such as SQL Server, Informix etc.
+Q2. What are the different subsets of SQL?
+1 Data Definition Language (DDL) – It allows you to perform various operations on the database such as CREATE, ALTER, and DELETE objects.
+2 Data Manipulation Language(DML) – It allows you to access and manipulate data. It helps you to insert, update, delete and retrieve data from the database.
+3 Data Control Language(DCL) – It allows you to control access to the database. Example – Grant and Revoke access permissions.
+Q3. What do you mean by DBMS? What are its different types?
+A Database Management System (DBMS) is a software application that interacts with the user, applications, and the database itself to capture and analyze data. A database is a structured collection of data.
+A DBMS allows a user to interact with the database. The data stored in the database can be modified, retrieved and deleted and can be of any type like strings, numbers, images, etc.
+There are two types of DBMS:
+1 Relational Database Management System: The data is stored in relations (tables). Example – MySQL.
+2 Non-Relational Database Management System: There is no concept of relations, tuples and attributes. Example – MongoDB
+Let’s move to the next question in this SQL Interview Questions.
+Q4. What is RDBMS? How is it different from DBMS?
+A relational database management system (RDBMS) is a set of applications and features that allow IT professionals and others to develop, edit, administer, and interact with relational databases. Most commercial relational database management systems use Structured Query Language (SQL) to access the database, which is stored in the form of tables. RDBMS is the most widely used database system in businesses all over the world. It offers a stable means of storing and retrieving massive amounts of data.
+Databases, in general, hold collections of data that may be accessed and used in other applications. The development, administration, and use of database platforms are all supported by a database management system.
+A relational database management system (RDBMS) is a type of database management system (DBMS) that stores data in a row-based table structure that links related data components. An RDBMS contains functions that ensure the data’s security, accuracy, integrity, and consistency. This is not the same as the file storage utilized by a database management system.
+The following are some further distinctions between database management systems and relational database management systems:
+Number of users who are permitted to utilise the system DBMS can only handle one user at a time, whereas an RDBMS can handle numerous users. Hardware and software specifications In comparison to an RDBMS, a DBMS requires less software and hardware. Amount of information RDBMSes can handle any quantity of data, from tiny to enormous, whereas DBMSes are limited to small amounts. The structure of the database Data is stored in a hierarchical format in a DBMS, whereas an RDBMS uses a table with headers that serve as column names and rows that hold the associated values. Implementation of the ACID principle The atomicity, consistency, isolation, and durability (ACID) concept is not used by DBMSs for data storage. RDBMSes, on the other hand, use the ACID model to organize their data and ensure consistency. Databases that are distributed DBMS will not provide complete support for distributed databases, whereas RDBMS will. Programs that are managed DBMS focuses on keeping databases that are present within the computer network and system hard discs, whereas an RDBMS helps manage relationships between its incorporated tables of data. Normalization of databases is supported RDBMS can be normalized , but a DBMS cannot be normalized.
+Q5. What is a Self-Join?
+Self-join is a type of join that can be used to connect two tables. As a result, it is a unary relationship. Each row of the table is attached to itself and all other rows of the same table in a self-join. As a result, self-joining is mostly used to combine and compare rows from the same database table.
+Q6. What is the SELECT statement?
+The SELECT command gets zero or more rows from one or more database tables or views. SELECT the most frequent data manipulation language (DML) command in most applications. SELECT queries define a result set, but not how to calculate it, because SQL is a declarative programming language.
+Q7. What are some common clauses used with SELECT query in SQL?
+The following are some frequent SQL clauses used in conjunction with a SELECT query:
+WHERE clause: In SQL, the WHERE clause is used to filter records that are required depending on certain criteria. ORDER BY clause: The ORDER BY clause in SQL is used to sort data in ascending (ASC) or descending (DESC) order depending on specified field(s) (DESC). GROUP BY clause: GROUP BY clause in SQL is used to group entries with identical data and may be used with aggregation methods to obtain summarised database results. HAVING clause in SQL is used to filter records in combination with the GROUP BY clause. It is different from WHERE, since the WHERE clause cannot filter aggregated records.
+Q8. What are UNION, MINUS and INTERSECT commands?
+The UNION operator is used to combine the results of two tables while also removing duplicate entries. The MINUS operator is used to return rows from the first query but not from the second query. The INTERSECT operator is used to combine the results of both queries into a single row. Before running either of the above SQL statements, certain requirements must be satisfied – Within the clause, each SELECT query must have the same number of columns. The data types in the columns must also be comparable. In each SELECT statement, the columns must be in the same order.
+Q9. What is Cursor? How to use a Cursor?
+After any variable declaration, DECLARE a cursor. A SELECT Statement must always be coupled with the cursor definition.
+To start the result set, move the cursor over it. Before obtaining rows from the result set, the OPEN statement must be executed.
+To retrieve it and go to the next row in the result set, use the FETCH command.
+To disable the cursor, use the CLOSE command.
+Finally, use the DEALLOCATE command to remove the cursor definition and free up the resources connected to it.
+Q10. List the different types of relationships in SQL.
+There are different types of relations in the database:
+One-to-One – This is a connection between two tables in which each record in one table corresponds to the maximum of one record in the other.
+One-to-Many and Many-to-One – This is the most frequent connection, in which a record in one table is linked to several records in another.
+Many-to-Many – This is used when defining a relationship that requires several instances on each side.
+Self-Referencing Relationships – When a table has to declare a connection with itself, this is the method to employ.
+Q12. What is OLTP?
+OLTP, or online transactional processing, allows huge groups of people to execute massive amounts of database transactions in real time, usually via the internet. A database transaction occurs when data in a database is changed, inserted, deleted, or queried.
+Q13. What are the differences between OLTP and OLAP?
+OLTP stands for online transaction processing, whereas OLAP stands for online analytical processing. OLTP is an online database modification system, whereas OLAP is an online database query response system.
+Q14. How do I create empty tables with the same structure as another table?
+To create empty tables: Using the INTO operator to fetch the records of one table into a new table while setting a WHERE clause to false for all entries, it is possible to create empty tables with the same structure. As a result, SQL creates a new table with a duplicate structure to accept the fetched entries, but nothing is stored into the new table since the WHERE clause is active.
+Q15. What is PostgreSQL?
+In 1986, a team lead by Computer Science Professor Michael Stonebraker created PostgreSQL under the name Postgres. It was created to aid developers in the development of enterprise-level applications by ensuring data integrity and fault tolerance in systems. PostgreSQL is an enterprise-level, versatile, resilient, open-source, object-relational database management system that supports variable workloads and concurrent users. The international developer community has constantly backed it. PostgreSQL has achieved significant appeal among developers because to its fault-tolerant characteristics. It’s a very reliable database management system, with more than two decades of community work to thank for its high levels of resiliency, integrity, and accuracy. Many online, mobile, geospatial, and analytics applications utilise PostgreSQL as their primary data storage or data warehouse.
+SQL Interview Questions and Answers for Freshers
+Q16. What are SQL comments?
+SQL Comments are used to clarify portions of SQL statements and to prevent SQL statements from being executed. Comments are quite important in many programming languages. The comments are not supported by a Microsoft Access database. As a result, the Microsoft Access database is used in the examples in Mozilla Firefox and Microsoft Edge. Single Line Comments: It starts with two consecutive hyphens (–). Multi-line Comments: It starts with /* and ends with */.
+Q17. What is the usage of the NVL() function?
+You may use the NVL function to replace null values with a default value. The function returns the value of the second parameter if the first parameter is null. If the first parameter is anything other than null, it is left alone.
+This function is used in Oracle, not in SQL and MySQL. Instead of NVL() function, MySQL have IFNULL() and SQL Server have ISNULL() function.
+Let’s move to the next question in this SQL Interview Questions.
+Q18. Explain character-manipulation functions? Explains its different types in SQL.
+Change, extract, and edit the character string using character manipulation routines. The function will do its action on the input strings and return the result when one or more characters and words are supplied into it.
+The character manipulation functions in SQL are as follows:
+A) CONCAT (joining two or more values): This function is used to join two or more values together. The second string is always appended to the end of the first string.
+B) SUBSTR: This function returns a segment of a string from a given start point to a given endpoint.
+C) LENGTH: This function returns the length of the string in numerical form, including blank spaces.
+D) INSTR: This function calculates the precise numeric location of a character or word in a string.
+E) LPAD: For right-justified values, it returns the padding of the left-side character value.
+F) RPAD: For a left-justified value, it returns the padding of the right-side character value.
+G) TRIM: This function removes all defined characters from the beginning, end, or both ends of a string. It also reduced the amount of wasted space.
+H) REPLACE: This function replaces all instances of a word or a section of a string (substring) with the other string value specified.
+Q19. Write the SQL query to get the third maximum salary of an employee from a table named employees.
+Employee table
+employee_name salary A 24000 C 34000 D 55000 E 75000 F 21000 G 40000 H 50000
+SELECT * FROM(
+SELECT employee_name, salary, DENSE_RANK()
+OVER(ORDER BY salary DESC)r FROM Employee)
+WHERE r=&n;
+To find 3rd highest salary set n = 3
+Q20. What is the difference between the RANK() and DENSE_RANK() functions?
+The RANK() function in the result set defines the rank of each row within your ordered partition. If both rows have the same rank, the next number in the ranking will be the previous rank plus a number of duplicates. If we have three records at rank 4, for example, the next level indicated is 7.
+The DENSE_RANK() function assigns a distinct rank to each row within a partition based on the provided column value, with no gaps. It always indicates a ranking in order of precedence. This function will assign the same rank to the two rows if they have the same rank, with the next rank being the next consecutive number. If we have three records at rank 4, for example, the next level indicated is 5.
+Q21. What are Tables and Fields?
+A table is a collection of data components organized in rows and columns in a relational database. A table can also be thought of as a useful representation of relationships. The most basic form of data storage is the table. An example of an Employee table is shown below.
+ID Name Department Salary 1 Rahul Sales 24000 2 Rohini Marketing 34000 3 Shylesh Sales 24000 4 Tarun Analytics 30000
+A Record or Row is a single entry in a table. In a table, a record represents a collection of connected data. The Employee table, for example, has four records.
+A table is made up of numerous records (rows), each of which can be split down into smaller units called Fields(columns). ID, Name, Department, and Salary are the four fields in the Employee table above.
+Q22. What is a UNIQUE constraint?
+The UNIQUE Constraint prevents identical values in a column from appearing in two records. The UNIQUE constraint guarantees that every value in a column is unique.
+Q23. What is a Self-Join?
+Self-join is a type of join that can be used to connect two tables. As a result, it is a unary relationship. Each row of the table is attached to itself and all other rows of the same table in a self-join. As a result, a self-join is mostly used to combine and compare rows from the same database table.
+Q24. What is the SELECT statement?
+A SELECT command gets zero or more rows from one or more database tables or views. SELECT the most frequent data manipulation language (DML) command is SELECT in most applications. SELECT queries define a result set, but not how to calculate it, because SQL is a declarative programming language.
+Q25. What are some common clauses used with SELECT query in SQL?
+The following are some frequent SQL clauses used in conjunction with a SELECT query:
+WHERE clause: In SQL, the WHERE clause is used to filter records that are required depending on certain criteria. ORDER BY clause: The ORDER BY clause in SQL is used to sort data in ascending (ASC) or descending (DESC) order depending on specified field(s) (DESC). GROUP BY clause: GROUP BY clause in SQL is used to group entries with identical data and may be used with aggregation methods to obtain summarised database results. HAVING clause in SQL is used to filter records in combination with the GROUP BY clause. It is different from WHERE, since the WHERE clause cannot filter aggregated records.
+Q26. What are UNION, MINUS and INTERSECT commands?
+The UNION operator is used to combine the results of two tables while also removing duplicate entries.
+The MINUS operator is used to return rows from the first query but not from the second query.
+The INTERSECT operator is used to combine the results of both queries into a single row. Before running either of the above SQL statements, certain requirements must be satisfied –
+Within the clause, each SELECT query must have the same amount of columns.
+The data types in the columns must also be comparable.
+In each SELECT statement, the columns must be in the same order.
+Let’s move to the next question in this SQL Interview Questions.
+Q27. What is Cursor? How to use a Cursor?
+After any variable declaration, DECLARE a cursor. A SELECT Statement must always be coupled with the cursor definition.
+To start the result set, move the cursor over it. Before obtaining rows from the result set, the OPEN statement must be executed.
+To retrieve and go to the next row in the result set, use the FETCH command.
+To disable the cursor, use the CLOSE command.
+Finally, use the DEALLOCATE command to remove the cursor definition and free up the resources connected with it.
+Q28. List the different types of relationships in SQL.
+There are different types of relations in the database: One-to-One – This is a connection between two tables in which each record in one table corresponds to the maximum of one record in the other. One-to-Many and Many-to-One – This is the most frequent connection, in which a record in one table is linked to several records in another. Many-to-Many – This is used when defining a relationship that requires several instances on each sides. Self-Referencing Relationships – When a table has to declare a connection with itself, this is the method to employ.
+Q29. What is SQL example?
+SQL is a database query language that allows you to edit, remove, and request data from databases. The following statements are a few examples of SQL statements:
+1 SELECT
+2 INSERT
+3 UPDATE
+4 DELETE
+5 CREATE DATABASE
+6 ALTER DATABASE
+Q30. What are basic SQL skills?
+SQL skills aid data analysts in the creation, maintenance, and retrieval of data from relational databases, which divide data into columns and rows. It also enables users to efficiently retrieve, update, manipulate, insert, and alter data.
+The most fundamental abilities that a SQL expert should possess are:
+1 Database Management
+2 Structuring a Database
+3 Creating SQL clauses and statements
+4 SQL System SKills like MYSQL, PostgreSQL
+5 PHP expertise is useful.
+6 Analyze SQL data
+7 Using WAMP with SQL to create a database
+8 OLAP Skills
+Q31. What is schema in SQL Server?A schema is a visual representation of the database that is logical. It builds and specifies the relationships among the database’s numerous entities. It refers to the several kinds of constraints that may be applied to a database. It also describes the various data kinds. It may also be used on Tables and Views.
+Schemas come in a variety of shapes and sizes. Star schema and Snowflake schema are two of the most popular. The entities in a star schema are represented in a star form, whereas those in a snowflake schema are shown in a snowflake shape. Any database architecture is built on the foundation of schemas.
+Q32. How to create a temp table in SQL Server?
+Temporary tables are created in TempDB and are erased automatically after the last connection is closed. We may use Temporary Tables to store and process interim results. When we need to store temporary data, temporary tables come in handy. The following is the syntax for creating a Temporary Table: CREATE TABLE #Employee (id INT, name VARCHAR(25)) INSERT INTO #Employee VALUES (01, ‘Ashish’), (02, ‘Atul’)
+Let’s move to the next question in this SQL Interview Questions.
+Q33. How to install SQL Server in Windows 11?
+Install SQL Server Management Studio In Windows 11
+Step 1: Click on SSMS, which will take you to the SQL Server Management Studio page.
+Step 2: Moreover, click on the SQL Server Management Studio link and tap on Save File.
+Step 3: Save this file to your local drive and go to the folder.
+Step 4: The setup window will appear, and here you can choose the location where you want to save the file. Step 5: Click on Install. Step 6: Close the window after the installation is complete. Step 7: Furthermore, go back to your Start Menu and search for SQL server management studio.
+Step 8: Furthermore, double-click on it, and the login page will appear once it shows up.
+Step 9: You should be able to see your server name. However, if that’s not visible, click on the drop-down arrow on the server and tap on Browse.
+Step 10: Choose your SQL server and click on Connect.
+After that, the SQL server will connect, and Windows 11 will run well.
+Q34. What is the case when in SQL Server?
+The CASE statement is used to construct logic in which one column’s value is determined by the values of other columns.
+At least one set of WHEN and THEN commands makes up the SQL Server CASE Statement. The condition to be tested is specified by the WHEN statement. If the WHEN the condition returns TRUE, the THEN sentence explains what to do.
+When none of the WHEN conditions return true, the ELSE statement is executed. The END keyword brings the CASE statement to a close.
+CASE WHEN condition1 THEN result1 WHEN condition2 THEN result2 WHEN conditionN THEN resultN ELSE results END;
+Q35. NoSQL vs SQL
+In summary, the following are the five major distinctions between SQL and NoSQL:
+Relational databases are SQL, while non-relational databases are NoSQL.
+SQL databases have a specified schema and employ structured query language. For unstructured data, NoSQL databases use dynamic schemas.
+SQL databases scale vertically, but NoSQL databases scale horizontally.
+NoSQL databases are document, key-value, graph, or wide-column stores, whereas SQL databases are table-based.
+SQL databases excel in multi-row transactions, while NoSQL excels at unstructured data such as documents and JSON.
+Q36. What is the difference between NOW() and CURRENT_DATE()?NOW() returns a constant time that indicates the time at which the statement began to execute. (Within a stored function or trigger, NOW() returns the time at which the function or triggering statement began to execute. The simple difference between NOW() and CURRENT_DATE() is that NOW() will fetch the current date and time both in format ‘YYYY-MM_DD HH:MM:SS’ while CURRENT_DATE() will fetch the date of the current day ‘YYYY-MM_DD’.
+Let’s move to the next question in this SQL Interview Questions.
+Q37. What is BLOB and TEXT in MySQL?
+BLOB stands for Binary Huge Objects and can be used to store binary data, whereas TEXT may be used to store a large number of strings. BLOB may be used to store binary data, which includes images, movies, audio, and applications. BLOB values function similarly to byte strings, and they lack a character set. As a result, bytes’ numeric values are completely dependent on comparison and sorting. TEXT values behave similarly to a character string or a non-binary string. The comparison/sorting of TEXT is completely dependent on the character set collection.
+SQL Interview Questions and Answers for Experienced
+Q38. How to remove duplicate rows in SQL?
+If the SQL table has duplicate rows, the duplicate rows must be removed.
+Let’s assume the following table for our dataset:
+ID Name Age 1 A 21 2 B 23 2 B 23 4 D 22 5 E 25 6 G 26 5 E 25
+The following SQL query removes the duplicate ids from the table: DELETE FROM table WHERE ID IN ( SELECT ID, COUNT(ID) FROM table GROUP BY ID HAVING COUNT (ID) > 1);
+Q39. How to create a stored procedure using SQL Server?
+A stored procedure is a piece of prepared SQL code that you can save and reuse again and over. So, if you have a SQL query that you create frequently, save it as a stored procedure and then call it to run it. You may also supply parameters to a stored procedure so that it can act based on the value(s) of the parameter(s) given.
+Stored Procedure Syntax
+CREATE PROCEDURE procedure_name
+AS
+sql_statement
+GO;
+Execute a Stored Procedure
+EXEC procedure_name;
+Q40. What is Database Black Box Testing?
+Black Box Testing is a software testing approach that involves testing the functions of software applications without knowing the internal code structure, implementation details, or internal routes. Black Box Testing is a type of software testing that focuses on the input and output of software applications and is totally driven by software requirements and specifications. Behavioral testing is another name for it. Q41. What are the different types of SQL sandbox?
+SQL Sandbox is a secure environment within SQL Server where untrusted programmes can be run. There are three different types of SQL sandboxes:
+Safe Access Sandbox: In this environment, a user may execute SQL activities like as building stored procedures, triggers, and so on, but they can’t access the memory or create files.
+Sandbox for External Access: Users can access files without having the ability to alter memory allocation.
+Unsafe Access Sandbox: This contains untrustworthy code that allows a user to access memory.
+Let’s move to the next question in this SQL Interview Questions.
+Q42. Where MyISAM table is stored?
+Prior to the introduction of MySQL 5.5 in December 2009, MyISAM was the default storage engine for MySQL relational database management system versions. It’s based on the older ISAM code, but it comes with a lot of extra features. Each MyISAM table is split into three files on disc (if it is not partitioned). The file names start with the table name and end with an extension that indicates the file type. The table definition is stored in a.frm file, however this file is not part of the MyISAM engine; instead, it is part of the server. The data file suffix is.MYD (MYData). The index file extension is.MYI (MYIndex). If you lose your index file, you may always restore it by recreating indexes. Q43. How to find the nth highest salary in SQL?The most typical interview question is to find the Nth highest pay in a table. This work can be accomplished using the dense rank() function. Employee table
+employee_name salary A 24000 C 34000 D 55000 E 75000 F 21000 G 40000 H 50000
+SELECT * FROM(
+SELECT employee_name, salary, DENSE_RANK()
+OVER(ORDER BY salary DESC)r FROM Employee)
+WHERE r=&n;
+To find to the 2nd highest salary set n = 2
+To find 3rd highest salary set n = 3 and so on.
+Q44. What do you mean by table and field in SQL?
+A table refers to a collection of data in an organised manner in form of rows and columns. A field refers to the number of columns in a table. For example:
+Table: StudentInformation Field: Stu Id, Stu Name, Stu Marks
+Q45. What are joins in SQL?
+A JOIN clause is used to combine rows from two or more tables, based on a related column between them. It is used to merge two tables or retrieve data from there. There are 4 types of joins, as you can refer to below:
+1 Inner join:Inner Join in SQL is the most common type of join. It is used to return all the rows from multiple tables where the join condition is satisfied.
+Left Join: Left Join in SQL is used to return all the rows from the left table but only the matching rows from the right table where the join condition is fulfilled.
+Right Join: Right Join in SQL is used to return all the rows from the right table but only the matching rows from the left table where the join condition is fulfilled.
+Full Join: Full join returns all the records when there is a match in any of the tables. Therefore, it returns all the rows from the left-hand side table and all the rows from the right-hand side table.
+Let’s move to the next question in this SQL Interview Questions.
+Q46.What is the difference between CHAR and VARCHAR2 datatype in SQL?
+Both Char and Varchar2 are used for character datatype but varchar2 is used for character strings of variable length whereas Char is used for strings of fixed length. For example, char(10) can only store 10 characters and will not be able to store a string of any other length whereas varchar2(10) can store any length i.e 6,8,2 in this variable.
+Q47. What is a Primary key?
+1 APrimary key in SQLis a column (or collection of columns) or a set of columns that uniquely identifies each row in the table.
+2 Uniquely identifies a single row in the table
+3 Null values not allowed
+Example- In the Student table, Stu_ID is the primary key.
+Q48.What are Constraints?
+Constraints in SQL are used to specify the limit on the data type of the table. It can be specified while creating or altering the table statement. The sample of constraints are:
+1 NOT NULL
+2 CHECK
+3 DEFAULT
+4 UNIQUE
+5 PRIMARY KEY
+6 FOREIGN KEY
+Q49. What is the difference between DELETE and TRUNCATE statements?
+DELETE vs TRUNCATE
+DELETETRUNCATEDelete command is used to delete a row in a table. Truncate is used to delete all the rows from a table. You can rollback data after using delete statement.You cannot rollback data. It is a DML command. It is a DDL command. It is slower than truncate statement. It is faster.
+Q50. What is a Unique key?
+1 Uniquely identifies a single row in the table.
+2 Multiple values allowed per table.
+3 Null values allowed.
+Apart from this SQL Interview Questions blog, if you want to get trained by professionals on this technology, you can opt for structured training from edureka!
+Q51. What is a Foreign key in SQL?
+1 Foreign key maintains referential integrity by enforcing a link between the data in two tables.
+2 The foreign key in the child table references the primary key in the parent table.
+3 The foreign key constraint prevents actions that would destroy links between the child and parent tables.
+Q52. What do you mean by data integrity?
+Data Integrity defines the accuracy as well as the consistency of the data stored in a database. It also defines integrity constraints to enforce business rules on the data when it is entered into an application or a database.
+Q53. What is the difference between clustered and non-clustered index in SQL?
+The differences between the clustered and non clustered index in SQL are :
+1 Clustered index is used for easy retrieval of data from the database and its faster whereas reading from non clustered index is relatively slower.
+2 Clustered index alters the way records are stored in a database as it sorts out rows by the column which is set to be clustered index whereas in a non clustered index, it does not alter the way it was stored but it creates a separate object within a table which points back to the original table rows after searching.
+One table can only have one clustered index whereas it can have many non clustered indexes.
+Q54. Write a SQL query to display the current date?
+In SQL, there is a built-in function called GetDate() which helps to return the current timestamp/date.
+Q55.What do you understand from query optimization?
+The phase that identifies a plan for the evaluation query with the least estimated cost is known as query optimization.
+The advantages of query optimization are as follows:
+1 The output is provided faster
+2 A larger number of queries can be executed in less time
+3 Reduces time and space complexity
+Denormalization refers to a technique which is used to access data from higher to lower forms of a database. It helps database managers to increase the performance of the entire infrastructure as it introduces redundancy into a table. It adds the redundant data into a table by incorporating database queries that combine data from various tables into a single table.
+Q57. What are Entities and Relationships?
+Entities: A person, place, or thing in the real world about which data can be stored in a database. Tables store data that represents one type of entity. For example – A bank database has a customer table to store customer information. The customer table stores this information as a set of attributes (columns within the table) for each customer.
+Relationships: Relation or links between entities that have something to do with each other. For example – The customer’s name is related to the customer account number and contact information, which might be in the same table. There can also be relationships between separate tables (for example, customer to accounts).
+Let’s move to the next question in this SQL Interview Questions.
+Q58. What is an Index?
+An index refers to a performance tuning method of allowing faster retrieval of records from the table. An index creates an entry for each value and hence it will be faster to retrieve data.
+Q59. Explain different types of index in SQL.
+There are three types of index in SQL namely:
+Unique Index:
+This index does not allow the field to have duplicate values if the column is unique indexed. If a primary key is defined, a unique index can be applied automatically.
+Clustered Index:
+This index reorders the physical order of the table and searches based on the basis of key values. Each table can only have one clustered index.
+Non-Clustered Index:
+Non-Clustered Index does not alter the physical order of the table and maintains a logical order of the data. Each table can have many nonclustered indexes.
+SQL Interview Questions for Data Analyst
+Q60. What is Normalization and what are the advantages of it?
+Normalization in SQL is the process of organizing data to avoid duplication and redundancy. Some of the advantages are:
+1 Better Database organization
+2 More Tables with smaller rows
+3 Efficient data access
+4 Greater Flexibility for Queries
+5 Quickly find the information
+6 Easier to implement Security
+7 Allows easy modification
+8 Reduction of redundant and duplicate data
+9 More Compact Database
+10 Ensure Consistent data after modification
+Apart from this SQL Interview Questions Blog, if you want to get trained by professionals on this technology, you can opt for structured training from edureka!
+Q61. What is the difference between DROP and TRUNCATE commands?
+DROP command removes a table and it cannot be rolled back from the database whereas TRUNCATE command removes all the rows from the table.
+Q62. Explain the different types of Normalization.
+There are many successive levels of normalization. These are called normal forms. Each consecutive normal form depends on the previous one.The first three normal forms are usually adequate.
+Normal Forms are used in database tables to remove or decrease duplication. The following are the many forms:
+First Normal Form: When every attribute in a relationship is a single-valued attribute, it is said to be in the first normal form. The first normal form is broken when a relation has a composite or multi-valued property.
+Second Normal Form:
+A relationship is in a second normal form if it meets the first normal form’s requirements and does not contain any partial dependencies. In 2NF, a relation has no partial dependence, which means it has no non-prime attribute that is dependent on any suitable subset of any table candidate key. Often, the problem may be solved by setting a single column Primary Key.
+Third Normal Form: If a relation meets the requirements for the second normal form and there is no transitive dependency, it is said to be in the third normal form.
+Q63. What is OLTP?
+OLTP, or online transactional processing, allows huge groups of people to execute massive amounts of database transactions in real time, usually via the internet. A database transaction occurs when data in a database is changed, inserted, deleted, or queried.
+What are the differences between OLTP and OLAP?
+OLTP stands for online transaction processing, whereas OLAP stands for online analytical processing. OLTP is an online database modification system, whereas OLAP is an online database query response system.
+Q64. How to create empty tables with the same structure as another table?
+To create empty tables:
+Using the INTO operator to fetch the records of one table into a new table while setting a WHERE clause to false for all entries, it is possible to create empty tables with the same structure. As a result, SQL creates a new table with a duplicate structure to accept the fetched entries, but nothing is stored into the new table since the WHERE clause is active.
+Q65. What is PostgreSQL?
+In 1986, a team lead by Computer Science Professor Michael Stonebraker created PostgreSQL under the name Postgres. It was created to aid developers in the development of enterprise-level applications by ensuring data integrity and fault tolerance in systems. PostgreSQL is an enterprise-level, versatile, resilient, open-source, object-relational database management system that supports variable workloads and concurrent users. The international developer community has consistently backed it. PostgreSQL has achieved significant appeal among developers because of its fault-tolerant characteristics. It’s a very reliable database management system, with more than two decades of community work to thank for its high levels of resiliency, integrity, and accuracy. Many online, mobile, geospatial, and analytics applications utilise PostgreSQL as their primary data storage or data warehouse.
+Q66. What are SQL comments?
+SQL Comments are used to clarify portions of SQL statements and to prevent SQL statements from being executed. Comments are quite important in many programming languages. These comments are not supported by the Microsoft Access database. As a result, the Microsoft Access database is used in the examples in Mozilla Firefox and Microsoft Edge. Single Line Comments: It starts with two consecutive hyphens (–). Multi-line Comments: It starts with /* and ends with */.
+Let’s move to the next question in this SQL Interview Questions.
+Q67. What is the difference between the RANK() and DENSE_RANK() functions?
+The RANK() function in the result set defines the rank of each row within your ordered partition. If both rows have the same rank, the next number in the ranking will be the previous rank plus a number of duplicates. If we have three records at rank 4, for example, the next level indicated is 7.
+The DENSE_RANK() function assigns a distinct rank to each row within a partition based on the provided column value, with no gaps. It always indicates a ranking in order of precedence. This function will assign the same rank to the two rows if they have the same rank, with the next rank being the next consecutive number. If we have three records at rank 4, for example, the next level indicated is 5.
+Q68. What is SQL Injection?
+SQL injection is a sort of flaw in website and web app code that allows attackers to take control of back-end processes and access, retrieve, and delete sensitive data stored in databases. In this approach, malicious SQL statements are entered into a database entry field, and the database becomes exposed to an attacker once they are executed. By utilising data-driven apps, this strategy is widely utilised to get access to sensitive data and execute administrative tasks on databases. SQLi attack is another name for it.
+The following are some examples of SQL injection:
+1 Getting access to secret data in order to change a SQL query to acquire the desired results.
+2 UNION attacks are designed to steal data from several database tables.
+3 Examine the database to get information about the database’s version and structure
+Q69. How many Aggregate functions are available in SQL?
+SQL aggregate functions provide information about a database’s data. AVG, for example, returns the average of a database column’s values.
+SQL provides seven (7) aggregate functions, which are given below:
+AVG(): returns the average value from the specified columns. COUNT(): returns the number of table rows, including rows with null values. MAX(): returns the largest value among the group. MIN(): returns the smallest value among the group. SUM(): returns the total summed values(non-null) of the specified column. FIRST(): returns the first value of an expression. LAST(): returns the last value of an expression.
+Q70. What is the default ordering of data using the ORDER BY clause? How could it be changed?
+The ORDER BY clause in MySQL can be used without the ASC or DESC modifiers. The sort order is preset to ASC or ascending order when this attribute is absent from the ORDER BY clause.
+Q71. How do we use the DISTINCT statement? What is its use?
+The SQL DISTINCT keyword is combined with the SELECT query to remove all duplicate records and return only unique records. There may be times when a table has several duplicate records. The DISTINCT clause in SQL is used to eliminate duplicates from a SELECT statement’s result set.
+Q72. What are the syntax and use of the COALESCE function?
+From a succession of expressions, the COALESCE function returns the first non-NULL value. The expressions are evaluated in the order that they are supplied, and the function’s result is the first non-null value. Only if all of the inputs are null does the COALESCE method return NULL.
+The syntax of COALESCE function is COALESCE (exp1, exp2, …. expn)
+Q73. What is the ACID property in a database?
+ACID stands for Atomicity, Consistency, Isolation, Durability. It is used to ensure that the data transactions are processed reliably in a database system.
+1 Atomicity: Atomicity refers to the transactions that are completely done or failed where transaction refers to a single logical operation of a data. It means if one part of any transaction fails, the entire transaction fails and the database state is left unchanged.
+2 Consistency: Consistency ensures that the data must meet all the validation rules. In simple words, you can say that your transaction never leaves the database without completing its state.
+3 Isolation: The main goal of isolation is concurrency control.
+4 Durability: Durability means that if a transaction has been committed, it will occur whatever may come in between such as power loss, crash or any sort of error.
+Top 10 Trending Technologies to Learn in 2025 | Edureka
+This video talks about the Top 10 Trending Technologies in 2025 that you must learn.
+Q74. What do you mean by “Trigger” in SQL?
+Trigger in SQL is are a special type of stored procedures that are defined to execute automatically in place or after data modifications. It allows you to execute a batch of code when an insert, update or any other query is executed against a specific table.
+Q75. What are the different operators available in SQL?
+There are three operators available in SQL, namely:
+1 Arithmetic Operators
+2 Logical Operators
+3 Comparison Operators
+Apart from this SQL Interview Questions blog, if you want to get trained by professionals on this technology, you can opt for structured training from Edureka!
+Q76. Are NULL values the same as that of zero or a blank space?
+A NULL value is not at all the same as that of zero or a blank space. NULL values represent a value that is unavailable, unknown, assigned or not applicable whereas a zero is a number and a blank space is a character.
+Q77. What is the difference between cross join and natural join?
+The cross join produces the cross product or Cartesian product of two tables whereas the natural join is based on all the columns having the same name and data types in both the tables.
+Q78. What is subquery in SQL?
+A subquery is a query inside another query where a query is defined to retrieve data or information back from the database. In a subquery, the outer query is called as the main query whereas the inner query is called subquery. Subqueries are always executed first and the result of the subquery is passed on to the main query. It can be nested inside a SELECT, UPDATE or any other query. A subquery can also use any comparison operators such as >,< or =.
+Q79. What are the different types of a subquery?
+There are two types of subquery namely, Correlated and Non-Correlated.
+Correlated subquery: These are queries which select the data from a table referenced in the outer query. This is not considered an independent query as it refers to another table and refers to the column in a table.
+Non-Correlated subquery: This query is an independent query where the output of subquery is substituted in the main query.
+Let’s move to the next question in this SQL Interview Questions.
+Q80. List the ways to get the count of records in a table?
+To count the number of records in a table in SQL, you can use the below commands:
+SELECT * FROM table1 SELECT COUNT(*) FROM table1 SELECT rows FROM sysindexes WHERE id = OBJECT_ID(table1) AND indid < 2
+Apart from this SQL Interview Questions Blog, if you want to get trained by professionals on this technology, you can opt for structured training from edureka!
+Interview Questions for SQL Developer
+Q81. Write a SQL query to find the names of employees that begin with ‘A’?
+To display name of the employees that begin with ‘A’, type in the below command:
+SELECT * FROM Table_name WHERE EmpName like 'A%'
+Q82. Write a SQL query to get the third-highest salary of an employee from employee_table?
+SELECT TOP 1 salary FROM( SELECT TOP 3 salary FROM employee_table ORDER BY salary DESC) AS emp ORDER BY salary ASC;
+Q83. What is the need for group functions in SQL?
+Group functions work on the set of rows and return one result per group. Some of the commonly used group functions are: AVG, COUNT, MAX, MIN, SUM, VARIANCE.
+Q84. What is a Relationship and what are they?
+Relation or links are between entities that have something to do with each other. Relationships are defined as the connection between the tables in a database. There are various relationships, namely:
+1 One to One Relationship.
+2 One to Many Relationship.
+3 Many to One Relationship.
+4 Self-Referencing Relationship.
+Q85. How can you insert NULL values in a column while inserting the data?
+NULL values in SQL can be inserted in the following ways:
+1 Implicitly by omitting column from column list.
+2 Explicitly by specifying NULL keyword in the VALUES clause
+Q86. What is the main difference between ‘BETWEEN’ and ‘IN’ condition operators?
+BETWEEN operator is used to display rows based on a range of values in a row whereas the IN condition operator is used to check for values contained in a specific set of values.
+Example of BETWEEN:
+SELECT * FROM Students where ROLL_NO BETWEEN 10 AND 50;Example of IN:SELECT * FROM students where ROLL_NO IN (8,15,25); Get More SQL query interview questions Q87. Why are SQL functions used?
+SQL functions are used for the following purposes:
+1 To perform some calculations on the data
+2 To modify individual data items
+3 To manipulate the output
+4 To format dates and numbers
+5 To convert the data types
+Q88. What is the need for MERGE statement?
+This statement allows conditional update or insertion of data into a table. It performs an UPDATE if a row exists, or an INSERT if the row does not exist.
+Q89. What do you mean by recursive stored procedure?
+Recursive stored procedure refers to a stored procedure which calls by itself until it reaches some boundary condition. This recursive function or procedure helps the programmers to use the same set of code n number of times.
+Q90. What is CLAUSE in SQL?
+SQL clause helps to limit the result set by providing a condition to the query. A clause helps to filter the rows from the entire set of records.
+For example – WHERE, HAVING clause.
+Apart from this SQL Interview Questions Blog, if you want to get trained by professionals on this technology, you can opt for a structured training from edureka! Click below to learn more.
+Q91. What is the difference between ‘HAVING’ CLAUSE and a “where” clause?
+HAVING clause can only be used only with SELECT statement. It is usually used in a GROUP BY clause and whenever GROUP BY is not used, HAVING behaves like a WHERE clause. Having Clause is only used with the GROUP BY function in a query whereas WHERE Clause is applied to each row before they are a part of the GROUP BY function in a query.
+Q92. List the ways in which Dynamic SQL can be executed?
+Following are the ways in which dynamic SQL can be executed:
+1 Write a query with parameters.
+2 Using EXEC.
+3 Using sp_executesql.
+Q93. What are the various levels of constraints?
+Constraints are the representation of a column to enforce data entity and consistency. There are two levels of a constraint, namely:
+1 column level constraint
+2 table level constraint
+Q94. How can you fetch common records from two tables?
+You can fetch common records from two tables using INTERSECT. For example:
+Select studentID from student. <strong>INTERSECT </strong> Select StudentID from Exam
+Q95. List some case manipulation functions in SQL?
+There are three case manipulation functions in SQL, namely:
+1 LOWER: This function returns the string in lowercase. It takes a string as an argument and returns it by converting it into lower case. Syntax:
+LOWER(‘string’)
+1 UPPER: This function returns the string in uppercase. It takes a string as an argument and returns it by converting it into uppercase. Syntax:
+UPPER(‘string’)
+1 INITCAP: This function returns the string with the first letter in uppercase and rest of the letters in lowercase. Syntax:
+INITCAP(‘string’)
+Apart from this SQL Interview Questions blog, if you want to get trained by professionals on this technology, you can opt for a structured training from edureka! Click below to learn more.
+Q96. What are the different set operators available in SQL?
+Some of the available set operators are – Union, Intersect or Minus operators.
+Q97. What is an ALIAS command?
+ALIAS command in SQL is the name that can be given to any table or a column. The alias name can be referred in WHERE clause to identify a particular table or column.
+For example-
+Select emp.empID, dept.Result from employee emp, department as dept where emp.empID=dept.empID
+In the above example, emp refers to alias name for employee table and dept refers to alias name for department table.
+Let’s move to the next question in this SQL Interview Questions.
+Q98. What are aggregate and scalar functions?
+Aggregate functions are used to evaluate mathematical calculation and returns a single value. These calculations are done from the columns in a table. For example- max(),count() are calculated with respect to numeric.
+Scalar functions return a single value based on the input value. For example – UCASE(), NOW() are calculated with respect to string.
+Let’s move to the next question in this SQL Interview Questions.
+Q99. How can you fetch alternate records from a table?
+You can fetch alternate records i.e both odd and even row numbers. For example- To display even numbers, use the following command:
+Select studentId from (Select rowno, studentId from student) where mod(rowno,2)=0
+Now, to display odd numbers:
+Select studentId from (Select rowno, studentId from student) where mod(rowno,2)=1
+Q100. Name the operator which is used in the query for pattern matching?
+LIKE an operator is used for pattern matching, and it can be used as -.
+1 % – It matches zero or more characters.
+For example- select * from students where studentname like ‘a%’
+_ (Underscore) – it matches exactly one character. For example- select * from student where studentname like ‘abc_’
+Apart from this SQL Interview Questions Blog, if you want to get trained from professionals on this technology, you can opt for structured training from edureka!
+Q101. How can you select unique records from a table?
+You can select unique records from a table by using the DISTINCT keyword.
+Select DISTINCT studentID from Student
+Using this command, it will print unique student id from the table Student.
+Q102. How can you fetch the first 5 characters of the string?
+There are a lot of ways to fetch characters from a string. For example:
+Select SUBSTRING(StudentName,1,5) as studentname from student
+Q103. What is the main difference between SQL and PL/SQL?
+SQL is a query language that allows you to issue a single query or execute a single insert/update/delete whereas PL/SQL is Oracle’s “Procedural Language” SQL, which allows you to write a full program (loops, variables, etc.) to accomplish multiple operations such as selects/inserts/updates/deletes.
+Q104. What is a View?
+A view is a virtual table which consists of a subset of data contained in a table. Since views are not present, it takes less space to store. View can have data from one or more tables combined and it depends on the relationship.
+Let’s move to the next question in this SQL Interview Questions.
+Q105. What are Views used for?
+A view refers to a logical snapshot based on a table or another view. It is used for the following reasons:
+1 Restricting access to data.
+2 Making complex queries simple.
+3 Ensuring data independence.
+4 Providing different views of the same data.
+Q106. What is a Stored Procedure?
+A Stored Procedure is a function which consists of many SQL statements to access the database system. Several SQL statements are consolidated into a stored procedure and execute them whenever and wherever required which saves time and avoids writing code again and again.
+Q107. List some advantages and disadvantages of Stored Procedure?
+Advantages:
+A Stored Procedure can be used as a modular programming which means to create once, store and call several times whenever it is required. This supports faster execution. It also reduces network traffic and provides better security to the data.
+Disadvantage:
+The only disadvantage of Stored Procedure is that it can be executed only in the database and utilizes more memory in the database server.
+Q108. List all the types of user-defined functions?
+There are three types of user-defined functions, namely:
+1 Scalar Functions
+2 Inline Table-valued functions
+3 Multi-statement valued functions
+Scalar returns the unit, variant defined the return clause. Other two types of defined functions return table.
+Let’s move to the next question in this SQL Interview Questions.
+Q109. What do you mean by Collation?
+Collation is defined as a set of rules that determine how data can be sorted as well as compared. Character data is sorted using the rules that define the correct character sequence along with options for specifying case-sensitivity, character width etc.
+Let’s move to the next question in this SQL Interview Questions.
+Q110. What are the different types of Collation Sensitivity?
+Following are the different types of collation sensitivity:
+1 Case Sensitivity: A and a and B and b.
+2 Kana Sensitivity: Japanese Kana characters.
+3 Width Sensitivity: Single byte character and double-byte character.
+4 Accent Sensitivity.
+Apart from this SQL Interview Questions Blog, if you want to get trained by professionals on this technology, you can opt for structured training from Edureka!
+Q111. What are the Local and Global variables?
+Local variables:
+These variables can be used or exist only inside the function. These variables are not used or referred to by any other function.
+Global variables:
+These variables are the variables which can be accessed throughout the program. Global variables cannot be created whenever that function is called.
+Q112. What is Auto Increment in SQL?
+Autoincrement keyword allows the user to create a unique number to get generated whenever a new record is inserted into the table. This keyword is usually required whenever PRIMARY KEY in SQL is used.
+AUTO INCREMENT keyword can be used in Oracle and IDENTITY keyword can be used in SQL SERVER.
+Q113. What is a Datawarehouse?
+Datawarehouse refers to a central repository of data where the data is assembled from multiple sources of information. Those data are consolidated, transformed and made available for mining as well as online processing. Warehouse data also has a subset of data called Data Marts.
+Q114. What are the different authentication modes in SQL Server? How can it be changed?
+Windows mode and Mixed Mode – SQL and Windows. You can go to the steps below to change authentication mode in SQL Server:
+1 Click Start> Programs> Microsoft SQL Server and click SQL Enterprise Manager to run SQL Enterprise Manager from the Microsoft SQL Server program group.
+2 Then select the server from the Tools menu.
+3 Select SQL Server Configuration Properties and choose the Security page.
+Q115. What are STUFF and REPLACE function?
+STUFF Function: This function is used to overwrite existing character or inserts a string into another string. Syntax: STUFF(string_expression,start, length, replacement_characters) where, string_expression: it is the string that will have characters substitutedstart: This refers to the starting position length: It refers to the number of characters in the string which are substituted.replacement_string: They are the new characters which are injected in the string.
+REPLACE function: This function is used to replace the existing characters of all the occurrences. Syntax: REPLACE (string_expression, search_string, replacement_string) Here every search_string in the string_expression will be replaced with the replacement_string.
+Q116. How do you add email validation using only one query?
+You can use a regular expression within a SQL query to validate an email format. For example, in MySQL, you can do it like this:
+SELECT email
+FROM your_table_name
+WHERE email REGEXP ‘^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$’;
+This query selects the email column from your_table_name where the email matches the specified regular expression pattern for a valid email format.
+Q117. Write a query to get the last record from a table.To get the last record from a table, you can use a query like this:
+SELECT * FROM your_table_name ORDER BY your_primary_key_column DESC LIMIT 1;
+Replace your_table_name with the name of your table and your_primary_key_column with the primary key column that defines the order of records. The DESC keyword sorts the records in descending order, and LIMIT 1 ensures you only get the last record.

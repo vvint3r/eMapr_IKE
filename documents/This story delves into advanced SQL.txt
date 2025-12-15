@@ -1,0 +1,466 @@
+This story delves into advanced SQL techniques that will be useful for data science practitioners. In this piece, I will provide a detailed exploration of expert-grade SQL queries I use daily in my analytics projects. SQL, along with modern data warehouses, forms the backbone of data science. It is an indispensable tool for data manipulation and user behaviour analytics. The techniques I am going to talk about are designed to be practical and beneficial from the data science perspective. Mastery of SQL is a valuable skill, crucial for a wide range of projects, and these techniques have significantly streamlined my daily work. I hope it will be useful for you as well.
+
+Given that SQL is the primary language used by data warehouse and business intelligence professionals, it’s an ideal choice for sharing data across data platforms. Its robust features facilitate seamless data modelling and visualization. It remains the most popular means of communication for any data team and nearly every data platform available in the market.
+
+We will use BigQuery’s standard SQL dialect. It’s free and easy to run the queries I wrote and provided below.
+
+Recursive CTEs
+Similarly, we would use Python’s faker library, we can mock test data using recursive CTEs in SQL.
+
+    WITH RECURSIVE
+    CTE_1 AS (
+        (SELECT 0 AS iteration)
+        UNION ALL
+        SELECT iteration + 1 AS iteration FROM CTE_1 WHERE iteration < 3
+    )
+    SELECT iteration FROM CTE_1
+    ORDER BY 1 ASC
+The output would be this:
+
+Image by author.
+Image by author.
+In BigQuery and many other data warehouse solutions CTEs can be either non-recursive or recursive. The RECURSIVE keyword allows for recursion within the WITH clause (e.g., WITH RECURSIVE).
+
+Recursive CTEs continue to execute until no new results are produced, making them well-suited for querying hierarchical and graph data. In our case execution will stop is defined by the where clause: FROM CTE_1 WHERE iteration < 3
+
+In contrast, non-recursive CTEs execute only once.
+
+The main difference is that a non-recursive CTE can only reference preceding CTEs and cannot reference itself, whereas a recursive CTE can reference itself, as well as preceding or subsequent CTEs.
+
+Working with graphs
+Using recursive CTE to work with graph data is very handy. In the data science world graphs are a pretty neat concept used almost everywhere. In Data engineering I use dependency graphs a lot to demonstrate data lineage in my data pipeline.
+
+We can use recursive SQL techniques to evaluate reachability in graphs. In the code snippet below we will find nodes that can be reached from node table_5 in a graph called SampleGraph
+
+WITH RECURSIVE
+  SampleGraph AS (
+    --      table_1               table_5
+    --      /                      / 
+    --  table_2 - table_3    table_6   table_7
+    --      |               /
+    --   table_4       table_8
+    SELECT 'table_1' AS from_node, 'table_2' AS to_node UNION ALL
+    SELECT 'table_1', 'table_3' UNION ALL
+    SELECT 'table_2', 'table_3' UNION ALL
+    SELECT 'table_3', 'table_4' UNION ALL
+    SELECT 'table_5', 'table_6' UNION ALL
+    SELECT 'table_5', 'table_7' UNION ALL
+    SELECT 'table_6', 'table_8' UNION ALL
+    SELECT 'table_7', 'table_8'
+  ),
+  R AS (
+    (SELECT 'table_5' AS node)
+    UNION ALL
+    (
+      SELECT SampleGraph.to_node AS node
+      FROM R
+      INNER JOIN SampleGraph
+        ON (R.node = SampleGraph.from_node)
+    )
+  )
+SELECT DISTINCT node FROM R ORDER BY node;
+Output:
+
+image by author
+image by author
+Recursive CTEs are quite expensive and we would want to make sure they are used for the intended purpose. If your query doesn’t involve graphs or hierarchical data, it may be more efficient to explore alternatives, such as employing a LOOP statement in conjunction with a non-recursive CTE.
+
+Also, be aware of infinite recursion. We wouldn’t want our SQL to run forever.
+
+Fuzzy matching and approximate joins
+It proves to be exceptionally useful in situations where we need to join two datasets with values that, while not identical, share a close resemblance. These scenarios require more sophisticated approaches to ensure accurate data matching. The fuzzy matching technique is a great example of the advanced SQL methods that data analysts often rely on in approximate JOINs.
+
+To illustrate this, consider the following SQL snippet:
+
+with people as (
+select 'gmail' as domain, 'john.adams@gmail.com' as email
+union all
+select 'gmail' as domain, 'dave.robinson@gmail.com' as email
+)
+
+, linkedin as (
+select
+ 'gmail'          as domain
+,'Dave Robinson'  as name  
+)
+
+, similarity as (
+select 
+  linkedin.name   as name 
+, linkedin.domain as domain
+, people.email
+, fhoffa.x.levenshtein(linkedin.name, people.email) similarity_score
+from linkedin 
+join people
+ on linkedin.domain = people.domain
+)
+
+select
+*
+, row_number() over (partition by name order by similarity_score) as best_match
+from 
+similarity
+We can apply proximity functions such as ngramdistance (available in Clickhouse) and levenshtein (BigQuery) to identify emails that resemble each other.
+
+A lower score indicates a better match:
+
+Image by author
+Image by author
+This approach proved to be very useful in tasks of matching entities, i.e. individuals, etc. from two separate datasets using their attributes, i.e. email addresses. This is a straightforward scenario when dealing with data from platforms like LinkedIn, Crunchbase, and similar sources where we need to align user information.
+
+Calculating user activity and sessions using LEAD and LAG operators
+Window functions proved to be very useful in data science.
+
+Often we need to calculate sessions to aggregate user activity. The example below demonstrates how to do it in SQL.
+
+
+-- models/sessions.sql
+-- mock some data
+with raw_event_data as (
+    select 'A' as user_id, timestamp_add(current_timestamp(), interval -1 minute) as timestamp union all
+    select 'A' as user_id, timestamp_add(current_timestamp(), interval -3 minute) as timestamp union all
+    select 'A' as user_id, timestamp_add(current_timestamp(), interval -5 minute) as timestamp union all
+    select 'A' as user_id, timestamp_add(current_timestamp(), interval -36 minute) as timestamp union all
+    select 'A' as user_id, timestamp_add(current_timestamp(), interval -75 minute) as timestamp
+
+)
+-- calculate sessions:
+SELECT
+    event.user_id || '-' || row_number() over(partition by event.user_id order by event.timestamp) as session_id
+    , event.user_id
+    , event.timestamp as session_start_at
+    , lead(timestamp) over(partition by event.user_id order by event.timestamp) as next_session_start_at
+FROM (
+    SELECT
+        e.user_id
+        , e.timestamp
+        , DATE_DIFF(
+             e.timestamp
+            ,LAG(e.timestamp) OVER(
+                PARTITION BY e.user_id ORDER BY e.timestamp
+                )
+            , minute
+            ) AS inactivity_time  
+        FROM raw_event_data AS e
+      ) as event
+    WHERE (event.inactivity_time > 30 OR event.inactivity_time is null)
+The output would be the following:
+
+Calculating user sessions with SQL. Image by author.
+Calculating user sessions with SQL. Image by author.
+This is a widely used approach to get an aggregated activity the right way in a scenario when the data science team have to deal with raw user engagement event data.
+
+The benefit of this approach is that we don’t need to rely on data engineers with their streaming techniques or maintain a Kafka server [1].
+
+Mastering Data Streaming in Python
+
+With this data model in place, answering the user analytics questions becomes straightforward. It can be a simple event count but it’s session analytics now. For instance, to compute the average session duration, we can utilize the following SQL:
+
+SELECT
+  COUNT(*) AS sessions_count,
+  AVG(duration) AS average_session_duration
+FROM (
+  SELECT session_id
+        , DATEDIFF(minutes, MIN(events.timestamp), MAX(events.timestamp)) AS duration
+  FROM sessions
+  LEFT JOIN events on events.user_id = sessions.user_id
+        AND events.timestamp >= events.session_start_at
+        AND (events.timestamp < sessions.next_session_start_at OR sessions.next_session_start_at is null)
+  GROUP BY 1
+)
+Using NTILE()
+NTILE() is a useful numbering function typically used in analytics to get a distribution of a metric, i.e. sales, revenue, etc. The most common SQL using NTILE() would look like this:
+
+SELECT
+    NTILE(4) OVER ( ORDER BY amount ) AS sale_group,
+    product_id,
+    product_category,
+    soccer_team,
+    amount as sales_amount
+FROM sales
+WHERE sale_date >= '2024-12-01' AND sale_date <= '2024-12-31';
+It returns the distribution of sales ordered by amount in 4 even buckets.
+
+I find it particularly handy for tracking metrics such as login duration in seconds for a mobile app. For instance, with my app connected to Firebase, I can monitor how long each user’s login process takes.
+
+Image by author
+Image by author
+This function partitions rows into a specified number of buckets according to their order and assigns each row a bucket number as +1 – a constant integer expression. The rows within each bucket can vary by no more than one. Any remainder from dividing the total number of rows by the number of buckets is distributed evenly across the buckets, starting with bucket 1. If the specified number of buckets is NULL, 0, or negative, an error will be generated. The SQL below explains how I calculate median login duration times:
+
+-- Looker Studio dataset:
+select (case when tile = 50 then 'median' when tile = 95 then '95%' else '5%' end) as tile
+    , dt
+    , max(cast( round(duration/1000) as numeric)/1000 ) max_duration_s
+    , min(cast( round(duration/1000) as numeric)/1000 ) min_duration_s
+
+from (
+    select 
+         trace_info.duration_us duration
+        , ntile(100) over (partition by (date(event_timestamp)) order by trace_info.duration_us) tile
+        , date(event_timestamp) dt
+
+    from firebase_performance.my_mobile_app 
+    where 
+        date(_partitiontime) >= parse_date('%y%m%d', @ds_start_date) and date(_partitiontime) <= parse_date('%y%m%d', @ds_end_date)
+        and 
+        date(event_timestamp) >= parse_date('%y%m%d', @ds_start_date)
+        and 
+        date(event_timestamp) <= parse_date('%y%m%d', @ds_end_date)
+    and lower(event_type) = "duration_trace"
+    and lower(event_name) = 'logon'
+) x
+WHERE tile in (5, 50, 95)
+group by dt, tile
+order by dt
+;
+Median and k-th percentile are valuable statistics for analyzing data
+
+Using FOLLOWING AND PRECEDING
+FOLLOWING AND PRECEDING are SQL operators we would want to use when we need to check a window before or after that particular record.
+
+Moving average
+This is often used to calculate a moving (rolling) average. Consider the SQL below. It explains how to do it and this is a standard task in data analysis.
+
+-- mock data
+with temperatures as (
+    select 'A' as city, timestamp_add(current_timestamp(), interval -1 day) as timestamp  ,15 as temperature union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -3 day) as timestamp  ,15 union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -5 day) as timestamp  ,15 union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -36 day) as timestamp ,20 union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -75 day) as timestamp ,25
+
+)
+
+SELECT
+  city,
+  day,
+  AVG(temperature) OVER(PARTITION BY city ORDER BY UNIX_DATE(date(timestamp)) 
+                RANGE BETWEEN 14 PRECEDING AND CURRENT ROW) AS rolling_avg_14_days,
+  AVG(temperature) OVER(PARTITION BY city ORDER BY UNIX_DATE(date(timestamp)) 
+                RANGE BETWEEN 30 PRECEDING AND CURRENT ROW) AS rolling_avg_30_days
+FROM (
+  SELECT date(timestamp) day, city, temperature, timestamp
+  FROM temperatures
+)
+We’ve mocked some data to illustrate the calculation and the output would be the following:
+
+Moving average. Image by author.
+Moving average. Image by author.
+Indeed, it is very easy to prove that it worked by having just a simple glance at the image above.
+
+Calculating Moving Average Convergence Divergence (MACD)
+Widely used by investors, the Moving Average Convergence Divergence (MACD) is a technical indicator to pinpoint optimal market entry points for buying or selling.
+
+MACD can also be calculated using PRECEDING
+
+We will need a 26-period exponential moving average (EMA) and then subtract it from the 12-period EMA. The signal line, which helps to interpret the MACD, is a nine-period EMA of the MACD line itself.
+
+The SQL below explains how to calculate it:
+
+-- mock data
+with temperatures as (
+    select 'A' as city, timestamp_add(current_timestamp(), interval -1 day) as timestamp  ,15 as temperature union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -3 day) as timestamp  ,15 union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -5 day) as timestamp  ,15 union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -12 day) as timestamp ,20 union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -26 day) as timestamp ,25
+)
+, data as (
+SELECT
+  city,
+  day,
+  temperature,
+  AVG(temperature) OVER(PARTITION BY city ORDER BY UNIX_DATE(date(timestamp)) 
+                RANGE BETWEEN 12 PRECEDING AND CURRENT ROW) AS rolling_avg_12_days,
+  AVG(temperature) OVER(PARTITION BY city ORDER BY UNIX_DATE(date(timestamp)) 
+                RANGE BETWEEN 26 PRECEDING AND CURRENT ROW) AS rolling_avg_26_days
+FROM (
+  SELECT date(timestamp) day, city, temperature, timestamp
+  FROM temperatures
+)
+)
+
+select s.day,
+    s.temperature,
+    s.rolling_avg_12_days,
+    s.rolling_avg_26_days,
+    s.rolling_avg_12_days - l.rolling_avg_26_days as macd
+from
+ data s
+join 
+ data l
+on
+ s.day = l.day
+Output:
+
+Image by author.
+Image by author.
+Percentage change
+This standard indicator can also be calculated using LEAD and LAG. The SQL below explains how to do it.
+
+-- mock data
+with temperatures as (
+    select 'A' as city, timestamp_add(current_timestamp(), interval -1 day) as timestamp  ,15 as temperature union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -3 day) as timestamp  ,15 union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -5 day) as timestamp  ,15 union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -12 day) as timestamp ,20 union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -26 day) as timestamp ,25
+)
+
+SELECT
+  city,
+  day,
+  temperature,
+
+    (temperature - lag(temperature) over (order by day))*1.0/lag(temperature) over (order by day)*100
+FROM (
+  SELECT date(timestamp) day, city, temperature, timestamp
+  FROM temperatures
+)
+Output:
+
+Image by author.
+Image by author.
+Marketing analytics using FOLLOWING AND UNBOUNDED FOLLOWING
+Similar to PRECEDING, this is particularly useful when we need to compile a list of items, such as events or purchases, to create a funnel dataset. Using PARTITION BY allows you to group all subsequent events within each partition, regardless of their quantity.
+
+A good example of this concept is marketing funnels.
+
+Our dataset might include a series of recurring events of the same type, but ideally, you want to link each event to the subsequent one of a different type.
+
+Let’s imagine we need to get all events after a user had join_group an event in their funnel. The code below explains how to do it:
+
+-- mock some data
+with d as (
+select * from unnest([
+  struct('0003f' as user_pseudo_id, 12322175 as user_id, timestamp_add(current_timestamp(), interval -1 minute) as event_timestamp, 'join_group' as event_name),
+  ('0003',12,timestamp_add(current_timestamp(), interval -1 minute),'set_avatar'),
+  ('0003',12,timestamp_add(current_timestamp(), interval -2 minute),'set_avatar'),
+  ('0003',12,timestamp_add(current_timestamp(), interval -3 minute),'set_avatar'),
+  ('0003',12,timestamp_add(current_timestamp(), interval -4 minute),'join_group'),
+  ('0003',12,timestamp_add(current_timestamp(), interval -5 minute),'create_group'),
+  ('0003',12,timestamp_add(current_timestamp(), interval -6 minute),'create_group'),
+  ('0003',12,timestamp_add(current_timestamp(), interval -7 minute),'in_app_purchase'),
+  ('0003',12,timestamp_add(current_timestamp(), interval -8 minute),'spend_virtual_currency'),
+  ('0003',12,timestamp_add(current_timestamp(), interval -9 minute),'create_group'),
+  ('0003',12,timestamp_add(current_timestamp(), interval -10 minute),'set_avatar')
+  ]
+  ) as t)
+
+  , event_data as (
+SELECT 
+    user_pseudo_id
+  , user_id
+  , event_timestamp
+  , event_name
+  , ARRAY_AGG(
+        STRUCT(
+              event_name AS event_name
+            , event_timestamp AS event_timestamp
+        )
+    ) 
+    OVER(PARTITION BY user_pseudo_id ORDER BY event_timestamp ROWS BETWEEN 1 FOLLOWING AND  UNBOUNDED FOLLOWING ) as next_events
+
+FROM d
+WHERE
+DATE(event_timestamp) = current_date()
+
+)
+
+-- Get events after each `join_group` event per user
+select
+*
+from event_data t
+where event_name = 'join_group'
+;
+I previously wrote about it here [2] and there is a more advanced example of marketing funnels:
+
+Advanced SQL techniques for beginners
+
+Exploratory data analysis
+It’s often more efficient to conduct analysis directly on the data within your tables using SQL before progressing to ML, AI, data science, or engineering tasks. In fact, you can now even build machine learning models using SQL – BigQuery ML is a prime example of this capability. The trend is clear: everything is increasingly shifting towards data warehouses.
+
+EDA. Image by author.
+EDA. Image by author.
+Getting unique column values is easily done using Pandas but can we do it in SQL?
+
+The SQL snippet below provides a handy script to achieve this. Run this code in BigQuery (replace ‘your-client’ with your project name):
+
+DECLARE columns ARRAY<STRING>;
+DECLARE query STRING;
+SET columns = (
+  WITH all_columns AS (
+    SELECT column_name
+    FROM `your-client.staging.INFORMATION_SCHEMA.COLUMNS`
+    WHERE table_name = 'churn'
+  )
+  SELECT ARRAY_AGG((column_name) ) AS columns
+  FROM all_columns
+);
+
+SET query = (select STRING_AGG('(select count(distinct '||x||')  from `your-client.staging.churn`) '||x ) AS string_agg from unnest(columns) x );
+EXECUTE IMMEDIATE 
+"SELECT  "|| query
+;
+Output:
+
+EDA. Image by author.
+EDA. Image by author.
+Describing the datasets
+We can use SQL scripts to describe tables we have in our data warehouse. I will slightly change the SQL mentioned above and add mean, max, min, median, 0.75 tile, 0.25 tile so the final SQL would be like this:
+
+DECLARE columns ARRAY<STRING>;
+DECLARE query1, query2, query3, query4, query5, query6, query7 STRING;
+SET columns = (
+  WITH all_columns AS (
+    SELECT column_name
+    FROM `your-client.staging.INFORMATION_SCHEMA.COLUMNS`
+    WHERE table_name = 'churn' 
+        and  data_type IN ('INT64','FLOAT64')
+  )
+  SELECT ARRAY_AGG((column_name) ) AS columns
+  FROM all_columns
+);
+
+SET query1 = (select STRING_AGG('(select stddev( '||x||')  from `your-client.staging.churn`) '||x ) AS string_agg from unnest(columns) x );
+SET query2 = (select STRING_AGG('(select avg( '||x||')  from `your-client.staging.churn`) '||x ) AS string_agg from unnest(columns) x );
+SET query3 = (select STRING_AGG('(select PERCENTILE_CONT( '||x||', 0.5) over()  from `your-client.staging.churn` limit 1) '||x ) AS string_agg from unnest(columns) x );
+SET query4 = (select STRING_AGG('(select PERCENTILE_CONT( '||x||', 0.25) over()  from `your-client.staging.churn` limit 1) '||x ) AS string_agg from unnest(columns) x );
+SET query5 = (select STRING_AGG('(select PERCENTILE_CONT( '||x||', 0.75) over()  from `your-client.staging.churn` limit 1) '||x ) AS string_agg from unnest(columns) x );
+SET query6 = (select STRING_AGG('(select max( '||x||')  from `your-client.staging.churn`) '||x ) AS string_agg from unnest(columns) x );
+SET query7 = (select STRING_AGG('(select min( '||x||')  from `your-client.staging.churn`) '||x ) AS string_agg from unnest(columns) x );
+
+EXECUTE IMMEDIATE (
+"SELECT 'stddev' ,"|| query1 || " UNION ALL " ||
+"SELECT 'mean'   ,"|| query2 || " UNION ALL " ||
+"SELECT 'median' ,"|| query3 || " UNION ALL " ||
+"SELECT '0.25' ,"|| query4 || " UNION ALL " ||
+"SELECT '0.75' ,"|| query5 || " UNION ALL " ||
+"SELECT 'max' ,"|| query6 || " UNION ALL " ||
+"SELECT 'min' ,"|| query7
+)
+;
+It generates all standard EDA metrics:
+
+Describe() in SQL. Image by author.
+Describe() in SQL. Image by author.
+EDA can be easily performed using SQL
+
+For instance, we can apply SQL to analyse the correlation between two variables, i.e. CreditScore and Balance. The beauty of SQL-based solutions is that we can easily visualize the results and create scatterplots between all variables using modern BI tools.
+
+Variable distribution. Image by author.
+Variable distribution. Image by author.
+For instance, in one of my previous stories I compared EDA in SQL and Pandas to calculate such metrics as Standard Deviation and Correlation Matrix [3].
+
+Exploratory Data Analysis with BigQuery SQL? Easy!
+
+Conclusion
+Time series analytics is an essential part of data science. In this story, I’ve covered the most popular SQL for data science use cases. I used these queries quite often I hope this will be useful for you in your data science projects.
+
+With SQL scripting, we can automate queries, perform Exploratory Data Analysis, and visualize results directly in any Business Intelligence tool. Modern data warehouses have built-in machine learning tools, i.e. BigQuery ML, etc. and it simplifies ML modelling too.
+
+User Churn Prediction
+
+While Python remains a powerful tool for data scientists, offering robust scripting features, SQL can efficiently handle EDA tasks as well. For visualizing results, an SQL-like setup offers a superior dashboarding experience. Once the dashboard is configured, there’s no need to rerun queries or notebooks, making it a one-time setup that streamlines the process. Adding a modern data modelling tool to this environment setup will put everything to an even higher level of automation with robust data quality checks and unit testing.
+
+Advanced Data Modelling

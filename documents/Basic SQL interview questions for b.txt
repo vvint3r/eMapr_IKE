@@ -1,0 +1,223 @@
+Basic SQL interview questions for beginners (0 to 2 years of experience) 
+Basic SQL data types and simple SELECT query
+Question: Write a SQL query that retrieves the `first_name`, `last_name`, and `email` columns from a table named `users`, where the `email` domain is “example.com”. Assume that `email` is a `VARCHAR` type.
+
+Example Answer:
+
+SELECT first_name, last_name, email
+
+FROM users
+
+WHERE email LIKE '%@example.com';
+Explanation: This query selects the `first_name`, `last_name`, and `email` columns from the `users` table and filters the rows to include only those with an email domain of “example.com”. The `LIKE` operator is used with a wildcard (`%`) to match any characters before “@example.com”.
+
+SQL joins and relationships
+Question: Write a SQL query to retrieve the `order_id` and `order_date` from an `orders` table and the `product_name` from a `products` table for all orders. Assume that the `orders` table has a `product_id` foreign key that references the `product_id` in the `products` table.
+
+Example Answer:
+
+SELECT o.order_id, o.order_date, p.product_name
+
+FROM orders o
+
+JOIN products p ON o.product_id = p.product_id;
+Explanation: This query retrieves data from both the `orders` and `products` tables using an `INNER JOIN`. The `JOIN` is performed on the `product_id` column, which is common between the two tables, allowing the query to combine rows from each table where there is a matching `product_id`.
+
+Basic data manipulation
+Question: Write a SQL query to update the `salary` column in the `employees` table, increasing it by 10% for all employees who work in the “Sales” department. Assume the `department` column is of type `VARCHAR`.
+
+Example Answer:
+
+UPDATE employees
+
+SET salary = salary * 1.10
+
+WHERE department = 'Sales';
+Explanation: This query updates the `salary` field in the `employees` table by multiplying the current salary by 1.10 (a 10% increase) for all employees in the “Sales” department. The `WHERE` clause ensures that only rows where the `department` is “Sales” are affected.
+
+Learning tip: Want to review SQL basics before your next interview? Journey into SQL with Taylor Swift is a fun and accessible learning path in CodeSignal Learn where you’ll practice key querying skills using Taylor Swift’s discography as your database.
+
+Intermediate SQL interview questions (2 to 5 years of experience) 
+Complex SQL queries and subqueries
+Question: Write a SQL query to find the top 3 customers with the highest total `order_amount` from the `orders` table. Assume that each order is linked to a customer via a `customer_id` column, and the `order_amount` is a numeric column.
+
+Example Answer:
+
+SELECT customer_id, SUM(order_amount) AS total_spent
+
+FROM orders
+
+GROUP BY customer_id
+
+ORDER BY total_spent DESC
+
+LIMIT 3;
+Explanation: This query calculates the total `order_amount` spent by each customer using the `SUM()` function and groups the results by `customer_id`. The `ORDER BY` clause sorts the results in descending order of total spent, and the `LIMIT` clause restricts the output to the top 3 customers. This type of query is essential for analyzing customer behavior and identifying high-value customers.
+
+Subqueries and data integrity
+Question: Write a SQL query to find all employees in the `employees` table whose `salary` is greater than the average salary in their department. Assume that the table has `employee_id`, `department_id`, and `salary` columns.
+
+Example Answer:
+
+SELECT employee_id, department_id, salary
+
+FROM employees e
+
+WHERE salary > (
+
+    SELECT AVG(salary)
+
+    FROM employees
+
+    WHERE department_id = e.department_id
+
+);
+Explanation: This query uses a subquery to calculate the average salary within each department. The main query then selects employees whose salary exceeds the average salary of their respective department. The use of correlated subqueries (where the subquery references a column from the outer query) is a powerful technique for comparing data within grouped contexts.
+
+Indexes, performance, and transaction control
+Question: Suppose you need to delete a large number of records from the `transactions` table where the `transaction_date` is older than one year. Write a SQL script that includes steps to ensure the deletion is efficient and doesn’t affect the performance of the database during the operation. Assume an index exists on the `transaction_date` column.
+
+Example Answer:
+
+BEGIN;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+DELETE FROM transactions
+
+WHERE transaction_date < NOW() - INTERVAL '1 year';
+
+COMMIT;
+Explanation: This script begins with a `BEGIN` statement to start a transaction. The `SET TRANSACTION ISOLATION LEVEL` command ensures that the operation uses the appropriate isolation level to prevent reading data that has been modified but not committed by other transactions (dirty reads), improving performance during the deletion. The `DELETE` operation then removes records older than one year, leveraging the existing index on `transaction_date` for faster execution. Finally, the `COMMIT` statement ensures that all changes are saved permanently, maintaining data integrity and consistency.
+
+Learning tip: Refresh your SQL scripting skills before your next interview or assessment with the Learning SQL Scripting with Leo Messi learning path in CodeSignal Learn. Practice joins, functions, conditional logic, and more using stats from soccer star Lionel Messi’s career as your database. 
+
+Advanced SQL interview questions (5 years experience or more)
+SQL optimization techniques and handling large datasets
+Question: You have a table `large_sales` with millions of rows and a composite index on `(customer_id, sale_date) named `idx_customer_date`. Write an optimized SQL query to retrieve the total sales amount for each `customer_id` in the year 2023, considering the potential performance impact due to the dataset size.
+
+Example Answer:
+
+SELECT customer_id, SUM(sale_amount) AS total_sales
+
+FROM large_sales
+
+WHERE sale_date BETWEEN '2023-01-01' AND '2023-12-31'
+
+GROUP BY customer_id
+
+USE INDEX (idx_customer_date);
+Explanation: This query retrieves the total sales amount for each `customer_id` for the year 2023 from a very large dataset. By specifying the `USE INDEX` hint, the query explicitly directs the database to utilize the composite index on `(customer_id, sale_date)` to optimize the filtering and grouping operations instead of an index on just `sale_date`. This is crucial for maintaining performance when dealing with large datasets, as it minimizes the amount of data scanned.
+
+Advanced data modeling and stored procedures
+Question: Design a stored procedure named `UpdateEmployeeDepartment` that transfers an employee to a new department while ensuring that the new department’s `budget` is not exceeded. Assume that `employees` and `departments` tables exist, with `employees` containing `employee_id`, `department_id`, and `salary`, and `departments` containing `department_id`, `budget`, and `current_expenditure`.
+
+Example Answer:
+
+DELIMITER //
+
+CREATE PROCEDURE UpdateEmployeeDepartment(IN emp_id INT, IN new_dept_id INT)
+
+BEGIN
+
+    DECLARE emp_salary DECIMAL(10,2);
+
+    DECLARE current_expenditure DECIMAL(10,2);
+
+    DECLARE dept_budget DECIMAL(10,2);
+
+    SELECT salary INTO emp_salary FROM employees WHERE employee_id = emp_id;
+
+    SELECT current_expenditure, budget INTO current_expenditure, dept_budget 
+
+    FROM departments WHERE department_id = new_dept_id;
+
+    IF current_expenditure + emp_salary <= dept_budget THEN
+
+        UPDATE employees SET department_id = new_dept_id WHERE employee_id = emp_id;
+
+        UPDATE departments SET current_expenditure = current_expenditure + emp_salary 
+
+        WHERE department_id = new_dept_id;
+
+    ELSE
+
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Budget exceeded for the new department';
+
+    END IF;
+
+END //
+
+DELIMITER ;
+Explanation: This stored procedure first retrieves the salary of the employee being transferred and the budget and current expenditure of the target department. It then checks if adding the employee’s salary to the department’s current expenditure would exceed the department’s budget. If not, the employee is transferred, and the department’s expenditure is updated. If the budget would be exceeded, the procedure raises an error, ensuring budget constraints are respected. This approach demonstrates advanced data modeling by handling complex relationships between entities in the database.
+
+Database architecture considerations and triggers
+Question: Write a trigger named `CheckInventoryBeforeInsert` that prevents the insertion of a new order in the `orders` table if the total quantity of items ordered exceeds the available stock in the `inventory` table. Assume the `orders` table has `product_id` and `quantity` columns, and the `inventory` table has `product_id` and `stock_quantity` columns.
+
+Example Answer:
+
+DELIMITER //
+
+CREATE TRIGGER CheckInventoryBeforeInsert
+
+BEFORE INSERT ON orders
+
+FOR EACH ROW
+
+BEGIN
+
+    DECLARE available_stock INT;
+
+    SELECT stock_quantity INTO available_stock 
+
+    FROM inventory 
+
+    WHERE product_id = NEW.product_id;
+
+    IF NEW.quantity > available_stock THEN
+
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Insufficient stock for the product';
+
+    END IF;
+
+END //
+
+DELIMITER ;
+Explanation: This trigger executes before a new order is inserted into the `orders` table. It checks if the quantity being ordered exceeds the available stock in the `inventory` table. If the order quantity is greater than the available stock, the trigger prevents the insert operation by raising an error. This ensures that the database maintains data integrity and consistency, crucial for systems where inventory management is critical. It also reflects an understanding of how triggers can enforce business rules at the database level, which is a key consideration in robust database architecture.
+
+Hard SQL server interview questions for senior developers (10+ years of experience)
+High-availability solutions and disaster recovery strategies
+Question: Can you describe a high-availability solution for an SQL Server environment, and how you would implement a disaster recovery plan to minimize downtime and data loss?
+
+Example Answer: I would use Always On Availability Groups for high availability, setting up primary and secondary replicas across different servers, ideally in separate geographic locations. The primary replica handles transactions, while secondary replicas are kept in sync.
+
+For disaster recovery, I’d configure a secondary replica in a remote data center with automatic failover. This setup ensures minimal downtime and no data loss if the primary server fails. I’d also establish regular backups and test the failover process to ensure reliability.
+
+Performance tuning complex systems
+Question: Can you walk me through your approach to diagnosing and resolving performance issues in a complex SQL Server system with multiple large databases?
+
+Example Answer: I start by analyzing wait statistics to find bottlenecks like CPU or I/O issues. Then, I examine query execution plans to spot inefficiencies, such as unnecessary table scans.
+
+For optimization, I may tune indexes, rewrite queries, or partition large tables. I also check system configurations, such as memory and I/O settings, and ensure regular maintenance tasks like index rebuilding are in place to keep performance stable.
+
+Security best practices in SQL server management
+Question: What are some of the security best practices you follow when setting up and managing SQL Server databases?
+
+Example Answer: I follow the principle of least privilege, assigning minimal permissions needed for tasks. I integrate SQL Server with Active Directory for secure authentication and use encryption for sensitive data with tools like Transparent Data Encryption (TDE).
+
+I also ensure SQL Server is regularly patched and perform security audits to monitor for unauthorized access. Regular reviews of activity logs help me quickly detect and respond to any security issues.
+
+SQL performance tuning interview questions
+Query optimization and execution plans analysis
+Question: How do you approach optimizing a slow-running query in SQL Server, and what role do execution plans play in this process?
+
+Example Answer: When optimizing a slow query, I start by analyzing its execution plan to identify bottlenecks like full table scans or expensive joins. The execution plan shows how SQL Server processes the query, helping me spot inefficiencies.
+
+Based on the plan, I might rewrite the query, add or modify indexes, or adjust the query structure to reduce processing time. I continually review the updated execution plan to ensure the changes improve performance.
+
+Index management and query optimization
+Question: Can you explain your process for managing indexes to ensure efficient query performance in SQL Server?
+
+Example Answer: I regularly monitor index usage to identify underutilized or missing indexes. If a query is slow, I check the execution plan to see if an index could improve performance.
+
+I also evaluate existing indexes to ensure they are not redundant or overlapping, which could cause unnecessary overhead. Periodically, I perform index maintenance, such as rebuilding or reorganizing fragmented indexes, to keep the database performing optimally.

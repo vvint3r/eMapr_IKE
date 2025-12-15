@@ -1,0 +1,415 @@
+TOPICS
+
+MARKETING ANALYTICS - COMPREHENSIVE TAXONOMY
+L1: MEASUREMENT & ATTRIBUTION
+L2: Multi-Touch Attribution (MTA)
+
+L3: Rule-Based Models (First-touch, Last-touch, Linear, Time-decay, Position-based)
+L3: Algorithmic Attribution (Markov chains, Shapley value, Survival analysis)
+L3: Data Requirements & Infrastructure
+L3: Implementation Challenges (Data quality, Cross-device, Walled gardens)
+
+L2: Marketing Mix Modeling (MMM)
+
+L3: Traditional Econometric Approaches
+L3: Bayesian MMM (Priors, Hierarchical models, Stan/PyMC)
+L3: Adstock & Saturation Curves
+L3: Model Validation & Diagnostics
+L3: Budget Optimization
+L3: Modern Approaches (Robyn, Meridian, LightweightMMM)
+
+L2: Incrementality Testing
+
+L3: Geo-Based Experiments (Matched markets, Synthetic control)
+L3: User-Level Holdout Tests
+L3: Ghost Ads & PSA Tests
+L3: Conversion Lift Studies
+L3: Brand Lift Studies
+
+L2: Unified Measurement Approaches
+
+L3: Combining MTA + MMM
+L3: Data Fusion Techniques
+L3: Cross-Channel Attribution
+L3: Online-to-Offline Attribution
+
+L2: Performance Measurement
+
+L3: KPI Frameworks (North Star metrics, AARRR, HEART)
+L3: Marketing Efficiency Metrics (CAC, LTV, ROAS, MER, CPA)
+L3: Brand Metrics & Upper Funnel
+L3: Channel-Specific Metrics
+
+L2: Privacy-First Measurement
+
+L3: iOS ATT Impact & Solutions
+L3: Cookie Deprecation Strategies
+L3: Server-Side Tracking
+L3: Aggregated Measurement (SKAdNetwork, Privacy Sandbox)
+L3: Conversion Modeling & Statistical Modeling
+
+
+L1: EXPERIMENTATION & CAUSAL INFERENCE
+L2: A/B Testing Fundamentals
+
+L3: Hypothesis Formation & Test Design
+L3: Sample Size & Power Analysis
+L3: Randomization Techniques
+L3: Statistical Significance & P-values
+L3: Multiple Testing Corrections
+
+L2: Advanced Experimentation
+
+L3: Variance Reduction (CUPED, Stratification, Regression adjustment)
+L3: Sequential Testing (Always-valid inference, mSPRT)
+L3: Multi-Armed Bandits
+L3: Factorial & Multivariate Testing
+L3: Switchback Experiments
+
+L2: Quasi-Experimental Methods
+
+L3: Difference-in-Differences (DiD)
+L3: Regression Discontinuity Design (RDD)
+L3: Instrumental Variables (IV)
+L3: Synthetic Control Methods
+L3: Interrupted Time Series
+
+L2: Experimentation Challenges
+
+L3: Network Effects & Interference
+L3: Long-Term vs Short-Term Effects
+L3: Heterogeneous Treatment Effects
+L3: Winner's Curse & Selection Bias
+L3: Statistical Power in Marketing Contexts
+
+L2: Experimentation Infrastructure
+
+L3: Feature Flagging Systems
+L3: Assignment Mechanisms
+L3: Metrics Pipelines
+L3: Experiment Analysis Platforms
+
+
+L1: PREDICTIVE ANALYTICS & MODELING
+L2: Customer Lifetime Value (LTV)
+
+L3: Historical LTV Calculation
+L3: Predictive LTV Models
+L3: Cohort-Based Analysis
+L3: LTV:CAC Ratio Optimization
+L3: Churn Prediction Integration
+
+L2: Propensity Modeling
+
+L3: Conversion Propensity
+L3: Churn Propensity
+L3: Purchase Propensity
+L3: Response Modeling
+L3: Look-Alike Modeling
+
+L2: Segmentation & Targeting
+
+L3: RFM Analysis
+L3: Clustering Approaches (K-means, Hierarchical, DBSCAN)
+L3: Behavioral Segmentation
+L3: Persona Development
+L3: Dynamic Segmentation
+
+L2: Forecasting
+
+L3: Time Series Methods (ARIMA, Prophet, Exponential smoothing)
+L3: Demand Forecasting
+L3: Revenue Forecasting
+L3: Scenario Planning
+
+L2: Machine Learning in Marketing
+
+L3: Supervised Learning (Classification, Regression)
+L3: Feature Engineering
+L3: Model Selection & Validation
+L3: Ensemble Methods
+L3: Deep Learning Applications
+L3: Recommendation Systems
+
+
+L1: DATA INFRASTRUCTURE & ENGINEERING
+L2: Data Collection
+
+L3: Web & App Tracking (Pixels, SDKs, Tag managers)
+L3: Event Taxonomy Design
+L3: Data Layer Implementation
+L3: API Integrations
+L3: Data Quality & Validation
+
+L2: Data Pipeline Architecture
+
+L3: ETL/ELT Processes
+L3: Real-Time vs Batch Processing
+L3: Data Orchestration (Airflow, Dagster)
+L3: Data Transformation (dbt)
+L3: Error Handling & Monitoring
+
+L2: Data Warehousing
+
+L3: Warehouse Design (Snowflake, BigQuery, Redshift)
+L3: Schema Design (Star, Snowflake, Data Vault)
+L3: Data Modeling Best Practices
+L3: Query Optimization
+L3: Cost Management
+
+L2: Customer Data Platforms (CDP)
+
+L3: Identity Resolution
+L3: Profile Unification
+L3: Audience Activation
+L3: CDP Selection & Implementation
+
+L2: Data Governance
+
+L3: Data Quality Frameworks
+L3: Metadata Management
+L3: Data Lineage
+L3: Access Controls
+L3: Compliance (GDPR, CCPA, HIPAA)
+
+
+L1: TOOLS & TECHNOLOGY STACK
+L2: Analytics Platforms
+
+L3: Google Analytics 4
+L3: Adobe Analytics
+L3: Mixpanel & Amplitude
+L3: Heap Analytics
+
+L2: Attribution & Measurement Platforms
+
+L3: Mobile Attribution (AppsFlyer, Adjust, Branch)
+L3: Multi-Touch Attribution Tools
+L3: Marketing Attribution Software
+
+L2: Ad Platforms & APIs
+
+L3: Google Ads API
+L3: Facebook Marketing API
+L3: LinkedIn, TikTok, Pinterest APIs
+L3: Programmatic Platforms
+
+L2: Tag Management & Data Collection
+
+L3: Google Tag Manager
+L3: Adobe Launch
+L3: Segment
+L3: mParticle
+L3: RudderStack
+
+L2: Business Intelligence & Visualization
+
+L3: Tableau
+L3: Looker
+L3: Power BI
+L3: Mode Analytics
+L3: Metabase
+
+L2: Programming & Analysis
+
+L3: Python (Pandas, Scikit-learn, Statsmodels)
+L3: R (Tidyverse, Statistical packages)
+L3: SQL (Advanced techniques, Window functions)
+L3: Jupyter/R Markdown Workflows
+
+L2: Experimentation Platforms
+
+L3: Optimizely
+L3: VWO
+L3: Statsig
+L3: LaunchDarkly
+L3: Internal Platforms
+
+
+L1: ANALYTICS STRATEGY & GOVERNANCE
+L2: Measurement Strategy
+
+L3: Measurement Framework Development
+L3: KPI Selection & Prioritization
+L3: Measurement Maturity Models
+L3: Attribution Strategy
+L3: Reporting Cadence & Formats
+
+L2: Analytics Roadmap
+
+L3: Capability Assessment
+L3: Prioritization Frameworks
+L3: Implementation Planning
+L3: Resource Allocation
+L3: Vendor Selection
+
+L2: Data Strategy
+
+L3: Data Architecture Vision
+L3: Build vs Buy Decisions
+L3: Integration Strategy
+L3: Privacy-First Strategy
+L3: Data Democratization
+
+L2: Stakeholder Management
+
+L3: Executive Communication
+L3: Cross-Functional Collaboration
+L3: Insight Delivery & Storytelling
+L3: Managing Expectations
+L3: Change Management
+
+L2: Analytics Operating Model
+
+L3: Centralized vs Embedded Teams
+L3: Center of Excellence (CoE)
+L3: Self-Service Analytics
+L3: Request Intake & Prioritization
+
+
+L1: ORGANIZATIONAL & PROFESSIONAL
+L2: Team Structure & Leadership
+
+L3: Org Design for Analytics Teams
+L3: Roles & Responsibilities
+L3: Hiring & Talent Development
+L3: Team Performance Management
+L3: Scaling Analytics Teams
+
+L2: Career Development
+
+L3: Career Paths (IC vs Management)
+L3: Skill Development
+L3: Industry Transitions
+L3: Interview Preparation
+L3: Building Executive Presence
+
+L2: Soft Skills
+
+L3: Communication & Presentation
+L3: Influencing Without Authority
+L3: Conflict Resolution
+L3: Building Trust with Stakeholders
+L3: Strategic Thinking
+
+L2: Project Management
+
+L3: Agile for Analytics
+L3: Scoping & Estimation
+L3: Risk Management
+L3: Dependency Management
+L3: Retrospectives & Continuous Improvement
+
+
+L1: INDUSTRY & CHANNEL APPLICATIONS
+L2: Industry-Specific Analytics
+
+L3: E-commerce & Retail
+L3: SaaS & B2B
+L3: Financial Services & Fintech
+L3: Media & Entertainment
+L3: Healthcare & Pharma
+L3: Travel & Hospitality
+
+L2: Channel-Specific Analytics
+
+L3: Paid Search (SEM)
+L3: Paid Social
+L3: Display & Programmatic
+L3: Email Marketing
+L3: Affiliate Marketing
+L3: Influencer Marketing
+L3: Content Marketing
+L3: SEO Analytics
+L3: Mobile App Marketing
+L3: CTV & Video Advertising
+
+L2: Marketing Automation & CRM
+
+L3: Marketing Automation Platforms
+L3: Lead Scoring
+L3: Journey Orchestration
+L3: Email Deliverability & Engagement
+L3: CRM Analytics
+
+
+L1: STATISTICAL FOUNDATIONS
+L2: Probability & Distributions
+
+L3: Probability Theory Basics
+L3: Common Distributions (Normal, Binomial, Poisson, etc.)
+L3: Central Limit Theorem
+L3: Bayesian vs Frequentist
+
+L2: Statistical Inference
+
+L3: Hypothesis Testing
+L3: Confidence Intervals
+L3: Type I & Type II Errors
+L3: Effect Sizes
+L3: Bayesian Inference
+
+L2: Regression Analysis
+
+L3: Linear Regression
+L3: Logistic Regression
+L3: Regularization (Ridge, Lasso, Elastic Net)
+L3: Diagnostics & Assumptions
+L3: Generalized Linear Models
+
+L2: Causal Inference Frameworks
+
+L3: Rubin Causal Model
+L3: Directed Acyclic Graphs (DAGs)
+L3: Confounding & Selection Bias
+L3: Mediation Analysis
+L3: Treatment Effect Heterogeneity
+
+L2: Time Series Analysis
+
+L3: Stationarity & Differencing
+L3: Autocorrelation & Seasonality
+L3: ARIMA Models
+L3: State Space Models
+L3: Anomaly Detection
+
+
+L1: ADJACENT DISCIPLINES
+L2: Product Analytics
+
+L3: Product Metrics & KPIs
+L3: Funnel Analysis
+L3: Retention & Engagement
+L3: Feature Adoption
+L3: Product-Market Fit Measurement
+
+L2: UI/UX & Behavioral Psychology
+
+L3: Conversion Rate Optimization (CRO)
+L3: User Research Methods
+L3: Behavioral Economics in Marketing
+L3: Cognitive Biases
+L3: Persuasion Principles
+
+L2: Data Science & Engineering
+
+L3: Software Engineering Practices
+L3: Version Control (Git)
+L3: CI/CD for Analytics
+L3: Code Review & Documentation
+L3: Production ML Systems
+
+L2: Finance & Business Strategy
+
+L3: Financial Modeling
+L3: Unit Economics
+L3: ROI & Business Case Development
+L3: Competitive Analysis
+L3: Growth Accounting
+
+L2: Privacy & Legal
+
+L3: Privacy Regulations (GDPR, CCPA, PIPEDA)
+L3: Consent Management
+L3: Data Ethics
+L3: Terms of Service & Legal Compliance

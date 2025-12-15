@@ -1,0 +1,408 @@
+Entry-Level SQL Interview Questions for Data Analysts
+These SQL interview questions for data analyst freshers tend to appear early in the hiring funnel—typically in recruiter screens, take-home challenges, or online assessments. While you might get sent a SQL interview questions for data analyst PDF as prep material, remember that companies are testing more than syntax memorization. They’re looking for clarity in how you approach data, how you structure logic, and how well you can generalize patterns across datasets.
+
+Each of these basic SQL interview questions for data analyst roles targets specific foundational skills—whether it’s joining tables, applying aggregation, or extracting time-based insights. Mastering these builds a strong core for more advanced questions later in the process.
+
+What query returns the largest salary in each department?
+
+This exercise checks whether you can aggregate data and apply group-level filters. You need to GROUP BY department_id and use MAX(salary) to capture the highest value per group, then join to a dimension (or add a window function) if the interviewer also wants employee names. It reinforces the idea that every SELECT with a grouped aggregate must include only grouping columns or aggregates. Interviewers listen for discussion of NULL salaries and why casting to DECIMAL might be required when a table mixes currencies. Clear communication of these edge cases shows you understand how basic aggregation supports compensation dashboards.
+
+How would you find the 2nd-highest salary in the engineering department?
+
+A classic ranking problem that proves you can work with ordering and limits. Common answers use DENSE_RANK() or ROW_NUMBER() partitioned by department, filter on =2, and add WHERE dept_name='engineering'. Candidates should point out that ties at the top push the “true” second value down, making DENSE_RANK() the safer choice. Interviewers like to hear how you’d handle departments with fewer than two employees, perhaps returning NULL or excluding them entirely. Knowing when to use a window function versus a correlated subquery highlights core SQL literacy.
+
+Which neighborhoods have zero registered users?
+
+This anti-join problem tests understanding of NULL handling and set logic. A straightforward LEFT JOIN users u ON n.neighborhood_id = u.neighborhood_id WHERE u.user_id IS NULL surfaces empty areas. Explaining why NOT IN or NOT EXISTS could behave differently when NULLs appear shows grasp of three-valued logic. The query is common in churn or vacancy analyses where managers need to see untouched market segments. Interviewers may ask how adding an index on neighborhood_id speeds results on large city-wide datasets.
+
+How can you return one random car manufacturer with equal probability?
+
+Selecting a uniform random row validates awareness of database-specific random functions (ORDER BY RANDOM() in Postgres, TABLESAMPLE in BigQuery, etc.). Candidates should mention why adding LIMIT 1 is critical and discuss performance implications when the table grows—e.g., why full sorts can be expensive and how to use a precomputed sampling column. This maps to real features like “pick a random promo” or A/B bucket assignment. Good answers show you can translate business requests into performant SQL rather than relying on naïve approaches.
+
+How much did 2022 sign-ups spend on every product?
+
+Here you join users (filtered on registration_year = 2022) to purchases, then sum price * quantity per product_id. It reinforces join direction, date filtering, and grouped aggregation—bread-and-butter skills for any analyst. Explaining why you use an INNER JOIN versus LEFT JOIN (to exclude users with no purchases) demonstrates awareness of how join semantics affect totals. You might also discuss rounding currency and indexing on (user_id, product_id) to keep the query responsive.
+
+How do you calculate the daily average downloads for free vs. paying accounts?
+
+This question couples conditional aggregation with date grouping. You join accounts to downloads, apply COUNT(DISTINCT download_id) or simple COUNT(*), and divide by distinct account count per plan to get averages—rounding to two decimals. Interviewers expect mention of grouping by download_date and plan_type and why accounts with zero downloads should be excluded per spec. It mirrors real SaaS KPIs like DAU/MAU or usage per subscription tier.
+
+What query returns the maximum quantity bought for every product each year?
+
+The task blends date extraction (EXTRACT(YEAR FROM order_date)) with per-product aggregation. You need to group by year and product_id, selecting MAX(quantity) as max_quantity, then order by those keys. Bringing up indexing on (product_id, order_date) and partitioning large fact tables on year helps show you think about scale even for basic metrics. Such year-over-year comparisons are staple requests in retail analytics.
+
+How many days separate each user’s first and last session in 2020?
+
+This problem evaluates use of MIN() and MAX() in one pass per user, or window functions if you prefer. You filter on YEAR(session_date)=2020, compute the difference in days, and return user_id plus the gap. Candidates should highlight that results may be negative if data quality is bad and suggest placing a composite index on (user_id, session_date) to speed scanning billions of events. It echoes churn analytics where tenure length influences retention models.
+
+How do you compute the average order value by gender?
+
+Joining customer attributes to transaction totals and then grouping by gender tests basic join logic plus conditional counting (only users who have ever placed an order). You sum order_amount per user, divide by order count, and round to two decimals. Interviewers note whether you handle NULL genders and whether you use a subquery or CTE for clarity. Such demographic breakdowns appear daily in e-commerce BI work.
+
+What share of Apple-platform actions ranked in the top-5 during November 2020?
+
+You must filter on platform, restrict to November 2020, aggregate counts, then rank with DENSE_RANK. Handling ties properly and producing an ordered output shows mastery of grouping plus ranking logic in real engagement analyses.
+
+How would you flag each purchase as either the customer’s first or a repeat in its product category?
+
+Interviewers want to see whether you can leverage window functions (ROW_NUMBER() or MIN(id) OVER (PARTITION BY user_id, category)) to mark a “first” versus subsequent purchase, then cast that boolean into a tidy feature column. A good solution joins no extra tables, sorts by purchase time, and explains why session-level deduping isn’t needed. Mentioning that this repeat-purchase label later feeds retention analyses shows business awareness while keeping the SQL lightweight.
+
+Given wireless packet logs, how can you return—per SSID—the largest number of packets any single device sent in the first ten minutes of 1 Jan 2022?
+
+The query filters on the timestamp window, groups by both ssid and device_id, counts packets, then applies MAX() (or ROW_NUMBER() with DESC ordering) per SSID. Explaining that you choose an index on (ssid, created_at) to speed the time filter demonstrates practical sense, yet the core logic remains a straightforward aggregation—squarely entry-level.
+
+What SQL statement gives each user’s total transaction cost, sorted from highest spender to lowest?
+
+This test reinforces simple grouping (SUM(amount)) and ordering skills. Candidates should highlight that an INNER JOIN to a product table isn’t necessary unless unit prices live elsewhere, and that NULL amounts require COALESCE to keep sums correct. Such wallet-share rollups are daily fare for junior analysts in fintech or retail data teams.
+
+How would you output, in one result set, the total transaction count, the number of distinct purchasers, the count of “paid” transactions ≥ $100, and the product with the highest paid revenue?
+
+Interviewers are testing whether you can combine scalar subqueries or CTEs into a single select list. A neat answer uses four subqueries—each aggregating differently—while noting why unioning or multiple passes over the table would be less efficient. This “dashboard in one row” pattern appears often in recruiter screens.
+
+Which five user actions ranked highest during Thanksgiving week 2020, and what were their ranks (ties allowed)?
+
+The task mixes filtering on a date range, aggregating counts, and ranking with DENSE_RANK(). Candidates should explain tie handling and why ORDER BY action_count DESC before ranking is crucial. The scenario mirrors common engagement reporting—perfect for junior analysts who’ll build feature-usage tables.
+
+How do you calculate the overall acceptance rate of friend requests, rounded to four decimals?
+
+Solving requires counting total requests versus accepted ones—often via a join or a request_id IN (SELECT …) pattern. Key talking points include integer division pitfalls, the need to cast to DECIMAL, and whether to exclude self-friend edge cases. Simplicity keeps it entry-level, but the precision requirement checks attention to detail.
+
+After discovering duplicate rows in employee_projects, how would you still identify the five priciest projects by budget-to-employee ratio?
+
+A clean answer uses COUNT(DISTINCT employee_id) in the denominator, guarding against duplicates, then orders by the computed ratio and limits to five. The exercise spotlights practical data-quality thinking (deduping) without venturing into advanced optimization, making it a solid capstone basic query for new analysts.
+
+SQL Interview Questions for Experienced Data Analysts
+Once you’ve cleared the basics, most data analyst SQL interviews begin to probe deeper into query logic, edge-case reasoning, and optimization skills. For candidates with 3+ years of experience, the expectations go beyond just writing accurate queries. These are the types of SQL query interview questions for data analyst roles that assess how well you can translate business requests into accurate, testable SQL logic.
+
+Expect a mix of hands-on live coding tasks and take-home SQL challenges—especially at companies like Meta, Amazon, or Netflix—where your ability to manipulate data at scale matters just as much as syntax fluency.
+
+These types of SQL interview questions for experienced data analyst roles are especially common in companies handling terabytes of data daily—like e-commerce platforms, fintech firms, and data-driven marketplaces. If you’re looking to ace SQL interview questions for 3 years experience, focus on techniques like query planning, indexing strategy, and intelligent use of CTEs or window functions.
+
+What is the last transaction recorded on each calendar day?
+
+A banking table lists id, transaction_value, and created_at timestamps. Your goal is to pick, for every date, the single transaction with the latest timestamp and output its id, amount, and datetime. This entry-level task teaches the staple window-function pattern—ROW_NUMBER() OVER (PARTITION BY CAST(created_at AS DATE) ORDER BY created_at DESC)—and encourages candidates to consider tie-breakers when two entries share an identical timestamp. Interviewers gauge whether you can partition correctly, convert datetimes to dates, and deliver an ordered result set that business users can trust.
+
+How would you pivot exam results so each student’s four test scores appear on a single row?
+
+A table exam_scores records student-id, exam-id (1-4) and score. You’re asked to reshape the data into a wide format—one row per student, with separate columns for Exam 1 through Exam 4. The prompt reinforces essential entry-level skills: conditional aggregation (or filtered pivots) and null handling when scores are missing. Interviewers love it because it surfaces your mental model of grouping, selective aggregation with CASE, and output formatting for downstream dashboard use. Getting it right demonstrates that you can translate a reporting requirement into clean SQL without over-engineering the solution.
+
+How would you pull a truly random row from a 100-million-row table without overloading the database?
+
+A naïve ORDER BY RANDOM() causes full sorts, so seasoned beginners mention more efficient tricks—sampling by id range, using a random modulo predicate, or leveraging database sampling clauses like TABLESAMPLE BERNOULLI. The question pushes you to reason about performance trade-offs and estimate how long a query might lock. It also opens discussion on why approximate randomness is often “good enough” for dashboards or QA spot-checks.
+
+Which customers have placed more than three transactions in both 2019 and 2020?
+
+You aggregate by (user_id, year) with COUNT(*), filter on >3 using a CTE, then GROUP BY user_id HAVING COUNT(DISTINCT year)=2. The task ensures you understand grouping, HAVING filters, and how to pivot year-level conditions into a single pass. It’s the kind of simple cohort query recruiters expect juniors to nail quickly.
+
+Which shipments were delivered during a customer’s membership period, and which were not?
+
+You’re a data scientist on Amazon’s distribution team and must tag each shipment as Y (delivered while the customer was an active member) or N (delivered outside that window). The exercise checks your comfort with conditional joins and date-range logic: you’ll join a customers table that stores membership start and end dates to a shipments table, compare shipment dates against those ranges, and return a tidy report. A correct answer shows you can reason about inclusive vs. exclusive boundaries (edge-case shipments sent on the exact start or end date) and format a boolean output column. It’s a classic entry-level test of CASE expressions, simple joins, and clear communication of business rules. Mastering this pattern prepares you for common “flag-this-row” analytics tasks that pop up in day-to-day work.
+
+How would you list only the duplicate rows in a users table?
+
+Data-cleaning is core to analyst work, and this task checks your ability to spot duplicates using COUNT(*) > 1 in a grouped CTE or ROW_NUMBER() > 1 in a window. You must decide which columns define “duplicate”—often all columns except a surrogate key—and explain why hashing or concatenating fields can be handy. The interviewer looks for discussion of removing rather than just identifying duplicates, highlighting the importance of reproducible ETL pipelines. Mentioning how to add a composite unique index to prevent recurrence shows practical thinking.
+
+Who are the top three highest-earning employees in each department?
+
+Using employees and departments, build a ranked list of the three largest salaries per department, outputting employee full name, department name, and salary. The question probes intermediate query construction: joining reference tables, applying RANK() or DENSE_RANK(), and handling departments with fewer than three staff. A solid answer shows familiarity with window functions, tie-breaking rules, and ordering by multiple fields—skills that quickly separate candidates who only know basic aggregation from those who can craft polished reporting queries.
+
+How many customers were upsold after their initial purchase?
+
+Given a purchases table with timestamps, determine the number of users who bought additional products after their first purchase date (same-day multiple items don’t count). You’ll apply MIN(purchase_date) in a CTE, join back, and filter on later dates. The scenario tests logical thinking around customer behavior funnels and event ordering, plus competence with CTEs and date comparisons. It’s a favorite mid-screen question because the correct query is short yet requires careful reasoning about “first purchase” vs. “later purchase” semantics.
+
+Create a January-2020 histogram of comments per user, with one-comment bins.
+
+From an events table, count how many comments each user left in January 2020, then bucket those counts (0, 1, 2, …) and tally users per bucket. This query forces use of subqueries or CTEs for per-user counts followed by either a GROUP BY on that derived count or a windowed approach. Interviewers want to see if you understand grouping on aggregated results, generating missing buckets (optional), and rounding percentages if requested. It’s representative of product-analytics tasks like building engagement histograms.
+
+What item did each user purchase third?
+
+A transactions table records every order with user_id, item, timestamp, and id. You must return, for every user, the item (or full row) corresponding to their third chronological purchase, breaking timestamp ties with the lower id. The exercise highlights ranking functions (ROW_NUMBER()) and tie-handling logic—core abilities for analysts who work with event streams. It also demonstrates your understanding of why deterministic ordering matters when timestamps collide.
+
+How would HR total regular pay, overtime, and overall compensation per role?
+
+Group the payroll table by role_title, SUM(regular_salary) AS reg_pay, SUM(overtime_pay) AS ot_pay, and compute total_comp = reg_pay + ot_pay. Presenting both component and aggregated figures helps budget planning, and comparing each role’s share to company averages can reveal inequities. The paragraph stresses validating that overtime isn’t double-counted and explains how currency conversions or multi-country payrolls complicate roll-ups.
+
+What query totals IT, HR, Marketing, and Other departmental spend by 2023 fiscal quarter?
+
+Create fiscal_qtr = DATE_TRUNC('quarter', txn_date) (or custom fiscal logic), then sum amounts with conditional aggregation: SUM(CASE WHEN dept='IT' THEN amt END) AS it_spend, and group by fiscal_qtr. An “Other” column sums any department not explicitly listed. Finance uses this snapshot to spot over-budget units quickly. Including a quarter index or partition improves performance, and noting how fiscal calendars can differ from calendar quarters shows analyst diligence.
+
+How do you compute a three-day rolling average of steps per user, excluding the first two days?
+
+Partition by user_id, order by step_date, then AVG(steps) OVER (PARTITION BY user_id ORDER BY step_date ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) gives the moving average. Filter out rows where ROW_NUMBER() ≤ 2. Rounding the result matches dashboard display needs. The explanation cautions about missing dates: if gaps exist, analysts might need a calendar table to fill them before windowing.
+
+Which query extracts every user’s third purchase, breaking timestamp ties by the lower transaction ID?
+
+Apply ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY purchase_ts, id) and filter for row_number = 3. Sorting by (user_id, id) afterwards yields a tidy list. Merchandisers watch this milestone because the third order often signals long-term retention. Highlight that users with fewer than three purchases won’t appear, and note that composite indexing on (user_id, purchase_ts, id) optimizes the window function.
+
+How can you pivot worldwide branch sales so each year is a column?
+
+Start by unifying all yearly branch tables—either with UNION ALL into a common-table expression or by querying a single long-format table if one already exists—so every row holds branch_id, year, total_sales. Apply a conditional aggregation: SUM(CASE WHEN year = 2021 THEN total_sales END) AS sales_2021, repeating for each year you need, and group by branch_id. This returns one row per branch with sales split across columns, letting executives compare multi-year performance at a glance. Including a fallback “other_year” column or dynamically generating the year list future-proofs the report. A composite index on (branch_id, year) keeps scans fast even with millions of rows.
+
+What query finds the median household income for every city?
+
+Use a window function: partition incomes by city, order by income, then assign row numbers from both the top and bottom (ROW_NUMBER() and COUNT(*) OVER). For each city keep rows where the two row numbers meet in the middle; average them when the count is even. This calculation handles any sample size and avoids subqueries that scan the same city repeatedly. Presenting the median rather than the mean gives a better sense of typical earnings when outliers skew the data. Be sure to cast incomes to a numeric type with the right precision to avoid truncation.
+
+How do you compute a 3-day weighted moving average of product sales (0.5, 0.3, 0.2)?
+
+Partition rows by product_id, order by sale_date, and grab the three-day window with LAG(); then calculate 0.5*curr + 0.3*prev1 + 0.2*prev2 only when both previous rows exist. Filtering with WHERE prev1 IS NOT NULL AND prev2 IS NOT NULL ensures you output dates that have two predecessors. This weighted view smooths volatility while still reacting quickly to recent shifts, which is why analysts prefer it for trend dashboards. Indexes on (product_id, sale_date) guarantee sequential access, and adding ROUND(value, 2) readies the figure for stakeholder slide decks.
+
+How can you classify 2023 sales as Standard, Premium, or Promotional and sum them by region?
+
+A CASE statement encodes the hierarchy: July overrides all as Promotional; East overrides the amount cut-off except in July; otherwise the 2 000 threshold splits Premium and Standard. Sum amount and COUNT(*) by region and the derived sale_type to build the report. Management uses these figures to tune pricing and seasonal promotions. Clearly documenting rule priority prevents logic drift, and partitioning by sale date enables parallel scans for year-long tables.
+
+How would you calculate the number of unpurchased seats on every flight?
+
+Joining flights, planes, and flight_purchases demands careful use of LEFT JOIN and COALESCE() to treat “no purchases” as zeros. Advanced candidates point out that a SKU-like key combining flight date, flight number, and seat number prevents double counting, and they’ll propose materialized views or incremental aggregation to keep the query sub-second for operations teams. Explaining how this metric feeds yield-management optimizations demonstrates business impact awareness.
+
+What query reports 2022 total expenses and the company-wide average per department?
+
+Senior analysts must aggregate at two levels in one result: per-department totals and an overall benchmark. A clean answer uses a window function (AVG(total_expense) OVER ()) or a cross-join to a sub-aggregate, and discusses why aligning fiscal vs. calendar years matters. Performance commentary—such as partitioning the fact table on expense_date and compressing low-cardinality dept_id—signals experience with real finance datasets.
+
+Which cities have the lowest-quality search results (all ratings < 3)?
+
+The challenge blends grouping with Boolean tests across result sets: you must confirm that all rows per query meet a condition, not just the average. A typical pattern uses MIN(rating) and checks if it’s >=3, then flips the logic. Interviewers expect discussion of the anti-join alternative and of clustering the table by (query, rating) so that the engine can skip irrelevant blocks—crucial for terabyte-scale search logs.
+
+How many confirmation SMS responses do we receive by carrier and country on 28-Feb-2020?
+
+Real-time marketing teams rely on this metric to detect deliverability issues, so latency and accuracy both matter. You join the latest “confirmation” message per phone number to the confirmations table, group by carrier, country, and count responses. Senior-level answers mention windowing to select “latest” per number, advocate a filtered index on type='confirmation', and discuss why time-zone normalization is vital when messages span regions.
+
+What share of comments on each ad occurs in the feed versus the “moments” surface?
+
+Solving this requires UNIONing two comment tables, tagging the source, grouping by ad_id, and computing percentages. Advanced interviewees justify using COUNT(DISTINCT comment_id) to avoid duplicates, suggest bitmap indexes on ad_id, and highlight the importance of consistent UTC timestamps when ads run in multiple regions. They may even propose pre-aggregating hourly to power real-time advertiser dashboards.
+
+How do you retrieve each employee’s current salary after an ETL bug inserted yearly updates as new rows?
+
+The fix leverages ROW_NUMBER() over (employee_id ORDER BY salary_effective_date DESC) to isolate the latest row. You then join this CTE back to employees for a clean, deduplicated view. Experienced analysts discuss adding a surrogate key plus ON CONFLICT handling to prevent future drift and consider a covering index (employee_id, salary_effective_date DESC) to support both the query and payroll reports.
+
+How would you build a monthly customer KPI report for 2020 showing user count, transactions, and GMV?
+
+The query aggregates different measures from separate tables, aligns them on a generated date spine, and outputs tidy month-level rows suited for dashboards. Senior answers cover why using a calendar table avoids missing-month gaps, how to handle late-arriving transactions via incremental backfills, and ways to index on (order_date) + (user_signup_date) to keep nightly ETL light.
+
+Which users performed ATM withdrawals exactly 10 seconds apart—indicating possible fraud?
+
+You use LAG() over (user_id ORDER BY created_at) to compute time deltas, then confirm that all consecutive gaps equal 10 seconds. Edge-case handling (single-transaction users) and ordering in the final result (ORDER BY user_id) show professionalism. Discussing a composite index (user_id, created_at) and partitioning on created_at to shorten forensic look-backs moves the answer into staff-level territory.
+
+Rank departments with ≥10 employees by percent earning > 100 K, keep top 3.
+
+The query mixes conditional aggregation, filtering on department size, and percentage calculation. Interviewers check numeric precision, use of window functions for ranking, and thoughtful exclusion of small departments—common executive-level reporting nuances.
+
+Find the three lowest-paid employees who have finished ≥2 projects.
+
+The answer requires joining employee, project, and assignment tables, filtering completed projects, and ranking salaries. Interviewers judge your join ordering and ability to eliminate duplicates that inflate project counts.
+
+Fix an ETL bug: retrieve each employee’s latest salary despite duplicate rows.
+
+Seasoned analysts must deploy ROW_NUMBER() OVER (PARTITION BY employee_id ORDER BY salary_date DESC) or a MAX-by-GROUP approach, then discuss auditing steps to prevent future duplication. It tests data-quality instincts alongside SQL chops.
+
+Which users post the same job repeatedly vs. only once?
+
+Counting per-user per-job occurrences, then pivoting into single vs. multiple posters, forces nuanced grouping and CASE aggregation. Senior roles often own marketplace anti-spam metrics like this.
+
+Who are the daily top-3 downloaders, using window RANK?
+
+Large download_fact tables demand efficient partitioning and thoughtful ordering; follow-ups often cover index or cluster key choices. Experienced analysts should anticipate scale-related pitfalls.
+
+How would you integrate payment, behavior, and fraud logs to improve the system?
+
+The prompt is open-ended: discuss data cleansing, schema unification, entity resolution, and choosing the right join keys. Interviewers want narrative structure—ingestion → validation → feature engineering → insight generation—illustrating that you can plan end-to-end analytics projects beyond a single SQL script.
+
+Compute a weighted campaign score using 0.3 × open rate and 0.7 × click rate.
+
+Beyond writing the SQL, strong candidates justify why click-heavy weighting matters, mention confidence intervals on small sends, and flag bias if opens are auto-filtered by email clients. It marries arithmetic SQL with marketing-domain reasoning.
+
+Describe the data-model migration from a document DB to relational tables.
+
+The scenario expects an architectural narrative: identifying entities (users, friendships, interactions), defining PK/FK constraints, planning backfill ETLs, and outlining read-pattern performance. It evaluates system-thinking more than pure query writing.
+
+What insights and distribution metrics would you build on daily conversation counts?
+
+After outlining potential KPIs (median conversations per user, power-law tails, churn predictors), you must deliver a SQL query producing the per-user daily conversation histogram. The question blends exploratory analytics reasoning with concrete querying—perfect for analysts who straddle data discovery and SQL execution
+
+How would you calculate the total salary paid to employees who never finished a single assigned project ?
+
+You must join employees to projects, flag unfinished work where end_dt IS NULL, and identify staff whose entire project set is unfinished. A CTE that counts finished projects per employee (COUNT(end_dt) FILTER (WHERE end_dt IS NOT NULL)) and filters on = 0 is a clean pattern. Summing their salaries shows the true cost of “slackers” and is often used in cost-reduction audits. Good answers also mention excluding employees with no projects and adding an index on (employee_id, end_dt) for speed.
+
+What query returns the running (cumulative) sales total for every product, ordered by product and date?
+
+This task highlights window functions: SUM(price) OVER (PARTITION BY product_id ORDER BY date ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) produces the cumulative field. Grouping isn’t needed—windowing keeps each purchase row intact—so analysts can trend the metric day by day. Discussing how to partition large sales tables (e.g., by month) shows scale awareness. Rounding and casting are minor but necessary finishing touches for reporting.
+
+How many rows would each join type (INNER, LEFT, RIGHT, CROSS) return when you join all ads to the top-3 ads subquery?
+
+You first build a CTE top_ads using ORDER BY popularity LIMIT 3, then create four separate SELECT COUNT(*) blocks labeled by join type. The puzzle forces you to reason about join mechanics—INNER should give 3, LEFT gives N, RIGHT gives 3, and CROSS gives 3 × N—rather than just write syntax. Seasoned answers mention why RIGHT joins aren’t supported in some systems and how nulls affect counts. It doubles as a quick sanity-check of a candidate’s join intuition.
+
+Which user has the highest average number of unique item categories per order?
+
+You’ll need a two-stage aggregate: first count distinct categories inside each order, then average that count per user. Ordering the result and limiting to 1 returns the winning user. The question checks comfort with nested aggregation, COUNT(DISTINCT …), and the difference between order-level and user-level granularity. Mentioning tie-handling and potential use of WITH TIES shows polish.
+
+Which two students scored closest to each other on the SAT, and what was the score gap?
+
+A neat approach self-joins the table on score differences or uses window functions with LAG() after ordering by score. You then pick the minimum absolute difference and, if ties remain, return the alphabetically higher pair. This tests ranking logic, tie-breaking, and string comparison. Explaining why an index on score speeds the inner difference scan gets bonus points.
+
+What percentage of users held “Data Analyst” immediately before “Data Scientist”?
+
+Using ROW_NUMBER() or LEAD() over each user’s job-history ordered by start date lets you compare adjacent titles. Count matches where the earlier row is “Data Analyst” and the next row is “Data Scientist,” divide by total distinct users, and round. The prompt tests your ability to work with ordered event data and compute conditional ratios. Call out pitfalls like overlapping date ranges or simultaneous titles.
+
+On what earliest date did each user listen to their third unique song, and what was that song?
+
+You partition by user_id, rank distinct song_id by first-play date, and filter for rank 3, leaving nulls for users below the threshold. Handling distinctness inside the window (ROW_NUMBER() OVER … PARTITION BY user_id ORDER BY MIN(play_dt)) shows finesse. Interviewers like hearing about edge cases—repeated plays of the same song—and why a surrogate key on (user_id, song_id) accelerates the query.
+
+What fraction of 12/31/2019 active accounts closed on 1/1/2020?
+
+You identify the active cohort on December 31, join to January 1 statuses, count those whose status changed to “closed,” and divide by the cohort total. Rounding to two decimals matches finance reporting standards. Discussing how to index (account_id, ds) for daily status snapshots demonstrates practical performance thinking. It also surfaces the need to guard against duplicate daily rows.
+
+How would you label each user’s attribution as “paid” or “organic” based on prior Facebook or Google visits?
+
+A subquery that checks EXISTS (SELECT 1 FROM visits WHERE user_id=… AND source IN ('facebook','google')) feeds a simple CASE statement. The exercise is tiny but reveals your clarity on boolean logic and set membership. Advanced candidates bring up deduplicating multi-channel visits and the importance of visit timing relative to conversion. It’s foundational for marketing analytics pipelines.
+
+How do you assign session numbers to events when a session is ≤ 60 minutes of inactivity?
+
+Use LAG(event_ts) per user to compute minute gaps, flag starts where gap > 60, then apply a running SUM() of those flags to generate session_id. This classic pattern tests mastery of window functions for stateful labeling. Mentioning timezone normalization and indexing (user_id, event_ts) shows real-world savvy. Edge-case awareness—like back-to-back identical timestamps—also impresses.
+
+Which ongoing projects are forecast to go “over-budget” versus “within budget”?
+
+You prorate each employee’s salary to project duration, sum per project, and compare to the budget. A CASE label outputs the status, making it useful for dashboards. The math forces candidates to convert annual salaries into daily costs and handle half-year examples correctly. Seasoned answers discuss assuming a 365-day divisor and suggest materializing salary snapshots for long projects.
+
+What was the month-over-month revenue change for every month in 2019?
+
+Aggregate revenue by month, then apply LAG(total_rev) to compute the change and ROUND(…,2) for presentation. Candidates must filter to 2019, handle January’s null prior month, and decide between absolute or percentage change. Performance-minded folks note that partitioning the transactions table by date keeps annual scans light.
+
+Which products cost more than their own average transaction total?
+
+A per-product CTE calculates AVG(price*quantity) as avg_total; the outer query joins to products and filters on product_price > avg_total. Rounding both numeric columns to two decimals matches stakeholder expectations. The problem checks understanding of self-referential filters and grouped aggregates. Bringing up indexed materialized views for large SKU catalogs adds senior-level depth.
+
+If you’re preparing offline, you can also use a downloadable SQL practice questions for data analyst interview PDF or worksheet. The best prep resources go beyond copy-paste queries—they explain why each query matters in a business context.
+
+Let these questions guide your prep, but make sure to actually write and run them in a real SQL editor. Practice under realistic constraints is what separates candidates who pass from those who almost do.
+
+Scenario-Based and Advanced SQL Questions
+As you move into mid-level and senior data analyst roles, SQL interviews go beyond basic queries. Companies expect you to handle multi-table joins, create optimized CTEs, work with window functions, and debug slow queries in production. These advanced SQL interview questions for data analysts reflect business-critical scenarios where precision, scalability, and business logic all matter.
+
+Many SQL scenario-based interview questions for data analyst roles also test your ability to reason about trade-offs—e.g., filtering before or after joins, dealing with nulls, or ensuring referential integrity. Below are examples that simulate these real-world demands.
+
+How many minutes did each plane spend in the air on every calendar day?
+
+This problem forces you to convert departure and arrival timestamps into minute-level duration, group by both plane_id and flight date, and round down fractional minutes. It rewards analysts who can spot hidden pitfalls—overnight flights that straddle dates, missing data, or daylight-saving jumps—and who suggest placing a composite index on (plane_id, departure_ts) to avoid full table scans during daily ETL. Interviewers also look for discussion of window vs. aggregation trade-offs when the same table powers multiple metrics.
+
+Which SQL pulls the 2nd-longest flight for every city pair?
+
+Normalize routes by sorting the two city names and storing them as city_a, city_b so A-B equals B-A, then compute duration_minutes. Apply ROW_NUMBER() OVER (PARTITION BY city_a, city_b ORDER BY duration_minutes DESC) and filter for rank = 2; if a pair lacks two flights no row returns. Sorting the final output by flight_id meets the spec. Airlines inspect this list to schedule backup aircraft for long hauls, so accuracy matters. A multi-column index on normalized cities plus duration speeds the ranking even in decade-long flight logs.
+
+How would you calculate first-touch attribution for each converting shopper?
+
+Join attribution to user_sessions, filter to rows where conversion = TRUE, and for every user_id pick the earliest session (MIN(session_ts)) then capture its channel with FIRST_VALUE(channel) over an ORDER BY session_ts. This isolates the discovery channel that led to the eventual purchase, informing marketing spend. Mention deduplicating multiple same-timestamp sessions and handling users who clear cookies. Partitioning by user_id and indexing on (user_id, session_ts) make the scan feasible when logs exceed a billion rows.
+
+How do you calculate a three-day rolling average of deposits in a bank-transactions table?
+
+You first filter to positive transaction_values, group them by txn_date, then use AVG(daily_total) OVER (ORDER BY txn_date ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) to smooth volatility in inflows. The explanation should mention why withdrawals are excluded, how to handle holidays that skip dates, and how indexing on txn_date keeps the query scalable for real-time dashboards.
+
+How can you surface the five product pairs most frequently purchased together?
+
+The technique explodes each transaction into product pairs via a self-join (enforcing p1 < p2 to avoid duplicates), counts occurrences, and orders by that count. The query illustrates market-basket analysis at scale—important for recommendation engines—so candidates should comment on deduplicating large intermediate joins (e.g., using sessionization or probabilistic sketches). Deterministic alphabetical ordering (p2) ensures tie-breaking for reproducible BI dashboards.
+
+Calculate a 3-day rolling average of step counts per user.
+
+The query uses AVG() OVER(ORDER BY date ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) while filtering out rows lacking two predecessors. It gauges ability to apply window frames, convert floating output to whole numbers, and think through the first-two-days exclusion. Such rolling metrics surface constantly in health-tech dashboards, making this a practical advanced exercise.
+
+How many right-swipes does each feed-ranking variant average among users with ≥ 10, 50 and 100 total swipes?
+
+You’ll join the swipes log to the variants table, bucket users by total-swipe count (≥10, ≥50, ≥100), and for each cohort compute the mean of is_right_swipe separately for variants A and B. The challenge mixes conditional aggregation with a HAVING filter on swipe thresholds and showcases why integer division of right/total swipes yields a clearer metric than simply averaging booleans. Good answers also explain how excluding users below each threshold avoids small-sample noise and why indexing (user_id, variant) keeps the query performant on billions of swipes. Interviewers listen for discussion of statistical significance and whether further stratification (e.g., by geography) might alter conclusions.
+
+What cumulative distribution (CDF) of comment counts per user can you build, using one-comment buckets?
+
+First, aggregate the comments table to get each user’s total comment count; then group these counts into integer buckets and apply a running SUM() window to produce the cumulative percentage. This pattern teaches how to turn raw frequency data into a CDF that product managers can read at a glance (e.g., “90 % of users leave ≤ 3 comments”). Candidates should mention handling sparse tails, ensuring the bucket list is complete, and ordering the window correctly so cumulative values stay monotonic. Indexing on user_id and pre-materialising daily comment tallies are good scale optimisations to note.
+
+How many “likers’ likers” does each user have on a dating platform?
+
+The task requires a self-join: first find everyone who liked you, then count how many people liked them in turn. Using DISTINCT in the inner set avoids double-counting duplicates, and grouping by the original user_id produces a tidy fan-out metric. The exercise checks fluency with aliasing, multi-layer joins, and reasoning about graph-like relationships in SQL. Interviewers value explanations of edge cases (users with no inbound likes) and performance tips such as indexing (liker_id) to accelerate the second-level lookup.
+
+What annual-cohort retention does an annually-billed SaaS achieve?
+
+In annual_payments each row marks a yearly renewal; cohort users by their first payment_year, then compute the share who renew in year +1 and year +2. You’ll pivot counts into retention percentages and order by cohort year for an executive-friendly table. The query demonstrates date extraction, cohort labelling, and conditional aggregation—all staples of subscription analytics. Strong answers discuss missing renewals (NULL pay dates), churn bias, and how to handle users who upgrade mid-cycle.
+
+How many push notifications does a user receive before converting, segmented across the user base?
+
+Join notification_deliveries to the users table, cap each user’s timeline at their conversion_date, and count notifications sent before that moment (or to today if they never convert). Aggregating these counts into a histogram—e.g., 0-3, 4-7, 8+—reveals whether over-messaging hurts conversions. The prompt tests temporal joins, NULL handling for non-converters, and the ability to craft business-ready distribution outputs. Savvy candidates will discuss window functions to pick “last pre-purchase notification” and the impact of time-zone normalisation.
+
+What is the three-month cohort retention for each subscription plan?
+
+Using subscriptions, derive the signup month, then for months +1, +2, +3 flag whether the user remains active (end_date IS NULL or after the window). A UNION or conditional aggregation can roll these flags into retention rates per (start_month, plan_id, num_month). The problem blends date math, cohort framing, and ratio calculation, mirroring dashboards built for product-led-growth teams. Interviewers look for clear ordering, thoughtful null checks, and commentary on why 3-month retention predicts lifetime value.
+
+Does click-through rate rise with higher human-rated relevance in Facebook search results?
+
+Combine search_results with search_events, group by discrete rating bands, and compute both impressions and clicks to output CTR per rating. A subsequent regression or chi-square test (outside SQL) can confirm significance, but the query itself must deliver clean aggregates: total rows, clicked rows, and CTR rounded to two decimals. The exercise checks ability to join fact tables correctly, avoid double counting when multiple results share a query, and reason about causality versus correlation in product metrics. Mentioning confidence intervals and exposure thresholds shows senior-level insight.
+
+MySQL and Tool-Specific SQL Questions
+If you’re preparing for a role that specifically uses MySQL, expect questions on syntax, functions, and performance nuances unique to this platform. Many MySQL data analyst interview questions focus on functions like STR_TO_DATE, DATEDIFF, GROUP_CONCAT, and window functions such as ROW_NUMBER()—all critical for date parsing, ranking, and summarizing large datasets.
+
+What are common MySQL functions used in analytics?
+In data analyst interviews focused on MySQL, you’ll often be asked to demonstrate fluency with built-in functions that are essential for performing analytical tasks. These types of MySQL interview questions for data analyst roles are especially common at smaller startups and SaaS companies that rely on MySQL for powering dashboards and reporting pipelines.
+
+You may also be asked to debug queries involving MySQL-specific behaviors, such as how NULL values are sorted or how execution plans are generated. To stand out, go beyond just syntax—be ready to explain how MySQL handles indexing, temporary tables, and query optimization under the hood.
+
+What does GROUP_CONCAT() do in MySQL, and when would you use it?
+
+The GROUP_CONCAT() function in MySQL combines multiple values from grouped rows into a single comma-separated string. It’s especially useful in data analyst tasks when summarizing categories or labels into one field, such as combining all product names per customer. This function isn’t supported natively in all databases, making it a frequent question in MySQL data analyst interview questions. You may also be asked to handle truncation or ordering issues with this function.
+
+How does MySQL handle NULL values when using ORDER BY?
+
+Unlike some databases that treat NULL as the lowest value, MySQL orders NULLs first in ascending order and last in descending order by default. This behavior can affect analytic reports or dashboards when sorting is involved, especially in rankings or priority queues. It’s a subtle point but commonly tested in MySQL interview questions for data analyst candidates who are expected to understand default behaviors and how to override them with IS NULL, IFNULL(), or COALESCE().
+
+Explain the difference between LIMIT in MySQL and TOP in SQL Server.
+
+MySQL uses LIMIT to restrict the number of rows returned, while SQL Server uses TOP. For example, SELECT * FROM users LIMIT 10 is equivalent to SELECT TOP 10 * FROM users in SQL Server. Understanding this difference is crucial for analysts who switch between platforms or work with ETL pipelines spanning multiple systems. It’s also a common question in MySQL-focused interviews, testing adaptability across SQL dialects.
+
+How would you use DATE_FORMAT() to bucket a timestamp column into calendar months while preserving the sort order?
+
+Candidates should explain that DATE_FORMAT(ts,'%Y-%m') converts a timestamp to a year-month string that still sorts chronologically, enabling straightforward GROUP BY or ORDER BY without additional casts. A strong answer mentions edge cases such as time-zone inconsistencies, how %b %Y would break lexical ordering, and why using DATE_TRUNC() equivalents (available only in other SQL dialects) isn’t an option in pre-8.0 MySQL. Interviewers also appreciate discussion of indexing on the raw timestamp versus the formatted string.
+
+When aggregating revenue, why might you choose COALESCE(col,0) over IFNULL(col,0)?
+
+Both functions replace NULL, but COALESCE is ANSI-standard and accepts more than two arguments, making queries portable and expressive. Analysts should note that in MySQL they perform identically on performance, yet COALESCE works inside window frames, nested selects, and casts without surprises. Highlighting subtle precedence rules and null-propagation pitfalls shows deeper fluency.
+
+Explain how GROUP_CONCAT() can be used to create a “top products per user” string, and list two limitations of the function.
+
+A complete answer covers concatenating sorted product names within a GROUP BY user_id, optionally controlling order with ORDER BY price DESC inside the function. Limitations include the default group_concat_max_len (often 1,024 bytes) and the inability to store more than one value per delimiter safely when downstream tools expect atomic columns. Mentioning a fallback to sub-queries or reporting tables demonstrates real-world experience.
+
+Write a query that compares two dates in different time zones using CONVERT_TZ() and TIMESTAMPDIFF(). What could go wrong around daylight-saving changes?
+
+Interviewers want to see CONVERT_TZ(order_ts,'UTC','America/New_York') followed by a TIMESTAMPDIFF(day, signup_ts, …) clause. A strong explanation calls out that DST gaps/overlaps may yield nulls if MySQL’s time-zone tables are stale, and that TIMESTAMPDIFF truncates toward zero. Acknowledging the need to refresh or mount mysql_tzinfo_to_sql shows operational maturity.
+
+How can JSON_EXTRACT() (or >) be leveraged to filter events stored in a JSON column, and why is a virtual column sometimes preferable?
+
+Good answers demonstrate WHERE JSON_EXTRACT(meta,'$.event') = 'click', discuss generated virtual columns for indexing, and note that MySQL cannot index deep keys directly without exposing them. They might also mention cost trade-offs of storing semi-structured data in JSON versus normalizing into relational tables.
+
+Describe a scenario where LAG() combined with IFNULL() solves an analytics problem in MySQL 8.0.
+
+Typical use-case: computing session gaps or day-over-day user metrics. The analyst must show LAG(val) OVER (PARTITION BY user ORDER BY ts) to fetch the prior value, then wrap in IFNULL() to set a default for the first row. Highlighting memory usage and the implications of window size indicates deeper expertise.
+
+Why might SUBSTRING_INDEX() be safer than SUBSTRING() for parsing URLs into domain buckets?
+
+SUBSTRING_INDEX(url,'/',3) grabs everything up to the third slash without relying on hard-coded positions, handling variable lengths robustly. Interviewers value commentary on search-engine tracking parameters, how leading “https://” changes offsets, and why pre-cleaning with LOWER() prevents case-sensitive mismatches.
+
+Show how DENSE_RANK() differs from ROW_NUMBER() when extracting top-selling SKUs per month.
+
+Candidates must articulate that DENSE_RANK preserves shared ranks for ties, whereas ROW_NUMBER forces uniqueness. Illustrating with revenue ties and explaining downstream dashboard impact (e.g., “top 3” may yield more than three rows) proves practical understanding.
+
+What is the purpose of the CAST() function when joining a numeric user ID stored as a string to another table storing it as INT?
+
+Beyond syntax, answers should discuss index usage: casting the smaller side (or using generated columns) maintains performance, whereas casting a bigint column in the WHERE clause negates indexes. Mentioning data-quality initiatives to align types highlights broader thinking.
+
+How does MySQL sort NULL values by default, and what expression forces explicit ordering?
+
+By default, ORDER BY col ASC places NULL first; adding ORDER BY col IS NULL, col pushes them last. A seasoned analyst notes MySQL 8.0’s
+
+How to Prepare for a SQL Interview as a Data Analyst
+Cracking the SQL portion of a data analyst interview requires more than just memorizing syntax—you need to solve business problems using structured logic, write efficient queries, and explain your reasoning clearly. Whether you’re prepping for your first job or have years of experience, most data analyst SQL interviews will test your grasp of real-world query writing, data interpretation, and optimization techniques. The good news? There’s a predictable structure to how these interviews are built—and with the right study plan, you can master it.
+
+Study Topics to Master
+If you’re preparing for a SQL test for data analyst roles, your first step is to build a strong foundation in the following areas:
+
+Joins (inner, left, self joins) and understanding data relationships
+Aggregations with GROUP BY, COUNT(), SUM(), AVG()
+Filtering using WHERE, HAVING, and subconditions
+Window functions like RANK(), ROW_NUMBER(), LAG() and LEAD()
+Subqueries and CTEs, especially for nested logic or transformations
+Indexes and performance optimization, especially on large datasets
+For advanced roles, you’ll also be tested on query optimization, data modeling concepts, and the ability to break down business KPIs using SQL logic.
+
+Want structure? Start with the SQL Learning Path on Interview Query—it guides you from basic queries to complex window functions and optimization.

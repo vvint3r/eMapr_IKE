@@ -1,0 +1,373 @@
+11 Airbnb SQL Interview Questions - Can You Solve Them?
+
+By
+Nick Singh
+
+(Ex-Facebook & Best-Selling Data Science Author)
+
+
+
+
+Updated on
+
+April 30, 2025
+
+At Airbnb, SQL is used day-to-day for analyzing customer behavior to improve property recommendations and monitoring system performance for seamless booking experiences. Unsurprisingly this is why Airbnb LOVES to ask SQL problems in interviews for Data Analyst, Data Science, and BI jobs.
+
+In case you want to ace the SQL Assessment, we've curated 11 Airbnb SQL interview questions to practice, which are similar to recently asked questions at Airbnb – able to answer them all?
+
+Airbnb SQL Interview Questions
+
+11 Airbnb SQL Interview Questions
+SQL Question 1: Booking Referral Source
+The strategy team in Airbnb is trying to analyze the impact of Covid-19 during 2021. To do so, they need you to write a query that outputs the average vacant days across the AirBnbs in 2021. Some properties have gone out of business, so you should only analyze rentals that are currently active. Round the results to a whole number.
+
+Assumptions:
+
+is_active field equals to 1 when the property is active, and 0 otherwise.
+In cases where the check-in or check-out date is in another year other than 2021, limit the calculation to the beginning or end of the year 2021 respectively.
+Listing can be active even if there are no bookings throughout the year.
+bookings Table:
+Column Name	Type
+listing_id	integer
+checkin_date	date
+checkout_date	date
+bookings Example Input:
+listing_id	checkin_date	checkout_date
+1	08/17/2021 00:00:00	08/19/2021 00:00:00
+1	08/19/2021 00:00:00	08/25/2021 00:00:00
+2	08/19/2021 00:00:00	09/22/2021 00:00:00
+3	12/23/2021 00:00:00	01/05/2022 00:00:00
+listings Table:
+Column Name	Type
+listing_id	integer
+is_active	integer
+listings Example Input:
+listing_id	is_active
+1	1
+2	0
+3	1
+Example Output:
+avg_vacant_days
+357
+Explanation:
+Property 1 was rented for 8 days, thus the property has 365 - 8 = 357 vacant days.
+Property 2 is excluded as it is not active.
+Property 3 was rented out for 12 days, thus the property as 365 - 12 = 353 vacant days.
+Average vacant days are 355 days. (357 + 353 / 2).
+
+The dataset you are querying against may have different input & output - this is just an example!
+
+Answer:
+WITH listing_vacancies AS (
+SELECT 
+  listings.listing_id,
+  365 - COALESCE(
+    SUM(
+      CASE WHEN checkout_date>'12/31/2021' THEN '12/31/2021' ELSE checkout_date END -
+      CASE WHEN checkin_date<'01/01/2021' THEN '01/01/2021' ELSE checkin_date END 
+  ),0) AS vacant_days
+FROM listings 
+LEFT JOIN bookings
+  ON listings.listing_id = bookings.listing_id 
+WHERE listings.is_active = 1
+GROUP BY listings.listing_id)
+
+SELECT ROUND(AVG(vacant_days)) 
+FROM listing_vacancies;
+To solve this question join DataLemur Premium to try this Airbnb SQL interview question:Airbnb SQL Interview Question
+
+SQL Question 2: Analyzing Monthly Average Ratings of Airbnb Property Listings
+Given the reviews table with columns: review_id, user_id, submit_date, listing_id, stars, write a SQL query to get the average rating of each Airbnb property listing per month. The submit_date column represents when the review was submitted. The listing_id column represents the unique ID of the Airbnb property, and stars represents the rating given by the user where 1 is the lowest and 5 is the highest rating.
+
+reviews Example Input:
+review_id	user_id	submit_date	listing_id	stars
+6171	123	01/02/2022 00:00:00	50001	4
+7802	265	01/15/2022 00:00:00	69852	4
+5293	362	01/22/2022 00:00:00	50001	3
+6352	192	02/05/2022 00:00:00	69852	3
+4517	981	02/10/2022 00:00:00	69852	2
+Answer:
+SELECT 
+EXTRACT(MONTH from submit_date) as mth, 
+listing_id, 
+AVG(stars) as avg_stars
+FROM 
+reviews
+GROUP BY 
+mth, 
+listing_id
+ORDER BY 
+listing_id, 
+mth;
+This SQL query will first group the data by month and listing_id. For each group, it calculates the average stars rating. The EXTRACT(MONTH from submit_date) function is used to get the month from submit_date. The AVG(stars) function is used to calculate the average stars rating. In the end, it orders the results by listing_id and mth.
+
+Example Output:
+mth	listing_id	avg_stars
+1	50001	3.50
+1	69852	4.00
+2	69852	2.50
+p.s. Window functions show up super frequently during SQL interviews, so practice the 27+ window function questions on DataLemur
+
+DataLemur SQL Questions
+
+SQL Question 3: Average Vacant Days
+The strategy team in Airbnb is trying to analyze the impact of Covid-19 during 2021. To do so, they need you to write a query that outputs the average vacant days across the AirBnbs in 2021. Some properties have gone out of business, so you should only analyze rentals that are currently active. Round the results to a whole number.
+
+Assumptions:
+
+is_active field equals to 1 when the property is active, and 0 otherwise.
+In cases where the check-in or check-out date is in another year other than 2021, limit the calculation to the beginning or end of the year 2021 respectively.
+Listing can be active even if there are no bookings throughout the year.
+bookings Table:
+Column Name	Type
+listing_id	integer
+checkin_date	date
+checkout_date	date
+bookings Example Input:
+listing_id	checkin_date	checkout_date
+1	08/17/2021 00:00:00	08/19/2021 00:00:00
+1	08/19/2021 00:00:00	08/25/2021 00:00:00
+2	08/19/2021 00:00:00	09/22/2021 00:00:00
+3	12/23/2021 00:00:00	01/05/2022 00:00:00
+listings Table:
+Column Name	Type
+listing_id	integer
+is_active	integer
+listings Example Input:
+listing_id	is_active
+1	1
+2	0
+3	1
+Example Output:
+avg_vacant_days
+357
+Solution:
+WITH listing_vacancies AS (
+SELECT 
+  listings.listing_id,
+  365 - COALESCE(
+    SUM(
+      CASE WHEN checkout_date>'12/31/2021' THEN '12/31/2021' ELSE checkout_date END -
+      CASE WHEN checkin_date<'01/01/2021' THEN '01/01/2021' ELSE checkin_date END 
+  ),0) AS vacant_days
+FROM listings 
+LEFT JOIN bookings
+  ON listings.listing_id = bookings.listing_id 
+WHERE listings.is_active = 1
+GROUP BY listings.listing_id)
+
+SELECT ROUND(AVG(vacant_days)) 
+FROM listing_vacancies;
+To solve this question on DataLemur's free interactive site, try this Airbnb SQL interview question:Airbnb SQL Interview Question
+
+SQL Question 4: Retrieve Housing Data from Specific Cities
+You're a data analyst at Airbnb and you've been tasked with retrieving housing data from specific cities. You want to find all Airbnb listings in San Francisco and New York that have at least 10 reviews and an average rating equal to or above 4.5.
+
+Assume you have two tables: a listings table with the ID of the housing, its name, city, and the total number of reviews; and a reviews table with the ID of the listing, the review ID, the rating, and the date submitted.
+
+listings Example Input:
+listing_id	name	city	reviews_count
+10001	"Central Loft"	"San Francisco"	15
+10002	"Cozy Apartment"	"New York"	20
+10003	"Sunny Studio"	"San Francisco"	8
+10004	"Stylish Suite"	"Las Vegas"	13
+10005	"Dreamy Duplex"	"New York"	5
+reviews Example Input:
+listing_id	review_id	stars	submit_date
+10001	15001	4.5	2022-06-08
+10001	15002	5.0	2022-06-10
+10002	15003	4.0	2022-06-18
+10002	15004	5.0	2022-07-26
+10003	15005	3.5	2022-07-05
+10004	15006	4.5	2022-06-08
+10005	15007	3.0	2022-06-10
+Answer:
+SELECT l.listing_id, l.name, l.city, avg(r.stars) as average_rating
+FROM listings l
+JOIN reviews r ON l.listing_id = r.listing_id
+WHERE l.city in ('San Francisco', 'New York') 
+AND l.reviews_count >= 10
+GROUP BY l.listing_id
+HAVING avg(r.stars) >= 4.5;
+The above query works as follows:
+
+We join the listings table (alias 'l') with the reviews table (alias 'r') using the listing_id as the common column between the two tables.
+In the WHERE clause, we filter the cities to "San Francisco" and "New York", and the reviews_count to be at least 10.
+In the GROUP BY clause, we group by listing_id. This allows us to calculate the average rating for each listing.
+In the HAVING clause, we filter the average rating to be at least 4.5.
+By joining the tables, filtering, grouping, and running the average function, we're able to get the desired listings in those cities with the specific review conditions.
+
+SQL Question 5: What is the purpose of the SQL constraint UNIQUE?
+The UNIQUE constraint is used to ensure the uniqueness of the data in a column or set of columns in a table. It prevents the insertion of duplicate values in the specified column or columns and helps to ensure the integrity and reliability of the data in the database.
+
+For example, say you were on the Marketing Analytics team at Airbnb and were doing some automated keyword research:
+
+Your keyword database might store SEO data like this:
+
+CREATE TABLE keywords (
+    keyword_id INTEGER PRIMARY KEY,
+    keyword VARCHAR(255) NOT NULL UNIQUE,
+    search_volume INTEGER NOT NULL,
+    competition FLOAT NOT NULL
+);
+In this example, the UNIQUE constraint is applied to the "keyword" field to ensure that each keyword is unique. This helps to ensure the integrity of the data in the database and prevents errors that could occur if two rows had the same keyword.
+
+SQL Question 6: Find the Average Number of Guests per Booking in Each City for Airbnb
+As an analyst at Airbnb, one of the most useful insights you could provide would be to understand the average number of guests per booking across locations. For this question, we would like you to write a SQL query that will find the average number of guests per booking in each city.
+
+bookings Example Input:
+booking_id	property_id	guests	booking_date
+101	4523	3	01/01/2022
+102	9871	2	01/05/2022
+103	4523	4	02/10/2022
+104	7452	1	02/20/2022
+105	9871	3	03/01/2022
+properties Example Input:
+property_id	city
+4523	New York
+9871	Los Angeles
+7452	Chicago
+Example Output:
+city	average_guests
+New York	3.5
+Los Angeles	2.5
+Chicago	1.0
+Answer:
+SELECT p.city, AVG(b.guests) AS average_guests
+FROM bookings b
+JOIN properties p ON b.property_id = p.property_id
+GROUP BY p.city;
+In this query, we first join the bookings and properties tables on property_id, allowing us to access both the city and guests columns in the same query. We then group by city, so we get a separate row for each city in our output. For each group, we calculate the average number of guests.
+
+To practice a very similar question try this interactive Robinhood Cities With Completed Trades Question which is similar for requiring SQL analysis grouped by city or this Amazon Average Review Ratings Question which is similar for needing an average calculation.
+
+SQL Question 7: What's the difference between relational and non-relational databases?
+While both types of databases are used to store data (no duh!), relational databases and non-relational (also known as NoSQL databases) differ in a few important ways, most importantly on the way data is stored. Relational databases use a data model consisting of tables and rows, while NoSQL databases use a variety of data models, including document, key-value, columnar, and graph storage formats.
+
+This added flexibilty makes NoSQL databases great for non-tabular data (like hierarchal data or JSON data), or data where the type/format is constantly evolving. With this added flexibility, comes one big weakness – you won't get ACID-compliance. That means, unlike relational databases which are typically adhere to the ACID properties (atomic, consistent, isolated, and durable), you don't get as strong guarentees with most non-relational databases.
+
+SQL Question 8: Analyzing click-through rates for Airbnb Listing Views and Bookings
+The scenario is that Airbnb wants to analyze the click-through conversion rates (CTRs) of their listings. The CTR is calculated by dividing the number of bookings by the number of listing views, giving a proportion of views that resulted in a booking.
+
+Consider you have two tables: one showing all the views for a listing (listing_views) and another one showing all bookings (bookings).
+
+listing_views Example Input:
+view_id	user_id	visit_date	listing_id
+101	10	7/08/2022	1001
+102	12	7/08/2022	1002
+103	14	7/09/2022	1001
+104	10	7/10/2022	1003
+105	13	7/11/2022	1002
+bookings Example Input:
+booking_id	user_id	booking_date	listing_id
+201	10	7/09/2022	1001
+202	12	7/10/2022	1002
+203	15	7/12/2022	1003
+204	13	7/13/2022	1002
+205	12	7/14/2022	1001
+The question is to write a SQL query to find the CTR for every unique listing in July 2022.
+
+Answer:
+Here is a PostgreSQL query answer:
+
+WITH total_views AS (
+    SELECT 
+        listing_id, 
+        COUNT(*) AS view_count
+    FROM
+        listing_views
+    WHERE
+        DATE_TRUNC('month', visit_date) = '2022-07-01'
+    GROUP BY 
+        listing_id
+),
+total_bookings AS (
+    SELECT 
+        listing_id, 
+        COUNT(*) AS booking_count
+    FROM
+        bookings
+    WHERE
+        DATE_TRUNC('month', booking_date) = '2022-07-01'
+    GROUP BY 
+        listing_id
+)
+SELECT 
+    V.listing_id, 
+    B.booking_count::decimal / NULLIF(V.view_count, 0) AS CTR
+FROM 
+    total_views V
+LEFT JOIN 
+    total_bookings B ON V.listing_id = B.listing_id;
+The query utilises two subqueries (total_views and total_bookings) to calculate the counts of views and bookings respectively for each listing for the month of July. The final query joins these subqueries via a LEFT JOIN (to include those listings which were viewed but never booked), and calculates the CTR as booking_count / view_count. The NULLIF function is used to avoid division by zero error.
+
+To practice a similar SQL problem on DataLemur's free online SQL coding environment, solve this Meta SQL interview question:Facebook App CTR SQL Interview question
+
+SQL Question 9: The Most Popular City for Airbnb Stays
+As a data analyst for Airbnb, you've been asked to determine the city that has had the most bookings (reservations) in the past year. You are given two tables - a 'bookings' table with booking IDs, user IDs, listing IDs, and booking dates, and a 'listings' table with listing IDs, city locations, and host IDs.
+
+Provide a SQL query that returns the city with the maximum number of bookings, along with the number of bookings.
+
+bookings Example Input:
+booking_id	user_id	listing_id	booking_date
+101	123	50001	06/08/2022
+102	265	69852	06/10/2022
+103	362	50001	06/18/2022
+104	192	69852	07/26/2022
+105	981	69852	07/05/2022
+listings Example Input:
+listing_id	city	host_id
+50001	Amsterdam	876
+69852	Barcelona	974
+Answer:
+SELECT l.city, COUNT(b.booking_id) AS num_bookings
+FROM bookings b
+JOIN listings l ON b.listing_id = l.listing_id
+GROUP BY l.city
+ORDER BY num_bookings DESC
+LIMIT 1;
+This query works by joining the 'bookings' table with the 'listings' table on the shared 'listing_id'. After joining, the 'city' in the 'listings' table is grouped by, and for each city, the number of bookings is counted (by counting the 'booking_id' in the 'bookings' table). The results are then ordered by the number of bookings in descending order, and finally, the top result (the city with the most bookings) is selected. undefined
+
+SQL Question 10: What's the SQL command INTERSECT do, and when would you use it?
+The SQL command INTERSECT merges the results of multiple SELECT statements and keeps only those rows that are present in all sets.
+
+For example, say you were doing an HR Analytics project for Airbnb, and had access to Airbnb's employees and contractors data. Assume that some employees were previously contractors, and vice versa, and thus would show up in both tables. You could use INTERSECT operator to find all contractors who also show up in the employees table:
+
+SELECT first_name, last_name
+FROM airbnb_contractors
+
+INTERSECT
+
+SELECT first_name, last_name
+FROM airbnb_employees
+SQL Question 11: Analyze Host Listings and Booking Transactions
+As an Airbnb data analyst, you have been asked to analyze the performance of hosts' listings in the past year. Your task is to identify the top 10 listings with the most bookings.
+
+There are two tables involved. One is the 'hosts' table that provides details about each host and its respective listing. The other one is 'bookings' table that records each booking transaction.
+
+The 'hosts' table:
+
+host_id	listing_id	listing_name	city
+101	201	Penthouse	New York
+102	202	Ocean View	San Francisco
+103	203	Country House	Austin
+The 'bookings' table:
+
+booking_id	user_id	listing_id	booking_date
+301	401	201	06/08/2022
+302	402	202	06/10/2022
+303	403	202	07/10/2022
+304	404	203	08/08/2022
+305	405	201	09/08/2022
+Remarks:
+Both tables can be joined on the 'listing_id' field.
+
+Answer:
+SELECT H.listing_id, H.listing_name, COUNT(B.booking_id) AS number_of_bookings 
+FROM hosts H
+LEFT JOIN bookings B ON H.listing_id = B.listing_id 
+GROUP BY H.listing_id, H.listing_name 
+ORDER BY number_of_bookings DESC 
+LIMIT 10;
+This query first joins the 'hosts' and 'bookings' tables based on the 'listing_id' field. It then groups the result by 'listing_id' and 'listing_name' from the 'hosts' table. For each group, it calculates the total number of bookings, and finally sorts the groups based on this count in descending order. It returns the top 10 listings with the most bookings.

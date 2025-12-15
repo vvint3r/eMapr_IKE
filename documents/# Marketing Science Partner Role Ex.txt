@@ -1,0 +1,74 @@
+# Marketing Science Partner Role Examples
+
+## 1. **Drive operationalizing analyses to prove advertising value**
+
+**Meta Example:**
+You work with Unilever to implement a continuous Marketing Mix Model (MMM) that automatically updates monthly, measuring how Facebook/Instagram ads drive both online purchases and in-store sales. You build dashboards showing that Instagram Reels ads deliver a 3.2x ROAS compared to their previous TV-only strategy, helping them shift $50M in budget to Meta platforms.
+
+**Adobe Example:**
+You partner with Marriott to operationalize Adobe Analytics and Adobe Advertising Cloud data, creating an automated attribution framework that tracks how Adobe DSP display campaigns influence hotel bookings across the customer journey. You demonstrate that mid-funnel display ads increase direct bookings by 18% when combined with email campaigns.
+
+**Shopify Example:**
+You help a DTC brand (e.g., Allbirds) set up Shopify's conversion lift studies integrated with their Shopify Analytics, proving that Shopify Audiences targeting drives 2.5x higher customer lifetime value compared to standard prospecting, justifying increased investment in the platform.
+
+## 2. **Strategic role in cross-platform/cross-media measurement**
+
+**Meta Example:**
+You design a unified measurement framework for Nike that compares effectiveness across Meta (Facebook/Instagram), TikTok, YouTube, and linear TV. You lead a 6-month test using geo-experiments and brand lift studies to determine optimal budget allocation, revealing that Instagram Stories drive 40% lower cost-per-brand-awareness than TV for Gen Z audiences.
+
+**Adobe Example:**
+You develop a cross-channel attribution strategy for American Express that connects Adobe Experience Cloud data across their email, display (Adobe DSP), paid search, and offline direct mail campaigns. You create a testing roadmap with sequencing strategies to understand interaction effects between channels.
+
+**Shopify Example:**
+You build a measurement approach for Fashion Nova that integrates Shopify's Shop Pay data with their Pinterest, Meta, and Google ad spend to understand how cross-platform shopping behavior differs, discovering that customers who click TikTok ads but purchase through Instagram shops have 35% higher repeat rates.
+
+## 3. **Conduct ad effectiveness studies/meta-analysis**
+
+**Meta Example:**
+You run a custom conversion lift study for BMW's electric vehicle launch across 15 countries, testing video ad creative variations, audience targeting strategies, and placement combinations. You conduct a meta-analysis aggregating 47 auto industry studies showing that carousel ads with user-generated content drive 2.1x higher consideration than brand-produced video content.
+
+**Adobe Example:**
+You execute an incrementality study for Target using Adobe's clean room technology, measuring how frequency of Adobe DSP display ads affects in-store purchases. You perform meta-analysis across 30 retail clients showing that personalized dynamic creative optimization (DCO) through Adobe delivers 1.8x better performance than static creative.
+
+**Shopify Example:**
+You design a randomized controlled trial for Gymshark testing Shopify Collabs (influencer marketing) effectiveness versus traditional paid ads. You synthesize findings from 20 DTC brand studies showing that Shop app placements convert at 3x higher rates than browser-based ads, with significantly higher retention.
+
+## 4. **Drive adoption of measurement methodologies**
+
+**Meta Example:**
+You create a "Measurement Playbook" for the CPG vertical, evangelizing Meta's Conversions API and aggregated event measurement post-iOS14. You present at industry conferences (e.g., ANA), host quarterly workshops with top 100 advertisers, and achieve 60% adoption of Facebook's Conversion Lift studies among Fortune 500 clients in your territory.
+
+**Adobe Example:**
+You lead an initiative to drive adoption of Adobe's data clean room solution among financial services clients, creating case studies, running certification programs for client data scientists, and hosting "Measurement Summits" that increase clean room adoption from 12% to 45% of enterprise clients within 18 months.
+
+**Shopify Example:**
+You champion Shopify's first-party data strategy (Shop Pay, Shopify Audiences) as a cookieless measurement solution for merchants. You develop vertical-specific guides for fashion, beauty, and home goods, achieving 1,000+ merchant adoptions of Shopify's enhanced conversion tracking within your first year.
+
+## 5. **Engage in senior client conversations and consult with sales**
+
+**Meta Example:**
+You present quarterly business reviews to PepsiCo's CMO and CFO, translating complex incrementality findings into strategic recommendations for their $200M digital budget. You train Meta's sales team on how to position conversion lift studies during renewals, creating talk tracks that help them defend Meta's ad effectiveness against client concerns about measurement accuracy.
+
+**Adobe Example:**
+You meet with Ford's VP of Marketing to present findings from a multi-touch attribution study, recommending they shift 25% of their Adobe DSP budget from awareness to consideration campaigns. You create "client conversation kits" for Adobe's account teams, equipping them with vertical-specific benchmarks and ROI calculators.
+
+**Shopify Example:**
+You join quarterly strategy sessions with Kylie Cosmetics leadership, showing how Shopify Audiences' lookalike modeling outperforms their previous third-party data approach. You coach Shopify's merchant success team on consultative measurement conversations, creating frameworks to help them identify which merchants need incrementality testing versus attribution modeling.
+
+## 6. **Provide feedback to Product/R&D/Partnerships**
+
+**Meta Example:**
+After running 50+ studies, you identify that advertisers need better measurement for offline conversions. You collaborate with Meta's Product team to enhance the Offline Conversions API, providing specifications based on client needs. You partner with LiveRamp to build a data connectivity solution that makes it easier for retailers to measure in-store lift from Meta ads.
+
+**Adobe Example:**
+You discover through client feedback that Adobe Analytics lacks native integration with retail media networks. You write a product brief for R&D to build connectors with Walmart Connect and Amazon DSP, and broker a partnership with Criteo to enable closed-loop measurement for Adobe Advertising Cloud clients selling through retail channels.
+
+**Shopify Example:**
+You notice merchants struggle to measure subscription revenue impact from ads. You submit product requirements for Shopify to add cohort analysis tools showing LTV by acquisition channel. You initiate a partnership discussion with Northbeam and Triple Whale to integrate third-party attribution platforms directly into Shopify's native analytics dashboard.
+
+---
+
+**Key Difference in Approaches:**
+- **Meta** focuses on proving incremental value of their walled garden platform
+- **Adobe** emphasizes cross-solution integration within their marketing cloud ecosystem  
+- **Shopify** prioritizes merchant success through commerce-specific measurement that drives GMV

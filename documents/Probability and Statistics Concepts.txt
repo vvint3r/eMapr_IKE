@@ -1,0 +1,100 @@
+Probability and Statistics Concepts to Review for the Data Science Interview
+Because probability & statistics are foundational to the field of Data Science, before the interview you should review:
+
+Central Limit Theorem
+Probability Distributions
+Regression Analysis
+Hypothesis Testing
+If are unfamiliar with these concepts I recommend reading some of the books from the 13 Best Books for Data Scientists list.
+
+Central Limit Theorem
+Understanding the Central Limit Theorem is crucial. It states that the distribution of the sample mean of a large enough sample from any population will be approximately normally distributed, regardless of the population's underlying distribution. This theorem is fundamental when dealing with inferential statistics and hypothesis testing.
+
+Probability Distributions
+Hypothesis testing involves formulating null and alternative hypotheses, collecting data, and using statistical methods to determine whether there is enough evidence to reject the null hypothesis. You should be proficient in different types of hypothesis tests (e.g., t-tests, chi-squared tests) and their applications.
+
+Regression Analysis
+Familiarity with common probability distributions like the normal distribution, binomial distribution, and Poisson distribution is essential. You should understand their probability density functions, cumulative distribution functions, and how to use them in real-world scenarios.
+
+Hypothesis Testing
+Regression analysis is a fundamental statistical technique used for modeling relationships between variables. You should know about linear regression, multiple regression, logistic regression (for classification), and how to interpret regression coefficients, p-values, and R-squared values. Understanding regression allows you to make predictions and draw insights from data.
+
+Beginner Probability and Statistic Questions and Answers asked by FAANG
+1. What is the probability of rolling a 6 on a fair six-sided die?
+The probability of rolling a 6 on a fair six-sided die is 1/6.
+
+2. Calculate the expected value of a fair coin flip.
+The expected value of a fair coin flip is 0.5 (or 1/2).
+
+3. Explain the concept of simple random sampling in statistics.
+Simple random sampling is a method where every member of the population has an equal chance of being selected in the sample.
+
+4. Define the Central Limit Theorem and its significance in statistics.
+The Central Limit Theorem states that the distribution of the sample mean approaches a normal distribution as the sample size increases, regardless of the shape of the original population distribution.
+
+5. What is a p-value, and how is it used in hypothesis testing?
+A p-value is a probability measure used in hypothesis testing that quantifies the evidence against a null hypothesis. A smaller p-value suggests stronger evidence against the null hypothesis.
+
+More Questions
+Not enough? Try these questions for FREE:
+
+Two Consecutive Sixes
+Coin Fairness Test
+Medium Probability and Statistic Questions and Answers asked by FAANG
+6. Given two events A and B, how do you calculate P(A|B) (the conditional probability of A given B)?
+Conditional probability P(A|B) is calculated as the probability of both events A and B occurring (P(A ∩ B)) divided by the probability of event B occurring (P(B)).
+
+7. Explain the Bayesian probability theory and its application in data science.
+Bayesian probability is a framework that incorporates prior beliefs and updates them with new evidence using Bayes' theorem, allowing for probabilistic reasoning and decision-making.
+
+8. What is the confidence interval, and how do you interpret a 95% confidence interval?
+A 95% confidence interval means that if we were to take many random samples and construct confidence intervals from them, we would expect approximately 95% of those intervals to contain the true population parameter.
+
+9. Describe the sampling distribution of the sample mean.
+The sampling distribution of the sample mean is a normal distribution with the same mean as the population and a standard deviation equal to the population standard deviation divided by the square root of the sample size.
+
+10. Calculate the z-score for a data point in a standard normal distribution.
+The z-score for a data point in a standard normal distribution is calculated as (X - μ) / σ, where X is the data point, μ is the mean, and σ is the standard deviation.
+
+More Questions
+Not enough? Try these questions for FREE:
+
+Consecutive Fives
+Biased Coin?
+Hard Probability and Statistic Questions and Answers asked by FAANG
+11. Compare and contrast the Poisson and Binomial distributions.
+The Poisson distribution models the number of events occurring in a fixed interval of time or space, while the Binomial distribution models the number of successes in a fixed number of independent trials.
+
+12. What is the difference between Type I and Type II errors in hypothesis testing?
+Type I error occurs when we reject a true null hypothesis, while Type II error occurs when we fail to reject a false null hypothesis.
+
+13. Explain the concept of MLE and provide an example of its application.
+Maximum Likelihood Estimation is a method used to estimate the parameters of a statistical model by maximizing the likelihood function. For example, in the case of a normal distribution, MLE estimates the mean and standard deviation.
+
+14. What is covariance, and how does it differ from correlation?
+Covariance measures the degree to which two variables change together, while correlation measures the strength and direction of the linear relationship between two variables.
+
+15. Describe stratified sampling and its advantages over simple random sampling.
+Stratified sampling involves dividing the population into subgroups or strata and then taking random samples from each stratum. It is advantageous when there is significant variation within strata.
+
+More Questions
+Not enough? Try these questions for FREE:
+
+Product vs. Square
+Minimum of Two Uniform Variables
+Expert Probability and Statistic Questions and Answers asked by FAANG
+Questions:
+16. How does Monte Carlo simulation work, and what are its applications in data science?
+Monte Carlo simulation is a computational technique that uses random sampling to solve complex problems or estimate numerical results. It has applications in finance, engineering, and optimization problems.
+
+17. Define bootstrapping and discuss its use in estimating population parameters.
+Bootstrapping is a resampling technique where samples are drawn with replacement from the observed data to estimate population parameters. It is useful when parametric assumptions are uncertain.
+
+18. Explain the principles of Bayesian networks and their role in probabilistic graphical models.
+Bayesian networks are graphical models that represent probabilistic relationships among a set of variables. They are used for probabilistic reasoning, decision-making, and risk analysis.
+
+19. What are autoregressive (AR) and moving average (MA) models in time series analysis?
+Autoregressive (AR) models describe a time series using its own past values while moving average (MA) models describe a time series using past forecast errors.
+
+20. Discuss the concept of familywise error rate and methods to control it in multiple hypothesis testing scenarios.
+Familywise error rate is the probability of making at least one Type I error when conducting multiple hypothesis tests. Methods to control it include Bonferroni correction and false discovery rate control.

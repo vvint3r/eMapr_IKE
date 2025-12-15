@@ -1,0 +1,220 @@
+Here’s a focused, two-part preparation guide—technical SQL practice and high-level 
+product-analytics case strategy—tailored to the Airbnb Sr. Manager, Advanced Analytics, 
+Marketing interview and the job description you shared. 
+1⃣ SQL & Data-Analysis Prep 
+Airbnb uses Hive/Presto (ANSI-SQL-like) syntax. The interview allows you to look up syntax, 
+so focus on conceptual mastery and pattern recognition rather than rote memorization. 
+Core Topics to Review 
+Area 
+Joins 
+Key Patterns & Examples 
+INNER, LEFT, RIGHT, FULL; self-joins (hierarchies, user→referrer). 
+Aggregation 
+Filtering 
+GROUP BY, HAVING, DISTINCT counts, conditional aggregation 
+(SUM(CASE WHEN …)), grouping sets/cube/rollup. 
+WHERE vs HAVING, date filters, semi/anti joins. 
+Window Functions ROW_NUMBER, RANK, DENSE_RANK, LAG/LEAD, SUM() OVER 
+(PARTITION BY … ORDER BY … RANGE/ROWS). 
+Subqueries & CTEs Correlated subqueries (e.g., latest record per user), multi-CTE 
+pipelines. 
+Set Ops 
+Data Types & 
+Casting 
+Performance 
+UNION vs UNION ALL, INTERSECT, EXCEPT. 
+Timestamps/time zones (Hive/Presto often use UTC), string parsing 
+(regexp_extract, split). 
+Predicate pushdown, filtering before joining, using DISTINCT vs 
+windowing. 
+Recommended Practice Framework 
+Organize practice around query archetypes so you can recognize patterns quickly: 
+Archetype 
+Top N per group 
+SQL Pattern 
+ROW_NUMBER() OVER (PARTITION BY g ORDER BY metric 
+DESC) 
+Deduplicate latest QUALIFY ROW_NUMBER() OVER (PARTITION BY id ORDER BY 
+ts DESC)=1 
+Sessionization 
+LAG(ts) ... WHERE ts - LAG(ts) > 30m 
+Retention / cohort First login per user → DATEDIFF(event_date, cohort_date) 
+Rolling metrics 
+Practice these with: 
+SUM(metric) OVER (PARTITION BY id ORDER BY ts ROWS 
+BETWEEN 6 PRECEDING AND CURRENT ROW) 
+● LeetCode SQL 50, Mode Analytics SQL tutorial, and Airbnb open-source datasets 
+(e.g., Inside Airbnb). 
+2⃣ Product-Analytics / Case-Study Prep 
+The “case study portion” focuses on structuring an analytical approach to measure product 
+development and marketing impact. 
+Framework for Case Answers 
+A. Clarify the Objective 
+● Business goal (e.g., improve guest conversion, host retention). 
+● Primary KPIs (bookings, GMV, NPS, repeat rate). 
+B. Map the Funnel / User Journey 
+● Awareness → Search → Listing View → Booking → Review. 
+● Identify key drop-off points and leverage marketing levers. 
+C. Define Metrics 
+● Core: conversion rate, activation rate, LTV, acquisition cost. 
+● Supporting: time-to-book, search-to-book ratio, host response rate. 
+D. Experimental / Measurement Strategy 
+● A/B Testing: randomization, CUPED/stratified designs. 
+● Quasi-experiments: geo holdouts, difference-in-differences when randomization isn’t 
+possible. 
+● Attribution: MTA vs. MMM for marketing spend. 
+E. Data & Infrastructure 
+● Event-level logs, Hive/Presto tables, dimensional model. 
+● Guardrails: data quality checks, anomaly detection. 
+F. Communicate & Drive Action 
+● Build narrative: baseline → intervention → impact. 
+● Visuals: funnel charts, retention curves. 
+Example Mini-Case 
+“Airbnb wants to assess the impact of a new search-ranking algorithm on booking 
+conversions.” 
+1. Hypothesis: Improved ranking increases booking rate. 
+2. Design: 50/50 randomized bucket of search traffic. 
+3. Metrics: primary = bookings/search session; guardrail = search latency. 
+SQL Approach: 
+SELECT bucket, 
+COUNT(DISTINCT booking_id)/COUNT(DISTINCT search_session_id) AS conv_rate 
+FROM search_experiment 
+GROUP BY bucket; 
+4.  
+5. Deeper Dive: segment by market, device; run CUPED for variance reduction. 
+3⃣ Marketing-Specific Angle 
+Because this is Marketing Advanced Analytics, expect tie-ins such as: 
+● Incrementality of paid channels (MMM, geo experiments). 
+● Lifetime value modeling. 
+● Marketplace balance (supply vs. demand). 
+● Global seasonality & pricing effects. 
+4⃣ Mock Interview Drill Plan 
+Day 
+Focus 
+1–2 SQL review 
+Action 
+Work through 15 LeetCode/Mode problems across joins, windows, 
+CTEs. 
+3 
+Product metrics Create funnels for sample Airbnb datasets; write metric definitions. 
+4 
+5 
+Case studies 
+Dry run 
+Practice 2–3 mock product-measurement questions aloud; time 
+yourself. 
+Combine: 30-min SQL live coding + 30-min case presentation. 
+Quick Reference Sheets 
+Prepare a one-pager with: 
+● Common window function syntax. 
+● Funnel & retention metric formulas. 
+● Experiment design checklist. 
+Here’s a concise, single-page reference you can print or keep open during your Airbnb 
+interview prep. 
+SQL Window Functions – Quick Syntax 
+Use Case 
+Row numbering / 
+ranking 
+Example 
+ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY 
+event_ts DESC) 
+Rank with ties 
+Percentile 
+RANK() OVER (PARTITION BY region ORDER BY revenue 
+DESC) 
+PERCENT_RANK() OVER (PARTITION BY cohort ORDER BY 
+spend) 
+Running total / 
+cumulative sum 
+Moving average 
+(7-day) 
+Lag/Lead (prev/next 
+event) 
+First/last value 
+Deduplicate latest 
+SUM(bookings) OVER (PARTITION BY host_id ORDER BY 
+date ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT 
+ROW) 
+AVG(metric) OVER (PARTITION BY id ORDER BY dt ROWS 
+BETWEEN 6 PRECEDING AND CURRENT ROW) 
+LAG(price,1) OVER (PARTITION BY listing_id ORDER 
+BY ts) 
+FIRST_VALUE(state) OVER (PARTITION BY guest_id 
+ORDER BY check_in) 
+QUALIFY ROW_NUMBER() OVER (PARTITION BY user_id 
+ORDER BY updated_at DESC)=1 (Presto/Hive often use 
+subquery instead of QUALIFY) 
+Funnel & Retention Metrics 
+Metric 
+Step-to-step 
+conversion 
+Overall 
+funnel 
+conversion 
+Formula (SQL-style) 
+COUNT(DISTINCT 
+users_at_step_n)/COUNT(DISTINCT 
+users_at_step_{n-1}) 
+COUNT(DISTINCT 
+booked_users)/COUNT(DISTINCT 
+entry_users) 
+Notes 
+Compute for each adjacent 
+step (e.g., 
+Search→View→Book). 
+From first touch to booking. 
+Activation 
+rate 
+Day-N 
+retention 
+Rolling 
+retention 
+Churn rate 
+LTV (simple) 
+activated_users / new_signups 
+COUNT(DISTINCT user_id WHERE 
+DATEDIFF(event_date, 
+signup_date)=N)/COUNT(DISTINCT 
+user_id WHERE signup_date = 
+cohort_date) 
+Same as above but DATEDIFF <= N 
+1 - retention_rate 
+SUM(net_revenue)/COUNT(DISTINCT 
+users) 
+Define “activated” (e.g., first 
+booking). 
+Repeat for N=1,7,30… 
+Measures “active anytime up 
+to N days.” 
+Periodic. 
+Segment by cohort. 
+Tip: For cohort tables use a CTE to capture MIN(signup_date) per user, then join back on 
+events. 
+Experiment Design Checklist 
+1. Define 
+● Business Objective: e.g., “Increase booking conversion by 2 pp.” 
+● Primary Metric: conversion rate, revenue/visitor, etc. 
+● Guardrails: latency, cancellations, NPS. 
+2. Hypothesis & Design 
+● Randomized buckets (50/50 or multivariate). 
+● Stratification if needed (market, device). 
+● Unit of randomization (user, session, geo). 
+3. Sample & Power 
+● Minimum Detectable Effect (MDE). 
+● Power ≥80%, α=0.05. 
+● Duration estimate: use historical variance. 
+4. Data Collection 
+● Event logging spec: user_id, experiment_id, ts, variant. 
+● Monitor for logging gaps. 
+5. Analysis 
+● Difference in means/prop tests or CUPED for variance reduction. 
+● Segmentation (geo, platform). 
+● Pre-checks: balance of key covariates. 
+6. Interpretation 
+● Statistical significance vs. practical impact. 
+● Validate no negative impact on guardrail metrics. 
+7. Rollout 
+● Gradual exposure / ramp-up. 
+● Post-launch monitoring and backtesting. 
+Keep this one-pager handy during prep and mock interviews to quickly recall syntax, metric 
+formulas, and the stepwise experiment framework. 

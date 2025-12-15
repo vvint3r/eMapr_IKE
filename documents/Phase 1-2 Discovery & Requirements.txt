@@ -1,0 +1,689 @@
+Phase 1-2: Discovery & Requirements
+
+Problem discovery canvas with real interview questions and synthesis
+Lean Canvas filled out with actual business model details
+One-page PRD with specific metrics and user personas
+Detailed user stories with acceptance criteria
+Technical architecture and database schema
+
+Phase 3-4: Planning & Development
+
+RICE prioritization matrix with actual features scored
+Release plan broken into 4 iterations (0.1 to 1.0)
+Sprint planning with personal Kanban boards
+Daily checklists and testing frameworks
+
+Phase 5-6: Launch & Iteration
+
+Go-to-market timeline with specific week-by-week activities
+Launch assets checklist (Product Hunt, social media, etc.)
+Customer support preparation with FAQ templates
+Post-launch feedback tracking and version planning
+
+
+
+# Web App Example: TaskFlow - Complete Product Development Templates
+
+## Project Overview: TaskFlow
+**A task management web app for freelancers that automatically tracks time and generates invoices**
+
+This document contains actual templates and frameworks following a real project from concept to launch.
+
+---
+
+## Phase 1: Discovery & Validation (Week 1-2)
+
+### 1.1 Problem Discovery Canvas
+
+**Problem Statement:**
+Freelancers waste 5-8 hours weekly on administrative tasks: tracking time across projects, creating invoices, and managing task priorities across multiple clients.
+
+**Initial Hypothesis:**
+If we create a unified task management system that automatically tracks time and generates invoices, freelancers can reduce admin time by 70% and increase billable hours.
+
+**Target User:**
+- **Primary:** Solo freelancers managing 3-8 clients simultaneously
+- **Secondary:** Small agencies (2-5 people) without dedicated project managers
+- **Anti-persona:** Large agencies with existing enterprise tools
+
+### 1.2 Customer Interview Script & Results
+
+**Interview Questions Template:**
+```
+Opening:
+"Tell me about your typical workday as a freelancer."
+
+Problem Discovery:
+1. "Walk me through how you currently manage tasks across different clients."
+2. "What's the most frustrating part of tracking your work hours?"
+3. "How do you handle invoicing? What takes the most time?"
+4. "Have you tried solving this problem before? What did/didn't work?"
+
+Solution Testing:
+5. "If you could wave a magic wand and fix one thing about your workflow, what would it be?"
+6. "How much would you pay to save 5 hours per week on admin tasks?"
+```
+
+**Interview Synthesis (10 interviews conducted):**
+| Pain Point | Frequency | Severity (1-5) | Quote |
+|------------|-----------|----------------|--------|
+| Switching between tools | 10/10 | 4.5 | "I use Trello for tasks, Toggl for time, and Wave for invoices" |
+| Forgetting to track time | 8/10 | 5 | "I lose $500-1000/month from untracked time" |
+| Manual invoice creation | 9/10 | 3.5 | "Takes 2 hours every two weeks, tedious but necessary" |
+| Client task visibility | 6/10 | 3 | "Clients always ask for updates I've already sent" |
+
+### 1.3 Lean Canvas (One-Page Business Model)
+
+| Section | Content |
+|---------|---------|
+| **Problem** | 1. Time tracking across multiple tools<br>2. Manual invoice generation<br>3. Lost billable hours |
+| **Solution** | Unified task management with automatic time tracking and invoice generation |
+| **Key Metrics** | - User activation rate (>60%)<br>- Weekly active users<br>- Revenue per user ($29/month target) |
+| **Unique Value Prop** | "Stop losing money to admin work - track tasks, time, and invoices in one place" |
+| **Unfair Advantage** | Deep integration between tasks and invoicing (competitors do one or the other) |
+| **Channels** | - Product Hunt launch<br>- Freelancer communities (Reddit, Discord)<br>- Content marketing (productivity tips) |
+| **Customer Segments** | Freelancers billing $2,000-$10,000/month across multiple clients |
+| **Cost Structure** | - Hosting: $50/month<br>- Payment processing: 2.9%<br>- Development time: 200 hours |
+| **Revenue Streams** | - SaaS subscription: $29/month<br>- Payment processing markup: 0.5% |
+
+---
+
+## Phase 2: Product Requirements & Specification (Week 2-3)
+
+### 2.1 One-Page PRD (Product Requirements Document)
+
+**TaskFlow PRD v1.0**
+*Date: January 15, 2025*
+
+**Executive Summary:**
+TaskFlow is a task management platform that automatically tracks time and generates invoices for freelancers managing multiple clients.
+
+**Success Metrics:**
+1. 60% of trial users convert to paid within 14 days
+2. Average user saves 5+ hours per week on admin tasks
+3. $10,000 MRR within 6 months of launch
+
+**User Persona:**
+**"Busy Beth"** - Freelance Designer
+- 32 years old, works from home
+- Manages 5 clients simultaneously
+- Bills $6,000/month, loses ~$800 to untracked time
+- Tech-savvy but time-poor
+- Currently uses 4 different tools for work management
+
+**Core Features (MVP):**
+| Feature | User Story | Priority | Effort |
+|---------|------------|----------|--------|
+| Task Management | As a freelancer, I want to organize tasks by client so I can focus on one project at a time | MUST | 3 days |
+| Auto Time Tracking | As a freelancer, I want time tracked automatically when I work on tasks so I don't forget to bill clients | MUST | 5 days |
+| Invoice Generation | As a freelancer, I want to generate invoices from tracked time so I can bill clients quickly | MUST | 4 days |
+| Client Portal | As a freelancer, I want to share project status with clients so they stop asking for updates | SHOULD | 3 days |
+| Keyboard Shortcuts | As a power user, I want keyboard shortcuts so I can work faster | COULD | 2 days |
+
+**Out of Scope (v1):**
+- Team collaboration features
+- Mobile app
+- Advanced reporting/analytics
+- Third-party integrations
+- Recurring invoices
+
+**Technical Requirements:**
+- Load time < 2 seconds
+- 99.9% uptime
+- GDPR compliant
+- Works on Chrome, Firefox, Safari
+- Responsive design (desktop priority)
+
+### 2.2 User Stories with Acceptance Criteria
+
+**Epic: Task Management**
+
+**Story 1: Create Client Workspace**
+```
+As a freelancer
+I want to create separate workspaces for each client
+So that I can organize my work and maintain focus
+
+Acceptance Criteria:
+✓ User can create unlimited client workspaces
+✓ Each workspace has name, color, hourly rate
+✓ Workspaces appear in sidebar navigation
+✓ User can switch between workspaces with keyboard shortcut (Cmd+K)
+✓ Empty state shows "Add your first client" CTA
+```
+
+**Story 2: Add and Manage Tasks**
+```
+As a freelancer
+I want to quickly add tasks to a client workspace
+So that I can capture work items without breaking flow
+
+Acceptance Criteria:
+✓ Quick add with just task name (enter to save)
+✓ Optional fields: description, due date, estimate
+✓ Tasks can be marked complete/incomplete
+✓ Completed tasks move to "Done" section
+✓ Tasks display time tracked (if any)
+```
+
+**Story 3: Automatic Time Tracking**
+```
+As a freelancer
+I want time tracked automatically when I'm working on a task
+So that I don't lose billable hours
+
+Acceptance Criteria:
+✓ "Start Timer" button on each task
+✓ Timer runs in background (survives page refresh)
+✓ Visual indicator when timer is running
+✓ Auto-pause after 10 minutes of inactivity
+✓ Manual time entry option for forgotten work
+✓ Daily time summary in sidebar
+```
+
+### 2.3 Technical Specification
+
+**Architecture Overview:**
+```
+Frontend (Next.js + TypeScript)
+    ├── Pages
+    │   ├── Dashboard
+    │   ├── Workspace
+    │   ├── Tasks
+    │   ├── Invoices
+    │   └── Settings
+    ├── Components
+    │   ├── TaskList
+    │   ├── Timer
+    │   ├── InvoiceGenerator
+    │   └── ClientPortal
+    └── State Management (Zustand)
+
+Backend (Next.js API Routes + Prisma)
+    ├── Authentication (Clerk)
+    ├── Database (PostgreSQL)
+    │   ├── Users
+    │   ├── Workspaces
+    │   ├── Tasks
+    │   ├── TimeEntries
+    │   └── Invoices
+    └── Services
+        ├── TimeTracker
+        ├── InvoiceGenerator
+        └── EmailService
+
+Infrastructure
+    ├── Hosting: Vercel
+    ├── Database: Supabase
+    ├── Payments: Stripe
+    └── Monitoring: Sentry
+```
+
+**Database Schema:**
+```sql
+-- Core entities
+users (
+  id, email, name, created_at
+)
+
+workspaces (
+  id, user_id, name, color, hourly_rate, 
+  client_email, created_at
+)
+
+tasks (
+  id, workspace_id, title, description, 
+  status, due_date, estimate_hours, created_at
+)
+
+time_entries (
+  id, task_id, start_time, end_time, 
+  duration_minutes, manual_entry, created_at
+)
+
+invoices (
+  id, workspace_id, invoice_number, 
+  total_amount, status, due_date, 
+  sent_at, paid_at, created_at
+)
+```
+
+---
+
+## Phase 3: Prioritization & Roadmap (Week 3-4)
+
+### 3.1 Feature Prioritization Matrix (RICE Framework)
+
+| Feature | Reach | Impact | Confidence | Effort | RICE Score | Build Order |
+|---------|-------|--------|------------|--------|------------|-------------|
+| Basic task CRUD | 100% | 3 | 100% | 3 | 100 | 1 |
+| Auto time tracking | 100% | 5 | 80% | 5 | 80 | 2 |
+| Manual time entry | 80% | 3 | 100% | 2 | 120 | 3 |
+| Invoice generation | 90% | 5 | 70% | 4 | 78.75 | 4 |
+| Client workspace | 100% | 4 | 90% | 2 | 180 | 1 |
+| Keyboard shortcuts | 40% | 2 | 100% | 2 | 40 | 7 |
+| Client portal | 60% | 3 | 60% | 3 | 36 | 8 |
+| PDF export | 70% | 3 | 90% | 1 | 189 | 5 |
+| Email invoices | 80% | 4 | 80% | 2 | 128 | 6 |
+
+### 3.2 MVP Release Plan
+
+**Release 0.1: Core Task Management (Week 1-2)**
+```
+Goals: Basic usability, validate task workflow
+Features:
+- User authentication
+- Create workspaces
+- Add/edit/delete tasks
+- Mark tasks complete
+- Basic navigation
+
+Success Criteria:
+- 10 beta users can manage tasks
+- <2 second load time
+- No critical bugs
+```
+
+**Release 0.2: Time Tracking (Week 3-4)**
+```
+Goals: Validate automatic tracking accuracy
+Features:
+- Start/stop timer on tasks
+- Background timer (survives refresh)
+- Activity detection
+- Manual time entry
+- Daily/weekly summaries
+
+Success Criteria:
+- Timer accuracy within 1 minute
+- 80% of users prefer auto-tracking
+- Time entries properly saved
+```
+
+**Release 0.3: Invoice Generation (Week 5-6)**
+```
+Goals: Complete monetization loop
+Features:
+- Generate invoice from time entries
+- Invoice templates
+- PDF export
+- Email delivery
+- Payment tracking
+
+Success Criteria:
+- Invoice generation < 5 seconds
+- PDF renders correctly
+- Email delivery rate > 95%
+```
+
+**Release 1.0: Public Launch (Week 7-8)**
+```
+Goals: Market-ready product
+Features:
+- Stripe integration
+- Onboarding flow
+- Settings/preferences
+- Basic analytics
+- Support documentation
+
+Success Criteria:
+- 100 signups in first week
+- 60% complete onboarding
+- <3% payment failure rate
+```
+
+### 3.3 Go-to-Market Timeline
+
+```
+Week -2: Landing Page Live
+- Value proposition testing
+- Email capture
+- "Coming Soon" messaging
+
+Week -1: Beta Access
+- 20 hand-picked users
+- Daily feedback sessions
+- Bug fixes and iterations
+
+Week 0: Product Hunt Launch
+- Launch at 12:01 AM PST
+- Respond to all comments
+- Offer 50% lifetime discount
+
+Week 1: Content Marketing
+- "How I Built This" blog post
+- Reddit r/freelance post
+- Twitter build thread
+
+Week 2-4: Community Engagement
+- Freelancer Discord servers
+- Facebook groups
+- Indie Hackers showcase
+
+Week 4+: Paid Acquisition
+- Google Ads ($500 budget)
+- Facebook/Instagram ($500 budget)
+- Influencer outreach
+```
+
+---
+
+## Phase 4: Development Process (Week 5-8)
+
+### 4.1 Sprint Planning (Personal Kanban)
+
+**Sprint 1: Foundation (Week 5)**
+| To Do | In Progress | Testing | Done |
+|-------|-------------|---------|------|
+| | Setup Next.js project | | |
+| | Configure Tailwind | | |
+| | Setup Clerk auth | | |
+| Implement Prisma schema | | | |
+| Create workspace CRUD | | | |
+| Design task list component | | | |
+
+**Daily Checklist:**
+```markdown
+Morning (1 hour):
+□ Review yesterday's progress
+□ Check error logs (Sentry)
+□ Respond to user feedback
+□ Update today's priorities
+
+Development (5-6 hours):
+□ Focus on single feature
+□ Write tests for critical paths
+□ Commit every 2 hours
+□ Update documentation
+
+Evening (30 minutes):
+□ Deploy to staging
+□ Quick smoke test
+□ Update progress tracker
+□ Plan tomorrow's work
+```
+
+### 4.2 Testing Framework
+
+**Pre-Launch Checklist:**
+```markdown
+Functional Testing:
+□ All CRUD operations work
+□ Timer persists across sessions
+□ Invoices calculate correctly
+□ Email delivery works
+□ Payment processing succeeds
+
+Performance Testing:
+□ Page load < 2 seconds
+□ No memory leaks in timer
+□ Database queries optimized
+□ Images properly compressed
+
+Security Testing:
+□ Authentication required
+□ Data properly scoped to user
+□ SQL injection prevented
+□ XSS attacks prevented
+□ HTTPS enforced
+
+Usability Testing:
+□ 5 users complete onboarding
+□ Key tasks < 3 clicks
+□ Mobile responsive
+□ Keyboard navigation works
+□ Error messages helpful
+```
+
+### 4.3 User Feedback Loop
+
+**Weekly User Interview Template:**
+```
+1. Setup (5 min)
+   - Thank user for time
+   - Explain goal: improve product
+   - Permission to record
+
+2. Usage Review (10 min)
+   - "Walk me through how you used TaskFlow this week"
+   - "What worked well?"
+   - "What was frustrating?"
+
+3. Feature Testing (10 min)
+   - Share screen of new feature
+   - "Try to [complete specific task]"
+   - Observe without helping
+   - Note confusion points
+
+4. Prioritization (5 min)
+   - "If you could change one thing, what would it be?"
+   - "What's missing that would make you pay for this?"
+
+5. Wrap-up
+   - Thank again
+   - Mention next steps
+   - Offer early access/discount
+```
+
+---
+
+## Phase 5: Launch Preparation (Week 7-8)
+
+### 5.1 Launch Assets Checklist
+
+**Marketing Materials:**
+```markdown
+Website:
+□ Landing page with clear value prop
+□ Feature tour/screenshots
+□ Pricing page
+□ Terms of Service
+□ Privacy Policy
+
+Product Hunt:
+□ Compelling tagline (< 60 chars)
+□ Description (< 260 chars)
+□ Gallery images (5-10)
+□ Maker comment prepared
+□ Hunter identified
+
+Social Media:
+□ Twitter launch thread (10 tweets)
+□ LinkedIn article
+□ Demo video (< 2 minutes)
+□ Share graphics (1200x630)
+```
+
+**Pricing Strategy Documentation:**
+```
+Competitor Analysis:
+- Toggl: $10/user/month (time only)
+- FreshBooks: $15/month (invoicing focus)
+- ClickUp: $5/user/month (tasks only)
+
+Our Pricing:
+- Free: 1 workspace, 10 tasks/month
+- Pro: $29/month, unlimited everything
+- Launch offer: 50% off lifetime
+
+Justification:
+- Combines 3 tools ($30 value)
+- Saves 5 hours/week ($250 value at $50/hour)
+- ROI in first week of use
+```
+
+### 5.2 Customer Support Preparation
+
+**FAQ Template:**
+```markdown
+Getting Started:
+Q: How do I import my existing data?
+A: Currently manual entry, import coming in v2
+
+Q: Can I try before buying?
+A: Yes, 14-day free trial, no credit card required
+
+Time Tracking:
+Q: How accurate is auto-tracking?
+A: Detects activity within 30 seconds, 95% accurate
+
+Q: What counts as "activity"?
+A: Mouse movement, keyboard input, or scrolling
+
+Invoicing:
+Q: What invoice templates are available?
+A: 3 professional templates, customization coming soon
+
+Q: Can clients pay through the invoice?
+A: Not yet, but Stripe integration planned for Q2
+```
+
+### 5.3 Success Metrics Dashboard
+
+**Week 1 Metrics:**
+| Metric | Target | Actual | Status |
+|--------|--------|--------|--------|
+| Signups | 100 | ___ | ⏳ |
+| Activation (added task) | 60% | ___ | ⏳ |
+| Day 3 Retention | 50% | ___ | ⏳ |
+| Support tickets | <20 | ___ | ⏳ |
+| Average session time | >5 min | ___ | ⏳ |
+
+**Month 1 Targets:**
+- 500 total signups
+- 50 paying customers
+- $1,450 MRR
+- 4.5+ star average review
+- <24 hour support response
+
+---
+
+## Phase 6: Post-Launch Iteration
+
+### 6.1 Feedback Prioritization Framework
+
+**Feedback Tracking Spreadsheet:**
+| Source | Request | Frequency | Impact | Effort | Decision |
+|--------|---------|-----------|--------|--------|----------|
+| User Interview | "Need recurring invoices" | 8/10 | High | Medium | v1.1 |
+| Support Ticket | "Can't delete workspace" | 3/10 | Low | Small | Hotfix |
+| Product Hunt | "Add Zapier integration" | 5/10 | Medium | Large | Backlog |
+| Twitter | "Dark mode please!" | 12/10 | Low | Small | v1.1 |
+
+### 6.2 Version Planning Template
+
+**v1.1 Planning (Month 2):**
+```
+Theme: "Polish & Productivity"
+
+New Features:
+- Recurring invoices
+- Dark mode
+- Bulk task operations
+- Export to CSV
+
+Improvements:
+- 50% faster invoice generation
+- Better mobile experience
+- Refined onboarding flow
+
+Bug Fixes:
+- Workspace deletion
+- Timer sync issues
+- Invoice calculation edge cases
+
+Success Metrics:
+- Reduce churn by 20%
+- Increase activation to 70%
+- Support tickets <15/week
+```
+
+---
+
+## Appendix: Quick Reference Templates
+
+### A. Daily Standup (Solo Version)
+```markdown
+Date: ___________
+
+Yesterday:
+- Completed: ___________
+- Blockers: ___________
+
+Today:
+- Priority 1: ___________
+- Priority 2: ___________
+- Priority 3: ___________
+
+Metrics Check:
+- New users: ___
+- Active users: ___
+- Revenue: $___
+- Bugs reported: ___
+```
+
+### B. Weekly Review Template
+```markdown
+Week of: ___________
+
+Wins:
+1. ___________
+2. ___________
+
+Challenges:
+1. ___________
+2. ___________
+
+User Feedback Themes:
+- Most requested: ___________
+- Biggest pain point: ___________
+
+Next Week Focus:
+- Ship: ___________
+- Fix: ___________
+- Research: ___________
+
+Burnout Check (1-10): ___
+```
+
+### C. Feature Decision Framework
+```markdown
+Feature: ___________
+
+Why Now?
+- User requests: ___/10
+- Revenue impact: $___
+- Strategic importance: ___/10
+
+Implementation:
+- Effort (days): ___
+- Risk level: Low/Med/High
+- Dependencies: ___________
+
+Success Metrics:
+- Usage target: ___%
+- Revenue impact: $___
+
+Decision: Build / Defer / Reject
+Reason: ___________
+```
+
+---
+
+## Key Learnings & Tips
+
+**What Works for Solo Builders:**
+1. Ship weekly - momentum matters more than perfection
+2. Talk to users constantly - 3 conversations > 100 surveys  
+3. Say no to 80% of feature requests - focus wins
+4. Document everything - future you will thank you
+5. Use boring technology - proven > trendy
+
+**Common Traps to Avoid:**
+1. Building features nobody asked for
+2. Perfecting instead of shipping
+3. Ignoring customer support
+4. Not charging enough
+5. Comparing to VC-funded competitors
+
+**Remember:** You're not building the next Asana. You're solving a specific problem for a specific group of people better than anyone else. Stay focused, stay lean, and keep shipping.

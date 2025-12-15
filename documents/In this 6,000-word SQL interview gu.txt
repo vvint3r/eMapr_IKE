@@ -1,0 +1,493 @@
+In this 6,000-word SQL interview guide, I'm here to set the record straight. For context, my name is Nick Singh and I've worked in a variety of Data/Software Engineering roles at Facebook, Google, and Microsoft. I also wrote the best-selling book Ace the Data Science Interview.
+
+Nick Singh About Me
+
+The SQL interview tips in this 6,000-word guide directly come from my experience coaching hundreds of Data Analysts and Data Scientists to ace their SQL interviews.
+
+The Ultimate SQL Interview Guide Covers:
+
+Common SQL Commands Used in Interviews
+SQL Questions from Tesla, Microsoft, TikTok, and Uber (with solutions)
+Join SQL Interview Questions
+Window Functions Used in SQL Interviews
+Common Database Design Interview Questions
+6-Step Process to Solve Hard SQL Questions
+3 Best Books for SQL Interviews
+Best Site to Practice SQL Interview Questions
+How to Approach Open-Ended Take-Home SQL Challenges
+4 Real Take-Home SQL Interview Challenges
+Before we go into the exact topics SQL interviews cover, we need to get into the interviewer’s head and truly understand WHY tech companies ask SQL questions during interviews.
+
+Why Do Data Interviews Ask SQL Questions?
+While SQL might not be as glamorous and sexy as Python or R, SQL is an important language to master for Data Analysts and Data Scientists because your data lives in a database, and that’s where cleaning, filtering, and joining of large datasets can be done in a performant way. You don’t want to pull all the data into a Pandas or R dataframe, and crash your laptop, when you can efficiently shape and filter datasets thanks to SQL.
+
+Just Use SQL Bellcurve Meme
+
+That's why SQL is listed in 61% of data analytics jobs posted on Indeed, according to research done by DataQuest.io. In order to see if you can do the day-to-day work, hiring managers typically send candidates a SQL assessment during the Data Analyst or Data Science interview process.
+
+But you might say: "Nick, I got into this field to do Deep Learning with Tensorflow, are you seriously telling me Data Science interviews cover boring old SQL?"
+
+YES that's exactly what I'm saying!!
+
+SQL?! I thought Data Science was about Neural Networks in Python?
+Even at companies like Amazon and Facebook, which have massive amounts of data, most Data Scientists still spend most of their time writing SQL queries to answer business questions like "What are the top-selling products?", or "How do we increase ad click-through rates?".
+
+For more insight into the importance of SQL for Data Scientists, you can read this infamous article "No, you don't need ML/AI – You need SQL" which concretely shows you how so many ML problems can just be solved in a fraction of the time with some heuristics and a SQL query.
+
+What version of SQL is used in interviews?
+SQL comes in a variety of versions (also known as flavors), like MySQL, SQL Server, Oracle SQL, and PostgreSQL. Because the SQL versions are pretty similar, most data job interviews don't require you to use a specific version of SQL during the interview. We recommend aspiring Data Analysts and Data Scientists practice their SQL interview questions in PostgreSQL, because it’s the most standards-compliant version of SQL out there, and one of the most popular flavors of SQL in the data industry.
+
+However, if you are strongest in another flavor of SQL, it usually shouldn’t be a problem for SQL interviews. That’s because interviewers are more-so seeing if you understand how to write SQL queries and problem-solve – they know on the job you can just learn the version of SQL the company uses in a few days. As such, during live SQL interviews, a good interviewer won’t stress about minor syntactical errors or differences between different SQL versions.
+
+What Do SQL Interviews Cover?
+SQL interviews typically cover five main topics:
+
+basic SQL commands
+SQL joins
+window functions
+database design concepts
+your ability to write SQL queries to answer business questions
+While most other SQL interview question lists cover SQL trivia, like “What does DBMS stand for?” this guide focuses on what FAANG companies like Amazon and Google ask during interviews. I need to emphasize this point, because the first result on Google for "SQL interview questions" is a pop-up riddled website claiming "What is database?" is a legit interview question 😂.
+
+Fake List of Questions on InterviewBit
+
+Instead of asking conceptual questions, top Silicon Valley technology companies put you on the spot, and ask you to write a SQL query to answer a realistic business questions like "Find me the number of companies who accidentally posted duplicate job listings on LinkedIn?"
+
+LinkedIn SQL Interview Question: Find Duplicate Job Listings
+
+Before we can learn to apply SQL to these scenario-based questions, we need to cover some foundational SQL concepts like the most common SQL commands you need to know for interviews, what kinds of joins show up, and the most popular window functions for SQL interviews.
+
+What are the most common SQL commands used in interviews?
+Here’s the top 7 most common SQL commands tested during SQL interviews:
+
+SELECT - used to select specific columns from a table
+FROM - used to specify the table that contains the columns you are SELECT’ing
+WHERE - used to specify which rows to pick
+GROUP BY - used to group rows with similar values together
+HAVING - used to specify which groups to include, that were formed by the GROUP BY clause.
+ORDER BY - used to order the rows in the result set, either in ascending or descending order
+LIMIT - used to limit the number of rows returned
+However, 99% of Data Science & Data Analyst interviews at competitive companies won't just straight up ask you "What does GROUP BY do?". Instead you'll have to write a query that actually uses GROUP BY to solve a real-world problem. Check out the next section to see what we mean.
+
+Group By Example: Tesla SQL Interview Question
+In this real Tesla SQL Interview question, a Data Analyst was given the table called parts_assembly and asked to "Write a SQL query that determines which parts have begun the assembly process but are not yet finished?".
+
+Tesla Data Analyst SQL Interview Question
+
+To solve the question, realize that parts that are not yet finished can be found by filtering for rows with no data present in the finish_date column. This can be done using the SQL snippet:
+
+WHERE finish_date IS NULL
+Because some parts might be represented multiple times in the query data because they have several assembly steps that are not yet complete, we can GROUP BY to obtain only the unique parts.
+
+Thus, the final answer to this Tesla SQL Interview question is:
+
+SELECT part
+FROM parts_assembly
+WHERE finish_date IS NULL
+GROUP BY part;
+Hopefully, you've understood how just memorizing what WHERE or GROUP BY isn't going to cut it, and that to solve beginner SQL interview questions you still have to creatively apply the basic commands. To practice this Tesla SQL question yourself, click the image below:
+
+Tesla SQL Question: Unfinished Parts
+
+Now, let's cover another fundamental topic that's often combined with basic SQL commands: aggregate functions like COUNT() and SUM().
+
+Aggregate Functions Used In SQL Interviews
+Aggregate functions allow you to summarize information about a group of rows. For example, say you worked at JPMorgan Chase, in their Credit Card analytics department, and had access to a table called monthly_cards_issued. This table has data on how many credit cards were issued per month, for each different type of credit card that Chase offered.
+
+JPMorgan Chase SQL Interview Question Data
+
+To answer a question like “How many total cards were issued for each credit card” you’d use the SUM() aggregate function:
+
+SELECT card_name,
+       SUM(issued_amount)
+FROM   monthly_cards_issued
+GROUP  BY card_name; 
+Entering this query on DataLemur yields the following output:
+
+SUM() PostgreSQL Interview Question Example
+
+Similarly, if you wanted to count the total number of rows, you could use the aggregate function COUNT(). To play around with this dataset, open the SQL sandbox for the JPMorgan SQL Interview Question.
+
+JPMorgan SQL Interview Questions: Cards Issued Difference
+
+While PostgreSQL technically has dozens of aggregate functions, 99% of the time you'll just be using the big five functions covered below.
+
+What are the most common SQL aggregate functions?
+The 5 most common aggregate functions used in SQL interviews are:
+
+AVG() - Returns the average value
+COUNT() - Returns the number of rows
+MAX() - Returns the largest value
+MIN() - Returns the smallest value
+SUM() - Returns the sum
+While array_agg() and string_agg() aggregate functions may show up in advanced SQL interviews, they are extremely rare. To learn more about these uncommon commands, visit the PostgreSQL documentation.
+
+SQL Interview Questions On Joins
+In real-world data science & data analytics, you don't just use aggregate functions on one table at a time. Because your data lives in multiple SQL tables, as an analyst you're constantly writing SQL joins to analyze all the data together in one go. As such, hiring managers frequently ask both conceptual questions about SQL joins, as well as give you practical scenarios and then ask you to write a SQL query to join two tables.
+
+Microsoft SQL Interview Question Using JOIN
+For a concrete example of how joins show up during SQL interviews, checkout this real SQL interview Question asked by Microsoft:
+
+“Which Azure customer buys at least 1 Azure product from each product category?”
+
+The data needed to answer this would be in two tables – a customer_contracts table, which details which companies buy which products, and a table of Azure products, which has details about what product category each Azure service belongs too.
+
+Microsoft SQL Interview Question Dataset
+
+To solve this question, you'd need to combine the customer_contracts and products tables with a SQL join, which is what the following SQL snippet does:
+
+SELECT *
+FROM customer_contracts
+LEFT JOIN products 
+    ON customers.product_id = products.product_id
+To solve this real Microsoft Data Analyst SQL question yourself, and see the full solution give it a try on DataLemur:
+
+Microsoft Join SQL Interview Question
+
+What are the 4 different joins tested in SQL assessments?
+There are four main ways to join two database tables, and one of the most frequently asked SQL interview questions is to distinguish between each kind:
+
+INNER JOIN - combines rows from two tables that have matching values
+LEFT JOIN - combines rows from the left table, even if there are no matching values in the right table
+RIGHT JOIN - combines rows from the right table, even if there are no matching values in the left table
+FULL JOIN - combines rows from both tables, regardless of whether there are matching values
+Because a picture is worth a thousand words, checkout this neat infographic from DataSchool that explains joins visually:
+
+SQL Joins Explained Visually
+
+6 Most Common SQL Join Interview Questions
+Besides having to write queries which use JOIN commands, you might also encounter the following commonly asked conceptual interview questions about SQL joins:
+
+What is a self-join, and when would you use it?
+What is an anti-join, and when would you use it?
+What are the performance considerations of SQL join queries?
+How do you optimize a slow join query?
+How do you join more than two tables?
+Does a join always have to be on two rows sharing the same value (non-equi joins)?
+Many of these conceptual join questions closely relate to how databases are organized, and the costs and benefits of normalizing your tables. If you're interviewing for a Data Engineering, this topic is a must-know!
+
+Do I need to know date/time functions for SQL assessments?
+While it’s good to be familiar with date and time functions when preparing for a SQL interview, it isn’t absolutely mandatory to memorize the exact syntax for date/time functions because they differ greatly between SQL flavors. For example, SQL Server and MySQL have a DATEADD function, but PostgreSQL uses the keyword INTERVAL to get the same results.
+
+Because of the varying syntax, interviewers often give you some leeway and allow you to look up the exact date/time SQL commands mid-interview, especially if you are interviewing in a version of SQL you aren’t accustomed to.
+
+Most Common Date/Time Functions Used in SQL Interviews
+The most common date/time functions to know for SQL interviews are:
+
+NOW(): returns the current date and time
+CURRENT_DATE(): returns the current date
+INTERVAL: adds a specified time interval to a date
+DATEDIFF: calculates the difference between two dates
+EXTRACT: extracts a specific part of a date (e.g., month, day, year)
+You should also know the following date/time operators:
+
++: adds a time interval to a date/time value
+-: subtracts a time interval from a date/time value
+||: concatenates two date/time values
+Before a SQL assessment, it's also useful to be familiar with the various date/time types available in PostgreSQL, such as DATE, TIME, and TIMESTAMP.
+
+Using Date/Time Functions In A TikTok SQL Assessment
+To see PostgreSQL date/time operators in action, let’s solve this TikTok SQL Assessment Question called 2nd-day confirmation which gives you a table of text message and email signup data. You’re asked to write a query to display the ids of the users who confirmed their phone number via text message on the day AFTER they signed up (aka their 2nd day on Tik-Tok).
+
+TikTok SQL Assessment: 2nd Day Confirmation
+
+In the example data above, email_id 433 has a signup_date of 7/9/2022 and a confirmed action date of 7/10/2022. Hence, the user had a 1-day delay between the two events.
+
+The answer to this TikTok SQL question utilizes the date/time operator INTERVAL to identify the 1-day gap between signup and confirmation. The snippet looks like this:
+
+WHERE texts.action_date = emails.signup_date + INTERVAL '1 day'
+The full solution also requires us to join the texts and emails table, and also filter down to text messages that were confirmed. Hence, the final solution is:
+
+SELECT DISTINCT user_id
+FROM emails 
+INNER JOIN texts
+  ON emails.email_id = texts.email_id
+WHERE texts.action_date = emails.signup_date + INTERVAL '1 day'
+  AND texts.signup_action = 'Confirmed';
+Hard Date/Time SQL Interview Question From Stripe
+If your up for a challenging date/time SQL interview question, try this very hard Stripe SQL Interview question asked in a final-round Data Science interview. The problem requires you to EXTRACT the EPOCH from a transaction timestamp.
+
+Practice Problem
+Stripe SQL Question: Write a SQL query to identify any payments made with the same credit card for the same amount within 10 minutes of each other.
+
+
+If you have no idea how to solve this question, and reading the solution doesn't help, you probably need a refresher on window functions like LAG, conveniently covered up next!
+
+Window Functions In SQL Interviews
+Window functions are tricky, and hence show up constantly in advanced SQL interview questions to separate the beginners from the more experienced data analysts & data scientists.
+
+At a high-level, a window function performs calculation across a set of rows that are related to the current row. This is similar to an aggregate function like SUM() or COUNT(), but unlike an aggregate function, a window function does not cause rows to become grouped into a single output row. Instead, you have control over the window (subset) of rows which are being acted upon.
+
+ROW_NUMBER() Example From Google SQL Interview
+For example the window function ROW_NUMBER() ranks selected rows in ascending order, but resets the ranks for each window. To demo this, let's analyze data from a real Google SQL Interview Question.
+
+Google SQL Interview Question Odd Even
+
+In the problem, you are given the measurements table which has data from an IoT sensor that collects multiple measurements per day:
+
+measurements Example Input:
+measurement_id	measurement_value	measurement_time
+131233	1109.51	07/10/2022 09:00:00
+135211	1662.74	07/10/2022 11:00:00
+523542	1246.24	07/10/2022 13:15:00
+143562	1124.50	07/11/2022 15:00:00
+346462	1234.14	07/11/2022 16:45:00
+You are asked to find the sum of the odd-numbered and even-numbered sensor measurements for each day. Before we start worrying about the odd measurements (1st, 3rd, 5th measurement of the day, etc.) and even measurements, we need to just understand what was the 1st, 2nd, 3rd, 4th, measurement of the day.
+
+To do this we use ROW_NUMBER() to rank the rows BUT make the window only one-day wide. That means at the end of every day, the ranks reset back to 1. This is achieved with the following window function:
+
+ROW_NUMBER() OVER (
+    PARTITION BY CAST(measurement_time AS DATE) 
+    ORDER BY measurement_time) AS measurement_num
+When we run the code, you'll see at the end of each day the measurement number resets:Row_Number() Window Function Example.
+
+From here, to get odd and even measurements, we just need to divide the measurement_num by 2 and check the remainder, but we'll leave it up to you to implement inside the SQL code sandbox for this Google Data Analyst SQL question.
+
+For another example, let's dive into a practical exercise from an Uber Data Science assessment which also uses the ROW_NUMBER() window function.
+
+Uber Window Function SQL Interview Question
+Take for example this Uber SQL Interview Question about selecting a user's 3rd transaction made on the Uber platform.Uber SQL Interview Question: User's 3rd Transaction
+
+At the core of this SQL question is the window function ROW_NUMBER() which assigns a number to each row within the partition. Essentially, we want to group/partition all the Uber transactions together based on which user_id made the transaction, and then order these transactions by when they occured (transaction_date), so that we can label the order in which they occured using ROW_NUMBER():
+
+    ROW_NUMBER() OVER (
+      PARTITION BY user_id ORDER BY transaction_date) AS row_num
+    FROM transactions) AS trans_num 
+Finally, using the output from the window function, we want to filter our results to only get the 3rd transaction for every user:
+
+WHERE row_num = 3
+This yields us the final solution:
+
+SELECT 
+  user_id,
+  spend,
+  transaction_date
+FROM (
+  SELECT 
+    user_id, 
+    spend, 
+    transaction_date, 
+    ROW_NUMBER() OVER (
+      PARTITION BY user_id ORDER BY transaction_date) AS row_num
+  FROM transactions) AS trans_num 
+WHERE row_num = 3;
+For more practice with SQL interview questions that use window functions select the 'Window Functions' filter on the DataLemur SQL interview questions.
+
+Window Function SQL Interview Questions
+
+What are the most common window functions for SQL interviews?
+The top window functions used in SQL interviews are:
+
+RANK() - gives a rank to each row in a partition based on a specified column or value
+DENSE_RANK() - gives a rank to each row, but DOESN'T skip rank values
+ROW_NUMBER() - gives a unique integer to each row in a partition based on the order of the rows
+NTILE() - divides a partition into a specified number of groups, and gives a group number to each row
+LAG() - retrieves a value from a previous row in a partition based on a specified column or expression
+LEAD() - retrieves a value from a subsequent row in a partition based on a specified column or expression
+NTH_VALUE() - retrieves the nth value in a partition
+To understand each window function in more detail, check out Mode's SQL tutorial on Window Functions.
+
+Now that you know the basic SQL commands that come up in interviews, along with intermediate SQL interview topics like joins and window functions, we're ready to cover database design and data modeling interview questions.
+
+Database Design & Data Modeling Interview Questions
+Database design and data modeling interview questions test you on how well you understand the inner-workings of databases, along with how to design your data warehouse. If you're preparing for a Data Engineering or Analytics Engineering interview, this section is just as important as being able to write SQL queries. However, we still think it’s an important topic for Data Analysts and Data Scientists to briefly cover too, especially if interviewing for a smaller startup where you’ll likely wear multiple hats and end up doing some Data Engineering work too.
+
+Common Database Design Interview Questions
+What is an index, and why does it speed up queries?
+What are the dis-advantages of using indexes?
+How do you troubleshoot a slow SQL query?
+How do you CREATE, READ, UPDATE, and DELETE in SQL?
+What is a stored procedure, and when do we use them?
+What is normalization? Why might we want to also de-normalize some tables?
+What is ACID, and how does a database enforce atomicity, consistency, isolation, durability?
+What’s the difference between Star schema and Snowflake schema?
+What are the different types of dimensions (e.g. junk dimensions, conformed dimensions, mini dimensions, shrunken dimensions)?
+If you had to make a simple news feed, similar to the Facebook or LinkedIn feed, what are the main tables you’d have? Can you whiteboard a quick ER Diagram for it?
+What is database sharding?
+What are the advantages and disadvantages of relational vs. NoSQL databases?
+How To Prep For Database Design Interview Questions
+If these database design interview questions look super tough, I recommend reading the classic book Database Design for Mere Mortals because it covers topics like translating business needs into design specifications, how to determine what tables you need and their relationships, how to anticipate and mitigate performance bottlenecks, and how to ensure data integrity via field specifications and constraints.
+
+Database Design for Mere Mortals on Amazon
+
+To answer data warehousing interview questions, you need to memorize the dimension modeling bible The Data Warehouse Toolkit by Kimball and Ross. This book is gold because it features multiple data warehousing case studies, and shows you exactly how to design your dimensional databases for maintainability and performance.
+
+And to learn basic DML (Data Markup Language) commands like CREATE, UPDATE, and DELETE checkout this blog post SQL CRUD operations.
+
+Why Data Analysts And Data Scientists Should Study Database Design
+While Data Analysts and Data Scientists might not be asked advanced database interview questions during their interview process, we still think it’s worth studying database design because:
+
+knowing how databases are structured and indexed allows you to write more efficient SQL queries
+understanding how databases enforce data integrity can help you troubleshoot issues with data quality
+learning data modeling & warehouse design helps you collaborate more effectively with Data Engineering co-workers
+at smaller companies you’ll wear multiple-hats which means there’s a very real chance you end up doing some data infrastructure work
+With the fundamental SQL commands and database concepts out of the way, let's take a high-level approach to solving SQL interview questions.
+
+How do you approach a SQL interview question?
+SQL interviews are stressful, but if you approach each question with a structured approach, you’ll ace the SQL interview. Here’s the 6 steps to solve any SQL interview question:
+
+Understand the question
+Identify Relevant information
+Break down the problem
+Consider Edge Cases
+Write queries to answer sub-problems
+Test your final query
+SQL Interview Step 1: Understand the Question
+Often you might get a long SQL word problem, where you’ll have lots of extra details and it might not be clear what the interviewer is specifically asking you to query. So understanding and clarifying what specifically needs to be done is the best first step to take.
+
+SQL Interview Step 2: Identify Relevant information
+You might have extraneous columns, or even extra tables that aren’t needed for your SQL query. Interviewers do this on purpose, because in real-world SQL you'll often have thousands of tables, with hundreds of columns, and it's a skill to determine what information you actually need to query that's relevant to the problem. As such, Identify what’s actually needed to directly answer the SQL interview question at-hand.
+
+SQL Interview Step 3: Break Down the Problem
+Often, SQL interviews have a multi-part solution, consisting of multiple joins, unions, subqueries, and CTEs. Map out what are the smaller building blocks that are needed for the final solution. You want to verbalize this step, because it shows the interviewer that's watching you code that you are able to break-down complex problems into simpler sub-problems – a useful skill not just in SQL, but in Data Analytics & Data Science as a whole.
+
+SQL Interview Step 4: Consider Edge Cases
+You can’t forget edge cases, like if some value is null, or there is a tie in your results set. Make sure to think about this BEFORE you start writing your SQL query. Frequently, SQL interviews will purposely have tricky test cases which catch whether you’ve handled all edge cases.
+
+SQL Interview Step 5: Write Queries for Sub-Problems
+Write queries to answer sub-problems: don’t go after the question all at once. Write small subqueries that answer sub-problems. Test your solutions incrementally, and slowly combine your sub-problem results. If you try to answer the problem all in one go, your SQL query likely won’t run and you’ll overwhelm yourself trying to figure which of the 27 lines you wrote contains the error.
+
+SQL Interview Step 6: Test Your Final Query
+Run your SQL query, and validate that your output matches the expected output. From coaching hundreds of people, you won’t believe how many people think they have the final solution, but don’t realize there’s a slight difference between the expected results and what they produced.
+
+What makes online SQL assessments difficult?
+Online SQL assessments are difficult for three main reasons:
+
+You need to solve the questions under time pressure.
+You need to write clean SQL code which adheres to best-practices.
+You need to know the SQL patterns required for the toughest SQL interview questions (which takes a ton of SQL interview practice)
+Let's cover each tricky aspect, and how best to overcome these difficulties.
+
+Handling Time Pressure During SQL Assessments
+Online SQL assessments typically give you an hour to solve 2 to 3 tricky SQL questions. This time constraint significantly adds to the stress, which can make it difficult to think clearly. For live whiteboard SQL interviews, an interviewer is hovering over you, which further adds to the tension. Finally, for live SQL screens, you're expected to verbalize your thought process to the interviewer, which can make SQL interviews even more stressful.
+
+Our advice to make this less nerve-wracking is to practice sql interview questions with a timer, and in the presence of a friend, so you can get used to writing SQL quickly while verbalizing your thoughts.
+
+Write Clean SQL Queries During Interviews
+It’s not enough to answer the interview question correctly – your SQL query needs to be written cleanly too! That means not taking shortcuts, like renaming columns and tables with short unhelpful names like “t” or “u”. It also means not overly nesting sub-queries, and instead using CTEs. This is especially true during take-home SQL assessments, where there is less time pressure and you have no excuse not to write clean SQL.
+
+My soccer coach used to always tell me “You play like you practice and practice how you play” and the same mentality applies for SQL interviews too. When you are practicing sql interview questions, don’t take shortcuts, and put in the effort to make sure your SQL queries are written cleanly even if no one else is going to read them!
+
+If you don’t know what constitutes clean, efficient SQL code read the article “10 Best Practices to Write Readable and Maintainable SQL Code”. You can also get feedback on your SQL queries, and learn from others, by seeing how other people solve the SQL interview exercises on DataLemur.
+
+Learn SQL Interview Patterns
+For advanced SQL interview questions, you’ll need to practice enough questions to internalize the most common SQL interview patterns out there. For example, there’s a non-intuitive way to apply Postgres’s GENERATE_SERIES() command that keeps coming up in SQL interview questions, yet most Data Analysts probably haven’t ever come across this function during their day-to-day SQL work.
+
+That’s why we added SQL pattern tags to the sql interview questions on DataLemur, to help you notice and then intentionally practice the specific SQL interview patterns that come up.
+
+Common SQL Interview Patterns
+
+You can also read this article on common SQL interview patterns.
+
+SQL Interview Patterns
+
+Preparing for SQL Assessments
+Simply knowing the SQL concepts that commonly show up in online SQL assessments isn't enough. I recommend creating a study plan that allots oodles of time to practice the concepts too if you want to crack the SQL interview.
+
+How long does it take to study for a SQL interview?
+From analyzing data from 12,000 DataLemur.com users, we found it takes SQL beginners 3-6 months to pass the toughest SQL interview questions. For Data Analysts and Data Scientists who’ve used SQL extensively at work, it takes 30 to 60 days to ace SQL interview questions at companies like Amazon, Google, and Facebook. However, if you’ve only got a few days or hours to cram for a SQL assessment, checkout this guide on how to cram for SQL assessments.
+
+The best way to know the appropriate amount of time to dedicate to studying is by solving a real easy, medium, and hard SQL interview question from DataLemur. If you struggle on the easy question, you know you've got your work cut out for you!
+
+Easy Amazon SQL Interview Question: Average Review Ratings
+Medium Difficulty Spotify SQL Interview Question: Top 5 Artists
+Hard Facebook SQL Interview Question: Active User Retention
+I have a SQL assessment in a month. What should I study?
+If you’ve got an interview in a month, but don’t know much SQL, check out this 30-day SQL learning roadmap which covers the best FREE online SQL resources (in what order to study them).
+
+Learn SQL in 30 Days Roadmap
+
+However, because SQL is so core to Data Analytics & Data Science, I recommend giving yourself more than a month to learn SQL, and sitting down with a more comprehensive book to learn SQL. And in case you find learning SQL boring, play these 4 SQL games to make learning more fun!
+
+What are the best books for SQL interviews?
+The 3 best books to get ready for a SQL interview are:
+
+SQL for Data Scientists: A Beginner's Guide for Building Datasets for Analysis
+Minimum Viable SQL Patterns: Hands on Design Patterns for SQL
+Ace the Data Science Interview: 201 Real Data & SQL Interview Questions
+3 Best Books To Prep For SQL Interviews
+
+SQL for Data Scientists: The Best Book To Learn SQL For Data Nerds
+The book "SQL for Data Scientists" is an excellent resource specifically designed for data nerds (compared to other more general books, which cover obscure database details geared towards database administrators. While not specifically geared towards SQL interview prep, it covers all the main topics which you'll find during an interview, like joins, window functions, subqueries, and data prep for ML.
+
+Minimum Viable SQL Patterns: Best Book To Learn SQL Best Practices
+The eBook Minimum Viable SQL Patterns will take your SQL code to the next level. This is for folks who want their SQL queries to be more efficient, readable, and maintainable – things that experienced hires are judged on during SQL interviews!
+
+Ace the Data Science Interview: Best Book For SQL Exercises
+Finally, the book Ace the Data Science Interview has an entire chapter with 30 real SQL & Database Interview questions, along with a guide on how to prepare for them. I like this book, but then again I’m biased because I wrote it!
+
+To get a complete list of book recommendations, check out this list of the 17 best books for Data Analysts and the 13 best Data Science books.
+
+What's the best site to practice SQL interview questions?
+The 3 most popular sites to practice SQL interviews are:
+
+LeetCode - https://leetcode.com/
+HackerRank - https://www.hackerrank.com/
+DataLemur – https://datalemur.com/
+I believe that DataLemur is the best SQL interview platform because it is the most affordable option (half the cost of LeetCode), features the best solutions and hints, and has the most generous free tier.
+
+Want proof? Start practicing with this free TikTok SQL question to see what I mean:
+
+Practice Problem
+TikTok SQL Question: Write a query to find the activation rate of new users
+
+
+While practicing from these online SQL interview platforms is great, we want to acknowledge that tackling open-ended take-home SQL challenges is a whole other beast.
+
+Open-Ended Take-Home SQL Challenges
+What makes open-ended SQL tests trickier than online SQL assessments?
+Open-ended SQL challenges typically use much larger, messier, and more realistic datasets than SQL assessments. For example, in a take-home challenge you might get some anonymized data from the company’s production database, which is filled with missing data or nulls. In timed SQL coding screens, you’re usually querying a clean toy dataset that might only be 20-30 rows big.
+
+The scope of an open-ended SQL challenge is much bigger too. Whereas in an online SQL assessment, there’s a specific question with well-defined inputs and outputs, for take-home SQL challenges it might not even be obvious what question you need to answer! Some startups in their SQL take-home challenges just give you a large CSV file along with vague prompt like “From this data, what recommendations do you have for our business?” and it’s up to you to determine what specific questions you’ll ask of the dataset.
+
+Of course, the timeframe for take-home SQL challenges is much longer too. Plus, you can usually pick which version of SQL to use too! However, this is both a blessing and a curse. While you typically have more freedom, the expectations around the cleanliness of your SQL code are much, much higher.
+
+Finally, an open-ended SQL take-home challenge tests for much more than just raw SQL skills. Typically, you’ll have to write a report about what you did, which tests your written communication skills. You might even be asked to visualize the data, which tests your data visualization skills as well. Lastly, over a Zoom call, you might be asked to present your analysis, and defend the work you did, which evaluates your oral communication and presentation skills.
+
+How do you prepare for take-home SQL interview challenges?
+The best way to prepare for open-ended SQL interview challenges is by practicing real take-home SQL interview challenges, doing exploratory data analysis with Kaggle datasets. and reading books to improving your data analytics skills.
+
+4 Real Take-Home SQL Interview Challenges
+Because practice makes perfect, here’s 4 real take-home SQL interview challenges from PayPal, CVS Health, Asana, and UnitedHealth Group:
+
+PayPal/Braintree Analytics Code Challenge
+4-Part CVS Pharmacy Analytics SQL Challenge
+Asana Take Home Data Science Challenge
+4-Part UnitedHealth Group Patient Support SQL Analysis
+You can also make your own open-ended SQL challenges using data from Kaggle if you want more practice!
+
+Using Kaggle To Improve Your Ability To Answer Open-Ended SQL Questions
+If you don’t know about Kaggle, you are missing out. While they typically host Data Science & Machine Learning competitions, where people build neural network models in Python or R, you can use Kaggle to improve your SQL skills too.
+
+First find an interesting dataset on Kaggle and download the CSVs onto your laptop. Next, load the data into a free database tool like dBeaver so you can query it in the SQL flavor of your choice. Then brainstorm a list of questions you think a business stakeholder might have about the data. Finally, get querying – do the best you can to write SQL queries that answer these hypothetical open-ended analytics questions.
+
+For bonus points, you can even visualize the results in an interactive Tableau dashboard, and turn this into a full-fledged data analytics portfolio project.
+
+How To Translate Vague Business Questions Into SQL
+To improve your ability to handle ambiguous data analytics take-home challenges like “Use SQL to find us some business insights in this dataset” my go-to resource is Lean Analytics.
+
+Lean Analytics explains the most important metrics associated with business models like SaaS, freemium consumer apps, 2-sided marketplaces, and e-commerce brands. By knowing what numbers decision makers generally care about, you’ll be able to narrow down the scope of your SQL queries to only answer the questions that truly matter.
+
+Read Lean Analytics to ace take-home SQL challenges
+
+I also recommend improving your business-acumen by reading books like “The Personal MBA” and Boston Consulting Group’s book “On Strategy”, which you can find more details about in my list of the the best business books for Data Scientists.
+
+Beyond SQL: Other Data Interview Topics
+What technical concepts do Data Analyst interviews cover (besides SQL)?
+SQL is just one tool in the Data Analyst toolbox, and anyways it’s not the tool that matters (or its size), it’s how you use it 😉. That’s why Data Analyst interviews go beyond just SQL questions, and ask technical interview questions like:
+
+Probability Interview Questions:: Basics about conditional probability, Bayes' theorem, random variables
+Statistics Interview Questions:: Topics include measures of central tendency (e.g., mean, median, mode), measures of dispersion (e.g., variance, standard deviation), hypothesis testing (t-tests, ANOVA, and chi-squared tests) and sometimes linear regression analysis for senior Data Analyst interviews.
+Data Visualization Questions: Usually tested in-directly, by examining a data analytics portfolio project of yours, or judging a how you visualized the results from an open-ended SQL take-home test.
+Business Acumen Questions: You’ll usually get an open-ended case question like “You're launching a new AWS database service. What metrics would you measure to know if the launch went well or not?”. Here you’ll have to walk through your knowledge of financial and product metrics, and be evaluated on your general business-savvy. You’ll also be asked about your past work experience, and how you communicated your data analysis results to stakeholders.
+What do Data Science interviews cover besides SQL?
+Much like a Data Analyst interview, Data Science interviews cover way more topics than just SQL. You can expected to be asked:
+
+Probability & Statistics Questions
+A/B Testing Questions
+Machine Learning Questions
+Database Design Questions
+Coding Questions (usually in Python)
+Product-Sense Questions
+Behavioral Interview Questions
+For a concrete example of what to expect

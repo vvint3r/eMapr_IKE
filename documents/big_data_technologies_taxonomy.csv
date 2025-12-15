@@ -1,0 +1,439 @@
+Level_1	Level_2	Level_3	Level_4	Level_5	Level_6
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	The 5 V's of Big Data	Volume	Petabyte Scale	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	The 5 V's of Big Data	Volume	Data Growth Rate	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	The 5 V's of Big Data	Volume	Storage Requirements	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	The 5 V's of Big Data	Volume	Processing Capacity	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	The 5 V's of Big Data	Velocity	Real-time Processing	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	The 5 V's of Big Data	Velocity	Streaming Data	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	The 5 V's of Big Data	Velocity	Response Time Requirements	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	The 5 V's of Big Data	Velocity	Batch vs Stream	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	The 5 V's of Big Data	Variety	Structured Data	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	The 5 V's of Big Data	Variety	Semi-Structured Data	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	The 5 V's of Big Data	Variety	Unstructured Data	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	The 5 V's of Big Data	Variety	Data Source Diversity	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	The 5 V's of Big Data	Veracity	Data Quality	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	The 5 V's of Big Data	Veracity	Data Reliability	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	The 5 V's of Big Data	Veracity	Uncertainty Management	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	The 5 V's of Big Data	Veracity	Trust & Validation	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	The 5 V's of Big Data	Value	Business Value Extraction	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	The 5 V's of Big Data	Value	ROI Considerations	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	The 5 V's of Big Data	Value	Monetization Strategies	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	The 5 V's of Big Data	Value	Analytics Insights	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	Distributed Computing Principles	Parallel Processing	Task Distribution	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	Distributed Computing Principles	Parallel Processing	Workload Partitioning	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	Distributed Computing Principles	Fault Tolerance	Replication	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	Distributed Computing Principles	Fault Tolerance	Recovery Mechanisms	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	Distributed Computing Principles	Scalability	Horizontal Scaling	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	Distributed Computing Principles	Scalability	Vertical Scaling	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	Distributed Computing Principles	Data Locality	Data Proximity	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	Distributed Computing Principles	Data Locality	Network Optimization	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	CAP Theorem	Consistency	Strong Consistency	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	CAP Theorem	Consistency	Eventual Consistency	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	CAP Theorem	Availability	High Availability	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	CAP Theorem	Availability	Uptime Requirements	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	CAP Theorem	Partition Tolerance	Network Partitions	
+BIG DATA TECHNOLOGIES	Big Data Fundamentals	CAP Theorem	Partition Tolerance	System Resilience	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Hadoop Core Components	HDFS	NameNode	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Hadoop Core Components	HDFS	DataNode	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Hadoop Core Components	HDFS	Block Storage	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Hadoop Core Components	HDFS	Replication Factor	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Hadoop Core Components	MapReduce	Map Phase	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Hadoop Core Components	MapReduce	Shuffle & Sort	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Hadoop Core Components	MapReduce	Reduce Phase	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Hadoop Core Components	MapReduce	Job Execution	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Hadoop Core Components	YARN	Resource Manager	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Hadoop Core Components	YARN	Node Manager	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Hadoop Core Components	YARN	Application Master	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Hadoop Core Components	YARN	Container Management	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Hadoop Distributions	Cloudera	CDH Distribution	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Hadoop Distributions	Cloudera	Cloudera Manager	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Hadoop Distributions	Cloudera	Enterprise Features	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Hadoop Distributions	Hortonworks	HDP Distribution	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Hadoop Distributions	Hortonworks	Ambari Management	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Hadoop Distributions	Hortonworks	Open Source Focus	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Hadoop Distributions	MapR	Converged Platform	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Hadoop Distributions	MapR	POSIX Compliance	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Hadoop Distributions	MapR	High Performance	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Data Processing Tools	Apache Hive	HiveQL	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Data Processing Tools	Apache Hive	Metastore	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Data Processing Tools	Apache Hive	Query Optimization	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Data Processing Tools	Apache Pig	Pig Latin	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Data Processing Tools	Apache Pig	Data Flow Scripts	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Data Processing Tools	Apache Pig	ETL Operations	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Data Processing Tools	Apache Sqoop	RDBMS Import	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Data Processing Tools	Apache Sqoop	Data Export	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Data Processing Tools	Apache Flume	Log Aggregation	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Data Processing Tools	Apache Flume	Streaming Ingestion	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Coordination & Management	Apache ZooKeeper	Configuration Management	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Coordination & Management	Apache ZooKeeper	Synchronization	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Coordination & Management	Apache ZooKeeper	Leader Election	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Coordination & Management	Apache Oozie	Workflow Scheduling	
+BIG DATA TECHNOLOGIES	Hadoop Ecosystem	Coordination & Management	Apache Oozie	Job Coordination	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Core	In-Memory Computing	Memory Management	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Core	In-Memory Computing	Caching Strategies	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Core	Distributed Processing	Cluster Computing	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Core	Distributed Processing	Task Scheduling	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Core	Fault Tolerance	Lineage Tracking	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Core	Fault Tolerance	Recovery Mechanisms	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Core Components	RDDs	Immutable Collections	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Core Components	RDDs	Lazy Evaluation	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Core Components	RDDs	Transformations	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Core Components	RDDs	Actions	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Core Components	DataFrames	Structured Data API	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Core Components	DataFrames	Schema Definition	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Core Components	DataFrames	Catalyst Optimizer	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Core Components	Datasets	Type Safety	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Core Components	Datasets	Encoders	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Core Components	Datasets	Performance Benefits	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark SQL	SQL Interface	Query Processing	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark SQL	SQL Interface	JDBC/ODBC Support	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark SQL	SQL Interface	Hive Integration	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark SQL	Data Sources	Parquet Format	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark SQL	Data Sources	ORC Format	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark SQL	Data Sources	JSON Support	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark SQL	Data Sources	CSV Processing	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Streaming	DStreams	Discretized Streams	Legacy Approach
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Streaming	DStreams	Micro-Batching	Legacy Approach
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Streaming	DStreams	Windowing Operations	Legacy Approach
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Streaming	Structured Streaming	Stream as Table	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Streaming	Structured Streaming	Event Time Processing	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Streaming	Structured Streaming	Watermarks	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Streaming	Structured Streaming	Output Modes	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Streaming	Integration Sources	Apache Kafka	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Streaming	Integration Sources	Amazon Kinesis	
+BIG DATA TECHNOLOGIES	Apache Spark	Spark Streaming	Integration Sources	File Sources	
+BIG DATA TECHNOLOGIES	Apache Spark	MLlib	Machine Learning	Classification Algorithms	
+BIG DATA TECHNOLOGIES	Apache Spark	MLlib	Machine Learning	Regression Models	
+BIG DATA TECHNOLOGIES	Apache Spark	MLlib	Machine Learning	Clustering	
+BIG DATA TECHNOLOGIES	Apache Spark	MLlib	Feature Engineering	Feature Extraction	
+BIG DATA TECHNOLOGIES	Apache Spark	MLlib	Feature Engineering	Transformations	
+BIG DATA TECHNOLOGIES	Apache Spark	MLlib	Feature Engineering	Pipeline API	
+BIG DATA TECHNOLOGIES	Apache Spark	MLlib	Model Persistence	Model Save/Load	
+BIG DATA TECHNOLOGIES	Apache Spark	MLlib	Model Persistence	Model Deployment	
+BIG DATA TECHNOLOGIES	Apache Spark	GraphX	Graph Processing	Vertices & Edges	
+BIG DATA TECHNOLOGIES	Apache Spark	GraphX	Graph Processing	Graph Algorithms	
+BIG DATA TECHNOLOGIES	Apache Spark	GraphX	Graph Processing	PageRank	
+BIG DATA TECHNOLOGIES	Apache Spark	GraphX	Graph Processing	Connected Components	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Document Databases	MongoDB	Document Model	JSON Documents
+BIG DATA TECHNOLOGIES	NoSQL Databases	Document Databases	MongoDB	BSON Format	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Document Databases	MongoDB	Indexes	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Document Databases	MongoDB	Replication	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Document Databases	MongoDB	Sharding	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Document Databases	CouchDB	HTTP REST API	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Document Databases	CouchDB	MapReduce Views	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Document Databases	CouchDB	Master-Master Replication	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Wide Column Stores	Apache Cassandra	Column Families	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Wide Column Stores	Apache Cassandra	Distributed Architecture	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Wide Column Stores	Apache Cassandra	Tunable Consistency	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Wide Column Stores	Apache Cassandra	Linear Scalability	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Wide Column Stores	Apache Cassandra	CQL Query Language	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Wide Column Stores	Apache HBase	Hadoop Integration	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Wide Column Stores	Apache HBase	Real-time Access	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Wide Column Stores	Apache HBase	Column-Oriented Storage	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Wide Column Stores	Apache HBase	Strong Consistency	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Wide Column Stores	ScyllaDB	Cassandra Compatible	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Wide Column Stores	ScyllaDB	C++ Performance	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Wide Column Stores	ScyllaDB	Low Latency	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Key-Value Stores	Redis	In-Memory Storage	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Key-Value Stores	Redis	Data Structures	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Key-Value Stores	Redis	Caching	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Key-Value Stores	Redis	Pub/Sub Messaging	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Key-Value Stores	Redis	Persistence Options	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Key-Value Stores	Amazon DynamoDB	Serverless	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Key-Value Stores	Amazon DynamoDB	Auto-Scaling	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Key-Value Stores	Amazon DynamoDB	Global Tables	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Key-Value Stores	Riak	Distributed KV Store	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Key-Value Stores	Riak	High Availability	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Graph Databases	Neo4j	Property Graph Model	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Graph Databases	Neo4j	Cypher Query Language	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Graph Databases	Neo4j	ACID Transactions	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Graph Databases	Neo4j	Graph Algorithms	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Graph Databases	Neo4j	Social Networks	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Graph Databases	Apache Giraph	Pregel-like Processing	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Graph Databases	Apache Giraph	Hadoop Integration	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Graph Databases	Amazon Neptune	Managed Graph DB	
+BIG DATA TECHNOLOGIES	NoSQL Databases	Graph Databases	Amazon Neptune	Property & RDF Graphs	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Kafka	Distributed Messaging	Topics & Partitions	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Kafka	Distributed Messaging	Producers & Consumers	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Kafka	Distributed Messaging	Consumer Groups	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Kafka	Architecture	Brokers	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Kafka	Architecture	ZooKeeper Coordination	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Kafka	Architecture	Replication	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Kafka	Kafka Streams	Stream Processing Library	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Kafka	Kafka Streams	Stateful Processing	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Kafka	Kafka Streams	Exactly-Once Semantics	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Kafka	Kafka Connect	Source Connectors	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Kafka	Kafka Connect	Sink Connectors	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Kafka	Kafka Connect	Data Integration	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Flink	Stream Processing Engine	Event-Time Processing	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Flink	Stream Processing Engine	Stateful Computations	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Flink	Stream Processing Engine	Fault Tolerance	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Flink	Stream Processing Engine	Exactly-Once Guarantees	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Flink	APIs	DataStream API	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Flink	APIs	Table API	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Flink	APIs	SQL Interface	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Flink	Connectors	Kafka Integration	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Flink	Connectors	HDFS Integration	
+BIG DATA TECHNOLOGIES	Stream Processing	Apache Flink	Connectors	Elasticsearch	
+BIG DATA TECHNOLOGIES	Stream Processing	Amazon Kinesis	Data Streams	Real-time Ingestion	
+BIG DATA TECHNOLOGIES	Stream Processing	Amazon Kinesis	Data Streams	Shards	
+BIG DATA TECHNOLOGIES	Stream Processing	Amazon Kinesis	Data Streams	Retention Period	
+BIG DATA TECHNOLOGIES	Stream Processing	Amazon Kinesis	Data Firehose	Delivery Service	
+BIG DATA TECHNOLOGIES	Stream Processing	Amazon Kinesis	Data Firehose	Data Transformation	
+BIG DATA TECHNOLOGIES	Stream Processing	Amazon Kinesis	Data Analytics	SQL Queries on Streams	
+BIG DATA TECHNOLOGIES	Stream Processing	Amazon Kinesis	Data Analytics	Apache Flink Support	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Data Lake Concepts	Storage Layer	Object Storage (S3, ADLS, GCS)	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Data Lake Concepts	Storage Layer	Raw Data Storage	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Data Lake Concepts	Data Organization	Zones (Raw, Curated, Refined)	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Data Lake Concepts	Data Organization	Folder Structures	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Data Lake Concepts	Data Formats	Parquet	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Data Lake Concepts	Data Formats	ORC	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Data Lake Concepts	Data Formats	Avro	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Table Formats	Delta Lake	ACID Transactions	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Table Formats	Delta Lake	Time Travel	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Table Formats	Delta Lake	Schema Evolution	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Table Formats	Delta Lake	Upserts & Deletes	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Table Formats	Apache Iceberg	Schema Evolution	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Table Formats	Apache Iceberg	Partition Evolution	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Table Formats	Apache Iceberg	Hidden Partitioning	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Table Formats	Apache Iceberg	Time Travel	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Table Formats	Apache Hudi	Incremental Processing	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Table Formats	Apache Hudi	Upserts	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Table Formats	Apache Hudi	Change Data Capture	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Lakehouse Platforms	Databricks Lakehouse	Unity Catalog	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Lakehouse Platforms	Databricks Lakehouse	Delta Engine	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Lakehouse Platforms	Databricks Lakehouse	Photon Engine	
+BIG DATA TECHNOLOGIES	Data Lakes & Lakehouses	Lakehouse Platforms	Databricks Lakehouse	MLflow Integration	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Snowflake	Architecture	Storage & Compute Separation	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Snowflake	Architecture	Virtual Warehouses	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Snowflake	Architecture	Multi-Cluster	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Snowflake	Features	Zero-Copy Cloning	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Snowflake	Features	Time Travel	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Snowflake	Features	Data Sharing	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Snowflake	Features	Snowpipe	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Snowflake	Workloads	SQL Analytics	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Snowflake	Workloads	Data Engineering	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Snowflake	Workloads	Data Science	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Amazon Redshift	Architecture	Cluster-Based	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Amazon Redshift	Architecture	Leader & Compute Nodes	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Amazon Redshift	Architecture	Columnar Storage	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Amazon Redshift	Features	Redshift Spectrum	Query External Data
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Amazon Redshift	Features	Concurrency Scaling	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Amazon Redshift	Features	Materialized Views	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Amazon Redshift	Integration	AWS Ecosystem	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Amazon Redshift	Integration	S3 Data Lake	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Google BigQuery	Architecture	Serverless	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Google BigQuery	Architecture	Dremel Engine	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Google BigQuery	Architecture	Colossus Storage	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Google BigQuery	Features	Standard SQL	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Google BigQuery	Features	ML Integration (BQML)	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Google BigQuery	Features	Federated Queries	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Google BigQuery	Features	Real-time Analytics	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Google BigQuery	Pricing	On-Demand	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Google BigQuery	Pricing	Flat-Rate	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Azure Synapse Analytics	Architecture	Dedicated SQL Pools	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Azure Synapse Analytics	Architecture	Serverless SQL	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Azure Synapse Analytics	Architecture	Apache Spark Pools	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Azure Synapse Analytics	Features	Integration with Power BI	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Azure Synapse Analytics	Features	Data Integration Pipelines	
+BIG DATA TECHNOLOGIES	Cloud Data Warehouses	Azure Synapse Analytics	Features	Security Features	
+BIG DATA TECHNOLOGIES	Query Engines	Apache Presto (PrestoDB)	Architecture	Distributed SQL Engine	
+BIG DATA TECHNOLOGIES	Query Engines	Apache Presto (PrestoDB)	Architecture	MPP Processing	
+BIG DATA TECHNOLOGIES	Query Engines	Apache Presto (PrestoDB)	Architecture	Memory-Based	
+BIG DATA TECHNOLOGIES	Query Engines	Apache Presto (PrestoDB)	Features	Federated Queries	
+BIG DATA TECHNOLOGIES	Query Engines	Apache Presto (PrestoDB)	Features	Multiple Data Sources	
+BIG DATA TECHNOLOGIES	Query Engines	Apache Presto (PrestoDB)	Use Cases	Interactive Analytics	
+BIG DATA TECHNOLOGIES	Query Engines	Apache Presto (PrestoDB)	Use Cases	Data Lake Queries	
+BIG DATA TECHNOLOGIES	Query Engines	Trino (formerly PrestoSQL)	Architecture	Distributed Query Engine	
+BIG DATA TECHNOLOGIES	Query Engines	Trino (formerly PrestoSQL)	Architecture	Coordinator & Workers	
+BIG DATA TECHNOLOGIES	Query Engines	Trino (formerly PrestoSQL)	Features	ANSI SQL Support	
+BIG DATA TECHNOLOGIES	Query Engines	Trino (formerly PrestoSQL)	Features	Connectors	
+BIG DATA TECHNOLOGIES	Query Engines	Trino (formerly PrestoSQL)	Features	Cost-Based Optimizer	
+BIG DATA TECHNOLOGIES	Query Engines	Trino (formerly PrestoSQL)	Performance	Low Latency	
+BIG DATA TECHNOLOGIES	Query Engines	Trino (formerly PrestoSQL)	Performance	High Concurrency	
+BIG DATA TECHNOLOGIES	Query Engines	Apache Drill	Schema-Free Queries	JSON & Nested Data	
+BIG DATA TECHNOLOGIES	Query Engines	Apache Drill	Schema-Free Queries	Self-Describing Data	
+BIG DATA TECHNOLOGIES	Query Engines	Apache Drill	Features	ANSI SQL	
+BIG DATA TECHNOLOGIES	Query Engines	Apache Drill	Features	Multiple Sources	
+BIG DATA TECHNOLOGIES	Query Engines	Amazon Athena	Serverless Queries	S3 Data Queries	
+BIG DATA TECHNOLOGIES	Query Engines	Amazon Athena	Serverless Queries	Pay-per-Query	
+BIG DATA TECHNOLOGIES	Query Engines	Amazon Athena	Architecture	Based on Presto	
+BIG DATA TECHNOLOGIES	Query Engines	Amazon Athena	Features	AWS Glue Integration	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	Apache Druid	Architecture	Columnar Storage	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	Apache Druid	Architecture	Real-time & Historical Nodes	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	Apache Druid	Architecture	Segment-Based	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	Apache Druid	Features	Sub-Second Queries	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	Apache Druid	Features	Time-Series Optimized	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	Apache Druid	Features	High Concurrency	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	Apache Druid	Ingestion	Streaming Ingestion	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	Apache Druid	Ingestion	Batch Ingestion	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	Apache Druid	Use Cases	User-Facing Analytics	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	Apache Druid	Use Cases	Operational Dashboards	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	Apache Pinot	Architecture	Real-Time OLAP	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	Apache Pinot	Architecture	Segments & Tables	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	Apache Pinot	Features	Ultra-Low Latency	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	Apache Pinot	Features	Rich Indexing	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	Apache Pinot	Features	Star-Tree Indexes	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	Apache Pinot	Use Cases	User Analytics	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	Apache Pinot	Use Cases	Ad Analytics	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	ClickHouse	Architecture	Column-Oriented DBMS	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	ClickHouse	Architecture	Vectorized Execution	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	ClickHouse	Features	Fast Query Performance	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	ClickHouse	Features	Data Compression	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	ClickHouse	Features	Real-Time Updates	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	ClickHouse	Use Cases	Web Analytics	
+BIG DATA TECHNOLOGIES	Real-Time Analytics	ClickHouse	Use Cases	Time-Series Data	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	ETL Tools	Apache NiFi	Flow-Based Programming	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	ETL Tools	Apache NiFi	Web UI	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	ETL Tools	Apache NiFi	Data Provenance	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	ETL Tools	Apache NiFi	Processors	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	ETL Tools	Talend	Open Studio	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	ETL Tools	Talend	Data Integration	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	ETL Tools	Talend	Cloud Platform	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	ETL Tools	Talend	Big Data Support	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	ETL Tools	Informatica PowerCenter	Enterprise ETL	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	ETL Tools	Informatica PowerCenter	Data Quality	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	ETL Tools	Informatica PowerCenter	Metadata Management	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	ETL Tools	Informatica PowerCenter	Transformations	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	ETL Tools	Microsoft SSIS	SQL Server Integration	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	ETL Tools	Microsoft SSIS	Visual Studio	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	ETL Tools	Microsoft SSIS	Control Flow	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	ETL Tools	Microsoft SSIS	Data Flow	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	Cloud ETL Services	AWS Glue	Serverless ETL	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	Cloud ETL Services	AWS Glue	Data Catalog	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	Cloud ETL Services	AWS Glue	Crawlers	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	Cloud ETL Services	AWS Glue	Job Scheduling	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	Cloud ETL Services	Azure Data Factory	Pipeline Orchestration	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	Cloud ETL Services	Azure Data Factory	Data Flows	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	Cloud ETL Services	Azure Data Factory	Integration Runtime	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	Cloud ETL Services	Google Dataflow	Apache Beam	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	Cloud ETL Services	Google Dataflow	Stream & Batch	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	Cloud ETL Services	Google Dataflow	Auto-Scaling	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	Modern Data Integration	Fivetran	Automated Connectors	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	Modern Data Integration	Fivetran	SaaS to Warehouse	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	Modern Data Integration	Fivetran	Change Data Capture	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	Modern Data Integration	Airbyte	Open-Source	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	Modern Data Integration	Airbyte	Connector Development	
+BIG DATA TECHNOLOGIES	ETL & Data Integration	Modern Data Integration	Airbyte	ELT Approach	
+BIG DATA TECHNOLOGIES	Data Orchestration	Apache Airflow	Workflow Management	DAGs (Directed Acyclic Graphs)	
+BIG DATA TECHNOLOGIES	Data Orchestration	Apache Airflow	Workflow Management	Task Dependencies	
+BIG DATA TECHNOLOGIES	Data Orchestration	Apache Airflow	Workflow Management	Scheduler	
+BIG DATA TECHNOLOGIES	Data Orchestration	Apache Airflow	Features	Python-Based	
+BIG DATA TECHNOLOGIES	Data Orchestration	Apache Airflow	Features	Extensible Operators	
+BIG DATA TECHNOLOGIES	Data Orchestration	Apache Airflow	Features	Web UI	
+BIG DATA TECHNOLOGIES	Data Orchestration	Apache Airflow	Features	Monitoring & Alerting	
+BIG DATA TECHNOLOGIES	Data Orchestration	Apache Airflow	Use Cases	ETL Pipelines	
+BIG DATA TECHNOLOGIES	Data Orchestration	Apache Airflow	Use Cases	ML Workflows	
+BIG DATA TECHNOLOGIES	Data Orchestration	Luigi	Workflow Management	Dependency Resolution	
+BIG DATA TECHNOLOGIES	Data Orchestration	Luigi	Workflow Management	Task Visualization	
+BIG DATA TECHNOLOGIES	Data Orchestration	Luigi	Features	Python Framework	
+BIG DATA TECHNOLOGIES	Data Orchestration	Luigi	Features	Simple Design	
+BIG DATA TECHNOLOGIES	Data Orchestration	Prefect	Workflow Management	Dataflow Automation	
+BIG DATA TECHNOLOGIES	Data Orchestration	Prefect	Features	Hybrid Execution	
+BIG DATA TECHNOLOGIES	Data Orchestration	Prefect	Features	Parametrized Flows	
+BIG DATA TECHNOLOGIES	Data Orchestration	Dagster	Workflow Management	Data-Aware Orchestration	
+BIG DATA TECHNOLOGIES	Data Orchestration	Dagster	Features	Asset-Based	
+BIG DATA TECHNOLOGIES	Data Orchestration	Dagster	Features	Type System	
+BIG DATA TECHNOLOGIES	MPP Databases	Teradata	Architecture	Massively Parallel	
+BIG DATA TECHNOLOGIES	MPP Databases	Teradata	Architecture	Shared-Nothing	
+BIG DATA TECHNOLOGIES	MPP Databases	Teradata	Features	Advanced Analytics	
+BIG DATA TECHNOLOGIES	MPP Databases	Teradata	Features	Query Optimization	
+BIG DATA TECHNOLOGIES	MPP Databases	Vertica	Architecture	Column-Oriented	
+BIG DATA TECHNOLOGIES	MPP Databases	Vertica	Architecture	Compression	
+BIG DATA TECHNOLOGIES	MPP Databases	Vertica	Features	Projections	
+BIG DATA TECHNOLOGIES	MPP Databases	Vertica	Features	High Performance	
+BIG DATA TECHNOLOGIES	MPP Databases	Greenplum	Architecture	PostgreSQL-Based	
+BIG DATA TECHNOLOGIES	MPP Databases	Greenplum	Architecture	MPP	
+BIG DATA TECHNOLOGIES	MPP Databases	Greenplum	Features	Open Source	
+BIG DATA TECHNOLOGIES	MPP Databases	Greenplum	Features	Advanced Analytics	
+BIG DATA TECHNOLOGIES	Data Transformation	dbt (Data Build Tool)	SQL Transformation	Models	
+BIG DATA TECHNOLOGIES	Data Transformation	dbt (Data Build Tool)	SQL Transformation	Jinja Templating	
+BIG DATA TECHNOLOGIES	Data Transformation	dbt (Data Build Tool)	Features	Version Control	
+BIG DATA TECHNOLOGIES	Data Transformation	dbt (Data Build Tool)	Features	Testing Framework	
+BIG DATA TECHNOLOGIES	Data Transformation	dbt (Data Build Tool)	Features	Documentation	
+BIG DATA TECHNOLOGIES	Data Transformation	dbt (Data Build Tool)	Deployment	dbt Cloud	
+BIG DATA TECHNOLOGIES	Data Transformation	dbt (Data Build Tool)	Deployment	dbt Core	
+BIG DATA TECHNOLOGIES	Data Quality	Great Expectations	Data Validation	Expectations	
+BIG DATA TECHNOLOGIES	Data Quality	Great Expectations	Data Validation	Data Docs	
+BIG DATA TECHNOLOGIES	Data Quality	Great Expectations	Features	Profiling	
+BIG DATA TECHNOLOGIES	Data Quality	Great Expectations	Features	Testing Framework	
+BIG DATA TECHNOLOGIES	Data Quality	Apache Griffin	Data Quality Metrics	Accuracy	
+BIG DATA TECHNOLOGIES	Data Quality	Apache Griffin	Data Quality Metrics	Completeness	
+BIG DATA TECHNOLOGIES	Data Quality	Apache Griffin	Features	Batch & Streaming	
+BIG DATA TECHNOLOGIES	Data Catalog & Governance	Apache Atlas	Metadata Management	Data Lineage	
+BIG DATA TECHNOLOGIES	Data Catalog & Governance	Apache Atlas	Metadata Management	Classification	
+BIG DATA TECHNOLOGIES	Data Catalog & Governance	Apache Atlas	Features	Governance	
+BIG DATA TECHNOLOGIES	Data Catalog & Governance	Apache Atlas	Features	Hadoop Integration	
+BIG DATA TECHNOLOGIES	Data Catalog & Governance	AWS Glue Data Catalog	Metadata Repository	Table Definitions	
+BIG DATA TECHNOLOGIES	Data Catalog & Governance	AWS Glue Data Catalog	Metadata Repository	Schema Management	
+BIG DATA TECHNOLOGIES	Data Catalog & Governance	AWS Glue Data Catalog	Features	Crawler-Based Discovery	
+BIG DATA TECHNOLOGIES	Data Catalog & Governance	Databricks Unity Catalog	Unified Governance	Cross-Workspace	
+BIG DATA TECHNOLOGIES	Data Catalog & Governance	Databricks Unity Catalog	Features	Fine-Grained Access	
+BIG DATA TECHNOLOGIES	Data Catalog & Governance	Databricks Unity Catalog	Features	Data Lineage	
+BIG DATA TECHNOLOGIES	Search & Analytics	Elasticsearch	Search Engine	Full-Text Search	
+BIG DATA TECHNOLOGIES	Search & Analytics	Elasticsearch	Search Engine	Inverted Index	
+BIG DATA TECHNOLOGIES	Search & Analytics	Elasticsearch	Features	Real-Time Indexing	
+BIG DATA TECHNOLOGIES	Search & Analytics	Elasticsearch	Features	Distributed Search	
+BIG DATA TECHNOLOGIES	Search & Analytics	Elasticsearch	Use Cases	Log Analytics	
+BIG DATA TECHNOLOGIES	Search & Analytics	Elasticsearch	Use Cases	Application Monitoring	
+BIG DATA TECHNOLOGIES	Search & Analytics	Apache Solr	Search Platform	Faceted Search	
+BIG DATA TECHNOLOGIES	Search & Analytics	Apache Solr	Search Platform	Highlighting	
+BIG DATA TECHNOLOGIES	Search & Analytics	Apache Solr	Features	Schema Management	
+BIG DATA TECHNOLOGIES	Search & Analytics	Apache Solr	Features	Clustering	
+BIG DATA TECHNOLOGIES	Edge & IoT Analytics	Edge Computing	Edge Devices	Local Processing	
+BIG DATA TECHNOLOGIES	Edge & IoT Analytics	Edge Computing	Edge Devices	Reduced Latency	
+BIG DATA TECHNOLOGIES	Edge & IoT Analytics	Edge Computing	Edge Analytics	Real-Time Decisions	
+BIG DATA TECHNOLOGIES	Edge & IoT Analytics	Edge Computing	Edge Analytics	Bandwidth Optimization	
+BIG DATA TECHNOLOGIES	Edge & IoT Analytics	IoT Platforms	AWS IoT Core	Device Management	
+BIG DATA TECHNOLOGIES	Edge & IoT Analytics	IoT Platforms	AWS IoT Core	Message Broker	
+BIG DATA TECHNOLOGIES	Edge & IoT Analytics	IoT Platforms	Azure IoT Hub	Device-to-Cloud	
+BIG DATA TECHNOLOGIES	Edge & IoT Analytics	IoT Platforms	Azure IoT Hub	Security Features	
+BIG DATA TECHNOLOGIES	Edge & IoT Analytics	IoT Platforms	Google Cloud IoT	Device Registry	
+BIG DATA TECHNOLOGIES	Edge & IoT Analytics	IoT Platforms	Google Cloud IoT	Pub/Sub Integration	
+BIG DATA TECHNOLOGIES	Time-Series Databases	InfluxDB	Time-Series Storage	High Write Throughput	
+BIG DATA TECHNOLOGIES	Time-Series Databases	InfluxDB	Time-Series Storage	Downsampling	
+BIG DATA TECHNOLOGIES	Time-Series Databases	InfluxDB	Features	InfluxQL	
+BIG DATA TECHNOLOGIES	Time-Series Databases	InfluxDB	Features	Retention Policies	
+BIG DATA TECHNOLOGIES	Time-Series Databases	TimescaleDB	PostgreSQL Extension	SQL Interface	
+BIG DATA TECHNOLOGIES	Time-Series Databases	TimescaleDB	PostgreSQL Extension	Hypertables	
+BIG DATA TECHNOLOGIES	Time-Series Databases	TimescaleDB	Features	Continuous Aggregates	
+BIG DATA TECHNOLOGIES	Time-Series Databases	TimescaleDB	Features	Compression	
+BIG DATA TECHNOLOGIES	Time-Series Databases	Prometheus	Monitoring System	Metrics Collection	
+BIG DATA TECHNOLOGIES	Time-Series Databases	Prometheus	Monitoring System	Alerting	
+BIG DATA TECHNOLOGIES	Time-Series Databases	Prometheus	Features	PromQL	
+BIG DATA TECHNOLOGIES	Time-Series Databases	Prometheus	Features	Pull-Based Model	
+BIG DATA TECHNOLOGIES	Data Replication & CDC	Debezium	Change Data Capture	Log-Based CDC	
+BIG DATA TECHNOLOGIES	Data Replication & CDC	Debezium	Change Data Capture	Kafka Integration	
+BIG DATA TECHNOLOGIES	Data Replication & CDC	Debezium	Features	Multiple Databases	
+BIG DATA TECHNOLOGIES	Data Replication & CDC	Debezium	Features	Event Streaming	
+BIG DATA TECHNOLOGIES	Data Replication & CDC	Apache Kafka Connect	Replication Framework	Source Connectors	
+BIG DATA TECHNOLOGIES	Data Replication & CDC	Apache Kafka Connect	Replication Framework	Sink Connectors	
+BIG DATA TECHNOLOGIES	Data Replication & CDC	Oracle GoldenGate	Replication	Real-Time	
+BIG DATA TECHNOLOGIES	Data Replication & CDC	Oracle GoldenGate	Features	Heterogeneous Support	
+BIG DATA TECHNOLOGIES	Data Modeling & Design	Star Schema	Dimensional Modeling	Fact Tables	
+BIG DATA TECHNOLOGIES	Data Modeling & Design	Star Schema	Dimensional Modeling	Dimension Tables	
+BIG DATA TECHNOLOGIES	Data Modeling & Design	Star Schema	Benefits	Query Performance	
+BIG DATA TECHNOLOGIES	Data Modeling & Design	Star Schema	Benefits	Simplicity	
+BIG DATA TECHNOLOGIES	Data Modeling & Design	Snowflake Schema	Normalized Dimensions	Multiple Levels	
+BIG DATA TECHNOLOGIES	Data Modeling & Design	Snowflake Schema	Benefits	Storage Efficiency	
+BIG DATA TECHNOLOGIES	Data Modeling & Design	Data Vault	Modeling Approach	Hubs	
+BIG DATA TECHNOLOGIES	Data Modeling & Design	Data Vault	Modeling Approach	Links	
+BIG DATA TECHNOLOGIES	Data Modeling & Design	Data Vault	Modeling Approach	Satellites	
+BIG DATA TECHNOLOGIES	Data Modeling & Design	Data Vault	Benefits	Auditability	
+BIG DATA TECHNOLOGIES	Data Modeling & Design	Data Vault	Benefits	Flexibility	
+BIG DATA TECHNOLOGIES	Performance Optimization	Partitioning Strategies	Range Partitioning	Date-Based	
+BIG DATA TECHNOLOGIES	Performance Optimization	Partitioning Strategies	Range Partitioning	Numeric Ranges	
+BIG DATA TECHNOLOGIES	Performance Optimization	Partitioning Strategies	Hash Partitioning	Even Distribution	
+BIG DATA TECHNOLOGIES	Performance Optimization	Partitioning Strategies	List Partitioning	Categorical Data	
+BIG DATA TECHNOLOGIES	Performance Optimization	Indexing Strategies	B-Tree Indexes	Ordered Data	
+BIG DATA TECHNOLOGIES	Performance Optimization	Indexing Strategies	Bitmap Indexes	Low Cardinality	
+BIG DATA TECHNOLOGIES	Performance Optimization	Indexing Strategies	Columnar Indexes	OLAP Queries	
+BIG DATA TECHNOLOGIES	Performance Optimization	Caching	In-Memory Caching	Redis Cache	
+BIG DATA TECHNOLOGIES	Performance Optimization	Caching	In-Memory Caching	Memcached	
+BIG DATA TECHNOLOGIES	Performance Optimization	Caching	Query Result Caching	Materialized Views	
+BIG DATA TECHNOLOGIES	Performance Optimization	Caching	Query Result Caching	Query Cache	
+BIG DATA TECHNOLOGIES	Performance Optimization	Compression	Columnar Compression	Parquet Compression	
+BIG DATA TECHNOLOGIES	Performance Optimization	Compression	Columnar Compression	ORC Compression	
+BIG DATA TECHNOLOGIES	Performance Optimization	Compression	Data Compression	Snappy	
+BIG DATA TECHNOLOGIES	Performance Optimization	Compression	Data Compression	GZIP	
+BIG DATA TECHNOLOGIES	Performance Optimization	Compression	Data Compression	LZO	

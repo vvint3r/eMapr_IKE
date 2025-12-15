@@ -1,0 +1,397 @@
+User Churn Prediction
+Modern data warehousing and Machine Learning
+
+💡Mike Shakhomirov
+Dec 23, 2023
+13 min read
+Share
+Photo by Martin Adams on Unsplash
+Photo by Martin Adams on Unsplash
+No doubt, user retention is a crucial performance metric for many companies and online apps. We will discuss how we can use built-in data warehouse machine learning capabilities to run propensity models on user behaviour data to determine the likelihood of user churn. In this story, I would like to focus on dataset preparation and model training using standard SQL. Modern data warehouses allow this. Indeed, retention is an important business metric that helps understand user behaviour’s mechanics. It provides a high-level overview of how successful our Application is in terms of retaining users by answering one simple question: Is our App good enough at retaining users? It is a well-known fact that it’s cheaper to retain an existing user than to acquire a new one.
+
+In one of my previous articles, I wrote about modern data warehousing [1].
+
+Modern Data Warehousing
+
+Modern DWH has a lot of useful features and components which differentiate them from other data platform types [2].
+
+ML model support seems to be the foundational DWH component when dealing with big data.
+
+In this story, I will use Binary logistic regression, one of the fastest models to train. I will demonstrate how we can use it to predict user propensity to churn. Indeed, We don’t need to know every machine-learning model.
+
+We can’t compete with cloud service providers such as Amazon ang Google in machine learning and data science but we need to know how to use it.
+
+I previously wrote about it in my article here [3]:
+
+How to Become a Data Engineer
+
+In this tutorial, we will learn how to transform raw event data to create a training dataset for our ML model. We will use it to generate predictions for our users. I will use BigQuery ML as an example but there are a lot of other DWH tools that support this feature.
+
+BigQuery ML democratizes machine learning operations and model training, so now data analysts or software engineers can train models with ease. All we need is a good knowledge of SQL and an understanding of user retention dataset logic [4].
+
+The data preparation process is straightforward and should be easy to follow.
+
+We will use standard SQL for this.
+
+Very often, it helps to reveal some useful facts about the data and user base. Analyzing user behaviour and performing exploratory data analysis helps to detect important user behaviour funnels (open funnels)that can later be used for further feature engineering and to improve the model. As an example, we can use one of those free user behaviour datasets with user event data kindly provided by Google. The typical mobile application has two builds – Android and IOS which generate a constant flow of event data. Google Analytics 4 is a good example and this data can be used to measure traffic and engagement levels in our application.
+
+Every model requires a dataset
+
+We would want to create one. We will need to:
+
+Perform exploratory data analysis (EDA) on BigQuery export dataset from Firebase (Google Analytics 4).
+Split the dataset into two parts for training and tests with categorical and behavioural attributes for the Machine Learning (ML) model.
+Train and Evaluate Machine learning models using BigQuery ML
+Make predictions using the BigQuery ML models
+Use model insights in practice
+In Firebase or Google Analytics 4 all user-behaviour data is being stored as events, which means that each row within a table corresponds to a single event with additional parameters and properties.
+
+Dataset prep and model training diag
+Dataset prep and model training diag
+We will use a publicly available Google Analytics dataset [5], it has data for a mobile game app called "Flood It!" (Android, iOS) and there are no associated costs to that. However, Google Cloud Platform (GCP) services are billable and might incur costs.
+
+Dataset exaple. Image by author.
+Dataset exaple. Image by author.
+This dataset contains 5.7M events from over 15k users. Open the link above and click Preview.
+
+It won’t cost anything to run a Preview on any table.
+
+Copy this dataset by running this in the command line below:
+
+gcloud init # Authenticate
+
+# Use bq mk command with --dataset flag to create a new dataset:
+bq mk
+  --dataset 
+  --location=US 
+  PROJECT:DATASET
+
+# # Example:
+# bq mk
+#   --dataset 
+#   --location=US 
+#   bq-shakhomirov:analytics_153293282
+
+# Use bq mk with --transfer_config flag to copy the dataset with public data:
+bq mk
+--transfer_config
+--project_id=PROJECT  # Replace with your project_id
+--data_source=cross_region_copy
+--target_dataset=analytics_153293282
+--display_name=analytics_153293282
+--params='{"source_dataset_id":"analytics_153293282","source_project_id":"firebase-public-project","overwrite_destination_table":"true"}'
+Explore the data
+Analyzing user behaviour and performing exploratory data analysis [6] helps to understand the user journey better.
+
+Exploratory Data Analysis with BigQuery SQL? Easy!
+
+Run this query to check the dataset structure:
+
+SELECT *
+FROM `firebase-public-project.analytics_153293282.events_*`
+TABLESAMPLE SYSTEM (1 PERCENT)
+;
+The limitation of this dataset is that user data doesn’t have an actual user_id that is often assigned after registration. So working with this dataset, we work only with device ids, which is not great in an ideal world as those are constantly updated after re-install or new App version rollout.
+
+Firstly, we would want to pre-process raw event data and create a new dataset that has the right structure for the ML model.
+
+We will label each user as retained (0) if they were active during the last 30 days.
+We will use the user_pseudo_id (device_id) that is used by GA4. Firebase by default to identify each user’s device.
+Based on our EDA we will exclude some obvious outliers, i.e. spammers (too many events), and bounced users (those who spent less than 10 minutes in the App after the install event).
+We will add a few columns with categorical features extracted from raw event data, i.e. platform, device_type, country, etc.
+We will finally add user behaviour and activity totals for each user within a certain period of time, i.e. user_engagement, spend_virtual_currency, etc.
+These calculations will be used as ML model features, but in a nutshell, they are open event funnels, i.e. user’s steps while using the App.
+
+Our not churned (returning user) definition is that the user was active, and engaging with the App within the last 30 days from the current date. You can try to tweak this parameter. You can also try to predict something, i.e. the likelihood of spending money in the App (in_app_purchase), etc.
+
+Calculating bounced and churned users
+If we’re using user_pseudo_id in our model, then we would calculate bounced = 1 if last_touch within 10 min after registration, else 0:
+
+...
+
+ IF (user_last_engagement <= TIMESTAMP_ADD(user_first_engagement, 
+      INTERVAL 10 MINUTE),
+    1,
+    0 ) AS bounced
+
+, IF(last_seen_dt < DATE_SUB(current_date(),INTERVAL 30 DAY) , 1, 0)     AS churned
+...
+Using current_date() to identify churned users would be ideal if we have a dynamic dataset that is being updated daily. However, we are working with some sample data and therefore, we should use the last known date in that data, i.e. we imagine we collected the data on that particular day (20181003).
+
+Ideally, we would want to track only those users who have passed the registration in the App after they installed it. In that case, we wouldn’t need to calculate bounced, and we will count churned = 1 if last_seen_dt was before _24 hr/ 3 day/ 30 day_s from current_timestamp(), else 0:
+
+...
+  , IF( last_seen_ts < timestamp_sub(
+        current_timestamp(), interval 30*24 hour) , 1, 0) AS churned
+...
+Adding behavioural quantitative and categorical features
+This is what we will use to build our model. Categorical features can represent some non-quantifiable demographic values, i.e. male/female, etc. Quantitative is what we can measure and count.
+
+A combination of both types of these features helps to create a more predictive model. There is a lot of information in the Firebase/GA4 dataset extract which might be useful for our model, i.e. app_info, device, event_params, geo etc.
+
+Many events are being collected automatically by Firebase, but keep in mind that there is a way to set custom events and properties. This is important for us as mobile developers can integrate a custom event, i.e. user tag. For our example App, it would indicate that a user might have certain in-app privileges (Premium, Influencer, Group Admin, Moderator, etc.).
+
+Having said that, we would want to use the following categorical features:
+
+platform (IOS/Android)
+geo.country
+device.operating_system
+device.language
+It is important to say that users might have different values in these fields, i.e. different devices, changed languages, and VPN settings might affect those. So we would need only the first engagement event and the device setting they used on install or registration.
+
+Adding row_number function will help with that:
+
+...
+ROW_NUMBER() OVER (PARTITION BY user_pseudo_id ORDER BY event_timestamp DESC) AS row_number
+...
+Then, to predict user churn, we would want to count the number of events a user encountered within 24 hours/3 days/ 7 days after registration/installation:
+
+In our case, we would want to collect and count these events:
+
+user_engagement
+level_start_quickplay
+level_end_quickplay
+level_complete_quickplay
+level_reset_quickplay
+post_score
+spend_virtual_currency
+ad_reward
+challenge_a_friend
+completed_5_levels
+use_extra_steps
+For other Apps it might be useful to collect any other events that would describe user behaviour, i.e.:
+
+message_sent
+chat_open
+spend_virtual_currency
+account_topup
+set_avatar
+group_join
+broadcast_listened
+achievement_unlocked
+reputation_update
+Calculate model features
+Let’s create a dedicated dataset for our future model and its data: sample_churn_model.
+
+The SQL query in ./sql/churn.sql below demonstrates how these user metrics can be calculated. We can find this file in the code widget. To create this dataset run this in the command line:
+
+bq query --nouse_legacy_sql < sql/churn.sql
+./sql/churn.sql:
+-- ./sql/churn.sql
+create schema if not exists sample_churn_model
+  OPTIONS (
+    description = 'sample_churn_model',
+    location = 'US'
+)
+;
+
+create or replace table sample_churn_model.churn as
+with first_engagement_data as (
+select distinct
+
+    user_pseudo_id
+  , device.language
+  , geo.country
+  , platform
+  , ROW_NUMBER() OVER (PARTITION BY user_pseudo_id ORDER BY event_timestamp DESC) AS row_num
+
+from `firebase-public-project.analytics_153293282.events_*`
+
+where
+-- _TABLE_SUFFIX =  FORMAT_DATE('%Y%m%d', DATE_SUB(current_date(), INTERVAl 1 DAY))
+-- and 
+lower(event_name) = 'user_engagement'
+)
+
+, first_engagement as (
+    select * except (row_num)
+    from first_engagement_data
+    where row_num = 1 
+)
+
+, first_last_seen as (
+    select
+        user_pseudo_id
+      , min(event_timestamp) as first_seen_ts
+      , max(event_timestamp) as last_seen_ts
+    from
+      `firebase-public-project.analytics_153293282.events_*`
+    where event_name = 'user_engagement'
+    group by
+      user_pseudo_id
+)
+
+, event_aggregates as (
+  select
+     event_date                                         
+    ,user_pseudo_id
+    ,lower(event_name)                   as event_name  
+    ,count(distinct event_timestamp)     as event_cnt   
+  from 
+    `firebase-public-project.analytics_153293282.events_*`
+--   where
+--     _TABLE_SUFFIX =  FORMAT_DATE('%Y%m%d', DATE_SUB(current_date(), INTERVAl 1 DAY))
+  group by
+     event_date
+    ,user_pseudo_id
+    ,event_name
+)
+
+, daily_data as (
+select
+     a.user_pseudo_id   
+    ,a.event_date       
+    ,a.event_name
+    ,a.event_cnt
+    ,f.first_seen_ts    
+    ,f.last_seen_ts     
+    ,e.language         
+    ,e.country          
+    ,e.platform         
+
+    , date_diff(
+          parse_date('%Y%m%d', a.event_date)
+        , cast(timestamp_micros(first_seen_ts) as date)
+        , day
+    )  as day_number
+
+    ,if( cast(timestamp_micros(f.last_seen_ts) as date) < 
+                date_sub(parse_date('%Y%m%d', '20181003'), interval 30 day) 
+        , 1
+        , 0)     as churned -- wasn't active last 30 days
+
+    ,if (timestamp_micros(last_seen_ts) <= timestamp_add(timestamp_micros(first_seen_ts), 
+                interval 10 minute)
+        ,1
+        ,0 )     as bounced
+
+from event_aggregates a
+left join first_last_seen f on f.user_pseudo_id = a.user_pseudo_id 
+left join first_engagement e on e.user_pseudo_id = a.user_pseudo_id
+)
+
+-- Final dataset for churn model training:
+select
+     user_pseudo_id   
+    ,first_seen_ts    
+    ,last_seen_ts     
+    ,language         
+    ,country          
+    ,platform         
+    ,churned          
+    ,sum(if(day_number in (0) and event_name = 'user_engagement', event_cnt, 0))            as user_engagement_cnt          
+    ,sum(if(day_number in (0) and event_name = 'level_start_quickplay', event_cnt, 0))      as level_start_quickplay_cnt    
+    ,sum(if(day_number in (0) and event_name = 'level_end_quickplay', event_cnt, 0))        as level_end_quickplay_cnt      
+    ,sum(if(day_number in (0) and event_name = 'level_complete_quickplay', event_cnt, 0))   as level_complete_quickplay_cnt 
+    ,sum(if(day_number in (0) and event_name = 'level_reset_quickplay', event_cnt, 0))      as level_reset_quickplay_cnt    
+    ,sum(if(day_number in (0) and event_name = 'post_score', event_cnt, 0))                 as post_score_cnt               
+    ,sum(if(day_number in (0) and event_name = 'spend_virtual_currency', event_cnt, 0))     as spend_virtual_currency_cnt   
+    ,sum(if(day_number in (0) and event_name = 'ad_reward', event_cnt, 0))                  as ad_reward_cnt                
+    ,sum(if(day_number in (0) and event_name = 'challenge_a_friend', event_cnt, 0))         as challenge_a_friend_cnt       
+    ,sum(if(day_number in (0) and event_name = 'completed_5_levels', event_cnt, 0))         as completed_5_levels_cnt       
+    ,sum(if(day_number in (0) and event_name = 'use_extra_steps', event_cnt, 0))            as use_extra_steps_cnt          
+from daily_data
+-- where bounced = 0
+group by
+     user_pseudo_id   
+    ,first_seen_ts    
+    ,last_seen_ts     
+    ,language         
+    ,country          
+    ,platform         
+    ,churned          
+Let’s see how many churned users we have:
+
+From our dataset, we found that 4030 churned and were inactive during the last 30 days:
+
+SELECT
+    churned
+    ,COUNT(churned) as count_users
+
+FROM
+    sample_churn_model.churn
+GROUP BY 1
+;
+Churned users. Image by author.
+Churned users. Image by author.
+Model training and classification
+There are different model types [7] available in BigQuery ML at the moment:
+
+BOOSTED_TREE_CLASSIFIER
+Neural Networks
+AutoML Tables
+Logistic Regression
+Logistic regression might be a good choice to start with as it is the one that can be trained relatively fast. Other types of models might provide better performance but also require more time to train, i.e. Deep Neural Networks.
+
+Each of these models will output a probability score (propensity) between 0 and 1.0 of how likely the model prediction is based on the training data.
+
+Consider the file ./sql/churn_model.sql. It will create and train the model if we run it.
+
+Run this query to evaluate the model:
+
+bq query --nouse_legacy_sql 
+'SELECT * FROM ML.EVALUATE(MODEL sample_churn_model.churn_model);'
+You will see model performance metrics. Analyzing them might help to choose between different models.
+
+For instance, with regard to model accuracy, anything that is above 70% is considered to be a strong model performance.
+
+Our model has a recall of 0.559 – in other words, it correctly identifies 56% of all churned users.
+
+Model performance metrics. Image by author.
+Model performance metrics. Image by author.
+We can use a confusion matrix to see how well our model predicted the labels, compared to the actual labels. If we run this SQL below it will generate a confusion matrix.
+
+SELECT
+  expected_label,
+  _0 AS predicted_0,
+  _1 AS predicted_1
+FROM
+  ML.CONFUSION_MATRIX(MODEL sample_churn_model.churn_model)
+This can be interpreted as a comparison of false positive and false negative predictions.
+
+Confusion matrix. Image by author.
+Confusion matrix. Image by author.
+Using predictions
+For our classification model, the most important metric is the user propensity to churn and be inactive. In other words, it is a probability and the closer this probability is to 1 the more likely this user will not return to the App according to the model’s prediction:
+
+SELECT
+  user_pseudo_id,
+  churned,
+  predicted_churned,
+  predicted_churned_probs[OFFSET(0)].prob as probability_churned
+FROM
+  ML.PREDICT(MODEL sample_churn_model.churn_model,
+  (SELECT * FROM sample_churn_model.churn)) #can be replaced with a proper test dataset
+order by 3 desc
+;
+Predictions. Image by author.
+Predictions. Image by author.
+In real-life scenario we would want to create a dataset with predictions that is being updated daily.
+
+Firstly, we will need Firebase/Analytics users who registered yesterday. We will need to schedule our sample_churn_model.churn dataset and incrementally add new users from yesterday, i.e.:
+
+insert into sample_churn_model.churn (...)
+select
+  ... -- aggregate model features for new users.
+from 
+  `firebase-public-project.analytics_153293282.events_*`
+where
+  _TABLE_SUFFIX =  FORMAT_DATE('%Y%m%d', DATE_SUB(current_date(), INTERVAl 1 DAY))
+...
+Then we would want to generate prediction for them and insert into our new predictions dataset:
+
+SELECT
+  user_pseudo_id,
+  churned,
+  predicted_churned,
+  predicted_churned_probs[OFFSET(0)].prob as probability_churned
+FROM
+  ML.PREDICT(MODEL sample_churn_model.churn_model,
+  (SELECT * FROM sample_churn_model.churn 
+WHERE date(first_seen_ts) = date_sub(current_date(), interval 1 day)))
+With this model we can better understand user behaviour through patterns, and, of course, we would want to do something with this knowledge.
+
+There are a number of ways to use prediction data (activate). For instance, we can read data directly from our DWH solution using SDK and client libraries. For example, we might want to create a data service that collects predictions every day for new users and then sends that data somewhere else, i.e. retargeting service. Yes, we would probably want to retarget users who are likely to churn or users who are likely to stay in the App too.
+
+Conclusion
+It is true that acting on machine learning (ML) model data to retain users proved itself extremely useful and might help to gain a competitive advantage in the fast-changing market environment. That is why it is important to be able to forecast user engagement to predict if users are about to leave. We don’t need to be data scientists to create and train ML models. All we need – is a modern DWH, good knowledge of SQL and a good understanding of user retention logic. Modern data warehouses evolved to that state where we have the luxury of all known ML models and they are already set and ready to be created using standard SQL dialect. With predicted retention numbers, we can create and edit audiences. Using ML capabilities in modern DWH we can tailor user experience by targeting our identified users with relevant information, useful offers and promos. Modern DWH solutions democratize machine learning ops and model training. It is an extremely useful feature for data engineers as all these processes can be easily automated, scheduled and triggered depending on the use case scenario.

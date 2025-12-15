@@ -1,0 +1,5 @@
+Marketing analytics experiment design case study.
+We discuss acquisition channel attribution, KPI governance, and instrumentation best practices.
+This note touches Strategy & Governance as well as Measurement & Reporting with emphasis on stakeholder rituals and value assurance loops.
+In addition, it outlines reporting cadences, story-driven dashboards, and the link between analytics charters and decision-making frameworks. By covering governance, instrumentation, and insight operations, it should map well to Strategy & Governance plus Measurement & Reporting nodes within the knowledge graph.
+Furthermore, it enumerates the instrumentation QA checklist, anomaly detection workflows, and executive storytelling templates for quarterly reviews. Lessons learned from experimentation are translated into enablement assets, ensuring Channel & Campaign teams can action insights rapidly. This alignment between governance, measurement, and channel optimization is critical to the marketing analytics operating system described in the knowledge graph.

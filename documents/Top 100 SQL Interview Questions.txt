@@ -1,0 +1,228 @@
+Top 100 SQL Interview Questions
+Dan Lee's profile image
+Dan Lee
+Updated Feb 7, 2025 — 8 min read
+Feature image - SQL interview prep for data analyst, data scientist and data engineer roles
+Table of Contents
+📚 SQL Interview Areas
+⭐ SQL Interviews Across Data Roles
+🎯 Common SQL Topics to Master
+✍️ SQL Interview Technical Screen
+📝 More SQL Interview Questions
+💡 How to Prepare for SQL Interviews
+Facebook
+X (formerly Twitter)
+LinkedIn
+Reddit
+Looking for REAL SQL interview questions asked in FAANGs and startups? Here's a comprehensive guide with REAL questions!
+
+These questions are fair game across data analyst, data engineer, backend engineer, and database administrator interviews. Companies such as Google, Amazon, Meta, Stripe, Microsoft, and many more all ask SQL questions.
+
+We will explore the question areas, uncover tips, and provide you with a detailed list of interview questions you can use to ace the interviews!
+
+Let's get started👇
+
+📚 SQL Interview Areas
+Here are common areas assessed in SQL interviews across data roles.
+
+Area 1 - Basic SQL Queries
+Understanding basic SQL queries is fundamental. Expect questions that test your ability to retrieve, filter, and sort data using SELECT, WHERE, ORDER BY, and GROUP BY clauses. Also, SQL joins are essential for combining data from multiple tables. You should be comfortable with INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN.
+
+Sample Questions
+Write a SQL query to find the second highest salary from the Employees table.
+How do you count the number of records in a table?
+Retrieve all records where the status is 'Active' from the Users table.
+Explain the difference between an INNER JOIN and a LEFT JOIN.
+Write a query to find all customers who have made more than one purchase.
+How do you retrieve data from three tables using joins?
+💡
+You don't need to know all the statements in SQL for interviews. In some cases, the interviewer will allow you to look up the statement. Just know the common ones, as seen in this guide.
+
+Area 2 - Advanced SQL Concepts
+Requiring multiple steps to solve, advanced SQL questions assess your understanding of subqueries, window functions, CTEs (Common Table Expressions), and set operations like UNION and INTERSECT.
+
+Sample Questions
+Write a query to find the cumulative sum of sales per day.
+How do you delete duplicate records from a table?
+Calculate the 7-day moving average of daily sales.
+💡 You can get practice questions with hands-on coding on DataInterview SQL Pad.
+
+Area 3 - SQL Optimization and Performance
+Performance is crucial in SQL. If you are shooting for senior DS or data engineering roles, you should know how to optimize queries, use indexes effectively, and understand execution plans.
+
+Sample Questions
+What are the pros and cons of using indexes in a database?
+How does a full table scan impact query performance, and how can you avoid it?
+What techniques would you use to optimize a query that joins multiple large tables?
+Explain how the query execution plan helps in query optimization.
+What are common causes of deadlocks in SQL, and how can you prevent them?
+How does database partitioning improve query performance, and when should you use it?
+What is the difference between a covering index and a composite index, and when would you use each?
+Area 4 - SQL in Data Warehousing and ETL
+This is the part often assessed in data engineering or analytics engineering roles. Understanding how SQL is used in data warehousing and ETL processes is important for roles that deal with large datasets.
+
+Sample Questions
+What is the purpose of a staging table in ETL, and how is it used?
+Explain the difference between OLTP and OLAP databases.
+How would you design a data pipeline to handle incremental data loads?
+What are surrogate keys, and why are they used in data warehousing?
+Describe the advantages of using a star schema over a snowflake schema.
+What are some common challenges in maintaining data quality in ETL processes, and how do you address them?
+How do you implement error handling in an ETL workflow to ensure data integrity?
+⭐ SQL Interviews Across Data Roles
+SQL questions are highly common across interviews in data roles from Data Analyst, Data Scientist and Data Engineer. Do expect SQL questions to show up in technical screens, and again in final rounds.
+
+In some cases, a recruiter may ask basic SQL questions such as "explain JOINs" and "UNION vs UNION ALL" just to assess your basic knowledge before letting you advance to the technical screen.
+
+Data Analyst (or BI Engineer) - Do expect SQL questions that involve table manipulation, but also in tandem with data visualization questions.
+Data Scientist - Expect SQL questions with hands-on coding. Most often the questions pertain to a particular product of the company you are interviewing.
+Data Engineer - Do expect intermediate to advanced questions and follow-ups regarding data modeling, optimization and databases.
+👉 If you are looking for structured interview prep, join the Data Scientist Interview MasterClass - a live cohort led by FAANG instructors!
+
+🎯 Common SQL Topics to Master
+In general, you should have an in-depth understanding of the following topics:
+
+Data Retrieval and Filtering
+Aggregate Functions (COUNT, SUM, AVG, etc.)
+Joins and Subqueries
+Window Functions
+Indexes and Query Optimization
+Database Transactions and Isolation Levels
+Stored Procedures and Functions
+💡
+Learn the ins-and-outs of these topics by practicing writing queries from scratch. This will be helpful in SQL coding interviews!
+
+✍️ SQL Interview Technical Screen
+Here's an example technical screen you may encounter if you interview for data analyst, data engineer or data scientist position at a company like Meta (Facebook) or Amazon. The technical screen round is usually 45 minutes. The first 20-30 minutes is primarily on SQL followed by a business or product case.
+
+Tables Provided:
+Listings Table
+
+listing_id	title	seller_id	category	price	created_date
+101	Used Bicycle	1	Sports	150	2024-01-10
+102	Vintage Chair	2	Furniture	200	2024-03-15
+103	Laptop	3	Electronics	800	2024-02-20
+104	Smartphone	4	Electronics	500	2024-04-05
+105	Dining Table Set	2	Furniture	450	2024-01-25
+Sellers Table
+
+seller_id	name	join_date	location	rating
+1	Alice	2023-08-12	New York	4.8
+2	Bob	2022-05-20	San Francisco	4.5
+3	Charlie	2023-01-05	Chicago	4.9
+4	Diana	2024-02-18	Austin	4.3
+5	Eve	2022-11-11	Seattle	4.7
+#1 - List the titles of the top 3 most expensive listings, along with the seller name and location, for sellers who joined in 2023 or later.
+
+SELECT l.title, s.name, s.location
+FROM Listings l
+JOIN Sellers s ON l.seller_id = s.seller_id
+WHERE s.join_date >= '2023-01-01'
+ORDER BY l.price DESC
+LIMIT 3;
+#2 - Find sellers who have not listed any items in the 'Electronics' category. Display their name and total number of listings.
+
+SELECT s.name, COUNT(l.listing_id) AS total_listings
+FROM Sellers s
+LEFT JOIN Listings l ON s.seller_id = l.seller_id AND l.category = 'Electronics'
+WHERE l.listing_id IS NULL
+GROUP BY s.name;
+#3 - Find the seller(s) who joined the earliest but have listings priced higher than the average price in their respective categories. Display the seller name, title of the listing, and price.
+
+SELECT s.name, l.title, l.price
+FROM Sellers s
+JOIN Listings l ON s.seller_id = l.seller_id
+WHERE s.join_date = (SELECT MIN(join_date) FROM Sellers)
+AND l.price > (SELECT AVG(price) 
+               FROM Listings l2 
+               WHERE l2.category = l.category);
+📝 More SQL Interview Questions
+These questions are fair game across data analyst, data engineer, backend engineer, and database administrator interviews at companies such as Google, Amazon, Meta, Stripe, and many more👇
+
+Basic SQL Interview Questions
+*For all data roles
+
+What is the difference between WHERE and HAVING clauses?
+Explain the use of GROUP BY and ORDER BY in SQL.
+How do you remove duplicate records from a table?
+What is a primary key and a foreign key?
+How do you use the LIKE operator?
+What are the different types of SQL JOINs?
+Explain the difference between DELETE, TRUNCATE, and DROP.
+What is the purpose of the DISTINCT keyword?
+How do you create and modify tables in SQL?
+What are constraints in SQL?
+Explain the difference between VARCHAR and CHAR data types.
+How do you use aggregate functions (COUNT, SUM, AVG, etc.)?
+What is the difference between UNION and UNION ALL?
+How do you use aliases in SQL?
+What is the purpose of the NULL value?
+How do you use wildcards in SQL?
+Explain the concept of SQL views.
+What is the difference between INNER JOIN and OUTER JOIN?
+How do you insert multiple rows into a table?
+What is the purpose of the BETWEEN operator?
+How do you use the IN operator?
+Explain the use of TOP and LIMIT clauses.
+What is the difference between DROP TABLE and DELETE FROM TABLE?
+How do you use string functions in SQL?
+What is the purpose of the COALESCE function?
+Advanced SQL Interview Questions (20)
+*For all data roles
+
+What are window functions and how do they work?
+Explain CTE (Common Table Expressions) and provide an example.
+How do you handle transactions in SQL?
+What are stored procedures, and why are they used?
+Explain the ACID properties in database systems.
+How do you use PIVOT and UNPIVOT operations?
+What are triggers and how do they work?
+Explain the concept of materialized views.
+How do you implement error handling in SQL?
+What are user-defined functions?
+How do you use MERGE statements?
+Explain recursive queries and their applications.
+What are table partitioning strategies?
+How do you implement row-level security?
+Explain the use of CROSS APPLY and OUTER APPLY.
+What are temporary tables and table variables?
+How do you handle dynamic SQL?
+Explain database isolation levels.
+What are indexed views and when should they be used?
+How do you implement hierarchical queries?
+Performance and Optimization Questions
+*For Data Engineers, sometimes in Senior DS roles.
+
+How do indexes improve query performance?
+What is a query execution plan and how do you analyze it?
+Explain the difference between clustered and non-clustered indexes.
+How do you avoid deadlocks in SQL?
+What strategies can you use to optimize a slow-running query?
+How do you identify and resolve blocking issues?
+What are statistics in SQL Server and why are they important?
+How do you optimize joins in large tables?
+Explain index fragmentation and how to address it.
+What are parameter sniffing issues and how do you resolve them?
+How do you optimize stored procedure performance?
+What is the impact of implicit conversions on performance?
+How do you handle missing indexes?
+Explain query plan caching and recompilation.
+What are wait statistics and how do you analyze them?
+Database Design and Modeling Questions
+*For Data Engineers, sometimes in Senior DS roles.
+
+Explain the concept of database normalization.
+What are the different types of relationships in databases?
+How do you design a database schema for a social media application?
+What is denormalization, and when would you use it?
+Explain the differences between OLTP and OLAP systems.
+How do you implement many-to-many relationships?
+What are the different normal forms (1NF through 5NF)?
+How do you handle soft deletes in database design?
+Explain the concept of data warehousing.
+What are dimensional modeling concepts?
+How do you implement versioning in database design?
+What are the best practices for database naming conventions?
+How do you handle temporal data in databases?
+Explain the star schema and snowflake schema.
+What are the considerations for designing a distributed database?

@@ -1,0 +1,237 @@
+Technical Skills & Utilities (TSU)
+
+
+
+
+CORE TOPICS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Coding, Data Engineering, & Testing
+
+
+
+
+
+
+BROAD TOPIC
+SUB-TOPICS
+DETAILED TOPICS
+SQL
+SELECT, JOIN
+Window Functions, CTEs, Recrusions
+Python
+Pandas, Numpy
+…
+Statistics
+[Refer to: Statistics and Mathematics (SMS)]
+Machine Learning
+Scikit-Learn
+XGBoost, Deep Learning, Feature Stores
+Data Engineering
+Airflow
+Dragster (Prefect), dbt, macros, CI/CD
+Visualization
+Tableau, Looker, Amplitude
+Custom d3.js, Dashboard Parameters (Filtering)
+Cloud & DevOps
+BigQuery, AWS
+Terraform, Kubernetes
+Experimentation
+T-Tests
+Sequential Testing, CUPED, Heterogeneous-Effect Models
+
+
+
+
+
+
+
+
+
+
+
+Layer
+2025-leading Options
+Warehouses / Lakehouses
+BigQuery, Snowflake, Databricks, Microsoft Fabric OneLake
+Batch & Stream Ingest
+Fivetran, Airbyte, Kafka, Google Dataflow
+Transformation (ELT)
+dbt, pyspark-on-Databricks, SQLMesh
+Orchestration
+Apache Airflow, Dagster, Prefect
+Languages
+SQL, Python, R, Julia; Polars & DuckDB for local analytics
+BI / Viz
+Looker, Power BI, Tableau, Superset; streamlit/Plotly for apps
+ML & MLOps
+scikit-learn, XGBoost, PyTorch/TensorFlow, MLflow, Vertex AI
+Experimentation Platforms
+Optimizely, Eppo, VWO, in-house CUPED frameworks
+Reverse-ETL / Activation
+Census, Hightouch, RudderStack
+Data Observability
+Monte Carlo, Soda, Databand
+Collaboration & Versioning
+GitHub, GitLab, JupyterLab, Hex, Deepnote
+
+
+
+
+Competency
+Skill Level & Key Concepts
+Core Tools
+Application in a Project (Use Case)
+SQL
+Foundational: SELECT, WHERE, GROUP BY, ORDER BY, INNER/LEFT JOINs. <br> Advanced: Window Functions (ROW_NUMBER, LEAD), Common Table Expressions (CTEs), Subqueries, performance tuning.
+PostgreSQL, MySQL, SQL Server, BigQuery, Redshift
+Extracting, segmenting, and aggregating customer subscription and product usage data from the company's main database.
+Spreadsheets
+Foundational: VLOOKUP/XLOOKUP, INDEX-MATCH, Pivot Tables, data filters. <br> Advanced: Power Query (Get & Transform), creating data models, complex nested formulas.
+Excel, Google Sheets
+Performing quick, ad-hoc analysis on a smaller data export; validating data quality; creating simple charts for a team meeting.
+Python
+Foundational: Data structures, functions, loops, using Jupyter Notebooks.
+ Advanced: Mastery of key libraries:
+ • Pandas: DataFrames for cleaning, transforming, merging, & grouping.
+ • NumPy: Numerical operations.
+ • Matplotlib/Seaborn: Data visualization.
+ • Scikit-learn: Building predictive models (e.g., regression).
+ • Statsmodels: Rigorous statistical testing.
+Jupyter, VS Code, Python, Pandas, Scikit-learn
+Writing a script to clean a 500k-row dataset, perform exploratory data analysis, and build a logistic regression model to predict customer churn.
+BI Platforms
+Foundational: Connecting to data sources (CSVs, databases), building standard charts (bar, line, scatter).
+ Advanced: Creating interactive dashboards with filters and actions, using calculated fields, data storytelling.
+Tableau, Power BI, Looker Studio
+Creating a C-level interactive dashboard that reports on key churn drivers and allows stakeholders to drill down into specific customer segments.
+Statistics
+Foundational: Descriptive Statistics (mean, median, standard deviation), basic probability.
+ Advanced: Inferential Statistics (Hypothesis/A/B testing, t-tests), Regression Analysis (Linear, Logistic).
+Python (Statsmodels, Scikit-learn), Excel
+Designing and analyzing an A/B test to determine if a new app feature significantly reduced customer churn compared to the old version.
+
+
+
+Top Technologies & Tools by Frequency
+Rank
+Technology/Tool
+Count
+Category
+1
+SQL
+27
+Programming Language
+2
+Python
+23
+Programming Language
+3
+R
+11
+Programming Language
+4
+Tableau
+10
+Data Visualization
+5
+Looker
+9
+Business Intelligence
+6
+dbt/DBT
+14
+Data Engineering
+7
+AWS
+5
+Cloud Platform
+8
+Salesforce
+5
+CRM Platform
+9
+Excel
+5
+Spreadsheet Tool
+10
+DOMO
+4
+Analytics Platform
+11
+Power BI
+3
+Business Intelligence
+12
+Snowflake
+3
+Cloud Data Platform
+13
+Databricks
+3
+Analytics Platform
+14
+BigQuery
+3
+Cloud Database
+15
+Google Analytics
+3
+Web Analytics
+
+
+
+SQL (27 mentions) - Most critical technical skill
+Python (23 mentions) - Primary programming language
+R (11 mentions) - Statistical analysis focus
+Tableau (10 mentions) - Leading visualization platform
+dbt (14 combined mentions) - Modern data transformation
+Modern Data Stack:
+Cloud-First: AWS (5), Snowflake (3), BigQuery (3), Databricks (3)
+Data Engineering: dbt (14), Airflow (1), ETL (2)
+Self-Service Analytics: Looker (9), Tableau (10), Power BI (3)
+Programming-Heavy: Python (23), R (11), SQL (27)
+Traditional vs Modern Tools:
+Traditional: Excel (5), PowerPoint (implied)
+Modern BI: Tableau (10), Looker (9), DOMO (4)
+Cloud Analytics: Snowflake (3), BigQuery (3), Databricks (3)
+
+
+
+Technical and Analytical Questions
+Gemini
+Tool Proficiency: What tools and technologies are you most comfortable with for marketing analytics? (e.g., Google Analytics, Tableau, SQL, Python, R)
+Data Modeling: How do you design predictive models for customer lifetime value (CLV), churn, or lead scoring?
+Attribution Models: Can you explain the different types of marketing attribution models and when to use each?
+Data Quality: How do you ensure the accuracy and consistency of marketing data across multiple sources?
+Advanced Analytics: Describe a situation where you used advanced statistical methods to solve a marketing problem.
+Grok
+Can you explain how you would measure the ROI of a marketing campaign? 
+This tests your understanding of key performance indicators (KPIs), attribution models, and financial metrics.
+What analytics tools are you proficient in? 
+Expect to discuss software like Google Analytics, Adobe Analytics, Tableau, SQL, Python, or R for data manipulation and visualization.
+How do you ensure data quality in your analytics work?
+This can involve discussing data cleaning processes, validation checks, and maintaining data integrity.
+Describe an instance where you used predictive analytics in marketing.
+They'll want to see your ability to use data to forecast trends or consumer behavior.
+

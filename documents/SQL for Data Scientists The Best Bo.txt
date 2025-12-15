@@ -1,0 +1,90 @@
+SQL for Data Scientists: The Best Book To Learn SQL For Data Nerds
+The book "SQL for Data Scientists" is an excellent resource specifically designed for data nerds (compared to other more general books, which cover obscure database details geared towards database administrators. While not specifically geared towards SQL interview prep, it covers all the main topics which you'll find during an interview, like joins, window functions, subqueries, and data prep for ML.
+
+Minimum Viable SQL Patterns: Best Book To Learn SQL Best Practices
+The eBook Minimum Viable SQL Patterns will take your SQL code to the next level. This is for folks who want their SQL queries to be more efficient, readable, and maintainable – things that experienced hires are judged on during SQL interviews!
+
+Ace the Data Science Interview: Best Book For SQL Exercises
+Finally, the book Ace the Data Science Interview has an entire chapter with 30 real SQL & Database Interview questions, along with a guide on how to prepare for them. I like this book, but then again I’m biased because I wrote it!
+
+To get a complete list of book recommendations, check out this list of the 17 best books for Data Analysts and the 13 best Data Science books.
+
+What's the best site to practice SQL interview questions?
+The 3 most popular sites to practice SQL interviews are:
+
+LeetCode - https://leetcode.com/
+HackerRank - https://www.hackerrank.com/
+DataLemur – https://datalemur.com/
+I believe that DataLemur is the best SQL interview platform because it is the most affordable option (half the cost of LeetCode), features the best solutions and hints, and has the most generous free tier.
+
+Want proof? Start practicing with this free TikTok SQL question to see what I mean:
+
+Practice Problem
+TikTok SQL Question: Write a query to find the activation rate of new users
+
+
+While practicing from these online SQL interview platforms is great, we want to acknowledge that tackling open-ended take-home SQL challenges is a whole other beast.
+
+Open-Ended Take-Home SQL Challenges
+What makes open-ended SQL tests trickier than online SQL assessments?
+Open-ended SQL challenges typically use much larger, messier, and more realistic datasets than SQL assessments. For example, in a take-home challenge you might get some anonymized data from the company’s production database, which is filled with missing data or nulls. In timed SQL coding screens, you’re usually querying a clean toy dataset that might only be 20-30 rows big.
+
+The scope of an open-ended SQL challenge is much bigger too. Whereas in an online SQL assessment, there’s a specific question with well-defined inputs and outputs, for take-home SQL challenges it might not even be obvious what question you need to answer! Some startups in their SQL take-home challenges just give you a large CSV file along with vague prompt like “From this data, what recommendations do you have for our business?” and it’s up to you to determine what specific questions you’ll ask of the dataset.
+
+Of course, the timeframe for take-home SQL challenges is much longer too. Plus, you can usually pick which version of SQL to use too! However, this is both a blessing and a curse. While you typically have more freedom, the expectations around the cleanliness of your SQL code are much, much higher.
+
+Finally, an open-ended SQL take-home challenge tests for much more than just raw SQL skills. Typically, you’ll have to write a report about what you did, which tests your written communication skills. You might even be asked to visualize the data, which tests your data visualization skills as well. Lastly, over a Zoom call, you might be asked to present your analysis, and defend the work you did, which evaluates your oral communication and presentation skills.
+
+How do you prepare for take-home SQL interview challenges?
+The best way to prepare for open-ended SQL interview challenges is by practicing real take-home SQL interview challenges, doing exploratory data analysis with Kaggle datasets. and reading books to improving your data analytics skills.
+
+4 Real Take-Home SQL Interview Challenges
+Because practice makes perfect, here’s 4 real take-home SQL interview challenges from PayPal, CVS Health, Asana, and UnitedHealth Group:
+
+PayPal/Braintree Analytics Code Challenge
+4-Part CVS Pharmacy Analytics SQL Challenge
+Asana Take Home Data Science Challenge
+4-Part UnitedHealth Group Patient Support SQL Analysis
+You can also make your own open-ended SQL challenges using data from Kaggle if you want more practice!
+
+Using Kaggle To Improve Your Ability To Answer Open-Ended SQL Questions
+If you don’t know about Kaggle, you are missing out. While they typically host Data Science & Machine Learning competitions, where people build neural network models in Python or R, you can use Kaggle to improve your SQL skills too.
+
+First find an interesting dataset on Kaggle and download the CSVs onto your laptop. Next, load the data into a free database tool like dBeaver so you can query it in the SQL flavor of your choice. Then brainstorm a list of questions you think a business stakeholder might have about the data. Finally, get querying – do the best you can to write SQL queries that answer these hypothetical open-ended analytics questions.
+
+For bonus points, you can even visualize the results in an interactive Tableau dashboard, and turn this into a full-fledged data analytics portfolio project.
+
+How To Translate Vague Business Questions Into SQL
+To improve your ability to handle ambiguous data analytics take-home challenges like “Use SQL to find us some business insights in this dataset” my go-to resource is Lean Analytics.
+
+Lean Analytics explains the most important metrics associated with business models like SaaS, freemium consumer apps, 2-sided marketplaces, and e-commerce brands. By knowing what numbers decision makers generally care about, you’ll be able to narrow down the scope of your SQL queries to only answer the questions that truly matter.
+
+Read Lean Analytics to ace take-home SQL challenges
+
+I also recommend improving your business-acumen by reading books like “The Personal MBA” and Boston Consulting Group’s book “On Strategy”, which you can find more details about in my list of the the best business books for Data Scientists.
+
+Beyond SQL: Other Data Interview Topics
+What technical concepts do Data Analyst interviews cover (besides SQL)?
+SQL is just one tool in the Data Analyst toolbox, and anyways it’s not the tool that matters (or its size), it’s how you use it 😉. That’s why Data Analyst interviews go beyond just SQL questions, and ask technical interview questions like:
+
+Probability Interview Questions:: Basics about conditional probability, Bayes' theorem, random variables
+Statistics Interview Questions:: Topics include measures of central tendency (e.g., mean, median, mode), measures of dispersion (e.g., variance, standard deviation), hypothesis testing (t-tests, ANOVA, and chi-squared tests) and sometimes linear regression analysis for senior Data Analyst interviews.
+Data Visualization Questions: Usually tested in-directly, by examining a data analytics portfolio project of yours, or judging a how you visualized the results from an open-ended SQL take-home test.
+Business Acumen Questions: You’ll usually get an open-ended case question like “You're launching a new AWS database service. What metrics would you measure to know if the launch went well or not?”. Here you’ll have to walk through your knowledge of financial and product metrics, and be evaluated on your general business-savvy. You’ll also be asked about your past work experience, and how you communicated your data analysis results to stakeholders.
+What do Data Science interviews cover besides SQL?
+Much like a Data Analyst interview, Data Science interviews cover way more topics than just SQL. You can expected to be asked:
+
+Probability & Statistics Questions
+A/B Testing Questions
+Machine Learning Questions
+Database Design Questions
+Coding Questions (usually in Python)
+Product-Sense Questions
+Behavioral Interview Questions
+For a concrete example of what to expect, check out some TikTok Data Scientist Interview Questions.
+
+TikTok Data Science Interview Questions
+
+You can also expect to get take-home Data Science interview projects, which test your data cleaning and exploration skills, along with your data visualization and communication skills.
+
+For a comprehensive way to prep for Data Science Interviews, go read the paperback book Ace the Data Science Interview which covers all these topics.

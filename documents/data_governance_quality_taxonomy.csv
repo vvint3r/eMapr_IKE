@@ -1,0 +1,653 @@
+Level 1	Level 2	Level 3	Level 4	Level 5	Level 6
+Data Governance Foundations	Governance Framework	Framework Components	Vision & Strategy	Strategic Alignment	Business Objectives Alignment
+Data Governance Foundations	Governance Framework	Framework Components	Vision & Strategy	Strategic Alignment	Enterprise Goals Integration
+Data Governance Foundations	Governance Framework	Framework Components	Vision & Strategy	Strategic Alignment	Digital Transformation Support
+Data Governance Foundations	Governance Framework	Framework Components	Vision & Strategy	Long-term Planning	Roadmap Development
+Data Governance Foundations	Governance Framework	Framework Components	Vision & Strategy	Long-term Planning	Maturity Assessment
+Data Governance Foundations	Governance Framework	Framework Components	Vision & Strategy	Long-term Planning	Phased Implementation
+Data Governance Foundations	Governance Framework	Framework Components	Guiding Principles	Core Values	Transparency
+Data Governance Foundations	Governance Framework	Framework Components	Guiding Principles	Core Values	Accountability
+Data Governance Foundations	Governance Framework	Framework Components	Guiding Principles	Core Values	Collaboration
+Data Governance Foundations	Governance Framework	Framework Components	Guiding Principles	Core Values	Trust
+Data Governance Foundations	Governance Framework	Framework Components	Guiding Principles	Operating Principles	Data as Strategic Asset
+Data Governance Foundations	Governance Framework	Framework Components	Guiding Principles	Operating Principles	Privacy by Design
+Data Governance Foundations	Governance Framework	Framework Components	Guiding Principles	Operating Principles	Security First
+Data Governance Foundations	Governance Framework	Framework Models	DAMA-DMBOK	Framework Overview	Knowledge Areas
+Data Governance Foundations	Governance Framework	Framework Models	DAMA-DMBOK	Framework Overview	Principles
+Data Governance Foundations	Governance Framework	Framework Models	DAMA-DMBOK	Framework Overview	Best Practices
+Data Governance Foundations	Governance Framework	Framework Models	DAMA-DMBOK	Implementation	Maturity Model
+Data Governance Foundations	Governance Framework	Framework Models	DAMA-DMBOK	Implementation	Assessment Methodology
+Data Governance Foundations	Governance Framework	Framework Models	COBIT	IT Governance	Control Objectives
+Data Governance Foundations	Governance Framework	Framework Models	COBIT	IT Governance	Process Framework
+Data Governance Foundations	Governance Framework	Framework Models	COBIT	IT Governance	Maturity Models
+Data Governance Foundations	Governance Framework	Framework Models	COBIT	Data Governance Integration	Alignment Practices
+Data Governance Foundations	Governance Framework	Framework Models	COBIT	Data Governance Integration	Risk Management
+Data Governance Foundations	Governance Framework	Framework Models	DCAM	Capability Assessment	Dimensions
+Data Governance Foundations	Governance Framework	Framework Models	DCAM	Capability Assessment	Maturity Levels
+Data Governance Foundations	Governance Framework	Framework Models	DCAM	Capability Assessment	Scoring Methodology
+Data Governance Foundations	Governance Framework	Framework Models	Eckerson Framework	Flexibility Focus	Modular Components
+Data Governance Foundations	Governance Framework	Framework Models	Eckerson Framework	Flexibility Focus	Adaptable Approach
+Data Governance Foundations	Governance Framework	Framework Models	Industry-Specific	Vertical Frameworks	Financial Services
+Data Governance Foundations	Governance Framework	Framework Models	Industry-Specific	Vertical Frameworks	Healthcare
+Data Governance Foundations	Governance Framework	Framework Models	Industry-Specific	Vertical Frameworks	Retail
+Data Governance Foundations	Governance Framework	Framework Models	Industry-Specific	Vertical Frameworks	Manufacturing
+Data Governance Foundations	Governance Framework	Implementation Approach	Centralized Governance	Hub Model	Central Authority
+Data Governance Foundations	Governance Framework	Implementation Approach	Centralized Governance	Hub Model	Standardization
+Data Governance Foundations	Governance Framework	Implementation Approach	Centralized Governance	Hub Model	Control Mechanisms
+Data Governance Foundations	Governance Framework	Implementation Approach	Federated Governance	Distributed Model	Domain Autonomy
+Data Governance Foundations	Governance Framework	Implementation Approach	Federated Governance	Distributed Model	Central Standards
+Data Governance Foundations	Governance Framework	Implementation Approach	Federated Governance	Distributed Model	Coordination
+Data Governance Foundations	Governance Framework	Implementation Approach	Decentralized Governance	Autonomous Teams	Self-Service
+Data Governance Foundations	Governance Framework	Implementation Approach	Decentralized Governance	Autonomous Teams	Flexibility
+Data Governance Foundations	Governance Framework	Implementation Approach	Hybrid Governance	Combined Approach	Balanced Model
+Data Governance Foundations	Governance Framework	Implementation Approach	Hybrid Governance	Combined Approach	Scalability
+Data Governance Foundations	Roles & Responsibilities	Executive Leadership	Chief Data Officer (CDO)	Strategic Oversight	Data Strategy
+Data Governance Foundations	Roles & Responsibilities	Executive Leadership	Chief Data Officer (CDO)	Strategic Oversight	Budget Management
+Data Governance Foundations	Roles & Responsibilities	Executive Leadership	Chief Data Officer (CDO)	Strategic Oversight	Executive Reporting
+Data Governance Foundations	Roles & Responsibilities	Executive Leadership	Chief Data Officer (CDO)	Program Management	Initiative Prioritization
+Data Governance Foundations	Roles & Responsibilities	Executive Leadership	Chief Data Officer (CDO)	Program Management	Resource Allocation
+Data Governance Foundations	Roles & Responsibilities	Executive Leadership	Data Governance Council	Committee Structure	Membership
+Data Governance Foundations	Roles & Responsibilities	Executive Leadership	Data Governance Council	Committee Structure	Meeting Cadence
+Data Governance Foundations	Roles & Responsibilities	Executive Leadership	Data Governance Council	Committee Structure	Decision-Making Authority
+Data Governance Foundations	Roles & Responsibilities	Executive Leadership	Data Governance Council	Responsibilities	Policy Approval
+Data Governance Foundations	Roles & Responsibilities	Executive Leadership	Data Governance Council	Responsibilities	Strategic Direction
+Data Governance Foundations	Roles & Responsibilities	Executive Leadership	Executive Sponsors	Sponsorship Role	Advocacy
+Data Governance Foundations	Roles & Responsibilities	Executive Leadership	Executive Sponsors	Sponsorship Role	Resource Support
+Data Governance Foundations	Roles & Responsibilities	Executive Leadership	Executive Sponsors	Sponsorship Role	Barrier Removal
+Data Governance Foundations	Roles & Responsibilities	Data Ownership	Data Owner Definition	Accountability	Data Asset Ownership
+Data Governance Foundations	Roles & Responsibilities	Data Ownership	Data Owner Definition	Accountability	Quality Responsibility
+Data Governance Foundations	Roles & Responsibilities	Data Ownership	Data Owner Definition	Accountability	Access Control
+Data Governance Foundations	Roles & Responsibilities	Data Ownership	Data Owner Definition	Authority	Strategic Decisions
+Data Governance Foundations	Roles & Responsibilities	Data Ownership	Data Owner Definition	Authority	Budget Control
+Data Governance Foundations	Roles & Responsibilities	Data Ownership	Data Owner Types	Business Data Owner	Domain Expertise
+Data Governance Foundations	Roles & Responsibilities	Data Ownership	Data Owner Types	Business Data Owner	Business Context
+Data Governance Foundations	Roles & Responsibilities	Data Ownership	Data Owner Types	Technical Data Owner	System Knowledge
+Data Governance Foundations	Roles & Responsibilities	Data Ownership	Data Owner Types	Technical Data Owner	Infrastructure Management
+Data Governance Foundations	Roles & Responsibilities	Data Ownership	Data Owner Types	Executive Data Owner	Enterprise Perspective
+Data Governance Foundations	Roles & Responsibilities	Data Ownership	Data Owner Types	Executive Data Owner	Strategic Oversight
+Data Governance Foundations	Roles & Responsibilities	Data Stewardship	Steward Definition	Core Responsibilities	Data Quality Management
+Data Governance Foundations	Roles & Responsibilities	Data Stewardship	Steward Definition	Core Responsibilities	Standards Enforcement
+Data Governance Foundations	Roles & Responsibilities	Data Stewardship	Steward Definition	Core Responsibilities	Issue Resolution
+Data Governance Foundations	Roles & Responsibilities	Data Stewardship	Steward Definition	Daily Activities	Monitoring
+Data Governance Foundations	Roles & Responsibilities	Data Stewardship	Steward Definition	Daily Activities	Documentation
+Data Governance Foundations	Roles & Responsibilities	Data Stewardship	Steward Definition	Daily Activities	Collaboration
+Data Governance Foundations	Roles & Responsibilities	Data Stewardship	Steward Types	Business Data Steward	Domain Focus
+Data Governance Foundations	Roles & Responsibilities	Data Stewardship	Steward Types	Business Data Steward	User Liaison
+Data Governance Foundations	Roles & Responsibilities	Data Stewardship	Steward Types	Technical Data Steward	System Expertise
+Data Governance Foundations	Roles & Responsibilities	Data Stewardship	Steward Types	Technical Data Steward	Technical Implementation
+Data Governance Foundations	Roles & Responsibilities	Data Stewardship	Steward Types	Process Data Steward	End-to-End Focus
+Data Governance Foundations	Roles & Responsibilities	Data Stewardship	Steward Types	Process Data Steward	Cross-Functional Coordination
+Data Governance Foundations	Roles & Responsibilities	Data Stewardship	Steward Types	System Data Steward	Application Focus
+Data Governance Foundations	Roles & Responsibilities	Data Stewardship	Steward Types	System Data Steward	Technical Monitoring
+Data Governance Foundations	Roles & Responsibilities	Data Stewardship	Stewardship Program	Program Structure	Organization Design
+Data Governance Foundations	Roles & Responsibilities	Data Stewardship	Stewardship Program	Program Structure	Network Development
+Data Governance Foundations	Roles & Responsibilities	Data Stewardship	Stewardship Program	Program Structure	Communication Channels
+Data Governance Foundations	Roles & Responsibilities	Data Stewardship	Stewardship Program	Steward Development	Selection Criteria
+Data Governance Foundations	Roles & Responsibilities	Data Stewardship	Stewardship Program	Steward Development	Training Programs
+Data Governance Foundations	Roles & Responsibilities	Data Stewardship	Stewardship Program	Steward Development	Certification Paths
+Data Governance Foundations	Roles & Responsibilities	Data Stewardship	Stewardship Program	Steward Development	Performance Management
+Data Governance Foundations	Roles & Responsibilities	Data Custodianship	Custodian Definition	Technical Focus	Infrastructure Management
+Data Governance Foundations	Roles & Responsibilities	Data Custodianship	Custodian Definition	Technical Focus	Security Controls
+Data Governance Foundations	Roles & Responsibilities	Data Custodianship	Custodian Definition	Technical Focus	Access Implementation
+Data Governance Foundations	Roles & Responsibilities	Data Custodianship	Custodian Responsibilities	Operational Tasks	Data Storage
+Data Governance Foundations	Roles & Responsibilities	Data Custodianship	Custodian Responsibilities	Operational Tasks	Backup & Recovery
+Data Governance Foundations	Roles & Responsibilities	Data Custodianship	Custodian Responsibilities	Operational Tasks	System Maintenance
+Data Governance Foundations	Roles & Responsibilities	Data Custodianship	Custodian Responsibilities	Security Implementation	Permission Controls
+Data Governance Foundations	Roles & Responsibilities	Data Custodianship	Custodian Responsibilities	Security Implementation	Encryption
+Data Governance Foundations	Roles & Responsibilities	Data Custodianship	Custodian Responsibilities	Security Implementation	Monitoring
+Data Governance Foundations	Roles & Responsibilities	Supporting Roles	Data Quality Analyst	Analysis Focus	Quality Assessment
+Data Governance Foundations	Roles & Responsibilities	Supporting Roles	Data Quality Analyst	Analysis Focus	Root Cause Analysis
+Data Governance Foundations	Roles & Responsibilities	Supporting Roles	Data Quality Analyst	Analysis Focus	Metrics Reporting
+Data Governance Foundations	Roles & Responsibilities	Supporting Roles	Data Architect	Architecture Focus	Data Models
+Data Governance Foundations	Roles & Responsibilities	Supporting Roles	Data Architect	Architecture Focus	Standards Definition
+Data Governance Foundations	Roles & Responsibilities	Supporting Roles	Data Architect	Architecture Focus	Integration Design
+Data Governance Foundations	Roles & Responsibilities	Supporting Roles	Business Analyst	Business Context	Requirements Definition
+Data Governance Foundations	Roles & Responsibilities	Supporting Roles	Business Analyst	Business Context	Use Case Analysis
+Data Governance Foundations	Roles & Responsibilities	Supporting Roles	Business Analyst	Business Context	Stakeholder Management
+Data Governance Foundations	Roles & Responsibilities	Supporting Roles	Compliance Officer	Regulatory Focus	Compliance Monitoring
+Data Governance Foundations	Roles & Responsibilities	Supporting Roles	Compliance Officer	Regulatory Focus	Risk Assessment
+Data Governance Foundations	Roles & Responsibilities	Supporting Roles	Compliance Officer	Regulatory Focus	Audit Support
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Types	Data Classification Policy	Sensitivity Levels
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Types	Data Classification Policy	Handling Requirements
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Types	Data Classification Policy	Labeling Standards
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Types	Data Access Policy	Access Control Matrix
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Types	Data Access Policy	Authorization Levels
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Types	Data Access Policy	Request Procedures
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Types	Data Retention Policy	Retention Schedules
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Types	Data Retention Policy	Archival Procedures
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Types	Data Retention Policy	Disposal Methods
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Types	Data Privacy Policy	Privacy Principles
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Types	Data Privacy Policy	Consent Management
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Types	Data Privacy Policy	Subject Rights
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Types	Data Security Policy	Security Controls
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Types	Data Security Policy	Threat Protection
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Types	Data Security Policy	Incident Response
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Types	Data Ethics Policy	Ethical Principles
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Types	Data Ethics Policy	Responsible Use
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Types	Data Ethics Policy	AI/ML Governance
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Development	Creation Process	Requirements Gathering
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Development	Creation Process	Stakeholder Input
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Development	Creation Process	Legal Review
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Development	Approval Process	Review Cycles
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Development	Approval Process	Sign-off Authority
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Development	Approval Process	Publication
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Management	Maintenance	Version Control
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Management	Maintenance	Update Procedures
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Management	Maintenance	Review Cycles
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Management	Communication	Distribution
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Management	Communication	Training
+Data Governance Foundations	Policies & Standards	Policy Framework	Policy Management	Communication	Awareness Programs
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Types	Naming Conventions	Field Naming
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Types	Naming Conventions	Table Naming
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Types	Naming Conventions	Schema Naming
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Types	Format Standards	Date Formats
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Types	Format Standards	Currency Formats
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Types	Format Standards	Address Formats
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Types	Data Type Standards	Numeric Standards
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Types	Data Type Standards	Text Standards
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Types	Data Type Standards	Boolean Standards
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Types	Reference Data Standards	Code Lists
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Types	Reference Data Standards	Lookup Tables
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Types	Reference Data Standards	Master Lists
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Development	Definition Process	Business Input
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Development	Definition Process	Technical Feasibility
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Development	Definition Process	Industry Alignment
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Development	Adoption Process	Pilot Testing
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Development	Adoption Process	Rollout Planning
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Development	Adoption Process	Change Management
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Enforcement	Validation	Automated Checks
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Enforcement	Validation	Manual Reviews
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Enforcement	Validation	Exception Handling
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Enforcement	Compliance Monitoring	Audit Procedures
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Enforcement	Compliance Monitoring	Reporting
+Data Governance Foundations	Policies & Standards	Data Standards	Standard Enforcement	Compliance Monitoring	Remediation
+Data Quality Management	Quality Dimensions	Accuracy	Definition & Measurement	Correctness	Source Validation
+Data Quality Management	Quality Dimensions	Accuracy	Definition & Measurement	Correctness	Truth Verification
+Data Quality Management	Quality Dimensions	Accuracy	Definition & Measurement	Correctness	Real-World Alignment
+Data Quality Management	Quality Dimensions	Accuracy	Definition & Measurement	Measurement Methods	Statistical Analysis
+Data Quality Management	Quality Dimensions	Accuracy	Definition & Measurement	Measurement Methods	Sample Testing
+Data Quality Management	Quality Dimensions	Accuracy	Definition & Measurement	Measurement Methods	Cross-Reference Checks
+Data Quality Management	Quality Dimensions	Accuracy	Issues & Detection	Common Problems	Data Entry Errors
+Data Quality Management	Quality Dimensions	Accuracy	Issues & Detection	Common Problems	Transformation Errors
+Data Quality Management	Quality Dimensions	Accuracy	Issues & Detection	Common Problems	Integration Errors
+Data Quality Management	Quality Dimensions	Accuracy	Issues & Detection	Detection Techniques	Profiling
+Data Quality Management	Quality Dimensions	Accuracy	Issues & Detection	Detection Techniques	Anomaly Detection
+Data Quality Management	Quality Dimensions	Accuracy	Issues & Detection	Detection Techniques	Pattern Analysis
+Data Quality Management	Quality Dimensions	Completeness	Definition & Measurement	Coverage	Record Completeness
+Data Quality Management	Quality Dimensions	Completeness	Definition & Measurement	Coverage	Field Completeness
+Data Quality Management	Quality Dimensions	Completeness	Definition & Measurement	Coverage	Referential Completeness
+Data Quality Management	Quality Dimensions	Completeness	Definition & Measurement	Measurement Approaches	Null Analysis
+Data Quality Management	Quality Dimensions	Completeness	Definition & Measurement	Measurement Approaches	Missing Value Detection
+Data Quality Management	Quality Dimensions	Completeness	Definition & Measurement	Measurement Approaches	Data Sampling
+Data Quality Management	Quality Dimensions	Completeness	Issues & Resolution	Common Problems	Missing Data
+Data Quality Management	Quality Dimensions	Completeness	Issues & Resolution	Common Problems	Incomplete Records
+Data Quality Management	Quality Dimensions	Completeness	Issues & Resolution	Common Problems	Partial Information
+Data Quality Management	Quality Dimensions	Completeness	Issues & Resolution	Resolution Techniques	Imputation
+Data Quality Management	Quality Dimensions	Completeness	Issues & Resolution	Resolution Techniques	Data Enrichment
+Data Quality Management	Quality Dimensions	Completeness	Issues & Resolution	Resolution Techniques	Source Consolidation
+Data Quality Management	Quality Dimensions	Consistency	Definition & Measurement	Uniformity	Format Consistency
+Data Quality Management	Quality Dimensions	Consistency	Definition & Measurement	Uniformity	Value Consistency
+Data Quality Management	Quality Dimensions	Consistency	Definition & Measurement	Uniformity	Structural Consistency
+Data Quality Management	Quality Dimensions	Consistency	Definition & Measurement	Cross-System Checks	Multi-Source Validation
+Data Quality Management	Quality Dimensions	Consistency	Definition & Measurement	Cross-System Checks	Reconciliation
+Data Quality Management	Quality Dimensions	Consistency	Definition & Measurement	Cross-System Checks	Integrity Checks
+Data Quality Management	Quality Dimensions	Consistency	Issues & Resolution	Common Problems	Data Conflicts
+Data Quality Management	Quality Dimensions	Consistency	Issues & Resolution	Common Problems	Format Variations
+Data Quality Management	Quality Dimensions	Consistency	Issues & Resolution	Common Problems	Temporal Inconsistency
+Data Quality Management	Quality Dimensions	Consistency	Issues & Resolution	Resolution Techniques	Standardization
+Data Quality Management	Quality Dimensions	Consistency	Issues & Resolution	Resolution Techniques	Master Data Management
+Data Quality Management	Quality Dimensions	Consistency	Issues & Resolution	Resolution Techniques	Integration Strategy
+Data Quality Management	Quality Dimensions	Timeliness	Definition & Measurement	Currency	Data Freshness
+Data Quality Management	Quality Dimensions	Timeliness	Definition & Measurement	Currency	Update Frequency
+Data Quality Management	Quality Dimensions	Timeliness	Definition & Measurement	Currency	Age Analysis
+Data Quality Management	Quality Dimensions	Timeliness	Definition & Measurement	Latency Metrics	Data Delivery Time
+Data Quality Management	Quality Dimensions	Timeliness	Definition & Measurement	Latency Metrics	Processing Time
+Data Quality Management	Quality Dimensions	Timeliness	Definition & Measurement	Latency Metrics	Propagation Time
+Data Quality Management	Quality Dimensions	Timeliness	Service Level Agreements	SLA Definition	Refresh Schedules
+Data Quality Management	Quality Dimensions	Timeliness	Service Level Agreements	SLA Definition	Availability Windows
+Data Quality Management	Quality Dimensions	Timeliness	Service Level Agreements	SLA Definition	Response Times
+Data Quality Management	Quality Dimensions	Timeliness	Service Level Agreements	SLA Monitoring	Performance Tracking
+Data Quality Management	Quality Dimensions	Timeliness	Service Level Agreements	SLA Monitoring	Breach Detection
+Data Quality Management	Quality Dimensions	Timeliness	Service Level Agreements	SLA Monitoring	Reporting
+Data Quality Management	Quality Dimensions	Validity	Definition & Measurement	Conformance	Format Validation
+Data Quality Management	Quality Dimensions	Validity	Definition & Measurement	Conformance	Type Validation
+Data Quality Management	Quality Dimensions	Validity	Definition & Measurement	Conformance	Range Validation
+Data Quality Management	Quality Dimensions	Validity	Definition & Measurement	Business Rules	Rule Definition
+Data Quality Management	Quality Dimensions	Validity	Definition & Measurement	Business Rules	Rule Engine
+Data Quality Management	Quality Dimensions	Validity	Definition & Measurement	Business Rules	Rule Validation
+Data Quality Management	Quality Dimensions	Validity	Issues & Resolution	Common Problems	Invalid Formats
+Data Quality Management	Quality Dimensions	Validity	Issues & Resolution	Common Problems	Out of Range Values
+Data Quality Management	Quality Dimensions	Validity	Issues & Resolution	Common Problems	Rule Violations
+Data Quality Management	Quality Dimensions	Validity	Issues & Resolution	Resolution Techniques	Format Conversion
+Data Quality Management	Quality Dimensions	Validity	Issues & Resolution	Resolution Techniques	Value Normalization
+Data Quality Management	Quality Dimensions	Validity	Issues & Resolution	Resolution Techniques	Rule Enforcement
+Data Quality Management	Quality Dimensions	Uniqueness	Definition & Measurement	Deduplication	Record Matching
+Data Quality Management	Quality Dimensions	Uniqueness	Definition & Measurement	Deduplication	Duplicate Detection
+Data Quality Management	Quality Dimensions	Uniqueness	Definition & Measurement	Deduplication	Identity Resolution
+Data Quality Management	Quality Dimensions	Uniqueness	Definition & Measurement	Measurement Methods	Duplicate Rate
+Data Quality Management	Quality Dimensions	Uniqueness	Definition & Measurement	Measurement Methods	Key Analysis
+Data Quality Management	Quality Dimensions	Uniqueness	Definition & Measurement	Measurement Methods	Entity Analysis
+Data Quality Management	Quality Dimensions	Uniqueness	Issues & Resolution	Common Problems	Duplicate Records
+Data Quality Management	Quality Dimensions	Uniqueness	Issues & Resolution	Common Problems	Multiple Entries
+Data Quality Management	Quality Dimensions	Uniqueness	Issues & Resolution	Common Problems	Data Redundancy
+Data Quality Management	Quality Dimensions	Uniqueness	Issues & Resolution	Resolution Techniques	Merge Logic
+Data Quality Management	Quality Dimensions	Uniqueness	Issues & Resolution	Resolution Techniques	Golden Record
+Data Quality Management	Quality Dimensions	Uniqueness	Issues & Resolution	Resolution Techniques	Survivorship Rules
+Data Quality Management	Quality Dimensions	Additional Dimensions	Integrity	Referential Integrity	Foreign Key Validation
+Data Quality Management	Quality Dimensions	Additional Dimensions	Integrity	Referential Integrity	Relationship Checks
+Data Quality Management	Quality Dimensions	Additional Dimensions	Integrity	Referential Integrity	Orphan Detection
+Data Quality Management	Quality Dimensions	Additional Dimensions	Integrity	Data Integrity	Constraint Enforcement
+Data Quality Management	Quality Dimensions	Additional Dimensions	Integrity	Data Integrity	Domain Integrity
+Data Quality Management	Quality Dimensions	Additional Dimensions	Integrity	Data Integrity	Entity Integrity
+Data Quality Management	Quality Dimensions	Additional Dimensions	Relevance	Business Relevance	Purpose Alignment
+Data Quality Management	Quality Dimensions	Additional Dimensions	Relevance	Business Relevance	Context Appropriateness
+Data Quality Management	Quality Dimensions	Additional Dimensions	Relevance	Business Relevance	Decision Support
+Data Quality Management	Quality Dimensions	Additional Dimensions	Availability	Data Accessibility	System Availability
+Data Quality Management	Quality Dimensions	Additional Dimensions	Availability	Data Accessibility	User Access
+Data Quality Management	Quality Dimensions	Additional Dimensions	Availability	Data Accessibility	Service Uptime
+Data Quality Management	Quality Dimensions	Additional Dimensions	Precision	Data Granularity	Level of Detail
+Data Quality Management	Quality Dimensions	Additional Dimensions	Precision	Data Granularity	Aggregation Levels
+Data Quality Management	Quality Dimensions	Additional Dimensions	Precision	Data Granularity	Measurement Precision
+Data Quality Management	Quality Framework	Framework Components	Assessment	Baseline Analysis	Current State
+Data Quality Management	Quality Framework	Framework Components	Assessment	Baseline Analysis	Gap Identification
+Data Quality Management	Quality Framework	Framework Components	Assessment	Baseline Analysis	Priority Setting
+Data Quality Management	Quality Framework	Framework Components	Assessment	Profiling Methods	Descriptive Profiling
+Data Quality Management	Quality Framework	Framework Components	Assessment	Profiling Methods	Structural Profiling
+Data Quality Management	Quality Framework	Framework Components	Assessment	Profiling Methods	Content Profiling
+Data Quality Management	Quality Framework	Framework Components	Assessment	Profiling Methods	Relationship Profiling
+Data Quality Management	Quality Framework	Framework Components	Metrics & KPIs	Quality Metrics	Accuracy Rate
+Data Quality Management	Quality Framework	Framework Components	Metrics & KPIs	Quality Metrics	Completeness Rate
+Data Quality Management	Quality Framework	Framework Components	Metrics & KPIs	Quality Metrics	Error Rate
+Data Quality Management	Quality Framework	Framework Components	Metrics & KPIs	Performance Indicators	Issue Resolution Time
+Data Quality Management	Quality Framework	Framework Components	Metrics & KPIs	Performance Indicators	Data Trust Score
+Data Quality Management	Quality Framework	Framework Components	Metrics & KPIs	Performance Indicators	Compliance Rate
+Data Quality Management	Quality Framework	Framework Components	Metrics & KPIs	Scorecards	Executive Dashboards
+Data Quality Management	Quality Framework	Framework Components	Metrics & KPIs	Scorecards	Operational Reports
+Data Quality Management	Quality Framework	Framework Components	Metrics & KPIs	Scorecards	Trend Analysis
+Data Quality Management	Quality Framework	Framework Components	Rules & Standards	Rule Types	Business Rules
+Data Quality Management	Quality Framework	Framework Components	Rules & Standards	Rule Types	Technical Rules
+Data Quality Management	Quality Framework	Framework Components	Rules & Standards	Rule Types	Validation Rules
+Data Quality Management	Quality Framework	Framework Components	Rules & Standards	Rule Definition	Requirements Analysis
+Data Quality Management	Quality Framework	Framework Components	Rules & Standards	Rule Definition	Rule Documentation
+Data Quality Management	Quality Framework	Framework Components	Rules & Standards	Rule Definition	Rule Testing
+Data Quality Management	Quality Framework	Framework Components	Rules & Standards	Rule Enforcement	Automated Validation
+Data Quality Management	Quality Framework	Framework Components	Rules & Standards	Rule Enforcement	Manual Reviews
+Data Quality Management	Quality Framework	Framework Components	Rules & Standards	Rule Enforcement	Exception Management
+Data Quality Management	Quality Framework	Implementation	Phased Approach	Phase 1: Foundation	Stakeholder Alignment
+Data Quality Management	Quality Framework	Implementation	Phased Approach	Phase 1: Foundation	Scope Definition
+Data Quality Management	Quality Framework	Implementation	Phased Approach	Phase 1: Foundation	Team Formation
+Data Quality Management	Quality Framework	Implementation	Phased Approach	Phase 2: Assessment	Data Profiling
+Data Quality Management	Quality Framework	Implementation	Phased Approach	Phase 2: Assessment	Issue Identification
+Data Quality Management	Quality Framework	Implementation	Phased Approach	Phase 2: Assessment	Priority Ranking
+Data Quality Management	Quality Framework	Implementation	Phased Approach	Phase 3: Design	Solution Architecture
+Data Quality Management	Quality Framework	Implementation	Phased Approach	Phase 3: Design	Tool Selection
+Data Quality Management	Quality Framework	Implementation	Phased Approach	Phase 3: Design	Process Design
+Data Quality Management	Quality Framework	Implementation	Phased Approach	Phase 4: Execution	Implementation
+Data Quality Management	Quality Framework	Implementation	Phased Approach	Phase 4: Execution	Testing
+Data Quality Management	Quality Framework	Implementation	Phased Approach	Phase 4: Execution	Deployment
+Data Quality Management	Quality Framework	Implementation	Phased Approach	Phase 5: Monitoring	Performance Tracking
+Data Quality Management	Quality Framework	Implementation	Phased Approach	Phase 5: Monitoring	Continuous Improvement
+Data Quality Management	Quality Framework	Implementation	Phased Approach	Phase 5: Monitoring	Optimization
+Data Quality Management	Quality Framework	Implementation	Maturity Model	Levels	Initial/Ad Hoc
+Data Quality Management	Quality Framework	Implementation	Maturity Model	Levels	Managed
+Data Quality Management	Quality Framework	Implementation	Maturity Model	Levels	Defined
+Data Quality Management	Quality Framework	Implementation	Maturity Model	Levels	Quantitatively Managed
+Data Quality Management	Quality Framework	Implementation	Maturity Model	Levels	Optimizing
+Data Quality Management	Quality Framework	Implementation	Maturity Model	Assessment	Current State Evaluation
+Data Quality Management	Quality Framework	Implementation	Maturity Model	Assessment	Gap Analysis
+Data Quality Management	Quality Framework	Implementation	Maturity Model	Assessment	Roadmap Development
+Data Quality Management	Quality Processes	Data Profiling	Profiling Techniques	Statistical Analysis	Descriptive Statistics
+Data Quality Management	Quality Processes	Data Profiling	Profiling Techniques	Statistical Analysis	Distribution Analysis
+Data Quality Management	Quality Processes	Data Profiling	Profiling Techniques	Statistical Analysis	Outlier Detection
+Data Quality Management	Quality Processes	Data Profiling	Profiling Techniques	Pattern Discovery	Frequency Analysis
+Data Quality Management	Quality Processes	Data Profiling	Profiling Techniques	Pattern Discovery	Value Distribution
+Data Quality Management	Quality Processes	Data Profiling	Profiling Techniques	Pattern Discovery	Format Analysis
+Data Quality Management	Quality Processes	Data Profiling	Profiling Techniques	Anomaly Detection	Unusual Patterns
+Data Quality Management	Quality Processes	Data Profiling	Profiling Techniques	Anomaly Detection	Outliers
+Data Quality Management	Quality Processes	Data Profiling	Profiling Techniques	Anomaly Detection	Exceptions
+Data Quality Management	Quality Processes	Data Profiling	Profiling Tools	Enterprise Tools	Informatica Data Quality
+Data Quality Management	Quality Processes	Data Profiling	Profiling Tools	Enterprise Tools	Talend Data Quality
+Data Quality Management	Quality Processes	Data Profiling	Profiling Tools	Enterprise Tools	IBM InfoSphere
+Data Quality Management	Quality Processes	Data Profiling	Profiling Tools	Cloud Tools	AWS Glue DataBrew
+Data Quality Management	Quality Processes	Data Profiling	Profiling Tools	Cloud Tools	Azure Purview
+Data Quality Management	Quality Processes	Data Profiling	Profiling Tools	Cloud Tools	Google Cloud Data Quality
+Data Quality Management	Quality Processes	Data Profiling	Profiling Tools	Open Source	Great Expectations
+Data Quality Management	Quality Processes	Data Profiling	Profiling Tools	Open Source	Apache Griffin
+Data Quality Management	Quality Processes	Data Profiling	Profiling Tools	Open Source	Deequ
+Data Quality Management	Quality Processes	Data Cleansing	Cleansing Operations	Standardization	Format Normalization
+Data Quality Management	Quality Processes	Data Cleansing	Cleansing Operations	Standardization	Value Standardization
+Data Quality Management	Quality Processes	Data Cleansing	Cleansing Operations	Standardization	Structure Normalization
+Data Quality Management	Quality Processes	Data Cleansing	Cleansing Operations	Correction	Error Correction
+Data Quality Management	Quality Processes	Data Cleansing	Cleansing Operations	Correction	Value Correction
+Data Quality Management	Quality Processes	Data Cleansing	Cleansing Operations	Correction	Format Correction
+Data Quality Management	Quality Processes	Data Cleansing	Cleansing Operations	Deduplication	Duplicate Detection
+Data Quality Management	Quality Processes	Data Cleansing	Cleansing Operations	Deduplication	Record Matching
+Data Quality Management	Quality Processes	Data Cleansing	Cleansing Operations	Deduplication	Merge/Purge
+Data Quality Management	Quality Processes	Data Cleansing	Cleansing Operations	Enrichment	Data Augmentation
+Data Quality Management	Quality Processes	Data Cleansing	Cleansing Operations	Enrichment	Third-Party Data
+Data Quality Management	Quality Processes	Data Cleansing	Cleansing Operations	Enrichment	Derived Values
+Data Quality Management	Quality Processes	Data Cleansing	Cleansing Approaches	Manual Cleansing	Data Entry Review
+Data Quality Management	Quality Processes	Data Cleansing	Cleansing Approaches	Manual Cleansing	Expert Review
+Data Quality Management	Quality Processes	Data Cleansing	Cleansing Approaches	Manual Cleansing	Case-by-Case
+Data Quality Management	Quality Processes	Data Cleansing	Cleansing Approaches	Automated Cleansing	Rule-Based
+Data Quality Management	Quality Processes	Data Cleansing	Cleansing Approaches	Automated Cleansing	Pattern-Based
+Data Quality Management	Quality Processes	Data Cleansing	Cleansing Approaches	Automated Cleansing	ML-Based
+Data Quality Management	Quality Processes	Data Validation	Validation Types	Syntax Validation	Format Checks
+Data Quality Management	Quality Processes	Data Validation	Validation Types	Syntax Validation	Type Checks
+Data Quality Management	Quality Processes	Data Validation	Validation Types	Syntax Validation	Pattern Matching
+Data Quality Management	Quality Processes	Data Validation	Validation Types	Semantic Validation	Business Logic
+Data Quality Management	Quality Processes	Data Validation	Validation Types	Semantic Validation	Domain Rules
+Data Quality Management	Quality Processes	Data Validation	Validation Types	Semantic Validation	Contextual Checks
+Data Quality Management	Quality Processes	Data Validation	Validation Types	Cross-Field Validation	Field Dependencies
+Data Quality Management	Quality Processes	Data Validation	Validation Types	Cross-Field Validation	Conditional Logic
+Data Quality Management	Quality Processes	Data Validation	Validation Types	Cross-Field Validation	Relationship Checks
+Data Quality Management	Quality Processes	Data Validation	Validation Implementation	Real-Time Validation	In-Flight Checks
+Data Quality Management	Quality Processes	Data Validation	Validation Implementation	Real-Time Validation	API Validation
+Data Quality Management	Quality Processes	Data Validation	Validation Implementation	Real-Time Validation	Stream Processing
+Data Quality Management	Quality Processes	Data Validation	Validation Implementation	Batch Validation	Scheduled Checks
+Data Quality Management	Quality Processes	Data Validation	Validation Implementation	Batch Validation	ETL Validation
+Data Quality Management	Quality Processes	Data Validation	Validation Implementation	Batch Validation	Post-Load Validation
+Data Quality Management	Quality Processes	Data Monitoring	Monitoring Types	Continuous Monitoring	Real-Time Alerts
+Data Quality Management	Quality Processes	Data Monitoring	Monitoring Types	Continuous Monitoring	Automated Checks
+Data Quality Management	Quality Processes	Data Monitoring	Monitoring Types	Continuous Monitoring	Threshold Detection
+Data Quality Management	Quality Processes	Data Monitoring	Monitoring Types	Scheduled Monitoring	Periodic Assessment
+Data Quality Management	Quality Processes	Data Monitoring	Monitoring Types	Scheduled Monitoring	Report Generation
+Data Quality Management	Quality Processes	Data Monitoring	Monitoring Types	Scheduled Monitoring	Trend Analysis
+Data Quality Management	Quality Processes	Data Monitoring	Monitoring Types	Event-Based Monitoring	Change Detection
+Data Quality Management	Quality Processes	Data Monitoring	Monitoring Types	Event-Based Monitoring	Trigger-Based
+Data Quality Management	Quality Processes	Data Monitoring	Monitoring Types	Event-Based Monitoring	Exception Alerts
+Data Quality Management	Quality Processes	Data Monitoring	Monitoring Tools	Observability Platforms	Monte Carlo
+Data Quality Management	Quality Processes	Data Monitoring	Monitoring Tools	Observability Platforms	Bigeye
+Data Quality Management	Quality Processes	Data Monitoring	Monitoring Tools	Observability Platforms	Datafold
+Data Quality Management	Quality Processes	Data Monitoring	Monitoring Tools	Enterprise Tools	Collibra DQ
+Data Quality Management	Quality Processes	Data Monitoring	Monitoring Tools	Enterprise Tools	Atlan
+Data Quality Management	Quality Processes	Data Monitoring	Monitoring Tools	Enterprise Tools	Alation
+Data Quality Management	Quality Processes	Issue Management	Issue Identification	Detection Methods	Automated Detection
+Data Quality Management	Quality Processes	Issue Management	Issue Identification	Detection Methods	Manual Reporting
+Data Quality Management	Quality Processes	Issue Management	Issue Identification	Detection Methods	User Feedback
+Data Quality Management	Quality Processes	Issue Management	Issue Identification	Categorization	Issue Type
+Data Quality Management	Quality Processes	Issue Management	Issue Identification	Categorization	Severity Level
+Data Quality Management	Quality Processes	Issue Management	Issue Identification	Categorization	Priority
+Data Quality Management	Quality Processes	Issue Management	Issue Resolution	Root Cause Analysis	5 Whys
+Data Quality Management	Quality Processes	Issue Management	Issue Resolution	Root Cause Analysis	Fishbone Diagram
+Data Quality Management	Quality Processes	Issue Management	Issue Resolution	Root Cause Analysis	Pareto Analysis
+Data Quality Management	Quality Processes	Issue Management	Issue Resolution	Workflow	Issue Logging
+Data Quality Management	Quality Processes	Issue Management	Issue Resolution	Workflow	Assignment
+Data Quality Management	Quality Processes	Issue Management	Issue Resolution	Workflow	Tracking
+Data Quality Management	Quality Processes	Issue Management	Issue Resolution	Workflow	Resolution
+Data Quality Management	Quality Processes	Issue Management	Issue Resolution	Workflow	Verification
+Data Quality Management	Quality Processes	Issue Management	Issue Resolution	Workflow	Closure
+Data Quality Management	Quality Tools & Technology	Tool Categories	Enterprise Platforms	Full Suite Solutions	Informatica IDMC
+Data Quality Management	Quality Tools & Technology	Tool Categories	Enterprise Platforms	Full Suite Solutions	IBM InfoSphere
+Data Quality Management	Quality Tools & Technology	Tool Categories	Enterprise Platforms	Full Suite Solutions	SAP Data Quality
+Data Quality Management	Quality Tools & Technology	Tool Categories	Enterprise Platforms	Governance Focus	Collibra
+Data Quality Management	Quality Tools & Technology	Tool Categories	Enterprise Platforms	Governance Focus	Alation
+Data Quality Management	Quality Tools & Technology	Tool Categories	Enterprise Platforms	Governance Focus	Atlan
+Data Quality Management	Quality Tools & Technology	Tool Categories	Cloud-Native Tools	AWS Solutions	AWS Glue DataBrew
+Data Quality Management	Quality Tools & Technology	Tool Categories	Cloud-Native Tools	AWS Solutions	AWS Data Quality
+Data Quality Management	Quality Tools & Technology	Tool Categories	Cloud-Native Tools	Azure Solutions	Azure Purview
+Data Quality Management	Quality Tools & Technology	Tool Categories	Cloud-Native Tools	Azure Solutions	Azure Data Quality
+Data Quality Management	Quality Tools & Technology	Tool Categories	Cloud-Native Tools	GCP Solutions	Dataplex Data Quality
+Data Quality Management	Quality Tools & Technology	Tool Categories	Cloud-Native Tools	GCP Solutions	Data Catalog
+Data Quality Management	Quality Tools & Technology	Tool Categories	Specialized Tools	Observability	Monte Carlo Data
+Data Quality Management	Quality Tools & Technology	Tool Categories	Specialized Tools	Observability	Bigeye
+Data Quality Management	Quality Tools & Technology	Tool Categories	Specialized Tools	Observability	Datafold
+Data Quality Management	Quality Tools & Technology	Tool Categories	Specialized Tools	Observability	Acceldata
+Data Quality Management	Quality Tools & Technology	Tool Categories	Specialized Tools	Testing	Great Expectations
+Data Quality Management	Quality Tools & Technology	Tool Categories	Specialized Tools	Testing	dbt Tests
+Data Quality Management	Quality Tools & Technology	Tool Categories	Specialized Tools	Testing	Soda
+Data Quality Management	Quality Tools & Technology	Tool Categories	Specialized Tools	Lineage	MANTA
+Data Quality Management	Quality Tools & Technology	Tool Categories	Specialized Tools	Lineage	Collibra Lineage
+Data Quality Management	Quality Tools & Technology	Tool Categories	Specialized Tools	MDM Tools	Profisee
+Data Quality Management	Quality Tools & Technology	Tool Categories	Specialized Tools	MDM Tools	Semarchy
+Data Quality Management	Quality Tools & Technology	Tool Categories	Open Source Tools	Validation Frameworks	Great Expectations
+Data Quality Management	Quality Tools & Technology	Tool Categories	Open Source Tools	Validation Frameworks	Apache Griffin
+Data Quality Management	Quality Tools & Technology	Tool Categories	Open Source Tools	Validation Frameworks	Deequ
+Data Quality Management	Quality Tools & Technology	Tool Categories	Open Source Tools	Data Testing	dbt
+Data Quality Management	Quality Tools & Technology	Tool Categories	Open Source Tools	Data Testing	SQLFluff
+Data Quality Management	Quality Tools & Technology	Tool Categories	Open Source Tools	Profiling	ydata-profiling
+Data Quality Management	Quality Tools & Technology	Tool Categories	Open Source Tools	Profiling	pandas-profiling
+Data Quality Management	Quality Tools & Technology	Tool Selection	Selection Criteria	Functional Requirements	Feature Needs
+Data Quality Management	Quality Tools & Technology	Tool Selection	Selection Criteria	Functional Requirements	Integration Points
+Data Quality Management	Quality Tools & Technology	Tool Selection	Selection Criteria	Functional Requirements	Scalability
+Data Quality Management	Quality Tools & Technology	Tool Selection	Selection Criteria	Technical Requirements	Architecture Fit
+Data Quality Management	Quality Tools & Technology	Tool Selection	Selection Criteria	Technical Requirements	Technology Stack
+Data Quality Management	Quality Tools & Technology	Tool Selection	Selection Criteria	Technical Requirements	Performance
+Data Quality Management	Quality Tools & Technology	Tool Selection	Selection Criteria	Business Requirements	Budget
+Data Quality Management	Quality Tools & Technology	Tool Selection	Selection Criteria	Business Requirements	Resource Needs
+Data Quality Management	Quality Tools & Technology	Tool Selection	Selection Criteria	Business Requirements	Time to Value
+Data Quality Management	Quality Tools & Technology	Tool Selection	Evaluation Process	Requirements Analysis	Stakeholder Input
+Data Quality Management	Quality Tools & Technology	Tool Selection	Evaluation Process	Requirements Analysis	Use Case Definition
+Data Quality Management	Quality Tools & Technology	Tool Selection	Evaluation Process	Requirements Analysis	Success Criteria
+Data Quality Management	Quality Tools & Technology	Tool Selection	Evaluation Process	Vendor Assessment	Proof of Concept
+Data Quality Management	Quality Tools & Technology	Tool Selection	Evaluation Process	Vendor Assessment	Reference Checks
+Data Quality Management	Quality Tools & Technology	Tool Selection	Evaluation Process	Vendor Assessment	TCO Analysis
+Data Quality Management	Quality Tools & Technology	Tool Selection	Evaluation Process	Decision Making	Scoring Matrix
+Data Quality Management	Quality Tools & Technology	Tool Selection	Evaluation Process	Decision Making	Risk Assessment
+Data Quality Management	Quality Tools & Technology	Tool Selection	Evaluation Process	Decision Making	Final Selection
+Metadata Management	Metadata Fundamentals	Metadata Types	Technical Metadata	System Metadata	Table Structures
+Metadata Management	Metadata Fundamentals	Metadata Types	Technical Metadata	System Metadata	Column Definitions
+Metadata Management	Metadata Fundamentals	Metadata Types	Technical Metadata	System Metadata	Data Types
+Metadata Management	Metadata Fundamentals	Metadata Types	Technical Metadata	System Metadata	Keys & Indexes
+Metadata Management	Metadata Fundamentals	Metadata Types	Technical Metadata	Schema Information	DDL Definitions
+Metadata Management	Metadata Fundamentals	Metadata Types	Technical Metadata	Schema Information	Constraints
+Metadata Management	Metadata Fundamentals	Metadata Types	Technical Metadata	Schema Information	Relationships
+Metadata Management	Metadata Fundamentals	Metadata Types	Business Metadata	Business Definitions	Business Terms
+Metadata Management	Metadata Fundamentals	Metadata Types	Business Metadata	Business Definitions	Glossary Entries
+Metadata Management	Metadata Fundamentals	Metadata Types	Business Metadata	Business Definitions	Descriptions
+Metadata Management	Metadata Fundamentals	Metadata Types	Business Metadata	Business Context	Business Rules
+Metadata Management	Metadata Fundamentals	Metadata Types	Business Metadata	Business Context	Usage Context
+Metadata Management	Metadata Fundamentals	Metadata Types	Business Metadata	Business Context	Purpose
+Metadata Management	Metadata Fundamentals	Metadata Types	Business Metadata	Ownership	Data Owners
+Metadata Management	Metadata Fundamentals	Metadata Types	Business Metadata	Ownership	Stewards
+Metadata Management	Metadata Fundamentals	Metadata Types	Business Metadata	Ownership	Custodians
+Metadata Management	Metadata Fundamentals	Metadata Types	Operational Metadata	Processing Information	ETL Job Details
+Metadata Management	Metadata Fundamentals	Metadata Types	Operational Metadata	Processing Information	Execution Logs
+Metadata Management	Metadata Fundamentals	Metadata Types	Operational Metadata	Processing Information	Performance Metrics
+Metadata Management	Metadata Fundamentals	Metadata Types	Operational Metadata	Quality Metrics	Quality Scores
+Metadata Management	Metadata Fundamentals	Metadata Types	Operational Metadata	Quality Metrics	Issue Counts
+Metadata Management	Metadata Fundamentals	Metadata Types	Operational Metadata	Quality Metrics	Validation Results
+Metadata Management	Metadata Fundamentals	Metadata Types	Operational Metadata	Usage Statistics	Access Patterns
+Metadata Management	Metadata Fundamentals	Metadata Types	Operational Metadata	Usage Statistics	Query Statistics
+Metadata Management	Metadata Fundamentals	Metadata Types	Operational Metadata	Usage Statistics	User Activity
+Metadata Management	Metadata Fundamentals	Metadata Types	Social Metadata	Collaborative Information	User Ratings
+Metadata Management	Metadata Fundamentals	Metadata Types	Social Metadata	Collaborative Information	Comments
+Metadata Management	Metadata Fundamentals	Metadata Types	Social Metadata	Collaborative Information	Tags
+Metadata Management	Metadata Fundamentals	Metadata Types	Social Metadata	Community Input	Discussions
+Metadata Management	Metadata Fundamentals	Metadata Types	Social Metadata	Community Input	Questions
+Metadata Management	Metadata Fundamentals	Metadata Types	Social Metadata	Community Input	Answers
+Data Lineage	Lineage Fundamentals	Lineage Types	Data Flow Lineage	Movement Tracking	Source to Target
+Data Lineage	Lineage Fundamentals	Lineage Types	Data Flow Lineage	Movement Tracking	System Hops
+Data Lineage	Lineage Fundamentals	Lineage Types	Data Flow Lineage	Movement Tracking	Data Pipelines
+Data Lineage	Lineage Fundamentals	Lineage Types	Transformation Lineage	Change Tracking	Transformation Logic
+Data Lineage	Lineage Fundamentals	Lineage Types	Transformation Lineage	Change Tracking	Business Rules
+Data Lineage	Lineage Fundamentals	Lineage Types	Transformation Lineage	Change Tracking	Calculations
+Data Lineage	Lineage Fundamentals	Lineage Types	Impact Lineage	Downstream Analysis	Impact Assessment
+Data Lineage	Lineage Fundamentals	Lineage Types	Impact Lineage	Downstream Analysis	Change Impact
+Data Lineage	Lineage Fundamentals	Lineage Types	Impact Lineage	Downstream Analysis	Dependency Mapping
+Data Lineage	Lineage Fundamentals	Lineage Levels	Table-Level Lineage	Coarse Granularity	Table Relationships
+Data Lineage	Lineage Fundamentals	Lineage Levels	Table-Level Lineage	Coarse Granularity	Dataset Flow
+Data Lineage	Lineage Fundamentals	Lineage Levels	Column-Level Lineage	Fine Granularity	Field Mapping
+Data Lineage	Lineage Fundamentals	Lineage Levels	Column-Level Lineage	Fine Granularity	Attribute Lineage
+Data Lineage	Lineage Fundamentals	Lineage Levels	Value-Level Lineage	Detailed Tracking	Data Element Flow
+Data Lineage	Lineage Fundamentals	Lineage Levels	Value-Level Lineage	Detailed Tracking	Transformation Trace
+Data Lineage	Lineage Capture	Capture Methods	Automated Capture	Metadata Extraction	Log Analysis
+Data Lineage	Lineage Capture	Capture Methods	Automated Capture	Metadata Extraction	Code Parsing
+Data Lineage	Lineage Capture	Capture Methods	Automated Capture	Metadata Extraction	API Integration
+Data Lineage	Lineage Capture	Capture Methods	Manual Documentation	Documentation Process	Lineage Mapping
+Data Lineage	Lineage Capture	Capture Methods	Manual Documentation	Documentation Process	Process Documentation
+Data Lineage	Lineage Capture	Capture Methods	Manual Documentation	Documentation Process	Maintenance
+Data Lineage	Lineage Capture	Capture Methods	Hybrid Approach	Combined Method	Automated Foundation
+Data Lineage	Lineage Capture	Capture Methods	Hybrid Approach	Combined Method	Manual Enhancement
+Data Lineage	Lineage Visualization	Visualization Types	Graph Visualization	Network Diagrams	Node-Edge Graphs
+Data Lineage	Lineage Visualization	Visualization Types	Graph Visualization	Network Diagrams	Interactive Graphs
+Data Lineage	Lineage Visualization	Visualization Types	Flow Diagrams	Process Flow	Data Flow Diagrams
+Data Lineage	Lineage Visualization	Visualization Types	Flow Diagrams	Process Flow	Pipeline Visualization
+Data Lineage	Lineage Visualization	Visualization Types	Impact Maps	Dependency Views	Upstream Impact
+Data Lineage	Lineage Visualization	Visualization Types	Impact Maps	Dependency Views	Downstream Impact
+Data Lineage	Lineage Tools	Enterprise Tools	Lineage Platforms	MANTA
+Data Lineage	Lineage Tools	Enterprise Tools	Lineage Platforms	Collibra Lineage
+Data Lineage	Lineage Tools	Enterprise Tools	Lineage Platforms	Informatica Lineage
+Data Lineage	Lineage Tools	Cloud-Native	Cloud Solutions	AWS Glue Lineage
+Data Lineage	Lineage Tools	Cloud-Native	Cloud Solutions	Azure Purview Lineage
+Data Lineage	Lineage Tools	Cloud-Native	Cloud Solutions	Google Cloud Lineage
+Data Catalog	Catalog Fundamentals	Catalog Purpose	Discovery	Asset Discovery	Search Capabilities
+Data Catalog	Catalog Fundamentals	Catalog Purpose	Discovery	Asset Discovery	Browse Functions
+Data Catalog	Catalog Fundamentals	Catalog Purpose	Discovery	Asset Discovery	Recommendations
+Data Catalog	Catalog Fundamentals	Catalog Purpose	Understanding	Context Provision	Descriptions
+Data Catalog	Catalog Fundamentals	Catalog Purpose	Understanding	Context Provision	Documentation
+Data Catalog	Catalog Fundamentals	Catalog Purpose	Understanding	Context Provision	Relationships
+Data Catalog	Catalog Fundamentals	Catalog Purpose	Governance	Policy Enforcement	Access Control
+Data Catalog	Catalog Fundamentals	Catalog Purpose	Governance	Policy Enforcement	Classification
+Data Catalog	Catalog Fundamentals	Catalog Purpose	Governance	Policy Enforcement	Compliance
+Data Catalog	Catalog Components	Metadata Repository	Storage	Centralized Store
+Data Catalog	Catalog Components	Metadata Repository	Storage	Metadata Graph
+Data Catalog	Catalog Components	Metadata Repository	Storage	Version Control
+Data Catalog	Catalog Components	Search Engine	Search Capabilities	Full-Text Search
+Data Catalog	Catalog Components	Search Engine	Search Capabilities	Faceted Search
+Data Catalog	Catalog Components	Search Engine	Search Capabilities	Advanced Filters
+Data Catalog	Catalog Components	Business Glossary	Terminology Management	Term Definitions
+Data Catalog	Catalog Components	Business Glossary	Terminology Management	Relationships
+Data Catalog	Catalog Components	Business Glossary	Terminology Management	Governance
+Data Catalog	Catalog Tools	Enterprise Solutions	Alation
+Data Catalog	Catalog Tools	Enterprise Solutions	Collibra
+Data Catalog	Catalog Tools	Enterprise Solutions	Informatica
+Data Catalog	Catalog Tools	Cloud Solutions	AWS Glue Catalog
+Data Catalog	Catalog Tools	Cloud Solutions	Azure Purview
+Data Catalog	Catalog Tools	Cloud Solutions	Google Dataplex
+Master Data Management	MDM Fundamentals	MDM Concepts	Golden Record	Single Source of Truth
+Master Data Management	MDM Fundamentals	MDM Concepts	Golden Record	Data Consolidation
+Master Data Management	MDM Fundamentals	MDM Concepts	Golden Record	Survivorship Rules
+Master Data Management	MDM Fundamentals	MDM Approaches	Registry Style	Centralized Index
+Master Data Management	MDM Fundamentals	MDM Approaches	Registry Style	Lightweight
+Master Data Management	MDM Fundamentals	MDM Approaches	Consolidation Style	Physical Integration
+Master Data Management	MDM Fundamentals	MDM Approaches	Consolidation Style	Master Repository
+Master Data Management	MDM Fundamentals	MDM Approaches	Hybrid Style	Combined Approach
+Master Data Management	MDM Fundamentals	Master Data Domains	Customer MDM	Customer Master
+Master Data Management	MDM Fundamentals	Master Data Domains	Customer MDM	Party Data
+Master Data Management	MDM Fundamentals	Master Data Domains	Product MDM	Product Master
+Master Data Management	MDM Fundamentals	Master Data Domains	Product MDM	Item Data
+Master Data Management	MDM Fundamentals	Master Data Domains	Vendor MDM	Supplier Master
+Master Data Management	MDM Fundamentals	Master Data Domains	Vendor MDM	Partner Data
+Master Data Management	MDM Fundamentals	Master Data Domains	Location MDM	Site Master
+Master Data Management	MDM Fundamentals	Master Data Domains	Location MDM	Geospatial Data
+Compliance & Regulations	Regulatory Frameworks	GDPR	Core Principles	Lawfulness & Fairness
+Compliance & Regulations	Regulatory Frameworks	GDPR	Core Principles	Purpose Limitation
+Compliance & Regulations	Regulatory Frameworks	GDPR	Core Principles	Data Minimization
+Compliance & Regulations	Regulatory Frameworks	GDPR	Core Principles	Accuracy
+Compliance & Regulations	Regulatory Frameworks	GDPR	Core Principles	Storage Limitation
+Compliance & Regulations	Regulatory Frameworks	GDPR	Core Principles	Integrity & Confidentiality
+Compliance & Regulations	Regulatory Frameworks	GDPR	Data Subject Rights	Right to Access
+Compliance & Regulations	Regulatory Frameworks	GDPR	Data Subject Rights	Right to Rectification
+Compliance & Regulations	Regulatory Frameworks	GDPR	Data Subject Rights	Right to Erasure
+Compliance & Regulations	Regulatory Frameworks	GDPR	Data Subject Rights	Right to Restriction
+Compliance & Regulations	Regulatory Frameworks	GDPR	Data Subject Rights	Right to Portability
+Compliance & Regulations	Regulatory Frameworks	GDPR	Data Subject Rights	Right to Object
+Compliance & Regulations	Regulatory Frameworks	GDPR	Compliance Requirements	Consent Management
+Compliance & Regulations	Regulatory Frameworks	GDPR	Compliance Requirements	Privacy by Design
+Compliance & Regulations	Regulatory Frameworks	GDPR	Compliance Requirements	Data Protection Impact Assessment
+Compliance & Regulations	Regulatory Frameworks	GDPR	Compliance Requirements	Breach Notification (72 hours)
+Compliance & Regulations	Regulatory Frameworks	GDPR	Penalties	Tier 1 Fines (€10M or 2%)
+Compliance & Regulations	Regulatory Frameworks	GDPR	Penalties	Tier 2 Fines (€20M or 4%)
+Compliance & Regulations	Regulatory Frameworks	CCPA/CPRA	Core Rights	Right to Know
+Compliance & Regulations	Regulatory Frameworks	CCPA/CPRA	Core Rights	Right to Delete
+Compliance & Regulations	Regulatory Frameworks	CCPA/CPRA	Core Rights	Right to Opt-Out
+Compliance & Regulations	Regulatory Frameworks	CCPA/CPRA	Core Rights	Right to Correct
+Compliance & Regulations	Regulatory Frameworks	CCPA/CPRA	Compliance Requirements	Privacy Notice
+Compliance & Regulations	Regulatory Frameworks	CCPA/CPRA	Compliance Requirements	Do Not Sell Link
+Compliance & Regulations	Regulatory Frameworks	CCPA/CPRA	Compliance Requirements	Data Access Requests
+Compliance & Regulations	Regulatory Frameworks	CCPA/CPRA	Enforcement	Financial Penalties
+Compliance & Regulations	Regulatory Frameworks	CCPA/CPRA	Enforcement	Private Right of Action
+Compliance & Regulations	Regulatory Frameworks	HIPAA	Privacy Rule	PHI Protection
+Compliance & Regulations	Regulatory Frameworks	HIPAA	Privacy Rule	Minimum Necessary
+Compliance & Regulations	Regulatory Frameworks	HIPAA	Privacy Rule	Use & Disclosure
+Compliance & Regulations	Regulatory Frameworks	HIPAA	Security Rule	Administrative Safeguards
+Compliance & Regulations	Regulatory Frameworks	HIPAA	Security Rule	Physical Safeguards
+Compliance & Regulations	Regulatory Frameworks	HIPAA	Security Rule	Technical Safeguards
+Compliance & Regulations	Regulatory Frameworks	HIPAA	Breach Notification	Notification Requirements
+Compliance & Regulations	Regulatory Frameworks	HIPAA	Breach Notification	60-Day Deadline
+Compliance & Regulations	Regulatory Frameworks	HIPAA	Breach Notification	OCR Reporting
+Compliance & Regulations	Regulatory Frameworks	PCI DSS	Security Requirements	Network Security
+Compliance & Regulations	Regulatory Frameworks	PCI DSS	Security Requirements	Access Control
+Compliance & Regulations	Regulatory Frameworks	PCI DSS	Security Requirements	Vulnerability Management
+Compliance & Regulations	Regulatory Frameworks	PCI DSS	Security Requirements	Monitoring & Testing
+Compliance & Regulations	Regulatory Frameworks	PCI DSS	Compliance Levels	Level 1 (6M+ transactions)
+Compliance & Regulations	Regulatory Frameworks	PCI DSS	Compliance Levels	Level 2 (1-6M transactions)
+Compliance & Regulations	Regulatory Frameworks	PCI DSS	Compliance Levels	Level 3 (20K-1M e-commerce)
+Compliance & Regulations	Regulatory Frameworks	PCI DSS	Compliance Levels	Level 4 (<20K e-commerce)
+Compliance & Regulations	Regulatory Frameworks	SOX	Financial Reporting	Internal Controls
+Compliance & Regulations	Regulatory Frameworks	SOX	Financial Reporting	Accuracy Requirements
+Compliance & Regulations	Regulatory Frameworks	SOX	Financial Reporting	Audit Trails
+Compliance & Regulations	Regulatory Frameworks	SOX	Data Governance	Data Integrity
+Compliance & Regulations	Regulatory Frameworks	SOX	Data Governance	Change Management
+Compliance & Regulations	Regulatory Frameworks	SOX	Data Governance	Access Controls
+Compliance & Regulations	Regulatory Frameworks	Other Regulations	LGPD (Brazil)	Personal Data Protection
+Compliance & Regulations	Regulatory Frameworks	Other Regulations	LGPD (Brazil)	Data Subject Rights
+Compliance & Regulations	Regulatory Frameworks	Other Regulations	LGPD (Brazil)	ANPD Enforcement
+Compliance & Regulations	Regulatory Frameworks	Other Regulations	PIPEDA (Canada)	Privacy Principles
+Compliance & Regulations	Regulatory Frameworks	Other Regulations	PIPEDA (Canada)	Consent Requirements
+Compliance & Regulations	Regulatory Frameworks	Other Regulations	POPIA (South Africa)	Data Protection
+Compliance & Regulations	Regulatory Frameworks	Other Regulations	POPIA (South Africa)	Processing Conditions
+Compliance & Regulations	Regulatory Frameworks	Other Regulations	PIPL (China)	National Security Focus
+Compliance & Regulations	Regulatory Frameworks	Other Regulations	PIPL (China)	Cross-Border Transfer
+Compliance & Regulations	Privacy Management	Privacy Programs	Program Components	Privacy Policy
+Compliance & Regulations	Privacy Management	Privacy Programs	Program Components	Privacy Notice
+Compliance & Regulations	Privacy Management	Privacy Programs	Program Components	Cookie Policy
+Compliance & Regulations	Privacy Management	Privacy Programs	Program Components	Terms of Service
+Compliance & Regulations	Privacy Management	Consent Management	Consent Mechanisms	Opt-In
+Compliance & Regulations	Privacy Management	Consent Management	Consent Mechanisms	Opt-Out
+Compliance & Regulations	Privacy Management	Consent Management	Consent Mechanisms	Granular Consent
+Compliance & Regulations	Privacy Management	Consent Management	Consent Recording	Consent Logs
+Compliance & Regulations	Privacy Management	Consent Management	Consent Recording	Audit Trail
+Compliance & Regulations	Privacy Management	Consent Management	Consent Recording	Withdrawal Tracking
+Compliance & Regulations	Privacy Management	Data Subject Requests	Request Types	Access Requests
+Compliance & Regulations	Privacy Management	Data Subject Requests	Request Types	Deletion Requests
+Compliance & Regulations	Privacy Management	Data Subject Requests	Request Types	Portability Requests
+Compliance & Regulations	Privacy Management	Data Subject Requests	Request Types	Correction Requests
+Compliance & Regulations	Privacy Management	Data Subject Requests	Request Handling	Identity Verification
+Compliance & Regulations	Privacy Management	Data Subject Requests	Request Handling	Request Processing
+Compliance & Regulations	Privacy Management	Data Subject Requests	Request Handling	Response Delivery
+Compliance & Regulations	Privacy Management	Privacy Impact Assessment	Assessment Process	Risk Identification
+Compliance & Regulations	Privacy Management	Privacy Impact Assessment	Assessment Process	Impact Analysis
+Compliance & Regulations	Privacy Management	Privacy Impact Assessment	Assessment Process	Mitigation Planning
+Compliance & Regulations	Privacy Management	Privacy Impact Assessment	Assessment Triggers	New Processing Activity
+Compliance & Regulations	Privacy Management	Privacy Impact Assessment	Assessment Triggers	Technology Change
+Compliance & Regulations	Privacy Management	Privacy Impact Assessment	Assessment Triggers	High-Risk Processing
+Compliance & Regulations	Security Management	Data Security	Security Controls	Encryption at Rest
+Compliance & Regulations	Security Management	Data Security	Security Controls	Encryption in Transit
+Compliance & Regulations	Security Management	Data Security	Security Controls	Tokenization
+Compliance & Regulations	Security Management	Data Security	Security Controls	Masking
+Compliance & Regulations	Security Management	Access Control	Authentication	Multi-Factor Authentication
+Compliance & Regulations	Security Management	Access Control	Authentication	Single Sign-On
+Compliance & Regulations	Security Management	Access Control	Authentication	Identity Management
+Compliance & Regulations	Security Management	Access Control	Authorization	Role-Based Access Control
+Compliance & Regulations	Security Management	Access Control	Authorization	Attribute-Based Access Control
+Compliance & Regulations	Security Management	Access Control	Authorization	Least Privilege
+Compliance & Regulations	Security Management	Incident Response	Incident Management	Detection
+Compliance & Regulations	Security Management	Incident Response	Incident Management	Containment
+Compliance & Regulations	Security Management	Incident Response	Incident Management	Investigation
+Compliance & Regulations	Security Management	Incident Response	Incident Management	Remediation
+Compliance & Regulations	Security Management	Incident Response	Incident Management	Recovery
+Compliance & Regulations	Security Management	Incident Response	Breach Response	Breach Assessment
+Compliance & Regulations	Security Management	Incident Response	Breach Response	Notification Process
+Compliance & Regulations	Security Management	Incident Response	Breach Response	Regulatory Reporting
+Compliance & Regulations	Audit & Compliance	Audit Management	Audit Types	Internal Audits
+Compliance & Regulations	Audit & Compliance	Audit Management	Audit Types	External Audits
+Compliance & Regulations	Audit & Compliance	Audit Management	Audit Types	Regulatory Audits
+Compliance & Regulations	Audit & Compliance	Audit Management	Audit Process	Planning
+Compliance & Regulations	Audit & Compliance	Audit Management	Audit Process	Execution
+Compliance & Regulations	Audit & Compliance	Audit Management	Audit Process	Findings
+Compliance & Regulations	Audit & Compliance	Audit Management	Audit Process	Remediation
+Compliance & Regulations	Audit & Compliance	Audit Management	Audit Process	Follow-up
+Compliance & Regulations	Audit & Compliance	Compliance Monitoring	Monitoring Activities	Control Testing
+Compliance & Regulations	Audit & Compliance	Compliance Monitoring	Monitoring Activities	Evidence Collection
+Compliance & Regulations	Audit & Compliance	Compliance Monitoring	Monitoring Activities	Gap Analysis
+Compliance & Regulations	Audit & Compliance	Compliance Monitoring	Reporting	Compliance Reports
+Compliance & Regulations	Audit & Compliance	Compliance Monitoring	Reporting	Executive Dashboards
+Compliance & Regulations	Audit & Compliance	Compliance Monitoring	Reporting	Regulatory Submissions
+Compliance & Regulations	Audit & Compliance	Documentation	Documentation Types	Policies & Procedures
+Compliance & Regulations	Audit & Compliance	Documentation	Documentation Types	Process Documentation
+Compliance & Regulations	Audit & Compliance	Documentation	Documentation Types	Training Materials
+Compliance & Regulations	Audit & Compliance	Documentation	Documentation Management	Version Control
+Compliance & Regulations	Audit & Compliance	Documentation	Documentation Management	Change Tracking
+Compliance & Regulations	Audit & Compliance	Documentation	Documentation Management	Retention

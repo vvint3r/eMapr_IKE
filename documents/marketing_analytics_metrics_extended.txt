@@ -1,0 +1,679 @@
+## Customer Journey Analytics
+
+| Segment | Category | Metric Name | Description | Calculation/Formula | Strategic Value |
+|---------|----------|-------------|-------------|-------------------|-----------------|
+| Customer Journey Analytics | Awareness Stage | Brand Discovery Rate | Percentage of target audience discovering brand for first time | New visitors / Total target audience × 100 | Identifies top-of-funnel effectiveness |
+| Customer Journey Analytics | Awareness Stage | Unaided Brand Recall | Percentage who remember brand without prompting | Survey respondents recalling brand / Total respondents × 100 | Measures brand penetration strength |
+| Customer Journey Analytics | Awareness Stage | Search Query Volume | Number of branded and non-branded searches | Sum of search impressions across keywords | Indicates market demand and interest |
+| Customer Journey Analytics | Awareness Stage | Share of Search | Brand's percentage of category search volume | Brand searches / Total category searches × 100 | Competitive awareness benchmark |
+| Customer Journey Analytics | Consideration Stage | Consideration Rate | Percentage moving from awareness to consideration | Users engaging with consideration content / Total aware users × 100 | Funnel progression efficiency |
+| Customer Journey Analytics | Consideration Stage | Content Engagement Depth | Average consideration content pieces consumed | Total content interactions / Unique considering users | Interest level indicator |
+| Customer Journey Analytics | Consideration Stage | Comparison Shopping Rate | Percentage comparing with competitors | Users viewing comparison content / Total considering users × 100 | Competitive positioning effectiveness |
+| Customer Journey Analytics | Consideration Stage | Review Engagement Rate | Interaction with reviews and ratings | Review page visits / Total consideration stage users × 100 | Trust-building effectiveness |
+| Customer Journey Analytics | Evaluation Stage | Demo/Trial Request Rate | Percentage requesting product demonstrations | Demo requests / Total evaluation stage users × 100 | Purchase intent strength |
+| Customer Journey Analytics | Evaluation Stage | Feature Investigation Rate | Detailed product feature exploration | Feature page engagement / Evaluation stage users × 100 | Product-market fit indicator |
+| Customer Journey Analytics | Evaluation Stage | Pricing Page Conversion | Movement from pricing to next action | Actions from pricing page / Pricing page visitors × 100 | Price point acceptance |
+| Customer Journey Analytics | Purchase Stage | Cart Abandonment Rate | Percentage abandoning purchase process | Abandoned carts / Total carts created × 100 | Friction point identifier |
+| Customer Journey Analytics | Purchase Stage | Checkout Completion Rate | Successful purchase completions | Completed purchases / Checkout starts × 100 | Transaction process efficiency |
+| Customer Journey Analytics | Purchase Stage | Payment Method Distribution | Breakdown of payment preferences | Payment method usage / Total transactions × 100 | Customer preference insights |
+| Customer Journey Analytics | Purchase Stage | First Purchase Value | Initial transaction amount | Sum of first purchase amounts / New customers | New customer quality indicator |
+| Customer Journey Analytics | Onboarding Stage | Activation Rate | Percentage completing key first actions | Activated users / Total new users × 100 | Early engagement success |
+| Customer Journey Analytics | Onboarding Stage | Time to First Value | Duration until customer realizes benefit | Average days from purchase to first value action | Product stickiness predictor |
+| Customer Journey Analytics | Onboarding Stage | Feature Adoption Rate | Initial feature usage patterns | Features used / Total available features × 100 | Product utilization depth |
+| Customer Journey Analytics | Retention Stage | Repeat Purchase Rate | Percentage making subsequent purchases | Customers with 2+ purchases / Total customers × 100 | Loyalty development indicator |
+| Customer Journey Analytics | Retention Stage | Customer Health Score | Composite retention likelihood indicator | Weighted sum of usage, satisfaction, and value metrics | Churn prevention priority |
+| Customer Journey Analytics | Retention Stage | Engagement Frequency | Regular interaction patterns | Average interactions per user per time period | Relationship strength measure |
+| Customer Journey Analytics | Advocacy Stage | Referral Generation Rate | Percentage becoming active advocates | Referring customers / Total satisfied customers × 100 | Organic growth potential |
+| Customer Journey Analytics | Advocacy Stage | User Generated Content Rate | Customer content creation frequency | UGC creators / Total customers × 100 | Community engagement level |
+| Customer Journey Analytics | Advocacy Stage | Net Promoter Score | Likelihood to recommend measurement | (Promoters - Detractors) / Total respondents × 100 | Advocacy potential gauge |
+| Customer Journey Analytics | Cross-Journey | Journey Velocity | Speed through funnel stages | Average days from first touch to conversion | Process efficiency measure |
+| Customer Journey Analytics | Cross-Journey | Stage Conversion Rates | Progression between each stage | Next stage entries / Current stage users × 100 | Funnel optimization targets |
+| Customer Journey Analytics | Cross-Journey | Journey Complexity Score | Number of touchpoints required | Average touchpoints per conversion | Experience simplification needs |
+| Customer Journey Analytics | Cross-Journey | Cross-Channel Journey Rate | Multi-channel interaction percentage | Multi-channel journeys / Total journeys × 100 | Omnichannel effectiveness |
+
+## Digital Experience Analytics
+
+| Segment | Category | Metric Name | Description | Calculation/Formula | Strategic Value |
+|---------|----------|-------------|-------------|-------------------|-----------------|
+| Digital Experience Analytics | Site Performance | Page Load Time | Average time to fully load pages | Total load time / Number of page loads | User experience quality |
+| Digital Experience Analytics | Site Performance | Time to Interactive | When page becomes fully functional | Time until main thread is quiet for 5 seconds | Usability benchmark |
+| Digital Experience Analytics | Site Performance | First Contentful Paint | Time to first visual content | Time from navigation start to first pixel painted | Perceived performance |
+| Digital Experience Analytics | Site Performance | Cumulative Layout Shift | Visual stability during load | Sum of all individual layout shift scores | User frustration predictor |
+| Digital Experience Analytics | Site Performance | Server Response Time | Backend processing duration | Time from request to first byte received | Infrastructure efficiency |
+| Digital Experience Analytics | Navigation Behavior | Pages per Session | Average page views per visit | Total page views / Total sessions | Engagement depth indicator |
+| Digital Experience Analytics | Navigation Behavior | Internal Search Usage Rate | Percentage using site search | Search users / Total users × 100 | Navigation efficiency needs |
+| Digital Experience Analytics | Navigation Behavior | Exit Rate by Page | Where users leave the site | Exits from page / Total page views × 100 | Problem page identifier |
+| Digital Experience Analytics | Navigation Behavior | Scroll Depth Distribution | How far users scroll on pages | Percentage of page scrolled by user segments | Content engagement measure |
+| Digital Experience Analytics | Navigation Behavior | Click Depth | Number of clicks to reach content | Average clicks from homepage to conversion | Site architecture efficiency |
+| Digital Experience Analytics | Mobile Experience | Mobile Conversion Rate | Mobile-specific conversion performance | Mobile conversions / Mobile visitors × 100 | Mobile optimization priority |
+| Digital Experience Analytics | Mobile Experience | App vs Web Usage | Channel preference patterns | App sessions / (App + Mobile web sessions) × 100 | Investment allocation guide |
+| Digital Experience Analytics | Mobile Experience | Touch Interaction Rate | Mobile-specific engagement patterns | Touch interactions / Total mobile interactions × 100 | Interface optimization needs |
+| Digital Experience Analytics | Mobile Experience | Orientation Changes | Portrait vs landscape usage | Orientation change events / Mobile sessions | Design adaptation requirements |
+| Digital Experience Analytics | User Flow | Path Analysis Coverage | Common paths through site | Top paths sessions / Total sessions × 100 | Journey optimization focus |
+| Digital Experience Analytics | User Flow | Reverse Goal Path | Routes to conversion endpoints | Unique paths to goal / Total conversions | Conversion driver identification |
+| Digital Experience Analytics | User Flow | Loop Detection Rate | Circular navigation patterns | Sessions with loops / Total sessions × 100 | Navigation confusion indicator |
+| Digital Experience Analytics | Error Tracking | JavaScript Error Rate | Frontend error frequency | JS errors / Total page views × 100 | Code quality measure |
+| Digital Experience Analytics | Error Tracking | 404 Error Frequency | Broken link encounters | 404 errors / Total page requests × 100 | Content maintenance needs |
+| Digital Experience Analytics | Error Tracking | Form Validation Errors | User input problems | Form errors / Total form submissions × 100 | UX friction points |
+| Digital Experience Analytics | Personalization | Personalization Lift | Impact of personalized experiences | (Personalized CVR - Default CVR) / Default CVR × 100 | Personalization ROI |
+| Digital Experience Analytics | Personalization | Segment Response Rate | Performance by user segment | Segment conversions / Segment visitors × 100 | Targeting effectiveness |
+| Digital Experience Analytics | Personalization | Dynamic Content Engagement | Interaction with personalized elements | Personalized element clicks / Total impressions × 100 | Relevance measure |
+| Digital Experience Analytics | Accessibility | Accessibility Compliance Score | WCAG compliance level | Passed criteria / Total criteria × 100 | Inclusivity measure |
+| Digital Experience Analytics | Accessibility | Assistive Technology Usage | Screen reader and tool usage | Assistive tech sessions / Total sessions × 100 | Accessibility need gauge |
+
+## Revenue & Financial Analytics
+
+| Segment | Category | Metric Name | Description | Calculation/Formula | Strategic Value |
+|---------|----------|-------------|-------------|-------------------|-----------------|
+| Revenue & Financial Analytics | Revenue Metrics | Total Revenue | Overall income generated | Sum of all transaction values | Business performance baseline |
+| Revenue & Financial Analytics | Revenue Metrics | Revenue Growth Rate | Period-over-period growth | (Current revenue - Previous revenue) / Previous revenue × 100 | Growth trajectory indicator |
+| Revenue & Financial Analytics | Revenue Metrics | Average Revenue Per User | Revenue efficiency per customer | Total revenue / Total active users | Monetization effectiveness |
+| Revenue & Financial Analytics | Revenue Metrics | Revenue per Visit | Session monetization rate | Total revenue / Total sessions | Traffic value indicator |
+| Revenue & Financial Analytics | Revenue Metrics | Recurring Revenue | Predictable income stream | Sum of subscription and repeat revenues | Business stability measure |
+| Revenue & Financial Analytics | Cost Analysis | Customer Acquisition Cost | Investment per new customer | Total acquisition spend / New customers acquired | Efficiency benchmark |
+| Revenue & Financial Analytics | Cost Analysis | Cost Per Transaction | Expense per completed sale | Total operational costs / Number of transactions | Margin pressure indicator |
+| Revenue & Financial Analytics | Cost Analysis | Marketing Cost Ratio | Marketing spend efficiency | Marketing costs / Total revenue × 100 | Budget allocation guide |
+| Revenue & Financial Analytics | Cost Analysis | Channel Cost Efficiency | Spend effectiveness by channel | Channel cost / Channel revenue | Channel prioritization metric |
+| Revenue & Financial Analytics | Cost Analysis | Fixed vs Variable Cost Ratio | Cost structure flexibility | Fixed costs / Total costs × 100 | Scalability indicator |
+| Revenue & Financial Analytics | Profitability | Gross Margin | Direct profitability measure | (Revenue - COGS) / Revenue × 100 | Product viability indicator |
+| Revenue & Financial Analytics | Profitability | Contribution Margin | Variable profit contribution | (Revenue - Variable costs) / Revenue × 100 | Unit economics health |
+| Revenue & Financial Analytics | Profitability | EBITDA Margin | Operational profitability | EBITDA / Total revenue × 100 | Operating efficiency measure |
+| Revenue & Financial Analytics | Profitability | Customer Profitability | Profit by customer segment | Customer revenue - Customer costs | Segment focus priority |
+| Revenue & Financial Analytics | Profitability | Product Line Profitability | Profit by product category | Product revenue - Product costs | Portfolio optimization guide |
+| Revenue & Financial Analytics | ROI Metrics | Marketing ROI | Marketing investment return | (Revenue from marketing - Marketing cost) / Marketing cost × 100 | Marketing effectiveness |
+| Revenue & Financial Analytics | ROI Metrics | Campaign ROI | Individual campaign returns | (Campaign revenue - Campaign cost) / Campaign cost × 100 | Campaign success measure |
+| Revenue & Financial Analytics | ROI Metrics | Channel ROI | Channel-specific returns | (Channel revenue - Channel cost) / Channel cost × 100 | Channel investment guide |
+| Revenue & Financial Analytics | ROI Metrics | Content ROI | Content investment returns | (Content-driven revenue - Content cost) / Content cost × 100 | Content strategy validation |
+| Revenue & Financial Analytics | ROI Metrics | Technology ROI | Tech stack returns | (Tech-enabled revenue - Tech costs) / Tech costs × 100 | Technology investment validation |
+| Revenue & Financial Analytics | Cash Flow | Operating Cash Flow | Cash generation from operations | Cash from operations - Operating expenses | Liquidity health indicator |
+| Revenue & Financial Analytics | Cash Flow | Days Sales Outstanding | Collection efficiency | (Accounts receivable / Revenue) × Days in period | Cash cycle efficiency |
+| Revenue & Financial Analytics | Cash Flow | Cash Conversion Cycle | Working capital efficiency | DSO + Inventory days - Payables days | Operational efficiency measure |
+| Revenue & Financial Analytics | Financial Planning | Revenue Forecast Accuracy | Prediction precision | |Actual revenue - Forecast revenue| / Actual revenue × 100 | Planning reliability measure |
+| Revenue & Financial Analytics | Financial Planning | Budget Variance | Actual vs planned spending | (Actual spend - Budgeted spend) / Budgeted spend × 100 | Financial control indicator |
+| Revenue & Financial Analytics | Financial Planning | Pipeline Coverage Ratio | Future revenue security | Pipeline value / Revenue target | Goal attainment likelihood |
+| Revenue & Financial Analytics | Unit Economics | Customer Lifetime Value | Total customer revenue potential | Average order value × Purchase frequency × Customer lifespan | Customer investment ceiling |
+| Revenue & Financial Analytics | Unit Economics | Payback Period | Time to recover CAC | Customer acquisition cost / Monthly revenue per customer | Investment recovery speed |
+| Revenue & Financial Analytics | Unit Economics | Unit Contribution | Per-unit profitability | Unit price - Unit variable cost | Scalability potential |
+
+## Customer Intelligence Analytics
+
+| Segment | Category | Metric Name | Description | Calculation/Formula | Strategic Value |
+|---------|----------|-------------|-------------|-------------------|-----------------|
+| Customer Intelligence Analytics | Segmentation | Segment Size | Customer count by segment | Count of customers meeting segment criteria | Market opportunity sizing |
+| Customer Intelligence Analytics | Segmentation | Segment Value Contribution | Revenue share by segment | Segment revenue / Total revenue × 100 | Resource allocation priority |
+| Customer Intelligence Analytics | Segmentation | Segment Growth Rate | Segment expansion speed | (Current segment size - Previous size) / Previous size × 100 | Future opportunity indicator |
+| Customer Intelligence Analytics | Segmentation | Segment Penetration | Market share within segment | Customers in segment / Total addressable segment × 100 | Growth potential measure |
+| Customer Intelligence Analytics | Segmentation | Cross-Segment Migration | Movement between segments | Customers changing segments / Total customers × 100 | Evolution pattern tracker |
+| Customer Intelligence Analytics | Behavioral Analysis | Purchase Frequency | Transaction intervals | Number of purchases / Time period | Engagement level indicator |
+| Customer Intelligence Analytics | Behavioral Analysis | Recency Score | Time since last interaction | Days since last activity | Engagement freshness measure |
+| Customer Intelligence Analytics | Behavioral Analysis | Monetary Value Score | Customer spending level | Total customer spend / Time period | Value contribution measure |
+| Customer Intelligence Analytics | Behavioral Analysis | Product Affinity Index | Product preference strength | Product purchases / Total purchases × 100 | Cross-sell opportunity identifier |
+| Customer Intelligence Analytics | Behavioral Analysis | Channel Preference Score | Preferred interaction channels | Channel usage / Total interactions × 100 | Channel strategy guide |
+| Customer Intelligence Analytics | Predictive Scoring | Churn Probability Score | Likelihood of customer loss | ML model output (0-1 probability) | Retention priority ranking |
+| Customer Intelligence Analytics | Predictive Scoring | Upsell Propensity Score | Upgrade likelihood | ML model output (0-1 probability) | Growth opportunity ranking |
+| Customer Intelligence Analytics | Predictive Scoring | Next Best Action Score | Optimal engagement prediction | ML model recommendation confidence | Personalization guide |
+| Customer Intelligence Analytics | Predictive Scoring | Lifetime Value Prediction | Future value estimation | ML predicted future revenue | Investment limit indicator |
+| Customer Intelligence Analytics | Predictive Scoring | Fraud Risk Score | Transaction risk assessment | ML fraud probability (0-1) | Security intervention trigger |
+| Customer Intelligence Analytics | Customer Quality | Customer Health Index | Overall relationship strength | Composite of usage, satisfaction, and value | Intervention priority guide |
+| Customer Intelligence Analytics | Customer Quality | Engagement Quality Score | Interaction depth measure | Weighted engagement actions / Possible actions × 100 | Relationship depth indicator |
+| Customer Intelligence Analytics | Customer Quality | Value Density | Revenue per interaction | Total revenue / Total interactions | Efficiency measure |
+| Customer Intelligence Analytics | Customer Quality | Cost to Serve | Service expense per customer | Total service costs / Customer count | Profitability factor |
+| Customer Intelligence Analytics | Preference Intelligence | Stated Preference Match | Alignment with expressed needs | Delivered preferences / Stated preferences × 100 | Personalization accuracy |
+| Customer Intelligence Analytics | Preference Intelligence | Revealed Preference Score | Actual vs stated behavior | Behavioral indicators / Stated preferences variance | True preference identifier |
+| Customer Intelligence Analytics | Preference Intelligence | Content Preference Profile | Content type affinities | Content type engagement / Total engagement × 100 | Content strategy guide |
+| Customer Intelligence Analytics | Preference Intelligence | Communication Preference Compliance | Respecting contact preferences | Compliant communications / Total communications × 100 | Privacy respect measure |
+| Customer Intelligence Analytics | Social Intelligence | Social Influence Score | Customer's network impact | Followers × Engagement rate × Relevance | Influencer identification |
+| Customer Intelligence Analytics | Social Intelligence | Advocacy Likelihood | Propensity to recommend | Social sharing + Reviews + Referrals composite | Word-of-mouth potential |
+| Customer Intelligence Analytics | Social Intelligence | Community Participation Rate | Engagement in brand community | Community actions / Total customers × 100 | Community health indicator |
+| Customer Intelligence Analytics | Lifecycle Position | Lifecycle Stage Distribution | Customers by lifecycle phase | Stage count / Total customers × 100 | Strategic focus areas |
+| Customer Intelligence Analytics | Lifecycle Position | Stage Transition Velocity | Movement through lifecycle | Average days between stage transitions | Process optimization target |
+| Customer Intelligence Analytics | Lifecycle Position | Lifecycle Value Capture | Revenue by lifecycle stage | Stage revenue / Total revenue × 100 | Monetization timing insight |
+
+## Marketing Performance Analytics
+
+| Segment | Category | Metric Name | Description | Calculation/Formula | Strategic Value |
+|---------|----------|-------------|-------------|-------------------|-----------------|
+| Marketing Performance Analytics | Campaign Effectiveness | Campaign Reach | Unique individuals exposed | Unique impressions across channels | Market penetration measure |
+| Marketing Performance Analytics | Campaign Effectiveness | Campaign Frequency | Average exposure per person | Total impressions / Unique reach | Message saturation indicator |
+| Marketing Performance Analytics | Campaign Effectiveness | Campaign Engagement Rate | Interaction percentage | Total engagements / Total impressions × 100 | Creative effectiveness measure |
+| Marketing Performance Analytics | Campaign Effectiveness | Campaign Conversion Rate | Success rate of campaigns | Campaign conversions / Campaign clicks × 100 | Campaign ROI indicator |
+| Marketing Performance Analytics | Campaign Effectiveness | Incremental Lift | True campaign impact | (Test group CVR - Control group CVR) / Control CVR × 100 | Real effectiveness measure |
+| Marketing Performance Analytics | Channel Performance | Channel Contribution | Revenue share by channel | Channel revenue / Total revenue × 100 | Channel importance ranking |
+| Marketing Performance Analytics | Channel Performance | Channel Efficiency Ratio | Cost effectiveness by channel | Channel revenue / Channel cost | Investment priority guide |
+| Marketing Performance Analytics | Channel Performance | Channel Velocity | Speed of results by channel | Time from spend to conversion by channel | Channel agility measure |
+| Marketing Performance Analytics | Channel Performance | Channel Synergy Score | Multi-channel interaction benefit | Multi-channel conversions / Single-channel conversions | Integration value measure |
+| Marketing Performance Analytics | Channel Performance | Channel Saturation Point | Diminishing returns threshold | Point where marginal ROI drops below target | Spend ceiling identifier |
+| Marketing Performance Analytics | Creative Performance | Creative Click-Through Rate | Ad creative effectiveness | Clicks / Impressions × 100 | Message resonance indicator |
+| Marketing Performance Analytics | Creative Performance | Creative Conversion Rate | Post-click effectiveness | Conversions / Clicks × 100 | Landing experience quality |
+| Marketing Performance Analytics | Creative Performance | Creative Fatigue Rate | Performance degradation over time | (Peak CTR - Current CTR) / Peak CTR × 100 | Refresh need indicator |
+| Marketing Performance Analytics | Creative Performance | A/B Test Win Rate | Testing success frequency | Winning variants / Total tests × 100 | Innovation effectiveness |
+| Marketing Performance Analytics | Creative Performance | Creative Production ROI | Return on creative investment | (Creative-driven revenue - Creative cost) / Creative cost × 100 | Creative investment validation |
+| Marketing Performance Analytics | Audience Performance | Audience Match Rate | Targeting accuracy | Converted users in target / Total target audience × 100 | Targeting precision measure |
+| Marketing Performance Analytics | Audience Performance | Audience Expansion Efficiency | Lookalike performance | Expanded audience CVR / Core audience CVR × 100 | Growth strategy effectiveness |
+| Marketing Performance Analytics | Audience Performance | Audience Overlap Analysis | Cross-campaign duplication | Overlapping users / Total unique users × 100 | Efficiency optimization opportunity |
+| Marketing Performance Analytics | Audience Performance | Audience Lifetime Value | Value by audience segment | Average CLV by audience segment | Targeting priority guide |
+| Marketing Performance Analytics | Budget Performance | Budget Utilization Rate | Spend efficiency | Actual spend / Allocated budget × 100 | Resource usage efficiency |
+| Marketing Performance Analytics | Budget Performance | Budget Pacing | Spend rate vs plan | Current spend rate / Planned spend rate × 100 | Trajectory management tool |
+| Marketing Performance Analytics | Budget Performance | Cost Per Result | Efficiency by outcome | Total cost / Number of desired outcomes | Efficiency benchmark |
+| Marketing Performance Analytics | Budget Performance | Marginal Cost Per Acquisition | Incremental cost efficiency | Change in cost / Change in acquisitions | Scaling decision guide |
+| Marketing Performance Analytics | Budget Performance | Budget Allocation Efficiency | Spend distribution optimality | Variance from optimal allocation model | Reallocation opportunity |
+| Marketing Performance Analytics | Marketing Mix | Media Mix Effectiveness | Channel blend performance | Statistical contribution by channel mix | Portfolio optimization guide |
+| Marketing Performance Analytics | Marketing Mix | Optimal Frequency Cap | Ideal exposure limit | Point of diminishing marginal return | Waste reduction target |
+| Marketing Performance Analytics | Marketing Mix | Seasonality Index | Temporal performance patterns | Period performance / Average performance × 100 | Timing optimization guide |
+| Marketing Performance Analytics | Marketing Mix | Geographic Performance Index | Regional effectiveness | Region performance / National average × 100 | Geographic focus guide |
+| Marketing Performance Analytics | Marketing Mix | Device Mix Optimization | Cross-device performance | Device contribution / Device cost index | Device strategy guide |
+
+## Brand & Market Position Analytics
+
+| Segment | Category | Metric Name | Description | Calculation/Formula | Strategic Value |
+|---------|----------|-------------|-------------|-------------------|-----------------|
+| Brand & Market Position Analytics | Brand Awareness | Unaided Brand Awareness | Top-of-mind presence | Unprompted brand mentions / Total respondents × 100 | Brand strength indicator |
+| Brand & Market Position Analytics | Brand Awareness | Aided Brand Awareness | Recognition with prompting | Recognized brand / Total respondents × 100 | Brand familiarity measure |
+| Brand & Market Position Analytics | Brand Awareness | Brand Recall Lift | Awareness campaign impact | (Post-campaign awareness - Pre-campaign) / Pre-campaign × 100 | Campaign effectiveness measure |
+| Brand & Market Position Analytics | Brand Awareness | Category Entry Point Coverage | Mental availability breadth | Entry points owned / Total category entry points × 100 | Market opportunity coverage |
+| Brand & Market Position Analytics | Brand Awareness | Brand Search Volume Index | Online brand interest | Brand searches / Category average searches × 100 | Digital brand strength |
+| Brand & Market Position Analytics | Brand Perception | Brand Favorability Score | Positive perception level | Favorable opinions / Total opinions × 100 | Brand health indicator |
+| Brand & Market Position Analytics | Brand Perception | Brand Attribute Association | Characteristic ownership | Attribute association strength (survey-based) | Positioning effectiveness |
+| Brand & Market Position Analytics | Brand Perception | Brand Sentiment Score | Emotional connection strength | (Positive mentions - Negative) / Total mentions × 100 | Reputation health measure |
+| Brand & Market Position Analytics | Brand Perception | Brand Trust Index | Credibility measure | Trust rating average (1-10 scale) | Relationship foundation strength |
+| Brand & Market Position Analytics | Brand Perception | Brand Differentiation Score | Uniqueness perception | Unique attribute ownership vs competitors | Competitive advantage measure |
+| Brand & Market Position Analytics | Market Share | Revenue Market Share | Sales-based position | Brand revenue / Total market revenue × 100 | Market dominance measure |
+| Brand & Market Position Analytics | Market Share | Unit Market Share | Volume-based position | Brand units sold / Total market units × 100 | Market penetration measure |
+| Brand & Market Position Analytics | Market Share | Share of Voice | Marketing presence share | Brand mentions / Total category mentions × 100 | Marketing dominance indicator |
+| Brand & Market Position Analytics | Market Share | Share of Wallet | Customer spending share | Brand spend / Total category spend per customer × 100 | Customer loyalty measure |
+| Brand & Market Position Analytics | Market Share | Relative Market Share | Position vs competitors | Brand share / Largest competitor share | Competitive strength ratio |
+| Brand & Market Position Analytics | Competitive Position | Competitive Win Rate | Head-to-head success | Wins against competitor / Total comparisons × 100 | Competitive effectiveness |
+| Brand & Market Position Analytics | Competitive Position | Feature Parity Score | Capability comparison | Matched features / Total competitor features × 100 | Product competitiveness |
+| Brand & Market Position Analytics | Competitive Position | Price Position Index | Relative pricing stance | Brand price / Category average price × 100 | Value positioning indicator |
+| Brand & Market Position Analytics | Competitive Position | Innovation Leadership Score | First-mover advantage frequency | First-to-market launches / Total launches × 100 | Innovation perception driver |
+| Brand & Market Position Analytics | Competitive Position | Competitive Response Time | Market agility measure | Days to match competitor moves | Organizational agility indicator |
+| Brand & Market Position Analytics | Brand Equity | Brand Value Estimate | Financial brand worth | Various methodologies (e.g., relief from royalty) | Asset value quantification |
+| Brand & Market Position Analytics | Brand Equity | Brand Premium Ability | Price premium command | (Brand price - Generic price) / Generic price × 100 | Brand power monetization |
+| Brand & Market Position Analytics | Brand Equity | Brand Elasticity | Demand sensitivity to brand | % Change in demand / % Change in brand investment | Brand investment efficiency |
+| Brand & Market Position Analytics | Brand Equity | Brand Loyalty Index | Repeat preference strength | Repeat purchasers / Total purchasers × 100 | Franchise strength measure |
+| Brand & Market Position Analytics | Category Dynamics | Category Growth Rate | Market expansion speed | (Current category size - Previous) / Previous × 100 | Market opportunity indicator |
+| Brand & Market Position Analytics | Category Dynamics | Category Penetration | Household/user adoption | Category users / Total addressable market × 100 | Growth ceiling indicator |
+| Brand & Market Position Analytics | Category Dynamics | Category Development Index | Regional development level | (Region category sales / Region population) / (National sales / National population) × 100 | Geographic opportunity finder |
+| Brand & Market Position Analytics | Category Dynamics | Brand Development Index | Regional brand strength | (Region brand sales / Region population) / (National brand sales / National population) × 100 | Regional priority identifier |
+
+## Content & Creative Analytics
+
+| Segment | Category | Metric Name | Description | Calculation/Formula | Strategic Value |
+|---------|----------|-------------|-------------|-------------------|-----------------|
+| Content & Creative Analytics | Content Performance | Content Views | Total content consumption | Sum of all content views | Reach indicator |
+| Content & Creative Analytics | Content Performance | Unique Content Viewers | Individual content consumers | Distinct users viewing content | True reach measure |
+| Content & Creative Analytics | Content Performance | Content Engagement Rate | Interaction with content | (Likes + Comments + Shares) / Views × 100 | Quality indicator |
+| Content & Creative Analytics | Content Performance | Average Time on Content | Consumption duration | Total time spent / Number of views | Depth of engagement |
+| Content & Creative Analytics | Content Performance | Content Completion Rate | Full consumption percentage | Complete views / Total views × 100 | Content holding power |
+| Content & Creative Analytics | Content Performance | Scroll Depth | Reading/viewing depth | Average percentage of content consumed | Engagement quality measure |
+| Content & Creative Analytics | Content Performance | Content Bounce Rate | Single-content departures | Single page exits / Total entries × 100 | Content satisfaction indicator |
+| Content & Creative Analytics | Content Distribution | Content Amplification Rate | Sharing frequency | Shares / Views × 100 | Viral potential measure |
+| Content & Creative Analytics | Content Distribution | Earned Media Value | Organic reach value | Equivalent paid media cost of earned impressions | PR/content ROI component |
+| Content & Creative Analytics | Content Distribution | Content Syndication Reach | Third-party distribution | Views on external platforms / Total views × 100 | Distribution effectiveness |
+| Content & Creative Analytics | Content Distribution | Backlink Acquisition Rate | SEO value generation | New backlinks / Content pieces × 100 | Authority building measure |
+| Content & Creative Analytics | Content Distribution | Social Share Distribution | Platform share breakdown | Shares by platform / Total shares × 100 | Channel optimization guide |
+| Content & Creative Analytics | Content Conversion | Content Conversion Rate | Business impact of content | Conversions from content / Content viewers × 100 | ROI direct measure |
+| Content & Creative Analytics | Content Conversion | Content Attribution Value | Revenue contribution | Revenue attributed to content touchpoints | Content investment justification |
+| Content & Creative Analytics | Content Conversion | Lead Generation Rate | Content's lead creation | Leads from content / Content viewers × 100 | B2B content effectiveness |
+| Content & Creative Analytics | Content Conversion | Content-Assisted Conversions | Support role in conversions | Conversions with content touchpoint / Total conversions × 100 | Content journey impact |
+| Content & Creative Analytics | Creative Testing | Test Velocity | Speed of creative testing | Tests completed / Time period | Innovation rate measure |
+| Content & Creative Analytics | Creative Testing | Statistical Significance Rate | Test conclusiveness | Significant results / Total tests × 100 | Testing quality measure |
+| Content & Creative Analytics | Creative Testing | Creative Lift | Performance improvement | (Challenger performance - Control) / Control × 100 | Innovation impact measure |
+| Content & Creative Analytics | Creative Testing | Multivariate Test Insights | Element interaction effects | Significant interactions found / Tests run | Complexity understanding |
+| Content & Creative Analytics | Content Efficiency | Content Production Cost | Creation investment | Total production costs / Content pieces produced | Efficiency baseline |
+| Content & Creative Analytics | Content Efficiency | Content ROI | Return on content investment | (Content revenue - Content cost) / Content cost × 100 | Investment effectiveness |
+| Content & Creative Analytics | Content Efficiency | Content Velocity | Production speed | Content pieces produced / Time period | Operational efficiency |
+| Content & Creative Analytics | Content Efficiency | Content Reuse Rate | Asset leverage frequency | Repurposed content / Total content × 100 | Resource optimization |
+| Content & Creative Analytics | Content Quality | Readability Score | Content accessibility | Flesch-Kincaid or similar scoring | Audience alignment measure |
+| Content & Creative Analytics | Content Quality | SEO Content Score | Search optimization level | Composite of keywords, structure, meta elements | Discoverability potential |
+| Content & Creative Analytics | Content Quality | Brand Consistency Score | Message alignment | Brand guideline compliance rating | Brand integrity measure |
+| Content & Creative Analytics | Content Quality | Content Freshness Index | Update recency | Days since last update weighted by traffic | Maintenance priority guide |
+
+## Product Analytics
+
+| Segment | Category | Metric Name | Description | Calculation/Formula | Strategic Value |
+|---------|----------|-------------|-------------|-------------------|-----------------|
+| Product Analytics | Product Adoption | Feature Adoption Rate | Percentage using specific features | Feature users / Total users × 100 | Development priority validation |
+| Product Analytics | Product Adoption | Time to Adopt | Speed of feature uptake | Average days from release to first use | Launch effectiveness measure |
+| Product Analytics | Product Adoption | Adoption Curve Pattern | User adoption distribution | Users by adoption timeframe / Total adopters | Innovation diffusion insight |
+| Product Analytics | Product Adoption | Feature Discovery Rate | Natural feature finding | Organic feature discovers / Total feature users × 100 | UX intuitiveness measure |
+| Product Analytics | Product Adoption | Cross-Feature Adoption | Multiple feature usage | Users with 2+ features / Total users × 100 | Product depth utilization |
+| Product Analytics | Usage Patterns | Daily Active Users | Daily engagement level | Unique users active per day | Core user base size |
+| Product Analytics | Usage Patterns | Monthly Active Users | Monthly engagement level | Unique users active per month | Total active base size |
+| Product Analytics | Usage Patterns | Stickiness Ratio | Habitual usage indicator | DAU / MAU × 100 | Habit formation measure |
+| Product Analytics | Usage Patterns | Session Frequency | Usage occasions | Sessions / User / Time period | Engagement intensity |
+| Product Analytics | Usage Patterns | Session Duration | Time per usage | Total time in product / Number of sessions | Depth of usage |
+| Product Analytics | Product Performance | Task Completion Rate | User success frequency | Completed tasks / Attempted tasks × 100 | Usability effectiveness |
+| Product Analytics | Product Performance | Error Rate | Problem frequency | Errors encountered / Total interactions × 100 | Quality issue indicator |
+| Product Analytics | Product Performance | Load Performance | Speed metrics | Page/screen load times by percentile | Performance quality |
+| Product Analytics | Product Performance | Crash Rate | Stability measure | App crashes / App sessions × 100 | Technical quality indicator |
+| Product Analytics | Product Performance | API Response Time | Backend performance | Average API call duration | Infrastructure efficiency |
+| Product Analytics | User Paths | Critical Path Completion | Key journey success | Completed critical paths / Started paths × 100 | Core UX effectiveness |
+| Product Analytics | User Paths | Path Deviation Rate | Unexpected route frequency | Non-optimal paths / Total paths × 100 | UX confusion indicator |
+| Product Analytics | User Paths | Feature Interaction Sequence | Usage order patterns | Common feature sequences by frequency | Workflow optimization guide |
+| Product Analytics | User Paths | Dead End Rate | Navigation failures | Sessions ending without completion / Total sessions × 100 | UX problem identifier |
+| Product Analytics | Product Value | Value Realization Time | Time to user benefit | Days from start to first value moment | Onboarding effectiveness |
+| Product Analytics | Product Value | Feature Value Score | Perceived feature worth | User rating × Usage frequency composite | Development focus guide |
+| Product Analytics | Product Value | Upgrade Trigger Analysis | Premium conversion drivers | Feature usage correlation with upgrades | Monetization opportunity |
+| Product Analytics | Product Value | Value per User Segment | Differential product worth | Segment-specific usage × Value metrics | Segment strategy guide |
+| Product Analytics | Retention Impact | Feature Retention Correlation | Features driving retention | Statistical correlation of feature use with retention | Retention driver identification |
+| Product Analytics | Retention Impact | Product Market Fit Score | User satisfaction indicator | % Users very disappointed if product went away | Core value validation |
+| Product Analytics | Retention Impact | Engagement Cliff Analysis | Drop-off points | Major engagement decline points over time | Critical intervention timing |
+| Product Analytics | Product Health | Technical Debt Indicator | Code quality impact | Bug rate + Performance degradation over time | Maintenance need measure |
+| Product Analytics | Product Health | Feature Bloat Index | Complexity measure | Unused features / Total features × 100 | Simplification opportunity |
+| Product Analytics | Product Health | User Satisfaction Trend | Product NPS over time | Monthly/quarterly NPS progression | Strategic health indicator |
+
+## Sales & Pipeline Analytics
+
+| Segment | Category | Metric Name | Description | Calculation/Formula | Strategic Value |
+|---------|----------|-------------|-------------|-------------------|-----------------|
+| Sales & Pipeline Analytics | Pipeline Health | Pipeline Value | Total opportunity worth | Sum of all open opportunity values | Revenue potential indicator |
+| Sales & Pipeline Analytics | Pipeline Health | Pipeline Coverage | Goal attainment likelihood | Pipeline value / Revenue target | Target achievement predictor |
+| Sales & Pipeline Analytics | Pipeline Health | Pipeline Velocity | Deal movement speed | (Opportunities × Win rate × Deal size) / Sales cycle length | Efficiency measure |
+| Sales & Pipeline Analytics | Pipeline Health | Stage Distribution | Opportunities by stage | Count by stage / Total opportunities × 100 | Pipeline balance indicator |
+| Sales & Pipeline Analytics | Pipeline Health | Pipeline Age | Opportunity staleness | Average days in pipeline by stage | Stagnation identifier |
+| Sales & Pipeline Analytics | Lead Management | Lead Volume | Inbound interest level | New leads / Time period | Demand generation success |
+| Sales & Pipeline Analytics | Lead Management | Lead Quality Score | Lead potential value | Composite score based on fit and behavior | Prioritization guide |
+| Sales & Pipeline Analytics | Lead Management | Lead Response Time | Speed to contact | Time from lead creation to first contact | Conversion impact factor |
+| Sales & Pipeline Analytics | Lead Management | Lead Conversion Rate | Lead to opportunity rate | Opportunities created / Leads × 100 | Lead quality indicator |
+| Sales & Pipeline Analytics | Lead Management | Marketing Qualified Lead Rate | Marketing to sales handoff | MQLs / Total leads × 100 | Marketing effectiveness |
+| Sales & Pipeline Analytics | Conversion Metrics | Win Rate | Deal success frequency | Won deals / Total closed deals × 100 | Sales effectiveness core metric |
+| Sales & Pipeline Analytics | Conversion Metrics | Loss Reason Analysis | Why deals fail | Loss reasons / Total losses × 100 | Improvement opportunity identifier |
+| Sales & Pipeline Analytics | Conversion Metrics | Competitive Win Rate | Head-to-head success | Wins vs competitor / Total competitive deals × 100 | Market position indicator |
+| Sales & Pipeline Analytics | Conversion Metrics | Stage Conversion Rates | Progress between stages | Next stage advances / Current stage × 100 | Process efficiency measure |
+| Sales & Pipeline Analytics | Conversion Metrics | Qualification Rate | Discovery to opportunity | Qualified opportunities / Total discoveries × 100 | Early funnel efficiency |
+| Sales & Pipeline Analytics | Sales Efficiency | Sales Cycle Length | Time to close | Average days from opportunity to close | Process speed indicator |
+| Sales & Pipeline Analytics | Sales Efficiency | Deal Size | Transaction value | Average or median closed deal value | Revenue quality measure |
+| Sales & Pipeline Analytics | Sales Efficiency | Sales Productivity | Output per rep | Revenue per sales rep / Time period | Team effectiveness measure |
+| Sales & Pipeline Analytics | Sales Efficiency | Activity Conversion | Action to outcome ratio | Outcomes / Activities × 100 | Effort effectiveness |
+| Sales & Pipeline Analytics | Sales Efficiency | Cost of Sale | Expense per deal | Total sales costs / Number of deals | Efficiency benchmark |
+| Sales & Pipeline Analytics | Account Management | Account Penetration | Wallet share capture | Current spend / Total account potential × 100 | Growth opportunity measure |
+| Sales & Pipeline Analytics | Account Management | Account Health Score | Relationship strength | Composite of usage, satisfaction, growth | Retention risk indicator |
+| Sales & Pipeline Analytics | Account Management | Expansion Revenue Rate | Growth from existing | Expansion revenue / Total revenue × 100 | Land and expand success |
+| Sales & Pipeline Analytics | Account Management | Logo Retention Rate | Account keeping success | Retained accounts / Total accounts × 100 | Relationship maintenance |
+| Sales & Pipeline Analytics | Account Management | Strategic Account Performance | Key account success | Strategic account revenue / Total revenue × 100 | Focus effectiveness |
+| Sales & Pipeline Analytics | Forecasting | Forecast Accuracy | Prediction precision | |Actual - Forecast| / Actual × 100 | Planning reliability |
+| Sales & Pipeline Analytics | Forecasting | Commit Coverage | Confidence in forecast | Committed pipeline / Forecast × 100 | Risk assessment tool |
+| Sales & Pipeline Analytics | Forecasting | Weighted Pipeline Value | Probability-adjusted value | Sum(Opportunity value × Stage probability) | Realistic revenue expectation |
+| Sales & Pipeline Analytics | Forecasting | Close Date Accuracy | Timing prediction quality | On-time closes / Total closes × 100 | Planning precision measure |
+| Sales & Pipeline Analytics | Team Performance | Quota Attainment | Goal achievement rate | Reps at quota / Total reps × 100 | Team success measure |
+| Sales & Pipeline Analytics | Team Performance | Ramp Time | New rep productivity | Days to full productivity | Onboarding effectiveness |
+| Sales & Pipeline Analytics | Team Performance | Rep Performance Distribution | Team variance | Performance by quartile distribution | Coaching need identifier |
+
+## Attribution & Path Analytics
+
+| Segment | Category | Metric Name | Description | Calculation/Formula | Strategic Value |
+|---------|----------|-------------|-------------|-------------------|-----------------|
+| Attribution & Path Analytics | Touch Analysis | Average Touchpoints | Interactions before conversion | Total touchpoints / Number of conversions | Journey complexity indicator |
+| Attribution & Path Analytics | Touch Analysis | Touchpoint Distribution | Interaction frequency by type | Touchpoint type count / Total touchpoints × 100 | Channel mix understanding |
+| Attribution & Path Analytics | Touch Analysis | First Touch Channel | Initial interaction source | First touches by channel / Total conversions × 100 | Awareness driver identification |
+| Attribution & Path Analytics | Touch Analysis | Last Touch Channel | Final interaction source | Last touches by channel / Total conversions × 100 | Closer identification |
+| Attribution & Path Analytics | Touch Analysis | Assist Interaction Rate | Supporting touch frequency | Assisted conversions / Total conversions × 100 | Journey complexity measure |
+| Attribution & Path Analytics | Path Patterns | Top Conversion Paths | Most common journeys | Path frequency / Total conversions × 100 | Optimization opportunity |
+| Attribution & Path Analytics | Path Patterns | Path Length Distribution | Journey complexity variance | Conversions by path length / Total conversions × 100 | Segmentation insight |
+| Attribution & Path Analytics | Path Patterns | Channel Transition Matrix | Movement between channels | Transitions from A to B / Total transitions from A × 100 | Flow optimization guide |
+| Attribution & Path Analytics | Path Patterns | Path Dropout Rate | Journey abandonment points | Exits at step / Entries at step × 100 | Friction point identifier |
+| Attribution & Path Analytics | Path Patterns | Circular Path Frequency | Repetitive journey patterns | Circular paths / Total paths × 100 | Experience confusion indicator |
+| Attribution & Path Analytics | Time Analysis | Time to Conversion | Journey duration | Average days from first touch to conversion | Sales cycle understanding |
+| Attribution & Path Analytics | Time Analysis | Time Between Touchpoints | Interaction spacing | Average time between consecutive touches | Engagement cadence insight |
+| Attribution & Path Analytics | Time Analysis | Time Decay Impact | Recency effect on conversion | Conversion rate by time since touch | Timing optimization guide |
+| Attribution & Path Analytics | Time Analysis | Optimal Contact Frequency | Best touch cadence | Conversion rate by touch frequency | Communication planning tool |
+| Attribution & Path Analytics | Attribution Models | Model Comparison Variance | Attribution method differences | (Model A credit - Model B credit) / Model A credit × 100 | Model selection impact |
+| Attribution & Path Analytics | Attribution Models | Incremental Value | True channel contribution | Test group lift vs control | Real impact isolation |
+| Attribution & Path Analytics | Attribution Models | Cross-Device Attribution | Multi-device credit distribution | Cross-device journeys / Total journeys × 100 | Holistic view completeness |
+| Attribution & Path Analytics | Attribution Models | View-Through Attribution | Impression impact credit | View-through conversions / Total conversions × 100 | Display value capture |
+| Attribution & Path Analytics | Attribution Models | Algorithmic Attribution Score | ML-based credit distribution | Data-driven model output by channel | Sophisticated credit allocation |
+| Attribution & Path Analytics | Channel Interaction | Channel Overlap | Multi-channel exposure | Users touching multiple channels / Total users × 100 | Integration opportunity |
+| Attribution & Path Analytics | Channel Interaction | Channel Synergy Lift | Combined channel effect | (Multi-channel CVR - Single channel CVR) / Single channel CVR × 100 | Integration value proof |
+| Attribution & Path Analytics | Channel Interaction | Channel Cannibalization | Negative channel interaction | Overlapping conversions / Total conversions × 100 | Efficiency loss identifier |
+| Attribution & Path Analytics | Channel Interaction | Optimal Channel Mix | Best performing combinations | Conversion rate by channel combination | Mix optimization target |
+| Attribution & Path Analytics | Path Value | Path ROI | Journey profitability | (Path revenue - Path cost) / Path cost × 100 | Route efficiency measure |
+| Attribution & Path Analytics | Path Value | High-Value Path Identification | Premium journey patterns | Paths with above-average order value | Premium experience focus |
+| Attribution & Path Analytics | Path Value | Path Conversion Value | Average value by path | Total revenue by path / Conversions by path | Journey prioritization guide |
+| Attribution & Path Analytics | Advanced Attribution | Markov Chain Probability | Transition likelihood model | Statistical transition probabilities between states | Sophisticated path modeling |
+| Attribution & Path Analytics | Advanced Attribution | Shapley Value | Game theory attribution | Fair credit distribution based on contribution | Equitable credit allocation |
+| Attribution & Path Analytics | Advanced Attribution | Survival Analysis | Time-to-event modeling | Hazard rate of conversion over time | Duration-based insights |
+
+## Predictive & Prescriptive Analytics
+
+| Segment | Category | Metric Name | Description | Calculation/Formula | Strategic Value |
+|---------|----------|-------------|-------------|-------------------|-----------------|
+| Predictive & Prescriptive Analytics | Customer Predictions | Churn Probability | Likelihood of customer loss | ML model output (0-1 probability score) | Retention intervention priority |
+| Predictive & Prescriptive Analytics | Customer Predictions | Lifetime Value Forecast | Predicted customer worth | ML prediction of future revenue | Investment ceiling guide |
+| Predictive & Prescriptive Analytics | Customer Predictions | Next Purchase Prediction | Timing of next transaction | ML predicted days to next purchase | Engagement timing optimizer |
+| Predictive & Prescriptive Analytics | Customer Predictions | Upsell Probability | Upgrade likelihood | ML model output (0-1 probability score) | Growth opportunity ranking |
+| Predictive & Prescriptive Analytics | Customer Predictions | Reactivation Likelihood | Win-back probability | ML model for dormant customer return | Re-engagement prioritization |
+| Predictive & Prescriptive Analytics | Behavioral Predictions | Content Affinity Prediction | Future content preferences | ML predicted content engagement probability | Personalization guide |
+| Predictive & Prescriptive Analytics | Behavioral Predictions | Channel Preference Forecast | Future channel usage | ML predicted channel engagement patterns | Omnichannel strategy tool |
+| Predictive & Prescriptive Analytics | Behavioral Predictions | Product Recommendation Score | Purchase likelihood by product | Collaborative filtering or ML recommendation confidence | Cross-sell optimization |
+| Predictive & Prescriptive Analytics | Behavioral Predictions | Engagement Level Forecast | Future activity prediction | ML predicted engagement score trajectory | Resource allocation guide |
+| Predictive & Prescriptive Analytics | Behavioral Predictions | Response Probability | Campaign reaction likelihood | ML model for individual response prediction | Targeting efficiency tool |
+| Predictive & Prescriptive Analytics | Market Predictions | Demand Forecasting | Future market demand | Time series or ML demand prediction | Inventory/capacity planning |
+| Predictive & Prescriptive Analytics | Market Predictions | Seasonal Pattern Detection | Cyclical trend identification | Statistical seasonality decomposition | Timing strategy tool |
+| Predictive & Prescriptive Analytics | Market Predictions | Trend Inflection Prediction | Change point forecasting | ML trend change detection | Strategic pivot indicator |
+| Predictive & Prescriptive Analytics | Market Predictions | Competitor Action Prediction | Competitive move forecasting | Pattern recognition on competitor behavior | Strategic planning input |
+| Predictive & Prescriptive Analytics | Market Predictions | Market Share Forecast | Future position prediction | Regression or time series projection | Strategic goal setting |
+| Predictive & Prescriptive Analytics | Optimization Recommendations | Budget Allocation Optimizer | Optimal spend distribution | Mathematical optimization output | Resource efficiency maximizer |
+| Predictive & Prescriptive Analytics | Optimization Recommendations | Pricing Optimization | Optimal price points | Elasticity modeling and optimization | Revenue maximization tool |
+| Predictive & Prescriptive Analytics | Optimization Recommendations | Contact Frequency Optimization | Best touch cadence | ML optimization for engagement without fatigue | Communication efficiency |
+| Predictive & Prescriptive Analytics | Optimization Recommendations | Creative Selection Algorithm | Best creative for individual | ML creative performance prediction | Personalization automation |
+| Predictive & Prescriptive Analytics | Optimization Recommendations | Next Best Action | Optimal next step | ML recommendation for highest value action | Decision automation tool |
+| Predictive & Prescriptive Analytics | Risk Predictions | Fraud Probability Score | Transaction risk level | ML fraud detection model output | Security intervention trigger |
+| Predictive & Prescriptive Analytics | Risk Predictions | Credit Risk Assessment | Payment default likelihood | ML credit scoring model | Financial risk management |
+| Predictive & Prescriptive Analytics | Risk Predictions | Operational Risk Forecast | Process failure probability | ML operational anomaly detection | Preventive action trigger |
+| Predictive & Prescriptive Analytics | Risk Predictions | Compliance Risk Score | Regulatory violation likelihood | Rule-based and ML compliance monitoring | Audit focus prioritization |
+| Predictive & Prescriptive Analytics | Performance Predictions | Campaign Performance Forecast | Expected campaign results | ML prediction based on historical patterns | Planning accuracy tool |
+| Predictive & Prescriptive Analytics | Performance Predictions | ROI Prediction | Expected return forecast | ML model for investment return prediction | Investment decision support |
+| Predictive & Prescriptive Analytics | Performance Predictions | Conversion Rate Prediction | Expected success rate | ML model for future conversion rates | Goal setting tool |
+| Predictive & Prescriptive Analytics | Performance Predictions | Revenue Impact Forecast | Business outcome prediction | ML revenue attribution and forecasting | Strategic impact assessment |
+| Predictive & Prescriptive Analytics | Model Performance | Model Accuracy | Prediction correctness | Correct predictions / Total predictions × 100 | Model reliability measure |
+| Predictive & Prescriptive Analytics | Model Performance | Model Precision | Positive prediction accuracy | True positives / (True positives + False positives) | Model quality for positive cases |
+| Predictive & Prescriptive Analytics | Model Performance | Model Recall | Coverage of positives | True positives / (True positives + False negatives) | Model completeness measure |
+| Predictive & Prescriptive Analytics | Model Performance | Model F1 Score | Balanced performance metric | 2 × (Precision × Recall) / (Precision + Recall) | Overall model effectiveness |
+| Predictive & Prescriptive Analytics | Model Performance | Model Drift Detection | Performance degradation | Performance change over time windows | Model refresh trigger |
+
+## Audience & Behavioral Analytics
+
+| Segment | Category | Metric Name | Description | Calculation/Formula | Strategic Value |
+|---------|----------|-------------|-------------|-------------------|-----------------|
+| Audience & Behavioral Analytics | Demographics | Age Distribution | Audience age breakdown | Users by age group / Total users × 100 | Targeting refinement tool |
+| Audience & Behavioral Analytics | Demographics | Gender Distribution | Audience gender mix | Users by gender / Total users × 100 | Messaging alignment guide |
+| Audience & Behavioral Analytics | Demographics | Income Distribution | Economic bracket breakdown | Users by income range / Total users × 100 | Pricing strategy input |
+| Audience & Behavioral Analytics | Demographics | Education Level | Audience education profile | Users by education / Total users × 100 | Content sophistication guide |
+| Audience & Behavioral Analytics | Demographics | Household Composition | Family structure breakdown | Household types / Total households × 100 | Product relevance indicator |
+| Audience & Behavioral Analytics | Psychographics | Interest Affinity Index | Topic interest strength | Interest engagement / Average engagement × 100 | Content strategy guide |
+| Audience & Behavioral Analytics | Psychographics | Lifestyle Segmentation | Behavioral clustering | Users by lifestyle segment / Total users × 100 | Personalization framework |
+| Audience & Behavioral Analytics | Psychographics | Value Orientation | Belief system alignment | Value segment distribution across audience | Messaging resonance guide |
+| Audience & Behavioral Analytics | Psychographics | Brand Affinity Profile | Other brand preferences | Cross-brand usage patterns | Partnership opportunity finder |
+| Audience & Behavioral Analytics | Psychographics | Media Consumption Habits | Content preference patterns | Media type consumption distribution | Channel strategy input |
+| Audience & Behavioral Analytics | Geographic | Regional Distribution | Audience location spread | Users by region / Total users × 100 | Market prioritization tool |
+| Audience & Behavioral Analytics | Geographic | Urban/Rural Mix | Settlement type distribution | Urban users / Total users × 100 | Distribution strategy guide |
+| Audience & Behavioral Analytics | Geographic | Time Zone Distribution | Temporal audience spread | Users by time zone / Total users × 100 | Timing optimization input |
+| Audience & Behavioral Analytics | Geographic | Language Distribution | Linguistic diversity | Users by language / Total users × 100 | Localization priority guide |
+| Audience & Behavioral Analytics | Geographic | Cultural Context Index | Cultural factor influence | Cultural dimension scores by region | Adaptation requirement gauge |
+| Audience & Behavioral Analytics | Technographic | Device Usage | Technology preferences | Sessions by device / Total sessions × 100 | Platform investment guide |
+| Audience & Behavioral Analytics | Technographic | Browser Distribution | Web technology choices | Users by browser / Total users × 100 | Technical optimization priority |
+| Audience & Behavioral Analytics | Technographic | Connection Speed | Internet quality profile | Users by connection type / Total users × 100 | Performance requirement setter |
+| Audience & Behavioral Analytics | Technographic | Technology Adoption Curve | Innovation acceptance rate | Early adopters / Total audience × 100 | Innovation strategy gauge |
+| Audience & Behavioral Analytics | Technographic | Platform Preference | OS and platform choices | Users by platform / Total users × 100 | Development priority guide |
+| Audience & Behavioral Analytics | Behavioral Patterns | Visit Frequency Distribution | Engagement pattern types | Users by visit frequency / Total users × 100 | Engagement strategy segments |
+| Audience & Behavioral Analytics | Behavioral Patterns | Session Timing Patterns | When users engage | Sessions by hour/day / Total sessions × 100 | Scheduling optimization tool |
+| Audience & Behavioral Analytics | Behavioral Patterns | Content Consumption Velocity | Speed of content intake | Content pieces / Time period by user segment | Content pacing guide |
+| Audience & Behavioral Analytics | Behavioral Patterns | Multi-Device Behavior | Cross-device usage patterns | Multi-device users / Total users × 100 | Experience consistency need |
+| Audience & Behavioral Analytics | Behavioral Patterns | Seasonal Behavior Shifts | Temporal pattern changes | Behavior metric variance by season | Campaign timing strategy |
+| Audience & Behavioral Analytics | Engagement Depth | Interaction Intensity Score | Depth of engagement | Weighted sum of engagement actions | Quality audience identifier |
+| Audience & Behavioral Analytics | Engagement Depth | Feature Usage Breadth | Product exploration extent | Features used / Total features × 100 | Product adoption health |
+| Audience & Behavioral Analytics | Engagement Depth | Community Participation Level | Social engagement depth | Community actions / Active users × 100 | Community health gauge |
+| Audience & Behavioral Analytics | Engagement Depth | Content Creation Rate | User-generated content frequency | Content creators / Total users × 100 | Community activation level |
+| Audience & Behavioral Analytics | Engagement Depth | Advocacy Behavior Index | Word-of-mouth activity level | Referrals + Reviews + Social shares composite | Organic growth driver measure |
+
+## Channel Optimization Analytics
+
+| Segment | Category | Metric Name | Description | Calculation/Formula | Strategic Value |
+|---------|----------|-------------|-------------|-------------------|-----------------|
+| Channel Optimization Analytics | Search Marketing | Organic Click Share | SERP click capture rate | Organic clicks / Total available clicks × 100 | SEO opportunity gauge |
+| Channel Optimization Analytics | Search Marketing | Paid Search Impression Share | Ad visibility coverage | Impressions received / Total eligible impressions × 100 | SEM coverage indicator |
+| Channel Optimization Analytics | Search Marketing | Search Query Match Rate | Keyword relevance alignment | Matched queries / Total queries × 100 | Targeting precision measure |
+| Channel Optimization Analytics | Search Marketing | Quality Score | Ad relevance rating | Platform quality score (1-10) | Cost efficiency predictor |
+| Channel Optimization Analytics | Search Marketing | Search Position Value | Ranking monetization | Revenue by position / Impressions by position | Position priority guide |
+| Channel Optimization Analytics | Social Media | Organic Reach Rate | Non-paid visibility | Organic reach / Total followers × 100 | Content algorithm success |
+| Channel Optimization Analytics | Social Media | Viral Coefficient | Content spread rate | New users from shares / Sharing users | Viral potential measure |
+| Channel Optimization Analytics | Social Media | Social Commerce Rate | Platform purchase frequency | Social purchases / Social traffic × 100 | Channel monetization gauge |
+| Channel Optimization Analytics | Social Media | Influencer Amplification | Partner reach extension | Influencer reach / Owned reach | Partnership value measure |
+| Channel Optimization Analytics | Social Media | Social Customer Service Rate | Support interaction frequency | Service interactions / Total social interactions × 100 | Channel role indicator |
+| Channel Optimization Analytics | Email Channel | Inbox Placement Rate | Delivery success to inbox | Emails in inbox / Emails sent × 100 | Deliverability health score |
+| Channel Optimization Analytics | Email Channel | Email Revenue Per Recipient | Monetization efficiency | Email revenue / Total recipients | List value indicator |
+| Channel Optimization Analytics | Email Channel | Segment Performance Index | Targeted campaign lift | Segment CTR / Overall CTR × 100 | Segmentation effectiveness |
+| Channel Optimization Analytics | Email Channel | Email Fatigue Rate | Over-communication indicator | Declining engagement rate over frequency | Frequency optimization need |
+| Channel Optimization Analytics | Email Channel | Win-Back Success Rate | Re-engagement effectiveness | Reactivated users / Win-back attempts × 100 | Retention program success |
+| Channel Optimization Analytics | Display Advertising | Viewability Rate | Ad visibility percentage | Viewable impressions / Total impressions × 100 | Inventory quality measure |
+| Channel Optimization Analytics | Display Advertising | Banner Blindness Index | Ad attention decline | CTR decline over time / Initial CTR × 100 | Creative refresh indicator |
+| Channel Optimization Analytics | Display Advertising | Programmatic Efficiency | Automated buying performance | Programmatic ROI / Direct buy ROI | Automation value proof |
+| Channel Optimization Analytics | Display Advertising | Creative Format Performance | Ad type effectiveness | CTR by format / Average CTR × 100 | Format optimization guide |
+| Channel Optimization Analytics | Display Advertising | Contextual Relevance Score | Content alignment quality | Relevant placements / Total placements × 100 | Targeting quality measure |
+| Channel Optimization Analytics | Content Marketing | Organic Traffic Share | Content's SEO contribution | Content organic traffic / Total organic × 100 | Content SEO success |
+| Channel Optimization Analytics | Content Marketing | Content Virality Score | Sharing momentum measure | (Shares² / Views) × 100 | Viral content identifier |
+| Channel Optimization Analytics | Content Marketing | Topic Authority Score | Subject matter dominance | Rankings for topic keywords / Total topic keywords | Expertise establishment gauge |
+| Channel Optimization Analytics | Content Marketing | Content Decay Rate | Traffic decline over time | Monthly traffic decline rate | Refresh priority indicator |
+| Channel Optimization Analytics | Content Marketing | Guest Post ROI | External content returns | (Referral value - Guest post cost) / Cost × 100 | Outreach effectiveness |
+| Channel Optimization Analytics | Affiliate Marketing | Affiliate Contribution Rate | Channel revenue share | Affiliate revenue / Total revenue × 100 | Channel importance gauge |
+| Channel Optimization Analytics | Affiliate Marketing | Partner Quality Score | Affiliate performance rating | Composite of volume, quality, compliance | Partner prioritization tool |
+| Channel Optimization Analytics | Affiliate Marketing | Commission Efficiency | Payout optimization | Revenue per commission dollar | Program efficiency measure |
+| Channel Optimization Analytics | Affiliate Marketing | Affiliate Fraud Rate | Invalid activity percentage | Fraudulent transactions / Total affiliate transactions × 100 | Risk management metric |
+| Channel Optimization Analytics | Direct Channel | Direct Traffic Quality | Non-attributed visitor value | Direct traffic conversion rate / Overall rate | Brand strength indicator |
+| Channel Optimization Analytics | Direct Channel | Brand Search Ratio | Branded vs non-branded | Branded searches / Total searches × 100 | Brand awareness measure |
+| Channel Optimization Analytics | Direct Channel | Type-In Traffic Share | URL direct entry rate | Direct URL entries / Total direct traffic × 100 | Brand recall strength |
+
+## Engagement & Interaction Analytics
+
+| Segment | Category | Metric Name | Description | Calculation/Formula | Strategic Value |
+|---------|----------|-------------|-------------|-------------------|-----------------|
+| Engagement & Interaction Analytics | Content Engagement | Dwell Time | Time spent with content | Total time on content / Number of views | Content quality indicator |
+| Engagement & Interaction Analytics | Content Engagement | Interaction Rate | Active engagement frequency | Total interactions / Total impressions × 100 | Content resonance measure |
+| Engagement & Interaction Analytics | Content Engagement | Save/Bookmark Rate | Content preservation actions | Saves / Total views × 100 | Value perception indicator |
+| Engagement & Interaction Analytics | Content Engagement | Return View Rate | Content re-consumption | Repeat views / Total views × 100 | Lasting value measure |
+| Engagement & Interaction Analytics | Content Engagement | Engagement Velocity | Speed of interaction accumulation | Engagements / Hours since publication | Content momentum gauge |
+| Engagement & Interaction Analytics | Social Engagement | Conversation Rate | Dialogue generation | Comments / Total posts × 100 | Community activation measure |
+| Engagement & Interaction Analytics | Social Engagement | Amplification Rate | Content sharing frequency | Shares / Total followers × 100 | Message spread indicator |
+| Engagement & Interaction Analytics | Social Engagement | Applause Rate | Positive reaction frequency | Likes / Total followers × 100 | Content approval measure |
+| Engagement & Interaction Analytics | Social Engagement | Response Rate | Brand interaction frequency | Brand responses / Total mentions × 100 | Community management quality |
+| Engagement & Interaction Analytics | Social Engagement | User Generated Content Rate | Community content creation | UGC posts / Total community members × 100 | Community vitality measure |
+| Engagement & Interaction Analytics | Interactive Elements | Form Completion Rate | Data capture success | Completed forms / Form starts × 100 | UX friction indicator |
+| Engagement & Interaction Analytics | Interactive Elements | Tool Usage Rate | Interactive feature adoption | Tool users / Total visitors × 100 | Feature value validation |
+| Engagement & Interaction Analytics | Interactive Elements | Quiz/Survey Completion | Interactive content success | Completions / Starts × 100 | Engagement depth measure |
+| Engagement & Interaction Analytics | Interactive Elements | Download Rate | Content value perception | Downloads / Download page views × 100 | Content utility indicator |
+| Engagement & Interaction Analytics | Interactive Elements | Video Interaction Rate | Video engagement depth | (Plays + Pauses + Seeks) / Views × 100 | Active viewing measure |
+| Engagement & Interaction Analytics | Community Metrics | Active Community Percentage | Engaged member ratio | Active members / Total members × 100 | Community health score |
+| Engagement & Interaction Analytics | Community Metrics | Member Contribution Rate | Content creation frequency | Contributing members / Total members × 100 | Community participation level |
+| Engagement & Interaction Analytics | Community Metrics | Community Growth Rate | Member base expansion | (New members - Lost members) / Total members × 100 | Community momentum |
+| Engagement & Interaction Analytics | Community Metrics | Peer Response Rate | Member-to-member interaction | Member responses / Total posts × 100 | Self-sustaining indicator |
+| Engagement & Interaction Analytics | Community Metrics | Community Sentiment Score | Member satisfaction level | Positive expressions / Total expressions × 100 | Community satisfaction gauge |
+| Engagement & Interaction Analytics | Loyalty Indicators | Repeat Engagement Rate | Return visitor frequency | Returning users / Total users × 100 | Audience loyalty measure |
+| Engagement & Interaction Analytics | Loyalty Indicators | Engagement Recency | Last interaction timing | Days since last engagement distribution | Relationship freshness gauge |
+| Engagement & Interaction Analytics | Loyalty Indicators | Engagement Consistency | Regular interaction patterns | Users engaging X of last Y periods × 100 | Habit formation measure |
+| Engagement & Interaction Analytics | Loyalty Indicators | Super User Percentage | Highly engaged user share | Power users / Total users × 100 | Core audience identifier |
+| Engagement & Interaction Analytics | Cross-Platform Engagement | Omnichannel Engagement Rate | Multi-platform usage | Multi-platform users / Total users × 100 | Ecosystem adoption measure |
+| Engagement & Interaction Analytics | Cross-Platform Engagement | Platform Transition Rate | Cross-platform movement | Platform switches / Total sessions × 100 | User journey fluidity |
+| Engagement & Interaction Analytics | Cross-Platform Engagement | Synchronized Engagement | Coordinated platform use | Simultaneous platform users / Multi-platform users × 100 | Integrated experience measure |
+| Engagement & Interaction Analytics | Qualitative Engagement | Sentiment Progression | Opinion change over time | Sentiment score change over user lifetime | Relationship evolution tracker |
+| Engagement & Interaction Analytics | Qualitative Engagement | Feedback Quality Score | Input value assessment | Actionable feedback / Total feedback × 100 | User input value measure |
+| Engagement & Interaction Analytics | Qualitative Engagement | Recommendation Intent | Advocacy likelihood | Users likely to recommend / Total users × 100 | True satisfaction indicator |
+
+## Operational Efficiency Analytics
+
+| Segment | Category | Metric Name | Description | Calculation/Formula | Strategic Value |
+|---------|----------|-------------|-------------|-------------------|-----------------|
+| Operational Efficiency Analytics | Resource Utilization | Marketing FTE Productivity | Output per team member | Revenue influenced / Marketing FTEs | Team efficiency benchmark |
+| Operational Efficiency Analytics | Resource Utilization | Budget Burn Rate | Spend velocity | Monthly spend / Monthly budget × 100 | Pacing control metric |
+| Operational Efficiency Analytics | Resource Utilization | Technology Stack Utilization | Tool usage rate | Active tool features / Total available features × 100 | Investment optimization guide |
+| Operational Efficiency Analytics | Resource Utilization | Agency Efficiency Ratio | External resource ROI | Agency-driven results / Agency costs | Outsourcing effectiveness |
+| Operational Efficiency Analytics | Resource Utilization | Content Asset Utilization | Asset usage frequency | Used assets / Total assets × 100 | Asset investment efficiency |
+| Operational Efficiency Analytics | Process Efficiency | Campaign Launch Velocity | Speed to market | Days from brief to launch | Agility measure |
+| Operational Efficiency Analytics | Process Efficiency | Approval Cycle Time | Decision-making speed | Average hours for approval by stage | Bottleneck identifier |
+| Operational Efficiency Analytics | Process Efficiency | Error Rate | Quality control metric | Errors requiring rework / Total outputs × 100 | Process quality indicator |
+| Operational Efficiency Analytics | Process Efficiency | Automation Rate | Manual work reduction | Automated tasks / Total tasks × 100 | Efficiency opportunity gauge |
+| Operational Efficiency Analytics | Process Efficiency | Cross-Team Collaboration Index | Teamwork effectiveness | Joint projects / Total projects × 100 | Organizational alignment |
+| Operational Efficiency Analytics | Time Management | Time to Insight | Analytics speed | Hours from data to actionable insight | Decision speed enabler |
+| Operational Efficiency Analytics | Time Management | Report Generation Time | Analytical efficiency | Hours to produce standard reports | Reporting efficiency measure |
+| Operational Efficiency Analytics | Time Management | Response Time SLA | Service level adherence | Responses within SLA / Total responses × 100 | Service quality measure |
+| Operational Efficiency Analytics | Time Management | Project Delivery Rate | On-time completion | Projects on schedule / Total projects × 100 | Execution reliability |
+| Operational Efficiency Analytics | Cost Efficiency | Cost Per Lead by Source | Acquisition efficiency | Channel cost / Channel leads | Channel efficiency comparison |
+| Operational Efficiency Analytics | Cost Efficiency | Overhead Allocation Rate | Indirect cost distribution | Overhead costs / Direct costs × 100 | True cost understanding |
+| Operational Efficiency Analytics | Cost Efficiency | Vendor Cost Variance | Supplier price management | (Actual - Expected cost) / Expected × 100 | Procurement effectiveness |
+| Operational Efficiency Analytics | Cost Efficiency | Cost Avoidance | Prevented expenses | Estimated saved costs through optimization | Efficiency impact measure |
+| Operational Efficiency Analytics | Quality Management | First-Time-Right Rate | Initial quality level | Correct first attempts / Total attempts × 100 | Quality process indicator |
+| Operational Efficiency Analytics | Quality Management | Compliance Score | Regulatory adherence | Compliant activities / Total activities × 100 | Risk mitigation measure |
+| Operational Efficiency Analytics | Quality Management | Data Quality Index | Information accuracy | Accurate records / Total records × 100 | Decision reliability factor |
+| Operational Efficiency Analytics | Quality Management | Brand Guideline Compliance | Consistency measure | Compliant assets / Total assets × 100 | Brand integrity score |
+| Operational Efficiency Analytics | Capacity Planning | Capacity Utilization Rate | Resource usage level | Used capacity / Total capacity × 100 | Scaling need indicator |
+| Operational Efficiency Analytics | Capacity Planning | Peak Load Management | Demand spike handling | Peak performance / Average performance | Stress handling capability |
+| Operational Efficiency Analytics | Capacity Planning | Skill Gap Analysis | Capability shortfall | Missing skills / Required skills × 100 | Training need identifier |
+| Operational Efficiency Analytics | Vendor Management | Vendor Performance Score | Supplier effectiveness | Composite of quality, timeliness, cost | Partner selection guide |
+| Operational Efficiency Analytics | Vendor Management | Contract Compliance Rate | Agreement adherence | Compliant deliverables / Total deliverables × 100 | Relationship health measure |
+| Operational Efficiency Analytics | Vendor Management | Vendor Diversity Ratio | Supplier variety | Diverse vendors / Total vendors × 100 | Risk distribution measure |
+
+## Competitive Intelligence Analytics
+
+| Segment | Category | Metric Name | Description | Calculation/Formula | Strategic Value |
+|---------|----------|-------------|-------------|-------------------|-----------------|
+| Competitive Intelligence Analytics | Market Position | Relative Market Share | Position versus leader | Brand share / Market leader share × 100 | Competitive gap measure |
+| Competitive Intelligence Analytics | Market Position | Market Share Momentum | Share change velocity | Current period share change / Previous period change | Momentum indicator |
+| Competitive Intelligence Analytics | Market Position | Category Share of Requirements | Customer wallet share | Brand purchases / Total category purchases × 100 | Loyalty comparison metric |
+| Competitive Intelligence Analytics | Market Position | Competitive Win/Loss Ratio | Head-to-head success | Wins against competitor / Total competitive situations | Direct competition effectiveness |
+| Competitive Intelligence Analytics | Market Position | Market Penetration Index | Coverage versus competitors | Brand penetration / Average competitor penetration × 100 | Expansion opportunity gauge |
+| Competitive Intelligence Analytics | Digital Presence | Share of Search | Search visibility share | Brand searches / Total category searches × 100 | Digital mindshare indicator |
+| Competitive Intelligence Analytics | Digital Presence | Social Share of Voice | Social mention share | Brand mentions / Total category mentions × 100 | Social dominance measure |
+| Competitive Intelligence Analytics | Digital Presence | Content Gap Score | Missing topic coverage | Competitor content topics not covered / Total topics × 100 | Content opportunity finder |
+| Competitive Intelligence Analytics | Digital Presence | SEO Visibility Index | Organic presence strength | Keyword rankings vs competitor average | Search competitiveness gauge |
+| Competitive Intelligence Analytics | Digital Presence | Digital Ad Share | Paid visibility share | Brand ad impressions / Category ad impressions × 100 | Paid presence indicator |
+| Competitive Intelligence Analytics | Product Comparison | Feature Parity Score | Product completeness | Matched features / Competitor features × 100 | Product gap identifier |
+| Competitive Intelligence Analytics | Product Comparison | Price Competitiveness Index | Relative pricing position | Brand price / Competitor average price × 100 | Value perception factor |
+| Competitive Intelligence Analytics | Product Comparison | Innovation Index | First-mover frequency | First-to-market launches / Total launches × 100 | Innovation leadership gauge |
+| Competitive Intelligence Analytics | Product Comparison | Quality Perception Gap | Perceived quality difference | Brand quality score - Competitor average | Positioning opportunity/threat |
+| Competitive Intelligence Analytics | Customer Perception | Preference Share | Choice likelihood | Brand preference / Total category preference × 100 | True competitiveness measure |
+| Competitive Intelligence Analytics | Customer Perception | Consideration Set Inclusion | Shopping list presence | In consideration / Total category shoppers × 100 | Relevance indicator |
+| Competitive Intelligence Analytics | Customer Perception | Switching Intent | Competitor vulnerability | Intending to switch to brand / Competitor customers × 100 | Acquisition opportunity gauge |
+| Competitive Intelligence Analytics | Customer Perception | Loyalty Comparison Index | Retention versus competitors | Brand retention rate / Competitor average × 100 | Stickiness comparison |
+| Competitive Intelligence Analytics | Strategic Monitoring | Competitor Response Time | Reaction speed to moves | Days for competitor to respond to initiatives | Market agility comparison |
+| Competitive Intelligence Analytics | Strategic Monitoring | Strategic Initiative Tracking | Competitor activity monitoring | Identified initiatives by competitor over time | Strategic threat assessment |
+| Competitive Intelligence Analytics | Strategic Monitoring | Partnership Network Analysis | Ecosystem comparison | Partner relationships versus competitors | Ecosystem strength gauge |
+| Competitive Intelligence Analytics | Financial Comparison | Revenue Per Customer Index | Monetization efficiency | Brand ARPU / Competitor ARPU × 100 | Value extraction comparison |
+| Competitive Intelligence Analytics | Financial Comparison | Growth Rate Differential | Expansion speed comparison | Brand growth rate - Competitor average growth | Momentum comparison |
+| Competitive Intelligence Analytics | Financial Comparison | Marketing Efficiency Ratio | Spend effectiveness | (Brand revenue/marketing) / (Competitor revenue/marketing) | Efficiency benchmark |
+| Competitive Intelligence Analytics | Talent Intelligence | Employee Satisfaction Gap | Workplace comparison | Brand employee NPS - Competitor average | Talent attraction factor |
+| Competitive Intelligence Analytics | Talent Intelligence | Talent Flow Analysis | Employee movement patterns | Hires from competitors - Losses to competitors | Talent competitiveness gauge |
+
+## Risk & Compliance Analytics
+
+| Segment | Category | Metric Name | Description | Calculation/Formula | Strategic Value |
+|---------|----------|-------------|-------------|-------------------|-----------------|
+| Risk & Compliance Analytics | Data Privacy | Consent Rate | Permission acquisition | Consents obtained / Consent requests × 100 | Privacy compliance health |
+| Risk & Compliance Analytics | Data Privacy | Data Subject Request Fulfillment | GDPR/CCPA compliance | Requests completed on time / Total requests × 100 | Regulatory compliance measure |
+| Risk & Compliance Analytics | Data Privacy | Privacy Policy Acceptance | Terms agreement rate | Acceptances / Total users × 100 | Legal coverage indicator |
+| Risk & Compliance Analytics | Data Privacy | Third-Party Data Compliance | Vendor privacy adherence | Compliant vendors / Total data vendors × 100 | Supply chain privacy risk |
+| Risk & Compliance Analytics | Data Privacy | Data Breach Risk Score | Security vulnerability level | Composite of vulnerabilities and exposure | Security priority indicator |
+| Risk & Compliance Analytics | Marketing Compliance | Ad Compliance Rate | Regulatory adherence | Compliant ads / Total ads × 100 | Legal risk mitigation |
+| Risk & Compliance Analytics | Marketing Compliance | Claim Substantiation Rate | Proof of claims | Substantiated claims / Total claims × 100 | Truth in advertising measure |
+| Risk & Compliance Analytics | Marketing Compliance | Accessibility Compliance | ADA/WCAG adherence | Compliant content / Total content × 100 | Inclusion risk measure |
+| Risk & Compliance Analytics | Marketing Compliance | Disclosure Compliance | Required information inclusion | Proper disclosures / Required disclosures × 100 | Transparency measure |
+| Risk & Compliance Analytics | Financial Risk | Payment Fraud Rate | Transaction security | Fraudulent transactions / Total transactions × 100 | Financial loss prevention |
+| Risk & Compliance Analytics | Financial Risk | Chargeback Rate | Payment dispute frequency | Chargebacks / Total transactions × 100 | Transaction quality indicator |
+| Risk & Compliance Analytics | Financial Risk | Currency Exposure | Foreign exchange risk | Revenue at risk from FX / Total revenue × 100 | Financial hedging need |
+| Risk & Compliance Analytics | Financial Risk | Credit Risk Exposure | Customer payment risk | At-risk receivables / Total receivables × 100 | Collection risk gauge |
+| Risk & Compliance Analytics | Reputation Risk | Crisis Response Time | Issue management speed | Hours from detection to response | Crisis readiness indicator |
+| Risk & Compliance Analytics | Reputation Risk | Negative Sentiment Spike | Reputation threat level | Sudden increase in negative mentions | PR intervention trigger |
+| Risk & Compliance Analytics | Reputation Risk | Brand Safety Score | Content adjacency risk | Safe placements / Total placements × 100 | Brand protection measure |
+| Risk & Compliance Analytics | Reputation Risk | Influencer Risk Score | Partner reputation risk | Risk factors in influencer partnerships | Partnership safety gauge |
+| Risk & Compliance Analytics | Operational Risk | Vendor Dependency Risk | Single point of failure | Critical processes dependent on single vendor | Continuity risk measure |
+| Risk & Compliance Analytics | Operational Risk | System Uptime | Technical reliability | System availability / Total time × 100 | Operational stability metric |
+| Risk & Compliance Analytics | Operational Risk | Disaster Recovery Readiness | Continuity preparedness | Tested recovery procedures / Total procedures × 100 | Resilience measure |
+| Risk & Compliance Analytics | Audit & Control | Audit Finding Rate | Control effectiveness | Issues found / Processes audited × 100 | Control quality indicator |
+| Risk & Compliance Analytics | Audit & Control | Remediation Timeliness | Issue resolution speed | On-time fixes / Total required fixes × 100 | Risk management efficiency |
+| Risk & Compliance Analytics | Audit & Control | Control Test Pass Rate | Process compliance | Passed controls / Total controls tested × 100 | Governance effectiveness |
+| Risk & Compliance Analytics | Legal Risk | Contract Compliance | Agreement adherence | Compliant contracts / Total contracts × 100 | Legal exposure measure |
+| Risk & Compliance Analytics | Legal Risk | Intellectual Property Risk | IP infringement exposure | IP risks identified / Content pieces reviewed × 100 | Legal safety measure |
+| Risk & Compliance Analytics | Legal Risk | Regulatory Change Impact | New rule preparation | Addressed changes / Total regulatory changes × 100 | Adaptability measure |
+
+## Innovation & Testing Analytics
+
+| Segment | Category | Metric Name | Description | Calculation/Formula | Strategic Value |
+|---------|----------|-------------|-------------|-------------------|-----------------|
+| Innovation & Testing Analytics | Experimentation Velocity | Tests Run Per Period | Testing frequency | Number of tests / Time period | Innovation rate indicator |
+| Innovation & Testing Analytics | Experimentation Velocity | Test Coverage | Areas under testing | Tested elements / Total testable elements × 100 | Optimization comprehensiveness |
+| Innovation & Testing Analytics | Experimentation Velocity | Time to Test Completion | Testing speed | Average days from start to significance | Agility measure |
+| Innovation & Testing Analytics | Experimentation Velocity | Parallel Test Capacity | Simultaneous testing ability | Concurrent tests without interference | Testing scalability gauge |
+| Innovation & Testing Analytics | Test Quality | Statistical Significance Rate | Conclusive test percentage | Significant results / Total tests × 100 | Testing effectiveness measure |
+| Innovation & Testing Analytics | Test Quality | Statistical Power Achievement | Test sensitivity | Tests achieving target power / Total tests × 100 | Result reliability indicator |
+| Innovation & Testing Analytics | Test Quality | Sample Size Efficiency | Traffic usage optimization | Actual sample / Required sample | Resource efficiency measure |
+| Innovation & Testing Analytics | Test Quality | False Positive Rate | Type I error frequency | False positives / Total positive results × 100 | Decision accuracy measure |
+| Innovation & Testing Analytics | Test Results | Average Lift Per Test | Innovation impact | Average performance improvement from tests | Innovation value measure |
+| Innovation & Testing Analytics | Test Results | Win Rate | Successful test percentage | Winning variants / Total tests × 100 | Innovation success rate |
+| Innovation & Testing Analytics | Test Results | Cumulative Impact | Total testing value | Sum of all positive lifts implemented | Program ROI indicator |
+| Innovation & Testing Analytics | Test Results | Learning Rate | Insight generation | Actionable insights / Total tests × 100 | Knowledge creation measure |
+| Innovation & Testing Analytics | Innovation Pipeline | Idea Generation Rate | Creativity volume | New test ideas / Time period | Innovation potential indicator |
+| Innovation & Testing Analytics | Innovation Pipeline | Idea Conversion Rate | Concept to test ratio | Tests launched / Ideas proposed × 100 | Innovation efficiency measure |
+| Innovation & Testing Analytics | Innovation Pipeline | Innovation Backlog Size | Pending test queue | Approved tests awaiting launch | Opportunity inventory gauge |
+| Innovation & Testing Analytics | Innovation Pipeline | Breakthrough Innovation Rate | Major discovery frequency | High-impact findings / Total tests × 100 | Transformation potential |
+| Innovation & Testing Analytics | Test Implementation | Implementation Rate | Test to production | Implemented winners / Total winners × 100 | Value capture measure |
+| Innovation & Testing Analytics | Test Implementation | Implementation Speed | Winner deployment time | Days from test completion to full rollout | Agility indicator |
+| Innovation & Testing Analytics | Test Implementation | Rollback Rate | Implementation failure | Reverted changes / Total implementations × 100 | Quality control measure |
+| Innovation & Testing Analytics | Personalization Testing | Segment Test Performance | Targeted testing success | Significant results by segment / Segment tests × 100 | Personalization effectiveness |
+| Innovation & Testing Analytics | Personalization Testing | Personalization Lift | Tailoring impact | (Personalized performance - Default) / Default × 100 | Customization value measure |
+| Innovation & Testing Analytics | Personalization Testing | Algorithmic Test Performance | ML model testing | Algorithm improvements / Algorithm tests × 100 | AI optimization success |
+| Innovation & Testing Analytics | Cultural Impact | Test Participation Rate | Organization involvement | Participating teams / Total teams × 100 | Testing culture penetration |
+| Innovation & Testing Analytics | Cultural Impact | Hypothesis Quality Score | Test design sophistication | Well-formed hypotheses / Total tests × 100 | Testing maturity indicator |
+| Innovation & Testing Analytics | Cultural Impact | Failure Acceptance Rate | Risk-taking culture | Failed tests viewed positively / Total failed tests × 100 | Innovation culture health |
+| Innovation & Testing Analytics | Advanced Testing | Multivariate Test Insights | Complex interaction findings | Significant interactions / MVT tests × 100 | Sophisticated learning rate |
+| Innovation & Testing Analytics | Advanced Testing | Bandit Algorithm Performance | Dynamic optimization success | Bandit performance vs traditional A/B | Advanced method value |
+| Innovation & Testing Analytics | Advanced Testing | Cross-Channel Test Impact | Omnichannel testing effect | Cross-channel winners / Cross-channel tests × 100 | Holistic optimization success |
+
+## Partnership & Ecosystem Analytics
+
+| Segment | Category | Metric Name | Description | Calculation/Formula | Strategic Value |
+|---------|----------|-------------|-------------|-------------------|-----------------|
+| Partnership & Ecosystem Analytics | Partner Performance | Partner Revenue Contribution | Ecosystem value share | Partner-generated revenue / Total revenue × 100 | Channel importance measure |
+| Partnership & Ecosystem Analytics | Partner Performance | Partner Quality Score | Performance rating | Composite of volume, quality, brand fit | Partner prioritization tool |
+| Partnership & Ecosystem Analytics | Partner Performance | Partner Activation Rate | Onboarded partner success | Active partners / Total partners × 100 | Program effectiveness gauge |
+| Partnership & Ecosystem Analytics | Partner Performance | Partner Retention Rate | Ecosystem stability | Retained partners / Total partners × 100 | Relationship health indicator |
+| Partnership & Ecosystem Analytics | Partner Performance | Partner Satisfaction Score | Relationship quality | Partner NPS or satisfaction survey results | Partnership health measure |
+| Partnership & Ecosystem Analytics | Affiliate Metrics | Affiliate Conversion Rate | Partner traffic quality | Affiliate conversions / Affiliate clicks × 100 | Traffic quality indicator |
+| Partnership & Ecosystem Analytics | Affiliate Metrics | Affiliate Fraud Detection | Invalid activity rate | Fraudulent affiliate actions / Total actions × 100 | Program integrity measure |
+| Partnership & Ecosystem Analytics | Affiliate Metrics | Commission Efficiency | Payout optimization | Revenue per commission dollar spent | Program efficiency gauge |
+| Partnership & Ecosystem Analytics | Affiliate Metrics | Affiliate Lifetime Value | Long-term partner worth | Total revenue from affiliate over time | Partner investment guide |
+| Partnership & Ecosystem Analytics | Affiliate Metrics | New Affiliate Performance | Program growth quality | New affiliate revenue / Total new affiliates | Recruitment effectiveness |
+| Partnership & Ecosystem Analytics | Influencer Metrics | Influencer Reach Efficiency | Audience access cost | Cost per thousand reached via influencers | Channel efficiency comparison |
+| Partnership & Ecosystem Analytics | Influencer Metrics | Engagement Authenticity Rate | Real engagement percentage | Authentic engagements / Total engagements × 100 | Influence quality measure |
+| Partnership & Ecosystem Analytics | Influencer Metrics | Influencer Content Performance | Created content success | Influencer content engagement / Average engagement | Content effectiveness gauge |
+| Partnership & Ecosystem Analytics | Influencer Metrics | Brand Fit Score | Message alignment quality | Audience overlap and value alignment composite | Partnership suitability measure |
+| Partnership & Ecosystem Analytics | Influencer Metrics | Influencer ROI | Investment return | (Influencer revenue - Costs) / Costs × 100 | Channel profitability measure |
+| Partnership & Ecosystem Analytics | Strategic Partnerships | Co-Marketing Performance | Joint effort success | Co-marketing campaign ROI vs solo campaigns | Collaboration value measure |
+| Partnership & Ecosystem Analytics | Strategic Partnerships | Integration Adoption Rate | Technical partnership success | Users of integration / Total eligible users × 100 | Partnership utility gauge |
+| Partnership & Ecosystem Analytics | Strategic Partnerships | Partner Ecosystem Growth | Network expansion rate | New partnerships / Time period | Ecosystem velocity indicator |
+| Partnership & Ecosystem Analytics | Strategic Partnerships | Cross-Sell Success Rate | Partner referral effectiveness | Successful cross-sells / Total referrals × 100 | Ecosystem synergy measure |
+| Partnership & Ecosystem Analytics | Channel Partners | Channel Partner Productivity | Reseller effectiveness | Revenue per channel partner | Partner efficiency measure |
+| Partnership & Ecosystem Analytics | Channel Partners | Channel Conflict Rate | Direct vs indirect tension | Conflict incidents / Total transactions × 100 | Channel harmony indicator |
+| Partnership & Ecosystem Analytics | Channel Partners | Partner Training Effectiveness | Enablement success | Trained partner performance lift | Investment value measure |
+| Partnership & Ecosystem Analytics | Channel Partners | Territory Performance | Geographic partner success | Revenue by territory / Territory potential × 100 | Coverage effectiveness gauge |
+| Partnership & Ecosystem Analytics | Marketplace Metrics | Marketplace Contribution | Platform revenue share | Marketplace revenue / Total revenue × 100 | Channel diversification measure |
+| Partnership & Ecosystem Analytics | Marketplace Metrics | Listing Optimization Score | Marketplace presence quality | Optimized listings / Total listings × 100 | Visibility maximization gauge |
+| Partnership & Ecosystem Analytics | Marketplace Metrics | Marketplace Ranking | Competitive position | Category rank across marketplaces | Platform success indicator |
+| Partnership & Ecosystem Analytics | API Ecosystem | API Adoption Rate | Developer engagement | Active API users / Total developers × 100 | Platform stickiness measure |
+| Partnership & Ecosystem Analytics | API Ecosystem | API Call Volume | Usage intensity | Total API calls / Time period | Ecosystem activity level |
+| Partnership & Ecosystem Analytics | API Ecosystem | Developer Satisfaction | Ecosystem health | Developer NPS or satisfaction scores | Platform quality indicator |
+
+## Experience & Satisfaction Analytics
+
+| Segment | Category | Metric Name | Description | Calculation/Formula | Strategic Value |
+|---------|----------|-------------|-------------|-------------------|-----------------|
+| Experience & Satisfaction Analytics | Overall Satisfaction | Net Promoter Score | Recommendation likelihood | (Promoters % - Detractors %) | Loyalty and advocacy predictor |
+| Experience & Satisfaction Analytics | Overall Satisfaction | Customer Satisfaction Score | General satisfaction level | Average satisfaction rating (1-5 or 1-10 scale) | Experience quality baseline |
+| Experience & Satisfaction Analytics | Overall Satisfaction | Customer Effort Score | Ease of interaction | Average effort rating (1-5 scale, lower is better) | Friction indicator |
+| Experience & Satisfaction Analytics | Overall Satisfaction | Satisfaction Trend | Satisfaction trajectory | Month-over-month satisfaction change | Experience health direction |
+| Experience & Satisfaction Analytics | Overall Satisfaction | Satisfaction Driver Analysis | Key satisfaction factors | Statistical correlation of factors with satisfaction | Improvement priority guide |
+| Experience & Satisfaction Analytics | Journey Satisfaction | Touchpoint Satisfaction | Channel-specific satisfaction | Satisfaction by interaction point | Channel optimization guide |
+| Experience & Satisfaction Analytics | Journey Satisfaction | Journey Completion Satisfaction | End-to-end experience quality | Satisfaction of journey completers vs non-completers | Process effectiveness measure |
+| Experience & Satisfaction Analytics | Journey Satisfaction | Pain Point Frequency | Problem encounter rate | Users experiencing issues / Total users × 100 | Friction priority indicator |
+| Experience & Satisfaction Analytics | Journey Satisfaction | Resolution Satisfaction | Problem-solving effectiveness | Satisfaction with issue resolution | Service quality measure |
+| Experience & Satisfaction Analytics | Experience Quality | First Contact Resolution | Single-touch solution rate | Issues resolved on first contact / Total issues × 100 | Service efficiency indicator |
+| Experience & Satisfaction Analytics | Experience Quality | Wait Time Impact | Delay effect on satisfaction | Satisfaction correlation with wait times | Speed importance gauge |
+| Experience & Satisfaction Analytics | Experience Quality | Personalization Satisfaction | Tailored experience quality | Satisfaction with personalized vs generic | Customization value proof |
+| Experience & Satisfaction Analytics | Experience Quality | Consistency Score | Cross-channel uniformity | Experience variance across channels | Integration quality measure |
+| Experience & Satisfaction Analytics | Emotional Connection | Brand Love Score | Deep affinity measure | Percentage expressing strong emotional connection | Relationship depth indicator |
+| Experience & Satisfaction Analytics | Emotional Connection | Trust Index | Confidence in brand | Average trust rating across dimensions | Relationship foundation strength |
+| Experience & Satisfaction Analytics | Emotional Connection | Emotional Journey Mapping | Feeling progression | Sentiment at each journey stage | Experience design guide |
+| Experience & Satisfaction Analytics | Emotional Connection | Delight Frequency | Positive surprise rate | Delight moments / Total interactions × 100 | Excellence indicator |
+| Experience & Satisfaction Analytics | Service Quality | Response Time Performance | Speed of service | Average response time by channel | Service standard adherence |
+| Experience & Satisfaction Analytics | Service Quality | Agent Performance Score | Human service quality | Average agent rating by customers | Training effectiveness measure |
+| Experience & Satisfaction Analytics | Service Quality | Self-Service Success Rate | Automation effectiveness | Self-service completions / Attempts × 100 | Digital service quality |
+| Experience & Satisfaction Analytics | Service Quality | Escalation Rate | Complex issue frequency | Escalated issues / Total issues × 100 | Service complexity indicator |
+| Experience & Satisfaction Analytics | Feedback Metrics | Feedback Collection Rate | Voice of customer capture | Feedback responses / Opportunities × 100 | Insight gathering success |
+| Experience & Satisfaction Analytics | Feedback Metrics | Feedback Action Rate | Response to input | Acted upon feedback / Total feedback × 100 | Customer-centricity measure |
+| Experience & Satisfaction Analytics | Feedback Metrics | Sentiment Distribution | Emotional tone spread | Positive vs neutral vs negative percentage | Overall perception gauge |
+| Experience & Satisfaction Analytics | Loyalty Indicators | Repeat Interaction Preference | Channel loyalty | Repeat use of preferred channels | Stickiness by touchpoint |
+| Experience & Satisfaction Analytics | Loyalty Indicators | Forgiveness Rate | Error tolerance | Retained customers after problems / Total problems × 100 | Relationship strength indicator |
+| Experience & Satisfaction Analytics | Loyalty Indicators | Voluntary Engagement Rate | Unprompted interaction | Self-initiated contacts / Total contacts × 100 | Relationship vitality measure |
+| Experience & Satisfaction Analytics | Competitive Satisfaction | Relative Satisfaction Index | Versus competitor satisfaction | Brand satisfaction / Industry average × 100 | Competitive experience position |
+| Experience & Satisfaction Analytics | Competitive Satisfaction | Switch Consideration Rate | Defection risk level | Considering competitors / Total customers × 100 | Retention risk indicator |
+| Experience & Satisfaction Analytics | Competitive Satisfaction | Win-Back Satisfaction | Returner satisfaction | Returned customer satisfaction vs average | Recovery effectiveness measure |
+
+This comprehensive set of analytics segments and metrics provides a strategic framework for measuring and optimizing all aspects of marketing and business performance. Each metric includes clear calculation methods and strategic value propositions to guide implementation and interpretation.

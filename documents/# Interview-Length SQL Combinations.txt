@@ -1,0 +1,308 @@
+# Interview-Length SQL Combinations for Marketing Analytics
+
+Here are shorter, interview-realistic problems that combine 3-5 syntax elements:
+
+## 1. Month-over-Month Growth by Channel
+**Combination: DATE_TRUNC + LAG + CASE**
+
+```sql
+-- Calculate MoM growth and flag declining channels
+SELECT 
+    DATE_TRUNC('month', booking_date) as month,
+    marketing_channel,
+    COUNT(*) as bookings,
+    LAG(COUNT(*)) OVER (PARTITION BY marketing_channel ORDER BY DATE_TRUNC('month', booking_date)) as prev_month,
+    CASE 
+        WHEN LAG(COUNT(*)) OVER (PARTITION BY marketing_channel ORDER BY DATE_TRUNC('month', booking_date)) IS NULL THEN NULL
+        ELSE (COUNT(*) - LAG(COUNT(*)) OVER (PARTITION BY marketing_channel ORDER BY DATE_TRUNC('month', booking_date))) * 100.0 / 
+             LAG(COUNT(*)) OVER (PARTITION BY marketing_channel ORDER BY DATE_TRUNC('month', booking_date))
+    END as mom_growth_pct
+FROM bookings
+WHERE booking_date >= '2024-01-01'
+GROUP BY month, marketing_channel
+ORDER BY marketing_channel, month;
+```
+
+## 2. Find Returning Users Within Time Window
+**Combination: SELF JOIN + DATE_DIFF + WHERE**
+
+```sql
+-- Users who booked again within 60 days
+SELECT 
+    b1.user_id,
+    b1.booking_date as first_booking,
+    b2.booking_date as second_booking,
+    DATE_DIFF('day', b1.booking_date, b2.booking_date) as days_between,
+    b1.marketing_channel as first_channel,
+    b2.marketing_channel as second_channel
+FROM bookings b1
+JOIN bookings b2 
+    ON b1.user_id = b2.user_id 
+    AND b2.booking_date > b1.booking_date
+    AND DATE_DIFF('day', b1.booking_date, b2.booking_date) <= 60
+WHERE b1.booking_date >= '2024-01-01';
+```
+
+## 3. Top Performers by Segment
+**Combination: CTE + RANK + HAVING**
+
+```sql
+-- Top 3 campaigns per channel with minimum spend
+WITH campaign_performance AS (
+    SELECT 
+        marketing_channel,
+        campaign_id,
+        SUM(spend) as total_spend,
+        SUM(revenue) as total_revenue,
+        SUM(revenue) / NULLIF(SUM(spend), 0) as roas
+    FROM marketing_data
+    WHERE campaign_date >= '2024-01-01'
+    GROUP BY marketing_channel, campaign_id
+    HAVING SUM(spend) >= 5000
+)
+SELECT 
+    marketing_channel,
+    campaign_id,
+    total_spend,
+    total_revenue,
+    roas,
+    RANK() OVER (PARTITION BY marketing_channel ORDER BY roas DESC) as rank
+FROM campaign_performance
+QUALIFY rank <= 3;
+```
+
+## 4. Cohort Week 1 Retention
+**Combination: CTE + DATE_TRUNC + DATE_DIFF + CASE**
+
+```sql
+-- Week 1 retention rate by signup channel
+WITH signups AS (
+    SELECT 
+        user_id,
+        DATE_TRUNC('week', signup_date) as cohort_week,
+        marketing_channel
+    FROM users
+    WHERE signup_date >= '2024-01-01'
+)
+SELECT 
+    s.cohort_week,
+    s.marketing_channel,
+    COUNT(DISTINCT s.user_id) as signups,
+    COUNT(DISTINCT CASE 
+        WHEN DATE_DIFF('day', s.cohort_week, b.booking_date) <= 7 
+        THEN b.user_id 
+    END) as week1_bookers,
+    COUNT(DISTINCT CASE 
+        WHEN DATE_DIFF('day', s.cohort_week, b.booking_date) <= 7 
+        THEN b.user_id 
+    END) * 100.0 / COUNT(DISTINCT s.user_id) as week1_retention_pct
+FROM signups s
+LEFT JOIN bookings b ON s.user_id = b.user_id
+GROUP BY s.cohort_week, s.marketing_channel;
+```
+
+## 5. Revenue Percentiles by Channel
+**Combination: PERCENTILE_CONT + CASE + WHERE IN**
+
+```sql
+-- Revenue distribution analysis
+SELECT 
+    marketing_channel,
+    COUNT(*) as bookings,
+    PERCENTILE_CONT(0.25) WITHIN GROUP (ORDER BY revenue) as p25,
+    PERCENTILE_CONT(0.50) WITHIN GROUP (ORDER BY revenue) as median,
+    PERCENTILE_CONT(0.75) WITHIN GROUP (ORDER BY revenue) as p75,
+    PERCENTILE_CONT(0.90) WITHIN GROUP (ORDER BY revenue) as p90,
+    AVG(revenue) as avg_revenue,
+    SUM(CASE WHEN revenue >= PERCENTILE_CONT(0.90) WITHIN GROUP (ORDER BY revenue) 
+             THEN revenue END) * 100.0 / SUM(revenue) as pct_from_top10
+FROM bookings
+WHERE marketing_channel IN ('paid_search', 'social', 'email')
+  AND booking_date >= '2024-01-01'
+GROUP BY marketing_channel;
+```
+
+## 6. Attribution Window Analysis
+**Combination: CTE + DATE_DIFF + BETWEEN + SUM with CASE**
+
+```sql
+-- Revenue attributed in different time windows
+WITH conversions AS (
+    SELECT 
+        t.marketing_channel,
+        t.touch_date,
+        b.booking_date,
+        b.revenue,
+        DATE_DIFF('day', t.touch_date, b.booking_date) as days_to_conversion
+    FROM marketing_touches t
+    JOIN bookings b 
+        ON t.user_id = b.user_id
+        AND b.booking_date >= t.touch_date
+        AND DATE_DIFF('day', t.touch_date, b.booking_date) <= 30
+)
+SELECT 
+    marketing_channel,
+    COUNT(*) as total_conversions,
+    SUM(CASE WHEN days_to_conversion <= 1 THEN revenue ELSE 0 END) as day1_revenue,
+    SUM(CASE WHEN days_to_conversion <= 7 THEN revenue ELSE 0 END) as day7_revenue,
+    SUM(CASE WHEN days_to_conversion <= 14 THEN revenue ELSE 0 END) as day14_revenue,
+    SUM(revenue) as day30_revenue
+FROM conversions
+GROUP BY marketing_channel;
+```
+
+## 7. Running Totals with Reset
+**Combination: SUM OVER + PARTITION BY + DATE_TRUNC**
+
+```sql
+-- Cumulative spend per campaign, resetting each quarter
+SELECT 
+    campaign_id,
+    DATE_TRUNC('quarter', spend_date) as quarter,
+    spend_date,
+    daily_spend,
+    SUM(daily_spend) OVER (
+        PARTITION BY campaign_id, DATE_TRUNC('quarter', spend_date)
+        ORDER BY spend_date
+    ) as qtd_spend
+FROM campaign_spend
+WHERE spend_date >= '2024-01-01'
+ORDER BY campaign_id, spend_date;
+```
+
+## 8. First and Last Touch Attribution
+**Combination: CTE + ROW_NUMBER + CASE + WHERE**
+
+```sql
+-- Compare first vs last touch channel
+WITH ranked_touches AS (
+    SELECT 
+        user_id,
+        marketing_channel,
+        touch_date,
+        ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY touch_date ASC) as first_touch,
+        ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY touch_date DESC) as last_touch
+    FROM marketing_touches
+)
+SELECT 
+    first_channel,
+    last_channel,
+    COUNT(DISTINCT user_id) as users,
+    SUM(revenue) as total_revenue
+FROM (
+    SELECT 
+        t1.user_id,
+        t1.marketing_channel as first_channel,
+        t2.marketing_channel as last_channel,
+        b.revenue
+    FROM ranked_touches t1
+    JOIN ranked_touches t2 ON t1.user_id = t2.user_id
+    JOIN bookings b ON t1.user_id = b.user_id
+    WHERE t1.first_touch = 1 AND t2.last_touch = 1
+) attribution
+GROUP BY first_channel, last_channel
+ORDER BY total_revenue DESC;
+```
+
+## 9. Active Users by Recency
+**Combination: MAX + DATE_DIFF + CASE + GROUP BY**
+
+```sql
+-- Segment users by last activity
+SELECT 
+    marketing_channel,
+    CASE 
+        WHEN DATE_DIFF('day', MAX(booking_date), CURRENT_DATE) <= 30 THEN 'active'
+        WHEN DATE_DIFF('day', MAX(booking_date), CURRENT_DATE) <= 90 THEN 'at_risk'
+        WHEN DATE_DIFF('day', MAX(booking_date), CURRENT_DATE) <= 180 THEN 'dormant'
+        ELSE 'churned'
+    END as user_status,
+    COUNT(DISTINCT user_id) as users,
+    AVG(DATE_DIFF('day', MAX(booking_date), CURRENT_DATE)) as avg_days_since_booking
+FROM bookings
+WHERE marketing_channel IS NOT NULL
+GROUP BY marketing_channel, user_status
+ORDER BY marketing_channel, 
+    CASE user_status 
+        WHEN 'active' THEN 1 
+        WHEN 'at_risk' THEN 2 
+        WHEN 'dormant' THEN 3 
+        ELSE 4 
+    END;
+```
+
+## 10. Conversion Funnel with Drop-off
+**Combination: CTE + LEFT JOIN + COUNT DISTINCT + COALESCE**
+
+```sql
+-- Simple funnel analysis
+WITH funnel AS (
+    SELECT DISTINCT user_id, 'impression' as stage FROM impressions WHERE date >= '2024-09-01'
+    UNION
+    SELECT DISTINCT user_id, 'click' as stage FROM clicks WHERE date >= '2024-09-01'
+    UNION
+    SELECT DISTINCT user_id, 'signup' as stage FROM signups WHERE date >= '2024-09-01'
+    UNION
+    SELECT DISTINCT user_id, 'booking' as stage FROM bookings WHERE date >= '2024-09-01'
+)
+SELECT 
+    'impression' as stage,
+    COUNT(DISTINCT CASE WHEN stage = 'impression' THEN user_id END) as users,
+    COUNT(DISTINCT CASE WHEN stage = 'click' THEN user_id END) * 100.0 / 
+        COUNT(DISTINCT CASE WHEN stage = 'impression' THEN user_id END) as conversion_to_next
+FROM funnel
+UNION ALL
+SELECT 
+    'click' as stage,
+    COUNT(DISTINCT CASE WHEN stage = 'click' THEN user_id END) as users,
+    COUNT(DISTINCT CASE WHEN stage = 'signup' THEN user_id END) * 100.0 / 
+        COUNT(DISTINCT CASE WHEN stage = 'click' THEN user_id END) as conversion_to_next
+FROM funnel
+UNION ALL
+SELECT 
+    'signup' as stage,
+    COUNT(DISTINCT CASE WHEN stage = 'signup' THEN user_id END) as users,
+    COUNT(DISTINCT CASE WHEN stage = 'booking' THEN user_id END) * 100.0 / 
+        COUNT(DISTINCT CASE WHEN stage = 'signup' THEN user_id END) as conversion_to_next
+FROM funnel;
+```
+
+## 11. Weekend vs Weekday Performance
+**Combination: EXTRACT + CASE + DATE_TRUNC + WHERE**
+
+```sql
+-- Compare weekend vs weekday bookings
+SELECT 
+    marketing_channel,
+    CASE 
+        WHEN EXTRACT(DOW FROM booking_date) IN (0, 6) THEN 'weekend'
+        ELSE 'weekday'
+    END as day_type,
+    COUNT(*) as bookings,
+    AVG(revenue) as avg_revenue,
+    SUM(revenue) as total_revenue
+FROM bookings
+WHERE booking_date >= DATE_TRUNC('month', CURRENT_DATE - INTERVAL '3 months')
+GROUP BY marketing_channel, day_type
+ORDER BY marketing_channel, total_revenue DESC;
+```
+
+## 12. Users with Multiple Channels
+**Combination: HAVING + COUNT DISTINCT + STRING_AGG**
+
+```sql
+-- Find users exposed to multiple marketing channels
+SELECT 
+    user_id,
+    COUNT(DISTINCT marketing_channel) as num_channels,
+    STRING_AGG(DISTINCT marketing_channel, ', ' ORDER BY marketing_channel) as channels,
+    MIN(touch_date) as first_touch,
+    MAX(touch_date) as last_touch
+FROM marketing_touches
+WHERE touch_date >= '2024-01-01'
+GROUP BY user_id
+HAVING COUNT(DISTINCT marketing_channel) >= 3
+ORDER BY num_channels DESC;
+```
+
+These queries are **interview-appropriate length** (10-25 lines) while still demonstrating multiple SQL concepts working together. Each solves a realistic marketing analytics problem you'd encounter at Airbnb.

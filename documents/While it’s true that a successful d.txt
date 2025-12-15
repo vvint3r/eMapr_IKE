@@ -1,0 +1,196 @@
+While it’s true that a successful data scientist is expected to master a wide range of skills, SQL is undeniably the bread and butter of data science. This article aims to distill the key patterns discovered during an intensive week of tackling SQL’s toughest questions.
+
+Press enter or click to view image in full size
+
+PREREQUISITE: SQL’s Logical Order of Operations
+Let’s revisit the core of SQL efficiency — the logical order of operations. This critical yet frequently overlooked skill is key in slashing processing times and securing considerable financial savings for companies each year. An absolute must-have for anyone handling extensive datasets and aiming for optimal performance. Below is a screenshot of the logical order of operations, sourced from learnsql.com.
+
+Press enter or click to view image in full size
+
+Logical Order of Operations in SQL
+Having covered the foundational aspect of query optimization, let’s now delve into the core patterns unearthed from facing SQL’s toughest puzzles:
+
+1. Recursive CTEs
+Common Table Expressions (CTEs) and Recursive CTEs are powerful SQL features that enhance the readability, structure, and maintainability of complex queries.
+
+Recursive CTEs are a special type of CTE that can refer to itself, making them exceptionally useful for dealing with hierarchical or tree-structured data, such as organizational charts, folder structures, or even complex mathematical calculations like Fibonacci sequences. They allow for the execution of a repeated process: each iteration of the process (recursion) builds upon the previous one until a specified condition is met.
+
+Recursive CTEs typically consist of 2 parts: an anchor member (the initial query that forms the base result set) and a recursive member (the query that references the CTE itself). These two parts are combined using a UNION ALL operator.
+
+-- Revisit: CTEs Syntax
+
+WITH cte AS (
+    SELECT col1, col2, ...
+    FROM table_name
+    WHERE condition
+)
+SELECT * FROM cte;
+-- Recursive CTEs Syntax
+
+WITH RECURSIVE cte AS (
+    -- Anchor member
+    SELECT col1, col2, ...
+    FROM table_name
+    WHERE condition
+    UNION ALL -- Remember to UNION ALL
+    -- Recursive member
+    SELECT col1, col2, ...
+    FROM table_name
+    JOIN cte ON condition
+    WHERE condition -- Terminating Criteria
+)
+
+SELECT * FROM cte;
+- LC 1336. Number of Transactions per Visit
+- LC 1384. Total Sales Amount by Year
+- LC 1635. Hopper Company Queries I
+- LC 1645. Hopper Company Queries II
+- LC 1651. Hopper Company Queries III
+- LC 1767. Find the Subtasks that Did Not Execute
+- LC 2153. The Number of Passengers in Each Bus II ***
+
+2. WINDOW FUNCTIONS
+Window functions in SQL are powerful tools for performing complex calculations across sets of rows related to the current row. Unlike standard aggregate functions, window functions do not collapse rows; they allow for the computation of values across rows while still retaining individual row identity. Here’s a concise overview:
+
+Aggregate Functions:
+Used within a window function, they compute values over a set of rows. These include avg, count, max, min & sum.
+
+Ranking Functions:
+Assign ranks to rows within a partition:
+
+ROW_NUMBER(): Assigns a unique number to each row starting from 1.
+RANK(): Assigns the same rank to identical values, with gaps in subsequent ranks.
+DENSE_RANK(): Similar to RANK(), but without gaps.
+Analytic Functions:
+Provide insights into row values without aggregation:
+
+LEAD() and LAG(): Access subsequent or preceding row values.
+FIRST_VALUE() and LAST_VALUE(): Get the first or last value in a partition.
+NTH_VALUE(): Fetches the Nth value in a window.
+NTILE(): Divides the partition into a specified number of ranked groups.
+Window Frame:
+Specifies the set of rows used for each calculation through ROWS, RANGE, or GROUPS between defined bounds:
+
+UNBOUNDED PRECEDING and UNBOUNDED FOLLOWING: Includes all rows from the start or end of the partition.
+N PRECEDING and N FOLLOWING: Considers rows within a specified distance before or after the current row.
+CURRENT ROW: The current row's boundary for calculation.
+Below is the SQL Window Function Cheat Sheet from learnsql.com.
+
+Press enter or click to view image in full size
+
+Press enter or click to view image in full size
+
+[Ranking Functions]
+- LC 185. Department Top 3 Salaries
+- LC 1159. Market Analysis II
+- LC 1369. Get the Second Most Recent Activity
+- LC 1412. Find the Quiet Students in All Exams
+- LC 1972. First & Last Call on the Same Day
+- LC 2010. The Number of Seniors & Juniors to Join the Company II
+- LC 2362. Generate the Invoice
+- LC 2720. Popularity Percentage
+- LC 2793. Status of Flight Tickets
+- LC 2995. Viewers Turned Streamers
+- LC 1194. Tournament Winners ***
+
+[Analytics Functions — Lead/Lag]
+- LC 579. Find Cumulative Salary of an Employee
+- LC 601. Human Traffic of Stadium
+- LC 1651. Hopper Company Queries III
+
+[Window Frame]
+- LC 2494. Merge Overlapping Events in the Same Hall ***
+
+3. Using Min/Max for Pivoting
+Pivoting with aggregates, particularly using MIN and MAX functions, is a versatile SQL technique for transforming rows into columns, enabling a more structured and readable presentation of data. This method is especially useful for summarizing and comparing grouped data across different categories or time periods.
+
+The MIN/MAX trick in pivoting involves two main steps:
+
+Grouping and Ranking: First, data is organized into groups (e.g., by category, date, or another criterion) and optionally ranked or ordered within those groups. This can involve window functions like ROW_NUMBER(), RANK(), or others to prepare the data for pivoting.
+Pivoting with Aggregates: Next, the pivot itself is performed by selecting the minimum or maximum value within each group for a specific field. This is typically done in a SELECT statement using CASE expressions to differentiate between the groups and apply the MIN or MAX function accordingly.
+- LC 618. Students Report by Geography
+- LC 2991. Top Three Wineries
+
+4. Special Trick — Gaps & Islands
+The “Gaps and Islands” problem in SQL refers to a class of problems that involve finding ranges of continuous data (“islands”) and breaks between these ranges (“gaps”) within a dataset. This problem is commonly encountered in datasets that include sequences of numbers, dates, or times where the objective is to group or separate these sequences based on their continuity or discontinuity.
+
+Understanding Gaps and Islands
+Gaps: These are discontinuities in the data. For example, if you have a sequence of dates or numbers, a gap would be a missing date or number that breaks the sequence.
+Islands: These are continuous ranges of data without any gaps. In a sequence of dates, an island would be a consecutive series of dates without any breaks.
+Gaps and Islands problems often arise in scenarios like:
+
+Analyzing periods of activity or inactivity in time-series data (e.g., login sessions).
+Grouping consecutive numerical data (e.g., order numbers, event IDs).
+Identifying continuous availability or booking slots.
+Solving Gaps and Islands problems typically involves using SQL window functions to compare rows against their preceding or following rows. The key is to identify when a gap starts or an island ends. Some common approaches include:
+
+ROW_NUMBER() and DENSE_RANK(): These functions can be used to generate sequences that help in identifying and separating islands.
+LAG() and LEAD(): These functions compare the current row with the previous or next row, respectively, to detect discontinuities.
+Differences in Sequences: Calculating the difference between the current row’s value and a sequence number can help identify gaps and islands.
+- LC 601. Human Traffic of Stadium
+- LC 1225. Report Contiguous Dates
+- LC 2173. Longest Winning Streak
+- LC 2701. Consecutive Transactions with Increasing Amounts
+- LC 2752. Customers with Maximum Number of Transactions on Consecutive Days
+
+5. Date Functions
+SQL date functions are essential tools for manipulating and analyzing data that contains dates and times. These functions allow you to extract specific components from a date, perform calculations with dates, and format dates for display or further processing. Here’s an overview of some of the most commonly used SQL date functions:
+
+WEEKDAY: Monday (0) — Sunday (6)
+WEEK(date_col)
+DATE_ADD(date_col, INTERVAL n DAY)
+DAY_SUB(date_col, INTERVAL n DAY)
+DATEDIFF(date_1, date_2) = date_1 — date_2
+EXTRACT(YEAR FROM date_col)
+- LC 1097. Game Play Analysis V
+- LC 1479. Sales by Day of the Week
+- LC 2993. Friday Purchases I
+- LC 2994. Friday Purchases II
+
+6. CONCAT & GROUP_CONCAT
+In SQL, the functions CONCAT and GROUP_CONCAT (or their equivalents, depending on the SQL dialect) are used to merge strings from multiple columns or rows, respectively. These functions are essential for data manipulation, especially when working with textual data or generating formatted output directly from queries.
+
+The CONCAT function merges two or more string values into a single string. It is straightforward and works by taking multiple string arguments and combining them in order.
+
+CONCAT(str_1, str_2, ..., str_N)
+The GROUP_CONCAT function is used to concatenate values from multiple rows into a single string within a group. This is particularly useful in queries that involve grouping results with GROUP BY.
+
+GROUP_CONCAT(  [DISTINCT] expression 
+               [ORDER BY some_column] 
+               [SEPARATOR 'separator_string']
+             )
+
+GROUP_CONCAT(email SEPARATOR '; ') 
+- LC 2118. Build the Equation
+- LC 2199. Finding the Topic of Each Post
+- LC 2991. Top Three Wineries
+
+7. JOIN — SELF JOIN || JOINING WITH ON VS WHERE
+A self join is a technique used in SQL to join a table to itself. It’s particularly useful for comparing rows within the same table or querying hierarchical data, such as finding all pairs of employees who work in the same department. To perform a self join, you typically assign different aliases to the table in the FROM clause to distinguish the two instances of the same table in the query.
+
+- LC 2474. Customers with Strictly Increasing Purchases
+
+In SQL, the distinction between using the ON clause and the WHERE clause for joins is crucial, particularly when applying filters like date conditions. Here’s a concise overview:
+
+Filtering with ON in Outer Joins: Preserves all rows from the primary table, using conditions to manage matches from the secondary table. Essential for analyses where maintaining a complete dataset from one table is critical.
+Filtering with WHERE: Applies conditions to the combined dataset, which can exclude unmatched rows from the primary table, affecting the inclusivity of your results.
+Example: Filtering for the year after a join, using WHERE YEAR(order_date) = 2019, excludes users without 2019 orders from the results. Conversely, incorporating the filter directly in a LEFT JOIN, as in LEFT JOIN Orders AS o ON u.user_id = o.buyer_id
+AND YEAR(order_date) = '2019', ensures users without matching 2019 orders still appear in the results, with a null order_date, thus maintaining a row in the final results, potentially with a count of 0.
+
+SELECT 
+  u.user_id AS buyer_id, u.join_date, 
+  IFNULL(COUNT(order_id), 0) AS orders_in_2019
+FROM users u LEFT JOIN Orders o ON o.buyer_id = u.user_id 
+AND YEAR(order_date) = 2019
+GROUP BY 1, 2
+- LC 1158. Market Analysis I
+- LC 1159. Market Analysis II
+
+Worth Mentioning
+- LC 571. Find Median Given Frequency of Numbers
+- LC 1917. Leetcodify Friends Recommendations
+[ STORED PROCEDURE]
+- LC 2252. Dynamic Pivoting of a Table
+- LC 2253. Dynamic Unpivoting of a Table
+
+P/S: The triple asterisk (***) indicates a higher difficulty level, taking me longer to solve than other hard questions.

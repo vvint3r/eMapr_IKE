@@ -1,0 +1,74 @@
+Introduction to SQL Query Patterns
+Get an overview of SQL query patterns and how they improve problem-solving in real-world tasks and interviews.
+
+Imagine we are preparing for a data analytics interview.
+
+One task is to find the most returned product by category in an online store. It is not a simple lookup involving joins, grouping, and filtering. We might not immediately remember the exact SQL syntax, but if we recognize the problem as a common Group bucket pattern, we know exactly how to approach it.
+
+This demonstrates the power of SQL query patterns.
+
+They provide a clear framework for solving real-world problems efficiently. In this lesson, we’ll discover SQL query patterns and why they matter in both interviews and on the job. We’ll learn how patterns offer reusable structures for solving common query challenges and how recognizing them can drastically improve our speed and clarity.
+
+We’ll also introduce the concept of thinking in patterns, similar to how platforms like LeetCode encourage coding. This time, however, we’ll apply it to SQL.
+
+In this lesson, we will:
+
+Understand what SQL query patterns are.
+
+Explain why patterns improve SQL problem-solving.
+
+See how pattern recognition helps in interviews and real-world SQL tasks.
+
+What are SQL query patterns?
+When working with SQL, we often encounter the same problems repeatedly: finding totals per group, filtering for recent records, identifying gaps in sequences, comparing datasets, and more. Instead of writing queries from scratch each time, we can use query patterns, generalized templates that help solve recurring problems confidently.
+
+These patterns aren’t about memorizing code; they’re about understanding how a problem can be solved and why certain query structures work. Much like design patterns in programming, SQL query patterns give us reusable solutions that adapt to different datasets and business questions.
+
+Why are they important?
+Using SQL patterns helps us:
+
+Solve faster by starting with a structure already proven to work.
+
+Avoid errors by following familiar, reliable query designs.
+
+Focus on the logic of the problem instead of low-level syntax.
+
+Communicate clearly with others by using consistent approaches.
+
+For example, imagine we are asked, “Which product category had the highest average monthly sales last month?” This is not a unique problem; it is a variation of a common aggregation pattern where we group by category and calculate an average.
+
+Once we recognize this pattern, the query becomes much more manageable.
+
+Why do SQL patterns improve problem-solving?
+Structured approaches help us navigate complex logic with greater confidence.
+
+When we face new problems, we can draw on a mental “catalog” of patterns, like grouping and aggregating to get summary insights, or comparing two data sets to see differences. This speeds up our reasoning and reduces the chance of missing corner cases.
+
+It also greatly benefits teams.
+
+When everyone on a project understands common patterns, they share a vocabulary for discussing and refining queries. This boosts collaboration and helps new team members come up to speed faster because they work with familiar query templates.
+
+This is powerful, especially in technical interviews.
+
+Like LeetCode problems often fall into well-known categories (e.g., two-pointer methods, binary search), SQL challenges follow similar patterns. Mastering patterns means not solving from scratch; we are selecting the right approach from a toolkit.
+
+LeetCode style pattern recognition
+Coding platforms like LeetCode often present algorithmic challenges that hinge on recognizing certain problem shapes, whether sorting, searching, or using data structures. For example:
+
+Sliding Window for string problems
+
+Binary Tree Traversal for tree problems
+
+SQL challenges follow a similar logic. When we learn common SQL patterns, we acquire a toolkit that helps us quickly map a new task to a known solution strategy. This is especially helpful in technical interviews, where time is limited and clarity is crucial.
+
+We have curated the following SQL patterns to categorize problems:
+
+Aggregation patterns for totals, averages, and counts
+
+Filtering patterns for selecting data based on logic
+
+Comparison patterns for identifying differences between rows or tables
+
+Sequencing patterns for handling row order and relationships
+
+Transformation patterns for reshaping data (like pivoting)

@@ -1,0 +1,3067 @@
+# Foundations & Core Concepts
+
+(Consolidated: Fundamentals & Core Concepts, Experimentation Foundations, Marketing Experimentation Definition)
+
+## Introduction to Experimentation
+
+(Consolidated: Introduction to Experimentation)
+
+### A/B Testing
+
+(Consolidated: What is A/B Testing, A/B Testing, A/B Tests Fundamentals, A/B Test (Split Testing), Split Test, Split Testing, OCE, Online Controlled Experiment)
+
+### History & Evolution
+
+(Consolidated: History and Evolution)
+
+### Scientific Method Application
+
+(Consolidated: Scientific Method Application)
+
+### Causality vs Correlation
+
+(Consolidated: Causality vs Correlation, Causality vs. Correlation)
+
+### When to Use A/B Testing
+
+(Consolidated: When to Use A/B Testing)
+
+## Business Value & Strategy
+
+(Consolidated: Business Value & Strategy)
+
+### Return on Investment (ROI)
+
+(Consolidated: Return on Investment (ROI), ROI, Return on Investment)
+
+### Evidence-Based Decision Making
+
+(Consolidated: Evidence-Based Decision Making, Evidence-based Decision Making)
+
+### North Star Metrics
+
+(Consolidated: North Star Metrics, North Star Metric)
+
+### Learning Agenda
+
+(Consolidated: Learning Agenda)
+
+### Experiment Portfolio Strategy
+
+(Consolidated: Experiment Portfolio Strategy, Experiment Portfolio)
+
+### Experiment Backlog Management
+
+(Consolidated: Experiment Backlog Management, Experiment Backlog)
+
+### Quick Wins vs Strategic Bets
+
+(Consolidated: Quick Wins vs Strategic Bets)
+
+### Risk Appetite Assessment
+
+(Consolidated: Risk Appetite Assessment, Risk Appetite)
+
+### PIE Framework (Potential, Importance, Ease)
+
+(Consolidated: PIE Framework (Potential, Importance, Ease), PIE Framework)
+
+### SMART Goal Setting
+
+(Consolidated: SMART Goal Setting)
+
+## Experiment Types & Methodologies
+
+(Consolidated: Experiment Types & Methodologies, Key Testing Methodologies)
+
+### A/B Test (Split Testing)
+
+(Consolidated: A/B Test (Split Testing), A/B Testing (Split Testing), Split Test)
+
+### A/B/n Test (Multiple Variants)
+
+(Consolidated: A/B/n Test (Multiple Variants), A/B/n Test)
+
+### A/A Test (System Validation)
+
+(Consolidated: A/A Test (System Validation), A/A Test, A/A Tests)
+
+### Multivariate Testing (MVT)
+
+(Consolidated: Multivariate Testing (MVT), Multivariate Test (MVT), MVT, Multivariate Testing)
+
+#### Full Factorial Design
+
+(Consolidated: Full Factorial Design, Factorial Design (2^k), Full-Factorial Designs)
+
+#### Fractional Factorial Design
+
+(Consolidated: Fractional Factorial Design, Fractional Factorial)
+
+#### Taguchi Design
+
+(Consolidated: Taguchi Design)
+
+### Randomized Controlled Trials (RCT)
+
+(Consolidated: Randomized Controlled Trials (RCT), Randomized Controlled Trials (RCTs))
+
+### Quasi-Experiments
+
+(Consolidated: Quasi-Experiments)
+
+### Holdout Tests
+
+(Consolidated: Holdout Tests, Holdout Group)
+
+### Crossover Designs
+
+(Consolidated: Crossover Designs, Crossover)
+
+### Switchback Experiments
+
+(Consolidated: Switchback Experiments, Switchback)
+
+### Time-Based Experiments
+
+(Consolidated: Time-Based Experiments, Time-Based Experiment)
+
+### Latin Square Designs
+
+(Consolidated: Latin Square Designs, Latin Square)
+
+### Interleaving (Search/Ranking)
+
+(Consolidated: Interleaving (Search/Ranking), Interleaving)
+
+### AGILE A/B Test
+
+(Consolidated: AGILE A/B Test)
+
+### Canary Testing
+
+(Consolidated: Canary Testing, Canary)
+
+# Metrics & Measurement
+
+(Consolidated: Metrics & Measurement, Measure Success)
+
+## Metrics Fundamentals
+
+(Consolidated: Metrics Fundamentals)
+
+### Metric Taxonomy
+
+(Consolidated: Metric Taxonomy)
+
+### ACCESS Framework (Attributes of Good Metrics)
+
+(Consolidated: ACCESS Framework (Attributes of Good Metrics), "ACCESS": Attributes of A Good Metric)
+
+### How to Define a Metric
+
+(Consolidated: How to Define a Metric, How to Define a Metric?)
+
+### KPI Trees & Decomposition
+
+(Consolidated: KPI Trees & Decomposition, KPI Tree)
+
+### Leading vs Lagging Indicators
+
+(Consolidated: Leading vs Lagging Indicators)
+
+### Surrogate Endpoints
+
+(Consolidated: Surrogate Endpoints)
+
+### Bernoulli Metric
+
+(Consolidated: Bernoulli Metric)
+
+### Binomial Metric
+
+(Consolidated: Binomial Metric)
+
+### Non-Binomial Metric
+
+(Consolidated: Non-Binomial Metric)
+
+### Continuous Metric
+
+(Consolidated: Continuous Metric)
+
+### Proportion
+
+(Consolidated: Proportion)
+
+### Rate
+
+(Consolidated: Rate)
+
+### Ratio Metrics Considerations
+
+(Consolidated: Ratio Metrics Considerations, Ratio Metrics)
+
+### Delta vs Relative Lift
+
+(Consolidated: Delta vs Relative Lift, Delta vs. Relative Lift, Absolute Change, Absolute Difference, Relative Change, Relative Difference, Percent Change)
+
+### Ratio-of-Means vs Mean-of-Ratios
+
+(Consolidated: Ratio-of-Means vs Mean-of-Ratios)
+
+### Winsorization & Truncation
+
+(Consolidated: Winsorization & Truncation)
+
+### Driver Metrics
+
+(Consolidated: Driver Metrics)
+
+### Guardrail Metrics (Must Not Degrade)
+
+(Consolidated: Guardrail Metrics (Must Not Degrade), Guardrail Metrics)
+
+### Primary KPI
+
+(Consolidated: Primary KPI)
+
+### Secondary KPI
+
+(Consolidated: Secondary KPI)
+
+### Overall Evaluation Criterion (OEC)
+
+(Consolidated: Overall Evaluation Criterion (OEC))
+
+### Pros & Cons of a Metric
+
+(Consolidated: Pros and Cons of a Metric)
+
+### Measure Customers' Satisfaction
+
+(Consolidated: Measure Customers' Satisfaction)
+
+## Primary Metrics
+
+(Consolidated: Primary Metrics)
+
+### Conversion Rate (CVR)
+
+(Consolidated: Conversion Rate (CVR), Conversion Rate, CVR, CR)
+
+### Click-Through Rate (CTR)
+
+(Consolidated: Click-Through Rate (CTR), Click-through Rate (CTR), CTR)
+
+### Revenue Metrics (RPU, AOV, ARPU)
+
+(Consolidated: Revenue Metrics (RPU, AOV, ARPU), Revenue per User (RPU), Average Order Value (AOV), Average Revenue Per User (ARPU), RPU, AOV, ARPU)
+
+### Engagement Metrics
+
+(Consolidated: Engagement Metrics)
+
+### Bounce Rate
+
+(Consolidated: Bounce Rate)
+
+### Purchase Rate
+
+(Consolidated: Purchase Rate)
+
+### Transaction Rate
+
+(Consolidated: Transaction Rate)
+
+## Customer Value Metrics
+
+(Consolidated: Customer Value Metrics)
+
+### Customer Lifetime Value (CLV/LTV)
+
+(Consolidated: Customer Lifetime Value (CLV/LTV), Customer Lifetime Value, CLV, LTV)
+
+### Customer Acquisition Cost (CAC)
+
+(Consolidated: Customer Acquisition Cost (CAC), Customer Acquisition Cost (CAC), CAC)
+
+### Cost Per Acquisition (CPA)
+
+(Consolidated: Cost Per Acquisition (CPA), Cost Per Acquisition (CPA), CPA)
+
+### Retention & Churn Rate
+
+(Consolidated: Retention & Churn Rate, Retention Rate, Churn Rate, Customer Churn)
+
+### Time-to-Event
+
+(Consolidated: Time-to-Event)
+
+## Marketing-Specific Metrics
+
+(Consolidated: Marketing-Specific Metrics, Key Performance Indicators (KPIs) & Metrics, Strategic KPIs, Tactical KPIs)
+
+### Return on Ad Spend (ROAS)
+
+(Consolidated: Return on Ad Spend (ROAS), Return on Ad Spend (ROAS), ROAS)
+
+### Incrementality & Lift
+
+(Consolidated: Incrementality & Lift, Incrementality, Uplift (Incremental Lift), Lift, Uplift)
+
+### Net Lift (Cannibalization Adjusted)
+
+(Consolidated: Net Lift (Cannibalization Adjusted), Net Lift)
+
+### Brand Lift & Awareness
+
+(Consolidated: Brand Lift & Awareness)
+
+### Cost Per Click (CPC)
+
+(Consolidated: Cost Per Click (CPC), CPC)
+
+### Impression Share
+
+(Consolidated: Impression Share)
+
+### iROAS Optimization
+
+(Consolidated: iROAS Optimization)
+
+### Uplift Distribution
+
+(Consolidated: Uplift Distribution)
+
+## Channel-Specific Metrics
+
+(Consolidated: Channel-Specific Metrics)
+
+### Email Marketing (Open Rates, Click Rates, Unsubscribe Rates)
+
+(Consolidated: Email Marketing (Open Rates, Click Rates, Unsubscribe Rates))
+
+### Social Media (Followers, Likes, Shares, Comments, Reach)
+
+(Consolidated: Social Media (Followers, Likes, Shares, Comments, Reach))
+
+### Content Marketing (Page Views, Time on Page, Bounce Rate)
+
+(Consolidated: Content Marketing (Page Views, Time on Page, Bounce Rate))
+
+### Paid Advertising (Cost Per Acquisition, ROAS)
+
+(Consolidated: Paid Advertising (Cost Per Acquisition, ROAS))
+
+### SEO (Organic Traffic, Keyword Rankings, Search Visibility)
+
+(Consolidated: SEO (Organic Traffic, Keyword Rankings, Search Visibility))
+
+# Statistical Foundations
+
+(Consolidated: Statistical Foundations, Statistical Methods & Analysis, Statistical Foundations)
+
+## Basic Statistical Concepts
+
+(Consolidated: Basic Statistical Concepts)
+
+### Mean, Median, Mode
+
+(Consolidated: Mean, Median, Mode, Mean, Average)
+
+### Standard Deviation & Variance
+
+(Consolidated: Standard Deviation & Variance, Standard Deviation, Variance, SD)
+
+### Standard Error (SEM)
+
+(Consolidated: Standard Error (SEM), Standard Error of the Mean, SEM)
+
+### Distribution Types (Normal, Binomial, etc.)
+
+(Consolidated: Distribution Types (Normal, Binomial, etc.), Distribution, Normal Distribution, Gaussian Distribution)
+
+### Over Dispersion
+
+(Consolidated: Over Dispersion, Overdispersion)
+
+### Identically Distributed
+
+(Consolidated: Identically Distributed)
+
+### Independent Observation
+
+(Consolidated: Independent Observation)
+
+### Statistic
+
+(Consolidated: Statistic)
+
+### Statistical Model
+
+(Consolidated: Statistical Model)
+
+### Estimator
+
+(Consolidated: Estimator)
+
+### Unbiased Estimator
+
+(Consolidated: Unbiased Estimator, Unbiased)
+
+### Efficient Estimator
+
+(Consolidated: Efficient Estimator)
+
+### Sufficient Estimator
+
+(Consolidated: Sufficient Estimator)
+
+### Consistent Estimator
+
+(Consolidated: Consistent Estimator)
+
+### Maximum Likelihood Estimate (MLE)
+
+(Consolidated: Maximum Likelihood Estimate (MLE), MLE, Maximum Likelihood Estimate)
+
+### Mean Square Error (MSE)
+
+(Consolidated: Mean Square Error (MSE), MSE)
+
+### Mu
+
+(Consolidated: Mu)
+
+### Sigma
+
+(Consolidated: Sigma)
+
+### Theta
+
+(Consolidated: Theta)
+
+## Hypothesis Testing Framework
+
+(Consolidated: Hypothesis Testing Framework, Hypothesis Testing)
+
+### Null & Alternative Hypotheses
+
+(Consolidated: Null & Alternative Hypotheses, Null Hypothesis, Alternative Hypothesis, Hypothesis, Null/Alternative Hypothesis)
+
+### Composite vs Point Hypotheses
+
+(Consolidated: Composite vs Point Hypotheses, Composite Hypothesis, Point Hypothesis)
+
+### One-Sided vs Two-Sided Tests
+
+(Consolidated: One-Sided vs Two-Sided Tests, One-Sided Hypothesis, Two-Sided Hypothesis, One-Tailed Test, Two-Tailed Test, One-sided Test, Two-sided Test)
+
+### Test of Significance vs NHST
+
+(Consolidated: Test of Significance vs NHST, Test Of Significance, NHST, Null Hypothesis Statistical Test)
+
+### Modus Tollens
+
+(Consolidated: Modus Tollens)
+
+### Likelihood Function
+
+(Consolidated: Likelihood Function)
+
+### Likelihood
+
+(Consolidated: Likelihood)
+
+## Statistical Significance
+
+(Consolidated: Statistical Significance)
+
+### P-values & Interpretation
+
+(Consolidated: P-values & Interpretation, p-value)
+
+### Alpha (Type I Error Rate)
+
+(Consolidated: Alpha (Type I Error Rate), Type I Error, alpha)
+
+### Beta (Type II Error Rate)
+
+(Consolidated: Beta (Type II Error Rate), Type II Error, beta)
+
+### Confidence Intervals & Confidence Levels
+
+(Consolidated: Confidence Intervals & Confidence Levels, Confidence Interval, CI, Confidence Level)
+
+### Effect Size (Cohen's d)
+
+(Consolidated: Effect Size (Cohen's d), Effect Size)
+
+### Practical vs Statistical Significance
+
+(Consolidated: Practical vs Statistical Significance, Statistical Significance, Statistically Significant, Significance Test, Significant)
+
+### Significance Level
+
+(Consolidated: Significance Level)
+
+### Significance Threshold
+
+(Consolidated: Significance Threshold)
+
+### Statistically Significant
+
+(Consolidated: Statistically Significant)
+
+### Confidence Bound
+
+(Consolidated: Confidence Bound)
+
+### Confidence Limit
+
+(Consolidated: Confidence Limit)
+
+### Confidence Threshold
+
+(Consolidated: Confidence Threshold)
+
+### Critical Region
+
+(Consolidated: Critical Region)
+
+### Rejection Region
+
+(Consolidated: Rejection Region)
+
+### Actual Significance
+
+(Consolidated: Actual Significance)
+
+### Nominal Significance
+
+(Consolidated: Nominal Significance)
+
+### Observed Significance
+
+(Consolidated: Observed Significance)
+
+### Actual p-value
+
+(Consolidated: Actual p-value)
+
+### Nominal p-value
+
+(Consolidated: Nominal p-value)
+
+### p-value Adjustment
+
+(Consolidated: p-value Adjustment)
+
+### p-value Distribution
+
+(Consolidated: p-value Distribution)
+
+### Severity
+
+(Consolidated: Severity)
+
+### t Score
+
+(Consolidated: t Score)
+
+### z Score
+
+(Consolidated: z Score)
+
+## Statistical Power
+
+(Consolidated: Statistical Power)
+
+### Power Analysis Fundamentals
+
+(Consolidated: Power Analysis Fundamentals, Power Analysis)
+
+### Power Function
+
+(Consolidated: Power Function)
+
+### Observed Power (Post Hoc)
+
+(Consolidated: Observed Power (Post Hoc), Observed Power, Post Hoc Power)
+
+### Overpowered & Underpowered Tests
+
+(Consolidated: Overpowered & Underpowered Tests, Overpowered Test, Underpowered Test)
+
+### Uniformly Most Powerful Tests (UMP)
+
+(Consolidated: Uniformly Most Powerful Tests (UMP), UMP, Uniformly Most Powerful Test)
+
+### Error Probability
+
+(Consolidated: Error Probability)
+
+### Error Rate
+
+(Consolidated: Error Rate)
+
+## Sample Size Determination
+
+(Consolidated: Sample Size Determination, Sample Size Determination, Sample Size Requirements)
+
+### Minimum Detectable Effect (MDE/MEI)
+
+(Consolidated: Minimum Detectable Effect (MDE/MEI), Minimum Detectable Effect, MDE, MEI, Minimum Effect of Interest)
+
+### Minimum Sample Size Calculation
+
+(Consolidated: Minimum Sample Size Calculation, Sample Size)
+
+### Average Sample Size (ASD)
+
+(Consolidated: Average Sample Size (ASD), ASD, Average Sample Size)
+
+### Test Duration Estimation
+
+(Consolidated: Test Duration Estimation, Test Duration)
+
+### Baseline Rate Uncertainty
+
+(Consolidated: Baseline Rate Uncertainty)
+
+### Cluster Design Effect & ICC
+
+(Consolidated: Cluster Design Effect & ICC, Cluster Design Effect, ICC, Intracluster Correlation)
+
+### Sample Space
+
+(Consolidated: Sample Space)
+
+# Hypothesis Development & Framing
+
+(Consolidated: Hypothesis Development & Framing)
+
+## Problem Identification
+
+(Consolidated: Problem Identification)
+
+### Problem Framing
+
+(Consolidated: Problem Framing)
+
+### Research & Data Analysis
+
+(Consolidated: Research & Data Analysis)
+
+### Qualitative & Quantitative Insights
+
+(Consolidated: Qualitative & Quantitative Insights, Quantitative Data, Qualitative Data)
+
+## Hypothesis Construction
+
+(Consolidated: Hypothesis Construction, Hypothesis Formulation, Hypothesis Construction)
+
+### Hypothesis Structure (Change → Outcome)
+
+(Consolidated: Hypothesis Structure (Change → Outcome), Hypothesis — Testable Prediction Connecting Change → Outcome)
+
+### Testable Predictions
+
+(Consolidated: Testable Predictions)
+
+## Test Prioritization
+
+(Consolidated: Test Prioritization)
+
+### Six-Step Process (Goal Setting, Hypothesis Formation, Audience Selection, Metric Selection, Execution, Analysis)
+
+(Consolidated: Six-Step Process: Goal Setting, Hypothesis Formation, Audience Selection, Metric Selection, Execution, Analysis)
+
+### Experiment Goals & Hypotheses
+
+(Consolidated: Experiment Goals and Hypotheses)
+
+# Experimental Design
+
+(Consolidated: Experimental Design, Test Design Principles, Experimental Frameworks, Design of Experiments (DOE))
+
+## Design of Experiments (DOE)
+
+(Consolidated: Design of Experiments (DOE))
+
+### Factor Levels & Variables
+
+(Consolidated: Factor Levels & Variables, Factor Levels, Variable Identification)
+
+#### Independent Variables
+
+(Consolidated: Independent Variables, Independent Variable)
+
+#### Dependent Variables
+
+(Consolidated: Dependent Variables, Dependent Variable)
+
+#### Extraneous Variables
+
+(Consolidated: Extraneous Variables)
+
+### Main Effects vs Interaction Effects
+
+(Consolidated: Main Effects vs Interaction Effects, Main Effects, Interaction Effects)
+
+### Orthogonality & Confounding
+
+(Consolidated: Orthogonality & Confounding, Orthogonality, Confounding)
+
+### Aliasing in Fractional Designs
+
+(Consolidated: Aliasing in Fractional Designs, Aliasing)
+
+### Design Resolution
+
+(Consolidated: Design Resolution)
+
+### Statistical Design
+
+(Consolidated: Statistical Design)
+
+### Power-Optimized Designs
+
+(Consolidated: Power-Optimized Designs)
+
+### D-Optimal Designs
+
+(Consolidated: D-Optimal Designs)
+
+## Randomization & Assignment
+
+(Consolidated: Randomization & Assignment, Randomization, Units and Randomization)
+
+### Randomization Units (User/Session/Geo)
+
+(Consolidated: Randomization Units (User/Session/Geo), Randomization Unit)
+
+### Simple Randomization
+
+(Consolidated: Simple Randomization)
+
+### Stratified Randomization & Blocking
+
+(Consolidated: Stratified Randomization & Blocking, Stratified Randomization, Blocking)
+
+### Cluster Randomization
+
+(Consolidated: Cluster Randomization)
+
+### Matched Pairs Design
+
+(Consolidated: Matched Pairs Design, Matched Pairs)
+
+### Re-randomization for Balance
+
+(Consolidated: Re-randomization for Balance)
+
+### Hash-Based Bucketing
+
+(Consolidated: Hash-Based Bucketing)
+
+### Sticky Assignment
+
+(Consolidated: Sticky Assignment)
+
+### Randomizer
+
+(Consolidated: Randomizer)
+
+## Traffic & Sample Management
+
+(Consolidated: Traffic & Sample Management)
+
+### Split Ratios & Traffic Allocation
+
+(Consolidated: Split Ratios & Traffic Allocation, Traffic Allocation, Sample Ratio)
+
+### Control Group Design
+
+(Consolidated: Control Group Design, Control Group, Control Group Methodology)
+
+### Holdout Groups
+
+(Consolidated: Holdout Groups)
+
+### Historical Controls
+
+(Consolidated: Historical Controls)
+
+### Sample Allocation Mismatch
+
+(Consolidated: Sample Allocation Mismatch)
+
+### Sample Ratio Mismatch (SRM)
+
+(Consolidated: Sample Ratio Mismatch (SRM), SRM, Sample Ratio Mismatch)
+
+## Eligibility & Exposure
+
+(Consolidated: Eligibility & Exposure)
+
+### Eligibility Criteria
+
+(Consolidated: Eligibility Criteria)
+
+### Exposure & Trigger Events
+
+(Consolidated: Exposure & Trigger Events, Exposure/Trigger)
+
+### Attribution Windows
+
+(Consolidated: Attribution Windows, Exposure and Attribution Windows)
+
+### Intention-to-Treat (ITT) vs Compliers (CACE)
+
+(Consolidated: Intention-to-Treat (ITT) vs Compliers (CACE))
+
+### ATE/ATT/ITT/CACE
+
+(Consolidated: ATE/ATT/ITT/CACE)
+
+## Ramp & Rollout Strategy
+
+(Consolidated: Ramp & Rollout Strategy, Rollout Strategy)
+
+### Ramp Plans (1% → 10% → 50%)
+
+(Consolidated: Ramp Plans (1% → 10% → 50%), Ramp Plan)
+
+### Feature Flagging
+
+(Consolidated: Feature Flagging, Feature Flagging)
+
+### Rollback Criteria
+
+(Consolidated: Rollback Criteria)
+
+## Test Planning & Pre-Registration
+
+(Consolidated: Test Planning & Pre-Registration)
+
+### Objective Definition
+
+(Consolidated: Objective Definition)
+
+### Success Criteria & Decision Rules
+
+(Consolidated: Success Criteria & Decision Rules, Success Criteria)
+
+### Pre-Registration & Analysis Plans
+
+(Consolidated: Pre-Registration & Analysis Plans, Pre-Registration)
+
+### Experiment Charter
+
+(Consolidated: Experiment Charter)
+
+### Resource Allocation
+
+(Consolidated: Resource Allocation)
+
+### Test Calendar & Scheduling
+
+(Consolidated: Test Calendar & Scheduling, Test Calendar)
+
+### Collision Management
+
+(Consolidated: Collision Management, Collisions)
+
+### Mutual Exclusion
+
+(Consolidated: Mutual Exclusion)
+
+### Experiment Interaction
+
+(Consolidated: Experiment Interaction)
+
+### Concurrent Tests
+
+(Consolidated: Concurrent Tests)
+
+### Overlap Policy
+
+(Consolidated: Overlap Policy)
+
+### Seasonality Blackouts
+
+(Consolidated: Seasonality Blackouts, Seasonality Blackout)
+
+# Implementation & Execution
+
+(Consolidated: Implementation & Execution)
+
+## Platform Architecture
+
+(Consolidated: Platform Architecture)
+
+### Experimentation Platforms
+
+(Consolidated: Experimentation Platforms)
+
+#### Open Source Solutions
+
+(Consolidated: Open Source Solutions)
+
+#### Commercial Platforms (Optimizely, VWO, Target)
+
+(Consolidated: Commercial Platforms (Optimizely, VWO, Target))
+
+#### Custom Built Systems
+
+(Consolidated: Custom Built Systems)
+
+### Assignment Service & Bucketing
+
+(Consolidated: Assignment Service & Bucketing)
+
+### Bucketing Namespaces
+
+(Consolidated: Bucketing Namespaces)
+
+### Feature Flags & Gates
+
+(Consolidated: Feature Flags & Gates)
+
+### Metric Store
+
+(Consolidated: Metric Store)
+
+### Shard/namespace
+
+(Consolidated: Shard/namespace)
+
+## Technical Implementation
+
+(Consolidated: Technical Implementation)
+
+### User Assignment Logic
+
+(Consolidated: User Assignment Logic)
+
+### Cookies & User Identification
+
+(Consolidated: Cookies & User Identification)
+
+### Cross-Device Identity
+
+(Consolidated: Cross-Device Identity)
+
+### Householding
+
+(Consolidated: Householding)
+
+### Instrumentation
+
+(Consolidated: Instrumentation)
+
+### Cookie Churn
+
+(Consolidated: Cookie Churn)
+
+## Data Collection & Tracking
+
+(Consolidated: Data Collection & Tracking, Data Collection & Validation)
+
+### Event Tracking & Schema
+
+(Consolidated: Event Tracking & Schema, Event Instrumentation)
+
+### Exposure Logging
+
+(Consolidated: Exposure Logging)
+
+### Trigger Logging
+
+(Consolidated: Trigger Logging)
+
+### Data Pipeline Architecture (Telemetry/ETL)
+
+(Consolidated: Data Pipeline Architecture (Telemetry/ETL))
+
+### Telemetry Latency & SLAs
+
+(Consolidated: Telemetry Latency & SLAs)
+
+### Sampling for Cost Efficiency
+
+(Consolidated: Sampling for Cost Efficiency, Sampling)
+
+### Event Schema/Contract
+
+(Consolidated: Event Schema/Contract)
+
+### Event Loss/Backfill
+
+(Consolidated: Event Loss/Backfill)
+
+## Test Execution
+
+(Consolidated: Test Execution)
+
+### Launch Checklists
+
+(Consolidated: Launch Checklists)
+
+### Monitoring During Tests
+
+(Consolidated: Monitoring During Tests)
+
+### Real-Time Dashboards
+
+(Consolidated: Real-Time Dashboards)
+
+### Emergency Stop Procedures (Kill-Switch)
+
+(Consolidated: Emergency Stop Procedures (Kill-Switch), Kill-Switch)
+
+### Incident Response
+
+(Consolidated: Incident Response)
+
+## Test Coordination
+
+(Consolidated: Test Coordination)
+
+### Test Calendar & Scheduling
+
+(Consolidated: Test Calendar & Scheduling)
+
+### Collision Management
+
+(Consolidated: Collision Management)
+
+### Mutual Exclusion
+
+(Consolidated: Mutual Exclusion)
+
+### Experiment Interaction
+
+(Consolidated: Experiment Interaction)
+
+### Concurrent Tests
+
+(Consolidated: Concurrent Tests)
+
+### Overlap Policy
+
+(Consolidated: Overlap Policy)
+
+### Seasonality Blackouts
+
+(Consolidated: Seasonality Blackouts)
+
+# Data Quality & Validation
+
+(Consolidated: Data Quality & Validation)
+
+## Pre-Test Validation
+
+(Consolidated: Pre-Test Validation)
+
+### A/A Tests
+
+(Consolidated: A/A Tests)
+
+### Balance Checks
+
+(Consolidated: Balance Checks, Sample Balance)
+
+### Instrumentation Audit
+
+(Consolidated: Instrumentation Audit)
+
+### Canary Analysis
+
+(Consolidated: Canary Analysis)
+
+## Sample Ratio Mismatch (SRM)
+
+(Consolidated: Sample Ratio Mismatch (SRM))
+
+### SRM Detection
+
+(Consolidated: SRM Detection)
+
+### Root Cause Investigation
+
+(Consolidated: Root Cause Investigation)
+
+### Sample Allocation Mismatch
+
+(Consolidated: Sample Allocation Mismatch)
+
+## Data Quality Checks
+
+(Consolidated: Data Quality Checks)
+
+### Sanity Checks
+
+(Consolidated: Sanity Checks)
+
+### Event Duplication & De-duplication
+
+(Consolidated: Event Duplication & De-duplication, Event Duplication)
+
+### Outlier Handling
+
+(Consolidated: Outlier Handling)
+
+### Bot Filtering
+
+(Consolidated: Bot Filtering)
+
+### Missing Data
+
+(Consolidated: Missing Data)
+
+### Left/Right Censoring
+
+(Consolidated: Left/Right Censoring)
+
+## Data Validation & Backfill
+
+(Consolidated: Data Validation & Backfill)
+
+### Event Loss Detection
+
+(Consolidated: Event Loss Detection)
+
+### Backfill Procedures
+
+(Consolidated: Backfill Procedures)
+
+### Backfill Validation
+
+(Consolidated: Backfill Validation)
+
+### Reproducibility
+
+(Consolidated: Reproducibility)
+
+# Statistical Analysis Methods
+
+(Consolidated: Statistical Analysis Methods, Analysis Techniques)
+
+## Frequentist Inference
+
+(Consolidated: Frequentist Inference)
+
+### T-tests (Pooled, Welch)
+
+(Consolidated: T-tests (Pooled, Welch), T-test, t-test (pooled/Welch))
+
+### Z-tests (Proportions)
+
+(Consolidated: Z-tests (Proportions), Z-test, z-test (proportions))
+
+### Chi-Square & Fisher's Exact Tests
+
+(Consolidated: Chi-Square & Fisher's Exact Tests, Chi Squared Test, Chi-square/Fisher's Exact)
+
+### ANOVA & ANCOVA
+
+(Consolidated: ANOVA & ANCOVA)
+
+### Linear & Logistic Regression
+
+(Consolidated: Linear & Logistic Regression, Regression Analysis)
+
+### Generalized Linear Models (GLM)
+
+(Consolidated: Generalized Linear Models (GLM), GLM)
+
+## Bayesian Inference
+
+(Consolidated: Bayesian Inference, Bayesian Methods)
+
+### Prior & Posterior Distributions
+
+(Consolidated: Prior & Posterior Distributions, Prior/Posterior)
+
+### Credible Intervals
+
+(Consolidated: Credible Intervals)
+
+### Posterior Predictive Distributions
+
+(Consolidated: Posterior Predictive Distributions, Posterior Predictive)
+
+### Bayes Factors
+
+(Consolidated: Bayes Factors)
+
+### ROPE (Region of Practical Equivalence)
+
+(Consolidated: ROPE (Region of Practical Equivalence), ROPE)
+
+### Loss Functions & Utility
+
+(Consolidated: Loss Functions & Utility)
+
+### Conjugate Models (Beta-Bernoulli, Normal-Inverse-Gamma)
+
+(Consolidated: Conjugate Models (Beta-Bernoulli, Normal-Inverse-Gamma), Beta–Bernoulli, Normal–Inverse-Gamma)
+
+### Hierarchical Bayes
+
+(Consolidated: Hierarchical Bayes)
+
+### Bayesian Power & Assurance
+
+(Consolidated: Bayesian Power & Assurance)
+
+### Bayesian Monitoring
+
+(Consolidated: Bayesian Monitoring)
+
+## Non-Parametric Methods
+
+(Consolidated: Non-Parametric Methods, Non-Parametrics, Non-Parametric Test, Parametric Test, Robust and Nonparametric Methods (Medians, Quantiles))
+
+### Mann-Whitney U Test
+
+(Consolidated: Mann-Whitney U Test)
+
+### Wilcoxon Tests
+
+(Consolidated: Wilcoxon Tests)
+
+### Median & Quantile Analysis
+
+(Consolidated: Median & Quantile Analysis)
+
+### Robust Methods
+
+(Consolidated: Robust Methods)
+
+## Standard Errors & Confidence Intervals
+
+(Consolidated: Standard Errors & Confidence Intervals)
+
+### Robust Standard Errors (HC3)
+
+(Consolidated: Robust Standard Errors (HC3), Robust SE (HC3))
+
+### Cluster-Robust SE
+
+(Consolidated: Cluster-Robust SE, Cluster-Robust Inference)
+
+### Delta Method for Ratios
+
+(Consolidated: Delta Method for Ratios)
+
+### Fieller's Method for Ratio CIs
+
+(Consolidated: Fieller's Method for Ratio CIs, Ratio-Metric Delta via Fieller)
+
+### Bootstrap Methods
+
+(Consolidated: Bootstrap Methods)
+
+## Causal Inference
+
+(Consolidated: Causal Inference, Causal Inference in Data Science)
+
+# Variance Reduction Techniques
+
+(Consolidated: Variance Reduction Techniques)
+
+## CUPED (Controlled-Experiment Using Pre-Experiment Data)
+
+(Consolidated: CUPED (Controlled-Experiment Using Pre-Experiment Data), CUPED)
+
+### CUPED Fundamentals
+
+(Consolidated: CUPED Fundamentals)
+
+### Pre-Period Covariate Selection
+
+(Consolidated: Pre-Period Covariate Selection)
+
+### CUPED + ANCOVA
+
+(Consolidated: CUPED + ANCOVA, CUPED+ANCOVA)
+
+## Covariate Adjustment
+
+(Consolidated: Covariate Adjustment)
+
+### Regression Controls
+
+(Consolidated: Regression Controls)
+
+### ANCOVA
+
+(Consolidated: ANCOVA)
+
+### Control Variates
+
+(Consolidated: Control Variates)
+
+## Stratification & Weighting
+
+(Consolidated: Stratification & Weighting)
+
+### Post-Stratification
+
+(Consolidated: Post-Stratification)
+
+### Reweighting (IPW)
+
+(Consolidated: Reweighting (IPW), Reweighting)
+
+### Paired Designs
+
+(Consolidated: Paired Designs, Paired/Blocked Designs)
+
+## Advanced Variance Reduction
+
+(Consolidated: Advanced Variance Reduction)
+
+### Synthetic Controls (Unit-Level)
+
+(Consolidated: Synthetic Controls (Unit-Level), Synthetic Controls (Unit-Level))
+
+### Matched Pairs
+
+(Consolidated: Matched Pairs)
+
+# Sequential Testing & Monitoring
+
+(Consolidated: Sequential Testing & Monitoring, Sequential Testing, Sequential Testing and Peeking Control)
+
+## Sequential Design Fundamentals
+
+(Consolidated: Sequential Design Fundamentals)
+
+### Group Sequential Design (GSD/GST)
+
+(Consolidated: Group Sequential Design (GSD/GST), GSD, GST, Group-Sequential Design)
+
+### Alpha-Spending Functions
+
+(Consolidated: Alpha-Spending Functions, Alpha-Spending, Alpha-spending Function)
+
+### Beta-Spending Functions
+
+(Consolidated: Beta-Spending Functions, Beta-Spending, Beta-spending Function)
+
+### Error-Spending Functions
+
+(Consolidated: Error-Spending Functions, Error-Spending Function)
+
+### Adaptive Sequential Design
+
+(Consolidated: Adaptive Sequential Design)
+
+## Sequential Boundaries
+
+(Consolidated: Sequential Boundaries)
+
+### O'Brien-Fleming Boundaries
+
+(Consolidated: O'Brien-Fleming Boundaries, O'Brien–Fleming)
+
+### Pocock Boundaries
+
+(Consolidated: Pocock Boundaries)
+
+### Efficacy & Futility Boundaries
+
+(Consolidated: Efficacy & Futility Boundaries, Efficacy Boundary, Futility Boundary)
+
+## Advanced Sequential Methods
+
+(Consolidated: Advanced Sequential Methods)
+
+### Sequential Probability Ratio Test (SPRT)
+
+(Consolidated: Sequential Probability Ratio Test (SPRT), SPRT)
+
+### Always-Valid P-values
+
+(Consolidated: Always-Valid P-values, Always-Valid p-values)
+
+### E-values
+
+(Consolidated: E-values)
+
+## Peeking & Optional Stopping
+
+(Consolidated: Peeking & Optional Stopping, Peeking)
+
+### Peeking Problem
+
+(Consolidated: Peeking Problem)
+
+### Optional Stopping Consequences
+
+(Consolidated: Optional Stopping Consequences, Optional Stopping)
+
+### Promising-Zone Extensions
+
+(Consolidated: Promising-Zone Extensions, Promising-Zone)
+
+### Sample Size Re-estimation
+
+(Consolidated: Sample Size Re-estimation)
+
+## Sequential Decision Rules
+
+(Consolidated: Sequential Decision Rules)
+
+### Early Stopping Rules
+
+(Consolidated: Early Stopping Rules)
+
+### Continue/Stop/Act Decisions
+
+(Consolidated: Continue/Stop/Act Decisions)
+
+### Sequential Monitoring
+
+(Consolidated: Sequential Monitoring)
+
+### Serial Testing
+
+(Consolidated: Serial Testing)
+
+# Multiple Testing & Corrections
+
+(Consolidated: Multiple Testing & Corrections, Multiple Testing, Multiple Comparisons)
+
+## Multiple Comparisons Problem
+
+(Consolidated: Multiple Comparisons Problem, Multiple Comparisons Problem)
+
+### Family-Wise Error Rate (FWER)
+
+(Consolidated: Family-Wise Error Rate (FWER), FWER, Family-Wise Error Rate)
+
+### False Discovery Rate (FDR)
+
+(Consolidated: False Discovery Rate (FDR), FDR, False Discovery Rate)
+
+### False Positive Risk (FPR)
+
+(Consolidated: False Positive Risk (FPR), FPR, False Positive Risk, False Positive)
+
+### False Findings Rate (FFR)
+
+(Consolidated: False Findings Rate (FFR), FFR)
+
+### False Negative Rate
+
+(Consolidated: False Negative Rate, False Negative)
+
+## FWER Control Methods
+
+(Consolidated: FWER Control Methods)
+
+### Bonferroni Correction
+
+(Consolidated: Bonferroni Correction)
+
+### Holm Method
+
+(Consolidated: Holm Method)
+
+### Hochberg Method
+
+(Consolidated: Hochberg Method)
+
+### Sidak Correction
+
+(Consolidated: Sidak Correction)
+
+### Dunnett's Correction
+
+(Consolidated: Dunnett's Correction, Dunnett’s Correction)
+
+## FDR Control Methods
+
+(Consolidated: FDR Control Methods)
+
+### Benjamini-Hochberg (BH)
+
+(Consolidated: Benjamini-Hochberg (BH), BH FDR)
+
+### Benjamini-Yekutieli
+
+(Consolidated: Benjamini-Yekutieli)
+
+### Storey Q-values
+
+(Consolidated: Storey Q-values)
+
+## Hierarchical & Structured Testing
+
+(Consolidated: Hierarchical & Structured Testing)
+
+### Hierarchical Testing
+
+(Consolidated: Hierarchical Testing)
+
+### Gatekeeping
+
+(Consolidated: Gatekeeping)
+
+### Alpha Allocation
+
+(Consolidated: Alpha Allocation)
+
+### Westfall-Young Resampling
+
+(Consolidated: Westfall-Young Resampling, Westfall–Young)
+
+# Results Interpretation & Analysis
+
+(Consolidated: Results Interpretation & Analysis, Result Validation)
+
+## Reading Test Results
+
+(Consolidated: Reading Test Results, Results Analysis Examples)
+
+### Effect Size Interpretation
+
+(Consolidated: Effect Size Interpretation)
+
+### Lift & Confidence Intervals
+
+(Consolidated: Lift & Confidence Intervals)
+
+### Uplift Distribution
+
+(Consolidated: Uplift Distribution)
+
+### MDE Attainment
+
+(Consolidated: MDE Attainment)
+
+## Statistical vs Practical Significance
+
+(Consolidated: Statistical vs Practical Significance, Statistical and Practical Significance)
+
+### Business Significance
+
+(Consolidated: Business Significance)
+
+### Decision Thresholds
+
+(Consolidated: Decision Thresholds)
+
+### Risk-Adjusted ROI
+
+(Consolidated: Risk-Adjusted ROI)
+
+### Severity
+
+(Consolidated: Severity)
+
+## Special Analysis Cases
+
+(Consolidated: Special Analysis Cases)
+
+### Non-Inferiority Testing
+
+(Consolidated: Non-Inferiority Testing, Non-Inferiority Test, Non-Inferiority Margin)
+
+### Equivalence Testing (TOST)
+
+(Consolidated: Equivalence Testing (TOST))
+
+### Superiority Testing
+
+(Consolidated: Superiority Testing, Superiority Test)
+
+## Segmentation Analysis
+
+(Consolidated: Segmentation Analysis, Segmentation Analysis)
+
+### User Segments
+
+(Consolidated: User Segments)
+
+### Device & Platform Analysis
+
+(Consolidated: Device & Platform Analysis)
+
+### Geographic Segmentation
+
+(Consolidated: Geographic Segmentation)
+
+### Behavioral Cohorts
+
+(Consolidated: Behavioral Cohorts)
+
+### Post-Test Segmentation Risks
+
+(Consolidated: Post-Test Segmentation Risks, Post-Test Segmentation (Simpsons' Paradox))
+
+### Simpson's Paradox
+
+(Consolidated: Simpson's Paradox)
+
+### Subgroup Analysis
+
+(Consolidated: Subgroup Analysis)
+
+## Heterogeneous Treatment Effects (HTE)
+
+(Consolidated: Heterogeneous Treatment Effects (HTE), Heterogeneous Treatment Effects (HTE), HTE)
+
+### HTE Discovery
+
+(Consolidated: HTE Discovery)
+
+### Causal Trees & Forests
+
+(Consolidated: Causal Trees & Forests)
+
+### Uplift Modeling
+
+(Consolidated: Uplift Modeling)
+
+### Meta-Learners (T/S/X-learners)
+
+(Consolidated: Meta-Learners (T/S/X-learners))
+
+### Segment-Level Lift
+
+(Consolidated: Segment-Level Lift)
+
+### Qini/AUUC
+
+(Consolidated: Qini/AUUC)
+
+### Policy Learning
+
+(Consolidated: Policy Learning)
+
+## Mediation & Mechanism Analysis
+
+(Consolidated: Mediation & Mechanism Analysis)
+
+### Mediation Analysis
+
+(Consolidated: Mediation Analysis)
+
+### Understanding Pathways
+
+(Consolidated: Understanding Pathways)
+
+### Surrogate Endpoints
+
+(Consolidated: Surrogate Endpoints)
+
+# Common Pitfalls & Biases
+
+(Consolidated: Common Pitfalls & Biases, A/B Tests Mistakes and Pitfalls, Challenges & Best Practices)
+
+## Statistical Pitfalls
+
+(Consolidated: Statistical Pitfalls)
+
+### Peeking Without Control
+
+(Consolidated: Peeking Without Control)
+
+### P-Hacking & Data Fishing
+
+(Consolidated: P-Hacking & Data Fishing, P-Hacking)
+
+### Winner's Curse
+
+(Consolidated: Winner's Curse)
+
+### Regression to the Mean
+
+(Consolidated: Regression to the Mean)
+
+### Power Dilution
+
+(Consolidated: Power Dilution)
+
+### Inconsistent Denominators
+
+(Consolidated: Inconsistent Denominators)
+
+### Bias
+
+(Consolidated: Bias, Avoiding Bias)
+
+## Design & Implementation Issues
+
+(Consolidated: Design & Implementation Issues)
+
+### Sample Ratio Mismatch
+
+(Consolidated: Sample Ratio Mismatch)
+
+### Instrumentation Errors
+
+(Consolidated: Instrumentation Errors)
+
+### Noncompliance
+
+(Consolidated: Noncompliance)
+
+### Attrition & Dropouts
+
+(Consolidated: Attrition & Dropouts)
+
+### External Validity
+
+(Consolidated: External Validity)
+
+### Generalizability
+
+(Consolidated: Generalizability)
+
+### Representativeness
+
+(Consolidated: Representativeness)
+
+### Representative Sample
+
+(Consolidated: Representative Sample)
+
+## Temporal & Environmental Biases
+
+(Consolidated: Temporal & Environmental Biases)
+
+### Novelty Effect
+
+(Consolidated: Novelty Effect)
+
+### Maturation Effects
+
+(Consolidated: Maturation Effects, Maturation)
+
+### Carryover Effects
+
+(Consolidated: Carryover Effects, Carry-Over Effect)
+
+### Seasonality
+
+(Consolidated: Seasonality)
+
+### S-curve Dynamics
+
+(Consolidated: S-curve Dynamics)
+
+### Learning Effects
+
+(Consolidated: Learning Effects, Learning Effect)
+
+## Assignment & Selection Biases
+
+(Consolidated: Assignment & Selection Biases)
+
+### Selection Bias
+
+(Consolidated: Selection Bias)
+
+### Survivorship Bias
+
+(Consolidated: Survivorship Bias)
+
+### Argument from Coincidence
+
+(Consolidated: Argument from Coincidence)
+
+## Interference & Spillover
+
+(Consolidated: Interference & Spillover)
+
+### Network Effects
+
+(Consolidated: Network Effects)
+
+### Spillover & Contamination
+
+(Consolidated: Spillover & Contamination)
+
+### SUTVA Violations
+
+(Consolidated: SUTVA Violations, SUTVA)
+
+### Dealing with Network Effects
+
+(Consolidated: Dealing with Network Effects)
+
+### Interference
+
+(Consolidated: Interference, Interference and Network Effects)
+
+# Advanced Experimentation Topics
+
+(Consolidated: Advanced Experimentation Topics, Advanced Experimentation Concepts, Advanced Design Techniques)
+
+## Quasi-Experimental Methods
+
+(Consolidated: Quasi-Experimental Methods, Quasi-Experiments)
+
+### Difference-in-Differences (DiD)
+
+(Consolidated: Difference-in-Differences (DiD), DiD)
+
+### Synthetic Control Methods
+
+(Consolidated: Synthetic Control Methods)
+
+#### Traditional Synthetic Control
+
+(Consolidated: Traditional Synthetic Control, Synthetic Control)
+
+#### SCUL (Lasso-Based)
+
+(Consolidated: SCUL (Lasso-Based))
+
+#### Bayesian Structural Time Series (BSTS)
+
+(Consolidated: Bayesian Structural Time Series (BSTS), BSTS)
+
+#### CausalImpact
+
+(Consolidated: CausalImpact)
+
+### Regression Discontinuity (RD)
+
+(Consolidated: Regression Discontinuity (RD), RD)
+
+### Interrupted Time Series
+
+(Consolidated: Interrupted Time Series)
+
+### Instrumental Variables (IV)
+
+(Consolidated: Instrumental Variables (IV), IV)
+
+### Propensity Score Methods
+
+(Consolidated: Propensity Score Methods)
+
+### Doubly Robust Estimation (AIPW)
+
+(Consolidated: Doubly Robust Estimation (AIPW), AIPW)
+
+### Sensitivity Analysis (Rosenbaum)
+
+(Consolidated: Sensitivity Analysis (Rosenbaum), Sensitivity (Rosenbaum))
+
+## Specialized Designs
+
+(Consolidated: Specialized Designs)
+
+### Crossover Designs
+
+(Consolidated: Crossover Designs)
+
+### Switchback Experiments
+
+(Consolidated: Switchback Experiments)
+
+### Time-Based Experiments
+
+(Consolidated: Time-Based Experiments)
+
+### Latin Square Designs
+
+(Consolidated: Latin Square Designs)
+
+### Interleaving (Search/Ranking)
+
+(Consolidated: Interleaving (Search/Ranking))
+
+### Clustered & Geo Experiments
+
+(Consolidated: Clustered & Geo Experiments)
+
+## Long-Term Effect Measurement
+
+(Consolidated: Long-Term Effect Measurement, Long-Term vs. Short-Term Effects)
+
+### Novelty Effect Detection
+
+(Consolidated: Novelty Effect Detection)
+
+### Long-Term Holdouts
+
+(Consolidated: Long-Term Holdouts)
+
+### Cohort Analysis
+
+(Consolidated: Cohort Analysis)
+
+### Long-Term Monitoring
+
+(Consolidated: Long-Term Monitoring)
+
+### Learning Effects
+
+(Consolidated: Learning Effects)
+
+### Novelty Decay
+
+(Consolidated: Novelty Decay, Long-Term Effects and Novelty Decay)
+
+# Online Optimization & Bandits
+
+(Consolidated: Online Optimization & Bandits)
+
+## Multi-Armed Bandits (MAB)
+
+(Consolidated: Multi-Armed Bandits (MAB), Multi-Armed Bandit, MAB)
+
+### MAB Fundamentals
+
+(Consolidated: MAB Fundamentals)
+
+### Epsilon-Greedy
+
+(Consolidated: Epsilon-Greedy)
+
+### Thompson Sampling
+
+(Consolidated: Thompson Sampling)
+
+### Upper Confidence Bound (UCB)
+
+(Consolidated: Upper Confidence Bound (UCB), UCB)
+
+### Successive Elimination
+
+(Consolidated: Successive Elimination)
+
+### Best-Arm Identification
+
+(Consolidated: Best-Arm Identification)
+
+### Regret Minimization
+
+(Consolidated: Regret Minimization, Regret)
+
+### Reward
+
+(Consolidated: Reward)
+
+## Contextual Bandits
+
+(Consolidated: Contextual Bandits)
+
+### Feature-Based Optimization
+
+(Consolidated: Feature-Based Optimization)
+
+### Personalization Strategies
+
+(Consolidated: Personalization Strategies, Personalization and Bandits)
+
+### Policy Learning
+
+(Consolidated: Policy Learning)
+
+## Off-Policy Evaluation (OPE)
+
+(Consolidated: Off-Policy Evaluation (OPE), OPE)
+
+### OPE from Logged Data
+
+(Consolidated: OPE from Logged Data)
+
+### Inverse Propensity Scoring (IPS)
+
+(Consolidated: Inverse Propensity Scoring (IPS), IPS)
+
+### Doubly Robust OPE
+
+(Consolidated: Doubly Robust OPE)
+
+# Incrementality & Media Testing
+
+(Consolidated: Incrementality & Media Testing, Incrementality Measurement)
+
+## Incrementality Measurement
+
+(Consolidated: Incrementality Measurement)
+
+### Incrementality Fundamentals
+
+(Consolidated: Incrementality Fundamentals, Incrementality Test)
+
+### Holdout Experiments
+
+(Consolidated: Holdout Experiments, Holdout Experiments)
+
+### Audience Split & Suppression
+
+(Consolidated: Audience Split & Suppression)
+
+### Ghost Ads
+
+(Consolidated: Ghost Ads, Ghost Ads/PSA Controls)
+
+### PSA Controls
+
+(Consolidated: PSA Controls, PSA Control)
+
+### Conversion Lift Studies
+
+(Consolidated: Conversion Lift Studies, Conversion Lift)
+
+### Lift Measurement
+
+(Consolidated: Lift Measurement, Lift Calculation)
+
+## Geo-Based Experiments
+
+(Consolidated: Geo-Based Experiments, Geo-Testing, Geographic Testing)
+
+### Geo Experiment Design
+
+(Consolidated: Geo Experiment Design, Geo Experiment)
+
+### Market Clustering & Matching
+
+(Consolidated: Market Clustering & Matching, Market Clustering)
+
+### Pre/Post Normalization
+
+(Consolidated: Pre/Post Normalization)
+
+### Matched Markets
+
+(Consolidated: Matched Markets)
+
+### GeoLift Frameworks
+
+(Consolidated: GeoLift Frameworks)
+
+### Spillover & Contamination
+
+(Consolidated: Spillover & Contamination)
+
+### Halo Effects
+
+(Consolidated: Halo Effects)
+
+## Brand & Awareness Testing
+
+(Consolidated: Brand & Awareness Testing)
+
+### Brand Lift Studies
+
+(Consolidated: Brand Lift Studies, Brand Lift Study)
+
+### Survey-Based Measurement
+
+(Consolidated: Survey-Based Measurement)
+
+### Perception & Intent Changes
+
+(Consolidated: Perception & Intent Changes)
+
+### Brand Lift Surveys
+
+(Consolidated: Brand Lift Surveys)
+
+## Marketing Mix Modeling (MMM)
+
+(Consolidated: Marketing Mix Modeling (MMM), MMM)
+
+### MMM Fundamentals
+
+(Consolidated: MMM Fundamentals)
+
+### Long-Term ROI Measurement
+
+(Consolidated: Long-Term ROI Measurement)
+
+### Saturation & Concavity
+
+(Consolidated: Saturation & Concavity)
+
+### MMM Calibration with Geo-Lift
+
+(Consolidated: MMM Calibration with Geo-Lift, Calibrate MMM)
+
+### Bayesian MMM
+
+(Consolidated: Bayesian MMM)
+
+### MMM Integration with Experiments
+
+(Consolidated: MMM Integration with Experiments)
+
+### Cross-Channel Tests & MMM Integration
+
+(Consolidated: Cross-Channel Tests & MMM Integration)
+
+## Walled-Garden Platforms
+
+(Consolidated: Walled-Garden Platforms)
+
+### Walled-Garden Lift Studies
+
+(Consolidated: Walled-Garden Lift Studies, Walled-Garden Constraints)
+
+### Platform Constraints
+
+(Consolidated: Platform Constraints)
+
+### Conversion Value Mapping
+
+(Consolidated: Conversion Value Mapping)
+
+# Attribution Models
+
+(Consolidated: Attribution Models, Attribution & Measurement Models)
+
+## Attribution Fundamentals
+
+(Consolidated: Attribution Fundamentals)
+
+### Attribution Windows
+
+(Consolidated: Attribution Windows)
+
+### De-duplication
+
+(Consolidated: De-duplication)
+
+### VTC vs CTC (View vs Click)
+
+(Consolidated: VTC vs CTC (View vs Click), VTC vs. CTC)
+
+## Attribution Model Types
+
+(Consolidated: Attribution Model Types)
+
+### First-Touch Attribution
+
+(Consolidated: First-Touch Attribution)
+
+### Last-Touch Attribution
+
+(Consolidated: Last-Touch Attribution)
+
+### Multi-Touch Attribution (MTA)
+
+(Consolidated: Multi-Touch Attribution (MTA), Multi-Touch Attribution (MTA))
+
+### Position-Based (U-Shaped)
+
+(Consolidated: Position-Based (U-Shaped), Position-Based (U-Shaped))
+
+### Time-Decay Attribution
+
+(Consolidated: Time-Decay Attribution)
+
+### Data-Driven Attribution
+
+(Consolidated: Data-Driven Attribution)
+
+## Unified Measurement
+
+(Consolidated: Unified Measurement)
+
+### Combining Attribution & Incrementality
+
+(Consolidated: Combining Attribution & Incrementality, Unified Measurement: Combining Attribution Models with Incrementality Testing)
+
+### Cross-Device Tracking
+
+(Consolidated: Cross-Device Tracking)
+
+### Cross-Channel Attribution
+
+(Consolidated: Cross-Channel Attribution)
+
+### Full-Funnel Attribution
+
+(Consolidated: Full-Funnel Attribution)
+
+# Channel-Specific Testing
+
+(Consolidated: Channel-Specific Testing)
+
+## Paid Media Channels
+
+(Consolidated: Paid Media Channels, Channel-Specific (Paid))
+
+### Bid & Budget Tests
+
+(Consolidated: Bid & Budget Tests, Bid/Budget Lift)
+
+### Creative MVT
+
+(Consolidated: Creative MVT)
+
+### Frequency Capping
+
+(Consolidated: Frequency Capping)
+
+### Reach vs Frequency Optimization
+
+(Consolidated: Reach vs Frequency Optimization, Reach vs. Frequency)
+
+### Audience Split Tests
+
+(Consolidated: Audience Split Tests, Audience Split/Holdout)
+
+### Geo-Split for Paid Media
+
+(Consolidated: Geo-Split for Paid Media)
+
+## Lifecycle & Email Marketing
+
+(Consolidated: Lifecycle & Email Marketing, Channel-Specific (Lifecycle))
+
+### Subject Line Testing
+
+(Consolidated: Subject Line Testing, Subject Line Test)
+
+### Send-Time Optimization
+
+(Consolidated: Send-Time Optimization)
+
+### Cadence Tests
+
+(Consolidated: Cadence Tests)
+
+### Offer & Promo Tests
+
+(Consolidated: Offer & Promo Tests, Offer/Promo Tests)
+
+### Onboarding Sequences
+
+(Consolidated: Onboarding Sequences)
+
+### Churn-Save & Winback
+
+(Consolidated: Churn-Save & Winback, Churn-Save, Winback)
+
+### Cross-Sell & Upsell
+
+(Consolidated: Cross-Sell & Upsell)
+
+## Web & App Optimization
+
+(Consolidated: Web & App Optimization, Channel-Specific (Web/App))
+
+### Landing Page Testing
+
+(Consolidated: Landing Page Testing, Landing Page A/B)
+
+### Checkout Funnel Optimization
+
+(Consolidated: Checkout Funnel Optimization, Checkout Funnel)
+
+### Pricing & Discount Display
+
+(Consolidated: Pricing & Discount Display, Pricing/Discount)
+
+### Bundling Tests
+
+(Consolidated: Bundling Tests)
+
+### Search & Ranking Tests
+
+(Consolidated: Search & Ranking Tests, Search/Ranking)
+
+### Recommender System Tests
+
+(Consolidated: Recommender System Tests, Recommender Test)
+
+### UI/UX Testing
+
+(Consolidated: UI/UX Testing)
+
+### Consent UX (Cookie Banners)
+
+(Consolidated: Consent UX (Cookie Banners))
+
+### Latency & UX Guardrails
+
+(Consolidated: Latency & UX Guardrails, Latency/UX Guardrails)
+
+## SEO & Content
+
+(Consolidated: SEO & Content)
+
+### SEO Experiments with Holdouts
+
+(Consolidated: SEO Experiments with Holdouts)
+
+### Headline Testing
+
+(Consolidated: Headline Testing)
+
+### Content Format Testing
+
+(Consolidated: Content Format Testing)
+
+## Social Media & Engagement
+
+(Consolidated: Social Media & Engagement)
+
+### Social Media Testing
+
+(Consolidated: Social Media Testing)
+
+### Content Engagement Tests
+
+(Consolidated: Content Engagement Tests)
+
+## Marketing Funnel Experimentation
+
+(Consolidated: Marketing Funnel Experimentation)
+
+### Awareness Stage (Content Marketing, Brand Campaigns)
+
+(Consolidated: Awareness Stage (Content Marketing, Brand Campaigns), Awareness Stage)
+
+### Consideration Stage (Educational Content)
+
+(Consolidated: Consideration Stage (Educational Content), Consideration Stage)
+
+### Decision Stage (CTAs, Checkout Processes)
+
+(Consolidated: Decision Stage (CTAs, Checkout Processes), Decision Stage)
+
+### Retention Stage (Post-Purchase, Loyalty Programs)
+
+(Consolidated: Retention Stage (Post-Purchase, Loyalty Programs), Retention Stage)
+
+### Customer Journey Optimization
+
+(Consolidated: Customer Journey Optimization)
+
+### Touchpoint Interaction Analysis
+
+(Consolidated: Touchpoint Interaction Analysis)
+
+### Sequential Testing Across Funnel Stages
+
+(Consolidated: Sequential Testing Across Funnel Stages, Sequential Testing)
+
+## Conversion Rate Optimization (CRO)
+
+(Consolidated: Conversion Rate Optimization (CRO), CRO, Conversion Rate Optimization)
+
+### CRO Process & Methodology
+
+(Consolidated: CRO Process & Methodology)
+
+### Research Phase
+
+(Consolidated: Research Phase)
+
+### Hypothesis Construction
+
+(Consolidated: Hypothesis Construction)
+
+### Test Prioritization
+
+(Consolidated: Test Prioritization)
+
+### Implementation & Analysis
+
+(Consolidated: Implementation and Analysis)
+
+### Landing Page Optimization (Headlines, Images, Forms, Layout)
+
+(Consolidated: Landing Page Optimization (Headlines, Images, Forms, Layout), Landing Page Optimization)
+
+### Call-to-Action Testing (Button Colors, Text, Placement)
+
+(Consolidated: Call-to-Action Testing (Button Colors, Text, Placement))
+
+### Form Optimization (Field Requirements, Multi-Step vs Single-Step)
+
+(Consolidated: Form Optimization (Field Requirements, Multi-Step vs Single-Step))
+
+### Content Personalization
+
+(Consolidated: Content Personalization)
+
+### Site Speed Optimization
+
+(Consolidated: Site Speed Optimization)
+
+### Mobile Responsiveness
+
+(Consolidated: Mobile Responsiveness)
+
+# Privacy, Ethics & Compliance
+
+(Consolidated: Privacy, Ethics & Compliance, Identity, Privacy & Compliance)
+
+## Ethical Considerations
+
+(Consolidated: Ethical Considerations)
+
+### Informed Consent
+
+(Consolidated: Informed Consent)
+
+### Potential Harm Assessment
+
+(Consolidated: Potential Harm Assessment)
+
+### Transparency Requirements
+
+(Consolidated: Transparency Requirements)
+
+### IRB & Ethics Review
+
+(Consolidated: IRB & Ethics Review)
+
+## Privacy Frameworks
+
+(Consolidated: Privacy Frameworks)
+
+### GDPR Implications
+
+(Consolidated: GDPR Implications)
+
+### CCPA Requirements
+
+(Consolidated: CCPA Requirements)
+
+### Consent Frameworks
+
+(Consolidated: Consent Frameworks, Consent Frameworks (GDPR/CCPA))
+
+### Data Protection Standards
+
+(Consolidated: Data Protection Standards)
+
+### Data Minimization
+
+(Consolidated: Data Minimization)
+
+## Privacy-Preserving Methods
+
+(Consolidated: Privacy-Preserving Methods)
+
+### Cookieless Tracking
+
+(Consolidated: Cookieless Tracking)
+
+### ATT & SKAdNetwork (iOS)
+
+(Consolidated: ATT & SKAdNetwork (iOS))
+
+### Differential Privacy
+
+(Consolidated: Differential Privacy)
+
+### Aggregation Thresholds
+
+(Consolidated: Aggregation Thresholds)
+
+### K-Anonymity
+
+(Consolidated: K-Anonymity)
+
+### Privacy Budgets
+
+(Consolidated: Privacy Budgets)
+
+## Bias & Fairness
+
+(Consolidated: Bias & Fairness)
+
+### Selection Bias
+
+(Consolidated: Selection Bias)
+
+### Algorithmic Fairness
+
+(Consolidated: Algorithmic Fairness)
+
+### Inclusive Design Testing
+
+(Consolidated: Inclusive Design Testing)
+
+# Organizational Implementation
+
+(Consolidated: Organizational Implementation)
+
+## Building Experimentation Culture
+
+(Consolidated: Building Experimentation Culture, Experimentation Culture)
+
+### Stakeholder Buy-In
+
+(Consolidated: Stakeholder Buy-In)
+
+### Education & Training
+
+(Consolidated: Education & Training)
+
+### Success Stories & Case Studies
+
+(Consolidated: Success Stories & Case Studies)
+
+### Continuous Optimization Mindset
+
+(Consolidated: Continuous Optimization Mindset, Continuous Optimization)
+
+## Governance & Process
+
+(Consolidated: Governance & Process)
+
+### Test Prioritization Frameworks
+
+(Consolidated: Test Prioritization Frameworks)
+
+### Review & Approval Processes
+
+(Consolidated: Review & Approval Processes)
+
+### Pre-Read & Decision Memos
+
+(Consolidated: Pre-Read & Decision Memos)
+
+### Documentation Standards
+
+(Consolidated: Documentation Standards)
+
+### Experiment Registry
+
+(Consolidated: Experiment Registry)
+
+### Taxonomy & Naming Conventions
+
+(Consolidated: Taxonomy & Naming Conventions)
+
+### Knowledge Management
+
+(Consolidated: Knowledge Management)
+
+### Experiment Governance & Registry
+
+(Consolidated: Experiment Governance & Registry)
+
+### Naming Conventions
+
+(Consolidated: Naming Conventions)
+
+### Taxonomy of Experiments
+
+(Consolidated: Taxonomy of Experiments)
+
+## Team Structure & Roles
+
+(Consolidated: Team Structure & Roles)
+
+### RACI Matrix
+
+(Consolidated: RACI Matrix, RACI)
+
+### Owner/DRI (Directly Responsible Individual)
+
+(Consolidated: Owner/DRI (Directly Responsible Individual), Owner/DRI)
+
+### Centralized vs Decentralized Models
+
+(Consolidated: Centralized vs Decentralized Models)
+
+### Cross-Functional Collaboration
+
+(Consolidated: Cross-Functional Collaboration)
+
+## Metrics & Performance
+
+(Consolidated: Metrics & Performance)
+
+### Testing Velocity
+
+(Consolidated: Testing Velocity)
+
+### Win Rate
+
+(Consolidated: Win Rate)
+
+### Impact Measurement
+
+(Consolidated: Impact Measurement)
+
+### Time-to-Decision
+
+(Consolidated: Time-to-Decision)
+
+### Executive Reporting
+
+(Consolidated: Executive Reporting)
+
+## Resource Management
+
+(Consolidated: Resource Management, Resource Allocation)
+
+### Resource Allocation
+
+(Consolidated: Resource Allocation)
+
+### Budget Allocation & Costing
+
+(Consolidated: Budget Allocation & Costing, Costing, iROAS, and Budget Allocation)
+
+# Reporting & Decision-Making
+
+(Consolidated: Reporting & Decision-Making)
+
+## Results Communication
+
+(Consolidated: Results Communication)
+
+### Lift & Confidence Intervals
+
+(Consolidated: Lift & Confidence Intervals)
+
+### Uplift Distribution
+
+(Consolidated: Uplift Distribution)
+
+### KPI vs Guardrails
+
+(Consolidated: KPI vs Guardrails, KPI vs. Guardrails)
+
+### Business Impact Translation
+
+(Consolidated: Business Impact Translation)
+
+## Decision Frameworks
+
+(Consolidated: Decision Frameworks)
+
+### Decision Rules
+
+(Consolidated: Decision Rules)
+
+### Decision Thresholds
+
+(Consolidated: Decision Thresholds)
+
+### Risk-Reward Analysis
+
+(Consolidated: Risk-Reward Analysis, Risk, Risk-Reward Analysis)
+
+### Launch vs No-Launch
+
+(Consolidated: Launch vs No-Launch, Launch or Not)
+
+## Learning & Knowledge Sharing
+
+(Consolidated: Learning & Knowledge Sharing, Knowledge Sharing, Learning from Failures)
+
+### Post-Mortem Analysis
+
+(Consolidated: Post-Mortem Analysis)
+
+### Learnings Repository
+
+(Consolidated: Learnings Repository)
+
+### Meta-Analysis
+
+(Consolidated: Meta-Analysis)
+
+### Learning from Failures
+
+(Consolidated: Learning from Failures)
+
+# Tools & Technology Ecosystem
+
+(Consolidated: Tools & Technology Ecosystem, Testing Tools & Technology)
+
+## Experimentation Platforms
+
+(Consolidated: Experimentation Platforms)
+
+### End-to-End Platforms
+
+(Consolidated: End-to-End Platforms)
+
+### Feature Flag Systems
+
+(Consolidated: Feature Flag Systems)
+
+### Assignment Services
+
+(Consolidated: Assignment Services)
+
+### A/B Testing Tools (Google Optimize, Optimizely, VWO)
+
+(Consolidated: A/B Testing Tools (Google Optimize, Optimizely, VWO), A/B Testing Tools)
+
+## Analytics & BI
+
+(Consolidated: Analytics & BI)
+
+### Analytics Platforms (Google Analytics, Adobe Analytics, Amplitude)
+
+(Consolidated: Analytics Platforms (Google Analytics, Adobe Analytics, Amplitude), Analytics Platforms)
+
+### BI Dashboards
+
+(Consolidated: BI Dashboards)
+
+### Customer Data Platforms (CDPs)
+
+(Consolidated: Customer Data Platforms (CDPs), Customer Data Platforms (CDPs))
+
+### Heatmap Tools (Hotjar, Crazy Egg)
+
+(Consolidated: Heatmap Tools (Hotjar, Crazy Egg))
+
+### Survey Platforms
+
+(Consolidated: Survey Platforms)
+
+## Statistical & Analysis Tools
+
+(Consolidated: Statistical & Analysis Tools)
+
+### Power Calculators
+
+(Consolidated: Power Calculators)
+
+### Statistical Software (R, Python, SPSS)
+
+(Consolidated: Statistical Software (R, Python, SPSS))
+
+### CUPED Libraries
+
+(Consolidated: CUPED Libraries)
+
+### Causal Inference Libraries (EconML/CausalImpact)
+
+(Consolidated: Causal Inference Libraries (EconML/CausalImpact), Causal Libraries)
+
+### Geo-Lift Tooling
+
+(Consolidated: Geo-Lift Tooling)
+
+### MMM Stack
+
+(Consolidated: MMM Stack)
+
+### Bandit Frameworks
+
+(Consolidated: Bandit Frameworks)
+
+## Data Infrastructure
+
+(Consolidated: Data Infrastructure, Data Integration & Management)
+
+### Telemetry & ETL Pipelines
+
+(Consolidated: Telemetry & ETL Pipelines)
+
+### Event Schema Management
+
+(Consolidated: Event Schema Management)
+
+### Metric Stores
+
+(Consolidated: Metric Stores)
+
+### Metrics Layer
+
+(Consolidated: Metrics Layer)
+
+## AI & Machine Learning
+
+(Consolidated: AI & Machine Learning, Machine Learning & AI Applications)
+
+### Predictive Modeling
+
+(Consolidated: Predictive Modeling)
+
+### Automated Personalization
+
+(Consolidated: Automated Personalization)
+
+### Automated Test Design
+
+(Consolidated: Automated Test Design)
+
+### Real-Time Optimization
+
+(Consolidated: Real-Time Optimization)
+
+# Lifecycle & Process
+
+(Consolidated: Lifecycle & Process)
+
+## Ideation & Prioritization
+
+(Consolidated: Ideation & Prioritization)
+
+## Design
+
+(Consolidated: Design)
+
+## Implementation & QA
+
+(Consolidated: Implementation & QA)
+
+## Monitoring & Execution
+
+(Consolidated: Monitoring & Execution)
+
+## Analysis & Interpretation
+
+(Consolidated: Analysis & Interpretation)
+
+## Readouts & Knowledge Repository
+
+(Consolidated: Readouts & Knowledge Repository)
+
+# Product & Marketing Context
+
+(Consolidated: Product & Marketing Context (Airbnb))
+
+## Product-Led Experimentation Cases (Search, Booking Funnel)
+
+(Consolidated: Product-Led Experimentation Cases (Search, Booking Funnel))
+
+## Marketing-Led Experimentation (Acquisition, Lifecycle)
+
+(Consolidated: Marketing-Led Experimentation (Acquisition, Lifecycle))
+
+## Interview-Style Cases (Experiences, Host Pricing Tool)
+
+(Consolidated: Interview-Style Cases (Experiences, Host Pricing Tool))
+
+## Business Models
+
+(Consolidated: Business Models Fundamentals, Business Models Overview)
+
+### E-commerce
+
+(Consolidated: E-commerce)
+
+### Software As A Service (SaaS)
+
+(Consolidated: Software As A Service (SaaS))
+
+### Mobile Application
+
+(Consolidated: Mobile Application)
+
+### Two-sided Marketplace
+
+(Consolidated: Two-sided Marketplace)
+
+### Social Media
+
+(Consolidated: Social Media)
+
+### Search Engine
+
+(Consolidated: Search Engine)
+
+## Analytical Frameworks
+
+(Consolidated: Analytical Frameworks)
+
+### AARRR
+
+(Consolidated: AARRR)
+
+### The 5 C's Framework
+
+(Consolidated: The 5 C's Framework)
+
+## Audience Segmentation & Targeting
+
+(Consolidated: Audience Segmentation & Targeting)
+
+### Demographic Segmentation
+
+(Consolidated: Demographic Segmentation)
+
+### Behavioral Segmentation
+
+(Consolidated: Behavioral Segmentation)
+
+### Psychographic Segmentation
+
+(Consolidated: Psychographic Segmentation)
+
+### Geographic Segmentation
+
+(Consolidated: Geographic Segmentation)
+
+### Multidimensional Segmentation
+
+(Consolidated: Multidimensional Segmentation)
+
+### Segment-Specific Experiments
+
+(Consolidated: Segment-Specific Experiments, Targeting Experiment)
+
+### Personalization Testing
+
+(Consolidated: Personalization Testing)
+
+### Cross-Segment Analysis
+
+(Consolidated: Cross-Segment Analysis)
+
+### Lookalike Audience Testing
+
+(Consolidated: Lookalike Audience Testing)
+
+## Product-Specific Questions
+
+(Consolidated: Product-Specific Questions)
+
+### Restaurant Recommendation for Facebook News Feed
+
+(Consolidated: Restaurant recommendation for Facebook News Feed)
+
+### New Shopping Cart Feature for E-commerce
+
+(Consolidated: New Shopping Cart Feature for an E-commerce)
+
+### Improve Accuracy of Birthday Data
+
+(Consolidated: Improve Accuracy of Birthday Data)
+
+### Measure & Improve Engagement for Quora
+
+(Consolidated: Measure and Improve Engagement for Quora)
+
+### Instagram: Launch the Story Feature
+
+(Consolidated: Instagram: Launch the Story Feature)
+
+### Spotify: Concert Tickets Early Access
+
+(Consolidated: Spotify: Concert Tickets Early Access)
+
+### Robinhood's Referral Program
+
+(Consolidated: Robinhoods' Referral Program)
+
+### Doordash: Effectiveness of Referral Program
+
+(Consolidated: Doordash: Effectiveness of a Referral Program)
+
+### Uprank Search Results
+
+(Consolidated: Uprank Search Results)
+
+### Diagnose Trading Activity for Robinhood
+
+(Consolidated: Diagnose Trading Activity for Robinhood, Diagnose a Problem: Common Mistakes, Diagnose a Problem)
+
+# Appendices
+
+(Consolidated: Appendices)
+
+## Quick-Start Checklist
+
+(Consolidated: Quick-Start Checklist, Appendix A: Quick-Start Checklist, Quick-Start Experiment Design Checklist)
+
+### Design Phase Checklist
+
+(Consolidated: Design Phase Checklist)
+
+### Implementation Checklist
+
+(Consolidated: Implementation Checklist)
+
+### Analysis Phase Checklist
+
+(Consolidated: Analysis Phase Checklist)
+
+### Decision & Rollout Checklist
+
+(Consolidated: Decision & Rollout Checklist)
+
+## Glossary of Terms
+
+(Consolidated: Glossary of Terms, Appendix B: Glossary of Terms, Airbnb-Style Metric Glossary (Selected))
+
+### Statistical Terms
+
+(Consolidated: Statistical Terms)
+
+### Experimental Design Terms
+
+(Consolidated: Experimental Design Terms)
+
+### Metric Definitions
+
+(Consolidated: Metric Definitions)
+
+### Platform & Technical Terms
+
+(Consolidated: Platform & Technical Terms)
+
+## Formulas & Calculations
+
+(Consolidated: Formulas & Calculations, Appendix C: Formulas & Calculations)
+
+### Sample Size Formulas
+
+(Consolidated: Sample Size Formulas)
+
+### Statistical Test Formulas
+
+(Consolidated: Statistical Test Formulas)
+
+### Variance Reduction Formulas
+
+(Consolidated: Variance Reduction Formulas)
+
+## Case Studies & Examples
+
+(Consolidated: Case Studies & Examples, Appendix D: Case Studies & Examples)
+
+### Industry Case Studies
+
+(Consolidated: Industry Case Studies)
+
+### Common Experiment Patterns
+
+(Consolidated: Common Experiment Patterns)
+
+## Industry Standards & Best Practices
+
+(Consolidated: Industry Standards & Best Practices, Appendix E: Industry Standards & Best Practices)
+
+### Best Practices by Domain
+
+(Consolidated: Best Practices by Domain)
+
+### Common Pitfalls to Avoid
+
+(Consolidated: Common Pitfalls to Avoid)
+
+## Reference Tables
+
+(Consolidated: Reference Tables, Appendix F: Reference Tables)
+
+### Test Selection Guide
+
+(Consolidated: Test Selection Guide)
+
+### Sample Size Methods
+
+(Consolidated: Sample Size Methods)

@@ -1,0 +1,89 @@
+Of course. Here is a detailed strategy for an exponential, organic acquisition tactic for Affirm.
+
+### **Executive Summary**
+
+The proposed strategy is **The Affirm "Group Goal" Flywheel**, a product-integrated, collaborative referral system designed to create exponential user acquisition. It moves beyond a simple one-to-one referral model by tapping into the psychology of group achievement and shared rewards. Instead of "refer a friend, you get $X," it becomes "form a group to unlock a massive, escalating reward for a specific purchase." This transforms the referral from a transactional interaction into a collaborative, goal-oriented campaign for each user group, creating a powerful viral loop.
+
+### **The Core Concept: The "Group Goal" Flywheel**
+
+The "Group Goal" is a time-sensitive, tiered reward system initiated by a user for a specific high-value item from a partner merchant (e.g., a Peloton bike, a vacation package from Delta Vacations, a couch from West Elm). The reward, such as a significant reduction in the loan principal, increases for *everyone* in the group as more *new-to-Affirm* users join.
+
+This creates a multi-directional incentive:
+1.  **The Initiator** is motivated to recruit.
+2.  **Each new member** is immediately motivated to become a recruiter themselves to help the group reach the next reward tier, which benefits them directly.
+
+This structure is designed to achieve a viral coefficient ($k$) greater than 1 within each group, leading to exponential growth.
+
+---
+
+### **The Exponential Mechanism: Why It Works**
+
+A standard referral program is linear. User A refers User B. The chain stops. Growth is $N \times 1$.
+
+The Group Goal Flywheel creates a branching, exponential model.
+* **Generation 0:** User A initiates a Goal (Group size = 1).
+* **Generation 1:** User A refers User B (Group size = 2). Both are now incentivized.
+* **Generation 2:** User A refers C. User B refers D. (Group size = 4).
+* **Generation 3:** Users A, B, C, and D each refer a new user (Group size = 8).
+
+The potential growth within a single "Group Goal" campaign follows the function $G(n) = 2^n$, where $n$ is the referral generation. While this is a perfect-world scenario, the core mechanic—shared, escalating rewards—makes this branching behavior far more likely than a linear model.
+
+The key is that the reward isn't just for the referrer; it's a **shared group utility function** where each new participant increases the value for all existing participants, creating a powerful incentive for everyone to evangelize.
+
+### **Detailed Implementation: A Step-by-Step User Flow**
+
+**Phase 1: Initiation**
+
+1.  **Discover & Initiate:** An existing (or new) Affirm user is Browse a partner merchant site, like `article.com`. They see a $2,000 sofa they want. On the product page, next to the normal "Pay with Affirm" option, is a new button: **"Start a Group Goal & Save."**
+2.  **Create the Goal:** In the Affirm app (or a web overlay), the user initiates the "Group Goal." The app presents the tiered reward structure clearly.
+    * **Goal:** $2,000 Sofa from Article.
+    * **Time Limit:** 7 days to build your group.
+    * **Reward Tiers (Example):**
+        * **Tier 1 (You + 1 new Affirm user):** Unlock $50 off the principal for everyone.
+        * **Tier 2 (Total 4 new users):** Reward upgrades to $150 off for everyone.
+        * **Tier 3 (Total 8 new users):** Reward upgrades to $350 off for everyone.
+
+**Phase 2: Recruitment (The Viral Loop)**
+
+1.  **Shareable Hub:** The initiator gets a unique, shareable link to a "Group Goal Hub." This page is the campaign's central point. It features:
+    * The target product and merchant.
+    * A progress bar showing the current tier and how many more people are needed to unlock the next.
+    * A list of group members (using first names/initials for privacy).
+    * Clear Calls-to-Action: "Join the Group & help us all save!"
+2.  **Recruitment:** The initiator shares the link with friends. A new user, Bob, clicks the link. He sees he can help his friend and also get a great deal on something he might want himself. He signs up for Affirm through the portal.
+3.  **The Flywheel Ignites:** Bob is now in the group. The progress bar updates. Bob now sees the *same* incentive: if he recruits more new users, his own reward increases from $50 to $150 to $350. He is now just as motivated as the initiator to share the group link.
+
+**Phase 3: Conversion**
+
+1.  **Goal Lock-In:** After 7 days (or if Tier 3 is hit), the goal is "locked." Let's say the group reached Tier 2 ($150 off).
+2.  **Claiming the Reward:** All members of the group receive a notification and a unique, single-use credit in their Affirm account. "Congratulations! Your group unlocked $150 off. Use this credit on any Affirm purchase of $1,000 or more at Article within the next 30 days."
+3.  **Driving Revenue:** This final step is crucial. The reward is not just cash; it's a purchase credit, which drives revenue for Affirm and the partner merchant. It pushes the entire group over the line to make a high-value purchase.
+
+---
+
+### **The One-Time Investment**
+
+The primary investment is in technology and initial seeding.
+
+1.  **Product & Engineering:**
+    * Development of the "Group Goal" functionality within the Affirm app and as a merchant-side widget.
+    * Creation of the dynamic sharing/hub pages.
+    * Backend logic to track referrals, tiers, and issue the targeted credits.
+
+2.  **Launch & Seeding Fund (One-Time Marketing Spend):**
+    * **Influencer Seeding:** Partner with major influencers to launch the first high-profile "Group Goals" for desirable products. Imagine an influencer starting a Group Goal for a Sony PS5. Their followers would rush to sign up for Affirm to join, creating a massive initial wave of users and showcasing the feature's power.
+    * **Merchant Co-Marketing:** Create a launch package for top-tier partners (e.g., Walmart, Amazon, Target, Apple) where the initial reward pool is co-funded, providing an even richer incentive.
+
+The "investment" in the rewards themselves is not a sunk cost; it's a highly efficient **Customer Acquisition Cost (CAC)**. If a group of 8 new users is acquired for a total reward cost of $2,800 ($350 x 8), the CAC is $350 per user. This is potentially competitive with other channels, but these users are acquired with a confirmed, high-value purchase intent, making them far more valuable than a standard signup.
+
+### **Psychological Drivers of Success**
+
+This model is powerful because it leverages several core human motivators:
+
+* **Gamification:** Tiers, progress bars, and a time limit create a compelling and urgent game.
+* **Collaboration & Shared Destiny:** Users are working *together* toward a common goal, building camaraderie.
+* **Loss Aversion:** As a group gets close to a tier, members will work harder to avoid the "loss" of the better reward.
+* **Social Proof:** The very act of being invited by a friend is a powerful endorsement of Affirm's value.
+* **Reciprocity:** "My friend invited me to save money, so I should help them (and myself) by inviting others."
+
+By building this flywheel directly into the product, Affirm can create a self-perpetuating engine for organic, exponential growth that is fundamentally tied to its core business of facilitating purchases.

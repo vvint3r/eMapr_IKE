@@ -1,0 +1,479 @@
+SQL Live Interview Playbook — Sr. 
+Manager, Advanced Analytics (Marketing) 
+Use this as a rapid reference during live SQL rounds. The idioms are 
+BigQuery‑flavored but portable. All snippets fit within ~80 chars/line. 
+0) How to use this 
+● Skim Section 1 to structure your approach under time pressure. 
+● Use Section 2 to map the prompt → pattern quickly. 
+● Paste skeletons from Section 3–4 and adapt with table/column names. 
+● Run the Section 5 checklist before executing. 
+● Drill with Section 6. Start with P1–P8 solutions, then the rest. 
+1) 8‑step approach under time pressure 
+Step What to do 
+1 
+Key checks & phrases 
+Restate goal Output grain, columns, sort, tie‑breaks, NULL policy 
+2 
+3 
+4 
+5 
+Identify data 
+Define grain 
+Edge cases 
+Plan query 
+Table names, keys, types, time zone, partitions 
+e.g., user‑day, user‑session, order, cohort‑week 
+Dups, late events, backfills, bots, test traffic 
+CTE stages: filter → join → enrich → agg → present 
+6 
+7 
+8 
+Write 
+Verify 
+Finalize 
+Use WITH CTEs, small test filters, determinism 
+Row counts, sample rows, invariants (e.g., totals) 
+Remove test filters, add order/limit, comments 
+Ask explicitly: time window (inclusive/exclusive), time zone, attribution 
+rule (first/last, click>view), dedupe rule (latest by ts, max version), and 
+whether to count unique users or events. 
+2) Prompt → Pattern decision matrix 
+Clues in prompt 
+"latest record", "one per 
+user" 
+Pattern to use 
+Dedupe by ranking 
+Core idiom 
+QUALIFY ROW_NUMBER() 
+"top N per group" 
+"first/last touch" 
+"within 30 mins" 
+"consecutive days" 
+"retention by cohort" 
+"rolling 7 days" 
+"funnel step 1→n" 
+Greatest‑N per group QUALIFY ROW_NUMBER<=N 
+Attribution window 
+Sessionization 
+Gaps & islands 
+Cohort cube 
+Moving window 
+Step gating 
+JOIN ... ON ts BETWEEN ... + 
+rank 
+LAG + DIF > 30m run‑sum groups 
+LAG + (date!=lag+1) group 
+labels 
+First date per user → DATEDIFF 
+bucket 
+SUM(...) OVER win ROWS/RANGE 
+Semi‑joins or MAX(step_k) method 
+"percentile/median" Quantiles APPROX_QUANTILES(x,100)[OFFS
+ ET(p)] 
+"users not in ..." Anti‑join LEFT JOIN ... WHERE right IS 
+NULL 
+"second highest" Rank/Distinct DENSE_RANK or LIMIT/OFFSET 
+"missing days" Date spine GENERATE_DATE_ARRAY left join 
+ 
+3) Reusable pattern library (BigQuery‑friendly) 
+3.1 Dedupe: latest record per key (deterministic) 
+WITH ranked AS ( 
+  SELECT t.*, ROW_NUMBER() OVER ( 
+    PARTITION BY user_id ORDER BY event_ts DESC, event_id DESC 
+  ) AS rn 
+  FROM `proj.ds.events` t 
+) 
+SELECT * FROM ranked QUALIFY rn = 1; 
+ 
+3.2 Top‑N per group (ties broken deterministically) 
+WITH ranked AS ( 
+  SELECT p.product_id, p.user_id, p.revenue, 
+         ROW_NUMBER() OVER ( 
+           PARTITION BY user_id ORDER BY revenue DESC, product_id 
+         ) AS rk 
+  FROM `proj.ds.purchases` p 
+) 
+SELECT * FROM ranked QUALIFY rk <= 3; 
+ 
+3.3 Gaps & islands: consecutive‑day streaks per user 
+WITH d AS ( 
+  SELECT user_id, DATE(event_ts) AS d 
+  FROM `proj.ds.events` 
+  GROUP BY user_id, d 
+), x AS ( 
+  SELECT *, DATE_DIFF(d, LAG(d) OVER (PARTITION BY user_id ORDER BY d), 
+                     DAY) AS diff 
+  FROM d 
+), y AS ( 
+  SELECT *, SUM(CASE WHEN diff = 1 THEN 0 ELSE 1 END) OVER ( 
+                PARTITION BY user_id ORDER BY d) AS grp 
+  FROM x 
+) 
+SELECT user_id, MIN(d) AS start_d, MAX(d) AS end_d, COUNT(*) AS days 
+FROM y 
+GROUP BY user_id, grp; 
+ 
+3.4 Date spine (fill missing days) 
+WITH spine AS ( 
+  SELECT d AS dt 
+  FROM UNNEST(GENERATE_DATE_ARRAY('2025-01-01','2025-01-31')) AS d 
+), agg AS ( 
+  SELECT DATE(event_ts) AS dt, COUNT(*) AS cnt 
+  FROM `proj.ds.events` 
+  WHERE event_ts >= '2025-01-01' AND event_ts < '2025-02-01' 
+  GROUP BY dt 
+) 
+SELECT s.dt, COALESCE(a.cnt, 0) AS cnt 
+FROM spine s 
+LEFT JOIN agg a USING (dt) 
+ORDER BY s.dt; 
+ 
+3.5 Rolling 7‑day sum per user 
+SELECT user_id, DATE(event_ts) AS d, 
+       SUM(value) OVER ( 
+         PARTITION BY user_id ORDER BY d 
+         RANGE BETWEEN INTERVAL 6 DAY PRECEDING AND CURRENT ROW 
+       ) AS val_7d 
+FROM `proj.ds.events`; 
+ 
+3.6 Funnel (step gating; 1→N in order) 
+WITH s AS ( 
+  SELECT user_id, 
+         MIN(CASE WHEN step='view' THEN event_ts END) AS ts1, 
+         MIN(CASE WHEN step='add' THEN event_ts END) AS ts2, 
+         MIN(CASE WHEN step='pay' THEN event_ts END) AS ts3 
+  FROM `proj.ds.funnel_events` 
+  GROUP BY user_id 
+) 
+SELECT 
+  COUNTIF(ts1 IS NOT NULL) AS view_users, 
+  COUNTIF(ts2 IS NOT NULL AND ts2 >= ts1) AS add_users, 
+  COUNTIF(ts3 IS NOT NULL AND ts3 >= ts2 AND ts2 >= ts1) AS pay_users; 
+ 
+3.7 Sessionization (30‑minute inactivity) 
+WITH e AS ( 
+  SELECT user_id, event_ts, 
+         IF(TIMESTAMP_DIFF(event_ts, 
+                           LAG(event_ts) OVER ( 
+                             PARTITION BY user_id ORDER BY event_ts), 
+                           MINUTE) > 30, 1, 0) AS new_sess 
+  FROM `proj.ds.events` 
+), s AS ( 
+  SELECT *, SUM(new_sess) OVER ( 
+           PARTITION BY user_id ORDER BY event_ts) AS sess_id 
+  FROM e 
+) 
+SELECT user_id, sess_id, 
+       MIN(event_ts) AS session_start, 
+       MAX(event_ts) AS session_end, 
+       COUNT(*) AS events 
+FROM s 
+GROUP BY user_id, sess_id; 
+ 
+3.8 Cohort retention (weekly, user first‑purchase cohort) 
+WITH firsts AS ( 
+  SELECT user_id, 
+         DATE_TRUNC(MIN(order_date), WEEK(MONDAY)) AS cohort_w 
+  FROM `proj.ds.orders` 
+  GROUP BY user_id 
+), weeks AS ( 
+  SELECT user_id, DATE_TRUNC(order_date, WEEK(MONDAY)) AS active_w 
+  FROM `proj.ds.orders` 
+  GROUP BY user_id, active_w 
+) 
+SELECT f.cohort_w, 
+       DATE_DIFF(w.active_w, f.cohort_w, WEEK) AS wk, 
+       COUNT(DISTINCT w.user_id) AS active_users 
+FROM firsts f 
+JOIN weeks w USING (user_id) 
+GROUP BY cohort_w, wk 
+ORDER BY cohort_w, wk; 
+ 
+3.9 Ads attribution: click over view within 7 days -- clicks c(user_id, click_ts, campaign_id) -- views  v(user_id, view_ts, campaign_id) -- conv   k(user_id, conv_ts) 
+WITH cand AS ( 
+  SELECT k.user_id, k.conv_ts, 
+         c.campaign_id AS camp, 
+         c.click_ts AS at_ts, 
+         1 AS pri 
+  FROM k 
+  JOIN c 
+    ON c.user_id = k.user_id 
+   AND c.click_ts BETWEEN TIMESTAMP_SUB(k.conv_ts, INTERVAL 7 DAY) 
+                      AND k.conv_ts 
+  UNION ALL 
+  SELECT k.user_id, k.conv_ts, 
+         v.campaign_id, v.view_ts, 2 
+  FROM k 
+  JOIN v 
+    ON v.user_id = k.user_id 
+   AND v.view_ts BETWEEN TIMESTAMP_SUB(k.conv_ts, INTERVAL 7 DAY) 
+                     AND k.conv_ts 
+), picked AS ( 
+  SELECT *, ROW_NUMBER() OVER ( 
+    PARTITION BY user_id, conv_ts ORDER BY pri, at_ts DESC 
+  ) AS rn 
+  FROM cand 
+) 
+SELECT user_id, conv_ts, camp 
+FROM picked 
+QUALIFY rn = 1; 
+ 
+3.10 Percentiles / median (approximate is fine live) 
+SELECT APPROX_QUANTILES(metric, 100)[OFFSET(50)] AS p50 
+FROM `proj.ds.table`; 
+ 
+3.11 Anti‑join / semi‑join -- Users who purchased but never installed app 
+SELECT DISTINCT p.user_id 
+FROM `proj.ds.purchases` p 
+LEFT JOIN `proj.ds.installs` i USING (user_id) 
+WHERE i.user_id IS NULL; 
+ 
+3.12 UTM parsing (lowercase, safe) 
+SELECT user_id, 
+       LOWER(REGEXP_EXTRACT(url, r"[?&]utm_source=([^&#]+)")) AS src, 
+       LOWER(REGEXP_EXTRACT(url, r"[?&]utm_medium=([^&#]+)")) AS med, 
+       LOWER(REGEXP_EXTRACT(url, r"[?&]utm_campaign=([^&#]+)")) AS cmp 
+FROM `proj.ds.pageviews`; 
+ 
+ 
+4) Marketing analytics staples (ready‑to‑run) 
+4.1 DAU / WAU / MAU and stickiness (DAU/MAU) 
+WITH u AS ( 
+  SELECT DATE(event_ts) AS d, user_id 
+  FROM `proj.ds.events` 
+  GROUP BY d, user_id 
+) 
+SELECT 
+  (SELECT COUNT(DISTINCT user_id) 
+   FROM u WHERE d = '2025-08-28') AS dau, 
+  (SELECT COUNT(DISTINCT user_id) 
+   FROM u WHERE d BETWEEN '2025-08-22' AND '2025-08-28') AS wau, 
+  (SELECT COUNT(DISTINCT user_id) 
+   FROM u WHERE d BETWEEN '2025-07-30' AND '2025-08-28') AS mau; -- stickiness = dau / mau 
+ 
+4.2 CAC by channel per week -- spend(channel, dt, cost) -- signups(user_id, dt, channel) 
+WITH s AS ( 
+  SELECT DATE_TRUNC(dt, WEEK(MONDAY)) AS wk, channel, 
+         SUM(cost) AS spend 
+  FROM `proj.ds.spend` 
+  GROUP BY wk, channel 
+), u AS ( 
+  SELECT DATE_TRUNC(dt, WEEK(MONDAY)) AS wk, channel, 
+         COUNT(DISTINCT user_id) AS users 
+  FROM `proj.ds.signups` 
+  GROUP BY wk, channel 
+) 
+SELECT s.wk, s.channel, spend, users, SAFE_DIVIDE(spend, users) AS cac 
+FROM s JOIN u USING (wk, channel) 
+ORDER BY wk, channel; 
+ 
+4.3 LTV within 90 days of signup -- orders(user_id, order_ts, net_rev) -- signups(user_id, signup_ts) 
+WITH joined AS ( 
+  SELECT s.user_id, s.signup_ts, o.order_ts, o.net_rev 
+  FROM `proj.ds.signups` s 
+  LEFT JOIN `proj.ds.orders` o 
+    ON o.user_id = s.user_id 
+   AND o.order_ts BETWEEN s.signup_ts AND 
+       TIMESTAMP_ADD(s.signup_ts, INTERVAL 90 DAY) 
+) 
+SELECT DATE(s.signup_ts) AS signup_d, 
+       AVG(net_rev) AS ltv_90d 
+FROM joined s 
+GROUP BY signup_d 
+ORDER BY signup_d; 
+ 
+4.4 Reactivation rate (churned ≥30d then active) 
+WITH act AS ( 
+  SELECT user_id, DATE(event_ts) AS d 
+  FROM `proj.ds.events` 
+  GROUP BY user_id, d 
+), gap AS ( 
+  SELECT user_id, d, 
+         LAG(d) OVER (PARTITION BY user_id ORDER BY d) AS prev_d 
+  FROM act 
+), reac AS ( 
+  SELECT user_id, d 
+  FROM gap 
+  WHERE prev_d IS NOT NULL AND DATE_DIFF(d, prev_d, DAY) >= 30 
+) 
+SELECT d AS reactivation_d, COUNT(*) AS users 
+FROM reac 
+GROUP BY reactivation_d 
+ORDER BY reactivation_d; 
+ 
+4.5 A/B test metric (mean revenue/user; guardrails) -- events contain (user_id, variant, revenue) 
+WITH by_u AS ( 
+SELECT variant, user_id, SUM(revenue) AS r 
+FROM `proj.ds.exp_events` 
+GROUP BY variant, user_id 
+) 
+SELECT variant, 
+COUNT(*) AS users, 
+AVG(r) AS arpu, 
+STDDEV_SAMP(r) AS sd 
+FROM by_u 
+GROUP BY variant; -- Compute diff, CI in Python or use APPROX_QUANTILES for quick sanity. 
+5) BigQuery correctness & performance checklist 
+Area 
+Filters 
+Rule 
+Always filter by _PARTITIONTIME/date on large tables 
+Select 
+Joins 
+Dups 
+Nulls 
+Time 
+Avoid SELECT *. Project only needed columns 
+Pre‑aggregate before many‑to‑many joins; add join keys list 
+Make ranking/tie‑breakers deterministic (secondary ORDER BY) 
+Use COALESCE, SAFE_ casts, and decide inclusion early 
+Fix time zone; define window boundaries precisely 
+Windows Prefer QUALIFY to prune after window ranking 
+Arrays 
+Approx 
+Costs 
+UNNEST deliberately; pre‑filter to avoid explosion 
+APPROX_* for speed in interviews if exactness not needed 
+LIMIT in dev; remove before final, or justify keeping it 
+6) Practice problems (20) 
+ID 
+Topic 
+P1 Dedupe 
+Prompt 
+Latest paid order per user in last 60 days 
+P2 Top‑N 
+P3 Funnel 
+P4 Rolling 
+P5 Attribution 
+P6 Cohort 
+P7 Gaps 
+P8 Anti‑join 
+P9 Date spine 
+P10 Percentile 
+P11 Session 
+P12 UTM 
+Top 3 cities per country by bookings (ties deterministic) 
+view→wishlist→book conversion counts & rates 
+7‑day rolling cancellations per market 
+Assign each booking to click>view within 7 days 
+Weekly retention for hosts after first listing 
+Longest consecutive active streak per guest 
+Guests who booked but never messaged a host 
+Fill missing days of bookings per market 
+Median nightly price per city per month 
+Sessionize guest web events (30‑min gap) 
+CAC by utm_source 
+P13 WAU/MAU Compute DAU/WAU/MAU + stickiness 
+P14 Reactivation Guests inactive 60d who returned 
+P15 AB 
+P16 String 
+P17 Join 
+P18 Window 
+P19 Quality 
+P20 Cleanup 
+ARPU by variant with sanity guardrails 
+Extract room type from title via regex 
+Hosts with ≥3 listings and ≥2 bookings each 
+2nd highest booking value per host 
+Flag suspected test traffic by rules 
+Remove duplicates by (id, ts) keep max version 
+Selected solutions & skeletons 
+P1 Latest paid order per user (60 days) 
+WITH f AS ( 
+SELECT * 
+FROM `proj.ds.orders` 
+WHERE status = 'paid' 
+AND order_ts >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 60 DAY) 
+), r AS ( 
+SELECT *, ROW_NUMBER() OVER ( 
+PARTITION BY user_id ORDER BY order_ts DESC, order_id DESC 
+) AS rn 
+FROM f 
+) 
+SELECT * FROM r WHERE rn = 1; 
+P2 Top 3 cities per country by bookings 
+WITH agg AS ( 
+  SELECT country, city, COUNT(*) AS b 
+  FROM `proj.ds.bookings` 
+  GROUP BY country, city 
+), r AS ( 
+  SELECT *, ROW_NUMBER() OVER ( 
+    PARTITION BY country ORDER BY b DESC, city 
+  ) AS rk 
+  FROM agg 
+) 
+SELECT country, city, b FROM r WHERE rk <= 3 ORDER BY country, rk; 
+ 
+P3 Funnel view→wishlist→book 
+WITH s AS ( 
+  SELECT user_id, 
+    MIN(CASE WHEN ev='view'     THEN ts END) AS t1, 
+    MIN(CASE WHEN ev='wishlist' THEN ts END) AS t2, 
+    MIN(CASE WHEN ev='book'     THEN ts END) AS t3 
+  FROM `proj.ds.site_events` 
+  GROUP BY user_id 
+) 
+SELECT 
+  COUNTIF(t1 IS NOT NULL) AS v, 
+  COUNTIF(t2 IS NOT NULL AND t2 >= t1) AS w, 
+  COUNTIF(t3 IS NOT NULL AND t3 >= t2 AND t2 >= t1) AS b, 
+  SAFE_DIVIDE(COUNTIF(t2 IS NOT NULL AND t2 >= t1), 
+              COUNTIF(t1 IS NOT NULL)) AS v2w, 
+  SAFE_DIVIDE(COUNTIF(t3 IS NOT NULL AND t3 >= t2 AND t2 >= t1), 
+              COUNTIF(t1 IS NOT NULL)) AS v2b; 
+ 
+P4 7‑day rolling cancellations per market 
+WITH d AS ( 
+  SELECT market, DATE(cancel_ts) AS d, COUNT(*) AS c 
+  FROM `proj.ds.cancels` 
+  GROUP BY market, d 
+) 
+SELECT market, d, 
+  SUM(c) OVER ( 
+    PARTITION BY market ORDER BY d 
+    RANGE BETWEEN INTERVAL 6 DAY PRECEDING AND CURRENT ROW 
+  ) AS c_7d 
+FROM d; 
+ 
+P5 Booking attribution click>view -- Use 3.9; replace tables with bookings(conv) and ads clicks/views. 
+ 
+P6 Weekly retention for hosts after first listing 
+WITH firsts AS ( 
+  SELECT host_id, 
+         DATE_TRUNC(MIN(list_ts), WEEK(MONDAY)) AS cohort_w 
+  FROM `proj.ds.listings` 
+  GROUP BY host_id 
+), act AS ( 
+SELECT host_id, DATE_TRUNC(event_ts, WEEK(MONDAY)) AS w 
+FROM `proj.ds.host_events` 
+GROUP BY host_id, w 
+) 
+SELECT cohort_w, DATE_DIFF(w, cohort_w, WEEK) AS wk, 
+COUNT(DISTINCT host_id) AS hosts 
+FROM firsts JOIN act USING (host_id) 
+GROUP BY cohort_w, wk 
+ORDER BY cohort_w, wk; 
+P7 Longest active streak per guest -- Use 3.3 and then take MAX(days) per user. 
+P8 Guests booked but never messaged 
+SELECT DISTINCT b.user_id 
+FROM `proj.ds.bookings` b 
+LEFT JOIN `proj.ds.messages` m USING (user_id) 
+WHERE m.user_id IS NULL; 
+(For P9–P20, use the matching patterns from Section 3.) 
+7) Speed tactics for live rounds 
+● Write CTEs in vertical slices. Name CTEs by purpose: filt, agg, rnk. 
+● Enforce determinism in every ORDER BY used for ranking. 
+● Develop with a narrow date filter, then widen. Keep the filter commented. 
+● Print sample rows for sanity: ORDER BY ... LIMIT 10. 
+● Prefer QUALIFY over re‑wrapping ranked CTEs when simple. 
+8) Debugging checklist 
+● Row count growth across CTEs as expected? Any blowups after joins? 
+● Keys unique at the correct grain before joining? If not, pre‑agg. 
+● Off‑by‑one dates? Inclusive/exclusive windows consistent? 
+● NULL‑safety: SAFE_ casts, COALESCE defaults. 
+● Time zone alignment: pick one and convert at inputs. 
+9) Minimal BigQuery function glossary 
+● QUALIFY, GENERATE_DATE_ARRAY, APPROX_QUANTILES, SAFE_CAST 
+● DATE_TRUNC, TIMESTAMP_ADD/SUB, DATE_DIFF, IFNULL/COALESCE 
+● LAG/LEAD, ROW_NUMBER, DENSE_RANK, COUNTIF 
+● RANGE‑based window frames for true time windows 

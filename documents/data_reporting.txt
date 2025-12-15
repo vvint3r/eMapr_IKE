@@ -1,0 +1,366 @@
+Data Analysis & Reporting (DAR)
+
+
+
+
+CORE TOPICS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Analytics Value Chain & Core Functions (AVC.CF)
+
+
+
+
+BROAD TOPIC
+SUB-TOPICS
+DETAILED TOPICS
+
+
+
+
+
+
+Data Acquisition
+Event & API tracking, Fivetran/Airbyte pipelines
+Raw landing tables, CDC streams
+Data Engineering
+dbt/SQL ELT, column-level lineage, tests
+Curated marts, entity-resolution tables
+Analytics & BI
+Ad-hoc SQL/Python, descriptive stats, dashboards
+Exploratory notebooks, Looker/Power BI reports
+Modeling & ML
+Feature engineering, MLflow experiments, MLOps
+Forecasts, propensity scores, segmentations
+Experimentation & Causal
+A/B test design, CUPED, diff-in-diff
+Lift reports, decision memos
+Activation
+Reverse-ETL, marketing pixels, product triggers
+Audiences in CDP/CRM, automated actions
+Governance & Quality
+Data contracts, Monte Carlo/Soda monitors
+SLA reports, incident retros
+Storytelling & Strategy
+Executive read-outs, OKR alignment
+Roadmaps, North-star metrics, ROI models
+
+
+
+Data Visualization
+Visualization Tools
+Tableau
+- Connecting to data sources
+- Calculated fields and parameters
+- Dashboards and storyboards
+
+
+
+
+Power BI
+- Data modeling and DAX
+- Report building
+- Sharing and collaboration features
+
+
+Visualization Principles
+Design Best Practices
+- Choosing chart types (bar, line, pie)
+- Color theory and accessibility
+- Avoiding misleading visuals
+
+
+
+
+Storytelling with Data
+- Structuring a narrative
+- Highlighting key insights
+- Tailoring visuals for stakeholders
+
+
+
+
+
+ 3. Analytics & Analysis Domain
+
+Core Skills and Competencies
+
+Technical Skills
+
+- Statistical Analysis [Skill] - Descriptive statistics, inferential statistics, hypothesis testing, regression analysis
+- Data Modeling [Skill] - Conceptual modeling, predictive modeling, statistical modeling
+- Programming Languages [Skill] - Python, R, SQL, SAS, MATLAB, Scala, Java
+- Machine Learning [Skill] - Supervised learning, unsupervised learning, deep learning, ensemble methods
+- Database Management [Skill] - SQL querying, database design, data warehousing, NoSQL databases
+
+Business Skills
+
+- Data Storytelling [Skill] - Narrative construction, insight communication, stakeholder engagement
+- Business Intelligence [Skill] - KPI development, dashboard creation, performance measurement
+- Analytics Strategy [Skill] - Analytics roadmap development, ROI measurement, data governance
+
+Key Methodologies and Frameworks
+
+- CRISP-DM [Framework] - Cross-Industry Standard Process for Data Mining (6 phases: Business Understanding, Data Understanding, Data Preparation, Modeling, Evaluation, Deployment)
+- SEMMA [Framework] - Sample, Explore, Modify, Model, Assess (SAS-developed methodology)
+- Descriptive Analytics [Methodology] - Historical data analysis, reporting, data aggregation
+- Predictive Analytics [Methodology] - Forecasting, machine learning models, statistical modeling
+- Prescriptive Analytics [Methodology] - Optimization, simulation, decision modeling
+
+Essential Tools and Software Platforms
+
+- Tableau [Tool] - Advanced data visualization, interactive dashboards, self-service analytics
+- Python [Tool] - Versatile programming language with data science libraries (pandas, numpy, scikit-learn)
+- R [Tool] - Open-source statistical computing with extensive package ecosystem
+- SAS [Tool] - Enterprise statistical software with advanced analytics capabilities
+- Google Cloud Platform [Tool] - BigQuery, Dataflow, Cloud ML Engine, Looker
+- Snowflake [Tool] - Cloud data platform, data warehousing, analytics workloads
+
+Sub-disciplines and Specializations
+
+- Customer Analytics [Specialization] - Customer segmentation, lifetime value modeling, churn prediction
+- Marketing Analytics [Specialization] - Campaign optimization, attribution modeling, A/B testing
+- Financial Analytics [Specialization] - Risk modeling, fraud detection, credit scoring
+- Data Science [Specialization] - Machine learning, artificial intelligence, experimental design
+- Business Intelligence [Specialization] - Data warehousing, OLAP, reporting, dashboard development
+
+Emerging Trends and Technologies
+
+- Agentic AI [Trend] - Autonomous AI systems capable of independent decision-making
+- Generative AI for Analytics [Trend] - AI-powered report generation, automated insight discovery
+- Real-time Analytics [Trend] - Stream processing, edge computing, instantaneous decision-making
+- MLOps [Trend] - Machine learning operations, model lifecycle management
+
+
+
+
+1. ANALYSIS PLANNING & STRATEGY
+Business Question Definition
+Reverse-engineering from decisions needed
+Stakeholder requirement gathering
+Success criteria establishment
+Scope and constraint documentation
+Hypothesis Development
+Formulating testable hypotheses
+Identifying key variables and relationships
+Defining success/failure metrics
+Creating analysis roadmaps
+Resource Planning
+Data source identification
+Tool and technology selection
+Timeline and milestone setting
+Team role assignment
+2. DATA MANAGEMENT & QUALITY
+Data Quality Assessment
+Completeness checks (missing values, gaps)
+Accuracy validation (range checks, business rules)
+Consistency verification (cross-source validation)
+Timeliness evaluation (data freshness)
+Data quality scorecarding
+Data Governance
+Source documentation
+Data lineage tracking
+Access control and security
+Version control implementation
+Metadata management
+Data Preparation Standards
+ETL process documentation
+Transformation logic standardization
+Error handling procedures
+Data validation checkpoints
+3. ANALYTICAL FRAMEWORKS
+Progressive Depth Analysis
+Descriptive: What happened?
+Summary statistics
+Historical trending
+Current state assessment
+Diagnostic: Why did it happen?
+Root cause analysis
+Variance decomposition
+Driver identification
+Predictive: What will happen?
+Forecasting models
+Risk assessment
+Scenario planning
+Prescriptive: What should we do?
+Optimization analysis
+Recommendation development
+Impact estimation
+Segmentation & Cohort Analysis
+Customer segmentation strategies
+Behavioral cohort creation
+Performance tier analysis
+Geographic/demographic breakdowns
+Time-based cohort tracking
+Comparative Analysis
+Period-over-period comparisons
+Benchmark analysis (internal/external)
+Competitive positioning
+Best practice identification
+Gap analysis
+4. REPORTING STRUCTURES & STANDARDS
+Report Architecture
+Executive Dashboards
+KPI summaries
+Trend visualizations
+Exception highlighting
+Action triggers
+Operational Reports
+Detailed metrics
+Process performance
+Resource utilization
+Bottleneck identification
+Analytical Deep Dives
+Investigation findings
+Statistical analysis
+Predictive insights
+Recommendation details
+Pyramid Principle Structure
+Lead with conclusions/recommendations
+Support with key evidence
+Provide detailed analysis
+Include technical appendices
+Visual Design Standards
+Chart type selection matrix
+Color coding conventions
+Layout templates
+Annotation guidelines
+Accessibility requirements
+5. INSIGHT GENERATION METHODOLOGIES
+Pattern Recognition Techniques
+Trend identification
+Seasonality detection
+Anomaly flagging
+Correlation analysis
+Cluster identification
+Variance Analysis Framework
+Actual vs. Plan/Forecast
+Volume/Price/Mix decomposition
+Time series variance
+Geographic variance
+Product/Service variance
+Statistical Rigor
+Significance testing
+Confidence intervals
+Sample size validation
+Bias identification
+Uncertainty quantification
+6. QUALITY ASSURANCE & VALIDATION
+Analysis Validation
+Peer review processes
+Sensitivity testing
+Scenario stress-testing
+Back-testing against historical data
+Cross-validation techniques
+Documentation Standards
+Methodology documentation
+Assumption cataloging
+Limitation disclosure
+Source attribution
+Calculation transparency
+Reproducibility Framework
+Code versioning
+Environment documentation
+Data snapshot preservation
+Process step recording
+Audit trail maintenance
+7. STAKEHOLDER MANAGEMENT
+Communication Frameworks
+Audience Segmentation
+Executive briefings
+Manager updates
+Technical deep-dives
+Cross-functional sharing
+Delivery Cadence
+Real-time alerts
+Daily operational updates
+Weekly business reviews
+Monthly strategic reports
+Quarterly business reviews
+Feedback Integration
+Iterative review cycles
+Requirement refinement
+Finding validation sessions
+Action plan development
+Impact measurement
+8. ACTION & IMPLEMENTATION
+Recommendation Framework
+Specific action identification
+Impact quantification
+Resource requirement estimation
+Implementation timeline
+Success metrics definition
+Decision Support Tools
+What-if scenario modeling
+ROI calculators
+Risk assessment matrices
+Priority scoring models
+Implementation roadmaps
+Performance Tracking
+KPI definition and tracking
+Initiative impact measurement
+Continuous improvement cycles
+Learning documentation
+Best practice capture
+9. TECHNOLOGY & TOOLS UTILIZATION
+Analytics Platform Management
+Tool selection criteria
+Platform integration strategies
+Performance optimization
+Automation implementation
+Scalability planning
+Self-Service Analytics
+User training programs
+Template development
+Governance frameworks
+Usage monitoring
+Quality control measures
+10. PROFESSIONAL DEVELOPMENT
+Skill Building Areas
+Statistical methods
+Business domain expertise
+Communication skills
+Technology proficiency
+Project management
+Industry Best Practices
+Professional standards adoption
+Methodology updates
+Tool evaluation
+Network building
+Continuous learning
+
+
+
+4. Function-Specific Deep Dives
+Marketing Analytics Specialization
+Customer Analytics Excellence
+Segmentation Mastery: Behavioral segmentation, psychographic profiling, and dynamic segmentation Analytics Vidhya365 Data Science
+Lifecycle Analysis: Customer journey mapping, cohort analysis, and retention modeling 365 Data Science
+Value Modeling: Customer Lifetime Value (CLV) calculation, predictive CLV modeling, and value optimization Analytics Vidhya365 Data Science
+Attribution and Measurement
+Multi-Touch Attribution: Data-driven attribution modeling, cross-device tracking, and incrementality testing Medium +3
+Marketing Mix Modeling: Adstock and saturation curves, media effectiveness measurement, and budget optimization Adsmurai +3
+Experimental Design: A/B testing for marketing campaigns, multivariate testing, and causal inference 365 Data Science
+Advanced Applications
+Personalization Engines: Real-time recommendation systems, dynamic content optimization, and behavioral targeting Ironhack
+Campaign Optimization: Automated bidding algorithms, creative optimization, and budget allocation
+Brand Analytics: Brand sentiment analysis, brand lift measurement, and competitive brand analysis Analytics Vidhya

@@ -1,0 +1,1734 @@
+﻿Of course. Here is a comprehensive guide to SQL that synthesizes all the information from your sources.
+First, let's set you up for success. This is a very detailed document, and trying to learn it all at once can be a lot. To make this journey effective and enjoyable, could you tell me a bit about what you're hoping to achieve? For example, are you preparing for a specific type of interview, learning SQL from scratch, or aiming to level up your existing skills?
+Also, how familiar are you with SQL right now?
+No matter your level, I'm here to guide you through it, one concept at a time.
+________________
+
+
+The Comprehensive Guide to SQL for Data Interviews
+This guide covers the essential concepts of SQL, from foundational principles to advanced analytical techniques, with a special focus on preparing for data analyst, data scientist, and data engineering interviews.
+Part I: Introduction to SQL and Database Concepts
+SQL, or Structured Query Language, is a standard programming language designed for managing and manipulating data in a relational database management system (RDBMS). Unlike general-purpose programming languages like Python, SQL is declarative, meaning it focuses on what data to retrieve rather than how to retrieve it. It's a must-have tool for data professionals because most data lives in databases, where SQL allows for the efficient cleaning, filtering, and joining of large datasets. In fact, SQL is listed in 61% of data analytics job postings.
+SQL Dialects and Big Data Engines
+While there is a standard for SQL, different database systems have their own implementations, known as "dialects" or "flavors". Most are very similar, so interviewers often don't require a specific version and may allow you to look up minor syntax differences. PostgreSQL is often recommended for practice as it's highly standards-compliant.
+* Common Dialects: Microsoft SQL Server (T-SQL), Oracle (PL/SQL), MySQL, and PostgreSQL.
+* Big Data SQL Engines: Companies like Airbnb and Meta use specialized query engines such as Hive and Presto for massive datasets.
+Database Fundamentals
+* Database: A structured collection of data stored in tables, which consist of rows (records) and columns (fields).
+* Schema: A collection of database objects like tables, views, and indexes that defines the database's overall architecture and relationships. A star schema, which consists of a central "fact" table (containing measurable data) linked to descriptive "dimension" tables, is a go-to pattern for analytical databases.
+* DBMS vs. RDBMS: A Database Management System (DBMS) is software for managing databases. A Relational Database Management System (RDBMS) is a specific type of DBMS that stores data in related tables, which is what SQL is designed to interact with. All RDBMSs are DBMSs, but not all DBMSs are RDBMSs.
+* Relational vs. Non-Relational (NoSQL) Databases: SQL databases are relational and have predefined schemas, making them ideal for structured data and complex queries. NoSQL databases are non-relational, offering more flexibility for unstructured data and often prioritizing scalability over the strict consistency (ACID) guarantees of SQL databases.
+* OLTP vs. OLAP:
+   * Online Transaction Processing (OLTP) systems handle a high volume of short, daily transactions, like e-commerce orders. They are optimized for writes and have highly normalized schemas.
+   * Online Analytical Processing (OLAP) systems are designed for complex queries and analysis on large historical datasets, like data warehouses. They are optimized for reads and often use denormalized schemas to speed up aggregations.
+SQL Command Subsets
+SQL commands are grouped into functional categories:
+* Data Query Language (DQL): Retrieves data. The primary command is SELECT.
+* Data Definition Language (DDL): Defines and manages the database structure. Includes CREATE, ALTER, DROP, and TRUNCATE.
+* Data Manipulation Language (DML): Accesses and manipulates the data itself. Includes INSERT, UPDATE, and DELETE.
+* Data Control Language (DCL): Manages user access and permissions. Includes GRANT and REVOKE.
+* Transaction Control Language (TCL): Manages transactions. Includes COMMIT, ROLLBACK, and SAVEPOINT.
+________________
+
+
+Part II: Core SQL for Data Retrieval and Manipulation
+Anatomy of a Query and Logical Execution Order
+While a SQL query is written in a specific order, the database engine processes it in a different logical sequence. Understanding this order is crucial for writing correct and efficient queries.
+Written Order
+	Logical Execution Order
+	Purpose
+	1. SELECT
+	1. FROM / JOIN
+	Identifies and combines source tables.
+	2. FROM
+	2. WHERE
+	Filters individual rows based on conditions.
+	3. JOIN
+	3. GROUP BY
+	Aggregates rows into groups.
+	4. WHERE
+	4. HAVING
+	Filters the aggregated groups.
+	5. GROUP BY
+	5. SELECT
+	Selects final columns and performs calculations.
+	6. HAVING
+	6. DISTINCT
+	Removes duplicate rows.
+	7. ORDER BY
+	7. ORDER BY
+	Sorts the final result set.
+	8. LIMIT / OFFSET
+	8. LIMIT / OFFSET
+	Restricts the number of rows returned.
+	Window functions are executed after the HAVING clause but before the ORDER BY clause.
+Essential Clauses and Operators
+* SELECT: Specifies the columns to return. Using SELECT * is discouraged in production as it can hurt performance; it's better to name columns explicitly.
+* DISTINCT: Used with SELECT to return only unique values, eliminating duplicate rows.
+* WHERE: Filters rows based on conditions before any grouping occurs.
+* GROUP BY: Groups rows that share the same values in specified columns, often used with aggregate functions.
+* HAVING: Filters groups after aggregation has been performed. A key difference from WHERE is that HAVING can operate on aggregate functions, whereas WHERE cannot.
+* ORDER BY: Sorts the final results, defaulting to ascending (ASC). DESC is used for descending order.
+* LIMIT / OFFSET: LIMIT restricts the number of rows returned, while OFFSET skips a specified number of rows. They are crucial for implementing pagination.
+* CASE: Provides IF-THEN-ELSE logic, allowing for conditional aggregations or the creation of new categorized columns.
+* LIKE: Used for pattern matching in strings with wildcards like % (matches zero or more characters) and _ (matches exactly one character).
+* IN: Checks if a value exists within a list of specified values.
+* BETWEEN: Selects values within an inclusive range.
+* IS NULL / IS NOT NULL: Checks for the presence or absence of a value, as NULL represents an unknown or absent value and cannot be compared with standard operators like =.
+Data Manipulation: DDL and DML in Practice
+* DELETE vs. TRUNCATE vs. DROP: This is a classic interview question testing your understanding of data removal.
+   * DELETE: A DML command that removes specific rows based on a WHERE clause. It is a logged operation, making it slower but allowing for rollbacks.
+   * TRUNCATE: A DDL command that removes all rows from a table by deallocating data pages. It's much faster for large tables, minimally logged, and generally cannot be rolled back.
+   * DROP: A DDL command that completely removes the table's structure, data, indexes, and constraints. It is irreversible.
+Data Integrity: Keys and Constraints
+Constraints are rules applied to columns to ensure data accuracy and reliability.
+* Primary Key: A constraint that uniquely identifies each record in a table. It must contain unique values and cannot contain NULL values. A table can have only one primary key.
+* Foreign Key: A key used to link two tables together. It is a field (or collection of fields) in one table that refers to the PRIMARY KEY in another table, ensuring referential integrity.
+* Unique Key: A constraint that ensures all values in a column are different. Unlike a primary key, it can accept one NULL value, and a table can have multiple unique keys.
+* Other Constraints: NOT NULL (prevents NULL values), CHECK (ensures values meet a specific condition), and DEFAULT (provides a default value).
+________________
+
+
+Part III: Intermediate SQL - Joining and Aggregating Data
+Joining Multiple Tables
+JOIN clauses are the primary way to combine data from multiple tables and are a critical topic in interviews.
+* INNER JOIN: Returns only the rows that have matching values in both tables. This is the most common and default join type.
+* LEFT JOIN (or LEFT OUTER JOIN): Returns all rows from the left table and matched rows from the right table. If there's no match, NULL is returned for the right table's columns. This is useful for finding records that exist in one table but not another (an "anti-join" pattern when using WHERE right_table.key IS NULL). There is no difference between LEFT JOIN and LEFT OUTER JOIN.
+* RIGHT JOIN (or RIGHT OUTER JOIN): The opposite of a LEFT JOIN. It returns all rows from the right table. Many developers avoid it by reordering the tables and using LEFT JOIN instead.
+* FULL OUTER JOIN: Returns all rows when there is a match in either table. If there's no match, NULL values are returned for the columns of the non-matching table.
+* CROSS JOIN: Returns the Cartesian product of the two tables—every row from the first table is combined with every row from the second. It is used less frequently but can generate all possible combinations of data.
+* SELF JOIN: A regular join where a table is joined with itself. This pattern is essential for querying hierarchical data (e.g., employees and their managers) or comparing rows within the same table.
+Advanced Data Combination
+* Set Operators: These combine the results of two or more SELECT statements.
+   * UNION vs. UNION ALL: UNION combines results and removes duplicate rows, which is a computationally expensive step. UNION ALL includes all rows, including duplicates, and is therefore more performant.
+   * INTERSECT: Returns only the rows that appear in both result sets.
+   * EXCEPT (or MINUS in Oracle): Returns rows from the first query's result set that are not present in the second.
+* Subqueries (Nested Queries): A query nested inside another statement, allowing for complex, multi-step logic. They can be placed in SELECT, FROM (as derived tables), or WHERE clauses.
+   * Correlated vs. Non-Correlated Subqueries: A non-correlated subquery can run independently of the outer query. A correlated subquery depends on the outer query for its values and is evaluated for each row processed by the outer query, which can be less efficient.
+* Common Table Expressions (CTEs): Defined using the WITH clause, a CTE creates a temporary, named result set that can be referenced within a single statement. CTEs are indispensable for breaking down complex queries into logical, readable steps and are generally preferred over deeply nested subqueries for clarity. They can also be referenced multiple times within the same query.
+________________
+
+
+Part IV: Advanced SQL for Modern Data Analysis
+Mastery of modern SQL features like window functions and recursive CTEs is what separates top-tier candidates in data-centric interviews.
+Window Functions
+Window functions perform calculations across a set of rows related to the current row but, unlike GROUP BY, do not collapse the rows; they return a value for each row. The OVER() clause defines the "window" of rows the function operates on, using PARTITION BY to divide rows into groups and ORDER BY to order rows within each group.
+Ranking Functions
+These functions assign a rank to each row within a partition. How they handle ties is a critical interview topic.
+* ROW_NUMBER(): Assigns a unique, sequential number to each row, regardless of ties.
+* RANK(): Assigns the same rank to tied values but leaves gaps in the subsequent ranks (e.g., 1, 2, 2, 4).
+* DENSE_RANK(): Assigns the same rank to tied values but does not leave gaps (e.g., 1, 2, 2, 3). This is often the most useful ranking function for "Top N per group" problems.
+* NTILE(n): Distributes rows into a specified number of ranked groups or "buckets".
+Navigation/Offset Functions
+These functions access data from a different row relative to the current row.
+* LAG(column, offset, default): Accesses data from a previous row.
+* LEAD(column, offset, default): Accesses data from a subsequent row.
+Aggregate Window Functions
+These apply standard aggregate functions like SUM, AVG, and COUNT over a defined window.
+* Frame Clause (ROWS BETWEEN...): This provides fine-grained control over the window frame. For example, ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW is used for calculating running totals.
+Recursive CTEs
+A recursive CTE is a powerful feature that allows a CTE to reference itself, making it the standard SQL method for querying hierarchical data like organizational charts or network graphs. It consists of an "anchor member" (the base case) and a "recursive member" that joins back to the CTE, stopping when no new rows are returned.
+Data Transformation Techniques
+* Pivoting Data: This involves transforming data from a row-based ("long") format to a column-based ("wide") format. While some databases have a native PIVOT function, the universal method uses an aggregate function with a CASE statement for each new column.
+* Handling NULLs:
+   * COALESCE(val1, val2, ...): Returns the first non-NULL value from a list, commonly used to substitute a default value.
+   * NULLIF(expr1, expr2): Returns NULL if the two expressions are equal; otherwise, it returns the first expression. This is useful for preventing division-by-zero errors.
+________________
+
+
+Part V: SQL Performance and Optimization
+For senior roles, writing a correct query is just the beginning. Follow-up questions often focus on performance, scalability, and architecture.
+Identifying Slow Queries
+* Execution Plans: Analyzing an execution plan (using EXPLAIN or a graphical tool) is the primary method for diagnosing performance bottlenecks. It reveals if indexes are used effectively and identifies costly operations like full table scans.
+* Monitoring Tools: Tools like SQL Server's Activity Monitor, Dynamic Management Views (DMVs), and slow query logs in MySQL or PostgreSQL help identify resource-intensive queries in production environments.
+Indexing Strategies
+An index is a data structure that provides a fast lookup path to data, avoiding slow full table scans.
+* Clustered vs. Non-Clustered Index:
+   * A clustered index determines the physical storage order of data in a table. A table can only have one.
+   * A non-clustered index is a separate structure with pointers to the data rows. A table can have many.
+* Trade-offs: While indexes dramatically speed up reads (SELECT), they slow down write operations (INSERT, UPDATE, DELETE) because the index must also be updated.
+* Index Selectivity: This measures how unique a column's values are. Indexes are most effective on columns with high selectivity (many unique values, like an email address) and less effective on columns with low selectivity (few unique values, like a gender flag).
+Common Query Optimization Techniques
+* SELECT Specific Columns: Avoid SELECT *. Specifying only necessary columns reduces the amount of data processed.
+* Filter Early: Apply WHERE clauses as early as possible to reduce the dataset size for subsequent operations.
+* Optimize JOINs: Ensure join conditions are on indexed columns.
+* Prefer UNION ALL over UNION: If duplicates are acceptable, UNION ALL is faster because it skips the deduplication step.
+* Optimize LIKE: Using a wildcard % at the beginning of a LIKE pattern (e.g., '%value') prevents the use of an index and forces a full table scan.
+________________
+
+
+Part VI: Acing the SQL Interview
+SQL interviews test not just technical syntax but also problem-solving ability, communication, and logical structuring.
+The Interview Process and Question Types
+Interviews can take several forms, with the whiteboard test being a common format.
+* Whiteboard Test: Write queries by hand to demonstrate your thought process and knowledge of concepts without a compiler.
+* Live Coding: Solve problems in a shared coding environment where syntax matters.
+* Take-Home Assignment: A more complex problem to solve on your own time, where expectations for code cleanliness and documentation are higher.
+Questions typically fall into three categories: definitional questions, questions about a given query, and writing a query from scratch to solve a business problem.
+A Strategic Framework for Solving SQL Problems
+A structured approach is critical, especially under pressure. Many sources recommend a similar multi-step framework.
+1. Understand and Clarify: Restate the question in your own words to confirm your understanding. Ask clarifying questions about the data schema (e.g., "Which columns contain unique values?", "Are there NULLs?") and the business goal.
+2. Identify Relevant Data: Determine which tables and columns are necessary and filter out irrelevant information early.
+3. Outline Your Approach: Before coding, formulate a plan. Break the problem into smaller, logical steps. This is often best done using CTEs. Verbalize this plan to the interviewer to show your structured thinking and give them a chance to correct your course.
+4. Consider Edge Cases: Think about potential issues like NULL values, duplicate records, ties in rankings, or empty tables before you start writing code. For example, NOT IN behaves unexpectedly with NULLs, making NOT EXISTS a safer alternative.
+5. Write Code Incrementally: Build your query one step at a time, often starting with a CTE for each logical chunk. If in a live environment, test each part as you go.
+6. Explain and Test: Talk through your logic as you code. Once finished, review your final query, check it against the sample output, and explain your assumptions and any trade-offs you made.
+Common SQL Interview Patterns
+Recognizing problem patterns is key to solving complex questions quickly.
+* Top-N / Nth-Highest: Finding a specific rank or the top N records within groups.
+   * Technique: Use window functions like DENSE_RANK() or RANK() with PARTITION BY. For simpler cases, a subquery or LIMIT with OFFSET can work.
+   * Example: "Find the top 3 highest-paid employees in each department".
+* Finding Duplicates: Identifying rows with the same values across specified columns.
+   * Technique: Use GROUP BY with HAVING COUNT(*) > 1 or the ROW_NUMBER() window function.
+   * Example: "Find all duplicate emails in the Person table".
+* Existence Checks (Anti-Joins): Finding records in one table that do or do not have a match in another.
+   * Technique: LEFT JOIN with a WHERE ... IS NULL clause is a common and robust method. NOT EXISTS is also highly effective and safe with NULLs.
+   * Example: "Find all customers who have never placed an order".
+* Rolling Metrics (Moving Averages/Sums): Calculating an aggregate over a moving window of time.
+   * Technique: Use aggregate window functions (AVG(), SUM()) with a frame clause like ROWS BETWEEN N PRECEDING AND CURRENT ROW.
+   * Example: "Calculate the 7-day rolling average of daily sales".
+* Consecutive Events / Streaks (Gaps and Islands): Identifying continuous sequences of events.
+   * Technique: Create a grouping identifier by subtracting a sequence number generated by ROW_NUMBER() from the actual date or ID. For consecutive items, this difference remains constant.
+   * Example: "Find users who logged in for 3 or more consecutive days".
+* Sessionization: Grouping a stream of user events into distinct sessions based on a period of inactivity.
+   * Technique: Use LAG() to get the previous event's timestamp, calculate the time difference, and create a flag to mark the start of a new session. A cumulative sum of this flag then creates a unique session ID.
+   * Example: "Group user clicks into sessions where a new session starts after 30 minutes of inactivity".
+________________
+
+
+Part VII: Beyond SQL - The Broader Data Role
+Data roles are not just about SQL. Interviews at top companies will also assess your understanding of statistics, experimentation, product sense, and behavioral fit.
+A/B Testing and Experimentation
+A/B testing is a foundational concept for product-focused data roles.
+* Experimental Design: Key considerations include choosing primary and secondary metrics, determining sample size and test duration, and ensuring proper randomization. Business cycles and seasonality are important factors for test duration.
+* Statistical Concepts: A strong grasp of hypothesis testing, p-values, confidence intervals, and statistical power is essential.
+   * p-value: The probability of observing the current results, or more extreme, assuming the null hypothesis is true. A small p-value (typically < 0.05) suggests rejecting the null hypothesis.
+   * Confidence Interval: A range of values expected to contain the true population parameter with a certain level of confidence (e.g., 95%).
+   * Statistical Power: The probability of correctly detecting a true effect (i.e., avoiding a Type II error). Power is influenced by sample size, effect size, and significance level.
+* Common Pitfalls: Interviewers often ask about potential issues like inadequate sample size, biased sampling, the "novelty effect," or failing to correct for multiple testing.
+* Multiple Testing: Running multiple tests simultaneously increases the chance of a false positive (Type I error). Methods to correct for this include the Bonferroni correction (adjusting the significance level) or controlling the False Discovery Rate (FDR).
+Product Sense and Business Acumen
+Data professionals are expected to think like product partners.
+* Metric Definition: Questions often involve defining metrics to measure the success of a product or feature (e.g., "How would you measure the success of Facebook Groups?"). Good metrics are meaningful, measurable, and tied to business goals; avoid "vanity metrics" that don't reflect true engagement.
+* Diagnosing Metric Changes: A common scenario is being asked to investigate a drop in a key metric (e.g., "Bookings are down 10% YoY. How do you diagnose it?"). A structured approach involves breaking down the problem by looking at internal factors (e.g., feature changes, bugs) and external factors (e.g., seasonality, competitor actions).
+* Business Frameworks: Frameworks like the AARRR "Pirate Metrics" (Acquisition, Activation, Retention, Referral, Revenue) can help structure your thinking about the user journey and relevant KPIs.
+Behavioral Questions
+Behavioral interviews assess soft skills, collaboration, and cultural fit.
+* STAR Method: Structure your answers using the STAR method: Situation, Task, Action, Result.
+* Common Questions: Be prepared to discuss past projects, times you dealt with conflict or ambiguity, how you communicate technical concepts to non-technical audiences, and why you're interested in the company.
+________________
+
+
+Part VIII: Curated Practice Problems
+Practice is the most critical part of preparation. The following problems are representative of what's asked in interviews, categorized by the primary SQL pattern they test.
+Basic Aggregation and Filtering
+* Problem: Find the number of users who posted at least twice in 2024 and the number of days between their first and last post of that year.
+   * Solution Logic: Filter posts for the year 2024. GROUP BY user_id. Use HAVING COUNT(post_id) > 1 to find users with at least two posts. Use MAX(post_date) and MIN(post_date) to calculate the difference.
+* Problem: Find the total revenue from bookings in San Francisco in 2024.
+   * Solution Logic: JOIN the bookings and listings tables. WHERE city is 'San Francisco' and the year of booking_date is 2024. Use SUM(revenue).
+JOINs
+* Problem: List all users who have hosted at least one listing but have never made a booking as a guest.
+   * Solution Logic: JOIN users to listings on user_id = host_id. LEFT JOIN this result to bookings on user_id = guest_id. Filter WHERE b.booking_id IS NULL to find users who have never been guests. GROUP BY user and use HAVING COUNT(l.listing_id) >= 1.
+* Problem: Find employees who earn more than their managers.
+   * Solution Logic: This requires a SELF JOIN. Join the Employee table to itself, aliasing one as E (Employee) and the other as M (Manager). The join condition is E.ManagerId = M.Id, and the filter is E.Salary > M.Salary.
+Subqueries and CTEs
+* Problem: Find listings with prices above the average price in their city.
+   * Solution Logic: This uses a correlated subquery. For each listing, the WHERE clause compares its price to the result of a subquery that calculates the average price for that specific city: WHERE price > (SELECT AVG(price) FROM listings AS sub WHERE sub.city = listings.city).
+* Problem: Find the percentage of users who booked within 30 days of signing up.
+   * Solution Logic: LEFT JOIN users to bookings with a condition on the date difference (DATEDIFF(b.booking_date, u.signup_date) <= 30). Then calculate the percentage as COUNT(DISTINCT b.guest_id) / COUNT(DISTINCT u.user_id).
+Window Functions
+* Problem: Rank listings by revenue within each city, showing the top 3 per city.
+   * Solution Logic: Use a CTE to first calculate the total revenue per listing. Then, in an outer query, use RANK() OVER (PARTITION BY city ORDER BY revenue DESC) to assign a rank. Finally, filter WHERE rank <= 3.
+* Problem: For each booking, calculate the running total revenue per host over time.
+   * Solution Logic: JOIN bookings and listings tables. Use the window function SUM(revenue) OVER (PARTITION BY host_id ORDER BY booking_date) to calculate the running total.
+* Problem: Find the number of retained users per month (users who logged in this month and the previous month).
+   * Solution Logic: A SELF JOIN on the logins table is a good approach. Join logins a with logins b on a.user_id = b.user_id and a date condition like DATE_TRUNC('month', a.date) = DATE_TRUNC('month', b.date) + interval '1 month'.
+* Problem: Calculate the 7-day rolling average of daily sign-ups.
+   * Solution Logic: Use a SELF JOIN where you join the signups table to itself on a date range condition: ON a.date <= b.date + interval '6 days' AND a.date >= b.date. Then GROUP BY a.date and calculate AVG(b.sign_ups). An alternative, often more efficient, solution uses a window function: AVG(sign_ups) OVER (ORDER BY date ASC ROWS BETWEEN 6 PRECEDING AND CURRENT ROW).
+
+
+
+
+________________
+
+
+
+
+An Exhaustive Guide to Mastering SQL
+for Technical Interviews
+…
+Section 1.2: The Anatomy of a Query
+The SELECT statement is the cornerstone of data retrieval in SQL.
+Understanding its components and the logical order in which they are processed is
+fundamental to writing correct and efficient queries.
+Core Syntax and Logical Order of Operations
+While a query is written in a specific order (SELECT, FROM, WHERE, etc.), the database engine
+processes it in a different logical order.
+A solid mental model of this processing order helps in understanding how clauses interact.
+1. FROM / JOIN: Identifies the source tables and combines them.
+2. WHERE: Filters individual rows based on conditions.
+3. GROUP BY: Aggregates the filtered rows into groups.
+4. HAVING: Filters the aggregated groups.
+5. SELECT: Selects the final columns and performs calculations.
+6. DISTINCT: Removes duplicate rows from the result.
+7. ORDER BY: Sorts the final result set.
+8. LIMIT / OFFSET: Restricts the number of rows returned.
+Clauses & Operators
+● SELECT: Specifies the columns to be returned. Using * selects all columns, but it is a best
+practice in production code to explicitly name the required columns to improve clarity
+and performance.8
+● DISTINCT: Used within the SELECT clause to return only unique values, eliminating
+duplicate rows from the result set.13
+● WHERE: Filters the result set based on one or more conditions applied to individual rows
+before any grouping occurs.12
+● ORDER BY: Sorts the final result set in ascending (ASC, default) or descending (DESC)
+order based on one or more columns.11
+● LIMIT / OFFSET: LIMIT restricts the number of rows returned, while OFFSET skips a
+specified number of rows before starting to return results. These are crucial for
+implementing pagination.13
+● Operators:
+○ Comparison: =, <>, !=, >, <, >=, <= are used for comparing values.13
+○ Logical: AND, OR, NOT are used to combine multiple conditions in a WHERE clause.13
+○ Pattern Matching & Lists:
+■ LIKE: Used with wildcards (% for zero or more characters, _ for a single
+character) for pattern matching in strings.11
+■ IN: Checks if a value exists within a specified list of values.12
+■ BETWEEN: Selects values within a given range (inclusive).13
+■ IS NULL / IS NOT NULL: Specifically used to check for the presence or absence of
+a value, as NULL cannot be compared using standard operators like = or <>.14
+Practice Questions
+● Question: Write a query to find employees whose names start with ‘Int’.
+○ Answer: SELECT * FROM employees WHERE employee_name LIKE 'Int%';.13
+● Question: Write a query to find orders where the order amount exists between 1000 and
+5000.
+○ Answer: SELECT * FROM orders WHERE order_amount BETWEEN 1000 AND 5000;.12
+● Question: Explain the difference between BETWEEN and IN.
+○ Answer: BETWEEN is used to select values within a continuous range (e.g., numbers,
+dates), and it is inclusive of the start and end values. IN is used to check if a value
+matches any value in a discrete list of specified values.12
+● Question: Are NULL values equal to zero or a blank space? Explain.
+○ Answer: No. A NULL value represents the absence of data or an unknown value. It is
+distinct from zero, which is a specific number, and a blank space or empty string,
+which is a character value of length zero. NULL cannot be compared with any other
+value using standard comparison operators; one must use IS NULL or IS NOT NULL.12
+Section 1.3: Data Definition and Manipulation (DDL, DML, DCL, TCL)
+SQL commands are categorized into functional subsets.
+A clear understanding of these categories is often tested in foundational interview questions.
+● Data Definition Language (DDL): Defines and manages the structure of database
+objects.
+○ Commands: CREATE, ALTER, DROP, TRUNCATE.1
+● Data Manipulation Language (DML): Used to manage the data within the schema
+objects.
+○ Commands: INSERT, UPDATE, DELETE, SELECT.1
+● Data Control Language (DCL): Manages access rights and permissions to the
+database.
+○ Commands: GRANT, REVOKE.1
+● Transaction Control Language (TCL): Manages transactions within the database.
+○ Commands: COMMIT, ROLLBACK, SAVEPOINT.13
+● Data Query Language (DQL): Primarily consists of the SELECT statement for retrieving
+data.1
+The DELETE vs. TRUNCATE vs. DROP Debate
+This is a classic interview question that tests a candidate's understanding of how the
+database handles data removal at different levels.
+● DELETE: A DML command that removes rows from a table one by one. It can be used with
+a WHERE clause to remove specific rows. Because it is a logged operation, it is generally
+slower and can be rolled back within a transaction. It also fires any DELETE triggers
+associated with the table.11
+● TRUNCATE: A DDL command that removes all rows from a table by deallocating the data
+pages. It is much faster than DELETE for large tables as it is minimally logged. It cannot
+be used with a WHERE clause and typically cannot be rolled back (though behavior can
+vary by RDBMS within an explicit transaction). It does not fire DELETE triggers.11
+● DROP: A DDL command that completely removes the table itself, including its structure,
+data, indexes, constraints, and permissions. The action is irreversible without a backup.11
+Practice Questions
+● Question: What is the difference between DELETE and TRUNCATE? Can you roll back a
+TRUNCATE statement?
+○ Answer: DELETE is a DML command that removes rows individually and is logged,
+making it slower but allowing for rollback and firing triggers. TRUNCATE is a DDL
+command that deallocates all data pages at once, making it faster but generally not
+rollbackable (with some exceptions like SQL Server within a BEGIN TRAN...ROLLBACK
+block) and it does not fire triggers.11
+● Question: How would you add a column to an existing table?
+○ Answer: Using the ALTER TABLE command with the ADD COLUMN clause. For
+example: ALTER TABLE employees ADD email VARCHAR(100);.14
+● Question: How can you copy data from one table to another?
+○ Answer: Using the INSERT INTO... SELECT... statement. For example, to copy all
+records: INSERT INTO new_table SELECT * FROM old_table;.13 To create a new table
+with the same structure and data, one can use
+SELECT * INTO new_table FROM old_table; in some SQL dialects.11
+Section 1.4: Database Normalization
+Normalization is a systematic approach to designing a database schema to minimize data
+redundancy and improve data integrity.
+It involves dividing larger tables into smaller, well-structured tables and defining relationships
+between them.11
+Normal Forms (1NF, 2NF, 3NF, BCNF)
+● First Normal Form (1NF): A table is in 1NF if all its columns contain atomic (indivisible)
+values, and each row is unique. This means no repeating groups or multi-valued
+columns.11
+● Second Normal Form (2NF): A table must be in 1NF and all of its non-key attributes must
+be fully functionally dependent on the entire primary key. This rule applies to tables with
+composite primary keys and aims to eliminate partial dependencies, where a non-key
+attribute depends on only part of the composite primary key.11
+● Third Normal Form (3NF): A table must be in 2NF and all its attributes must be
+dependent only on the primary key. This eliminates transitive dependencies, where a
+non-key attribute is dependent on another non-key attribute.11
+● Boyce-Codd Normal Form (BCNF): A stricter version of 3NF. A table is in BCNF if for
+every non-trivial functional dependency X→Y, X is a superkey. In simpler terms, every
+determinant must be a candidate key.13
+Denormalization
+Denormalization is the process of intentionally introducing redundancy into a normalized
+database design to improve query performance.
+By combining tables and reducing the number of required JOINs, read operations can be
+made significantly faster.
+This is a common strategy in data warehousing and reporting databases (OLAP systems)
+where read performance is more critical than write efficiency.11
+Practice Questions
+● Question: Explain the different normal forms (1NF, 2NF, 3NF).
+○ Answer: 1NF ensures atomic values in columns. 2NF builds on 1NF and removes
+partial dependencies on composite keys. 3NF builds on 2NF and removes transitive
+dependencies, where non-key attributes depend on other non-key attributes.13
+● Question: What is denormalization and when would you use it?
+○ Answer: Denormalization is the strategic introduction of redundancy to a database
+to improve read performance by reducing the need for complex joins. It is often used
+in analytical systems (OLAP) or high-traffic applications where query speed is a
+primary concern, and the trade-off of increased storage and more complex updates
+is acceptable.11
+Part II: Intermediate SQL - Aggregating and
+Combining Data
+This section transitions from single-table operations to the core analytical tasks of
+summarizing and merging data from multiple sources.
+The progression from simple JOINs to subqueries and then to Common Table Expressions
+(CTEs) reflects a growing sophistication in a developer's approach to problem-solving.
+Interviews often test this maturity curve.
+A candidate who can solve a problem with a JOIN is competent; one who recognizes when a
+CTE offers superior clarity and efficiency demonstrates a higher level of expertise.
+Section 2.1: Mastering Aggregation
+Aggregation is the process of transforming detailed, row-level data into summarized,
+meaningful information.
+Aggregate Functions
+These functions operate on a set of values to return a single, summary value.
+They are essential for calculating metrics.
+● COUNT(): Returns the number of rows. COUNT(*) counts all rows, while
+COUNT(column_name) counts non-NULL values in that column.13
+● SUM(): Calculates the total sum of a numeric column.13
+● AVG(): Calculates the average value of a numeric column.13
+● MIN(): Returns the minimum value in a column.13
+● MAX(): Returns the maximum value in a column.13
+Grouping Data with GROUP BY
+The GROUP BY clause is used with aggregate functions to group rows that have the same
+values in specified columns into summary rows.
+For each group, the aggregate function calculates a summary value.13
+Filtering Groups with WHERE vs. HAVING
+This distinction is a fundamental and frequently asked interview question.
+● WHERE clause filters individual rows before they are passed to the GROUP BY clause and
+aggregate functions. It operates on row-level data.12
+● HAVING clause filters groups after the GROUP BY clause has been applied and the
+aggregations have been calculated. It operates on the aggregated results.12
+Practice Questions
+● Question: Find the average salary for each department.
+○ Answer: SELECT department, AVG(salary) AS avg_salary FROM employees GROUP
+BY department;.13
+● Question: List departments with more than 10 employees.
+○ Answer: SELECT department, COUNT(*) FROM employees GROUP BY department
+HAVING COUNT(*) > 10;.14
+● Question: Explain, with an example, the difference between the WHERE and HAVING
+clauses.
+○ Answer: WHERE filters rows before aggregation, while HAVING filters groups after
+aggregation. For example, to find the total sales for products with a price over $10,
+but only for categories with total sales exceeding $1000, you would use WHERE price
+> 10 to filter products first, then GROUP BY category, and finally HAVING SUM(sales)
+> 1000 to filter the resulting categories.12
+Section 2.2: The Art of the JOIN
+JOIN clauses are the primary mechanism for combining data from two or more tables based
+on a related column.
+Core JOIN Types
+● INNER JOIN: Returns only the rows that have matching values in both tables. It is the
+most common type of join.11
+● LEFT JOIN (or LEFT OUTER JOIN): Returns all rows from the left table and the matched
+rows from the right table. If there is no match, NULL is returned for the columns from the
+right table. This is useful for finding entities that may not have a corresponding entry in
+another table (e.g., customers who have never placed an order).11
+● RIGHT JOIN (or RIGHT OUTER JOIN): The inverse of a LEFT JOIN. It returns all rows from
+the right table and the matched rows from the left table. NULL is returned for left table
+columns where there is no match.11
+● FULL OUTER JOIN: Returns all rows when there is a match in either the left or the right
+table. It effectively combines the results of both LEFT and RIGHT joins. If there is no
+match for a given row, the columns from the other table will contain NULL.11
+Advanced JOIN Types
+● CROSS JOIN: Returns the Cartesian product of the two tables, meaning every row from
+the first table is combined with every row from the second table. It is used less frequently
+but can be useful for generating all possible combinations of data.11
+● SELF JOIN: This is a regular join, but the table is joined with itself. It is used to query
+hierarchical data or to compare rows within the same table. Table aliases are required to
+distinguish between the two instances of the table in the query.11
+Practice Questions
+● Question: Write a query to join 3 tables.
+○ Answer: SELECT * FROM table1 t1 JOIN table2 t2 ON t1.id = t2.t1_id JOIN table3 t3
+ON t2.id = t3.t2_id;.13
+● Question: Get all employees and their project names, showing NULL if an employee is
+not assigned a project.
+○ Answer: This requires a LEFT JOIN from the employees table to the projects table.
+SELECT e.name, p.project_name FROM employees e LEFT JOIN projects p ON e.id =
+p.employee_id;.13
+● Question: Write a query to find pairs of employees who have the same salary.
+○ Answer: This is a classic SELF JOIN problem. SELECT e1.name, e2.name, e1.salary
+FROM employees e1 JOIN employees e2 ON e1.salary = e2.salary AND e1.id < e2.id;
+The e1.id < e2.id condition is crucial to avoid listing the same pair twice (e.g., A-B and
+B-A) and an employee with themselves.13
+● Question: Find all salespeople and customers who live in the same city.
+○ Answer: This requires an INNER JOIN between the two tables on the city column.
+SELECT s.name, c.name, s.city FROM salespeople s INNER JOIN customers c ON
+s.city = c.city;.12
+Section 2.3: Advanced Data Combination
+Beyond JOINs, SQL provides other powerful tools for combining and filtering datasets.
+Set Operators
+Set operators combine the results of two or more SELECT statements.
+● UNION vs. UNION ALL: This is a very common interview topic.
+○ UNION: Combines the result sets and removes duplicate rows. This deduplication
+step requires extra processing, making it slower.11
+○ UNION ALL: Combines the result sets but includes all rows, including duplicates. It is
+significantly more performant because it does not need to check for duplicates.11
+● INTERSECT: Returns only the rows that appear in both result sets.12
+● EXCEPT (or MINUS in Oracle): Returns the rows from the first result set that do not
+appear in the second result set.13
+Subqueries (Nested Queries)
+A subquery is a SELECT statement nested inside another statement.
+They allow for complex, multi-step logic where the result of an inner query is used to guide
+the outer query.
+● Placement: Subqueries can be used in the SELECT list, the FROM clause (where they are
+often called derived tables), and most commonly, the WHERE clause.11
+● Correlated vs. Non-Correlated Subqueries:
+○ Non-Correlated: The inner query can be run independently of the outer query. Its
+result is calculated once and then used by the outer query.11
+○ Correlated: The inner query depends on the outer query for its values. It is evaluated
+once for each row processed by the outer query. Correlated subqueries can be less
+efficient than other methods like JOINs or CTEs.11
+Practice Questions
+● Question: What is the difference between UNION and UNION ALL? Which is more
+performant and why?
+○ Answer: UNION combines results and removes duplicates, while UNION ALL
+combines results and keeps duplicates. UNION ALL is more performant because it
+avoids the computationally expensive sort or hash operation required to identify and
+remove duplicates.11
+● Question: Write a query to fetch employees who earn more than the average salary in
+the entire company.
+○ Answer: This is a classic use case for a subquery in the WHERE clause. SELECT
+name, salary FROM employees WHERE salary > (SELECT AVG(salary) FROM
+employees);.13
+● Question: Explain the difference between a correlated and a non-correlated subquery.
+○ Answer: A non-correlated subquery is self-contained and executes once, passing its
+result to the outer query. A correlated subquery references columns from the outer
+query and thus must be re-executed for each row processed by the outer query,
+which can lead to performance issues.11
+Part III: Advanced SQL for Modern Data Analysis
+This section delves into the modern SQL features that are now standard expectations in
+data-centric interviews.
+Mastery of window functions and Common Table Expressions (CTEs) is what separates
+top-tier candidates from the rest.
+These features are not merely individual topics to learn; they form a synergistic toolset.
+The combination of CTEs and window functions is a modern SQL "power combo" capable of
+elegantly solving most complex analytical questions.
+CTEs provide the framework for readable, modular logic, while window functions provide the
+engine for sophisticated calculations.
+Section 3.1: Unleashing the Power of Window Functions
+Window functions perform a calculation across a set of table rows that are related to the
+current row.
+Unlike GROUP BY aggregations, they do not collapse the result set; they return a value for
+each row, preserving the original row's identity.9
+This capability is essential for tasks like ranking, calculating running totals, and comparing
+values between rows.
+The core of a window function is the OVER() clause, which defines the "window" or set of rows
+the function operates on.
+It has two main components:
+● PARTITION BY: Divides the rows into groups (partitions). The window function is applied
+independently to each partition. This is conceptually similar to GROUP BY but does not
+collapse the rows.
+● ORDER BY: Orders the rows within each partition. This is crucial for functions that depend
+on sequence, such as RANK() or LAG().
+Key Categories of Window Functions
+1. Ranking Functions: Used to assign a rank to each row within a partition based on a
+specified order. The differences in how they handle tied values are a critical interview
+topic.
+○ ROW_NUMBER(): Assigns a unique, sequential integer to each row, regardless of
+ties.15
+○ RANK(): Assigns the same rank to tied values but leaves gaps in the subsequent
+ranks (e.g., 1, 2, 2, 4).14
+○ DENSE_RANK(): Assigns the same rank to tied values but does not leave gaps (e.g., 1,
+2, 2, 3). This is often the most useful ranking function in interviews.12
+○ NTILE(n): Distributes the rows in an ordered partition into a specified number of
+ranked groups (buckets).23
+2. Navigation/Offset Functions: Used to access data from a different row relative to the
+current row within the same result set.
+○ LAG(column, offset, default): Accesses data from a previous row in the partition.9
+○ LEAD(column, offset, default): Accesses data from a subsequent row in the
+partition.9
+3. Aggregate Window Functions: Apply standard aggregate functions (SUM, AVG, COUNT,
+MIN, MAX) over a defined window.
+○ Frame Clause (ROWS BETWEEN...): This clause provides fine-grained control over
+the window frame. For example, ROWS BETWEEN UNBOUNDED PRECEDING AND
+CURRENT ROW defines a window that includes all rows from the start of the partition
+up to the current row, which is essential for calculating running totals.13
+The following table provides a quick reference for these essential functions.
+Function Syntax Example Purpose Common Interview
+Use Case
+ROW_NUMBER() ROW_NUMBER()
+OVER (ORDER BY
+salary DESC)
+Assigns a unique
+sequential integer
+to each row.
+Arbitrarily breaking
+ties; assigning a
+unique ID to a
+result set.
+RANK() RANK() OVER
+(PARTITION BY
+dept ORDER BY
+salary DESC)
+Ranks rows, with
+gaps after ties.
+General ranking
+scenarios where
+gaps are
+acceptable.
+DENSE_RANK() DENSE_RANK()
+OVER (PARTITION
+BY dept ORDER BY
+salary DESC)
+Ranks rows, with no
+gaps after ties.
+Finding "Top N per
+group" (e.g., top 3
+salaries in each
+department).
+NTILE(n) NTILE(4) OVER
+(ORDER BY sales
+DESC)
+Divides rows into n
+ranked groups
+(e.g., quartiles).
+Segmenting
+customers into
+sales quartiles or
+performance
+buckets.
+LAG() LAG(sales, 1) OVER
+(PARTITION BY
+product ORDER BY
+month)
+Accesses a value
+from a previous
+row.
+Calculating
+period-over-period
+growth (e.g.,
+month-over-month
+sales change).
+LEAD() LEAD(event_time, 1)
+OVER (PARTITION
+BY user_id ORDER
+BY event_time)
+Accesses a value
+from a subsequent
+row.
+Calculating the
+duration until the
+next event for
+sessionization.
+SUM() OVER() SUM(sales) OVER
+(PARTITION BY year
+ORDER BY month
+ROWS
+UNBOUNDED
+PRECEDING)
+Calculates a sum
+over a window.
+Calculating a
+running total or
+cumulative sum
+(e.g., year-to-date
+sales).
+AVG() OVER() AVG(price) OVER
+(ORDER BY date
+ROWS BETWEEN 6
+PRECEDING AND
+CURRENT ROW)
+Calculates an
+average over a
+window.
+Calculating a
+moving average
+(e.g., 7-day rolling
+average price).
+Section 3.2: Simplifying Complexity with Common Table Expressions
+(CTEs)
+A Common Table Expression, defined using the WITH clause, creates a temporary, named
+result set that can be referenced within a single SELECT, INSERT, UPDATE, or DELETE
+statement.
+CTEs are indispensable for breaking down complex queries into logical, readable steps,
+making them far superior to deeply nested subqueries.1
+Recursive CTEs
+A powerful feature of CTEs is their ability to be recursive, meaning a CTE can reference itself.
+This is the standard SQL method for querying hierarchical data, such as organizational charts,
+bill of materials, or network graphs.13
+A recursive CTE has two parts: an anchor member that returns the base result, and a
+recursive member that references the CTE itself, joined with the anchor.
+The recursion stops when the recursive member returns no more rows.
+Practice Questions
+● Question: Rewrite a complex query containing multiple nested subqueries to use CTEs
+for improved readability.
+○ Answer: This involves identifying each subquery's purpose, converting it into a
+named CTE using the WITH clause, and then joining these CTEs in the final SELECT
+statement.
+● Question: Given an employees table with employee_id and manager_id, write a query to
+f
+ind the entire reporting hierarchy for a specific employee.
+○ Answer: This is a classic recursive CTE problem. The anchor member selects the
+starting employee. The recursive member repeatedly joins the employees table to the
+CTE to find the next level of direct reports, continuing until all levels of the hierarchy
+are traversed.13
+● Question: Use a CTE to rank customers by total purchase amount and return the top 10.
+○ Answer: A first CTE would calculate the total purchase amount for each customer
+using SUM() and GROUP BY. A second CTE would then use DENSE_RANK() on the
+result of the first CTE. The final query would select from the second CTE where the
+rank is less than or equal to 10.13
+Section 3.3: Data Transformation Techniques
+Beyond selecting and joining data, SQL provides a rich set of functions for transforming data
+within a query.
+● Conditional Logic with CASE: The CASE statement provides if-then-else logic, allowing
+for the creation of new columns or conditional aggregations based on specified rules. It
+is incredibly versatile for tasks like bucketing data, creating flags, or pivoting.6
+● Handling NULLs:
+○ COALESCE(val1, val2,...): Returns the first non-NULL value from a list of expressions.
+It is commonly used to substitute a default value for NULLs.12
+○ NULLIF(expr1, expr2): Returns NULL if the two expressions are equal; otherwise, it
+returns the first expression. Useful for preventing division-by-zero errors by
+converting a zero denominator to NULL.25
+● Date/Time Manipulation: Nearly every analytical query involves dates. Common
+functions include EXTRACT() or DATE_PART() to get components like year or month,
+DATEDIFF() to find the interval between two dates, and various formatting functions.9
+● String Manipulation: Functions like CONCAT() (or ||), SUBSTRING(), UPPER(), LOWER(),
+and TRIM() are essential for cleaning and formatting text data.12
+● Pivoting Data: This involves transforming data from a row-based format to a
+column-based format. While some databases have a native PIVOT function, the universal
+method involves using an aggregate function with a CASE statement for each desired
+new column.5
+Practice Questions
+● Question: Write a query to swap gender values ('M' to 'F' and 'F' to 'M') in a table.
+○ Answer: UPDATE employees SET gender = CASE WHEN gender = 'M' THEN 'F' ELSE
+'M' END;.13
+● Question: Calculate the number of days an employee has been with the company.
+○ Answer: SELECT name, DATEDIFF(CURDATE(), joining_date) AS days_with_company
+FROM employees; (Syntax may vary by SQL dialect).13
+● Question: Pivot a table of sales data to show total sales for each product category
+('Electronics', 'Clothing', 'Home Goods') as separate columns for each year.
+○ Answer: SELECT year, SUM(CASE WHEN category = 'Electronics' THEN sales ELSE 0
+END) AS electronics_sales, SUM(CASE WHEN category = 'Clothing' THEN sales ELSE
+0 END) AS clothing_sales, SUM(CASE WHEN category = 'Home Goods' THEN sales
+ELSE 0 END) AS home_goods_sales FROM sales_table GROUP BY year;
+Part IV: Cracking the Code - SQL Interview Patterns
+and Puzzles
+Moving from syntax to strategy is the most critical step in interview preparation.
+Technical interviews are not just about knowing commands; they are about recognizing a
+problem's underlying structure and applying the most efficient solution pattern.
+Candidates who struggle often do so because they treat each problem as unique, attempting
+to invent a solution from scratch under pressure.
+Successful candidates, however, have developed a mental library of these patterns, allowing
+them to quickly classify a problem and deploy a proven technique.
+The most challenging problems on platforms like LeetCode are frequently combinations of
+two or more fundamental patterns.
+For instance, a "Hard" problem might first require sessionizing user activity (a LAG-based
+pattern) and then finding the top N longest sessions (a DENSE_RANK pattern).
+This section deconstructs these complex problems into their core building blocks, teaching
+not just the patterns themselves but also how to combine them.
+The following matrix provides a high-level map, linking common question types to their
+primary solution techniques.
+This framework should guide the approach to any new problem encountered.
+Problem Pattern /
+Question Type
+Primary SQL
+Technique(s)
+Key Functions Example
+LeetCode/DataLem
+ur Problem
+Nth Highest Salary Window Function
+or Subquery/LIMIT
+DENSE_RANK(),
+LIMIT, OFFSET
+LeetCode 176, 177
+24
+Top N per Group Window Function
+with Partitioning
+DENSE_RANK(),
+PARTITION BY
+LeetCode 185 24
+Finding Duplicates Aggregation or
+Window Function
+GROUP BY, HAVING
+COUNT(*) > 1,
+ROW_NUMBER()
+LeetCode 182, 196
+24
+Rolling
+Average/Sum
+Aggregate Window
+Function with
+Frame
+AVG(), SUM(),
+ROWS BETWEEN
+Tweets' Rolling
+Averages 29
+Period-over-Period Navigation Window
+Function
+LAG() Y-on-Y Growth Rate
+29
+Consecutive Events
+/ Streaks
+Window Functions
+to create groups
+ROW_NUMBER(),
+Date Arithmetic
+LeetCode 180 24
+Gaps and Islands Window Functions
+to identify groups
+ROW_NUMBER(),
+LAG()
+Human Traffic of
+Stadium 24
+Analyzing Pairs Self-Join JOIN table AS a
+JOIN table AS b
+Analyze Pairs of
+Things 7
+Hierarchy Traversal Recursive Common
+Table Expression
+WITH RECURSIVE Tree Node 24
+Sessionization Navigation Window
+Function
+LAG(), LEAD() Calculating User
+Activity 23
+Section 4.1: Foundational Patterns
+These patterns represent the most common tasks and are frequently asked in interviews for
+all data roles.
+Top-N / Nth-Highest
+This pattern involves finding a specific rank or the top N records, either across an entire table
+or within distinct groups.
+● Technique: The most robust and modern solution is to use window functions like
+DENSE_RANK() or RANK() partitioned by the grouping column. An outer query or CTE is
+then used to filter on the calculated rank. For simpler cases (Nth highest overall), a
+subquery or LIMIT with OFFSET can also be used.7
+● Example Problem: Find the top 3 salaries in each department.
+● Logic:
+1. Use DENSE_RANK() to assign a salary rank for each employee, restarting the rank for
+each department.
+2. The OVER clause will be (PARTITION BY department_id ORDER BY salary DESC).
+3. Use a CTE to store this ranked result.
+4. Select from the CTE where the rank is less than or equal to 3.24
+Finding Duplicates
+This involves identifying rows that share the same values across one or more specified
+columns.
+● Technique 1 (GROUP BY): Group the data by the columns that define a duplicate and
+use HAVING COUNT(*) > 1 to filter for the groups with more than one entry.9
+● Technique 2 (Window Function): Use ROW_NUMBER() OVER (PARTITION BY col1, col2...
+ORDER BY some_column) to assign a sequence number to each row within a group of
+duplicates. Any row with a ROW_NUMBER > 1 is a duplicate that can be filtered or
+deleted.11 This method is particularly useful for deleting duplicates while keeping one
+instance.
+● Example Problem: Find all duplicate emails in the Person table.
+● Logic (GROUP BY):
+1. GROUP BY Email.
+2. Filter the groups with HAVING COUNT(Email) > 1.24
+Existence Checks
+This pattern addresses questions about finding records in one table that do or do not have a
+corresponding record in another table.
+● Technique 1 (LEFT JOIN): LEFT JOIN from the primary table to the secondary table.
+Where a match is not found, the columns from the secondary table will be NULL. Filtering
+WHERE secondary_table.key IS NULL will find all records from the primary table that have
+no match.13
+● Technique 2 (NOT IN): Use a subquery to select all keys from the secondary table and
+f
+ilter the primary table WHERE primary_table.key NOT IN (...). Caution: This method can
+produce unexpected empty results if the subquery's result set contains any NULL
+values.20
+● Technique 3 (NOT EXISTS): Use a correlated subquery with NOT EXISTS. This is often
+more performant and safer with NULLs than NOT IN.9
+● Example Problem: Find all customers who have never placed an order.
+● Logic (LEFT JOIN):
+1. LEFT JOIN the Customers table to the Orders table on customer_id.
+2. Filter the results WHERE Orders.order_id IS NULL.24
+Section 4.2: Analytical Patterns
+These patterns are central to business intelligence and data science, focusing on time-series
+analysis and trend calculation.
+Rolling Metrics (Moving Averages)
+This pattern involves calculating an aggregate (like an average or sum) over a moving window
+of time (e.g., a 7-day rolling average).
+● Technique: Use an aggregate window function (AVG(), SUM()) with an ORDER BY clause
+to define the sequence and a frame clause (ROWS BETWEEN N PRECEDING AND
+CURRENT ROW) to define the size of the window.6
+● Example Problem: Calculate the 7-day rolling average of daily sales.
+● Logic:
+1. First, ensure you have a table with daily total sales.
+2. If not, create one using a CTE with SUM() and GROUP BY date.
+3. On this daily sales table, apply the window function AVG(daily_sales) OVER (ORDER
+BY date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW).
+Cumulative Metrics (Running Totals)
+This pattern involves calculating the cumulative sum or count of a metric over time.
+● Technique: Use an aggregate window function (SUM(), COUNT()) with an ORDER BY
+clause and the frame clause ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT
+ROW.13
+● Example Problem: For each player, report the cumulative games played so far by date.
+● Logic:
+1. Use the window function SUM(games_played) OVER (PARTITION BY player_id ORDER
+BY event_date).
+2. The default frame for ORDER BY is RANGE BETWEEN UNBOUNDED PRECEDING AND
+CURRENT ROW, which achieves the running total.24
+Period-over-Period Analysis
+This involves comparing a metric from the current period to the same metric from a previous
+period (e.g., month-over-month, year-over-year).
+● Technique: The LAG() window function is the perfect tool. It allows you to pull a value
+from a previous row into the current row, making direct comparison and calculation
+possible.23
+● Example Problem: Calculate the month-over-month percentage growth in sales.
+● Logic:
+1. Create a CTE that aggregates sales by month.
+2. In a second query on the CTE, use LAG(monthly_sales, 1) OVER (ORDER BY month) to
+get the previous month's sales.
+3. Calculate the growth using the formula:
+(current_sales−previous_sales)/previous_sales.
+Section 4.3: Advanced Patterns & Puzzles
+These patterns often appear in interviews for senior roles or at companies with complex data
+challenges.
+They test a candidate's ability to solve non-obvious problems with creative applications of
+SQL features.
+Consecutive Events / Streaks (Gaps and Islands)
+This pattern involves identifying continuous sequences of events (islands) separated by
+breaks (gaps).
+A common variant is finding N consecutive events.
+● Technique: The core trick is to create a grouping identifier for each "island." This is done
+by subtracting a sequence number generated by ROW_NUMBER() from the actual date or
+ID. For consecutive items, this difference will be constant.
+● Example Problem: Find all numbers that appear at least three times consecutively in a
+Logs table.
+● Logic:
+1. A simple solution uses self-joins: SELECT l1.Num FROM Logs l1 JOIN Logs l2 ON l1.Id
+= l2.Id - 1 AND l1.Num = l2.Num JOIN Logs l3 ON l1.Id = l3.Id - 2 AND l1.Num =
+l3.Num.24
+2. A more robust "Gaps and Islands" solution:
+■ Use a CTE to calculate ROW_NUMBER() OVER (ORDER BY id) and
+ROW_NUMBER() OVER (PARTITION BY Num ORDER BY id).
+■ The difference between these two row numbers will be constant for any
+consecutive block of the same number.
+■ Group by this difference and the number itself, and use HAVING COUNT(*) >= 3.
+Sessionization
+This involves grouping a stream of user events into distinct sessions, typically defined by a
+period of inactivity.
+● Technique: Use the LAG() function to get the timestamp of the previous event for a user.
+Calculate the time difference between the current event and the previous one. A CASE
+statement can then create a flag (e.g., set to 1) whenever this difference exceeds the
+inactivity threshold (e.g., 30 minutes). A cumulative sum of this flag then serves as a
+unique session_id for each group of events.23
+● Example Problem: Group user clicks into sessions, where a new session starts after 30
+minutes of inactivity.
+● Logic:
+1. Use a CTE to calculate LAG(event_timestamp, 1) OVER (PARTITION BY user_id ORDER
+BY event_timestamp) to get the previous_event_time.
+2. Use a second CTE to calculate the time difference and set a new_session_flag using
+a CASE statement.
+3. Use a third CTE to create a session_id by calculating SUM(new_session_flag) OVER
+(PARTITION BY user_id ORDER BY event_timestamp).
+4. Finally, group by user_id and session_id to analyze each session.
+Section 4.4: A Curated Gauntlet of Practice Problems
+This section provides a comprehensive set of practice problems, categorized by pattern and
+difficulty, to solidify the concepts learned.
+Each problem includes a detailed breakdown of the logic and the final query.
+(Note: Due to the exhaustive nature of a full problem set, a representative selection is
+provided below. A complete interview preparation would involve working through dozens of
+such problems from the provided resources.)
+Easy Difficulty
+● Problem: LeetCode 182: Duplicate Emails 24
+○ Pattern: Finding Duplicates
+○ Statement: Write a SQL query to find all duplicate emails in a table named Person.
+○ Schema: Person (Id INT, Email VARCHAR)
+○ Logic: This is a direct application of the GROUP BY and HAVING pattern. Group the
+rows by the Email column and then use the HAVING clause to filter for groups where
+the count of rows is greater than 1.
+○ Query:
+SQL
+SELECT Email
+FROM Person
+GROUP BY Email
+HAVING COUNT(Email) > 1;
+● Problem: LeetCode 181: Employees Earning More Than Their Managers 24
+○ Pattern: Analyzing Pairs (Self-Join)
+○ Statement: Given an Employee table with Id, Name, Salary, and ManagerId, find
+employees who earn more than their managers.
+○ Schema: Employee (Id INT, Name VARCHAR, Salary INT, ManagerId INT)
+○ Logic: This requires comparing rows within the same table. A SELF JOIN is the ideal
+pattern. Join the Employee table to itself, aliasing one instance as E (for employee)
+and the other as M (for manager). The join condition will be E.ManagerId = M.Id. The
+WHERE clause then filters for rows where E.Salary > M.Salary.
+○ Query:
+SQL
+SELECT E.Name AS Employee
+FROM Employee E
+JOIN Employee M ON E.ManagerId = M.Id
+WHERE E.Salary > M.Salary;
+Medium Difficulty
+● Problem: LeetCode 176: Second Highest Salary 24
+○ Pattern: Nth-Highest
+○ Statement: Write a SQL query to get the second highest salary from the Employee
+table. If there is no second highest salary, the query should return null.
+○ Schema: Employee (Id INT, Salary INT)
+○ Logic (Subquery): Find the maximum salary in the table. Then, find the maximum
+salary that is less than the overall maximum salary. Using MAX() on a filtered set
+handles cases with ties for the highest salary correctly.
+○ Query (Subquery):
+SQL
+SELECT MAX(Salary) AS SecondHighestSalary
+FROM Employee
+WHERE Salary < (SELECT MAX(Salary) FROM Employee);
+○ Logic (Window Function): Use DENSE_RANK() to rank salaries in descending order.
+Then select the salary where the rank is 2. This approach is more generalizable for
+f
+inding the Nth highest salary.
+○ Query (Window Function):
+SQL
+WITH RankedSalaries AS (
+SELECT Salary, DENSE_RANK() OVER (ORDER BY Salary DESC) as rnk
+FROM Employee
+)
+SELECT Salary
+FROM RankedSalaries
+WHERE rnk = 2;
+● Problem: LeetCode 184: Department Highest Salary 24
+○ Pattern: Top-N per Group (where N=1)
+○ Statement: Find employees who have the highest salary in each department.
+○ Schema: Employee (Id, Name, Salary, DepartmentId), Department (Id, Name)
+○ Logic: This requires finding the maximum salary for each department and then
+finding the employee(s) who match that salary in that department. A window function
+is the cleanest approach.
+○ Query (Window Function):
+SQL
+WITH RankedEmployees AS (
+SELECT
+D.Name AS Department,
+E.Name AS Employee,
+E.Salary,
+RANK() OVER (PARTITION BY E.DepartmentId ORDER BY E.Salary DESC) as rnk
+FROM Employee E
+JOIN Department D ON E.DepartmentId = D.Id
+)
+SELECT Department, Employee, Salary
+FROM RankedEmployees
+WHERE rnk = 1;
+Hard Difficulty
+● Problem: LeetCode 185: Department Top Three Salaries 24
+○ Pattern: Top-N per Group
+○ Statement: Find employees who earn the top three salaries in each department.
+○ Schema: Employee (Id, Name, Salary, DepartmentId), Department (Id, Name)
+○ Logic: This is a direct extension of the previous problem. The key is to use
+DENSE_RANK() instead of RANK() to handle ties correctly (e.g., if two employees
+share the 2nd highest salary, the next salary is still the 3rd highest).
+○ Query:
+SQL
+WITH RankedSalaries AS (
+SELECT
+E.*,
+D.Name as DepartmentName,
+DENSE_RANK() OVER (PARTITION BY E.DepartmentId ORDER BY E.Salary DESC) as
+rnk
+FROM Employee E
+JOIN Department D ON E.DepartmentId = D.Id
+)
+SELECT
+DepartmentName AS Department,
+Name AS Employee,
+Salary
+FROM RankedSalaries
+WHERE rnk <= 3;
+● Problem: LeetCode 262: Trips and Users 24
+○ Pattern: Conditional Aggregation
+○ Statement: Find the cancellation rate of requests with unbanned users for each day
+between '2013-10-01' and '2013-10-03'.
+○ Schema: Trips (Id, Client_Id, Driver_Id, Status, Request_at), Users (Users_Id, Banned,
+Role)
+○ Logic: This complex problem requires several steps:
+1. Filter the Trips table for the specified date range.
+2. Filter out trips involving banned clients or banned drivers. This can be done with
+a WHERE clause and subqueries on the Users table.
+3. Group the results by Request_at date.
+4. For each day, calculate the total number of valid requests (COUNT(*)).
+5. For each day, calculate the number of canceled requests using conditional
+aggregation: SUM(CASE WHEN Status LIKE 'cancelled%' THEN 1 ELSE 0 END).
+6. Divide the canceled count by the total count and round to two decimal places.
+○ Query:
+SQL
+SELECT
+T.Request_at AS Day,
+ROUND(
+SUM(CASE WHEN T.Status IN ('cancelled_by_driver', 'cancelled_by_client') THEN 1.0
+ELSE 0.0 END) / COUNT(T.Id), 2
+) AS "Cancellation Rate"
+FROM Trips T
+JOIN Users C ON T.Client_Id = C.Users_Id
+JOIN Users D ON T.Driver_Id = D.Users_Id
+WHERE C.Banned = 'No' AND D.Banned = 'No'
+AND T.Request_at BETWEEN '2013-10-01' AND '2013-10-03'
+GROUP BY T.Request_at;
+Part V: Beyond the Query - Performance,
+Optimization, and Architecture
+In interviews for senior roles, writing a correct query is merely the first step.
+The follow-up questions often transition into performance, scalability, and system
+architecture.
+These questions are designed to gauge a candidate's real-world experience and engineering
+mindset.
+A junior candidate can write a query that works; a senior candidate understands why it works,
+how it will perform at scale, and its impact on the broader system.
+Demonstrating this deeper level of thinking can significantly influence the outcome of an
+interview and the level of the subsequent offer.8
+Section 5.1: Writing Performant SQL
+Optimizing a slow-running query is a common task and a frequent interview scenario.
+A structured approach to diagnosis is key.
+Indexes: The Key to Fast Lookups
+An index is a database object that provides a fast lookup path to data in a table, much like an
+index in a book.
+Without an index, the database must perform a full table scan, reading every row to find the
+ones that match the query's conditions.
+With an index, it can directly seek the relevant data pages.12
+● Clustered vs. Non-Clustered Index:
+○ Clustered Index: Determines the physical order of data in a table. Because the data
+can only be physically sorted in one way, a table can have only one clustered index. It
+is highly efficient for range queries.11
+○ Non-Clustered Index: Has a structure separate from the data rows. It contains the
+indexed values and pointers to the actual data rows. A table can have multiple
+non-clustered indexes. They are efficient for specific lookups.11
+● Trade-offs: While indexes dramatically speed up SELECT queries, they slow down data
+modification operations (INSERT, UPDATE, DELETE) because the index itself must also be
+updated.14
+Execution Plans
+An execution plan (or query plan) is the sequence of steps the database query optimizer
+generates to execute a SQL statement.
+Analyzing the execution plan using a command like EXPLAIN is the primary method for
+diagnosing performance bottlenecks.
+It reveals whether indexes are being used effectively, identifies costly operations like full table
+scans or inefficient join methods, and provides cost estimates for each step of the query.13
+Common Optimization Techniques
+● SELECT Specific Columns: Avoid using SELECT *. Specifying only the necessary
+columns reduces the amount of data that needs to be processed and transferred.7
+● Filter Early: Apply WHERE clauses as early as possible to reduce the size of the dataset
+that subsequent operations (like joins and aggregations) have to work with.7
+● Use JOINs Efficiently: Ensure that join conditions are on indexed columns. Understand
+the different join algorithms (e.g., Nested Loop, Hash Join, Merge Join) and how the
+optimizer chooses them.
+● Prefer UNION ALL: If duplicate rows are acceptable or known not to exist, UNION ALL is
+always more performant than UNION because it skips the deduplication step.11
+● Avoid Unnecessary Subqueries: While useful, subqueries (especially correlated ones)
+can sometimes be rewritten as more efficient JOINs or CTEs.7
+Practice Questions
+● Question: Your query is running slow. What are the first steps you would take to
+diagnose the problem?
+○ Answer: 1) Analyze the query execution plan (EXPLAIN) to identify bottlenecks like
+full table scans or expensive joins. 2) Verify that appropriate indexes exist on columns
+used in WHERE clauses and JOIN conditions. 3) Check table statistics to ensure the
+query optimizer has accurate information. 4) Evaluate the query logic for potential
+improvements, such as rewriting subqueries or simplifying complex conditions.8
+● Question: Explain the difference between a clustered and a non-clustered index.
+○ Answer: A clustered index dictates the physical storage order of rows in a table;
+there can be only one. A non-clustered index is a separate structure with pointers to
+the data rows; a table can have many. Clustered indexes are generally faster for
+range scans, while non-clustered indexes are better for point lookups.11
+Section 5.2: Database Architecture and System Design Concepts
+For senior roles, questions may touch upon higher-level database architecture and design
+principles.
+● OLTP vs. OLAP:
+○ Online Transaction Processing (OLTP): These systems are designed to handle a
+large number of short, atomic transactions (e.g., e-commerce order entry, banking
+transactions). They are optimized for fast writes and updates, with highly normalized
+schemas to ensure data integrity.11
+○ Online Analytical Processing (OLAP): These systems are designed for complex
+queries and analysis on large volumes of data (e.g., data warehouses). They are
+optimized for fast reads, often using denormalized schemas (like star or snowflake
+schemas) to minimize joins and speed up aggregations.11
+● ACID Properties: These are a set of four properties that guarantee the reliability of
+database transactions.
+○ Atomicity: Ensures that a transaction is an "all or nothing" operation. Either all of its
+operations complete successfully, or none of them do.11
+○ Consistency: Ensures that a transaction brings the database from one valid state to
+another, upholding all integrity constraints.11
+○ Isolation: Ensures that concurrent transactions do not interfere with each other,
+producing the same result as if they were executed sequentially.11
+○ Durability: Guarantees that once a transaction has been committed, it will remain so,
+even in the event of a system failure.11
+● Database Partitioning: The process of dividing a very large table into smaller, more
+manageable pieces (partitions) while still treating it as a single table logically. This can
+dramatically improve query performance and manageability.
+○ Horizontal Partitioning: Divides a table by rows (e.g., partitioning sales data by
+month or year).13
+○ Vertical Partitioning: Divides a table by columns (e.g., separating frequently
+accessed columns from rarely accessed large text columns).13
+Practice Questions
+● Question: Explain the ACID properties.
+○ Answer: ACID stands for Atomicity (all or nothing), Consistency (database remains in
+a valid state), Isolation (concurrent transactions don't interfere), and Durability
+(committed changes are permanent). Together, they ensure transactions are
+processed reliably.11
+● Question: What is the difference between OLTP and OLAP databases?
+○ Answer: OLTP systems are for managing day-to-day transactions, optimized for
+writes, and highly normalized (e.g., an e-commerce site's live database). OLAP
+systems are for analysis and business intelligence, optimized for reads, and often
+denormalized (e.g., a data warehouse for reporting).11
+Conclusion and Final Recommendations
+This guide has synthesized a vast array of resources into a structured, comprehensive
+curriculum for SQL interview preparation.
+The journey from foundational syntax to advanced analytical patterns and architectural
+considerations reflects the evolving demands of the modern data industry.
+Success in a SQL interview is not merely a function of memorizing answers but of developing
+a deep, intuitive understanding of how to model problems and apply the most effective tools
+to solve them.
+The key takeaways are twofold:
+1. Master the Fundamentals, but Differentiate with the Advanced: A flawless command
+of basic JOINs, aggregations, and filtering is the price of entry. The ability to fluently
+deploy window functions and CTEs to solve complex analytical puzzles is what
+distinguishes a top-tier candidate. A significant portion of preparation time should be
+dedicated to mastering the concepts in Part III and recognizing the patterns in Part IV.
+2. Think in Patterns, Not Just Problems: The most effective preparation strategy is to
+move beyond solving individual, disconnected problems and instead focus on identifying
+and mastering the underlying patterns. Recognizing a question as a "Top-N-per-Group"
+problem or a "Gaps-and-Islands" puzzle immediately narrows the solution space and
+provides a clear path forward, which is a critical advantage under the pressure of an
+interview.
+Actionable Recommendations for the Candidate:
+● Structured Practice: Work through the practice questions in this guide sequentially,
+ensuring a solid grasp of one section before moving to the next. Supplement this with
+active problem-solving on platforms like LeetCode and DataLemur, but always with the
+goal of categorizing each new problem into one of the patterns discussed.
+● Verbalize Your Logic: For every practice problem, articulate the step-by-step logic
+before writing the code. Explain the chosen pattern, the function of each clause, and any
+assumptions made. This practice is invaluable for the live interview setting, where
+communicating the thought process is as important as the final query.
+● Focus on Performance: After solving a problem correctly, always ask the follow-up
+question: "How can I make this more efficient?" Consider indexing strategies, alternative
+query structures (e.g., JOIN vs. EXISTS), and the potential impact of large data volumes.
+Being prepared to discuss optimization demonstrates seniority and real-world
+experience.
+By adopting this structured, pattern-oriented approach, the candidate will be well-equipped
+to not only answer the questions asked but also to demonstrate the analytical rigor and deep
+technical understanding that top companies seek in their data professionals.
+SQL Interview Questions: Complete Study
+Guide
+Based on my research of current SQL interview practices, I've compiled a comprehensive guide
+covering the most common SQL interview questions by syntax and question types. The field of
+SQL interviewing has evolved significantly, with companies now focusing on practical
+problem-solving skills rather than just theoretical knowledge.
+Most Common SQL Interview Question Categories
+1. Basic SQL Fundamentals (Entry Level)
+These questions test your understanding of core database concepts:ccslearningacademy+2
+Database Concepts:
+● What is SQL and its purpose?
+● Difference between SQL and NoSQL databases
+● Understanding of tables, columns, rows, and relationships
+● Primary keys vs foreign keys vs unique keys
+Basic Query Operations:
+● SELECT statements with filtering (WHERE clause)
+● Sorting data (ORDER BY)
+● Basic aggregate functions (COUNT, SUM, AVG, MIN, MAX)
+● Data insertion, updating, and deletion
+2. SQL Joins (Most Critical Topic)
+Joins are considered the most important SQL interview topic across all experience
+levels:datainterview+2
+Join Types You Must Master:
+● INNER JOIN - Returns only matching records
+● LEFT JOIN - Returns all left table records plus matches
+● RIGHT JOIN - Returns all right table records plus matches
+● FULL OUTER JOIN - Returns all records from both tables
+● CROSS JOIN - Cartesian product
+● SELF JOIN - Joining table with itself
+Common Join Interview Questions:
+● Write queries joining 2-3 tables
+● Explain when to use each join type
+● Handle NULL values in joins
+● Optimize join performancedatainterview
+3. Aggregate Functions and GROUP BY
+These questions test your ability to summarize and analyze data:simplilearn+1
+Key Concepts:
+● Using COUNT, SUM, AVG, MIN, MAX effectively
+● GROUP BY for data aggregation
+● HAVING vs WHERE clause differences
+● Combining multiple aggregate functions
+Typical Questions:
+● Find department-wise employee counts
+● Calculate running totals and moving averages
+● Group data by multiple columns
+● Filter grouped results with HAVING
+4. Window Functions (Advanced Level)
+Window functions are increasingly common in technical interviews, especially for senior
+roles:datalemur+2
+Essential Window Functions:
+● ROW_NUMBER() - Assigns sequential numbers
+● RANK() and DENSE_RANK() - Ranking with/without gaps
+● LAG() and LEAD() - Access previous/next row values
+● PARTITION BY - Create data subsets for calculations
+Common Window Function Problems:
+● Find Nth highest salary
+● Calculate year-over-year growth
+● Identify top N records per group
+● Create running totals and moving averagesdatalemur
+5. Subqueries and CTEs
+These test your ability to write complex, nested queries:sqlpad+1
+Subquery Types:
+● Scalar subqueries - Return single values
+● Correlated subqueries - Reference outer query
+● EXISTS and NOT EXISTS clauses
+● Common Table Expressions (CTEs) for readable complex queries
+Typical Applications:
+● Find records above/below averages
+● Complex filtering conditions
+● Multi-step data transformations
+6. Data Types and Constraints
+Understanding data integrity and table design:reddit+2
+Key Constraints:
+● NOT NULL - Prevent empty values
+● UNIQUE - Ensure distinctness
+● PRIMARY KEY - Table identifiers
+● FOREIGN KEY - Referential integrity
+● CHECK - Custom validation rules
+● DEFAULT - Automatic value assignment
+7. Performance Optimization
+Critical for senior-level positions:interviewbit+1youtube
+Optimization Techniques:
+● Index usage and types (clustered vs non-clustered)
+● Query execution plans analysis
+● Avoiding SELECT * statements
+● Proper WHERE clause ordering
+● JOIN optimization strategies
+Common Performance Questions:
+● How to identify slow queries?
+● When and how to create indexes?
+● Query optimization best practices
+● Database design impact on performance
+Classic SQL Problem Types
+1. Ranking Problems
+● Find 2nd/3rd highest salary
+● Top N customers by revenue
+● Rank employees within departments
+2. Duplicate Handling
+● Identify duplicate records
+● Remove duplicates efficiently
+● Find unique vs distinct values
+3. Date and Time Analysis
+● Extract date parts (year, month, day)
+● Calculate date differences
+● Time-based aggregations
+● Sequence and gap analysis
+4. String Manipulation
+● Text processing functions
+● Pattern matching with LIKE
+● String concatenation and extraction
+Interview Preparation Strategy
+By Experience Level:
+Entry Level (0-2 years):codesignal+1
+● Master basic SELECT, WHERE, ORDER BY
+● Understand all join types thoroughly
+● Practice aggregate functions
+● Learn constraint basics
+Mid-Level (2-5 years):dataquest+1
+● Complex multi-table queries
+● Window functions proficiency
+● Subquery optimization
+● Basic performance concepts
+Senior Level (5+ years):stratascratch+1
+● Advanced query optimization
+● Database design principles
+● Complex analytical queries
+● Scalability considerations
+Practice Approach:
+1. Start with fundamentals - Ensure solid grasp of basic concepts
+2. Progress systematically - Build complexity gradually
+3. Practice real scenarios - Use business-like problems
+4. Focus on problem-solving - Explain your thinking process
+5. Optimize solutions - Consider performance implications
+The key to SQL interview success is consistent practice with increasingly complex problems,
+understanding the reasoning behind different approaches, and being able to explain your
+solutions clearly to interviewers. Focus on mastering joins first, as they appear in virtually
+every SQL interview, then build proficiency in window functions and performance optimization
+
+
+Advanced SQL
+Leveling up
+SQL Data Types
+SQL Date Format
+Data Wrangling with SQL
+Using SQL String Functions to Clean Data
+Writing Subqueries in SQL
+SQL Window Functions
+Performance Tuning SQL Queries
+Pivoting Data in SQL
+Intermediate SQL
+Putting it together
+SQL Aggregate Functions
+SQL COUNT
+SQL SUM
+SQL MIN/MAX
+SQL AVG
+SQL GROUP BY
+SQL HAVING
+SQL CASE
+SQL DISTINCT
+SQL Joins
+SQL INNER JOIN
+SQL Outer Joins
+SQL LEFT JOIN
+SQL RIGHT JOIN
+SQL Joins Using WHERE or ON
+SQL FULL OUTER JOIN
+SQL UNION
+SQL Joins with Comparison Operators
+SQL Joins on Multiple Keys
+SQL Self Joins
+
+
+In this 6,000-word SQL interview guide, I'm here to set the record straight. For context, my name is Nick Singh and I've worked in a variety of Data/Software Engineering roles at Facebook, Google, and Microsoft. I also wrote the best-selling book Ace the Data Science Interview.
+Nick Singh About Me
+The SQL interview tips in this 6,000-word guide directly come from my experience coaching hundreds of Data Analysts and Data Scientists to ace their SQL interviews.
+The Ultimate SQL Interview Guide Covers:
+Common SQL Commands Used in Interviews
+SQL Questions from Tesla, Microsoft, TikTok, and Uber (with solutions)
+Join SQL Interview Questions
+Window Functions Used in SQL Interviews
+Common Database Design Interview Questions
+6-Step Process to Solve Hard SQL Questions
+3 Best Books for SQL Interviews
+Best Site to Practice SQL Interview Questions
+How to Approach Open-Ended Take-Home SQL Challenges
+4 Real Take-Home SQL Interview Challenges
+Before we go into the exact topics SQL interviews cover, we need to get into the interviewer’s head and truly understand WHY tech companies ask SQL questions during interviews.
+Why Do Data Interviews Ask SQL Questions?
+While SQL might not be as glamorous and sexy as Python or R, SQL is an important language to master for Data Analysts and Data Scientists because your data lives in a database, and that’s where cleaning, filtering, and joining of large datasets can be done in a performant way. You don’t want to pull all the data into a Pandas or R dataframe, and crash your laptop, when you can efficiently shape and filter datasets thanks to SQL.
+Just Use SQL Bellcurve Meme
+That's why SQL is listed in 61% of data analytics jobs posted on Indeed, according to research done by DataQuest.io. In order to see if you can do the day-to-day work, hiring managers typically send candidates a SQL assessment during the Data Analyst or Data Science interview process.
+But you might say: "Nick, I got into this field to do Deep Learning with Tensorflow, are you seriously telling me Data Science interviews cover boring old SQL?"
+YES that's exactly what I'm saying!!
+SQL?! I thought Data Science was about Neural Networks in Python?
+Even at companies like Amazon and Facebook, which have massive amounts of data, most Data Scientists still spend most of their time writing SQL queries to answer business questions like "What are the top-selling products?", or "How do we increase ad click-through rates?".
+For more insight into the importance of SQL for Data Scientists, you can read this infamous article "No, you don't need ML/AI – You need SQL" which concretely shows you how so many ML problems can just be solved in a fraction of the time with some heuristics and a SQL query.
+What version of SQL is used in interviews?
+SQL comes in a variety of versions (also known as flavors), like MySQL, SQL Server, Oracle SQL, and PostgreSQL. Because the SQL versions are pretty similar, most data job interviews don't require you to use a specific version of SQL during the interview. We recommend aspiring Data Analysts and Data Scientists practice their SQL interview questions in PostgreSQL, because it’s the most standards-compliant version of SQL out there, and one of the most popular flavors of SQL in the data industry.
+However, if you are strongest in another flavor of SQL, it usually shouldn’t be a problem for SQL interviews. That’s because interviewers are more-so seeing if you understand how to write SQL queries and problem-solve – they know on the job you can just learn the version of SQL the company uses in a few days. As such, during live SQL interviews, a good interviewer won’t stress about minor syntactical errors or differences between different SQL versions.
+What Do SQL Interviews Cover?
+SQL interviews typically cover five main topics:
+basic SQL commands
+SQL joins
+window functions
+database design concepts
+your ability to write SQL queries to answer business questions
+While most other SQL interview question lists cover SQL trivia, like “What does DBMS stand for?” this guide focuses on what FAANG companies like Amazon and Google ask during interviews. I need to emphasize this point, because the first result on Google for "SQL interview questions" is a pop-up riddled website claiming "What is database?" is a legit interview question 😂.
+Fake List of Questions on InterviewBit
+Instead of asking conceptual questions, top Silicon Valley technology companies put you on the spot, and ask you to write a SQL query to answer a realistic business questions like "Find me the number of companies who accidentally posted duplicate job listings on LinkedIn?"
+LinkedIn SQL Interview Question: Find Duplicate Job Listings
+Before we can learn to apply SQL to these scenario-based questions, we need to cover some foundational SQL concepts like the most common SQL commands you need to know for interviews, what kinds of joins show up, and the most popular window functions for SQL interviews.
+What are the most common SQL commands used in interviews?
+Here’s the top 7 most common SQL commands tested during SQL interviews:
+SELECT - used to select specific columns from a table
+FROM - used to specify the table that contains the columns you are SELECT’ing
+WHERE - used to specify which rows to pick
+GROUP BY - used to group rows with similar values together
+HAVING - used to specify which groups to include, that were formed by the GROUP BY clause.
+ORDER BY - used to order the rows in the result set, either in ascending or descending order
+LIMIT - used to limit the number of rows returned
+However, 99% of Data Science & Data Analyst interviews at competitive companies won't just straight up ask you "What does GROUP BY do?". Instead you'll have to write a query that actually uses GROUP BY to solve a real-world problem. Check out the next section to see what we mean.
+Group By Example: Tesla SQL Interview Question
+In this real Tesla SQL Interview question, a Data Analyst was given the table called parts_assembly and asked to "Write a SQL query that determines which parts have begun the assembly process but are not yet finished?".
+Tesla Data Analyst SQL Interview Question
+To solve the question, realize that parts that are not yet finished can be found by filtering for rows with no data present in the finish_date column. This can be done using the SQL snippet:
+WHERE finish_date IS NULL
+Because some parts might be represented multiple times in the query data because they have several assembly steps that are not yet complete, we can GROUP BY to obtain only the unique parts.
+Thus, the final answer to this Tesla SQL Interview question is:
+SELECT part
+FROM parts_assembly
+WHERE finish_date IS NULL
+GROUP BY part;
+Hopefully, you've understood how just memorizing what WHERE or GROUP BY isn't going to cut it, and that to solve beginner SQL interview questions you still have to creatively apply the basic commands. To practice this Tesla SQL question yourself, click the image below:
+Tesla SQL Question: Unfinished Parts
+Now, let's cover another fundamental topic that's often combined with basic SQL commands: aggregate functions like COUNT() and SUM().
+Aggregate Functions Used In SQL Interviews
+Aggregate functions allow you to summarize information about a group of rows. For example, say you worked at JPMorgan Chase, in their Credit Card analytics department, and had access to a table called monthly_cards_issued. This table has data on how many credit cards were issued per month, for each different type of credit card that Chase offered.
+JPMorgan Chase SQL Interview Question Data
+To answer a question like “How many total cards were issued for each credit card” you’d use the SUM() aggregate function:
+SELECT card_name,
+SUM(issued_amount)
+FROM monthly_cards_issued
+GROUP BY card_name;
+Entering this query on DataLemur yields the following output:
+SUM() PostgreSQL Interview Question Example
+Similarly, if you wanted to count the total number of rows, you could use the aggregate function COUNT(). To play around with this dataset, open the SQL sandbox for the JPMorgan SQL Interview Question.
+JPMorgan SQL Interview Questions: Cards Issued Difference
+While PostgreSQL technically has dozens of aggregate functions, 99% of the time you'll just be using the big five functions covered below.
+What are the most common SQL aggregate functions?
+The 5 most common aggregate functions used in SQL interviews are:
+AVG() - Returns the average value
+COUNT() - Returns the number of rows
+MAX() - Returns the largest value
+MIN() - Returns the smallest value
+SUM() - Returns the sum
+While array_agg() and string_agg() aggregate functions may show up in advanced SQL interviews, they are extremely rare. To learn more about these uncommon commands, visit the PostgreSQL documentation.
+SQL Interview Questions On Joins
+In real-world data science & data analytics, you don't just use aggregate functions on one table at a time. Because your data lives in multiple SQL tables, as an analyst you're constantly writing SQL joins to analyze all the data together in one go. As such, hiring managers frequently ask both conceptual questions about SQL joins, as well as give you practical scenarios and then ask you to write a SQL query to join two tables.
+Microsoft SQL Interview Question Using JOIN
+For a concrete example of how joins show up during SQL interviews, checkout this real SQL interview Question asked by Microsoft:
+“Which Azure customer buys at least 1 Azure product from each product category?”
+The data needed to answer this would be in two tables – a customer_contracts table, which details which companies buy which products, and a table of Azure products, which has details about what product category each Azure service belongs too.
+Microsoft SQL Interview Question Dataset
+To solve this question, you'd need to combine the customer_contracts and products tables with a SQL join, which is what the following SQL snippet does:
+SELECT *
+FROM customer_contracts
+LEFT JOIN products
+ON customers.product_id = products.product_id
+To solve this real Microsoft Data Analyst SQL question yourself, and see the full solution give it a try on DataLemur:
+Microsoft Join SQL Interview Question
+What are the 4 different joins tested in SQL assessments?
+There are four main ways to join two database tables, and one of the most frequently asked SQL interview questions is to distinguish between each kind:
+INNER JOIN - combines rows from two tables that have matching values
+LEFT JOIN - combines rows from the left table, even if there are no matching values in the right table
+RIGHT JOIN - combines rows from the right table, even if there are no matching values in the left table
+FULL JOIN - combines rows from both tables, regardless of whether there are matching values
+Because a picture is worth a thousand words, checkout this neat infographic from DataSchool that explains joins visually:
+SQL Joins Explained Visually
+6 Most Common SQL Join Interview Questions
+Besides having to write queries which use JOIN commands, you might also encounter the following commonly asked conceptual interview questions about SQL joins:
+What is a self-join, and when would you use it?
+What is an anti-join, and when would you use it?
+What are the performance considerations of SQL join queries?
+How do you optimize a slow join query?
+How do you join more than two tables?
+Does a join always have to be on two rows sharing the same value (non-equi joins)?
+Many of these conceptual join questions closely relate to how databases are organized, and the costs and benefits of normalizing your tables. If you're interviewing for a Data Engineering, this topic is a must-know!
+Do I need to know date/time functions for SQL assessments?
+While it’s good to be familiar with date and time functions when preparing for a SQL interview, it isn’t absolutely mandatory to memorize the exact syntax for date/time functions because they differ greatly between SQL flavors. For example, SQL Server and MySQL have a DATEADD function, but PostgreSQL uses the keyword INTERVAL to get the same results.
+Because of the varying syntax, interviewers often give you some leeway and allow you to look up the exact date/time SQL commands mid-interview, especially if you are interviewing in a version of SQL you aren’t accustomed to.
+Most Common Date/Time Functions Used in SQL Interviews
+The most common date/time functions to know for SQL interviews are:
+NOW(): returns the current date and time
+CURRENT_DATE(): returns the current date
+INTERVAL: adds a specified time interval to a date
+DATEDIFF: calculates the difference between two dates
+EXTRACT: extracts a specific part of a date (e.g., month, day, year)
+You should also know the following date/time operators:
++: adds a time interval to a date/time value
+-: subtracts a time interval from a date/time value
+||: concatenates two date/time values
+Before a SQL assessment, it's also useful to be familiar with the various date/time types available in PostgreSQL, such as DATE, TIME, and TIMESTAMP.
+Using Date/Time Functions In A TikTok SQL Assessment
+To see PostgreSQL date/time operators in action, let’s solve this TikTok SQL Assessment Question called 2nd-day confirmation which gives you a table of text message and email signup data. You’re asked to write a query to display the ids of the users who confirmed their phone number via text message on the day AFTER they signed up (aka their 2nd day on Tik-Tok).
+TikTok SQL Assessment: 2nd Day Confirmation
+In the example data above, email_id 433 has a signup_date of 7/9/2022 and a confirmed action date of 7/10/2022. Hence, the user had a 1-day delay between the two events.
+The answer to this TikTok SQL question utilizes the date/time operator INTERVAL to identify the 1-day gap between signup and confirmation. The snippet looks like this:
+WHERE texts.action_date = emails.signup_date + INTERVAL '1 day'
+The full solution also requires us to join the texts and emails table, and also filter down to text messages that were confirmed. Hence, the final solution is:
+SELECT DISTINCT user_id
+FROM emails
+INNER JOIN texts
+ON emails.email_id = texts.email_id
+WHERE texts.action_date = emails.signup_date + INTERVAL '1 day'
+AND texts.signup_action = 'Confirmed';
+Hard Date/Time SQL Interview Question From Stripe
+If your up for a challenging date/time SQL interview question, try this very hard Stripe SQL Interview question asked in a final-round Data Science interview. The problem requires you to EXTRACT the EPOCH from a transaction timestamp.
+Practice Problem
+Stripe SQL Question: Write a SQL query to identify any payments made with the same credit card for the same amount within 10 minutes of each other.
+If you have no idea how to solve this question, and reading the solution doesn't help, you probably need a refresher on window functions like LAG, conveniently covered up next!
+Window Functions In SQL Interviews
+Window functions are tricky, and hence show up constantly in advanced SQL interview questions to separate the beginners from the more experienced data analysts & data scientists.
+At a high-level, a window function performs calculation across a set of rows that are related to the current row. This is similar to an aggregate function like SUM() or COUNT(), but unlike an aggregate function, a window function does not cause rows to become grouped into a single output row. Instead, you have control over the window (subset) of rows which are being acted upon.
+ROW_NUMBER() Example From Google SQL Interview
+For example the window function ROW_NUMBER() ranks selected rows in ascending order, but resets the ranks for each window. To demo this, let's analyze data from a real Google SQL Interview Question.
+Google SQL Interview Question Odd Even
+In the problem, you are given the measurements table which has data from an IoT sensor that collects multiple measurements per day:
+measurements Example Input:
+measurement_id measurement_value measurement_time
+131233 1109.51 07/10/2022 09:00:00
+135211 1662.74 07/10/2022 11:00:00
+523542 1246.24 07/10/2022 13:15:00
+143562 1124.50 07/11/2022 15:00:00
+346462 1234.14 07/11/2022 16:45:00
+You are asked to find the sum of the odd-numbered and even-numbered sensor measurements for each day. Before we start worrying about the odd measurements (1st, 3rd, 5th measurement of the day, etc.) and even measurements, we need to just understand what was the 1st, 2nd, 3rd, 4th, measurement of the day.
+To do this we use ROW_NUMBER() to rank the rows BUT make the window only one-day wide. That means at the end of every day, the ranks reset back to 1. This is achieved with the following window function:
+ROW_NUMBER() OVER (
+PARTITION BY CAST(measurement_time AS DATE)
+ORDER BY measurement_time) AS measurement_num
+When we run the code, you'll see at the end of each day the measurement number resets:Row_Number() Window Function Example.
+From here, to get odd and even measurements, we just need to divide the measurement_num by 2 and check the remainder, but we'll leave it up to you to implement inside the SQL code sandbox for this Google Data Analyst SQL question.
+For another example, let's dive into a practical exercise from an Uber Data Science assessment which also uses the ROW_NUMBER() window function.
+Uber Window Function SQL Interview Question
+Take for example this Uber SQL Interview Question about selecting a user's 3rd transaction made on the Uber platform.Uber SQL Interview Question: User's 3rd Transaction
+At the core of this SQL question is the window function ROW_NUMBER() which assigns a number to each row within the partition. Essentially, we want to group/partition all the Uber transactions together based on which user_id made the transaction, and then order these transactions by when they occured (transaction_date), so that we can label the order in which they occured using ROW_NUMBER():
+ROW_NUMBER() OVER (
+PARTITION BY user_id ORDER BY transaction_date) AS row_num
+FROM transactions) AS trans_num
+Finally, using the output from the window function, we want to filter our results to only get the 3rd transaction for every user:
+WHERE row_num = 3
+This yields us the final solution:
+SELECT
+user_id,
+spend,
+transaction_date
+FROM (
+SELECT
+user_id,
+spend,
+transaction_date,
+ROW_NUMBER() OVER (
+PARTITION BY user_id ORDER BY transaction_date) AS row_num
+FROM transactions) AS trans_num
+WHERE row_num = 3;
+For more practice with SQL interview questions that use window functions select the 'Window Functions' filter on the DataLemur SQL interview questions.
+Window Function SQL Interview Questions
+What are the most common window functions for SQL interviews?
+The top window functions used in SQL interviews are:
+RANK() - gives a rank to each row in a partition based on a specified column or value
+DENSE_RANK() - gives a rank to each row, but DOESN'T skip rank values
+ROW_NUMBER() - gives a unique integer to each row in a partition based on the order of the rows
+NTILE() - divides a partition into a specified number of groups, and gives a group number to each row
+LAG() - retrieves a value from a previous row in a partition based on a specified column or expression
+LEAD() - retrieves a value from a subsequent row in a partition based on a specified column or expression
+NTH_VALUE() - retrieves the nth value in a partition
+To understand each window function in more detail, check out Mode's SQL tutorial on Window Functions.
+Now that you know the basic SQL commands that come up in interviews, along with intermediate SQL interview topics like joins and window functions, we're ready to cover database design and data modeling interview questions.
+Database Design & Data Modeling Interview Questions
+Database design and data modeling interview questions test you on how well you understand the inner-workings of databases, along with how to design your data warehouse. If you're preparing for a Data Engineering or Analytics Engineering interview, this section is just as important as being able to write SQL queries. However, we still think it’s an important topic for Data Analysts and Data Scientists to briefly cover too, especially if interviewing for a smaller startup where you’ll likely wear multiple hats and end up doing some Data Engineering work too.
+Common Database Design Interview Questions
+What is an index, and why does it speed up queries?
+What are the dis-advantages of using indexes?
+How do you troubleshoot a slow SQL query?
+How do you CREATE, READ, UPDATE, and DELETE in SQL?
+What is a stored procedure, and when do we use them?
+What is normalization? Why might we want to also de-normalize some tables?
+What is ACID, and how does a database enforce atomicity, consistency, isolation, durability?
+What’s the difference between Star schema and Snowflake schema?
+What are the different types of dimensions (e.g. junk dimensions, conformed dimensions, mini dimensions, shrunken dimensions)?
+If you had to make a simple news feed, similar to the Facebook or LinkedIn feed, what are the main tables you’d have? Can you whiteboard a quick ER Diagram for it?
+What is database sharding?
+What are the advantages and disadvantages of relational vs. NoSQL databases?
+How To Prep For Database Design Interview Questions
+If these database design interview questions look super tough, I recommend reading the classic book Database Design for Mere Mortals because it covers topics like translating business needs into design specifications, how to determine what tables you need and their relationships, how to anticipate and mitigate performance bottlenecks, and how to ensure data integrity via field specifications and constraints.
+Database Design for Mere Mortals on Amazon
+To answer data warehousing interview questions, you need to memorize the dimension modeling bible The Data Warehouse Toolkit by Kimball and Ross. This book is gold because it features multiple data warehousing case studies, and shows you exactly how to design your dimensional databases for maintainability and performance.
+And to learn basic DML (Data Markup Language) commands like CREATE, UPDATE, and DELETE checkout this blog post SQL CRUD operations.
+Why Data Analysts And Data Scientists Should Study Database Design
+While Data Analysts and Data Scientists might not be asked advanced database interview questions during their interview process, we still think it’s worth studying database design because:
+knowing how databases are structured and indexed allows you to write more efficient SQL queries
+understanding how databases enforce data integrity can help you troubleshoot issues with data quality
+learning data modeling & warehouse design helps you collaborate more effectively with Data Engineering co-workers
+at smaller companies you’ll wear multiple-hats which means there’s a very real chance you end up doing some data infrastructure work
+With the fundamental SQL commands and database concepts out of the way, let's take a high-level approach to solving SQL interview questions.
+How do you approach a SQL interview question?
+SQL interviews are stressful, but if you approach each question with a structured approach, you’ll ace the SQL interview. Here’s the 6 steps to solve any SQL interview question:
+Understand the question
+Identify Relevant information
+Break down the problem
+Consider Edge Cases
+Write queries to answer sub-problems
+Test your final query
+SQL Interview Step 1: Understand the Question
+Often you might get a long SQL word problem, where you’ll have lots of extra details and it might not be clear what the interviewer is specifically asking you to query. So understanding and clarifying what specifically needs to be done is the best first step to take.
+SQL Interview Step 2: Identify Relevant information
+You might have extraneous columns, or even extra tables that aren’t needed for your SQL query. Interviewers do this on purpose, because in real-world SQL you'll often have thousands of tables, with hundreds of columns, and it's a skill to determine what information you actually need to query that's relevant to the problem. As such, Identify what’s actually needed to directly answer the SQL interview question at-hand.
+SQL Interview Step 3: Break Down the Problem
+Often, SQL interviews have a multi-part solution, consisting of multiple joins, unions, subqueries, and CTEs. Map out what are the smaller building blocks that are needed for the final solution. You want to verbalize this step, because it shows the interviewer that's watching you code that you are able to break-down complex problems into simpler sub-problems – a useful skill not just in SQL, but in Data Analytics & Data Science as a whole.
+SQL Interview Step 4: Consider Edge Cases
+You can’t forget edge cases, like if some value is null, or there is a tie in your results set. Make sure to think about this BEFORE you start writing your SQL query. Frequently, SQL interviews will purposely have tricky test cases which catch whether you’ve handled all edge cases.
+SQL Interview Step 5: Write Queries for Sub-Problems
+Write queries to answer sub-problems: don’t go after the question all at once. Write small subqueries that answer sub-problems. Test your solutions incrementally, and slowly combine your sub-problem results. If you try to answer the problem all in one go, your SQL query likely won’t run and you’ll overwhelm yourself trying to figure which of the 27 lines you wrote contains the error.
+SQL Interview Step 6: Test Your Final Query
+Run your SQL query, and validate that your output matches the expected output. From coaching hundreds of people, you won’t believe how many people think they have the final solution, but don’t realize there’s a slight difference between the expected results and what they produced.
+What makes online SQL assessments difficult?
+Online SQL assessments are difficult for three main reasons:
+You need to solve the questions under time pressure.
+You need to write clean SQL code which adheres to best-practices.
+You need to know the SQL patterns required for the toughest SQL interview questions (which takes a ton of SQL interview practice)
+Let's cover each tricky aspect, and how best to overcome these difficulties.
+Handling Time Pressure During SQL Assessments
+Online SQL assessments typically give you an hour to solve 2 to 3 tricky SQL questions. This time constraint significantly adds to the stress, which can make it difficult to think clearly. For live whiteboard SQL interviews, an interviewer is hovering over you, which further adds to the tension. Finally, for live SQL screens, you're expected to verbalize your thought process to the interviewer, which can make SQL interviews even more stressful.
+Our advice to make this less nerve-wracking is to practice sql interview questions with a timer, and in the presence of a friend, so you can get used to writing SQL quickly while verbalizing your thoughts.
+Write Clean SQL Queries During Interviews
+It’s not enough to answer the interview question correctly – your SQL query needs to be written cleanly too! That means not taking shortcuts, like renaming columns and tables with short unhelpful names like “t” or “u”. It also means not overly nesting sub-queries, and instead using CTEs. This is especially true during take-home SQL assessments, where there is less time pressure and you have no excuse not to write clean SQL.
+My soccer coach used to always tell me “You play like you practice and practice how you play” and the same mentality applies for SQL interviews too. When you are practicing sql interview questions, don’t take shortcuts, and put in the effort to make sure your SQL queries are written cleanly even if no one else is going to read them!
+If you don’t know what constitutes clean, efficient SQL code read the article “10 Best Practices to Write Readable and Maintainable SQL Code”. You can also get feedback on your SQL queries, and learn from others, by seeing how other people solve the SQL interview exercises on DataLemur.
+Learn SQL Interview Patterns
+For advanced SQL interview questions, you’ll need to practice enough questions to internalize the most common SQL interview patterns out there. For example, there’s a non-intuitive way to apply Postgres’s GENERATE_SERIES() command that keeps coming up in SQL interview questions, yet most Data Analysts probably haven’t ever come across this function during their day-to-day SQL work.
+That’s why we added SQL pattern tags to the sql interview questions on DataLemur, to help you notice and then intentionally practice the specific SQL interview patterns that come up.
+Common SQL Interview Patterns
+You can also read this article on common SQL interview patterns.
+SQL Interview Patterns
+Preparing for SQL Assessments
+Simply knowing the SQL concepts that commonly show up in online SQL assessments isn't enough. I recommend creating a study plan that allots oodles of time to practice the concepts too if you want to crack the SQL interview.
+How long does it take to study for a SQL interview?
+From analyzing data from 12,000 DataLemur.com users, we found it takes SQL beginners 3-6 months to pass the toughest SQL interview questions. For Data Analysts and Data Scientists who’ve used SQL extensively at work, it takes 30 to 60 days to ace SQL interview questions at companies like Amazon, Google, and Facebook. However, if you’ve only got a few days or hours to cram for a SQL assessment, checkout this guide on how to cram for SQL assessments.
+The best way to know the appropriate amount of time to dedicate to studying is by solving a real easy, medium, and hard SQL interview question from DataLemur. If you struggle on the easy question, you know you've got your work cut out for you!
+Easy Amazon SQL Interview Question: Average Review Ratings
+Medium Difficulty Spotify SQL Interview Question: Top 5 Artists
+Hard Facebook SQL Interview Question: Active User Retention
+I have a SQL assessment in a month. What should I study?
+If you’ve got an interview in a month, but don’t know much SQL, check out this 30-day SQL learning roadmap which covers the best FREE online SQL resources (in what order to study them).
+Learn SQL in 30 Days Roadmap
+However, because SQL is so core to Data Analytics & Data Science, I recommend giving yourself more than a month to learn SQL, and sitting down with a more comprehensive book to learn SQL. And in case you find learning SQL boring, play these 4 SQL games to make learning more fun!
+What are the best books for SQL interviews?
+The 3 best books to get ready for a SQL interview are:
+SQL for Data Scientists: A Beginner's Guide for Building Datasets for Analysis
+Minimum Viable SQL Patterns: Hands on Design Patterns for SQL
+Ace the Data Science Interview: 201 Real Data & SQL Interview Questions
+3 Best Books To Prep For SQL Interviews
+SQL for Data Scientists: The Best Book To Learn SQL For Data Nerds
+The book "SQL for Data Scientists" is an excellent resource specifically designed for data nerds (compared to other more general books, which cover obscure database details geared towards database administrators. While not specifically geared towards SQL interview prep, it covers all the main topics which you'll find during an interview, like joins, window functions, subqueries, and data prep for ML.
+Minimum Viable SQL Patterns: Best Book To Learn SQL Best Practices
+The eBook Minimum Viable SQL Patterns will take your SQL code to the next level. This is for folks who want their SQL queries to be more efficient, readable, and maintainable – things that experienced hires are judged on during SQL interviews!
+Ace the Data Science Interview: Best Book For SQL Exercises
+Finally, the book Ace the Data Science Interview has an entire chapter with 30 real SQL & Database Interview questions, along with a guide on how to prepare for them. I like this book, but then again I’m biased because I wrote it!
+To get a complete list of book recommendations, check out this list of the 17 best books for Data Analysts and the 13 best Data Science books.
+What's the best site to practice SQL interview questions?
+The 3 most popular sites to practice SQL interviews are:
+LeetCode - https://leetcode.com/
+HackerRank - https://www.hackerrank.com/
+DataLemur – https://datalemur.com/
+I believe that DataLemur is the best SQL interview platform because it is the most affordable option (half the cost of LeetCode), features the best solutions and hints, and has the most generous free tier.
+Want proof? Start practicing with this free TikTok SQL question to see what I mean:
+Practice Problem
+TikTok SQL Question: Write a query to find the activation rate of new users
+While practicing from these online SQL interview platforms is great, we want to acknowledge that tackling open-ended take-home SQL challenges is a whole other beast.
+Open-Ended Take-Home SQL Challenges
+What makes open-ended SQL tests trickier than online SQL assessments?
+Open-ended SQL challenges typically use much larger, messier, and more realistic datasets than SQL assessments. For example, in a take-home challenge you might get some anonymized data from the company’s production database, which is filled with missing data or nulls. In timed SQL coding screens, you’re usually querying a clean toy dataset that might only be 20-30 rows big.
+The scope of an open-ended SQL challenge is much bigger too. Whereas in an online SQL assessment, there’s a specific question with well-defined inputs and outputs, for take-home SQL challenges it might not even be obvious what question you need to answer! Some startups in their SQL take-home challenges just give you a large CSV file along with vague prompt like “From this data, what recommendations do you have for our business?” and it’s up to you to determine what specific questions you’ll ask of the dataset.
+Of course, the timeframe for take-home SQL challenges is much longer too. Plus, you can usually pick which version of SQL to use too! However, this is both a blessing and a curse. While you typically have more freedom, the expectations around the cleanliness of your SQL code are much, much higher.
+Finally, an open-ended SQL take-home challenge tests for much more than just raw SQL skills. Typically, you’ll have to write a report about what you did, which tests your written communication skills. You might even be asked to visualize the data, which tests your data visualization skills as well. Lastly, over a Zoom call, you might be asked to present your analysis, and defend the work you did, which evaluates your oral communication and presentation skills.
+How do you prepare for take-home SQL interview challenges?
+The best way to prepare for open-ended SQL interview challenges is by practicing real take-home SQL interview challenges, doing exploratory data analysis with Kaggle datasets. and reading books to improving your data analytics skills.
+4 Real Take-Home SQL Interview Challenges
+Because practice makes perfect, here’s 4 real take-home SQL interview challenges from PayPal, CVS Health, Asana, and UnitedHealth Group:
+PayPal/Braintree Analytics Code Challenge
+4-Part CVS Pharmacy Analytics SQL Challenge
+Asana Take Home Data Science Challenge
+4-Part UnitedHealth Group Patient Support SQL Analysis
+You can also make your own open-ended SQL challenges using data from Kaggle if you want more practice!
+Using Kaggle To Improve Your Ability To Answer Open-Ended SQL Questions
+If you don’t know about Kaggle, you are missing out. While they typically host Data Science & Machine Learning competitions, where people build neural network models in Python or R, you can use Kaggle to improve your SQL skills too.
+First find an interesting dataset on Kaggle and download the CSVs onto your laptop. Next, load the data into a free database tool like dBeaver so you can query it in the SQL flavor of your choice. Then brainstorm a list of questions you think a business stakeholder might have about the data. Finally, get querying – do the best you can to write SQL queries that answer these hypothetical open-ended analytics questions.
+For bonus points, you can even visualize the results in an interactive Tableau dashboard, and turn this into a full-fledged data analytics portfolio project.
+How To Translate Vague Business Questions Into SQL
+To improve your ability to handle ambiguous data analytics take-home challenges like “Use SQL to find us some business insights in this dataset” my go-to resource is Lean Analytics.
+Lean Analytics explains the most important metrics associated with business models like SaaS, freemium consumer apps, 2-sided marketplaces, and e-commerce brands. By knowing what numbers decision makers generally care about, you’ll be able to narrow down the scope of your SQL queries to only answer the questions that truly matter.
+Read Lean Analytics to ace take-home SQL challenges
+I also recommend improving your business-acumen by reading books like “The Personal MBA” and Boston Consulting Group’s book “On Strategy”, which you can find more details about in my list of the the best business books for Data Scientists.
+Beyond SQL: Other Data Interview Topics
+What technical concepts do Data Analyst interviews cover (besides SQL)?
+SQL is just one tool in the Data Analyst toolbox, and anyways it’s not the tool that matters (or its size), it’s how you use it 😉. That’s why Data Analyst interviews go beyond just SQL questions, and ask technical interview questions like:
+Probability Interview Questions:: Basics about conditional probability, Bayes' theorem, random variables
+Statistics Interview Questions:: Topics include measures of central tendency (e.g., mean, median, mode), measures of dispersion (e.g., variance, standard deviation), hypothesis testing (t-tests, ANOVA, and chi-squared tests) and sometimes linear regression analysis for senior Data Analyst interviews.
+Data Visualization Questions: Usually tested in-directly, by examining a data analytics portfolio project of yours, or judging a how you visualized the results from an open-ended SQL take-home test.
+Business Acumen Questions: You’ll usually get an open-ended case question like “You're launching a new AWS database service. What metrics would you measure to know if the launch went well or not?”. Here you’ll have to walk through your knowledge of financial and product metrics, and be evaluated on your general business-savvy. You’ll also be asked about your past work experience, and how you communicated your data analysis results to stakeholders.
+What do Data Science interviews cover besides SQL?
+Much like a Data Analyst interview, Data Science interviews cover way more topics than just SQL. You can expected to be asked:
+Probability & Statistics Questions
+A/B Testing Questions
+Machine Learning Questions
+Database Design Questions
+Coding Questions (usually in Python)
+Product-Sense Questions
+Behavioral Interview Questions

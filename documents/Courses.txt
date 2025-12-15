@@ -1,0 +1,181 @@
+Courses
+Courses in this learning path are:
+
+Introduction to Data Science
+Introduction to Data Science
+Learn how to prepare for the wide range of questions that come up in data science interviews.
+
+0 of 8 Completed
+
+Easy SQL Questions
+Easy SQL Questions
+Get started on tackling easy level SQL questions involving aggregations, joining multiple tables, and pulling data for beginning analytical reports.
+
+0 of 12 Completed
+
+Medium SQL Questions
+Medium SQL Questions
+Medium level SQL questions utilize more advanced concepts like sub-queries, window functions, and solving case study problems.
+
+0 of 19 Completed
+
+Hard SQL Questions
+Hard SQL Questions
+Let's tackle advanced SQL interview questions that focus on multi-joins and layers of data interpretation. These questions may come up in take-home challenges and senior level interviews.
+
+0 of 9 Completed
+
+Data Structures
+Data Structures
+Data structures in Python attempt to be more intuitive and flexible than traditional data structures in other programming languages.
+
+0 of 9 Completed
+
+Common DS Packages
+Common DS Packages
+As we said in the first section of this course, a major benefit of using Python for data science in comparison to other programming languages is the availability of a large number of useful packages that are distributed under a free license.
+
+0 of 11 Completed
+
+Python Questions: Hard
+Python Questions: Hard
+Let's try some hard Python questions that you would see in tougher data science interviews and many machine learning interviews.
+
+0 of 6 Completed
+
+Basic Probability
+Basic Probability
+Probability Theory is the branch of mathematics that deals with uncertainty, underpinning all of statistics and machine learning.
+
+0 of 10 Completed
+
+Discrete Distributions
+Discrete Distributions
+All areas of study in math can roughly be divided into two camps: discrete mathematics and continuous mathematics. Perhaps the best way to describe the difference between the two is to talk about what each of the branches means by "number."
+
+0 of 12 Completed
+
+Continuous Distributions
+Continuous Distributions
+Continuous probability distribution: A probability distribution in which the random variable X can take on any value (is continuous).
+
+0 of 6 Completed
+
+Sampling Theorems
+Sampling Theorems
+Thus far in this course, we have considered random variables under an idealized scenario where we know the distribution of the random variable.
+
+0 of 7 Completed
+
+Hypothesis Testing
+Hypothesis Testing
+Hypothesis testing covers the fundamental theory and background behind A/B Testing. In this course we'll cover Z and T test, multiple hypothesis testing, and the different type errors.
+
+0 of 11 Completed
+
+Confidence Intervals
+Confidence Intervals
+Confidence intervals help us deal with this imprecision by giving us a way to talk about a range of values with some certainty where the true value of the statistic is contained in.
+
+0 of 6 Completed
+
+A/B Testing & Experiment Design
+A/B Testing & Experiment Design
+Let's start with a general framework for A/B testing. In practice, an A/B testing and experimentation all follow a step by step process of setting metrics and designing experiments.
+
+0 of 10 Completed
+
+A/B Testing Common Scenarios
+A/B Testing Common Scenarios
+The next couple of chapters will cover common scenarios and concepts involved in A/B testing. As A/B testing involves statistical concepts, there may be terms that you need refreshing on.
+
+0 of 9 Completed
+
+A/B Testing Tradeoffs
+A/B Testing Tradeoffs
+There are scenarios where A/B testing is not necessarily the best course of action. Often, there are technical, infrastructure, or practical concerns that come up while planning an A/B test.
+
+0 of 6 Completed
+
+Statistics
+Statistics
+This is a refresher on some important statistical concepts that will help us with A/B testing and beyond. While by no means a comprehensive guide, this chapter will go over some important basics about statistical testing and probability distributions.
+
+0 of 11 Completed
+
+Data Analytics Fundamentals: Causal Inference
+Data Analytics Fundamentals: Causal Inference
+In this course we’ll go over the core concepts of causality, significance, and analyzing data. This is meant as a quick refresher and a high level overview of causal inference basics to eventually apply them in data analytics problems.
+
+0 of 9 Completed
+
+Diagnosing and Investigating Metrics
+Diagnosing and Investigating Metrics
+Investigating metrics is a type of product intuition problem that will come up frequently in interviews. Examples of this are typically phrased along the lines of - If X metric is up/down by Y percent, how would you investigate it?
+
+0 of 12 Completed
+
+Measuring Success
+Measuring Success
+Measuring the success of products is critical to data science and analytics interviews. Generally, this question is an encapsulation of every time a product manager or executive asks the question: “So, how is it doing?”.
+
+0 of 11 Completed
+
+Feature Change
+Feature Change
+Before launching a feature, we can imagine that the first step we’d have to take is analyzing the existing data in our product to make a decision about exactly what to build. This process is what creates the building or change of a feature problem that gets asked in product interviews.
+
+0 of 10 Completed
+
+Metric Trade-Offs
+Metric Trade-Offs
+Metric trade-off type questions can occur on their own in product interviews or as part of a larger product or AB testing interview discussion.
+
+0 of 4 Completed
+
+Modeling Case Study
+Modeling Case Study
+The machine learning and modeling case study is the most common type of interview question that tests a combination of modeling intuition and business application.
+
+0 of 2 Completed
+
+Data Pre-Processing
+Data Pre-Processing
+Data processing and analysis is the first step that we need to consider once we've clarified details and started down the path of building the model.
+
+0 of 5 Completed
+
+Feature Selection
+Feature Selection
+Feature selection and feature engineering is the second part of the data processing step. Once we've understood what our data looks like, we need to begin to theorize the kinds of features we would use to build the model.
+
+0 of 4 Completed
+
+Model Selection
+Model Selection
+Model selection is usually the crux of any modeling case study problem. We want to be able to select a model or machine learning algorithm that will combine a bunch of factors to become the most optimal algorithm for the problem.
+
+0 of 4 Completed
+
+Machine Learning Algorithms
+Machine Learning Algorithms
+We have touched on the different machine learning algorithms throughout this lesson, but haven't yet dived deep into each one. The prior for this course is that you, as a candidate, have an idea of basic machine learning concepts, and the different modeling algorithms are one such example of them.
+
+0 of 7 Completed
+
+Model Evaluation
+Model Evaluation
+Most machine learning model deployment requires some technical details and implementation to doing so. But we can abstract away from that in an interview when we’re focusing on the model roll out.
+
+0 of 9 Completed
+
+Applied Modeling
+Applied Modeling
+Applied modeling is a type of case question asked about practical machine learning. The most common type of question framework is: Given an example scenario with a machine learning system or model, how would you analyze and fix the problem?
+
+0 of 5 Completed
+
+Generalized Linear Models and Regression
+Generalized Linear Models and Regression
+Regression models are used to predict the value of a dependent variable from one or more independent variables.
+

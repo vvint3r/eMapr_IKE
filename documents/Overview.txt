@@ -1,0 +1,316 @@
+Overview
+This cheat sheet contains five sections. These are:
+
+SQL Basics and Syntax
+SQL Queries
+SQL Functions
+SQL Window Functions
+SQL Data Types
+You’ll find a brief explanation of clauses and functions in each section, plus examples. You can also see the summarized cheat sheet at the end of each section. Additionally, we have included a few tips on using this SQL cheat sheet effectively when preparing for your interview.
+
+SQL Basics and Syntax
+SQL is a declarative language. The statements only describe the desired result, not the exact steps that should be taken to achieve the result. In this section, we’ll start by looking at the basic SQL commands and the syntax used to apply them.
+
+SELECT and FROM
+The SELECT statement is used to retrieve data from one or multiple tables. In the syntax, you start by writing SELECT before listing the names of the columns you’d like displayed. The column names should be separated by commas.
+
+The FROM clause comes after the column names, and it specifies which table(s) the data should be retrieved from. For example:
+
+SELECT column1, column2
+FROM table_name;
+WHERE
+The WHERE clause is used after the FROM statement. It’s used to filter results based on a specified condition. For example:
+
+SELECT column1, column2
+FROM table_name
+WHERE column1 = 'value';
+GROUP BY
+This clause can come after the FROM statement or the WHERE clause (if present). It groups together rows with the same values in a specified column and outputs a summary of these rows. It’s often used with aggregate functions such as COUNT(), AVG(), and MAX() to produce summary statistics. The syntax is as shown below:
+
+SELECT column1, COUNT(*)
+FROM table_name
+WHERE column1 > 10
+GROUP BY column1;
+HAVING
+Where the GROUP BY statement is used, the HAVING clause will be required to filter results based on a condition because the WHERE clause doesn’t work with aggregate functions. For example:
+
+SELECT column1, COUNT(*)
+FROM table_name
+GROUP BY column1
+HAVING COUNT(*) > 10;
+ORDER BY
+The ORDER BY clause is used to sort results based on one or more columns in ascending or descending order. In terms of syntax, it comes after whichever of the previous statements (FROM, WHERE, GROUP BY, HAVING) is last. To specify the sorting order, you use ASC for ascending and DESC for descending. For example:
+
+SELECT column1, column2
+FROM table_name
+WHERE column1 > 10
+ORDER BY column1, column2 ASC;
+Here’s a brief syntax cheat sheet of the commands discussed so far:
+
+SELECT: Used to retrieve data from one or more tables.
+
+Syntax: SELECT column1, column2, … FROM table_name;
+
+FROM: Specifies the table(s) from which data should be retrieved.
+
+Syntax: SELECT column1, column2, … FROM table_name;
+
+WHERE: Filters the data based on a specified condition.
+
+Syntax: SELECT column1, column2, … FROM table_name WHERE condition;
+
+GROUP BY: Groups rows that have the same values in specified columns.
+
+Syntax: SELECT column1, column2, … FROM table_name GROUP BY column1, column2, …;
+
+HAVING: Filters the results of a GROUP BY query based on a specified condition.
+
+Syntax: SELECT column1, column2, … FROM table_name GROUP BY column1, column2, … HAVING condition;
+
+ORDER BY: Sorts the result set in ascending or descending order based on one or more columns.
+
+Syntax: SELECT column1, column2, … FROM table_name ORDER BY column1 [ASC|DESC], column2 [ASC|DESC], …;
+
+These commands are the basis of all SQL queries, and you’ll need to master them if you want to ace SQL tests during interviews and succeed in a data-centered role.
+
+SQL Query Cheat Sheet
+Understanding how to write queries makes it easy to demonstrate your SQL proficiency in interviews. In this section, our cheat sheet will show you some common types of queries you may come across in a job interview.
+
+Retrieving Specific Data
+In this type of problem, the goal is to write a query that retrieves specific pieces of data from a table. You may be asked to retrieve all the columns or just a few, as shown below:
+
+If you only need specific types of data from a table, e.g., first names, email addresses, etc., you’ll need to write the names of the specific columns holding this information.
+SELECT column1, column20
+FROM table_name;
+When you need to examine or analyze all the data in the table, the wildcard (*) is used after the SELECT statement instead of specific column names.
+SELECT * 
+FROM table_name;
+Conditional Filtering
+This type of problem requires you to only display results that meet a specific condition. It relies on the use of the WHERE clause. Conditional filtering helps to identify the most relevant records and identify or filter out outliers.
+
+For example, if you’d like to only see data related to customers who have made purchases exceeding a certain amount, you’d use the WHERE clause followed by the name of the column holding transaction values, a greater-than sign, and the cut-off value:
+
+SELECT *
+FROM table_name
+WHERE transaction_value_column > 'Cut-off value';
+You can filter for different conditions, including equality (=), less than (<), not equal (!=), between a range (BETWEEN), similar to (LIKE), etc.
+
+Sorting Data
+Sorting data helps you organize data to make it easier to read or rank. For example, in a salaries table, you can sort the data from the lowest to the highest earners or vice versa. The ORDER BY clause is used together with the ASC and DESC keywords.
+
+Sort records from lowest to highest earners.
+SELECT *
+FROM table_name
+ORDER BY salary ASC;
+Sort records from highest to lowest earners.
+SELECT *
+FROM table_name
+ORDER BY salary DESC;
+Joining Tables
+Relational databases often hold data in multiple tables, which must be combined during analysis. In SQL, this requires the use of at least one JOIN statement. To join two tables, they must share a common feature/column. There are four types of JOIN statements, i.e.:
+
+INNER JOIN - Shows records with matching values in both tables
+SELECT table1.column1, table2.column2
+FROM table1
+INNER JOIN table2
+ON table1.column1 = table2.column1;
+LEFT JOIN - Shows all records in the left table and only matched records from the right table.
+RIGHT JOIN - Shows all records in the right table and only matched records from the left table.
+FULL OUTER JOIN - Shows all records from the joined tables whether they are matched or not. Unmatched values are shown as Null.
+Grouping and Aggregating Data
+Grouping and aggregating data helps with summarizing information for quick insights. To achieve this, the GROUP BY statement is used with an aggregating function. In the example below, this operation is used to return the average salary for each department in a company.
+
+SELECT department, AVG(salary)
+FROM table_name
+GROUP BY department;
+Limiting the Number of Rows in the Output
+Limiting the number of rows or records shown helps you quickly analyze a dataset or focus on the most important records, e.g., the top ten best-selling products. This operation requires the use of the LIMIT clause followed by the desired number of rows:
+
+SELECT * FROM table_name
+LIMIT 10;
+Here’s a brief syntax cheat sheet for the queries discussed in this section:
+
+Retrieving specific data:
+SELECT * FROM table_name; Retrieves all columns from the specified table.
+SELECT column1, column2 FROM table_name; Retrieves specific columns from the specified table.
+Filtering data using conditions:
+SELECT * FROM table_name WHERE column1 = ‘value’; Retrieves rows where the value of column1 matches the specified value.
+SELECT * FROM table_name WHERE column1 > ‘value’; Retrieves rows where the value of column1 is greater than the specified value.
+Sorting data:
+SELECT * FROM table_name ORDER BY column1 ASC; Retrieves data sorted by column1 in ascending order.
+SELECT * FROM table_name ORDER BY column1 DESC; Retrieves data sorted by column1 in descending order.
+Joining tables:
+SELECT table1.column1, table2.column2 FROM table1 INNER JOIN table2 ON table1.column1 = table2.column1; Retrieves specific columns from two tables, joining them based on the specified condition.
+Grouping and aggregating data:
+SELECT column1, COUNT(*) FROM table_name GROUP BY column1; Groups data by column1 and counts the number of rows in each group.
+Limiting the number of rows in the output
+SELECT * FROM table_name LIMIT 10.
+SQL Functions Cheat Sheet
+The most commonly used SQL functions include aggregate functions, string functions, and date functions. These functions simplify complex operations and improve the speed of data processing.
+
+Aggregate Functions
+These functions perform calculations on a set of values and return one value, i.e., an aggregate such as an average, maximum, minimum, etc. They are often used with the GROUP BY statement or the PARTITION BY window function.
+
+COUNT(): Counts the number of rows that match a specified condition.
+SELECT COUNT(column_name)
+FROM table_name
+GROUP BY column_name;
+SUM(): Adds up the values of a set of records in a specified column.
+SELECT SUM(column_name)
+FROM table_name
+GROUP BY column_name;
+AVG(): Calculates the average value of a set of records in a specified column.
+SELECT AVG(column_name)
+FROM table_name
+GROUP BY column_name;
+MIN(): Finds the smallest value in a specified column for a set of records.
+SELECT MIN(column_name)
+FROM table_name;
+MAX(): Finds the largest value in a specified column for a set of records.
+SELECT MAX(column_name)
+FROM table_name;
+When aggregate functions are used with the GROUP BY statement, calculations are done separately for each group. For example, the query below will return the total number of employees in each department. The result will be a summary table showing each department and the number of employees in each.
+
+SELECT department, COUNT(employee_id) AS employee_count
+FROM employees
+GROUP BY department;
+String Functions
+String functions manipulate and transform text data. Common string functions include:
+
+CONCAT(): Joins two or more strings together. For example, CONCAT('Hello', ' World') returns ‘Hello World’.
+SELECT CONCAT(column1, column2)
+FROM table_name;
+SUBSTRING(): Extracts a part of a string. For example, SUBSTRING('Hello World', 1, 5) returns ‘Hello’.
+SELECT SUBSTRING(column_name, start_position, length)
+FROM table_name
+LENGTH(): Returns the length of a string. For example, LENGTH('Hello') returns 5.
+SELECT LENGTH(column_name)
+FROM table_name;
+REPLACE(): Replaces a specified part of a string with another string. For example, REPLACE('Hello World', 'World', 'There') returns ‘Hello There’.
+SELECT REPLACE(column_name, 'old_string', 'new_string')
+FROM table_name;
+TRIM(column): Removes leading and trailing spaces from the specified column. For example, TRIM(' Hello World ') returns ‘Hello World’.
+Date Functions
+These functions help users manipulate and format date and time values in SQL. These come up often in job interviews because it’s common to work with data that contains one or more date/time values. Common date functions include:
+
+NOW(): Returns the current date and time.
+SELECT NOW()
+DATE(): Extracts the date part of a date-time expression.
+SELECT DATE(column_name)
+FROM table_name;
+DATEDIFF(): Calculates the difference between two dates.
+SELECT DATEDIFF(date1, date2)
+FROM table_name;
+DATE_ADD(): Adds a specified time interval to a date.
+SELECT DATE_ADD(date, INTERVAL value unit)
+FROM table_name;
+The “INTERVAL” keyword must be used. Value is the amount being added and unit is
+
+used to specify whether the value is being added to the ‘DAY’, ‘MONTH’, ‘YEAR’,
+
+‘HOUR’, ‘MINUTE’, or ‘SECOND’.
+
+Here’s the syntax cheat sheet for this section:
+
+Aggregate functions:
+COUNT(column): Counts the number of non-null values in the specified column.
+SUM(column): Calculates the sum of non-null values in the specified column.
+AVG(column): Computes the average of non-null values in the specified column.
+MIN(column): Finds the minimum value in the specified column.
+MAX(column): Identifies the maximum value in the specified column.
+String functions:
+CONCAT(column1, column2): Concatenates two columns of strings.
+SUBSTRING(column, start, length): Extracts a substring from the specified column, starting at the given position for the specified length.
+LENGTH(column): Returns the string length for the value in the column.
+REPLACE(column, search_string, replacement_string): Replaces all occurrences of the search_string with the replacement_string in the specified column.
+TRIM(column): Removes leading and trailing spaces from the specified column.
+Date functions:
+NOW(): Returns the current date and time.
+DATE(column): Extracts the date part of a datetime value in the specified column.
+DATEDIFF(column1, column2): Calculates the difference in days between two dates.
+DATE_ADD(date, INTERVAL value unit)
+SQL Window Functions Cheat Sheet
+SQL window functions enable users to perform calculations across a set of rows that share a common characteristic. This set of rows that serves as the input for the window function is defined using the OVER() clause. Window functions can be used to perform calculations such as cumulative sums and running averages while targeting specific groups in a dataset. Unlike the GROUP BY clause, the individual records are not rolled up into summaries. Their granularity is retained, which helps with data analysis. The syntax for window functions is:
+
+ SELECT column1, column2,...,
+
+ WINDOW FUNCTION() OVER() AS column_name
+
+ FROM table1
+For aggregate functions, you’ll need to specify the column on which calculation is done, i.e.:
+
+ SELECT column1, column2,...,
+
+ AGGREGATE FUNCTION(column_to_aggregate) OVER()
+
+ FROM table1
+ROW_NUMBER
+This function simply assigns a sequential number to each row starting from one. Each row has a unique number. The syntax for applying this function is:
+
+SELECT product_name, sales,
+ROW_NUMBER() OVER (ORDER BY sales DESC) AS row_number
+FROM products;
+In the above example, the ORDER BY clause is optional. If the brackets are left empty, the records will be returned in the same order they appear in the products table. ROW_NUMBER is useful where data lacks a row with sequential numbering without missing values.
+
+RANK()
+RANK() assigns a unique rank to each row based on a particular column. Rows with equal values in that column are assigned the same rank, but the next number is skipped when assigning the next rank, i.e., 1,2,2,4,5. The syntax for this function is:
+
+SELECT product_name, sales,
+RANK() OVER (ORDER BY sales DESC) AS rank
+FROM products;
+In the above example, the ORDER BY clause ensures the ranking is done from the product with the highest number of sales to that with the lowest sales. A potential use case for this function is identifying the top 10 performing salespeople in a team.
+
+DENSE_RANK
+This function is similar toRANK(). Except when two numbers are assigned the same rank, the next number will not be skipped when assigning rank, i.e., 1,2,3,3,4,4,5,6…
+
+NTILE
+NTILE() divides the records into a number of specified groups of equal number and assigns different records to different groups based on a specified column. For example:
+
+SELECT product_name, sales,
+NTILE(4) OVER (ORDER BY sales DESC) AS quartile
+FROM products;
+In the above example, the records in the products table are divided into four groups. Each item is assigned to a group based on the number of sales. Therefore, items with equally high sales numbers are likely to end up in the same group.
+
+PARTITION BY
+PARTITION BY is a window function used to segment records into smaller groups on which other functions can be performed separately. For example, it can be used to calculate the average sales numbers for different product classes separately. The syntax for this would be:
+
+SELECT product_name, sales,
+AVG(sales) OVER(PARTITION BY product_class) AS class_average
+FROM products;
+Note that the PARTITION BY function is placed inside the OVER() clause. You can read more on the PARTITION BY clause in this post.
+Here’s the syntax cheat sheet for this section:
+
+ROW_NUMBER(): Assigns a unique, sequential number to each row within the result set, starting at 1.
+
+Syntax: ROW_NUMBER() OVER (ORDER BY column)
+
+RANK(): Assigns a unique rank to each row within the result set, with the same rank assigned to rows with equal values. Rows with equal values will leave a gap in the sequence.
+
+Syntax: RANK() OVER (ORDER BY column)
+
+DENSE_RANK(): Similar to RANK(), but without gaps in the rank sequence for equal values.
+
+Syntax: DENSE_RANK() OVER (ORDER BY column)
+
+NTILE(n): Divides the result set into a specified number of groups (n) and assigns a group number to each row.
+
+Syntax: NTILE(n) OVER (ORDER BY column)
+
+PARTITION BY: Divides the records into different groups based on one feature and allows functions to be applied separately to each group.
+
+Syntax: OTHER_FUNCTION() OVER(PARTITION BY column)
+
+SQL Data Types Cheat Sheet
+Data tables often contain different types of information or information created and measured using different standards. This results in many data types, which you’ll need to know how to work with to write efficient queries and avoid conversion errors. Common SQL data types include:
+
+INT: A whole number with a range depending on the database system.
+
+FLOAT: A floating-point number, used to store approximate values with varying degrees of precision.
+
+DECIMAL(p, s): A fixed-point number with user-defined precision (p) and scale (s). Scale represents the number of digits to the right of the decimal point.
+
+VARCHAR(n): A variable-length character string with a maximum length of n characters.
+
+DATE: Represents a date value (YYYY-MM-DD).
+
+TIMESTAMP: Represents a date and time value (YYYY-MM-DD HH:MI:SS).

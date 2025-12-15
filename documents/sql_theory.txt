@@ -1,0 +1,475 @@
+SQL & Interview Playbook — Marketing Analytics
+1) Foundations & Environment (analytics-oriented)
+●	Relational model & set semantics: primary/foreign keys, star schemas
+ (facts for events/transactions; dims for entities like users/listings).
+
+2) Query lifecycle & execution model
+Logical evaluation order
+ FROM/JOIN → WHERE → GROUP BY → HAVING → SELECT → DISTINCT → ORDER BY → LIMIT
+Optimizer behavior (mental model)
+●	Predicate pushdown / SARGability: keep partition/filter columns bare on
+ LHS; avoid wrapping in functions (enables pruning).
+
+●	Join strategy: pre-aggregate/filter before joins; avoid row-explosion by
+ asserting key uniqueness.
+
+●	Sorting is expensive: pair ORDER BY with LIMIT unless needed
+ globally.
+
+●	Window frames: prefer ROWS over RANGE for deterministic rolling.
+
+
+________________________________________
+3) Core query building blocks
+●	Column discipline: avoid SELECT *; project only what you need.
+
+●	Filtering: use half-open windows (e.g., dt >= '2025-08-01' AND dt < '2025-09-01').
+
+●	CASE expressions: categorical logic; conditional aggregation.
+
+●	DISTINCT vs GROUP BY: dedupe vs aggregation intent.
+
+________________________________________
+4) Joins & set operations (with correctness checks)
+Need	Canonical idiom	Notes
+Inner match	INNER JOIN ... ON ...	Assert key uniqueness upstream.
+Keep left rows	LEFT JOIN ...	Anti-join via WHERE right.key IS NULL.
+Self-join	table to itself	Adjacency, near-dupe patterns.
+Union	UNION ALL	Prefer over UNION (dedupe cost).
+Row-explosion guard (pre-check)
+SELECT 'bookings' AS t, COUNT(*) AS n, COUNT(DISTINCT booking_id) AS d
+FROM   bookings
+UNION ALL
+SELECT 'reviews', COUNT(*), COUNT(DISTINCT booking_id)
+FROM   reviews;
+
+Safer anti-join
+SELECT g.guest_id
+FROM   guests g
+WHERE  NOT EXISTS (
+  SELECT 1
+  FROM   bookings b
+  WHERE  b.guest_id = g.guest_id
+     AND b.status   = 'confirmed'
+);
+
+________________________________________
+5) Aggregations & grouping
+●	Conditional aggregation
+
+○	Presto/Trino: COUNT_IF(cond) or COUNT(*) FILTER (WHERE cond)
+
+○	Hive: SUM(CASE WHEN cond THEN 1 ELSE 0 END)
+
+●	Approximate aggregations (exploration)
+
+○	Presto/Trino: approx_distinct(x), approx_percentile(x, p)
+
+○	Hive: percentile_approx(x, p)
+
+________________________________________
+6) Window functions (analytic functions)
+Ranking (tie policy)
+●	ROW_NUMBER() — unique sequence; breaks ties deterministically.
+
+●	RANK() — gaps on ties.
+
+●	DENSE_RANK() — no gaps on ties.
+
+Navigation
+SELECT user_id,
+       event_ts,
+       LAG(event_ts) OVER (
+         PARTITION BY user_id
+         ORDER BY event_ts
+       ) AS prev_ts
+FROM   events;
+
+Deterministic rolling (7 days)
+SELECT d,
+       SUM(bookings) OVER (
+         ORDER BY d
+         ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+       ) AS roll7
+FROM   daily_bookings;
+
+Latest row per entity (portable)
+WITH ranked AS (
+  SELECT  e.*,
+          ROW_NUMBER() OVER (
+            PARTITION BY user_id
+            ORDER BY event_ts DESC, event_id DESC
+          ) AS rn
+  FROM    events e
+)
+SELECT *
+FROM   ranked
+WHERE  rn = 1;
+
+Greatest-N per group
+●	Exactly K: ROW_NUMBER() ... WHERE rn <= K
+
+●	Include ties: DENSE_RANK() ... WHERE r <= K
+
+________________________________________
+7) Subqueries & CTEs
+●	Scalar/correlated subqueries: use cautiously; can be expensive.
+
+●	CTEs (WITH): stage logic for clarity and testability.
+
+●	Materialization: CTEs are often inlined; if reused, consider temp
+ tables (workflow-level choice, not included here).
+
+________________________________________
+8) Time & date handling (analytics hygiene)
+●	Normalize timestamps to UTC; convert only for presentation.
+
+●	Half-open windows: >= start AND < end to avoid off-by-one.
+
+●	Weekly alignment: pick ISO week consistently across pipelines.
+
+●	DST pitfalls: avoid hourly compares across DST; work in UTC.
+
+Presto/Trino date diff
+SELECT date_diff('day', DATE '2025-08-01', DATE '2025-09-01') AS days;
+
+Hive date diff
+SELECT datediff('2025-09-01', '2025-08-01') AS days;
+
+________________________________________
+9) Semi-structured data (JSON, arrays)
+Presto/Trino JSON
+SELECT json_extract_scalar(metadata, '$.utm_source') AS utm_source
+FROM   page_events
+WHERE  metadata IS NOT NULL;
+
+Hive JSON
+SELECT get_json_object(metadata, '$.utm_source') AS utm_source
+FROM   page_events
+WHERE  metadata IS NOT NULL;
+
+Arrays (Presto/Trino)
+SELECT listing_id,
+       cardinality(array_distinct(amenities)) AS uniq_amenities
+FROM   listings_dim;
+
+________________________________________
+10) Canonical analytical patterns (marketing)
+10.1 Sessionization (30-minute idle break)
+WITH base AS (
+  SELECT user_id,
+         event_ts,
+         LAG(event_ts) OVER (
+           PARTITION BY user_id ORDER BY event_ts
+         ) AS prev_ts
+  FROM   events
+),
+gaps AS (
+  SELECT user_id,
+         event_ts,
+         CASE
+           WHEN prev_ts IS NULL THEN 1
+           WHEN event_ts - prev_ts > INTERVAL '30' MINUTE THEN 1
+           ELSE 0
+         END AS is_new
+  FROM   base
+),
+labeled AS (
+  SELECT user_id,
+         event_ts,
+         SUM(is_new) OVER (
+           PARTITION BY user_id ORDER BY event_ts
+           ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+         ) AS session_id
+  FROM   gaps
+)
+SELECT user_id,
+       session_id,
+       MIN(event_ts) AS session_start,
+       MAX(event_ts) AS session_end,
+       COUNT(*)      AS events
+FROM   labeled
+GROUP  BY user_id, session_id;
+
+10.2 Funnels & step gating
+Presto/Trino (use COUNT_IF or filtered aggregates)
+WITH steps AS (
+  SELECT user_id,
+         MAX(CASE WHEN step = 'search' THEN 1 END) AS s1,
+         MAX(CASE WHEN step = 'view'   THEN 1 END) AS s2,
+         MAX(CASE WHEN step = 'book'   THEN 1 END) AS s3
+  FROM   user_events
+  WHERE  event_dt >= DATE '2025-08-01'
+     AND event_dt <  DATE '2025-09-01'
+  GROUP  BY user_id
+)
+SELECT COUNT(*) AS users_seen,
+       COUNT_IF(s1 = 1) AS step1,
+       COUNT_IF(s1 = 1 AND s2 = 1) AS step2,
+       COUNT_IF(s1 = 1 AND s2 = 1 AND s3 = 1) AS step3,
+       CAST(step2 AS DOUBLE) / NULLIF(step1, 0) AS p_s1_to_s2,
+       CAST(step3 AS DOUBLE) / NULLIF(step2, 0) AS p_s2_to_s3
+FROM   steps;
+
+Hive variant (no COUNT_IF)
+WITH steps AS (
+  SELECT user_id,
+         MAX(CASE WHEN step = 'search' THEN 1 ELSE 0 END) AS s1,
+         MAX(CASE WHEN step = 'view'   THEN 1 ELSE 0 END) AS s2,
+         MAX(CASE WHEN step = 'book'   THEN 1 ELSE 0 END) AS s3
+  FROM   user_events
+  WHERE  event_dt >= '2025-08-01' AND event_dt < '2025-09-01'
+  GROUP  BY user_id
+)
+SELECT COUNT(*) AS users_seen,
+       SUM(CASE WHEN s1 = 1 THEN 1 ELSE 0 END) AS step1,
+       SUM(CASE WHEN s1 = 1 AND s2 = 1 THEN 1 ELSE 0 END) AS step2,
+       SUM(CASE WHEN s1 = 1 AND s2 = 1 AND s3 = 1
+                THEN 1 ELSE 0 END) AS step3,
+       CAST(step2 AS DOUBLE) / NULLIF(step1, 0) AS p_s1_to_s2,
+       CAST(step3 AS DOUBLE) / NULLIF(step2, 0) AS p_s2_to_s3
+FROM   steps;
+
+Enforce ordering with session/timestamps if steps can be out of order.
+10.3 Cohorts & retention
+Presto/Trino
+WITH first_seen AS (
+  SELECT  user_id,
+          MIN(CAST(event_ts AS DATE)) AS cohort_dt
+  FROM    events
+  GROUP   BY user_id
+),
+grid AS (
+  SELECT  f.cohort_dt,
+          CAST(e.event_ts AS DATE) AS act_dt,
+          date_diff('day', f.cohort_dt, CAST(e.event_ts AS DATE)) AS d
+  FROM    first_seen f
+  JOIN    events e
+    ON    e.user_id = f.user_id
+)
+SELECT cohort_dt,
+       COUNT_IF(d BETWEEN 0 AND 0)   AS d0,
+       COUNT_IF(d BETWEEN 1 AND 7)   AS d1_7,
+       COUNT_IF(d BETWEEN 8 AND 14)  AS d8_14,
+       COUNT_IF(d BETWEEN 15 AND 30) AS d15_30
+FROM   grid
+GROUP  BY cohort_dt
+ORDER  BY cohort_dt;
+
+Hive
+WITH first_seen AS (
+  SELECT  user_id,
+          MIN(CAST(event_ts AS DATE)) AS cohort_dt
+  FROM    events
+  GROUP   BY user_id
+),
+grid AS (
+  SELECT  f.cohort_dt,
+          CAST(e.event_ts AS DATE) AS act_dt,
+          datediff(CAST(e.event_ts AS DATE), f.cohort_dt) AS d
+  FROM    first_seen f
+  JOIN    events e
+    ON    e.user_id = f.user_id
+)
+SELECT cohort_dt,
+       SUM(CASE WHEN d BETWEEN 0 AND 0  THEN 1 ELSE 0 END) AS d0,
+       SUM(CASE WHEN d BETWEEN 1 AND 7  THEN 1 ELSE 0 END) AS d1_7,
+       SUM(CASE WHEN d BETWEEN 8 AND 14 THEN 1 ELSE 0 END) AS d8_14,
+       SUM(CASE WHEN d BETWEEN 15 AND 30 THEN 1 ELSE 0 END) AS d15_30
+FROM   grid
+GROUP  BY cohort_dt
+ORDER  BY cohort_dt;
+
+10.4 Attribution & pathing (first-click in 7 days)
+WITH first_click AS (
+  SELECT  i.guest_id,
+          i.campaign_id,
+          MIN(c.click_dt) AS first_click_dt
+  FROM    ad_impressions i
+  JOIN    ad_clicks c
+    ON    c.guest_id    = i.guest_id
+   AND    c.campaign_id = i.campaign_id
+   AND    c.click_dt BETWEEN i.imp_dt
+                         AND i.imp_dt + INTERVAL '7' DAY
+  GROUP   BY i.guest_id, i.campaign_id
+)
+SELECT  campaign_id,
+        COUNT(*) AS imps_with_click
+FROM    first_click
+GROUP   BY campaign_id;
+
+10.5 Weighted metrics (guardrail-safe)
+SELECT CAST(SUM(r.rating * b.price_usd) AS DOUBLE)
+       / NULLIF(SUM(b.price_usd), 0) AS w_avg_rating
+FROM   reviews r
+JOIN   bookings b
+  ON   b.booking_id = r.booking_id
+WHERE  b.status = 'confirmed';
+
+________________________________________
+11) Performance & scalability (query-level)
+●	Pushdown & pruning: keep filters on raw columns (dt, event_date).
+
+●	Join reduction: filter & aggregate before joining; broadcast small dims
+ when feasible (Hive hint /*+ MAPJOIN(dim) */).
+
+●	Sort cost: prefer partial orders with LIMIT; avoid global sorts.
+
+●	Skew handling: identify heavy keys; conditional logic to isolate them.
+
+________________________________________
+12) Data quality, testing & validation (analytics)
+Check	How
+Null semantics	COUNT(*) vs COUNT(col); deliberate COALESCE.
+Key uniqueness	ROW_NUMBER() ... = 1 under the key you expect unique.
+Row conservation	Counts before/after joins; explain deltas.
+Totals reconcile	Sum by dim vs grand total; fix leakage.
+Time coverage	MIN/MAX(ts) after filters; no unintended gaps.
+Outliers	IQR/percentiles (approx_percentile) for quick scans.
+________________________________________
+13) Interview strategy — Marketing Analytics Manager
+What interviewers look for
+Area	Expectation	Evidence
+SQL depth	Windows, joins, rigor	Clean live coding
+Causal sense	A/B, geo holdout, DiD	Clear assumptions
+Marketing IQ	Funnels, LTV/ROAS, attr	Exact metric defs
+Product sense	Guardrails, trade-offs	“So what” framing
+Leadership	Prioritization, coaching	Decision memos, OKRs
+Communication	Structure, brevity	Tables > prose
+Live-coding talk-track (30–60s)
+ “I’ll restate the goal, define the metric and cohort, choose the pattern
+ (dedupe, Top-K, anti-join, windowed agg, session, funnel, cohort), write a
+ readable CTE sequence with correctness checks (key uniqueness, row counts),
+ and call out trade-offs (accuracy vs cost).”
+Case-study checklist (paste-ready)
+●	Unit of analysis & randomization unit (user/session/geo).
+
+●	Principal metric & exact SQL definition; guardrails (cancels, CS contacts).
+
+●	Eligibility/exposure; assignment integrity; pre-period balance.
+
+●	Design: A/B, geo holdout, DiD; power/MDE planning.
+
+●	Analysis plan: CUPED/covariates, variance, heterogeneity by device/market.
+
+●	Risks: seasonality, interference; mitigation plan.
+
+●	Decision rule & follow-ups (ship/iterate/rollback).
+
+Behavioral (prepare 5–7 STAR stories)
+Theme	Prompt seed
+Prioritization	“Trade-off: lift vs guardrails on latency/cancels.”
+Conflict	“Metric definition dispute with PM; resolution path.”
+Failure	“Wrong conclusion; how detected, corrected, prevented.”
+Leadership	“Coaching analyst to window-function mastery.”
+Influence	“Finance sign-off on MMM; changed forecast policy.”
+Ambiguity	“No A/B allowed; credible quasi-exp design.”
+________________________________________
+14) Engine-specific quick reference (Hive vs Presto/Trino)
+Topic	Presto/Trino	Hive
+Conditional count	COUNT_IF(cond) or COUNT(*) FILTER (WHERE cond)	SUM(CASE WHEN cond THEN 1 ELSE 0 END)
+Date diff	date_diff('day', a, b)	datediff(b, a)
+JSON	json_extract_scalar(json, path)	get_json_object(json, path)
+Broadcast hint	Session/auto, depends env	/*+ MAPJOIN(dim) */
+QUALIFY	Not available (use subquery)	Not available (use subquery)
+________________________________________
+15) Anti-patterns & edge cases
+●	NOT IN with NULLs ⇒ empty result. Prefer NOT EXISTS.
+
+●	Casting timestamp to date in WHERE on partition col breaks pruning.
+
+●	Global ORDER BY without LIMIT = expensive; avoid unless necessary.
+
+●	RANGE frames with duplicates can bloat windows; use ROWS.
+
+●	Non-unique join keys silently multiply rows; assert uniqueness.
+
+●	UNION when UNION ALL is acceptable wastes time on dedup.
+
+________________________________________
+16) Reusable snippet library (copy-ready)
+Latest row per entity
+WITH ranked AS (
+  SELECT  t.*,
+          ROW_NUMBER() OVER (
+            PARTITION BY entity_id
+            ORDER BY event_ts DESC, event_id DESC
+          ) AS rn
+  FROM    t
+)
+SELECT *
+FROM   ranked
+WHERE  rn = 1;
+
+Top-K per group (include ties)
+WITH ranked AS (
+  SELECT  g.*,
+          DENSE_RANK() OVER (
+            PARTITION BY group_key
+            ORDER BY metric DESC, tie_breaker
+          ) AS r
+  FROM    g
+)
+SELECT *
+FROM   ranked
+WHERE  r <= 3;
+
+Anti-join (users not converted)
+SELECT u.user_id
+FROM   users u
+WHERE  NOT EXISTS (
+  SELECT 1
+  FROM   conversions c
+  WHERE  c.user_id = u.user_id
+);
+
+Sessionization (30-min)
+-- See §10.1 for full version; gist below:
+... LAG(ts) ... CASE gap>30m THEN 1 ELSE 0 END AS is_new
+... SUM(is_new) OVER (PARTITION BY user ORDER BY ts ROWS UNBOUNDED PRECEDING)
+
+Funnel gating (Hive)
+SUM(CASE WHEN s1=1              THEN 1 ELSE 0 END) AS step1,
+SUM(CASE WHEN s1=1 AND s2=1     THEN 1 ELSE 0 END) AS step2,
+SUM(CASE WHEN s1=1 AND s2=1
+          AND s3=1              THEN 1 ELSE 0 END) AS step3
+
+Cohort grid (daily buckets)
+-- Pick Presto/Hive variant from §10.3
+
+Attribution: first click in 7 days
+-- See §10.4
+
+Weighted average (guardrail-safe)
+CAST(SUM(x * w) AS DOUBLE) / NULLIF(SUM(w), 0) AS weighted_avg
+
+________________________________________
+17) Practice index (marketing-centric)
+1.	Monthly bookings & GMV by channel/geo (half-open windows).
+
+2.	Top-3 listings per city by nights & revenue (tie-breaks deterministic).
+
+3.	Repeat-guest share (≥2 priors) in last 180 days (window count).
+
+4.	Near-repeat trips (pairs within 7 days) via self-join.
+
+5.	Running daily bookings by channel (30-day cumulative).
+
+6.	Impression→click→booking windows (first click in 7d).
+
+7.	Re-engagement email lift with cancels/CS guardrails.
+
+8.	Search ranking tweak: CTR vs bookings vs cancellations (guardrails).
+
+9.	Experiences cross-sell attach rate & net incremental GMV.
+
+10.	Geo promo: holdout/DiD set-up with cluster-robust SEs (SQL prep).
+
+________________________________________
+Final tip
+In interviews, state the decision each query supports, name the pattern
+ you’re using (e.g., “Top-K per group with deterministic ties”), and call out
+ validation checks (key uniqueness, row counts, totals reconcile). This
+ signals senior-level rigor aligned to Marketing impact.
+
+

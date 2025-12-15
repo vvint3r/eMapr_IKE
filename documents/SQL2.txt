@@ -1,0 +1,579 @@
+SQL 
+Below is a compact Airbnb-style schema we’ll use for all questions, followed by 30 SQL 
+prompts that mirror what’s typically tested (joins, aggregations, filters, subqueries, self-joins, 
+window functions, pivoting/conditional agg, date ops, CTEs, semi/anti joins, etc.). I’ve kept each 
+question self-contained and tagged the target concepts. 
+Working schema (columns you can assume exist) 
+● listings(listing_id, host_id, city, country, room_type, 
+n_bedrooms, created_at, is_active) 
+● hosts(host_id, host_since, superhost_flag, country) 
+● guests(guest_id, signup_dt, country) 
+● bookings(booking_id, listing_id, guest_id, checkin_dt, 
+checkout_dt, booked_dt, status, nights, guests_count, price_usd) 
+● reviews(review_id, booking_id, listing_id, guest_id, review_dt, 
+rating, review_text) 
+● calendar(listing_id, dt, available_flag, nightly_price_usd) 
+● search_sessions(session_id, guest_id, search_dt, device, country, 
+origin_channel) 
+● search_results(session_id, listing_id, position, clicked_flag, 
+booked_flag) 
+● marketing_campaigns(campaign_id, channel, campaign_name, 
+start_dt, end_dt, country) 
+● ad_impressions(imp_id, campaign_id, guest_id, imp_dt) 
+● ad_clicks(click_id, campaign_id, guest_id, click_dt) 
+● product_events(event_dt, guest_id, listing_id, event_name, 
+session_id) 
+● countries(country, region) 
+30 SQL interview-style prompts (Airbnb context) 
+# 
+Scenario / Prompt 
+1 Monthly bookings and GMV. For each 
+YYYY-MM, compute total confirmed 
+bookings and GMV (sum(price_usd)) for 
+active listings only. 
+Tables 
+bookings, listings 
+2 Host-level performance. Top 10 hosts by 
+GMV last 90 days; include bookings count, 
+distinct guests, and share of bookings with 
+nights >= 7. 
+3 Occupancy rate. For the last full calendar 
+month, compute occupancy rate per city: 
+booked_nights / total_nights using 
+calendar.available_flag and 
+bookings (confirmed only). 
+4 Search-to-book funnel. By channel, last 30 
+days: sessions, clicks, bookings, and 
+CTR/BTB rates. 
+5 Repeat guests. % of bookings in last 180 
+days from guests with ≥2 prior confirmed 
+bookings (any time before the booking’s 
+booked_dt). 
+bookings, listings, hosts 
+calendar, bookings, 
+listings 
+search_sessions, 
+search_results 
+bookings 
+Concepts 
+Tested 
+Filter, join, 
+group by month 
+Join, filters, agg 
+w/ conditional 
+sums 
+Date math, 
+joins, 
+aggregation 
+Semi-joins, 
+conditional agg 
+Correlated 
+subquery or 
+window 
+lag/count 
+6 Review coverage. For each city: share of 
+bookings that received a review within 30 
+days of checkout. 
+7 Superhost uplift. Compare average rating 
+and GMV for superhosts vs non-superhosts 
+in the last quarter; return group, bookings, 
+avg_rating, avg_price, GMV. 
+8 Cancellations. Weekly cancellation rate 
+(status = 'canceled') by room_type; 
+include 3-week moving average. 
+9 Search ranking effect. Compute conversion 
+to booking by position bucket (1–3, 4–10, 
+>10) controlling for device and country. 
+10 Longest stays. For each country, list the 
+single longest nights stay in last year with 
+listing & host details (ties keep highest 
+price_usd). 
+11 Guest lifecycle. For each guest, report 
+f
+ irst_booking_dt, days_to_second_booking, 
+and whether they churned (no bookings last 
+365d). 
+12 Activation cohort. Monthly host cohorts by 
+host_since and their month-2 GMV (GMV 
+in cohort_month+1). 
+13 Price dispersion. For active listings in a city, 
+compute median nightly price over last 60 
+days and IQR from calendar. 
+bookings, reviews, 
+listings 
+hosts, bookings, reviews, 
+listings 
+bookings, listings 
+search_results, 
+search_sessions 
+bookings, listings, hosts 
+bookings, guests 
+hosts, bookings, listings 
+calendar, listings 
+Left join, date 
+diff, conditional 
+agg 
+Joins, grouping, 
+window alt: 
+none 
+Window 
+(moving avg), 
+date binning 
+Case/pivot, 
+multi-dim group 
+Row_number 
+partition, top-1 
+per group 
+Window 
+(min/lead), 
+derived flags 
+Cohorts via date 
+trunc + joins 
+Percentiles 
+(approx or 
+window), filter 
+14 Calendar integrity check. Find listings that 
+were unavailable (available_flag=0) on 
+any date where a booking overlapped but 
+nights were priced at 0 or NULL. 
+15 Attribution (last touch). Within a 7-day 
+attribution window ending at booked_dt, 
+assign each booking to the most recent ad 
+click per guest; output channel-level GMV. 
+16 Marketing reach & frequency. For a date 
+range, compute unique guests reached and 
+average frequency by campaign. 
+17 Cross-sell signal. Among guests who 
+booked ≥2 cities in the last year, top 10 city 
+pairs by count (unordered pairs). 
+18 Supply growth. 3-month rolling new 
+listings by region (countries), and % 
+change vs prior 3-month window. 
+19 Time to first review. For each listing created 
+in the last year, days from created_at to 
+f
+ irst review_dt; return P50 and P90 by 
+city. 
+20 Click quality. For sessions with ≥1 click, 
+compute probability a clicked listing gets 
+booked within 48h; return by device. 
+21 Room-type mix. For each city, share of 
+active supply by room_type and Herfindahl 
+index (HHI) of room types. 
+calendar, bookings 
+bookings, ad_clicks, 
+marketing_campaigns 
+ad_impressions 
+bookings, listings 
+listings, countries 
+listings, reviews 
+search_sessions, 
+search_results 
+listings 
+Interval overlap, 
+data QA 
+Window over 
+time, last-touch 
+join 
+Distinct count, 
+ratio 
+Self-join or set 
+ops, 
+combinatorics 
+Rolling sums, 
+joins, pct 
+change 
+First-value via 
+min, percentiles 
+Filters, time 
+window, 
+conditional agg 
+Pivot via 
+conditional 
+sums, HHI calc 
+22 Price vs rating elasticity proxy. Correlate 
+listing’s median price (last 90d) with 
+average rating (last 365d) by city; return 
+Pearson r. 
+23 Host multi-listing behavior. Flag hosts 
+with ≥N active listings and compute their 
+share of city GMV last quarter. 
+24 Cancellation window abuse. Identify 
+guests with ≥2 cancellations within 24h of 
+booked_dt across different listings in past 
+180d. 
+25 Underpriced blackout. Find top 50 listings 
+where calendar shows 
+available_flag=1 but 
+nightly_price_usd is below the city’s 
+10th percentile in the next 14 days. 
+26 Session to search gap. Compute median 
+minutes from first 
+product_events.event_name='sessio
+ n_start' to first search per session. 
+27 Geo expansion. For new countries launched 
+in last 18 months (first listing), report 
+month-over-month bookings for first 6 
+months post-launch. 
+28 Review bias. Compare average rating for 
+stays ≤2 nights vs ≥7 nights, controlling for 
+city (return city-level deltas). 
+29 Seasonality index. For each city, compute 
+monthly seasonality index = month_GMV / 
+avg_month_GMV using 24 months of 
+history. 
+calendar, reviews, 
+listings 
+listings, bookings 
+bookings 
+calendar, listings 
+product_events 
+listings, bookings 
+bookings, reviews, 
+listings 
+bookings, listings 
+Aggregation to 
+features, corr 
+formula 
+Threshold 
+f
+ iltering, share 
+of total 
+Self-join on 
+guest, time diff 
+Percentiles by 
+group, date 
+f
+ ilter 
+Window by 
+session, time 
+diff 
+Launch 
+detection, 
+aligned 
+windows 
+Join, group, diff 
+calculations 
+Window avg 
+over partition 
+30 Booking lead time distribution. For last 
+quarter, output deciles of lead time 
+(booked_dt→checkin_dt) by room_type. 
+bookings, listings 
+Date diff, 
+percentiles by 
+group 
+Notes on expected approaches (best practices) 
+● Prefer date_trunc('month', …) or DATE_TRUNC('month', …) depending on 
+Presto/Hive. 
+● Use CTEs for readability, especially when deriving features (e.g., lead time, cohorts). 
+● For percentiles in Presto: approx_percentile(x, 0.5); in Hive: 
+percentile_approx. 
+● For rolling windows, use window frames: 
+avg(x) over (partition by k order by d rows between 2 preceding 
+and current row). 
+● For interval overlaps: GREATEST(start1, start2) < LEAST(end1, end2). 
+● For attribution: row_number() over (partition by booking_id order by 
+click_dt desc) 
+after joining clicks ≤ booked_dt and within window. 
+● For distinct counts at scale, approximate functions (HLL/approx_distinct) may be 
+acceptable if the engine supports them. 
+If you’d like, I can provide answer keys for any subset (e.g., 1–10) tailored to Presto/Hive syntax 
+and optimized for readability and performance. 
+Below is a compact, interview-style set of 30 Airbnb-context SQL questions spanning the 
+usual segments (joins, aggregation, filtering, subqueries, self-joins, windowing, date/time, 
+arrays/maps, set ops, funnels/retention, and experiment/marketing measurement). They are 
+framed for Presto/Hive-style SQL (Airbnb commonly uses SQL engines in that family) and 
+align with the role’s emphasis on experimentation/causal methods, product & growth metrics, 
+and building robust reporting/metrics. (Careers at Airbnb) 
+Starter schema (assumed) 
+Table 
+users 
+listings 
+bookings 
+reviews 
+calendar 
+search_events 
+sessions 
+marketing_impre
+ ssions 
+marketing_click
+ s 
+payments 
+refunds 
+experiments 
+Key columns (subset) 
+user_id (PK), created_at (ts), country, device_type 
+listing_id (PK), host_id, city, room_type, created_at 
+booking_id (PK), user_id, listing_id, checkin_date (date), 
+checkout_date (date), status (‘confirmed’, ‘cancelled’), 
+booked_at (ts), total_price (decimal), coupon_code 
+review_id, booking_id, user_id, listing_id, rating (int), 
+reviewed_at (ts) 
+listing_id, dt (date), is_available (bool), price (decimal) 
+event_ts (ts), user_id, query, city, result_count, 
+device_type 
+session_id, user_id, session_start (ts), session_end (ts), 
+source (utm_source), medium (utm_medium) 
+imp_id, user_id, campaign_id, imp_ts (ts), channel, cost 
+click_id, user_id, campaign_id, click_ts (ts), channel 
+payment_id, booking_id, paid_at (ts), amount, method 
+refund_id, booking_id, refunded_at (ts), amount 
+exp_name, user_id, variant (‘control’, ‘treatment’), 
+assigned_ts 
+hosts 
+messages 
+host_id (PK), joined_at (ts), country 
+message_id, booking_id, from_user_id, to_user_id, 
+sent_at (ts) 
+Use these columns as needed; not every column will be used per question. 
+30 interview-style SQL questions (Airbnb 
+themed) 
+# 
+Segment 
+1 Filtering + 
+Agg 
+2 Joins 
+Scenario 
+New guest 
+conversion 
+Prompt (what to return) 
+Among users created in last 90 
+days, % with ≥1 confirmed 
+booking within 30 days of 
+signup. 
+Search→booking By device, weekly 
+search→booking conversion: 
+users with a search this week 
+who booked within 7 days after 
+f
+ irst search. 
+3 Window fn Repeat bookers Top 10 cities by share of repeat 
+guests in last 12 months (repeat 
+= ≥2 confirmed bookings). 
+4 Self-join 
+Re-engagement 
+Users inactive ≥180 days who 
+returned to book; compute days 
+since prior booking at return 
+time. 
+Key concepts tested 
+Date filters, 
+conditional agg 
+Join on user & time 
+window 
+Grouping, window 
+percent 
+Self-join by user, 
+LAG 
+5 Subquery 
+Listing quality 
+6 Window fn Host activation 
+funnel 
+7 Anti-join 
+For listings with ≥10 reviews, 
+output avg rating and count; 
+keep top decile by avg rating per 
+city. 
+For new hosts (joined last 
+quarter), compute time from join 
+to first booking; report P50/P90 
+by host country. 
+Unreviewed stays Bookings completed 14+ days 
+ago with no review yet; list 
+booking_id, user_id, listing_id. 
+8 String/date 
+Peak pricing 
+For calendar, find 
+month/day-of-week combos 
+with highest median price per 
+city (last year). 
+9 Joins + CASE Cancellation rate By room_type and month, 
+cancellation rate = cancelled / 
+(cancelled+confirmed). 
+10 Window fn Greatest-N per 
+group 
+11 CTE + 
+Window 
+Sessionization 
+sanity 
+12 Arrays/Maps Query analysis 
+For each city, top 3 listings by 
+nights booked in the last 90 
+days. Break ties by total 
+revenue. 
+Compute avg 
+sessions/user/week and median 
+session duration by source for 
+past 8 weeks. 
+From search_events.query, 
+count searches containing any of 
+['pool','pet','wifi'] by device, 
+week. 
+Aggregation, 
+percentile filter 
+DATEDIFF, 
+percentiles 
+LEFT/ANTI join 
+DATE_TRUNC, 
+extract DOW 
+Conditional sums 
+ROW_NUMBER, 
+ORDER BY multi 
+TIMESTAMP math, 
+pctls 
+Simple 
+substring/regex 
+13 Dedup 
+14 Funnel 
+(semi-joins) 
+15 Retention 
+16 Marketing 
+join 
+17 MMM prep 
+(SQL) 
+18 CUPED 
+inputs 
+19 Guardrails 
+20 Percentiles 
+Identity stitching 
+Booking funnel 
+Clicks table may have dup 
+events. Dedup by (user_id, 
+campaign_id, minute(click_ts)). 
+Count unique clicks/day. 
+Build 3-step funnel: search → 
+listing view (assume sessions 
+page events) → booking; output 
+step rates by city. 
+8-week retention Weekly cohort retention for 
+guests by signup week; return 
+CohortWeek, WeekK, 
+RetainedUsers. 
+CPA by channel 
+Feature table 
+Join marketing_clicks to first 
+booking within 7 days post-click; 
+compute CPA and CVR by 
+channel. 
+Create weekly panel with 
+bookings, revenue, and ad spend 
+by channel 
+(sum(marketing_impression
+ s.cost)). 
+Pre-period metric For an experiment on new 
+search UI, compute each user’s 
+pre-period mean daily searches 
+(baseline covariate). 
+Abuse spike 
+Price dispersion 
+In experiment, report 
+week-over-week % change in 
+cancellation rate and refund rate 
+by variant. 
+For each city, P10, P50, P90 of 
+nightly price (from calendar) 
+restricted to available nights. 
+QUALIFY 
+ROW_NUMBER 
+Semi-join, distinct 
+users 
+Cohort labeling, 
+joins 
+Attribution, first 
+touch 
+Time bucketing, 
+panel 
+Pre window agg 
+Joins, ratios, WoW 
+approx_percentile 
+21 Multi-table 
+join 
+22 Set ops 
+23 Rollups 
+24 QA outliers 
+Host response 
+Supply vs 
+demand 
+KPI cube 
+Price sanity 
+25 Window fn RFM proxy 
+26 Time zones 
+Booking hour 
+27 Joins + CASE Net revenue 
+For completed bookings, 
+compute median host response 
+time (first message after guest 
+message). 
+Cities with demand growth 
+(bookings +20% YoY) but supply 
+growth (active listings) <5% 
+YoY. 
+Produce a cube of 
+bookings/revenue by (city, 
+room_type, device_type), 
+including subtotals and grand 
+total. 
+Identify listings whose median 
+price is >5× city median in a 
+month (potential data issues). 
+For each user, compute recency 
+(days since last booking), 
+frequency (bookings last 365d), 
+and monetary (sum revenue). 
+Distribution of booked_at by 
+local listing time zone hour; 
+assume listing city→TZ mapping 
+table city_tz. 
+Net revenue = payments − 
+refunds; report by month and 
+room_type for past 12 months. 
+Self join by time, 
+MIN 
+Intersections, YoY 
+GROUPING 
+SETS/ROLLUP 
+Median by group, 
+compare 
+MAX over user, sums 
+TZ conversion 
+Joins, arithmetic 
+28 Self-join 
+Cannibalization 
+29 Window fn SLA breaches 
+30 UDF/Regex 
+Coupon lift 
+For users in experiment with 
+new pricing, compute if first 
+booking post-assignment was 
+cheaper than their prior booking 
+(same city). 
+For support messages during a 
+booking, % of first host replies > 
+12 hours; breakdown by city. 
+For bookings with 
+coupon_code, estimate 
+incremental lift proxy: avg 
+revenue with coupon vs similar 
+listings without (same city, 
+room_type, month). 
+Pairwise compare 
+FIRST_VALUE/MIN, 
+CASE 
+Matched grouping 
+Notes for practicing these: 
+● Favor CTEs to keep logic modular; many prompts are naturally multi-step (e.g., build 
+user cohorts, then join to outcomes). 
+● Prefer window functions for “first/last/next” (e.g., ROW_NUMBER for “first booking 
+after X”, LAG/LEAD for diffs). 
+● For Presto/Hive percentiles use approx_percentile(x, 0.5) or 
+percentile_approx depending on engine. 
+● When attribution windows are involved (e.g., Q16), explicitly define lookback/forward 
+windows (7 days here) and choose first or last touch consistently. 
+● When you need top-N per group (Q10), use ROW_NUMBER() OVER (PARTITION BY 
+group ORDER BY metric DESC) + WHERE rn <= N. 
+● Guardrail metrics (Q19) should be pre-specified and computed alongside primary 
+outcomes to avoid p-hacking. 
+If you want, I can provide worked solutions next (Presto/Hive-style), one block per question 
+with readable line widths and short comments, or prioritize the areas you want to drill (e.g., 
+window functions + A/B). 

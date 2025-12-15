@@ -1,0 +1,273 @@
+#### **Primary** **Dimension**: Hierarchical Depth
+**Domain**: Broad field areas (Marketing & Growth Analytics)
+**Segment; Section; Focused Topic; Deep Topic**: Focused specializations (Marketing Analytics Reporting)
+**Framework**: Methodological approaches (Data Reporting Frameworks)
+**Application**: Specific use cases (User Acquisition Analytics & Reporting)
+**Implementation**: Concrete metrics/processes (Total Unique Users - Google Search)
+
+#### **Secondary** **Dimension**: Content Type
+**Conceptual** (C): Theories, principles, strategic thinking
+**Methodological** (M): Frameworks, approaches, best practices
+**Technical** (T): Tools, platforms, systems
+**Operational** (O): Processes, workflows, procedures
+**Tactical** (Ta): Specific metrics, KPIs, measurements
+
+#### **Tertiary** **Dimension**: Professional Application Context
+**Strategic** (S): Executive/leadership decision-making
+**Analytical** (A): Investigation, insight generation
+**Operational** (O): Day-to-day execution
+**Reporting** (R): Communication, dashboards, stakeholder updates
+
+### Foundational Theory
+- Basic principles and concepts
+- Historical context and evolution
+- Fundamental laws and rules
+- Core terminology and definition
+### Practical Applications
+- Real-world use cases
+- Case studies
+- Industry applications
+- Problem-solving scenarios
+### Technical Skills
+- Required tools and technologies
+- Methodologies and procedures
+- Standard practices
+- Technical documentation
+### Integration & Systems Thinking
+- Interdisciplinary connections
+- Systems interaction
+- Cross-domain applications
+- Integration principles
+### Professional Context
+- Industry standards
+- Best practices
+- Ethical considerations
+- Professional requirements
+### Analysis & Critical Thinking
+- Analytical methods
+- Decision-making frameworks
+- Problem-solving approaches
+- Critical evaluation techniques
+
+### Domain Level (Engineering):
+
+- Foundational Theory: Basic engineering principles, mathematics, physics
+- Practical Applications: Major engineering achievements, infrastructure projects
+- Technical Skills: Basic CAD, measurement, documentation
+- Integration: How engineering connects with science, design, business
+- Professional Context: Engineering ethics, licensing, regulations
+- Analysis: Engineering problem-solving methodology
+
+### Branch Level (Machine Learning):
+
+- Foundational Theory: Algorithm theory, statistical learning principles
+- Practical Applications: Industry-specific ML applications
+- Technical Skills: Python, R, ML frameworks
+- Integration: ML integration with data systems, business processes
+- Professional Context: ML ethics, model governance
+- Analysis: Model evaluation, performance metrics
+
+### Focus Area Level (Random Forest Feature Selection):
+
+- **Foundational** **Theory**: Feature importance metrics, selection algorithms
+- **Practical** **Applications**: Specific use cases for feature selection
+- **Technical** **Skills**: Specific libraries and tools (scikit-learn, etc.)
+- **Integration**: How feature selection affects overall ML pipeline
+- **Professional** **Context**: Best practices for feature engineering
+
+## Job Specific
+- Responsibilities
+- Requirements
+
+- Insights & Analysis
+- Market Insights
+- Insights & Analysis, Competitor Analysis
+- Insights & Analysis, Trend Reports
+- Insights & Analysis, Experiment Findings
+- Insights & Analysis, Anecdotal Learnings
+
+- Best Practices & Frameworks
+- Technical Best Practices
+- Process Frameworks
+- Methodologies
+- Checklists
+
+- Reference Materials, Glossary & Definitions
+- Reference Materials, API Documentation
+- Reference Materials, Tool References
+- Reference Materials, Architecture Diagrams
+
+- Templates & Checklists, Email Templates
+- Templates & Checklists, Meeting Agendas
+- Templates & Checklists, Report Templates
+- Templates & Checklists, Action Checklists
+
+- Case Studies & Examples, Case Studies
+- Case Studies & Examples, Use Cases
+- Case Studies & Examples, Success Stories
+- Case Studies & Examples, Failure Postmortems
+
+- Tools & Resources, Software Tools
+- Tools & Resources, Libraries & Frameworks
+- Tools & Resources, Online Platforms
+- Tools & Resources, Data Sources
+
+- Metrics & KPIs, KPI Definitions
+- Metrics & KPIs, Measurement Techniques
+- Metrics & KPIs, Dashboards & Reports
+
+- Processes & Workflows, Standard Operating Procedures
+- Processes & Workflows, Workflow Diagrams
+- Processes & Workflows, Process Maps
+
+- Planning & Roadmaps, Project Plans
+- Planning & Roadmaps, Product Roadmaps
+- Planning & Roadmaps, Timeline Milestones
+
+- Learning & Development,Skill Assessments
+- Learning & Development,Learning Paths
+- Learning & Development,Course Lists
+- Learning & Development,Certifications
+
+- Interview Prep,Practice Questions
+- Interview Prep,Example Answers
+- Interview Prep,STAR Stories
+
+- Resume & Application,Resume Drafts
+- Resume & Application,Cover Letters
+- Resume & Application,Portfolio Items
+
+- Networking,Contacts & Connections
+- Networking,Event Notes
+- Networking,Follow-up Actions
+
+- Personal Development,Goals & Reflections
+- Personal Development,Book Summaries
+- Personal Development,Podcast & Video Notes
+
+- Conferences & Workshops,Session Notes
+- Conferences & Workshops,Speaker Summaries
+- Conferences & Workshops,Takeaways
+
+- Articles & Blogs,Blog Post Summaries
+- Articles & Blogs,Link Annotations
+
+- Strategy & Planning,Strategic Frameworks
+- Strategy & Planning,Business Strategy
+- Strategy & Planning,Marketing Strategy
+- Strategy & Planning,Content Strategy
+- Strategy & Planning,Campaign Strategy
+- Strategy & Planning,Project Planning
+- Strategy & Planning,Roadmaps & Milestones
+- Strategy & Planning,OKRs & Goals
+- Strategy & Planning,Planning Templates
+- Strategy & Planning,Tactical Plans
+- Strategy & Planning,Execution Tactics
+
+---
+
+
+## Knowledge Type
+- Theory (TH): Conceptual foundations, principles
+- Methodology (MT): Systematic approaches, research methods
+- Framework (FR): Structured thinking models, templates
+- Process (PR): Step-by-step procedures, workflows
+- Technique (TC): Specific methods, tactics
+- Tool (TL): Software, platforms, instruments
+- Metric (ME): Measurements, KPIs, formulas
+- Model (MO): Mathematical/statistical constructs
+
+### Application Nature
+- Application (AP): Practical implementation
+- Case Study (CS): Real-world examples
+- Best Practice (BP): Proven approaches
+- Template (TE): Reusable formats
+- Checklist (CL): Verification procedures
+- Standard (ST): Industry norms, protocols
+
+### Skill Classification
+- Hard Skill (HS): Technical, measurable abilities
+- Soft Skill (SS): Interpersonal, communication
+- Cognitive Skill (CG): Critical thinking, problem-solving
+- Domain Knowledge (DK): Subject matter expertise
+
+## Problem-Solving Focus
+- Diagnostic (DG): Problem identification
+- Optimization (OP): Improvement techniques
+- Troubleshooting (TS): Error resolution
+- Innovation (IN): Creative solutions
+- Prevention (PV): Risk mitigation
+
+### Learning & Development
+- Concept (CN): Fundamental ideas
+- Principle (PR): Guiding rules
+- Definition (DF): Terminology, vocabulary
+- Example (EX): Illustrative instances
+- Exercise (EXR): Practice activities
+
+### Organizational Structure
+- Section (SC): Content groupings
+- Module (MD): Learning units
+- Chapter (CH): Major divisions
+- Topic (TP): Focused subjects
+- Reference (RF): Quick lookup material
+
+### Thinking Approaches
+- Approach (AC): General way of tackling problems
+- Strategy (ST): High-level planning
+- Tactic (TA): Specific execution methods
+- Heuristic (HE): Rule-of-thumb guidelines
+- Algorithm (AL): Defined computational steps
+
+---
+Knowledge Type
+- Theory (TH): Conceptual foundations, principles
+- Methodology (MT): Systematic approaches, research methods
+- Framework (FR): Structured thinking models, templates
+- Process (PR): Step-by-step procedures, workflows
+- Technique (TC): Specific methods, tactics
+- Tool (TL): Software, platforms, instruments
+- Metric (ME): Measurements, KPIs, formulas
+- Model (MO): Mathematical/statistical constructs
+
+### Application Nature
+- Application (AP): Practical implementation
+- Case Study (CS): Real-world examples
+- Best Practice (BP): Proven approaches
+- Template (TE): Reusable formats
+- Checklist (CL): Verification procedures
+- Standard (ST): Industry norms, protocols
+
+### Skill Classification
+- Hard Skill (HS): Technical, measurable abilities
+- Soft Skill (SS): Interpersonal, communication
+- Cognitive Skill (CG): Critical thinking, problem-solving
+- Domain Knowledge (DK): Subject matter expertise
+
+## Problem-Solving Focus
+- Diagnostic (DG): Problem identification
+- Optimization (OP): Improvement techniques
+- Troubleshooting (TS): Error resolution
+- Innovation (IN): Creative solutions
+- Prevention (PV): Risk mitigation
+
+### Learning & Development
+- Concept (CN): Fundamental ideas
+- Principle (PR): Guiding rules
+- Definition (DF): Terminology, vocabulary
+- Example (EX): Illustrative instances
+- Exercise (EXR): Practice activities
+
+### Organizational Structure
+- Section (SC): Content groupings
+- Module (MD): Learning units
+- Chapter (CH): Major divisions
+- Topic (TP): Focused subjects
+- Reference (RF): Quick lookup material
+
+### Thinking Approaches
+- Approach (AC): General way of tackling problems
+- Strategy (ST): High-level planning
+- Tactic (TA): Specific execution methods
+- Heuristic (HE): Rule-of-thumb guidelines
+- Algorithm (AL): Defined computational steps

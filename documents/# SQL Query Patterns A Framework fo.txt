@@ -1,0 +1,271 @@
+# SQL Query Patterns: A Framework for Data Extraction
+
+I'll walk you through the major SQL query patterns and when to use each one based on the type of question you're trying to answer.
+
+## 1. Basic SELECT Queries
+
+**When to use:** When you need simple filtering and sorting of data from a single table.
+
+```sql
+SELECT first_name, last_name, hire_date
+FROM employees
+WHERE department_id = 10
+ORDER BY hire_date DESC;
+```
+
+This is your foundation - use when questions are focused on a single entity ("Show me all sales from last month").
+
+## 2. JOIN Operations
+
+**When to use:** When your question involves relationships between multiple entities.
+
+```sql
+SELECT c.customer_name, o.order_date, p.product_name, oi.quantity
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+JOIN order_items oi ON o.order_id = oi.order_id
+JOIN products p ON oi.product_id = p.product_id
+WHERE o.order_date > '2023-01-01';
+```
+
+Use when questions involve relationships: "Which customers purchased which products?" The type of join depends on the inclusivity needed:
+- INNER JOIN: Only matching records
+- LEFT/RIGHT JOIN: All records from one table, matching from another
+- FULL JOIN: All records from both tables
+
+## 3. Aggregation Queries
+
+**When to use:** When you need to summarize data or answer "how many," "what's the average," etc.
+
+```sql
+SELECT 
+    department_id,
+    COUNT(*) AS employee_count,
+    AVG(salary) AS avg_salary,
+    MIN(hire_date) AS earliest_hire
+FROM employees
+GROUP BY department_id
+HAVING COUNT(*) > 5
+ORDER BY avg_salary DESC;
+```
+
+Useful for questions about totals, averages, minimums, maximums, or counts within groups.
+
+## 4. Subqueries
+
+**When to use:** When one query depends on the results of another query.
+
+```sql
+SELECT employee_id, first_name, last_name
+FROM employees
+WHERE salary > (
+    SELECT AVG(salary) 
+    FROM employees
+);
+```
+
+Good for questions like "Find employees who earn above the average salary" or "Which products have sold more than the company average?"
+
+## 5. Common Table Expressions (CTEs)
+
+**When to use:** When you need to break a complex query into logical steps or when a subquery would be used multiple times.
+
+```sql
+WITH monthly_sales AS (
+    SELECT 
+        DATE_TRUNC('month', order_date) AS month,
+        SUM(amount) AS total_sales
+    FROM orders
+    GROUP BY DATE_TRUNC('month', order_date)
+),
+avg_monthly AS (
+    SELECT AVG(total_sales) AS avg_monthly_sales
+    FROM monthly_sales
+)
+SELECT 
+    month,
+    total_sales,
+    total_sales - avg_monthly_sales AS sales_difference
+FROM monthly_sales, avg_monthly
+ORDER BY month;
+```
+
+Excellent for multi-step analysis: "Compare each month's sales to the overall monthly average." CTEs make queries more readable than nested subqueries.
+
+## 6. Window Functions
+
+**When to use:** When you need to perform calculations across rows while still maintaining row identity.
+
+```sql
+SELECT 
+    employee_id,
+    department_id,
+    salary,
+    AVG(salary) OVER(PARTITION BY department_id) AS dept_avg,
+    salary - AVG(salary) OVER(PARTITION BY department_id) AS diff_from_avg,
+    RANK() OVER(PARTITION BY department_id ORDER BY salary DESC) AS salary_rank
+FROM employees;
+```
+
+Perfect for questions involving:
+- Rankings: "What's each product's sales rank within its category?"
+- Running totals: "What are the cumulative sales by day?"
+- Comparisons: "How does each employee's salary compare to their department average?"
+
+## 7. Set Operations
+
+**When to use:** When you need to combine or compare results from multiple queries.
+
+```sql
+-- Customers who purchased Product A but not Product B
+SELECT customer_id
+FROM orders
+JOIN order_items ON orders.order_id = order_items.order_id
+WHERE product_id = 'A'
+EXCEPT
+SELECT customer_id
+FROM orders
+JOIN order_items ON orders.order_id = order_items.order_id
+WHERE product_id = 'B';
+```
+
+Useful for:
+- UNION: Combining results (with UNION ALL for duplicates)
+- INTERSECT: Finding common results
+- EXCEPT: Finding differences between results
+
+## 8. Conditional Logic
+
+**When to use:** When you need to apply different logic based on conditions.
+
+```sql
+SELECT 
+    order_id,
+    amount,
+    CASE 
+        WHEN amount < 100 THEN 'Small'
+        WHEN amount BETWEEN 100 AND 1000 THEN 'Medium'
+        ELSE 'Large'
+    END AS order_size
+FROM orders;
+```
+
+Great for:
+- Categorization: "Label orders as small, medium, or large"
+- Conditional aggregation: "Count orders by size category"
+
+## 9. Recursive CTEs
+
+**When to use:** When dealing with hierarchical data or graph relationships.
+
+```sql
+WITH RECURSIVE org_hierarchy AS (
+    -- Base case: CEO (no manager)
+    SELECT employee_id, name, manager_id, 1 AS level
+    FROM employees
+    WHERE manager_id IS NULL
+    
+    UNION ALL
+    
+    -- Recursive case: get all direct reports
+    SELECT e.employee_id, e.name, e.manager_id, h.level + 1
+    FROM employees e
+    JOIN org_hierarchy h ON e.manager_id = h.employee_id
+)
+SELECT * FROM org_hierarchy ORDER BY level, employee_id;
+```
+
+Essential for:
+- Organizational hierarchies: "Show me all reports up to 3 levels deep"
+- Bill of materials: "List all components needed for a product"
+- Path finding: "Find all possible routes between cities"
+
+## Decision Framework
+
+When approaching a data question, consider this sequence:
+
+1. **Identify the entities involved**
+   - Single entity → Basic SELECT
+   - Multiple related entities → JOINs
+
+2. **Determine the calculation type**
+   - Summarization across groups → GROUP BY aggregation
+   - Row-by-row calculations with access to other rows → Window functions
+   - Conditional results → CASE statements
+
+3. **Consider the query complexity**
+   - Query needs multiple logical steps → CTEs
+   - Query requires a result from another query → Subquery
+   - Hierarchical relationships → Recursive CTE
+   - Set-based operations → UNION/INTERSECT/EXCEPT
+
+4. **Optimize for readability**
+   - Repeated subqueries → CTEs
+   - Deeply nested logic → Break into multiple CTEs
+
+## Practical Examples by Question Type
+
+### Question: "What is the sales trend by month?"
+```sql
+SELECT 
+    DATE_TRUNC('month', order_date) AS month,
+    SUM(amount) AS monthly_sales
+FROM orders
+GROUP BY DATE_TRUNC('month', order_date)
+ORDER BY month;
+```
+
+### Question: "Which customers increased their spending each month?"
+```sql
+WITH monthly_spend AS (
+    SELECT 
+        customer_id,
+        DATE_TRUNC('month', order_date) AS month,
+        SUM(amount) AS total_spend
+    FROM orders
+    GROUP BY customer_id, DATE_TRUNC('month', order_date)
+)
+SELECT 
+    customer_id,
+    month,
+    total_spend,
+    LAG(total_spend) OVER(PARTITION BY customer_id ORDER BY month) AS prev_month_spend,
+    CASE 
+        WHEN total_spend > LAG(total_spend) OVER(PARTITION BY customer_id ORDER BY month) THEN 'Increased'
+        ELSE 'Decreased or Same'
+    END AS spend_trend
+FROM monthly_spend
+ORDER BY customer_id, month;
+```
+
+### Question: "What's the market share of each product category by quarter?"
+```sql
+WITH quarterly_sales AS (
+    SELECT 
+        DATE_TRUNC('quarter', o.order_date) AS quarter,
+        p.category,
+        SUM(oi.quantity * oi.unit_price) AS category_sales
+    FROM orders o
+    JOIN order_items oi ON o.order_id = oi.order_id
+    JOIN products p ON oi.product_id = p.product_id
+    GROUP BY DATE_TRUNC('quarter', o.order_date), p.category
+),
+total_quarterly AS (
+    SELECT 
+        quarter,
+        SUM(category_sales) AS total_sales
+    FROM quarterly_sales
+    GROUP BY quarter
+)
+SELECT 
+    qs.quarter,
+    qs.category,
+    qs.category_sales,
+    tq.total_sales,
+    ROUND((qs.category_sales / tq.total_sales) * 100, 2) AS market_share
+FROM quarterly_sales qs
+JOIN total_quarterly tq ON qs.quarter = tq.quarter
+ORDER BY qs.quarter, market_share DESC;
+```
+
+By understanding these patterns and when to apply them, you'll be able to tackle most data extraction challenges efficiently and effectively.

@@ -1,0 +1,83 @@
+We can't lie - Data Science Interviews are TOUGH. Especially tricky - probability and statistics questions asked by top tech companies & hedge funds during the Data Science, Data Analyst, and the Quant Trading Interview process.
+
+That's why we put together 40 real probability & statistics data science interview questions asked by companies like Facebook, Amazon, Two Sigma, & Bloomberg. We have solutions to all 40 problems, and to 161 other data interview problems on SQL, Machine Learning, and Product/Business Sense  in our book, Ace The Data Science Interview. You can also practice some of these same exact questions on DataLemur's statistics interview questions section.
+
+DataLemur has hundreds of real Statistics and Probability Interview questions, sourced from real Data Science and Data Analyst interviews at companies like Facebook and Google.  
+So, without further ado, here are:
+the probability & stat concepts to review before your DS interview
+20 probability questions asked by top tech-companies & Wall Street
+20 statistics questions asked by FANG & Hedge Funds
+solutions to 5 of the probability questions
+solutions to 5 of the statistics questions
+links to more data science interview resources
+Probability & Statistics Concepts To Review Before Your Data Science Interview
+Because probability & statistics is foundational to the field of Data Science, before the interview you should review:
+
+Probability Basics & Random Variables
+Probability Distributions
+Hypothesis Testing
+Regression Analysis
+In case these statistical concepts sound alien to you, check out some of our favorite Statistics Books for Data Analysts to get a gentle refresher.
+
+Probability Basics and Random Variables
+The beginnings of probability start with thinking about sample spaces, basic counting and combinatorial principles. Although it is not necessary to know all of the ins-and-outs of combinatorics, it is helpful to understand the basics for simplifying problems. One classic example here is the “stars and bars” counting method.
+
+The other core topic to study is random variables. Knowing concepts related to expectation, variance, covariance, along with the basic probability distributions is crucial.
+
+Probability Distributions
+For modeling random variables, knowing the basics of various probability distributions is essential. Understanding both discrete and continuous examples, combined with expectations and variances, is crucial. The most common distributions discussed in interviews are the Uniform and Normal but there are plenty of other well-known distributions for particular use cases (Poisson, Binomial, Geometric).
+
+Most of the time knowing the basics and their applications should suffice. For example, which distribution would flipping a coin be under? What about waiting for an event? It never hurts being able to do the derivations for expectation, variance, or other higher moments.
+
+Hypothesis Testing
+Hypothesis testing is the backbone behind statistical inference and can be broken down into a couple of topics. The first is the Central Limit Theorem, which plays an important role in studying large samples of data. Other core elements of hypothesis testing: sampling distributions, p-values, confidence intervals, type I and II errors. Lastly, it is worth looking at various tests involving proportions, and other hypothesis tests.
+
+Most of these concepts play a crucial role in A/B testing, which is a commonly asked topic during interviews at consumer-tech companies like Facebook, Amazon, and Uber. It's useful to not only understand the technical details but also conceptually how A/B testing operates, what the assumptions are, possible pitfalls, and applications to real-life products.
+
+Modeling
+Modeling relies on a strong understanding of probability distributions and hypothesis testing. Since it is a broad term, we will refer to modeling as the areas which have a strong statistical intersection with Machine Learning. This includes topics such as: linear regression, maximum likelihood estimation, & bayesian statistics. For interviews focused on modeling and machine learning, knowing these topics is essential.
+
+‍
+
+20 Probability Interview Problems Asked By Top-Tech Companies & Wall Street
+[Facebook - Easy] [Coin Fairness Test on DataLemur] There is a fair coin (one side heads, one side tails) and an unfair coin (both sides tails). You pick one at random, flip it 5 times, and observe that it comes up as tails all five times. What is the chance that you are flipping the unfair coin?
+[Lyft - Easy] You and your friend are playing a game. The two of you will continue to toss a coin until the sequence HH or TH shows up. If HH shows up first, you win. If TH shows up first, your friend wins. What is the probability of you winning?
+[Google - Easy] What is the probability that a seven-game series goes to 7 games?
+[Facebook - Easy] Facebook has a content team that labels pieces of content on the platform as spam or not spam. 90% of them are diligent raters and will label 20% of the content as spam and 80% as non-spam. The remaining 10% are non-diligent raters and will label 0% of the content as spam and 100% as non-spam. Assume the pieces of content are labeled independently from one another, for every rater. Given that a rater has labeled 4 pieces of content as good, what is the probability that they are a diligent rater?
+[Bloomberg - Easy] Say you draw a circle and choose two chords at random. What is the probability that those chords will intersect?
+[Amazon - Easy] 1/1000 people have a particular disease, and there is a test that is 98% correct if you have the disease. If you don’t have the disease, there is a 1% error rate. If someone tests positive, what are the odds they have the disease?
+[Facebook - Easy] There are 50 cards of 5 different colors. Each color has cards numbered between 1 to 10. You pick 2 cards at random. What is the probability that they are not of same color and also not of same number?
+[Tesla - Easy] A fair six-sided die is rolled twice. What is the probability of getting 1 on the first roll and not getting 6 on the second roll?
+[Facebook - Easy] What is the expected number of rolls needed to see all 6 sides of a fair die?
+[Microsoft - Easy] Three friends in Seattle each told you it’s rainy, and each person has a 1/3 probability of lying. What is the probability that Seattle is rainy? Assume the probability of rain on any given day in Seattle is 0.25.
+[Uber - Easy] Say you roll three dice, one by one. What is the probability that you obtain 3 numbers in a strictly increasing order?
+[Bloomberg - Medium] Three ants are sitting at the corners of an equilateral triangle. Each ant randomly picks a direction and starts moving along the edge of the triangle. What is the probability that none of the ants collide? Now, what if it is k ants on all k corners of an equilateral polygon?
+[Two Sigma - Medium] What is the expected number of coin flips needed to get two consecutive heads?
+[Amazon - Medium] How many cards would you expect to draw from a standard deck before seeing the first ace?
+[Robinhood - Medium] A and B are playing a game where A has n+1 coins, B has n coins, and they each flip all of their coins. What is the probability that A will have more heads than B?
+[Airbnb - Medium] Say you are given an unfair coin, with an unknown bias towards heads or tails. How can you generate fair odds using this coin?
+[Quora - Medium] Say you have N i.i.d. draws of a normal distribution with parameters μ and σ. What is the probability that k of those draws are larger than some value Y?
+[Spotify - Hard] A fair die is rolled n times. What is the probability that the largest number rolled is r, for each r in 1..6?
+[Snapchat - Hard] There are two groups of n users, A and B, and each user in A is friends with those in B and vice versa. Each user in A will randomly choose a user in B as their best friend and each user in B will randomly choose a user in A as their best friend. If two people have chosen each other, they are mutual best friends. What is the probability that there will be no mutual best friendships?
+[Tesla - Hard] Suppose there is a new vehicle launch upcoming. Initial data suggests that any given day there is either a malfunction with some part of the vehicle or possibility of a crash, with probability p which then requires a replacement. Additionally, each vehicle that has been around for n days must be replaced. What is the long-term frequency of vehicle replacements?
+20 Statistics Problems Asked By FAANG & Hedge Funds
+[Facebook - Easy] How would you explain a confidence interval to a non-technical audience?
+[Two Sigma - Easy] Say you are running a multiple linear regression and believe there are several predictors that are correlated. How will the results of the regression be affected if they are indeed correlated? How would you deal with this problem?
+[Uber - Easy] Describe p-values in layman’s terms.
+[Facebook - Easy] How would you build and test a metric to compare two user’s ranked lists of movie/tv show preferences?
+[Microsoft - Easy] Explain the statistical background behind power.
+[Twitter - Easy] Describe A/B testing. What are some common pitfalls?
+[Google - Medium] How would you derive a confidence interval from a series of coin tosses?
+[Stripe - Medium] Say you model the lifetime for a set of customers using an exponential distribution with parameter λ, and you have the lifetime history (in months) of n customers. What is your best guess for λ?
+[Lyft - Medium] Derive the mean and variance of the uniform distribution U(a, b).
+[Google - Medium] Say we have X ~ Uniform(0, 1) and Y ~ Uniform(0, 1). What is the expected value of the minimum of X and Y?
+[Spotify - Medium] You sample from a uniform distribution [0, d] n times. What is your best estimate of d?
+[Quora - Medium] You are drawing from a normally distributed random variable X ~ N(0, 1) once a day. What is the approximate expected number of days until you get a value of more than 2?
+[Facebook - Medium] Derive the expectation for a geometric distributed random variable.
+[Google - Medium] A coin was flipped 1000 times, and 550 times it showed up heads. Do you think the coin is biased? Why or why not?
+[Robinhood - Medium] Say you have n integers 1…n and take a random permutation. For any integers i, j let a swap be defined as when the integer i is in the jth position, and vice versa. What is the expected value of the total number of swaps?
+[Uber - Hard] What is the difference between MLE and MAP? Describe it mathematically.
+[Google - Hard] Say you have two subsets of a dataset for which you know their means and standard deviations. How do you calculate the blended mean and standard deviation of the total dataset? Can you extend it to K subsets?
+[Lyft - Hard] How do you randomly sample a point uniformly from a circle with radius 1?
+[Two Sigma - Hard] Say you continually sample from some i.i.d. uniformly distributed (0, 1) random variables until the sum of the variables exceeds 1. How many times do you expect to sample?
+[Uber - Hard] Given a random Bernoulli trial generator, how do you return a value sampled from a normal distribution

@@ -1,0 +1,67 @@
+The role of a Meta Data Scientist Product analytics
+Data scientist, Product analytics is a vital role at Meta. It focuses heavily on business problems. As a DS, Product Analytics you will work to bring out the best product and market analysis to help Meta make data-driven business decisions. For related roles at similarly levelled companies, check out the Lyft Data Scientist and Microsoft Data Scientist guides.
+
+The Data Scientist Product Analytics role has work across the following four areas:
+
+Product Operations: Forecasting and setting product team goals. Designing and evaluating experiments. Monitoring key product metrics. Understanding the root causes of changes in metrics. Building and analyzing dashboards and reports. Building key data sets to empower operational and exploratory analysis. Evaluating and defining metrics
+Exploratory Analysis: Proposing what to build in the next roadmap. Understanding ecosystems, user behaviors, and long-term trends. Identifying new levers to help move key metrics. Building models of user behaviors for analysis or to power production systems
+Product Leadership: Influencing product teams through the presentation of data-based recommendations. Communicating state of business, experiment results, etc. to product teams. Spreading best practices to analytics and product teams
+Data Infrastructure: Working in Hadoop and Hive primarily, sometimes MySQL, Oracle, and Vertica. Automating analyses and authoring pipelines via SQL and Python-based ETL framework
+For additional insights, refer to the Roblox Data Scientist guide.
+
+Meta Data Scientist Product analytics Interview Guide
+The initial interview will be a 45-minute video conference with a Meta data scientist. 
+
+The interview will include questions and discussion around both product interpretation 
+
+and applied data, as well as a few minutes for your questions at the end.
+
+Skills the interviewer is looking for:
+
+Framing: Can you structure and see data to answer a fairly open-ended question?
+Operationalization: Can you translate the concepts generated into specific actions?
+Analytical Understanding: Can you translate between numbers and words (i.e. prove to your interviewer that product “X” should be built through data resulting in analytical proof)?
+Hypothesis Driven: Can you identify reasonable hypotheses and apply basic logic to support those hypotheses? Can you identify hypotheses, and do you understand how to look at data to confirm or refute a product insight?
+As mentioned earlier the initial screener has questions from 2 parts which are:
+
+Product Interpretation-
+This part of the interview is a product case study focused on interpreting user behavior using data and metrics. It focuses broadly on how you translate user behavior into product ideas and insights using data and metrics. A sample question might be positioned as: “How would you evaluate YouTube’s video recommendations?”The interviewer will be assessing your ability to:
+Understand hypotheses for launching new features: “How can I improve a product?”
+Consider and quantify tradeoffs of a feature in terms of metrics.
+Design experiments to test these hypotheses.
+ Interpret results of experiments.
+Communicate decision-making via metrics.
+Applied Data-
+The applied data part of your interview focuses more on the technical side of solving a problem 
+
+using data, for example: “How do you frame a problem, from selecting the most suitable data sets all the way down to execution?” Or, “How would you evaluate YouTube’s video recommendations?” 
+
+It would be worth your while to go through Meta's core products and also engage with each of their core products, trying to reverse-engineer in your mind how these products came to be, what metrics, and what testing and experimentation were involved.
+
+Interview tips:
+
+1.Think out loud. 
+
+Narrate your approach to the problem/question asked as you go through the problem so that the interviewer has insight into your thought process.
+
+2. Deconstruct problems. 
+
+Follow the modular thinking approach to big ambiguous problems, breaking them into smaller groups, and combining the groups for a solution.
+
+3. Hints.
+
+Resort to mid answer course correction if your interviewer prompts you that you’re heading in the wrong direction.
+
+4. Clarification.
+
+Ask clarifying questions during the interview.
+
+5. Prepare an answer to the cliched "Why Meta?" question.
+
+Meta interviewers like to see people who know about the company's environment, projects, challenges, etc.
+
+6. Questions. 
+
+If time permits you may pop in a few questions yourself, say about Meta and analytics.
+
+The Meta DS Product Analytics interview might be a challenging one to crack, but if your preparation is on the lines of the guide we have prepared, we believe you are definitely going to come off with flying colors.

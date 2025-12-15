@@ -1,0 +1,678 @@
+For Beginners: Building a Strong SQL Foundation
+If you’re new in SQL or transitioning into a data-focused role, most interviewers will likely assess your foundational understanding and practical exposure to relational databases.
+
+Background and Experience : Be ready to talk about how long you've worked with SQL, what database systems you've used (e.g. MySQL, PostgreSQL, SQL Server etc.) and your comfort level with writing and optimizing queries.
+Core Concepts : Expect questions around what SQL is, its real-world applications, common data types and operators and basic syntax.
+SQL Components : Interviewers may quiz you on different types of SQL statements (like SELECT, INSERT, UPDATE, DELETE) data definition commands (CREATE, ALTER, DROP) and basic types of queries.
+Top SQL Interview Questions and Answers for Beginner
+
+For Intermediate-Level Candidates
+Before moving on Intermediate level it's recommended to read our Top Beginner level SQL Interview questions and answers
+
+Once you’ve mastered the basics, the next step is showcasing your ability to solve real-world database problems efficiently and accurately. Intermediate-level interviews often focus on the following areas
+
+SQL Functions : You should be comfortable explaining and using aggregate functions (SUM, COUNT, AVG etc.), scalar functions (UPPER(), LOWER(), LEN(), GETDATE()) and even custom user-defined functions9When and how to create and use them).
+Database Design Principles : Expect questions that test your ability to optimize database structures, including: Normalization vs Denormalization along with purpose, advantages and trade-offs, Use cases for DELETE vs TRUNCATE vs DROP etc with when to use what and why?. Understanding of relational integrity and constraints
+Advanced SQL Commands : Interviewers often explore your understanding of relationships and constraints through topics like: Joins (INNER, LEFT, RIGHT, FULL), Keys (Primary vs Foreign), Indexing strategies and their effect on query performance, Relationships between tables etc
+Complex Query Writing : You might be asked to solve complex problems using subqueries (both nested and correlated), GROUP BY clauses or even retrieve the Nth highest record using various approaches like LIMIT, ROW_NUMBER() or common table expressions etc.
+✅ Tip : Practice writing queries by hands-on exercise and explaining them out loud. Many interviews will include whiteboard rounds or live coding tasks where you’ll need to walk through your logic step by step and optimize queries while discussing performance implications.
+
+General SQL Interview Questions for Intermediate to Advanced Users
+As you progress in your SQL journey from beginner to Intermediate level, interviewers expect more than just knowledge of basic syntax. They’re looking for hands-on experience, depth of understanding and the ability to tackle real-world database challenges. These general interview questions help assess your proficiency, problem-solving skills and ability to work with large-scale data systems.
+
+Below are some commonly asked general SQL interview questions for intermediate to advanced professionals, especially useful if you’re preparing for roles like Database Developer, Data Engineer, SQL Analyst or DBA.
+
+1. What are the largest databases or datasets you’ve worked with?
+Be ready to describe the scale of data (e.g., millions of records, terabytes of storage) and your role in managing it. Interviewers want to know how you handled challenges related to performance, indexing or storage optimization at scale.
+
+Example
+I worked with a PostgreSQL database storing over 20 million transaction records per year. I optimized partitioning and used materialized views for performance.
+
+2. How do you approach query optimization?
+Explain your methodology for diagnosing and fixing slow queries. Mention tools like EXPLAIN PLAN, ANALYZE or SQL Server Profiler and strategies like using indexes, avoiding unnecessary joins, filtering early or optimizing subqueries and CTEs.
+
+Example
+I use EXPLAIN to analyze the query plan, then check for missing indexes, full table scans and unnecessary sorts.
+
+In aspect of Query Optimization can read blog SQL Performance Tuning
+
+3. Can you describe your experience with indexing strategies?
+Discuss types of indexes you’ve used like clustered, non-clustered, composite, covering or filtered indexes and when each is appropriate. Mention index maintenance tasks like rebuilding/reorganizing fragmented indexes.
+
+Example
+For read-heavy reporting queries, I implemented covering indexes on the sales table, reducing query time by 60%.
+
+4. How do you ensure data integrity in a multi-user environment?
+Talk about transaction isolation levels, locking mechanisms, constraints and handling concurrent updates. Be ready to discuss deadlocks, race conditions and consistency strategies like ACID compliance.
+
+Example
+To prevent dirty reads in critical financial systems, I use SERIALIZABLE isolation and optimistic concurrency controls
+
+5. Have you worked on database normalization and denormalization?
+Describe situations where you normalized data to eliminate redundancy or denormalized to improve performance. Include the impact on storage, query speed and complexity.
+
+Example
+For OLTP systems, I use 3NF. But for reporting dashboards, I denormalize heavily for performance.
+
+6. How do you handle schema changes in production databases?
+Explain your process for applying schema migrations with zero downtime, including version control, staging environments, rollback strategies and using tools like Liquibase, Flyway or custom scripts.
+
+Example
+I use Flyway to track schema versions, apply changes incrementally and test extensively in staging before production rollout.
+
+7. Describe your experience with views, materialized views or CTEs.
+Talk about your use cases for each like views for abstraction, CTEs for readability or recursion and materialized views for performance improvements.
+
+Example
+I used a materialized view to pre-aggregate daily user metrics, improving dashboard load times from 10s to under 1s.
+
+8. Have you worked with partitioned tables or sharding?
+Mention experience with table partitioning (range, list, hash) for managing large tables, and sharding strategies for horizontal scaling in distributed systems.
+
+Example
+In a high-traffic e-commerce app, I used range partitioning on the order date to archive older data and improve lookup speed.
+
+9. What’s your approach to managing database backups and recovery?
+Discuss backup strategies like full, incremental, point-in-time recovery and how you’ve tested or implemented disaster recovery plans (e.g., replication, failover clusters).
+
+Example
+For PostgreSQL, I set up daily base backups with WAL archiving and tested PITR using pgBackRest.
+
+10. How do you monitor and troubleshoot database performance?
+Explain the tools and techniques you use to detect issues like slow queries, blocking, deadlocks or CPU spikes. Mention tools like Prometheus, SQL Server DMVs, pg_stat_statements or performance schema in MySQL.
+
+Example
+I regularly monitor slow query logs and use pg_stat_statements to identify inefficient queries and optimize them.
+
+✅ Tip : Use specific scenarios and metrics when answering these questions. Instead of saying “I optimized a slow query,” say “I reduced query execution time from 8s to 0.5s by indexing two columns and rewriting a subquery with a CTE.”
+
+Technical SQL Interview Questions for Beginners
+Let’s move on to technical questions to check your deeper understanding of SQL concepts, query optimization and database structures.
+
+Tip : While answering try to give clear and practical answers. Focus on what works well and why. Don’t make things too complicated, just explain things in a simple way with examples if possible. Show that you understand how to use SQL effectively in real situations.
+
+11. What’s the difference between WHERE and HAVING clause?
+The WHERE clause filters individual rows before any grouping or aggregation takes place and The HAVING clause filters grouped/aggregated results after GROUP BY is applied.
+
+Example : Real-World Scenario
+Imagine you're managing an HR dashboard. You want to see only departments with more than 10 active employees
+
+SELECT department, COUNT(*) 
+FROM employees 
+WHERE status = 'active' 
+GROUP BY department 
+HAVING COUNT(*) > 10;
+Explanation
+Use WHERE to ignore inactive or terminated employees. WHERE status = 'active' ensures only active employees are considered.
+Use GROUP BY department groups active employees by department.
+Use HAVING to find departments that are large enough. HAVING COUNT(*) > 10 only includes departments with more than 10 active employees.
+12. What is the difference between ROW_NUMBER(), RANK() and DENSE_RANK() in SQL?
+These three functions are window (analytic) functions used to assign a ranking or position to rows within a result set, based on a specified ORDER BY clause. They differ in how they handle ties (rows with the same value).
+
+ROW_NUMBER() gives a unique row number without ties.
+RANK() gives the same rank for ties but skips ranks.
+DENSE_RANK() gives the same rank for ties but doesn’t skip ranks.
+Example: Assume the leaderboard table
+name	score
+Alice	100
+Bob	95
+Charlie	95
+David	90
+SELECT name, score,
+  ROW_NUMBER() OVER (ORDER BY score DESC) AS rn,
+  RANK() OVER (ORDER BY score DESC) AS rnk,
+  DENSE_RANK() OVER (ORDER BY score DESC) AS drnk
+FROM leaderboard;
+Output
+name	score	rn	rnk	drnk
+Alice	100	1	1	1
+Bob	95	2	2	2
+Charlie	95	3	2	2
+David	90	4	4	3
+13. How do you get the 2nd or Nth highest salary in SQL?
+You can find the 2nd or Nth highest salary using window functions (RANK(), DENSE_RANK(), ROW_NUMBER()) or using subqueries. Each method has its own use case depending on whether ties (duplicate salaries) should be considered.
+
+Method 1: Using DENSE_RANK() (Considers ties)
+SELECT name, salary
+FROM (
+  SELECT name, salary, 
+         DENSE_RANK() OVER (ORDER BY salary DESC) AS rnk
+  FROM employees
+) ranked
+WHERE rnk = 2;
+If two people have the same highest salary, then they will both be ranked 1 and the next will be ranked 2.
+So, this returns all employees who share the 2nd highest salary that means if second highest salary is x then this return all employees whose salary is x.
+Method 2: Using ROW_NUMBER() (No ties considered)
+SELECT name, salary
+FROM (
+  SELECT name, salary, 
+         ROW_NUMBER() OVER (ORDER BY salary DESC) AS rn
+  FROM employees
+) ranked
+WHERE rn = 2;
+This returns exactly one row , the second row after sorting salaries in descending order.
+Use this when you want strict ranking without duplicates.
+Method 3: Using a Subquery (Simple, only salary value)
+SELECT MAX(salary)
+FROM employees
+WHERE salary < (
+  SELECT MAX(salary)
+  FROM employees
+);
+This gives you the 2nd highest salary value, not the employee(s).
+To get the employee(s) with that salary
+SELECT name, salary
+FROM employees
+WHERE salary = (
+  SELECT MAX(salary)
+  FROM employees
+  WHERE salary < (
+    SELECT MAX(salary)
+    FROM employees
+  )
+);
+14 . How can I display the top 3 earners in each department in an HR dashboard?
+Use the RANK() or DENSE_RANK() window function with PARTITION BY department and order by salary in descending order.
+
+SELECT employee_id, name, department, salary,
+       RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS salary_rank
+FROM employees
+WHERE status = 'active'
+Then, filter using a subquery or CTE
+
+WITH ranked_employees AS (
+  SELECT employee_id, name, department, salary,
+         RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS salary_rank
+  FROM employees
+)
+SELECT * FROM ranked_employees
+WHERE salary_rank <= 3;
+15. What if I want to show only one unique runner-up (no ties) per leaderboard in a contest?
+If you want to strictly show only the 2nd place without any ties, use ROW_NUMBER() because it assigns a unique sequence to each row, even when there are duplicate scores.
+
+WITH leaderboard AS (
+  SELECT employee_id, name, department, salary,
+         ROW_NUMBER() OVER (PARTITION BY department ORDER BY salary DESC) AS row_num
+  FROM employees
+)
+SELECT * FROM leaderboard
+WHERE row_num = 2;
+ROW_NUMBER() assigns a unique ranking within each department, ordered by descending salary.
+The WHERE row_num = 2 filters to show only the 2nd highest-paid employee in each department with no ties allowed.
+16. How can you dynamically fetch the Nth highest salary in SQL (e.g., 4th, 5th)?
+Use a Common Table Expression (CTE) or subquery with DENSE_RANK() and filter where the rank equals N.
+
+In SQL Server (T-SQL)
+DECLARE @N INT = 4;
+
+WITH RankedSalaries AS (
+  SELECT employee_id, name, salary,
+         DENSE_RANK() OVER (ORDER BY salary DESC) AS rnk
+  FROM employees
+)
+SELECT *
+FROM RankedSalaries
+WHERE rnk = @N;
+In MySQL (v8+ with window functions)
+SET @N = 4;
+
+WITH RankedSalaries AS (
+  SELECT employee_id, name, salary,
+         DENSE_RANK() OVER (ORDER BY salary DESC) AS rnk
+  FROM employees
+)
+SELECT *
+FROM RankedSalaries
+WHERE rnk = @N;
+In PostgreSQL
+-- Use a CTE with parameterized query
+PREPARE get_nth_salary(INT) AS
+WITH Ranked AS (
+  SELECT employee_id, name, salary,
+         DENSE_RANK() OVER (ORDER BY salary DESC) AS rnk
+  FROM employees
+)
+SELECT * FROM Ranked WHERE rnk = $1;
+EXECUTE get_nth_salary(4);
+17. How can you fetch the Nth highest salary using LIMIT and OFFSET in MySQL or PostgreSQL?
+You can use DISTINCT, ORDER BY, and LIMIT ... OFFSET to retrieve the Nth highest unique salary.
+
+SELECT DISTINCT salary
+FROM employees
+ORDER BY salary DESC
+LIMIT 1 OFFSET 1;  -- 2nd highest salary
+How OFFSET Works
+
+OFFSET Value	Result
+OFFSET 0	Highest salary
+OFFSET 1	2nd highest salary
+OFFSET 2	3rd highest salary
+...	Nth highest = OFFSET N-1
+18. What is the different between Primary Key and Unique Key?
+Both Primary Key and Unique Key are used to enforce uniqueness in a table, but they differ in how they handle NULLs, indexing behavior and their intended purpose.
+
+A Primary Key is a column (or combination of columns) that uniquely identifies each row in a table and does not allow NULL values. A Unique Key also enforces uniqueness across rows but allows one NULL value and is typically used for enforcing alternate or secondary unique constraints.
+
+Key differences between Primary Key and Unique Key
+
+Feature	Primary Key	Unique Key
+Uniqueness	Must be unique	Must be unique
+NULL Values Allowed	Not allowed	Allowed (only one NULL per unique key in most DBMS)
+Default Index	Automatically creates a clustered index (in many DBMSs like SQL Server)	Automatically creates a non-clustered index
+Number per Table	Only one Primary Key per table	Can have multiple Unique Keys
+Purpose	Main identifier for a row	Enforces uniqueness on other columns
+Constraint Type	Primary Key constraint	Unique constraint
+Composite Key Support	Yes (can be made of multiple columns)	Yes (can be made of multiple columns)
+Enforces Entity Integrity	Yes	No
+Syntax	PRIMARY KEY	UNIQUE
+19. How do you create a Primary Key and Unique Keys in SQL?
+You can define a Primary Key and one or more Unique Keys in a CREATE TABLE statement using the PRIMARY KEY and UNIQUE constraints.
+
+CREATE TABLE Employees (
+  emp_id INT PRIMARY KEY,          -- Primary Key: unique + not null
+  email VARCHAR(100) UNIQUE,       -- Unique Key: unique, allows one NULL
+  phone VARCHAR(15) UNIQUE         -- Unique Key: unique, allows one NULL
+);
+Read in depth Primary Key And Unique key
+
+20. Can a table have multiple Primary Keys?
+No, A table can have only one Primary Key constraint, but that Primary Key can be composite, i.e., made up of multiple columns.
+
+Example
+CREATE TABLE ProjectAssignments (
+  employee_id INT,
+  project_id INT,
+  PRIMARY KEY (employee_id, project_id)
+);
+21. What kind of indexes are automatically created by Primary Key and Unique Key?
+Primary Key
+Automatically creates a unique clustered index in SQL Server, unless a clustered index already exists, in which case it creates a non-clustered unique index.
+In PostgreSQL and MySQL (InnoDB), it creates a unique B-tree index.
+In InnoDB, the primary key becomes the clustered index.
+Unique Key
+Automatically creates a unique non-clustered index in SQL Server.
+In PostgreSQL and MySQL, it creates a unique B-tree index (non-clustered by behavior).
+22. Is a UNIQUE constraint equivalent to using a DISTINCT clause?
+No, UNIQUE enforces physical data integrity, while DISTINCT is a query-time filter on the result set.
+
+UNIQUE : It prevents duplicates from being inserted.
+DISTINCT : It removes duplicates from results.
+23. Can a table have a UNIQUE constraint and a PRIMARY KEY on overlapping columns?
+Yes, technically it's allowed, but it's usually redundant and inefficient.
+
+CREATE TABLE Sample (
+  id INT PRIMARY KEY,
+  name VARCHAR(50),
+  UNIQUE (id, name)  -- Redundant
+);
+id is already unique because it's the PRIMARY KEY.
+The UNIQUE(id, name) constraint enforces uniqueness on the combination, but since id is already unique on its own, the pair (id, name) must also be unique. It's making the constraint redundant.
+Why is it inefficient?
+It creates an extra unique index that consumes storage and slows down inserts/updates.
+It adds no additional integrity benefit unless you're enforcing a more complex uniqueness condition (e.g., composite uniqueness independent of the primary key).
+When is it not redundant?
+If you have a composite primary key or your UNIQUE constraint adds additional columns not already covered by the PK.
+
+CREATE TABLE Orders (
+  order_id INT,
+  product_id INT,
+  PRIMARY KEY (order_id, product_id),
+  UNIQUE (order_id)  -- Not redundant
+);
+In this case, the UNIQUE constraint adds new business logic.
+
+24. When is a UNIQUE constraint not redundant in a table that already has a PRIMARY KEY?
+A UNIQUE constraint is not redundant when it enforces additional rules that are not covered by the primary key. This often happens when you need another column or set of columns to be unique, even though it's not the primary identifier of the row. So, a UNIQUE constraint is not redundant if
+
+It enforces uniqueness on columns not already covered by the PRIMARY KEY.
+Example
+
+CREATE TABLE Users (
+  UserID INT PRIMARY KEY,
+  Username VARCHAR(50) UNIQUE
+);
+It enforces independent business rules.
+Example
+
+CREATE TABLE Products (
+  ProductID INT PRIMARY KEY,
+  SKU VARCHAR(100),
+  CategoryID INT,
+  UNIQUE (SKU)
+);
+Here SKU (Stock Keeping Unit) must be unique across all products — a separate business rule.
+
+It uses different column combinations than the PK.
+Example
+
+CREATE TABLE Enrollments (
+  StudentID INT,
+  CourseID INT,
+  EnrollmentDate DATE,
+  PRIMARY KEY (StudentID, CourseID),
+  UNIQUE (CourseID, EnrollmentDate)
+);
+These are different combinations of columns, so the UNIQUE constraint is not redundant.
+
+25. Does enforcing UNIQUE or PRIMARY KEY constraints affect performance?
+Yes, enforcing these constraints does impact performance, both positively and negatively
+
+Performance Overhead
+INSERT/UPDATE overhead : The database performs an index lookup to ensure no duplicate values exist. This lookup adds latency, especially on large tables or frequently updated keys.
+Extra index maintenance : For every DML operation (INSERT, UPDATE, DELETE) associated unique indexes must be updated, adding to I/O and CPU cost.
+Performance Benefits
+Data integrity : Guarantees no duplicate values — a hard guarantee at the database level.
+Faster SELECTs : These constraints automatically create unique indexes, which speed up queries on those columns (especially JOINs, WHERE and lookups).
+Note : In write-heavy systems, it's important to balance data integrity vs performance. You can sometimes enforce uniqueness at the application level, but for critical business logic, database-level constraints are essential.
+
+26. What is a CTE in SQL?
+A CTE (Common Table Expression) is a temporary, named result set that exists only during the execution of a single SQL statement. It's defined using the WITH clause and can be referenced like a regular table or view within SELECT, INSERT, UPDATE or DELETE statements.
+
+Example :
+
+WITH cte_name AS (
+  SELECT column1, column2
+  FROM table_name
+  WHERE condition
+)
+SELECT *
+FROM cte_name
+WHERE column2 > 100;
+27. How is a CTE different from a Subquery?
+Feature	CTE (Common Table Expression)	Subquery
+Readability	✅ More readable for complex and multi-step logic	❌ Becomes hard to read when deeply nested
+Reusability	✅ Can be referenced multiple times in the same query	❌ Must repeat logic if reused
+Recursive Queries	✅ Supports recursion (especially in hierarchical data)	❌ Does not support recursion
+Named Result	✅ Yes, using WITH cte_name AS (...)	❌ No, it's anonymous
+Scope	✅ Available to the outer/main query and nested CTEs	❌ Limited to the immediate query part
+Materialization (RDBMS-dependent)	May or may not be materialized — depends on optimizer	Usually optimized inline (not materialized)
+Example Use Case
+CTE Example
+WITH HighEarners AS (
+  SELECT * FROM Employees WHERE salary > 100000
+)
+SELECT name FROM HighEarners WHERE department = 'Engineering';
+Subquery Equivalent
+SELECT name
+FROM (
+  SELECT * FROM Employees WHERE salary > 100000
+) AS HighEarners
+WHERE department = 'Engineering';
+✅ CTE is cleaner and allows for step-wise breakdown, especially when reused or made recursive.
+
+28. When should I use a CTE over a subquery?
+Most of the use cases of CTE (Common Table Expression) over subquery are
+
+Breaking Down Complex Logic
+CTEs allow you to structure large queries step by step, similar to writing modular code.
+Great for multi-join, aggregated or multi-layered queries.
+WITH Filtered AS (...), Aggregated AS (...) SELECT ... FROM Aggregated;
+Reusing a Result Set
+You can reference the same CTE multiple times in the main query without repeating logic.
+Subqueries must be duplicated, making them harder to maintain.
+Recursive Queries
+CTEs support recursion, which is essential for
+
+Tree structures
+Hierarchical data
+Graph traversals
+Bill of materials (BOM)
+WITH RECURSIVE OrgChart AS (...)
+Subqueries can not do recursion.
+
+Improving Readability &amp; Maintainability
+CTEs are named, making the logic self-explanatory and the query easier to debug.
+Especially helpful in team environments and code reviews.
+29. Are Common Table Expressions (CTEs) better for performance compared to subqueries or temporary tables?
+CTEs are great for readability, modularity and recursion, but they do not always offer performance improvements. In fact, depending on the database engine and how you use them, CTEs can sometimes be slower than subqueries or temp tables.
+
+Technique	Readability	Performance	Materialization	Use Case
+CTE (WITH clause)	✅ High	⚠️ Varies	Often materialized (engine-specific)	Recursive queries, modular logic
+Subquery (inline)	🟡 Medium	✅ Can be better	Often optimized/folded by the engine	One-off usage
+Temp Table	❌ Verbose	✅ Best for reuse/complex joins	Materialized and indexed	Multiple reuse or large datasets
+Tip : CTEs are not inherently faster. Use them for clarity and recursive logic, but always check the execution plan. For performance-critical queries, compare with subqueries or temp tables and benchmark.
+
+30. How do you detect and optimize slow SQL queries?
+You detect slow SQL queries using query profiling tools, execution plans and performance metrics. Optimization involves analyzing the query execution plan, indexing strategy, table statistics, joins, filtering logic and server resource usage. You can follow below steps for Optimization Process
+
+Analyze Execution Plan : Use tools like EXPLAIN, EXPLAIN ANALYZE or the execution plan viewer.
+Check for Missing or Inefficient Indexes
+Examine Joins and Filtering Logic : Ensure appropriate join types and push filters as early as possible in the plan.
+Rewrite Inefficient Queries
+Measure Query Stats : Look at runtime statistics, I/O, buffer cache hits and row estimates vs actuals.
+If you want to dive deeper, explore SQL Performance Tuning
+
+31. What is database normalization?
+Database normalization is the process of organizing data in a relational database to minimize redundancy and ensure data integrity by dividing large, complex tables into smaller, well-structured tables. Each resulting table represents a single concept or entity and relationships between tables are maintained using foreign keys.
+
+32. What are the differences Between DBMS and RDBMS
+Both DBMS (Database Management System) and RDBMS (Relational Database Management System) are systems designed to manage data efficiently, but they differ significantly in terms of structure, functionality and use cases.
+
+Feature	DBMS	RDBMS
+Data Storage	Stores data as files, documents or tables	Stores data strictly in relational tables
+Data Relationships	No relationships between data entities	Supports relationships via primary/foreign keys
+Normalization	Not supported	Fully supports normalization to reduce redundancy
+Data Integrity	Limited	Enforces integrity constraints (PK, FK, UNIQUE)
+Multi-user Access	Limited or not efficient	Supports multiple concurrent users with consistency
+ACID Transactions	Not guaranteed	Fully ACID-compliant for reliable transactions
+Security & Access Control	Basic or minimal	Advanced user roles and permission handling
+Examples	Microsoft Access, File System, XML DB	MySQL, PostgreSQL, Oracle, SQL Server
+Scalability	Suitable for small apps or single users	Suitable for enterprise apps and large systems
+Note : All RDBMS are DBMS, but ❌ not all DBMS are RDBMS.
+
+RDBMS follows a strict relational model, while DBMS can be any system that stores and retrieves data.
+
+33. Difference Between INNER JOIN and OUTER JOINs
+Joins are used to combine rows from two or more tables based on a related column. Here's how different join types behave:
+
+Join Type	Description
+INNER JOIN	Returns only the rows with matching values in both tables
+LEFT JOIN (Left Outer Join)	Returns all rows from the left table and matched rows from the right table (NULL if no match)
+RIGHT JOIN (Right Outer Join)	Returns all rows from the right table and matched rows from the left table (NULL if no match)
+FULL OUTER JOIN	Returns all rows from both tables. If there’s no match, fills with NULLs
+Tip : Use INNER JOIN when you need only common data, and use OUTER JOINs when you want to retain unmatched records too.
+
+34. Can you explain ACID properties in databases?
+ACID is a set of four key properties that ensure reliable and consistent transactions in a database system.
+
+Atomicity : A transaction is all-or-nothing. If one part fails, the entire transaction is rolled back. Partial changes are never saved.
+Consistency : Ensures that a transaction brings the database from one valid state to another. All rules (constraints, triggers, FK) must be satisfied.
+Isolation : Transactions are executed independently. Multiple transactions can run at the same time without interfering with each other.
+Durability : Once a transaction is committed, changes are permanent even in case of power loss or crash.
+35. When would you use a Stored Procedure vs a Trigger in SQL?
+Both stored procedures and triggers are used to encapsulate logic in SQL, but they serve very different purposes
+
+Use a Stored Procedure When
+You need modular, reusable logic (e.g., sp_generate_invoice, sp_apply_discount).
+You want to encapsulate complex business processes.
+You need parameterized execution or conditional logic.
+The process is called by an application or scheduler.
+To be in control of when and how it's executed.
+Example
+CREATE PROCEDURE sp_update_salary (@emp_id INT, @bonus DECIMAL)
+AS
+BEGIN
+  UPDATE employees
+  SET salary = salary + @bonus
+  WHERE emp_id = @emp_id;
+END;
+Use a Trigger When
+You want automatic action on data changes (like INSERT, UPDATE or DELETE).
+Enforcing audit logs
+Replicate data changes to another table/log.
+Enforcing hidden business rules at the database level.
+Example
+CREATE TRIGGER trg_audit_employees
+AFTER UPDATE ON employees
+FOR EACH ROW
+BEGIN
+  INSERT INTO audit_log(emp_id, old_salary, new_salary, changed_on)
+  VALUES (OLD.emp_id, OLD.salary, NEW.salary, CURRENT_TIMESTAMP);
+END;
+36. What are constraints in SQL and why use them?
+Constraints are rules applied to table columns to make sure the data is valid, accurate and consistent. They help prevent bad or incorrect data from being stored in the database.
+
+PRIMARY KEY: Uniquely identifies each row
+FOREIGN KEY: Maintains referential integrity (Ensures values match those in another table).
+NOT NULL: Prevents a column from having NULL values.
+UNIQUE: Ensures all values in a column are different i.e. Prevents duplicate values.
+CHECK: Validates that values meet a specific condition
+DEFAULT: Sets a default value if none is provided
+Example
+CREATE TABLE users (
+  id INT PRIMARY KEY,
+  email VARCHAR(100) UNIQUE NOT NULL
+);
+37. What are Indexes in SQL?
+An index in SQL is a performance-boosting data structure that helps the database quickly find rows without scanning the entire table.
+
+Think of it like a book index, instead of reading every page to find a topic, you look it up in the index and jump straight to the right page.
+
+38. Why to use Indexes?
+Indexes make data retrieval much faster and more efficient. Without an index, the database has to perform a full table scan, checking every row one by one to find a match. which can be slow, especially on large tables. With an index, the database can quickly jump to the rows it needs, improving the performance of queries like SELECT, JOIN, WHERE and ORDER BY.
+
+In short : Indexes reduce the amount of work the database has to do, helping your queries run faster and more efficiently, especially on large datasets.
+
+39. What are key Benefits of Using Indexes
+Faster Data Retrieval : Speeds up SELECT queries, especially on large tables.
+Better Use of Joins : Speeds up joins by indexing foreign and primary keys.
+Improved Application Performance : Enhances read operations in applications, reducing response time.
+Enforcing Uniqueness : Unique indexes prevent duplicate entries in a column (like email).
+Efficient Sorting and Filtering : Helps in ORDER BY, GROUP BY and WHERE clause queries.
+40. What is Trade-off using Indexs?
+While indexes can significantly speed up read operations, they come with certain downsides that you should be aware of
+
+Slower Write Operations : INSERT, UPDATE and DELETE take longer because indexes need to be updated too.
+Increased Storage : indexes take up extra disk space, especially if there are many or large indexes.
+Maintenance Overhead : More indexes mean more work to manage, monitor and optimize over time.
+Diminishing Returns : Adding too many indexes can actually hurt performance by confusing the query planner or slowing down queries.
+Use indexes only where needed - only on columns frequently used in WHERE, JOIN, ORDER BY or GROUP BY clauses. Avoid indexing every column, as that can slow down write performance and waste storage.
+
+41. How Do Indexes Work?
+When you create an index on a column (or multiple columns), the database builds a separate lookup structure (usually a B-tree) that keeps the data in sorted order.
+
+So, instead of going through the entire table row by row, the database uses this structure to jump directly to the relevant data, just like finding a word using a dictionary.
+
+42. How to Create Indexes in SQL?
+You can create indexes either while creating the table or after the table is created.
+
+While Creating a Table
+CREATE TABLE Customers (
+    CustomerId INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Email VARCHAR(100),
+    INDEX idx_lastname (LastName)
+);
+After Table Creation
+CREATE INDEX idx_email
+ON Customers (Email);
+43. What all different types of indexes in SQL
+Index Type	Key Features	Best Use Case
+Primary Index	- Unique
+- No nulls
+- Only one per table	Used as the main row identifier (e.g., user_id)
+Unique Index	- Prevents duplicate values
+- Allows nulls	Enforce uniqueness on fields like email, phone, username
+Composite Index	- Combines multiple columns
+- Index works best when queries use leftmost column(s)	Queries filtering by multiple fields (e.g., first_name, last_name)
+Clustered Index	- Physically sorts and stores data rows
+- Only one per table	Efficient for range or ordered queries (e.g., by created_at)
+Non-Clustered Index	- Stores pointers to data
+- Doesn’t change physical row order	Fast lookup queries without affecting storage order
+Full-Text Index	- Specialized for large text
+- Supports MATCH/AGAINST in MySQL/PostgreSQL	Searching in articles, blog posts, product descriptions
+Spatial Index	- For spatial/geographic data
+- Supports spatial relationships (e.g., distance, contains)	Location-based apps, GIS systems
+Bitmap Index	- Uses bitmaps for values
+- Ideal for low-cardinality columns (few unique values)	Data warehousing, analytics on columns like gender, status
+JSON/XML Index	- Indexes specific keys/paths inside JSON or XML
+- Improves structured queries on unstructured data	APIs, modern web apps storing structured documents
+44. What is Index Selectivity and Why Does It Matter?
+Index Selectivity measures how uniquely a column’s values identify rows in a table.
+
+Selectivity = (Number of distinct values) / (Total number of rows)
+High selectivity (e.g. email, user_id): Index is very effective.
+Low selectivity (e.g. gender, is_active): Index may be ignored by the optimizer
+Why it matters
+The query planner uses indexes only when they help filter down the data significantly. Indexes on low-selectivity columns can even slow things down due to overhead.
+
+45. What is a covering index?
+A covering index is an index that contains all columns needed by a query, so the DBMS doesn’t need to access the base table.
+
+Example
+SELECT FirstName, LastName FROM Customers WHERE Email = 'a@b.com';
+if you create
+
+CREATE INDEX idx_email_name ON Customers (Email, FirstName, LastName);
+This index covers the query (WHERE + SELECT columns), resulting in better performance.
+
+46. What is the difference between Index Scan and Index Seek in SQL?
+Feature	Index Seek	Index Scan
+Definition	Efficient search that goes directly to the matching entry in the index.	Reads the entire index from start to finish.
+Performance	Fast and selective, minimal I/O.	Slower, especially on large tables.
+Usage	When query filters match indexed columns precisely with high selectivity.	When filter is missing, too broad or column has low selectivity.
+Data Access	Uses B-tree traversal to locate relevant rows.	Scans all index rows and checks them one by one.
+Predicate	SARGable (Search ARGument Able) : filter can use index efficiently.	Often non-SARGable (e.g., functions, LIKE '%x', type mismatch).
+Tip : Aim for Index Seeks by writing SARGable queries and creating targeted indexes.
+
+47. What set operators do you know in SQL?
+SQL provides the following set operators to combine the results of two or more queries
+
+UNION
+Returns distinct rows from the result of two queries (duplicates are removed).
+
+✅ Use when you want to merge results without duplicates.
+
+UNION ALL
+Returns all rows, including duplicates, from both queries.
+
+✅ Faster than UNION, as it skips the distinct sort operation.
+
+INTERSECT
+Returns only the rows that are common to both queries.
+
+✅ Useful for identifying overlaps between datasets.
+
+EXCEPT (called MINUS in Oracle)
+Returns rows that are in the first query but not in the second.
+
+✅ Used to find non-overlapping differences between datasets.
+
+Note : All participating queries must return the same number of columns, with compatible data types and column order.
+
+48. What operator is used in SQL for pattern matching?
+SQL uses the LIKE operator for pattern matching, typically in combination with wildcard characters:
+
+% (percent) → Matches zero or more characters Example: 'A%' matches 'A', 'Alex', 'Amazon'
+_ (underscore) → Matches exactly one character Example: 'A_' matches 'AB', 'Ax', but not 'Alex'
+49. In which order does the SQL interpreter logically execute the sections of a SELECT query?
+The system executes logically :
+
+→ FROM
+→ JOIN / ON
+→ WHERE
+→ GROUP BY
+→ HAVING
+→ SELECT
+→ DISTINCT
+→ ORDER BY
+→ LIMIT (or OFFSET / TOP)
+50. Is this the correct order of appearance for the common clauses in a SELECT statement?
+ → SELECT 
+ → FROM
+ → JOIN
+ → ON
+ → WHERE
+ → GROUP BY
+ → HAVING
+ → ORDER BY
+ → LIMIT
+51. What is a View in SQL?
+A View is a virtual table based on a SQL query that retrieves data from one or more real tables (or even other views). It doesn’t store data itself, but dynamically presents it from the underlying tables.
+
+Example
+CREATE VIEW active_customers AS
+SELECT id, name, email
+FROM customers
+WHERE status = 'active';

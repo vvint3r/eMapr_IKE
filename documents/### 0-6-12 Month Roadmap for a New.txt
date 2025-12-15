@@ -1,0 +1,117 @@
+### 0-6-12 Month Roadmap for a **New Analytics Manager**
+
+The sequence below assumes you are hired to run a small-to-mid-sized analytics team (4-10 FTEs) that partners with product, marketing, and engineering.  Each time-box is organized around five pillars that matter most at this level: **People, Domain, Process & Tooling, Delivery, Governance & Culture**.
+
+---
+
+## PRE-START (week –2 → Day 0)
+
+| Pillar               | Actions                                                                                                                                                                                   | Artefacts                      |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| People               | • Ask recruiter for the org-chart, recent performance reviews (redacted), and open headcount.<br>• Book 1-on-1 intros with direct reports and “critical friends” (product, eng, finance). | 30-min intro slots on calendar |
+| Domain               | Review quarterly business review (QBR), OKRs, product roadmap, and data architecture diagrams.                                                                                            | Personal briefing deck         |
+| Process & Tooling    | Request Git, BI, warehouse, experimentation-platform access; skim run-books & dbt docs.                                                                                                   | Checklist in Notion            |
+| Delivery             | Ask for “Top 5 painful unanswered questions” from each exec.                                                                                                                              | Backlog seed                   |
+| Governance & Culture | Read data policy, SLAs, model-risk framework, security training.                                                                                                                          | Compliance sign-off            |
+
+> **Tip:** Send a short “90-day vision” memo to your future manager before Day 1—sets expectations and shows initiative ([hbr.org][1]).
+
+---
+
+## DAYS 1-30 “ABSORB”
+
+| Pillar                   | Objectives                                                                                                                                                             | Success Signals                                      |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| **People**               | • Conduct 1-on-1s with every team member (strengths, pain points, goals).<br>• Shadow analysts in live stakeholder meetings.<br>• Identify skill gaps & morale issues. | Trust baseline; anonymized SWOT                      |
+| **Domain**               | • Map the metric hierarchy (north-star → sub-metrics).<br>• Catalog critical dashboards & their owners (“system archeology”).                                          | Metric map Miro board                                |
+| **Process & Tooling**    | • Audit ELT → marts → BI lineage; note broken tests & flaky jobs.<br>• Observe sprint rituals; assess ticket hygiene.                                                  | One-page “current-state”                             |
+| **Delivery**             | • Ship at least **one quick-win** (e.g., fix a wrong KPI, automate a weekly CSV).                                                                                      | Exec kudos; visible win ([locallyoptimistic.com][2]) |
+| **Governance & Culture** | • Join incident post-mortems; learn the escalation ladder.<br>• Re-iterate data ethics & privacy norms in team slack.                                                  | Zero SLA breaches                                    |
+
+---
+
+## DAYS 31-60 “ALIGN”
+
+| Pillar                   | Objectives                                                                                                                                       | Success Signals                 |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------- |
+| **People**               | • Draft **individual development plans (IDPs)** with each report.<br>• Negotiate scope with adjacent teams to reduce ticket back-and-forth.      | Signed IDPs; RACI matrix        |
+| **Domain**               | • Build a “metric contract” template (owner, formula, business logic).<br>• Validate top 10 metrics with Finance.                                | Contracts published in dbt docs |
+| **Process & Tooling**    | • Stand up CI/CD for dbt + airflow (if missing).<br>• Propose a **request-intake Kanban** to replace ad-hoc pings.                               | PR merged; Jira board live      |
+| **Delivery**             | • Prioritize the backlog against OKRs; commit to Q-end impact stories.<br>• Kick off one A/B test or forecasting model with high business value. | Road-mapped backlog approved    |
+| **Governance & Culture** | • Institute weekly data-quality stand-ups (<15 min).<br>• Publish first monthly analytics newsletter.                                            | Reduction in data-incidents     |
+
+---
+
+## DAYS 61-90 “ACCELERATE”
+
+| Pillar                   | Objectives                                                                                                                                         | Success Signals             |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
+| **People**               | • Launch bi-weekly **analytics guild** brown-bag talks.<br>• Finalize hiring plan; open reqs for priority roles.                                   | +NPS in pulse surveys       |
+| **Domain**               | • Partner with Finance & Product on a **driver-tree model** linking inputs to revenue/GMV.<br>• Embed analysts in sprint ceremonies of key squads. | Unified growth model        |
+| **Process & Tooling**    | • Introduce data-contract testing (Great Expectations / Soda).<br>• Pilot reverse-ETL for activation use-case (e.g., churn-risk email).            | Fewer broken dashboards     |
+| **Delivery**             | • Present **Q3 impact review**: quick-wins, experiments, model ROI.                                                                                | Deck accepted at exec staff |
+| **Governance & Culture** | • Document a lightweight model-review checklist (fairness, drift, PII).                                                                            | Signed-off policy           |
+
+Industry playbooks recommend capping initial strategic goals at **three** to maintain focus during the first 90 days ([dataleadershipcollaborative.com][3], [indeed.com][4]).
+
+---
+
+## MONTH 4-6 “OPTIMIZE”
+
+1. **People** – formal mentorship pairing, succession plans, performance criteria tied to OKRs.
+2. **Domain** – quarterly roadmap refresh; socialize a KPI deprecation framework.
+3. **Process & Tooling** – migrate legacy ETLs to dbt; implement automated cost monitoring in BigQuery.
+4. **Delivery** – institutionalize an “experiment review board”; publish reusable notebook templates.
+5. **Governance & Culture** – run a data-literacy workshop for non-technical teams (HBR highlights this as a key unlock for org-wide data fluency) ([hbr.org][5]).
+
+---
+
+## MONTH 7-12 “STRATEGIZE & SCALE”
+
+| Goal                           | Key Milestones                                                                                                                                      |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Org & Talent**               | • Complete team skills matrix → training budget.<br>• Split team into **Analytics Engineering** vs **Insights & Science** pods with clear charters. |
+| **Platform Evolution**         | • Evaluate buy-vs-build for observability or experimentation platforms.                                                                             |
+| **Portfolio Management**       | • Introduce a quarterly **“analytics OKR demo day.”**<br>• Score all projects on impact/effort → cull low-ROI work.                                 |
+| **Cross-Functional Influence** | • Co-lead annual planning offsite; set company-level *Data Maturity* targets.                                                                       |
+| **Thought Leadership**         | • Speak at internal town-hall; optionally publish a blog or conference talk to aid hiring brand.                                                    |
+
+---
+
+### Executive Metrics Dashboard (what your VP will watch)
+
+| Area            | Sample KPI                                       | Target by Month 12 |
+| --------------- | ------------------------------------------------ | ------------------ |
+| Data Quality    | % Freshness SLA met                              | ≥ 98 %             |
+| Delivery        | Avg. cycle-time, idea → insight                  | –40 %              |
+| Adoption        | Monthly active Looker users                      | +50 %              |
+| Experimentation | Tests / quarter with **stat. power ≥ 80 %**      | ≥ 15               |
+| ROI             | Incremental ARR attributed to analytics projects | > $2 M             |
+
+---
+
+### Templates & Artifacts to Prepare
+
+* 30-60-90 PDF (one page)
+* IDP Google Sheets per report
+* KPI Catalog in dbt `docs/`
+* Analytics Intake Form (Google Form + Slack alert)
+* Incident Post-mortem Template (Markdown)
+* Quarterly Business Review slide deck
+
+---
+
+#### Final Advice
+
+* **Sequence “Listen → Learn → Lead.”** Jumping to re-architecture on Day 1 alienates teams; quick-wins earn capital first.
+* **Anchor everything in business outcomes.** Stakeholders remember revenue saved or growth unlocked, not model F1-scores.
+* **Invest in culture early.** High trust multiplies every engineering or statistical improvement you later introduce ([locallyoptimistic.com][6]).
+
+Use this roadmap as your north star, but tailor each deliverable to your company’s maturity and appetite for change. Good luck—your first year sets the trajectory for both you *and* your analytics function.
+
+[1]: https://hbr.org/books/watkins?utm_source=chatgpt.com "The First 90 Days, Updated and Expanded - Harvard Business Review"
+[2]: https://locallyoptimistic.com/post/reporting-is-a-gateway-drug/?utm_source=chatgpt.com "Reporting is a Gateway Drug - Locally Optimistic"
+[3]: https://www.dataleadershipcollaborative.com/data-leadership/your-first-30-60-and-90-days-data-leader-community-roundtable?utm_source=chatgpt.com "Your First 30, 60, and 90 Days as a Data Leader"
+[4]: https://www.indeed.com/career-advice/starting-new-job/30-60-90-day-plan?utm_source=chatgpt.com "30-60-90 Day Plan (With Template and Example) | Indeed.com"
+[5]: https://hbr.org/2025/01/how-to-make-everyone-great-at-data?utm_source=chatgpt.com "How to Make Everyone Great at Data - Harvard Business Review"
+[6]: https://locallyoptimistic.com/post/the-art-of-onboarding/?utm_source=chatgpt.com "The Art of Onboarding - Locally Optimistic"

@@ -1,0 +1,143 @@
+I'll create a comprehensive structured table of analytics and marketing metrics organized by category, primary metrics, and sub-metrics.
+
+## Analytics and Marketing Metrics - Structured Reference
+
+### Website and Traffic Analytics
+
+| Primary Metric | Sub-Metrics | Description |
+|----------------|-------------|-------------|
+| **Traffic Volume** | • Unique Visitors<br>• Total Visits<br>• Page Views<br>• Sessions | Core measurements of website activity |
+| **Traffic Sources** | • Organic Search Traffic<br>• Direct Traffic<br>• Referral Traffic<br>• Social Media Traffic<br>• Email Traffic<br>• Paid Traffic<br>• Campaign Traffic | Origin breakdown of visitor acquisition |
+| **User Demographics** | • Geographic Location (Country/Region/City)<br>• Language<br>• Age Groups<br>• Gender<br>• Interests/Affinity Categories | Audience composition data |
+| **Technical Metrics** | • Device Type (Desktop/Mobile/Tablet)<br>• Browser Type<br>• Operating System<br>• Screen Resolution<br>• Connection Speed | Technical environment analysis |
+| **Site Performance** | • Page Load Time<br>• Server Response Time<br>• Time to Interactive<br>• First Contentful Paint<br>• DNS Lookup Time | Speed and performance indicators |
+
+### User Behavior and Engagement
+
+| Primary Metric | Sub-Metrics | Description |
+|----------------|-------------|-------------|
+| **Engagement Depth** | • Session Duration<br>• Pages per Session<br>• Average Time on Page<br>• Scroll Depth<br>• Rage Clicks | How deeply users interact with content |
+| **Navigation Patterns** | • Bounce Rate<br>• Exit Rate<br>• Internal Search Usage<br>• Site Search Terms<br>• Click Patterns (Heat Maps) | How users move through the site |
+| **User Journey** | • User Flow<br>• Path Analysis<br>• Goal Flow<br>• Reverse Goal Path<br>• Multi-Channel Funnels | Complete journey mapping |
+| **Interaction Tracking** | • Event Completions<br>• Video Plays<br>• Downloads<br>• Form Submissions<br>• Button Clicks | Specific user actions |
+| **Cohort Analysis** | • New vs Returning Visitors<br>• Time-Based Cohorts<br>• Behavior-Based Cohorts<br>• Retention Curves | User group behavior over time |
+
+### Conversion and Sales Metrics
+
+| Primary Metric | Sub-Metrics | Description |
+|----------------|-------------|-------------|
+| **Conversion Rates** | • Overall Conversion Rate<br>• Goal Conversion Rate<br>• Micro-Conversion Rate<br>• Macro-Conversion Rate<br>• Assisted Conversions | Success rate measurements |
+| **E-commerce Metrics** | • Revenue<br>• Transactions<br>• Average Order Value<br>• Items per Order<br>• Product Performance | Direct sales measurements |
+| **Shopping Behavior** | • Cart Abandonment Rate<br>• Checkout Abandonment Rate<br>• Add-to-Cart Rate<br>• Cart-to-Detail Rate<br>• Buy-to-Detail Rate | Purchase funnel analysis |
+| **Customer Value** | • Customer Lifetime Value (CLV)<br>• Average Purchase Value<br>• Purchase Frequency<br>• Customer Value by Segment<br>• Revenue per Visitor | Long-term value metrics |
+| **Sales Velocity** | • Lead-to-Customer Rate<br>• Sales Cycle Length<br>• Deal Size<br>• Win Rate<br>• Pipeline Velocity | B2B sales metrics |
+
+### Marketing Campaign Performance
+
+| Primary Metric | Sub-Metrics | Description |
+|----------------|-------------|-------------|
+| **Campaign Reach** | • Impressions<br>• Reach<br>• Frequency<br>• Share of Voice<br>• Viewable Impressions | Audience exposure metrics |
+| **Campaign Engagement** | • Click-Through Rate (CTR)<br>• Engagement Rate<br>• Video View Rate<br>• Interaction Rate<br>• Dwell Time | Interaction measurements |
+| **Campaign Costs** | • Cost per Click (CPC)<br>• Cost per Thousand Impressions (CPM)<br>• Cost per Acquisition (CPA)<br>• Cost per View (CPV)<br>• Cost per Engagement | Efficiency metrics |
+| **Campaign ROI** | • Return on Ad Spend (ROAS)<br>• Revenue per Click<br>• Profit Margin<br>• Break-Even ROAS<br>• Incremental Revenue | Profitability measurements |
+| **Attribution Models** | • First-Touch Attribution<br>• Last-Touch Attribution<br>• Linear Attribution<br>• Time-Decay Attribution<br>• Data-Driven Attribution | Credit distribution methods |
+
+### Search Engine Optimization (SEO)
+
+| Primary Metric | Sub-Metrics | Description |
+|----------------|-------------|-------------|
+| **Rankings** | • Keyword Rankings<br>• Average Position<br>• Search Visibility Score<br>• Ranking Distribution<br>• SERP Features Owned | Search position metrics |
+| **Organic Traffic** | • Organic Sessions<br>• Organic Users<br>• Organic Landing Pages<br>• Organic Conversion Rate<br>• Organic Revenue | SEO traffic measurements |
+| **Technical SEO** | • Crawl Errors<br>• Index Coverage<br>• Mobile Usability<br>• Core Web Vitals<br>• Structured Data Implementation | Site health indicators |
+| **Link Metrics** | • Total Backlinks<br>• Referring Domains<br>• Domain Authority<br>• Page Authority<br>• Link Velocity | Off-page SEO strength |
+| **Content Performance** | • Top Performing Pages<br>• Content Gap Analysis<br>• Keyword Cannibalization<br>• Content Freshness<br>• Topic Authority | Content effectiveness |
+
+### Content Marketing Analytics
+
+| Primary Metric | Sub-Metrics | Description |
+|----------------|-------------|-------------|
+| **Content Reach** | • Page Views<br>• Unique Page Views<br>• Content Impressions<br>• Content Reach<br>• New vs Returning Readers | Content visibility metrics |
+| **Content Engagement** | • Average Time on Content<br>• Scroll Depth<br>• Comments<br>• Social Shares<br>• Content Interaction Rate | Engagement quality indicators |
+| **Content Conversion** | • Content Conversion Rate<br>• Content-Assisted Conversions<br>• Lead Generation Rate<br>• Content ROI<br>• Subscriber Growth from Content | Business impact metrics |
+| **Content Amplification** | • Backlinks Earned<br>• Social Amplification Rate<br>• Referral Traffic<br>• Mention Volume<br>• Share of Voice | Content spread measurements |
+| **Content Efficiency** | • Production Cost per Piece<br>• Cost per Engagement<br>• Content Velocity<br>• Editorial Calendar Adherence<br>• Content Reuse Rate | Production metrics |
+
+### Social Media Metrics
+
+| Primary Metric | Sub-Metrics | Description |
+|----------------|-------------|-------------|
+| **Audience Growth** | • Follower Count<br>• Follower Growth Rate<br>• Audience Demographics<br>• Audience Quality Score<br>• Fake Follower Ratio | Community size metrics |
+| **Social Engagement** | • Likes/Reactions<br>• Comments<br>• Shares/Retweets<br>• Saves/Bookmarks<br>• Engagement Rate | Interaction measurements |
+| **Social Reach** | • Organic Reach<br>• Paid Reach<br>• Viral Reach<br>• Impressions<br>• Story Views | Visibility metrics |
+| **Social Conversion** | • Social Referral Traffic<br>• Social Conversion Rate<br>• Social Commerce Revenue<br>• Lead Generation from Social<br>• Customer Acquisition from Social | Business impact |
+| **Brand Metrics** | • Share of Voice<br>• Sentiment Score<br>• Brand Mention Volume<br>• Response Time<br>• Response Rate | Brand health indicators |
+
+### Email Marketing Analytics
+
+| Primary Metric | Sub-Metrics | Description |
+|----------------|-------------|-------------|
+| **List Metrics** | • Total Subscribers<br>• List Growth Rate<br>• List Churn Rate<br>• Segment Size<br>• List Quality Score | Database health metrics |
+| **Delivery Metrics** | • Delivery Rate<br>• Bounce Rate (Hard/Soft)<br>• Spam Complaints<br>• Sender Reputation<br>• Inbox Placement Rate | Deliverability indicators |
+| **Engagement Metrics** | • Open Rate<br>• Unique Open Rate<br>• Click-Through Rate<br>• Click-to-Open Rate<br>• Read Time | Email interaction metrics |
+| **Conversion Metrics** | • Email Conversion Rate<br>• Revenue per Email<br>• Revenue per Subscriber<br>• Email ROI<br>• Goal Completion Rate | Business impact metrics |
+| **Optimization Metrics** | • Best Send Time<br>• Subject Line Performance<br>• Device/Client Usage<br>• Link Performance<br>• A/B Test Results | Performance optimization |
+
+### Customer and Retention Metrics
+
+| Primary Metric | Sub-Metrics | Description |
+|----------------|-------------|-------------|
+| **Acquisition Metrics** | • Customer Acquisition Cost (CAC)<br>• Cost per Lead<br>• Lead Quality Score<br>• Acquisition Channel Mix<br>• Time to First Purchase | New customer metrics |
+| **Retention Metrics** | • Customer Retention Rate<br>• Churn Rate<br>• Renewal Rate<br>• Repeat Purchase Rate<br>• Reactivation Rate | Customer loyalty indicators |
+| **Satisfaction Metrics** | • Net Promoter Score (NPS)<br>• Customer Satisfaction Score (CSAT)<br>• Customer Effort Score (CES)<br>• Customer Health Score<br>• Support Ticket Volume | Experience measurements |
+| **Loyalty Metrics** | • Customer Lifetime Value<br>• CLV:CAC Ratio<br>• Loyalty Program Participation<br>• Referral Rate<br>• Advocacy Rate | Long-term value metrics |
+| **Segmentation Metrics** | • RFM Analysis (Recency/Frequency/Monetary)<br>• Segment Performance<br>• Segment Migration<br>• Behavioral Segmentation<br>• Predictive Segmentation | Customer grouping analysis |
+
+### Mobile App Analytics
+
+| Primary Metric | Sub-Metrics | Description |
+|----------------|-------------|-------------|
+| **App Acquisition** | • Downloads<br>• Installs<br>• Install Rate<br>• Organic vs Paid Installs<br>• Cost per Install | App growth metrics |
+| **App Engagement** | • Daily Active Users (DAU)<br>• Monthly Active Users (MAU)<br>• Stickiness (DAU/MAU)<br>• Session Length<br>• Sessions per User | Usage pattern metrics |
+| **App Retention** | • Day 1/7/30 Retention<br>• Rolling Retention<br>• Churn Rate<br>• Resurrection Rate<br>• Uninstall Rate | User retention tracking |
+| **App Monetization** | • Average Revenue per User (ARPU)<br>• Lifetime Value (LTV)<br>• In-App Purchase Rate<br>• Ad Revenue<br>• Subscription Rate | Revenue metrics |
+| **App Performance** | • Crash Rate<br>• ANR Rate (App Not Responding)<br>• Load Time<br>• API Latency<br>• App Store Rating | Technical quality metrics |
+
+### Video Marketing Metrics
+
+| Primary Metric | Sub-Metrics | Description |
+|----------------|-------------|-------------|
+| **Video Reach** | • Views<br>• Unique Viewers<br>• Impressions<br>• Reach<br>• Discovery Sources | Audience metrics |
+| **Video Engagement** | • Watch Time<br>• Average View Duration<br>• Completion Rate<br>• Re-watches<br>• Engagement Actions | Viewing behavior |
+| **Video Interaction** | • Likes/Dislikes<br>• Comments<br>• Shares<br>• Subscribers Gained<br>• Click-Through Rate | Social engagement |
+| **Video Performance** | • Play Rate<br>• Drop-off Points<br>• Audience Retention Graph<br>• Peak Concurrent Viewers<br>• Buffer Rate | Quality indicators |
+| **Video Conversion** | • Video Conversion Rate<br>• Revenue from Video<br>• Leads from Video<br>• CTA Click Rate<br>• Attribution Impact | Business metrics |
+
+### Financial and ROI Metrics
+
+| Primary Metric | Sub-Metrics | Description |
+|----------------|-------------|-------------|
+| **Revenue Metrics** | • Total Revenue<br>• Marketing-Attributed Revenue<br>• Revenue Growth Rate<br>• Average Revenue per Account<br>• Recurring Revenue | Top-line metrics |
+| **Cost Metrics** | • Total Marketing Spend<br>• Channel Spend Allocation<br>• Variable vs Fixed Costs<br>• Cost per Result<br>• Budget Utilization | Expense tracking |
+| **Profitability Metrics** | • Marketing ROI<br>• Gross Margin<br>• Contribution Margin<br>• Profit per Customer<br>• Break-even Analysis | Bottom-line impact |
+| **Efficiency Metrics** | • Marketing Efficiency Ratio<br>• Revenue per Marketing Dollar<br>• Payback Period<br>• Marketing Velocity<br>• Cost Variance | Performance ratios |
+| **Forecasting Metrics** | • Pipeline Value<br>• Forecast Accuracy<br>• Run Rate<br>• Bookings<br>• Annual Contract Value | Future projections |
+
+### Attribution and Multi-Touch Analytics
+
+| Primary Metric | Sub-Metrics | Description |
+|----------------|-------------|-------------|
+| **Journey Metrics** | • Touchpoints per Conversion<br>• Time to Conversion<br>• Path Length<br>• Cross-Device Journeys<br>• Channel Transitions | Customer journey analysis |
+| **Attribution Analysis** | • Channel Contribution<br>• Assisted Conversions<br>• Attribution Model Comparison<br>• Incrementality Lift<br>• Media Mix Impact | Credit distribution |
+| **Advanced Attribution** | • Algorithmic Attribution<br>• Shapley Value Attribution<br>• Markov Chain Attribution<br>• Survival Analysis<br>• Uplift Modeling | Statistical approaches |
+
+### Predictive and Advanced Analytics
+
+| Primary Metric | Sub-Metrics | Description |
+|----------------|-------------|-------------|
+| **Predictive Metrics** | • Propensity Scores<br>• Predictive CLV<br>• Churn Probability<br>• Next Best Action<br>• Lead Scoring | Future behavior predictions |
+| **Advanced Analysis** | • Anomaly Detection<br>• Clustering Analysis<br>• Correlation Analysis<br>• Regression Models<br>• Time Series Forecasting | Statistical modeling |
+| **AI/ML Metrics** | • Model Accuracy<br>• Precision/Recall<br>• F1 Score<br>• AUC-ROC<br>• Model Drift | Machine learning performance |
+
+This structured format provides a comprehensive reference for analytics and marketing metrics, making it easy to identify relevant measurements for specific business needs and objectives.
+
+

@@ -1,0 +1,771 @@
+1. Foundations & Core Concepts
+    1.1 Introduction to Experimentation
+        1.1.1 A/B Testing
+        1.1.2 History & Evolution
+        1.1.3 Scientific Method Application
+        1.1.4 Causality vs Correlation
+        1.1.5 When to Use A/B Testing
+    1.2 Business Value & Strategy
+        1.2.1 Return on Investment (ROI)
+        1.2.2 Evidence-Based Decision Making
+        1.2.3 North Star Metrics
+        1.2.4 Learning Agenda
+        1.2.5 Experiment Portfolio Strategy
+        1.2.6 Experiment Backlog Management
+        1.2.7 Quick Wins vs Strategic Bets
+        1.2.8 Risk Appetite Assessment
+        1.2.9 PIE Framework (Potential, Importance, Ease)
+        1.2.10 SMART Goal Setting
+    1.3 Experiment Types & Methodologies
+        1.3.1 A/B Test (Split Testing)
+        1.3.2 A/B/n Test (Multiple Variants)
+        1.3.3 A/A Test (System Validation)
+        1.3.4 Multivariate Testing (MVT)
+            1.3.4.1 Full Factorial Design
+            1.3.4.2 Fractional Factorial Design
+            1.3.4.3 Taguchi Design
+        1.3.5 Randomized Controlled Trials (RCT)
+        1.3.6 Quasi-Experiments
+        1.3.7 Holdout Tests
+        1.3.8 Crossover Designs
+        1.3.9 Switchback Experiments
+        1.3.10 Time-Based Experiments
+        1.3.11 Latin Square Designs
+        1.3.12 Interleaving (Search/Ranking)
+        1.3.13 AGILE A/B Test
+        1.3.14 Canary Testing
+        1.3.15 CUPED A/A Validation
+2. Metrics & Measurement
+    2.1 Metrics Fundamentals
+        2.1.1 Metric Taxonomy
+        2.1.2 ACCESS Framework (Attributes of Good Metrics)
+        2.1.3 How to Define a Metric
+        2.1.4 KPI Trees & Decomposition
+        2.1.5 Leading vs Lagging Indicators
+        2.1.6 Surrogate Endpoints
+        2.1.7 Bernoulli Metric
+        2.1.8 Binomial Metric
+        2.1.9 Non-Binomial Metric
+        2.1.10 Continuous Metric
+        2.1.11 Proportion
+        2.1.12 Rate
+        2.1.13 Ratio Metrics Considerations
+        2.1.14 Delta vs Relative Lift
+        2.1.15 Ratio-of-Means vs Mean-of-Ratios
+        2.1.16 Winsorization & Truncation
+        2.1.17 Driver Metrics
+        2.1.18 Guardrail Metrics (Must Not Degrade)
+        2.1.19 Primary KPI
+        2.1.20 Secondary KPI
+        2.1.21 Overall Evaluation Criterion (OEC)
+        2.1.22 Pros & Cons of a Metric
+        2.1.23 Measure Customers' Satisfaction
+    2.2 Primary Metrics
+        2.2.1 Conversion Rate (CVR)
+        2.2.2 Click-Through Rate (CTR)
+        2.2.3 Revenue Metrics (RPU, AOV, ARPU)
+        2.2.4 Engagement Metrics
+        2.2.5 Bounce Rate
+        2.2.6 Purchase Rate
+        2.2.7 Transaction Rate
+    2.3 Customer Value Metrics
+        2.3.1 Customer Lifetime Value (CLV/LTV)
+        2.3.2 Customer Acquisition Cost (CAC)
+        2.3.3 Cost Per Acquisition (CPA)
+        2.3.4 Retention & Churn Rate
+        2.3.5 Time-to-Event
+    2.4 Marketing-Specific Metrics
+        2.4.1 Return on Ad Spend (ROAS)
+        2.4.2 Incrementality & Lift
+        2.4.3 Net Lift (Cannibalization Adjusted)
+        2.4.4 Brand Lift & Awareness
+        2.4.5 Cost Per Click (CPC)
+        2.4.6 Impression Share
+        2.4.7 iROAS Optimization
+        2.4.8 Uplift Distribution
+    2.5 Channel-Specific Metrics
+        2.5.1 Email Marketing (Open Rates, Click Rates, Unsubscribe Rates)
+        2.5.2 Social Media (Followers, Likes, Shares, Comments, Reach)
+        2.5.3 Content Marketing (Page Views, Time on Page, Bounce Rate)
+        2.5.4 Paid Advertising (Cost Per Acquisition, ROAS)
+        2.5.5 SEO (Organic Traffic, Keyword Rankings, Search Visibility)
+3. Statistical Foundations
+    3.1 Basic Statistical Concepts
+        3.1.1 Mean, Median, Mode
+        3.1.2 Standard Deviation & Variance
+        3.1.3 Standard Error (SEM)
+        3.1.4 Distribution Types (Normal, Binomial, etc.)
+        3.1.5 Over Dispersion
+        3.1.6 Gaussian Distribution
+        3.1.7 Identically Distributed
+        3.1.8 Independent Observation
+        3.1.9 Statistic
+        3.1.10 Statistical Model
+        3.1.11 Estimator
+        3.1.12 Unbiased Estimator
+        3.1.13 Efficient Estimator
+        3.1.14 Sufficient Estimator
+        3.1.15 Consistent Estimator
+        3.1.16 Maximum Likelihood Estimate (MLE)
+        3.1.17 Mean Square Error (MSE)
+        3.1.18 Mu
+        3.1.19 Sigma
+        3.1.20 Theta
+    3.2 Hypothesis Testing Framework
+        3.2.1 Null & Alternative Hypotheses
+        3.2.2 Composite vs Point Hypotheses
+        3.2.3 One-Sided vs Two-Sided Tests
+        3.2.4 Test of Significance vs NHST
+        3.2.5 Modus Tollens
+        3.2.6 Likelihood Function
+        3.2.7 Likelihood
+    3.3 Statistical Significance
+        3.3.1 P-values & Interpretation
+        3.3.2 Alpha (Type I Error Rate)
+        3.3.3 Beta (Type II Error Rate)
+        3.3.4 Confidence Intervals & Confidence Levels
+        3.3.5 Effect Size (Cohen's d)
+        3.3.6 Practical vs Statistical Significance
+        3.3.7 Significance Level
+        3.3.8 Significance Threshold
+        3.3.9 Statistically Significant
+        3.3.10 Confidence Bound
+        3.3.11 Confidence Limit
+        3.3.12 Confidence Threshold
+        3.3.13 Critical Region
+        3.3.14 Rejection Region
+        3.3.15 Actual Significance
+        3.3.16 Nominal Significance
+        3.3.17 Observed Significance
+        3.3.18 Actual p-value
+        3.3.19 Nominal p-value
+        3.3.20 p-value Adjustment
+        3.3.21 p-value Distribution
+        3.3.22 Severity
+        3.3.23 t Score
+        3.3.24 z Score
+    3.4 Statistical Power
+        3.4.1 Power Analysis Fundamentals
+        3.4.2 Power Function
+        3.4.3 Observed Power (Post Hoc)
+        3.4.4 Overpowered & Underpowered Tests
+        3.4.5 Uniformly Most Powerful Tests (UMP)
+        3.4.6 Error Probability
+        3.4.7 Error Rate
+    3.5 Sample Size Determination
+        3.5.1 Minimum Detectable Effect (MDE/MEI)
+        3.5.2 Minimum Sample Size Calculation
+        3.5.3 Average Sample Size (ASD)
+        3.5.4 Test Duration Estimation
+        3.5.5 Baseline Rate Uncertainty
+        3.5.6 Cluster Design Effect & ICC
+        3.5.7 Sample Space
+4. Hypothesis Development & Framing
+    4.1 Problem Identification
+        4.1.1 Problem Framing
+        4.1.2 Research & Data Analysis
+        4.1.3 Qualitative & Quantitative Insights
+    4.2 Hypothesis Construction
+        4.2.1 Hypothesis Structure (Change → Outcome)
+        4.2.2 Testable Predictions
+    4.3 Test Prioritization
+        4.3.1 Six-Step Process (Goal Setting, Hypothesis Formation, Audience Selection, Metric Selection, Execution, Analysis)
+        4.3.2 Experiment Goals & Hypotheses
+5. Experimental Design
+    5.1 Design of Experiments (DOE)
+        5.1.1 Factor Levels & Variables
+            5.1.1.1 Independent Variables
+            5.1.1.2 Dependent Variables
+            5.1.1.3 Extraneous Variables
+        5.1.2 Main Effects vs Interaction Effects
+        5.1.3 Orthogonality & Confounding
+        5.1.4 Aliasing in Fractional Designs
+        5.1.5 Design Resolution
+        5.1.6 Statistical Design
+        5.1.7 Power-Optimized Designs
+        5.1.8 D-Optimal Designs
+    5.2 Randomization & Assignment
+        5.2.1 Randomization Units (User/Session/Geo)
+        5.2.2 Simple Randomization
+        5.2.3 Stratified Randomization & Blocking
+        5.2.4 Cluster Randomization
+        5.2.5 Matched Pairs Design
+        5.2.6 Re-randomization for Balance
+        5.2.7 Hash-Based Bucketing
+        5.2.8 Sticky Assignment
+        5.2.9 Randomizer
+    5.3 Traffic & Sample Management
+        5.3.1 Split Ratios & Traffic Allocation
+        5.3.2 Control Group Design
+        5.3.3 Holdout Groups
+        5.3.4 Historical Controls
+        5.3.5 Sample Allocation Mismatch
+        5.3.6 Sample Ratio
+        5.3.7 Sample Ratio Mismatch (SRM)
+    5.4 Eligibility & Exposure
+        5.4.1 Eligibility Criteria
+        5.4.2 Exposure & Trigger Events
+        5.4.3 Attribution Windows
+        5.4.4 Intention-to-Treat (ITT) vs Compliers (CACE)
+        5.4.5 ATE/ATT/ITT/CACE
+    5.5 Ramp & Rollout Strategy
+        5.5.1 Ramp Plans (1% → 10% → 50%)
+        5.5.2 Feature Flagging
+        5.5.3 Rollback Criteria
+    5.6 Test Planning & Pre-Registration
+        5.6.1 Objective Definition
+        5.6.2 Success Criteria & Decision Rules
+        5.6.3 Pre-Registration & Analysis Plans
+        5.6.4 Experiment Charter
+        5.6.5 Resource Allocation
+        5.6.6 Test Calendar & Scheduling
+        5.6.7 Collision Management
+        5.6.8 Mutual Exclusion
+        5.6.9 Experiment Interaction
+        5.6.10 Concurrent Tests
+        5.6.11 Overlap Policy
+        5.6.12 Seasonality Blackouts
+6. Implementation & Execution
+    6.1 Platform Architecture
+        6.1.1 Experimentation Platforms
+            6.1.1.1 Open Source Solutions
+            6.1.1.2 Commercial Platforms (Optimizely, VWO, Target)
+            6.1.1.3 Custom Built Systems
+        6.1.2 Assignment Service & Bucketing
+        6.1.3 Bucketing Namespaces
+        6.1.4 Feature Flags & Gates
+        6.1.5 Metric Store
+        6.1.6 Shard/namespace
+    6.2 Technical Implementation
+        6.2.1 User Assignment Logic
+        6.2.2 Cookies & User Identification
+        6.2.3 Cross-Device Identity
+        6.2.4 Householding
+        6.2.5 Instrumentation
+        6.2.6 Cookie Churn
+    6.3 Data Collection & Tracking
+        6.3.1 Event Tracking & Schema
+        6.3.2 Exposure Logging
+        6.3.3 Trigger Logging
+        6.3.4 Data Pipeline Architecture (Telemetry/ETL)
+        6.3.5 Telemetry Latency & SLAs
+        6.3.6 Sampling for Cost Efficiency
+        6.3.7 Event Schema/Contract
+        6.3.8 Event Loss/Backfill
+    6.4 Test Execution
+        6.4.1 Launch Checklists
+        6.4.2 Monitoring During Tests
+        6.4.3 Real-Time Dashboards
+        6.4.4 Emergency Stop Procedures (Kill-Switch)
+        6.4.5 Incident Response
+    6.5 Test Coordination
+        6.5.1 Test Calendar & Scheduling
+        6.5.2 Collision Management
+        6.5.3 Mutual Exclusion
+        6.5.4 Experiment Interaction
+        6.5.5 Concurrent Tests
+        6.5.6 Overlap Policy
+        6.5.7 Seasonality Blackouts
+7. Data Quality & Validation
+    7.1 Pre-Test Validation
+        7.1.1 A/A Tests
+        7.1.2 Balance Checks
+        7.1.3 Instrumentation Audit
+        7.1.4 Canary Analysis
+    7.2 Sample Ratio Mismatch (SRM)
+        7.2.1 SRM Detection
+        7.2.2 Root Cause Investigation
+        7.2.3 Sample Allocation Mismatch
+    7.3 Data Quality Checks
+        7.3.1 Sanity Checks
+        7.3.2 Event Duplication & De-duplication
+        7.3.3 Outlier Handling
+        7.3.4 Bot Filtering
+        7.3.5 Missing Data
+        7.3.6 Left/Right Censoring
+    7.4 Data Validation & Backfill
+        7.4.1 Event Loss Detection
+        7.4.2 Backfill Procedures
+        7.4.3 Backfill Validation
+        7.4.4 Reproducibility
+8. Statistical Analysis Methods
+    8.1 Frequentist Inference
+        8.1.1 T-tests (Pooled, Welch)
+        8.1.2 Z-tests (Proportions)
+        8.1.3 Chi-Square & Fisher's Exact Tests
+        8.1.4 ANOVA & ANCOVA
+        8.1.5 Linear & Logistic Regression
+        8.1.6 Generalized Linear Models (GLM)
+    8.2 Bayesian Inference
+        8.2.1 Prior & Posterior Distributions
+        8.2.2 Credible Intervals
+        8.2.3 Posterior Predictive Distributions
+        8.2.4 Bayes Factors
+        8.2.5 ROPE (Region of Practical Equivalence)
+        8.2.6 Loss Functions & Utility
+        8.2.7 Conjugate Models (Beta-Bernoulli, Normal-Inverse-Gamma)
+        8.2.8 Hierarchical Bayes
+        8.2.9 Bayesian Power & Assurance
+        8.2.10 Bayesian Monitoring
+    8.3 Non-Parametric Methods
+        8.3.1 Mann-Whitney U Test
+        8.3.2 Wilcoxon Tests
+        8.3.3 Median & Quantile Analysis
+        8.3.4 Robust Methods
+    8.4 Standard Errors & Confidence Intervals
+        8.4.1 Robust Standard Errors (HC3)
+        8.4.2 Cluster-Robust SE
+        8.4.3 Delta Method for Ratios
+        8.4.4 Fieller's Method for Ratio CIs
+        8.4.5 Bootstrap Methods
+    8.5 Causal Inference
+        8.5.1 Causal Inference in Data Science
+9. Variance Reduction Techniques
+    9.1 CUPED (Controlled-Experiment Using Pre-Experiment Data)
+        9.1.1 CUPED Fundamentals
+        9.1.2 Pre-Period Covariate Selection
+        9.1.3 CUPED + ANCOVA
+    9.2 Covariate Adjustment
+        9.2.1 Regression Controls
+        9.2.2 ANCOVA
+        9.2.3 Control Variates
+    9.3 Stratification & Weighting
+        9.3.1 Post-Stratification
+        9.3.2 Reweighting (IPW)
+        9.3.3 Paired Designs
+    9.4 Advanced Variance Reduction
+        9.4.1 Synthetic Controls (Unit-Level)
+        9.4.2 Matched Pairs
+10. Sequential Testing & Monitoring
+    10.1 Sequential Design Fundamentals
+        10.1.1 Group Sequential Design (GSD/GST)
+        10.1.2 Alpha-Spending Functions
+        10.1.3 Beta-Spending Functions
+        10.1.4 Error-Spending Functions
+        10.1.5 Adaptive Sequential Design
+    10.2 Sequential Boundaries
+        10.2.1 O'Brien-Fleming Boundaries
+        10.2.2 Pocock Boundaries
+        10.2.3 Efficacy & Futility Boundaries
+    10.3 Advanced Sequential Methods
+        10.3.1 Sequential Probability Ratio Test (SPRT)
+        10.3.2 Always-Valid P-values
+        10.3.3 E-values
+    10.4 Peeking & Optional Stopping
+        10.4.1 Peeking Problem
+        10.4.2 Optional Stopping Consequences
+        10.4.3 Promising-Zone Extensions
+        10.4.4 Sample Size Re-estimation
+    10.5 Sequential Decision Rules
+        10.5.1 Early Stopping Rules
+        10.5.2 Continue/Stop/Act Decisions
+        10.5.3 Sequential Monitoring
+        10.5.4 Serial Testing
+11. Multiple Testing & Corrections
+    11.1 Multiple Comparisons Problem
+        11.1.1 Family-Wise Error Rate (FWER)
+        11.1.2 False Discovery Rate (FDR)
+        11.1.3 False Positive Risk (FPR)
+        11.1.4 False Findings Rate (FFR)
+        11.1.5 False Negative Rate
+    11.2 FWER Control Methods
+        11.2.1 Bonferroni Correction
+        11.2.2 Holm Method
+        11.2.3 Hochberg Method
+        11.2.4 Sidak Correction
+        11.2.5 Dunnett's Correction
+    11.3 FDR Control Methods
+        11.3.1 Benjamini-Hochberg (BH)
+        11.3.2 Benjamini-Yekutieli
+        11.3.3 Storey Q-values
+    11.4 Hierarchical & Structured Testing
+        11.4.1 Hierarchical Testing
+        11.4.2 Gatekeeping
+        11.4.3 Alpha Allocation
+        11.4.4 Westfall-Young Resampling
+12. Results Interpretation & Analysis
+    12.1 Reading Test Results
+        12.1.1 Effect Size Interpretation
+        12.1.2 Lift & Confidence Intervals
+        12.1.3 Uplift Distribution
+        12.1.4 MDE Attainment
+    12.2 Statistical vs Practical Significance
+        12.2.1 Business Significance
+        12.2.2 Decision Thresholds
+        12.2.3 Risk-Adjusted ROI
+        12.2.4 Severity
+    12.3 Special Analysis Cases
+        12.3.1 Non-Inferiority Testing
+        12.3.2 Equivalence Testing (TOST)
+        12.3.3 Superiority Testing
+    12.4 Segmentation Analysis
+        12.4.1 User Segments
+        12.4.2 Device & Platform Analysis
+        12.4.3 Geographic Segmentation
+        12.4.4 Behavioral Cohorts
+        12.4.5 Post-Test Segmentation Risks
+        12.4.6 Simpson's Paradox
+        12.4.7 Subgroup Analysis
+    12.5 Heterogeneous Treatment Effects (HTE)
+        12.5.1 HTE Discovery
+        12.5.2 Causal Trees & Forests
+        12.5.3 Uplift Modeling
+        12.5.4 Meta-Learners (T/S/X-learners)
+        12.5.5 Segment-Level Lift
+        12.5.6 Qini/AUUC
+        12.5.7 Policy Learning
+    12.6 Mediation & Mechanism Analysis
+        12.6.1 Mediation Analysis
+        12.6.2 Understanding Pathways
+        12.6.3 Surrogate Endpoints
+13. Common Pitfalls & Biases
+    13.1 Statistical Pitfalls
+        13.1.1 Peeking Without Control
+        13.1.2 P-Hacking & Data Fishing
+        13.1.3 Winner's Curse
+        13.1.4 Regression to the Mean
+        13.1.5 Power Dilution
+        13.1.6 Inconsistent Denominators
+        13.1.7 Bias
+    13.2 Design & Implementation Issues
+        13.2.1 Sample Ratio Mismatch
+        13.2.2 Instrumentation Errors
+        13.2.3 Noncompliance
+        13.2.4 Attrition & Dropouts
+        13.2.5 External Validity
+        13.2.6 Generalizability
+        13.2.7 Representativeness
+        13.2.8 Representative Sample
+    13.3 Temporal & Environmental Biases
+        13.3.1 Novelty Effect
+        13.3.2 Maturation Effects
+        13.3.3 Carryover Effects
+        13.3.4 Seasonality
+        13.3.5 S-curve Dynamics
+        13.3.6 Learning Effects
+    13.4 Assignment & Selection Biases
+        13.4.1 Selection Bias
+        13.4.2 Survivorship Bias
+        13.4.3 Argument from Coincidence
+    13.5 Interference & Spillover
+        13.5.1 Network Effects
+        13.5.2 Spillover & Contamination
+        13.5.3 SUTVA Violations
+        13.5.4 Dealing with Network Effects
+        13.5.5 Interference
+14. Advanced Experimentation Topics
+    14.1 Quasi-Experimental Methods
+        14.1.1 Difference-in-Differences (DiD)
+        14.1.2 Synthetic Control Methods
+            14.1.2.1 Traditional Synthetic Control
+            14.1.2.2 SCUL (Lasso-Based)
+            14.1.2.3 Bayesian Structural Time Series (BSTS)
+            14.1.2.4 CausalImpact
+        14.1.3 Regression Discontinuity (RD)
+        14.1.4 Interrupted Time Series
+        14.1.5 Instrumental Variables (IV)
+        14.1.6 Propensity Score Methods
+        14.1.7 Doubly Robust Estimation (AIPW)
+        14.1.8 Sensitivity Analysis (Rosenbaum)
+    14.2 Specialized Designs
+        14.2.1 Crossover Designs
+        14.2.2 Switchback Experiments
+        14.2.3 Time-Based Experiments
+        14.2.4 Latin Square Designs
+        14.2.5 Interleaving (Search/Ranking)
+        14.2.6 Clustered & Geo Experiments
+    14.3 Long-Term Effect Measurement
+        14.3.1 Novelty Effect Detection
+        14.3.2 Long-Term Holdouts
+        14.3.3 Cohort Analysis
+        14.3.4 Long-Term Monitoring
+        14.3.5 Learning Effects
+        14.3.6 Novelty Decay
+15. Online Optimization & Bandits
+    15.1 Multi-Armed Bandits (MAB)
+        15.1.1 MAB Fundamentals
+        15.1.2 Epsilon-Greedy
+        15.1.3 Thompson Sampling
+        15.1.4 Upper Confidence Bound (UCB)
+        15.1.5 Successive Elimination
+        15.1.6 Best-Arm Identification
+        15.1.7 Regret Minimization
+        15.1.8 Reward
+    15.2 Contextual Bandits
+        15.2.1 Feature-Based Optimization
+        15.2.2 Personalization Strategies
+        15.2.3 Policy Learning
+    15.3 Off-Policy Evaluation (OPE)
+        15.3.1 OPE from Logged Data
+        15.3.2 Inverse Propensity Scoring (IPS)
+        15.3.3 Doubly Robust OPE
+16. Incrementality & Media Testing
+    16.1 Incrementality Measurement
+        16.1.1 Incrementality Fundamentals
+        16.1.2 Holdout Experiments
+        16.1.3 Audience Split & Suppression
+        16.1.4 Ghost Ads
+        16.1.5 PSA Controls
+        16.1.6 Conversion Lift Studies
+        16.1.7 Lift Measurement
+    16.2 Geo-Based Experiments
+        16.2.1 Geo Experiment Design
+        16.2.2 Market Clustering & Matching
+        16.2.3 Pre/Post Normalization
+        16.2.4 Matched Markets
+        16.2.5 GeoLift Frameworks
+        16.2.6 Spillover & Contamination
+        16.2.7 Halo Effects
+    16.3 Brand & Awareness Testing
+        16.3.1 Brand Lift Studies
+        16.3.2 Survey-Based Measurement
+        16.3.3 Perception & Intent Changes
+        16.3.4 Brand Lift Surveys
+    16.4 Marketing Mix Modeling (MMM)
+        16.4.1 MMM Fundamentals
+        16.4.2 Long-Term ROI Measurement
+        16.4.3 Saturation & Concavity
+        16.4.4 MMM Calibration with Geo-Lift
+        16.4.5 Bayesian MMM
+        16.4.6 MMM Integration with Experiments
+        16.4.7 Cross-Channel Tests & MMM Integration
+    16.5 Walled-Garden Platforms
+        16.5.1 Walled-Garden Lift Studies
+        16.5.2 Platform Constraints
+        16.5.3 Conversion Value Mapping
+17. Attribution Models
+    17.1 Attribution Fundamentals
+        17.1.1 Attribution Windows
+        17.1.2 De-duplication
+        17.1.3 VTC vs CTC (View vs Click)
+    17.2 Attribution Model Types
+        17.2.1 First-Touch Attribution
+        17.2.2 Last-Touch Attribution
+        17.2.3 Multi-Touch Attribution (MTA)
+        17.2.4 Position-Based (U-Shaped)
+        17.2.5 Time-Decay Attribution
+        17.2.6 Data-Driven Attribution
+    17.3 Unified Measurement
+        17.3.1 Combining Attribution & Incrementality
+        17.3.2 Cross-Device Tracking
+        17.3.3 Cross-Channel Attribution
+        17.3.4 Full-Funnel Attribution
+18. Channel-Specific Testing
+    18.1 Paid Media Channels
+        18.1.1 Bid & Budget Tests
+        18.1.2 Creative MVT
+        18.1.3 Frequency Capping
+        18.1.4 Reach vs Frequency Optimization
+        18.1.5 Audience Split Tests
+        18.1.6 Geo-Split for Paid Media
+    18.2 Lifecycle & Email Marketing
+        18.2.1 Subject Line Testing
+        18.2.2 Send-Time Optimization
+        18.2.3 Cadence Tests
+        18.2.4 Offer & Promo Tests
+        18.2.5 Onboarding Sequences
+        18.2.6 Churn-Save & Winback
+        18.2.7 Cross-Sell & Upsell
+    18.3 Web & App Optimization
+        18.3.1 Landing Page Testing
+        18.3.2 Checkout Funnel Optimization
+        18.3.3 Pricing & Discount Display
+        18.3.4 Bundling Tests
+        18.3.5 Search & Ranking Tests
+        18.3.6 Recommender System Tests
+        18.3.7 UI/UX Testing
+        18.3.8 Consent UX (Cookie Banners)
+        18.3.9 Latency & UX Guardrails
+    18.4 SEO & Content
+        18.4.1 SEO Experiments with Holdouts
+        18.4.2 Headline Testing
+        18.4.3 Content Format Testing
+    18.5 Social Media & Engagement
+        18.5.1 Social Media Testing
+        18.5.2 Content Engagement Tests
+    18.6 Marketing Funnel Experimentation
+        18.6.1 Awareness Stage (Content Marketing, Brand Campaigns)
+        18.6.2 Consideration Stage (Educational Content)
+        18.6.3 Decision Stage (CTAs, Checkout Processes)
+        18.6.4 Retention Stage (Post-Purchase, Loyalty Programs)
+        18.6.5 Customer Journey Optimization
+        18.6.6 Touchpoint Interaction Analysis
+        18.6.7 Sequential Testing Across Funnel Stages
+    18.7 Conversion Rate Optimization (CRO)
+        18.7.1 CRO Process & Methodology
+        18.7.2 Research Phase
+        18.7.3 Hypothesis Construction
+        18.7.4 Test Prioritization
+        18.7.5 Implementation & Analysis
+        18.7.6 Landing Page Optimization (Headlines, Images, Forms, Layout)
+        18.7.7 Call-to-Action Testing (Button Colors, Text, Placement)
+        18.7.8 Form Optimization (Field Requirements, Multi-Step vs Single-Step)
+        18.7.9 Content Personalization
+        18.7.10 Site Speed Optimization
+        18.7.11 Mobile Responsiveness
+19. Privacy, Ethics & Compliance
+    19.1 Ethical Considerations
+        19.1.1 Informed Consent
+        19.1.2 Potential Harm Assessment
+        19.1.3 Transparency Requirements
+        19.1.4 IRB & Ethics Review
+    19.2 Privacy Frameworks
+        19.2.1 GDPR Implications
+        19.2.2 CCPA Requirements
+        19.2.3 Consent Frameworks
+        19.2.4 Data Protection Standards
+        19.2.5 Data Minimization
+    19.3 Privacy-Preserving Methods
+        19.3.1 Cookieless Tracking
+        19.3.2 ATT & SKAdNetwork (iOS)
+        19.3.3 Differential Privacy
+        19.3.4 Aggregation Thresholds
+        19.3.5 K-Anonymity
+        19.3.6 Privacy Budgets
+    19.4 Bias & Fairness
+        19.4.1 Selection Bias
+        19.4.2 Algorithmic Fairness
+        19.4.3 Inclusive Design Testing
+20. Organizational Implementation
+    20.1 Building Experimentation Culture
+        20.1.1 Stakeholder Buy-In
+        20.1.2 Education & Training
+        20.1.3 Success Stories & Case Studies
+        20.1.4 Continuous Optimization Mindset
+    20.2 Governance & Process
+        20.2.1 Test Prioritization Frameworks
+        20.2.2 Review & Approval Processes
+        20.2.3 Pre-Read & Decision Memos
+        20.2.4 Documentation Standards
+        20.2.5 Experiment Registry
+        20.2.6 Taxonomy & Naming Conventions
+        20.2.7 Knowledge Management
+        20.2.8 Experiment Governance & Registry
+        20.2.9 Naming Conventions
+        20.2.10 Taxonomy of Experiments
+    20.3 Team Structure & Roles
+        20.3.1 RACI Matrix
+        20.3.2 Owner/DRI (Directly Responsible Individual)
+        20.3.3 Centralized vs Decentralized Models
+        20.3.4 Cross-Functional Collaboration
+    20.4 Metrics & Performance
+        20.4.1 Testing Velocity
+        20.4.2 Win Rate
+        20.4.3 Impact Measurement
+        20.4.4 Time-to-Decision
+        20.4.5 Executive Reporting
+    20.5 Resource Management
+        20.5.1 Resource Allocation
+        20.5.2 Budget Allocation & Costing
+21. Reporting & Decision-Making
+    21.1 Results Communication
+        21.1.1 Lift & Confidence Intervals
+        21.1.2 Uplift Distribution
+        21.1.3 KPI vs Guardrails
+        21.1.4 Business Impact Translation
+    21.2 Decision Frameworks
+        21.2.1 Decision Rules
+        21.2.2 Decision Thresholds
+        21.2.3 Risk-Reward Analysis
+        21.2.4 Launch vs No-Launch
+    21.3 Learning & Knowledge Sharing
+        21.3.1 Post-Mortem Analysis
+        21.3.2 Learnings Repository
+        21.3.3 Meta-Analysis
+        21.3.4 Learning from Failures
+22. Tools & Technology Ecosystem
+    22.1 Experimentation Platforms
+        22.1.1 End-to-End Platforms
+        22.1.2 Feature Flag Systems
+        22.1.3 Assignment Services
+        22.1.4 A/B Testing Tools (Google Optimize, Optimizely, VWO)
+    22.2 Analytics & BI
+        22.2.1 Analytics Platforms (Google Analytics, Adobe Analytics, Amplitude)
+        22.2.2 BI Dashboards
+        22.2.3 Customer Data Platforms (CDPs)
+        22.2.4 Heatmap Tools (Hotjar, Crazy Egg)
+        22.2.5 Survey Platforms
+    22.3 Statistical & Analysis Tools
+        22.3.1 Power Calculators
+        22.3.2 Statistical Software (R, Python, SPSS)
+        22.3.3 CUPED Libraries
+        22.3.4 Causal Inference Libraries (EconML/CausalImpact)
+        22.3.5 Geo-Lift Tooling
+        22.3.6 MMM Stack
+        22.3.7 Bandit Frameworks
+    22.4 Data Infrastructure
+        22.4.1 Telemetry & ETL Pipelines
+        22.4.2 Event Schema Management
+        22.4.3 Metric Stores
+        22.4.4 Metrics Layer
+    22.5 AI & Machine Learning
+        22.5.1 Predictive Modeling
+        22.5.2 Automated Personalization
+        22.5.3 Automated Test Design
+        22.5.4 Real-Time Optimization
+23. Lifecycle & Process
+    23.1 Ideation & Prioritization
+    23.2 Design
+    23.3 Implementation & QA
+    23.4 Monitoring & Execution
+    23.5 Analysis & Interpretation
+    23.6 Readouts & Knowledge Repository
+24. Product & Marketing Context
+    24.1 Product-Led Experimentation Cases (Search, Booking Funnel)
+    24.2 Marketing-Led Experimentation (Acquisition, Lifecycle)
+    24.3 Interview-Style Cases (Experiences, Host Pricing Tool)
+    24.4 Business Models
+        24.4.1 E-commerce
+        24.4.2 Software As A Service (SaaS)
+        24.4.3 Mobile Application
+        24.4.4 Two-sided Marketplace
+        24.4.5 Social Media
+        24.4.6 Search Engine
+    24.5 Analytical Frameworks
+        24.5.1 AARRR
+        24.5.2 The 5 C's Framework
+    24.6 Audience Segmentation & Targeting
+        24.6.1 Demographic Segmentation
+        24.6.2 Behavioral Segmentation
+        24.6.3 Psychographic Segmentation
+        24.6.4 Geographic Segmentation
+        24.6.5 Multidimensional Segmentation
+        24.6.6 Segment-Specific Experiments
+        24.6.7 Personalization Testing
+        24.6.8 Cross-Segment Analysis
+        24.6.9 Lookalike Audience Testing
+    24.7 Product-Specific Questions
+        24.7.1 Restaurant Recommendation for Facebook News Feed
+        24.7.2 New Shopping Cart Feature for E-commerce
+        24.7.3 Improve Accuracy of Birthday Data
+        24.7.4 Measure & Improve Engagement for Quora
+        24.7.5 Instagram: Launch the Story Feature
+        24.7.6 Spotify: Concert Tickets Early Access
+        24.7.7 Robinhood's Referral Program
+        24.7.8 Doordash: Effectiveness of Referral Program
+        24.7.9 Uprank Search Results
+        24.7.10 Diagnose Trading Activity for Robinhood
+25. Appendices
+    25.1 Quick-Start Checklist
+        25.1.1 Design Phase Checklist
+        25.1.2 Implementation Checklist
+        25.1.3 Analysis Phase Checklist
+        25.1.4 Decision & Rollout Checklist
+    25.2 Glossary of Terms
+        25.2.1 Statistical Terms
+        25.2.2 Experimental Design Terms
+        25.2.3 Metric Definitions
+        25.2.4 Platform & Technical Terms
+    25.3 Formulas & Calculations
+        25.3.1 Sample Size Formulas
+        25.3.2 Statistical Test Formulas
+        25.3.3 Variance Reduction Formulas
+    25.4 Case Studies & Examples
+        25.4.1 Industry Case Studies
+        25.4.2 Common Experiment Patterns
+    25.5 Industry Standards & Best Practices
+        25.5.1 Best Practices by Domain
+        25.5.2 Common Pitfalls to Avoid
+    25.6 Reference Tables
+        25.6.1 Test Selection Guide
+        25.6.2 Sample Size Methods

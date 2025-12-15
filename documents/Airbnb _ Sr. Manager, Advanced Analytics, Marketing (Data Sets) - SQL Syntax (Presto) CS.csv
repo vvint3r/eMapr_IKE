@@ -1,0 +1,106 @@
+,Level 1,,Level 2,,Level 3
+,Query Fundamentals,,Basic Operations,,SELECT Statements
+,Query Fundamentals,,Basic Operations,,FROM Clause
+,Query Fundamentals,,Basic Operations,,WHERE Clause
+,Query Fundamentals,,Basic Operations,,Sorting & Grouping
+,Query Fundamentals,,Aggregate Functions,,Statistical Functions
+,Query Fundamentals,,Aggregate Functions,,Advanced Statistical
+,Query Fundamentals,,Joins & Relationships,,Inner Joins
+,Query Fundamentals,,Joins & Relationships,,Outer Joins
+,Query Fundamentals,,Joins & Relationships,,Advanced Joins
+,Query Fundamentals,,Subqueries,,Scalar Subqueries
+,Query Fundamentals,,Subqueries,,Table Subqueries
+,Query Fundamentals,,Subqueries,,Correlated Subqueries
+,Advanced Queries,,Window Functions,,Ranking Functions
+,Advanced Queries,,Window Functions,,Aggregate Windows
+,Advanced Queries,,Common Table Expressions,,Basic CTEs
+,Advanced Queries,,Common Table Expressions,,Recursive CTEs
+,Advanced Queries,,Set Operations,,UNION
+,Advanced Queries,,Set Operations,,INTERSECT
+,Advanced Queries,,Set Operations,,EXCEPT/MINUS
+,Advanced Queries,,Pivoting & Unpivoting,,PIVOT Operations
+,Advanced Queries,,Pivoting & Unpivoting,,UNPIVOT Operations
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,"Core Retrieval, Filtering, & Sorting",,,,
+,,,,,
+,,,,,
+,,,,,
+,CATEGORY,,SYNTAX,,PURPOSE
+,,,,,
+,,,,,
+,Data Retrieval,,"SELECT, FROM catalog.schema.table",,"Select data from federated sources (e.g., hive.events.bookings)."
+,Filtering,,"WHERE condition, IN, BETWEEN, LIKE, IS NULL",,"Isolate specific user segments, geographies, or time frames."
+,Grouping,,"GROUP BY, HAVING",,"Calculate campaign performance metrics (e.g., CTR, Conversion Rate)."
+,Transformation,,"CASE WHEN...END, CAST(), COALESCE()",,"Create custom user buckets, flag high-value bookings, or handle missing data."
+,Integration,,"JOIN, UNION ALL",,Link campaign data to booking data; combine multiple campaign reports.
+,Complexity,,WITH (CTE),,Structure multi-step transformation logic for readability and re-use.
+,Sequencing,,"LAG(), LEAD()",,Track user journey steps; analyze time between marketing touchpoints and booking.
+,Ranking,,"RANK(), ROW_NUMBER()",,Identify top-performing campaigns or the first/last touchpoint in a conversion path.
+,Rolling Metrics,,ROWS BETWEEN...,,Calculate moving averages of booking value or cumulative marketing spend.
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,SYNTAX,,EXAMPLE,,SQL QUERY
+,,,,,
+,,,,,
+,,,,,
+,Aggregation and Grouping (Metrics Calculation),,,,
+,,,,,
+,,,,,
+,,,,,
+,Basic Retrieval,,"Get the ID, channel, and spend for all active campaigns.",,"SELECT campaign_id, marketing_channel, campaign_spend FROM airbnb.marketing.campaigns WHERE is_active = TRUE;"
+,Presto Naming,,Referencing the bookings table stored in the hive catalog under the events schema.,,FROM hive.events.bookings AS b
+,IN Operator,,Filter for bookings originating from either the 'SEO' or 'Email' channel.,,"WHERE marketing_channel IN ('SEO', 'Email')"
+,BETWEEN,,Filter booking events that occurred during the Q3 2024 campaign window.,,WHERE event_timestamp BETWEEN DATE '2024-07-01' AND DATE '2024-09-30'
+,LIKE,,"Find all listings with 'Luxury' or 'Deluxe' in their title, regardless of capitalization.",,WHERE LOWER(listing_title) LIKE '%luxury%' OR LOWER(listing_title) LIKE '%deluxe%'
+,IS NULL / IS NOT NULL,,Identify campaign clicks that were not immediately followed by a booking (null booking ID).,,WHERE booking_id IS NULL AND event_type = 'click'
+,Sorting,,Rank the top 10 most expensive properties in San Francisco to target for a premium campaign.,,"SELECT listing_id, nightly_price FROM airbnb.listings.properties WHERE city = 'SF' ORDER BY nightly_price DESC LIMIT 10;"
+,,,,,
+,,,,,
+,,,,,
+,Conditional Logic & Transformation,,,,
+,,,,,
+,,,,,
+,,,,,
+,Simple CASE,,Create a Booking_Tier flag based on the value of the booking.,,"SELECT booking_id, CASE WHEN booking_value > 500 THEN 'Premium' WHEN booking_value > 100 THEN 'Standard' ELSE 'Budget' END AS booking_tier FROM airbnb.bookings.events;"
+,COALESCE,,Replace NULL values in the host_review_score with a default of 0.0 before calculating an average.,,"SELECT AVG(COALESCE(host_review_score, 0.0)) FROM airbnb.listings.properties;"
+,CAST,,"Convert a campaign success rate string (e.g., '0.15') to a double for use in calculations.",,"SELECT campaign_id, CAST(success_rate_str AS DOUBLE) FROM airbnb.marketing.campaigns;"
+,DATE_TRUNC,,Aggregate daily metrics into weekly performance reports.,,"SELECT DATE_TRUNC('week', event_timestamp) AS booking_week, COUNT(booking_id) FROM airbnb.bookings.events GROUP BY 1;"
+,SUBSTR / LENGTH,,Extract the first 4 characters of the listing ID for internal segmentation.,,"SELECT SUBSTR(listing_id, 1, 4) AS listing_prefix FROM airbnb.listings.properties;"
+,,,,,
+,,,,,
+,Data Integration (Joins and Set Operations),,,,
+,,,,,
+,,,,,
+,,,,,
+,INNER JOIN,,Find the booking value only for users who clicked a campaign ad (requires both a click event and a booking).,,SELECT b.booking_value FROM airbnb.bookings.events AS b INNER JOIN airbnb.marketing.campaigns AS c ON b.user_id = c.user_id;
+,LEFT JOIN (Enrichment),,"Get a list of all users and enrich it with their first booking ID, using NULL for non-bookers.",,"SELECT u.user_id, MIN(b.booking_id) AS first_booking FROM airbnb.users.guests AS u LEFT JOIN airbnb.bookings.events AS b ON u.user_id = b.user_id GROUP BY 1;"
+,UNION ALL,,Combine two separate year-end campaign performance tables into a single report.,,SELECT * FROM airbnb.marketing.campaigns_2023 UNION ALL SELECT * FROM airbnb.marketing.campaigns_2024;
+,Federated Join,,Join a user table in the Hive data lake with a financial table in the MySQL database.,,"SELECT h.booking_value, m.user_lifetime_value FROM hive.events.bookings AS h JOIN mysql.finance.ltv AS m ON h.user_id = m.user_id;"
+,,,,,
+,,,,,
+,Advanced Analytical Logic (CTEs and Subqueries),,,,
+,,,,,
+,,,,,
+,,,,,
+,WITH (CTE),,"Calculate the total revenue per channel in Step 1, then use it in Step 2 to find each channel's share of total revenue.",,"sql WITH channel_rev AS ( SELECT channel, SUM(revenue) AS total_channel_rev FROM bookings GROUP BY 1 ) SELECT channel, total_channel_rev / SUM(total_channel_rev) OVER () AS revenue_share FROM channel_rev;"
+,Scalar Subquery,,Filter only for bookings where the value is above the overall average booking value.,,WHERE booking_value > (SELECT AVG(booking_value) FROM airbnb.bookings.events)
+,Non-Correlated Subquery,,Find all users who booked a property that has been reviewed by at least 10 different guests.,,WHERE listing_id IN (SELECT listing_id FROM airbnb.listings.properties GROUP BY 1 HAVING COUNT(review_id) >= 10)
+,,,,,
+,Window Functions (Sequencing and Ranking),,,,
+,,,,,
+,,,,,
+,,,,,
+,Function/Syntax,,Example Scenario (Airbnb Marketing),,Presto SQL Example
+,PARTITION BY,,Calculate metrics separately for each marketing_channel.,,OVER (PARTITION BY marketing_channel ...)
+,ROW_NUMBER(),,Identify the first event in a user's session (first touchpoint).,,ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY event_timestamp ASC) AS event_rank
+,RANK() / DENSE_RANK(),,Rank campaigns based on their Conversion Rate (allowing ties).,,DENSE_RANK() OVER (ORDER BY conversion_rate DESC) AS campaign_rank
+,LAG(),,Determine the time elapsed between a user's current event and their previous event.,,event_timestamp - LAG(event_timestamp) OVER (PARTITION BY user_id ORDER BY event_timestamp)
+,LEAD(),,"Find the next step in a conversion funnel (e.g., what happened after a click).",,LEAD(event_type) OVER (PARTITION BY user_id ORDER BY event_timestamp)
+,Running Total (Cumulative),,Calculate the cumulative booking value earned over the month.,,sql SUM(booking_value) OVER ( ORDER BY booking_date ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW ) AS cumulative_gbv
+,Moving Average,,Smooth out daily volatility by calculating the 7-day rolling average of daily booking counts.,,sql AVG(daily_bookings) OVER ( ORDER BY booking_date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW ) AS avg_7_day_bookings

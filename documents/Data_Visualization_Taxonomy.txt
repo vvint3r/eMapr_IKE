@@ -1,0 +1,551 @@
+DATA VISUALIZATION - COMPREHENSIVE TAXONOMY
+
+Level 1	Level 2	Level 3	Level 4	Level 5	Level 6
+Visualization Fundamentals	Core Concepts	Data Viz Basics	Fundamental Principles	Purpose	Insight Discovery
+Visualization Fundamentals	Core Concepts	Data Viz Basics	Fundamental Principles	Purpose	Decision Support
+Visualization Fundamentals	Core Concepts	Data Viz Basics	Fundamental Principles	Purpose	Communication
+Visualization Fundamentals	Core Concepts	Data Viz Basics	Fundamental Principles	Purpose	Pattern Recognition
+Visualization Fundamentals	Core Concepts	Data Viz Basics	Data Types	Data Categories	Categorical Data
+Visualization Fundamentals	Core Concepts	Data Viz Basics	Data Types	Data Categories	Numerical Data
+Visualization Fundamentals	Core Concepts	Data Viz Basics	Data Types	Data Categories	Temporal Data
+Visualization Fundamentals	Core Concepts	Data Viz Basics	Data Types	Data Categories	Spatial Data
+Visualization Fundamentals	Core Concepts	Data Viz Basics	Data Types	Data Categories	Hierarchical Data
+Visualization Fundamentals	Core Concepts	Data Viz Basics	Data Types	Data Categories	Network Data
+Visualization Fundamentals	Core Concepts	Visual Encoding	Encoding Channels	Primary Encodings	Position
+Visualization Fundamentals	Core Concepts	Visual Encoding	Encoding Channels	Primary Encodings	Length
+Visualization Fundamentals	Core Concepts	Visual Encoding	Encoding Channels	Primary Encodings	Angle
+Visualization Fundamentals	Core Concepts	Visual Encoding	Encoding Channels	Primary Encodings	Area
+Visualization Fundamentals	Core Concepts	Visual Encoding	Encoding Channels	Secondary Encodings	Color (Hue)
+Visualization Fundamentals	Core Concepts	Visual Encoding	Encoding Channels	Secondary Encodings	Color (Saturation)
+Visualization Fundamentals	Core Concepts	Visual Encoding	Encoding Channels	Secondary Encodings	Color (Brightness)
+Visualization Fundamentals	Core Concepts	Visual Encoding	Encoding Channels	Secondary Encodings	Shape
+Visualization Fundamentals	Core Concepts	Visual Encoding	Encoding Channels	Secondary Encodings	Texture
+Visualization Fundamentals	Core Concepts	Visual Encoding	Encoding Channels	Secondary Encodings	Size
+Visualization Fundamentals	Perception & Cognition	Human Perception	Visual Perception	Preattentive Processing	Color Detection
+Visualization Fundamentals	Perception & Cognition	Human Perception	Visual Perception	Preattentive Processing	Motion Detection
+Visualization Fundamentals	Perception & Cognition	Human Perception	Visual Perception	Preattentive Processing	Form Detection
+Visualization Fundamentals	Perception & Cognition	Human Perception	Visual Perception	Gestalt Principles	Proximity
+Visualization Fundamentals	Perception & Cognition	Human Perception	Visual Perception	Gestalt Principles	Similarity
+Visualization Fundamentals	Perception & Cognition	Human Perception	Visual Perception	Gestalt Principles	Continuity
+Visualization Fundamentals	Perception & Cognition	Human Perception	Visual Perception	Gestalt Principles	Closure
+Visualization Fundamentals	Perception & Cognition	Human Perception	Visual Perception	Gestalt Principles	Figure-Ground
+Visualization Fundamentals	Perception & Cognition	Human Perception	Cognitive Load	Load Management	Working Memory
+Visualization Fundamentals	Perception & Cognition	Human Perception	Cognitive Load	Load Management	Attention
+Visualization Fundamentals	Perception & Cognition	Human Perception	Cognitive Load	Load Management	Information Processing
+Chart Types	Comparison Charts	Bar Charts	Bar Chart Variants	Vertical Bars	Column Chart
+Chart Types	Comparison Charts	Bar Charts	Bar Chart Variants	Vertical Bars	Stacked Column Chart
+Chart Types	Comparison Charts	Bar Charts	Bar Chart Variants	Vertical Bars	Grouped Column Chart
+Chart Types	Comparison Charts	Bar Charts	Bar Chart Variants	Horizontal Bars	Bar Chart
+Chart Types	Comparison Charts	Bar Charts	Bar Chart Variants	Horizontal Bars	Stacked Bar Chart
+Chart Types	Comparison Charts	Bar Charts	Bar Chart Variants	Horizontal Bars	Grouped Bar Chart
+Chart Types	Comparison Charts	Bar Charts	Bar Chart Variants	Specialized Bars	Bullet Chart
+Chart Types	Comparison Charts	Bar Charts	Bar Chart Variants	Specialized Bars	Waterfall Chart
+Chart Types	Comparison Charts	Bar Charts	Bar Chart Variants	Specialized Bars	Lollipop Chart
+Chart Types	Comparison Charts	Bar Charts	Bar Chart Variants	Specialized Bars	Pareto Chart
+Chart Types	Comparison Charts	Radial Charts	Radial Comparisons	Circular Charts	Pie Chart
+Chart Types	Comparison Charts	Radial Charts	Radial Comparisons	Circular Charts	Donut Chart
+Chart Types	Comparison Charts	Radial Charts	Radial Comparisons	Circular Charts	Semi-Circle Donut
+Chart Types	Comparison Charts	Radial Charts	Radial Comparisons	Web Charts	Radar Chart
+Chart Types	Comparison Charts	Radial Charts	Radial Comparisons	Web Charts	Spider Chart
+Chart Types	Comparison Charts	Radial Charts	Radial Comparisons	Circular Bars	Radial Bar Chart
+Chart Types	Comparison Charts	Radial Charts	Radial Comparisons	Circular Bars	Circular Progress
+Chart Types	Time Series Charts	Line Charts	Line Chart Types	Basic Lines	Line Graph
+Chart Types	Time Series Charts	Line Charts	Line Chart Types	Basic Lines	Multi-Line Chart
+Chart Types	Time Series Charts	Line Charts	Line Chart Types	Basic Lines	Step Line Chart
+Chart Types	Time Series Charts	Line Charts	Line Chart Types	Basic Lines	Curved Line Chart
+Chart Types	Time Series Charts	Line Charts	Line Chart Types	Area Lines	Area Chart
+Chart Types	Time Series Charts	Line Charts	Line Chart Types	Area Lines	Stacked Area Chart
+Chart Types	Time Series Charts	Line Charts	Line Chart Types	Area Lines	Stream Graph
+Chart Types	Time Series Charts	Line Charts	Line Chart Types	Specialized Lines	Sparkline
+Chart Types	Time Series Charts	Line Charts	Line Chart Types	Specialized Lines	Horizon Chart
+Chart Types	Time Series Charts	Temporal Visualizations	Time-Based Charts	Calendar Views	Calendar Heatmap
+Chart Types	Time Series Charts	Temporal Visualizations	Time-Based Charts	Timeline Charts	Timeline
+Chart Types	Time Series Charts	Temporal Visualizations	Time-Based Charts	Timeline Charts	Gantt Chart
+Chart Types	Time Series Charts	Temporal Visualizations	Time-Based Charts	Timeline Charts	Project Timeline
+Chart Types	Time Series Charts	Temporal Visualizations	Time-Based Charts	Cycle Charts	Circular Timeline
+Chart Types	Time Series Charts	Temporal Visualizations	Time-Based Charts	Cycle Charts	Seasonal Plot
+Chart Types	Relationship Charts	Scatter Plots	Scatter Plot Types	Basic Scatter	Scatter Plot
+Chart Types	Relationship Charts	Scatter Plots	Scatter Plot Types	Basic Scatter	Scatter Plot Matrix
+Chart Types	Relationship Charts	Scatter Plots	Scatter Plot Types	Enhanced Scatter	Bubble Chart
+Chart Types	Relationship Charts	Scatter Plots	Scatter Plot Types	Enhanced Scatter	3D Scatter Plot
+Chart Types	Relationship Charts	Correlation Charts	Correlation Views	Matrix Views	Correlation Matrix
+Chart Types	Relationship Charts	Correlation Charts	Correlation Views	Matrix Views	Heatmap
+Chart Types	Relationship Charts	Correlation Charts	Correlation Views	Matrix Views	Correlation Heatmap
+Chart Types	Relationship Charts	Network Graphs	Network Visualizations	Graph Types	Network Diagram
+Chart Types	Relationship Charts	Network Graphs	Network Visualizations	Graph Types	Force-Directed Graph
+Chart Types	Relationship Charts	Network Graphs	Network Visualizations	Graph Types	Arc Diagram
+Chart Types	Relationship Charts	Network Graphs	Network Visualizations	Graph Types	Chord Diagram
+Chart Types	Relationship Charts	Network Graphs	Network Visualizations	Graph Types	Sankey Diagram
+Chart Types	Relationship Charts	Network Graphs	Network Visualizations	Graph Types	Alluvial Diagram
+Chart Types	Relationship Charts	Flow Charts	Flow Visualizations	Process Flow	Flowchart
+Chart Types	Relationship Charts	Flow Charts	Flow Visualizations	Process Flow	Process Map
+Chart Types	Relationship Charts	Flow Charts	Flow Visualizations	Decision Flow	Decision Tree
+Chart Types	Distribution Charts	Histogram & Density	Distribution Types	Frequency Distribution	Histogram
+Chart Types	Distribution Charts	Histogram & Density	Distribution Types	Frequency Distribution	Frequency Polygon
+Chart Types	Distribution Charts	Histogram & Density	Distribution Types	Density Plots	Density Plot
+Chart Types	Distribution Charts	Histogram & Density	Distribution Types	Density Plots	Violin Plot
+Chart Types	Distribution Charts	Histogram & Density	Distribution Types	Density Plots	Ridgeline Plot
+Chart Types	Distribution Charts	Box & Whisker	Statistical Charts	Box Plots	Box Plot
+Chart Types	Distribution Charts	Box & Whisker	Statistical Charts	Box Plots	Box and Whisker Plot
+Chart Types	Distribution Charts	Box & Whisker	Statistical Charts	Box Plots	Grouped Box Plot
+Chart Types	Distribution Charts	Quartile Charts	Quartile Views	Range Charts	Range Chart
+Chart Types	Distribution Charts	Quartile Charts	Quartile Views	Range Charts	Error Bar Chart
+Chart Types	Part-to-Whole Charts	Proportion Charts	Compositional Charts	Pie Family	Pie Chart
+Chart Types	Part-to-Whole Charts	Proportion Charts	Compositional Charts	Pie Family	Donut Chart
+Chart Types	Part-to-Whole Charts	Proportion Charts	Compositional Charts	Pie Family	Multi-Level Pie
+Chart Types	Part-to-Whole Charts	Proportion Charts	Compositional Charts	Stacked Views	Stacked Bar Chart
+Chart Types	Part-to-Whole Charts	Proportion Charts	Compositional Charts	Stacked Views	100% Stacked Bar
+Chart Types	Part-to-Whole Charts	Proportion Charts	Compositional Charts	Stacked Views	Marimekko Chart
+Chart Types	Part-to-Whole Charts	Hierarchical Charts	Tree Structures	Tree Types	Treemap
+Chart Types	Part-to-Whole Charts	Hierarchical Charts	Tree Structures	Tree Types	Sunburst Chart
+Chart Types	Part-to-Whole Charts	Hierarchical Charts	Tree Structures	Tree Types	Circle Packing
+Chart Types	Part-to-Whole Charts	Hierarchical Charts	Tree Structures	Tree Types	Icicle Chart
+Chart Types	Part-to-Whole Charts	Hierarchical Charts	Tree Structures	Dendrogram	Dendrogram
+Chart Types	Part-to-Whole Charts	Hierarchical Charts	Tree Structures	Dendrogram	Cluster Dendrogram
+Chart Types	Part-to-Whole Charts	Waffle & Grid	Grid-Based Charts	Grid Charts	Waffle Chart
+Chart Types	Part-to-Whole Charts	Waffle & Grid	Grid-Based Charts	Grid Charts	Pictogram Chart
+Chart Types	Part-to-Whole Charts	Waffle & Grid	Grid-Based Charts	Unit Charts	Unit Chart
+Chart Types	Geospatial Charts	Maps	Cartographic Views	Basic Maps	Choropleth Map
+Chart Types	Geospatial Charts	Maps	Cartographic Views	Basic Maps	Symbol Map
+Chart Types	Geospatial Charts	Maps	Cartographic Views	Basic Maps	Dot Distribution Map
+Chart Types	Geospatial Charts	Maps	Cartographic Views	Heatmaps	Geographic Heatmap
+Chart Types	Geospatial Charts	Maps	Cartographic Views	Heatmaps	Hexbin Map
+Chart Types	Geospatial Charts	Maps	Cartographic Views	3D Maps	3D Terrain Map
+Chart Types	Geospatial Charts	Maps	Cartographic Views	3D Maps	Prism Map
+Chart Types	Geospatial Charts	Specialty Maps	Advanced Geo Viz	Flow Maps	Flow Map
+Chart Types	Geospatial Charts	Specialty Maps	Advanced Geo Viz	Flow Maps	Origin-Destination Map
+Chart Types	Geospatial Charts	Specialty Maps	Advanced Geo Viz	Cartogram	Cartogram
+Chart Types	Geospatial Charts	Specialty Maps	Advanced Geo Viz	Cartogram	Distorted Map
+Chart Types	Geospatial Charts	Location Markers	Point Data	Marker Types	Bubble Map
+Chart Types	Geospatial Charts	Location Markers	Point Data	Marker Types	Proportional Symbol Map
+Chart Types	Specialty Charts	Funnel Charts	Conversion Charts	Funnel Types	Sales Funnel
+Chart Types	Specialty Charts	Funnel Charts	Conversion Charts	Funnel Types	Marketing Funnel
+Chart Types	Specialty Charts	Funnel Charts	Conversion Charts	Funnel Types	Conversion Funnel
+Chart Types	Specialty Charts	Funnel Charts	Conversion Charts	Pyramid Types	Pyramid Chart
+Chart Types	Specialty Charts	Gauge Charts	Indicator Charts	Gauge Types	Gauge Chart
+Chart Types	Specialty Charts	Gauge Charts	Indicator Charts	Gauge Types	Speedometer Chart
+Chart Types	Specialty Charts	Gauge Charts	Indicator Charts	Progress Indicators	Progress Bar
+Chart Types	Specialty Charts	Gauge Charts	Indicator Charts	Progress Indicators	Progress Ring
+Chart Types	Specialty Charts	Financial Charts	Stock Charts	OHLC Charts	Candlestick Chart
+Chart Types	Specialty Charts	Financial Charts	Stock Charts	OHLC Charts	OHLC Chart
+Chart Types	Specialty Charts	Financial Charts	Stock Charts	Price Charts	Line Chart (Stock)
+Chart Types	Specialty Charts	Financial Charts	Stock Charts	Volume Charts	Volume Chart
+Chart Types	Specialty Charts	Word Clouds	Text Visualization	Word Cloud Types	Word Cloud
+Chart Types	Specialty Charts	Word Clouds	Text Visualization	Word Cloud Types	Tag Cloud
+Chart Types	Advanced Visualizations	Matrix Visualizations	Matrix Types	Correlation Views	Correlation Matrix
+Chart Types	Advanced Visualizations	Matrix Visualizations	Matrix Types	Correlation Views	Confusion Matrix
+Chart Types	Advanced Visualizations	Matrix Visualizations	Matrix Types	Grid Heatmaps	Matrix Heatmap
+Chart Types	Advanced Visualizations	Matrix Visualizations	Matrix Types	Grid Heatmaps	Adjacency Matrix
+Chart Types	Advanced Visualizations	Small Multiples	Faceted Views	Grid Layouts	Trellis Chart
+Chart Types	Advanced Visualizations	Small Multiples	Faceted Views	Grid Layouts	Panel Chart
+Chart Types	Advanced Visualizations	Small Multiples	Faceted Views	Grid Layouts	Small Multiple Line
+Chart Types	Advanced Visualizations	Parallel Coordinates	Multivariate Charts	Parallel Views	Parallel Coordinates Plot
+Chart Types	Advanced Visualizations	Parallel Coordinates	Multivariate Charts	Parallel Views	Parallel Sets
+Chart Types	Advanced Visualizations	Slope Graphs	Change Visualization	Slope Types	Slope Chart
+Chart Types	Advanced Visualizations	Slope Graphs	Change Visualization	Slope Types	Bump Chart
+Design Principles	Visual Design	Color Theory	Color Fundamentals	Color Models	RGB
+Design Principles	Visual Design	Color Theory	Color Fundamentals	Color Models	HSL
+Design Principles	Visual Design	Color Theory	Color Fundamentals	Color Models	CMYK
+Design Principles	Visual Design	Color Theory	Color Fundamentals	Color Properties	Hue
+Design Principles	Visual Design	Color Theory	Color Fundamentals	Color Properties	Saturation
+Design Principles	Visual Design	Color Theory	Color Fundamentals	Color Properties	Brightness
+Design Principles	Visual Design	Color Theory	Color Fundamentals	Color Properties	Contrast
+Design Principles	Visual Design	Color Schemes	Palette Types	Scheme Types	Monochromatic
+Design Principles	Visual Design	Color Schemes	Palette Types	Scheme Types	Analogous
+Design Principles	Visual Design	Color Schemes	Palette Types	Scheme Types	Complementary
+Design Principles	Visual Design	Color Schemes	Palette Types	Scheme Types	Triadic
+Design Principles	Visual Design	Color Schemes	Palette Types	Scheme Types	Split-Complementary
+Design Principles	Visual Design	Color Schemes	Palette Types	Sequential	Sequential Palette
+Design Principles	Visual Design	Color Schemes	Palette Types	Sequential	Gradient Scale
+Design Principles	Visual Design	Color Schemes	Palette Types	Diverging	Diverging Palette
+Design Principles	Visual Design	Color Schemes	Palette Types	Diverging	Two-Color Scale
+Design Principles	Visual Design	Color Schemes	Palette Types	Categorical	Categorical Palette
+Design Principles	Visual Design	Color Schemes	Palette Types	Categorical	Qualitative Colors
+Design Principles	Visual Design	Color Usage	Color Application	Semantic Colors	Red (Warning/Error)
+Design Principles	Visual Design	Color Usage	Color Application	Semantic Colors	Green (Success/Positive)
+Design Principles	Visual Design	Color Usage	Color Application	Semantic Colors	Yellow (Caution)
+Design Principles	Visual Design	Color Usage	Color Application	Semantic Colors	Blue (Information)
+Design Principles	Visual Design	Color Usage	Color Application	Emphasis	Highlight Colors
+Design Principles	Visual Design	Color Usage	Color Application	Emphasis	Accent Colors
+Design Principles	Visual Design	Color Accessibility	Accessible Colors	Colorblind-Safe	Deuteranopia-Friendly
+Design Principles	Visual Design	Color Accessibility	Accessible Colors	Colorblind-Safe	Protanopia-Friendly
+Design Principles	Visual Design	Color Accessibility	Accessible Colors	Colorblind-Safe	Tritanopia-Friendly
+Design Principles	Visual Design	Color Accessibility	Accessible Colors	Contrast Standards	WCAG AA Compliance
+Design Principles	Visual Design	Color Accessibility	Accessible Colors	Contrast Standards	WCAG AAA Compliance
+Design Principles	Visual Design	Typography	Text Elements	Font Selection	Font Family
+Design Principles	Visual Design	Typography	Text Elements	Font Selection	Font Weight
+Design Principles	Visual Design	Typography	Text Elements	Font Selection	Font Size
+Design Principles	Visual Design	Typography	Text Elements	Text Hierarchy	Title
+Design Principles	Visual Design	Typography	Text Elements	Text Hierarchy	Subtitle
+Design Principles	Visual Design	Typography	Text Elements	Text Hierarchy	Body Text
+Design Principles	Visual Design	Typography	Text Elements	Text Hierarchy	Labels
+Design Principles	Visual Design	Typography	Text Elements	Text Hierarchy	Annotations
+Design Principles	Visual Design	Typography	Text Elements	Readability	Line Height
+Design Principles	Visual Design	Typography	Text Elements	Readability	Letter Spacing
+Design Principles	Visual Design	Typography	Text Elements	Readability	Text Alignment
+Design Principles	Visual Design	Layout & Composition	Layout Principles	Grid Systems	Grid Layout
+Design Principles	Visual Design	Layout & Composition	Layout Principles	Grid Systems	Column Grid
+Design Principles	Visual Design	Layout & Composition	Layout Principles	Grid Systems	Modular Grid
+Design Principles	Visual Design	Layout & Composition	Layout Principles	Spacing	White Space
+Design Principles	Visual Design	Layout & Composition	Layout Principles	Spacing	Padding
+Design Principles	Visual Design	Layout & Composition	Layout Principles	Spacing	Margins
+Design Principles	Visual Design	Layout & Composition	Layout Principles	Alignment	Left Alignment
+Design Principles	Visual Design	Layout & Composition	Layout Principles	Alignment	Center Alignment
+Design Principles	Visual Design	Layout & Composition	Layout Principles	Alignment	Grid Alignment
+Design Principles	Visual Design	Visual Hierarchy	Hierarchy Techniques	Size Hierarchy	Sizing
+Design Principles	Visual Design	Visual Hierarchy	Hierarchy Techniques	Size Hierarchy	Scaling
+Design Principles	Visual Design	Visual Hierarchy	Hierarchy Techniques	Position Hierarchy	Top-Left Priority
+Design Principles	Visual Design	Visual Hierarchy	Hierarchy Techniques	Position Hierarchy	F-Pattern
+Design Principles	Visual Design	Visual Hierarchy	Hierarchy Techniques	Position Hierarchy	Z-Pattern
+Design Principles	Visual Design	Visual Hierarchy	Hierarchy Techniques	Color Hierarchy	Color Emphasis
+Design Principles	Visual Design	Visual Hierarchy	Hierarchy Techniques	Color Hierarchy	Contrast Usage
+Design Principles	Chart Selection	Selection Criteria	Data Purpose	Purpose Types	Comparison
+Design Principles	Chart Selection	Selection Criteria	Data Purpose	Purpose Types	Distribution
+Design Principles	Chart Selection	Selection Criteria	Data Purpose	Purpose Types	Composition
+Design Principles	Chart Selection	Selection Criteria	Data Purpose	Purpose Types	Relationship
+Design Principles	Chart Selection	Selection Criteria	Data Purpose	Purpose Types	Trend Over Time
+Design Principles	Chart Selection	Selection Guidelines	Selection Process	Question-Driven	What Question to Answer
+Design Principles	Chart Selection	Selection Guidelines	Selection Process	Data-Driven	What Data Type
+Design Principles	Chart Selection	Selection Guidelines	Selection Process	Audience-Driven	Who is the Audience
+Design Principles	Chart Selection	Chart Decision Trees	Decision Frameworks	Purpose-Based Selection	Compare Values → Bar
+Design Principles	Chart Selection	Chart Decision Trees	Decision Frameworks	Purpose-Based Selection	Show Trends → Line
+Design Principles	Chart Selection	Chart Decision Trees	Decision Frameworks	Purpose-Based Selection	Show Distribution → Histogram
+Design Principles	Chart Selection	Chart Decision Trees	Decision Frameworks	Purpose-Based Selection	Show Relationships → Scatter
+Design Principles	Chart Selection	Chart Decision Trees	Decision Frameworks	Purpose-Based Selection	Show Composition → Pie/Stacked
+Design Principles	Best Practices	Clarity & Simplicity	Simplification	Reduce Clutter	Remove Chartjunk
+Design Principles	Best Practices	Clarity & Simplicity	Simplification	Reduce Clutter	Minimize Decorations
+Design Principles	Best Practices	Clarity & Simplicity	Simplification	Reduce Clutter	Remove Unnecessary Elements
+Design Principles	Best Practices	Clarity & Simplicity	Simplification	Focus	One Message Per Chart
+Design Principles	Best Practices	Clarity & Simplicity	Simplification	Focus	Highlight Key Insights
+Design Principles	Best Practices	Clarity & Simplicity	Simplification	Clarity	Clear Labels
+Design Principles	Best Practices	Clarity & Simplicity	Simplification	Clarity	Descriptive Titles
+Design Principles	Best Practices	Clarity & Simplicity	Simplification	Clarity	Intuitive Legends
+Design Principles	Best Practices	Accuracy & Integrity	Data Integrity	Honest Representation	Avoid Misleading Scales
+Design Principles	Best Practices	Accuracy & Integrity	Data Integrity	Honest Representation	Start Axis at Zero
+Design Principles	Best Practices	Accuracy & Integrity	Data Integrity	Honest Representation	Proportional Sizing
+Design Principles	Best Practices	Accuracy & Integrity	Data Integrity	Transparency	Data Sources
+Design Principles	Best Practices	Accuracy & Integrity	Data Integrity	Transparency	Methodology
+Design Principles	Best Practices	Accuracy & Integrity	Data Integrity	Transparency	Limitations
+Design Principles	Best Practices	Context & Annotation	Contextual Information	Reference Lines	Benchmarks
+Design Principles	Best Practices	Context & Annotation	Contextual Information	Reference Lines	Targets
+Design Principles	Best Practices	Context & Annotation	Contextual Information	Reference Lines	Averages
+Design Principles	Best Practices	Context & Annotation	Contextual Information	Reference Lines	Thresholds
+Design Principles	Best Practices	Context & Annotation	Contextual Information	Annotations	Data Labels
+Design Principles	Best Practices	Context & Annotation	Contextual Information	Annotations	Callouts
+Design Principles	Best Practices	Context & Annotation	Contextual Information	Annotations	Explanatory Text
+Design Principles	Best Practices	Consistency	Visual Consistency	Consistent Elements	Color Usage
+Design Principles	Best Practices	Consistency	Visual Consistency	Consistent Elements	Font Usage
+Design Principles	Best Practices	Consistency	Visual Consistency	Consistent Elements	Chart Types
+Design Principles	Best Practices	Consistency	Visual Consistency	Standards	Style Guide
+Design Principles	Best Practices	Consistency	Visual Consistency	Standards	Design System
+Dashboard Design	Dashboard Fundamentals	Dashboard Types	Type Categories	Operational Dashboards	Real-Time Monitoring
+Dashboard Design	Dashboard Fundamentals	Dashboard Types	Type Categories	Operational Dashboards	KPI Tracking
+Dashboard Design	Dashboard Fundamentals	Dashboard Types	Type Categories	Analytical Dashboards	Deep Analysis
+Dashboard Design	Dashboard Fundamentals	Dashboard Types	Type Categories	Analytical Dashboards	Historical Trends
+Dashboard Design	Dashboard Fundamentals	Dashboard Types	Type Categories	Strategic Dashboards	Executive Summary
+Dashboard Design	Dashboard Fundamentals	Dashboard Types	Type Categories	Strategic Dashboards	High-Level KPIs
+Dashboard Design	Dashboard Fundamentals	Dashboard Types	Type Categories	Tactical Dashboards	Department-Specific
+Dashboard Design	Dashboard Fundamentals	Dashboard Types	Type Categories	Tactical Dashboards	Mid-Level Metrics
+Dashboard Design	Dashboard Fundamentals	Dashboard Purpose	Purpose Definition	Goal Setting	Define Objectives
+Dashboard Design	Dashboard Fundamentals	Dashboard Purpose	Purpose Definition	Goal Setting	Identify KPIs
+Dashboard Design	Dashboard Fundamentals	Dashboard Purpose	Purpose Definition	Audience Identification	Know Your Users
+Dashboard Design	Dashboard Fundamentals	Dashboard Purpose	Purpose Definition	Audience Identification	User Personas
+Dashboard Design	Dashboard Fundamentals	Dashboard Purpose	Purpose Definition	Question Focus	Key Questions
+Dashboard Design	Dashboard Fundamentals	Dashboard Purpose	Purpose Definition	Question Focus	Decision Support
+Dashboard Design	Dashboard Structure	Layout Design	Layout Patterns	Reading Patterns	F-Pattern Layout
+Dashboard Design	Dashboard Structure	Layout Design	Layout Patterns	Reading Patterns	Z-Pattern Layout
+Dashboard Design	Dashboard Structure	Layout Design	Layout Patterns	Information Hierarchy	Top-to-Bottom
+Dashboard Design	Dashboard Structure	Layout Design	Layout Patterns	Information Hierarchy	Left-to-Right
+Dashboard Design	Dashboard Structure	Layout Design	Layout Patterns	Priority Placement	Most Important Top-Left
+Dashboard Design	Dashboard Structure	Layout Design	Layout Patterns	Priority Placement	Secondary Bottom-Right
+Dashboard Design	Dashboard Structure	Layout Design	Layout Patterns	Grid Structure	Card-Based Layout
+Dashboard Design	Dashboard Structure	Layout Design	Layout Patterns	Grid Structure	Module Layout
+Dashboard Design	Dashboard Structure	Information Architecture	Data Organization	Grouping	Logical Grouping
+Dashboard Design	Dashboard Structure	Information Architecture	Data Organization	Grouping	Related Metrics Together
+Dashboard Design	Dashboard Structure	Information Architecture	Data Organization	Sections	Clear Sections
+Dashboard Design	Dashboard Structure	Information Architecture	Data Organization	Sections	Visual Separation
+Dashboard Design	Dashboard Structure	Information Architecture	Data Organization	Progressive Disclosure	Summary View
+Dashboard Design	Dashboard Structure	Information Architecture	Data Organization	Progressive Disclosure	Drill-Down Capability
+Dashboard Design	Dashboard Components	Essential Elements	Key Components	KPI Cards	Metric Display
+Dashboard Design	Dashboard Components	Essential Elements	Key Components	KPI Cards	Scorecards
+Dashboard Design	Dashboard Components	Essential Elements	Key Components	Charts & Graphs	Visualization Panels
+Dashboard Design	Dashboard Components	Essential Elements	Key Components	Tables	Data Tables
+Dashboard Design	Dashboard Components	Essential Elements	Key Components	Tables	Comparison Tables
+Dashboard Design	Dashboard Components	Essential Elements	Key Components	Filters	Filter Controls
+Dashboard Design	Dashboard Components	Essential Elements	Key Components	Filters	Date Range Selectors
+Dashboard Design	Dashboard Components	Essential Elements	Key Components	Filters	Dropdown Filters
+Dashboard Design	Dashboard Components	Interactive Elements	Interactivity Types	Controls	Buttons
+Dashboard Design	Dashboard Components	Interactive Elements	Interactivity Types	Controls	Sliders
+Dashboard Design	Dashboard Components	Interactive Elements	Interactivity Types	Controls	Toggles
+Dashboard Design	Dashboard Components	Interactive Elements	Interactivity Types	Actions	Click Actions
+Dashboard Design	Dashboard Components	Interactive Elements	Interactivity Types	Actions	Hover Effects
+Dashboard Design	Dashboard Components	Interactive Elements	Interactivity Types	Actions	Drill-Down
+Dashboard Design	Dashboard Components	Interactive Elements	Interactivity Types	Actions	Filter On Select
+Dashboard Design	Dashboard Principles	Design Guidelines	5-Second Rule	Quick Understanding	Immediate Insight
+Dashboard Design	Dashboard Principles	Design Guidelines	5-Second Rule	Quick Understanding	Clear Main Message
+Dashboard Design	Dashboard Principles	Design Guidelines	Minimize Scrolling	Single Screen	Above the Fold
+Dashboard Design	Dashboard Principles	Design Guidelines	Minimize Scrolling	Single Screen	Key Metrics Visible
+Dashboard Design	Dashboard Principles	Design Guidelines	Visual Consistency	Consistent Design	Unified Theme
+Dashboard Design	Dashboard Principles	Design Guidelines	Visual Consistency	Consistent Design	Coherent Colors
+Dashboard Design	Dashboard Principles	Design Guidelines	Performance	Load Time	Fast Loading
+Dashboard Design	Dashboard Principles	Design Guidelines	Performance	Load Time	Optimized Data
+Dashboard Design	Dashboard Principles	Responsive Design	Multi-Device	Device Adaptation	Desktop View
+Dashboard Design	Dashboard Principles	Responsive Design	Multi-Device	Device Adaptation	Tablet View
+Dashboard Design	Dashboard Principles	Responsive Design	Multi-Device	Device Adaptation	Mobile View
+Dashboard Design	Dashboard Principles	Responsive Design	Multi-Device	Responsive Layouts	Flexible Grids
+Dashboard Design	Dashboard Principles	Responsive Design	Multi-Device	Responsive Layouts	Adaptive Components
+Interactive Visualization	Interactivity Types	User Interactions	Interaction Methods	Hover Interactions	Tooltips
+Interactive Visualization	Interactivity Types	User Interactions	Interaction Methods	Hover Interactions	Hover Highlights
+Interactive Visualization	Interactivity Types	User Interactions	Interaction Methods	Hover Interactions	Hover Details
+Interactive Visualization	Interactivity Types	User Interactions	Interaction Methods	Click Interactions	Selection
+Interactive Visualization	Interactivity Types	User Interactions	Interaction Methods	Click Interactions	Drill-Down
+Interactive Visualization	Interactivity Types	User Interactions	Interaction Methods	Click Interactions	Drill-Through
+Interactive Visualization	Interactivity Types	User Interactions	Interaction Methods	Drag Interactions	Pan
+Interactive Visualization	Interactivity Types	User Interactions	Interaction Methods	Drag Interactions	Rearrange
+Interactive Visualization	Interactivity Types	User Interactions	Interaction Methods	Zoom Interactions	Zoom In/Out
+Interactive Visualization	Interactivity Types	User Interactions	Interaction Methods	Zoom Interactions	Semantic Zoom
+Interactive Visualization	Interactivity Types	Filtering & Selection	Filter Types	Data Filters	Single Select Filter
+Interactive Visualization	Interactivity Types	Filtering & Selection	Filter Types	Data Filters	Multi-Select Filter
+Interactive Visualization	Interactivity Types	Filtering & Selection	Filter Types	Data Filters	Range Filter
+Interactive Visualization	Interactivity Types	Filtering & Selection	Filter Types	Data Filters	Search Filter
+Interactive Visualization	Interactivity Types	Filtering & Selection	Filter Types	Time Filters	Date Range Picker
+Interactive Visualization	Interactivity Types	Filtering & Selection	Filter Types	Time Filters	Time Slider
+Interactive Visualization	Interactivity Types	Filtering & Selection	Filter Types	Spatial Filters	Geographic Filter
+Interactive Visualization	Interactivity Types	Filtering & Selection	Filter Types	Spatial Filters	Lasso Selection
+Interactive Visualization	Interactivity Types	Dynamic Updates	Real-Time Updates	Live Data	Streaming Data
+Interactive Visualization	Interactivity Types	Dynamic Updates	Real-Time Updates	Live Data	Auto-Refresh
+Interactive Visualization	Interactivity Types	Dynamic Updates	Real-Time Updates	Live Data	Push Updates
+Interactive Visualization	Interactivity Types	Animation	Animated Transitions	Transition Types	State Transitions
+Interactive Visualization	Interactivity Types	Animation	Animated Transitions	Transition Types	Data Updates
+Interactive Visualization	Interactivity Types	Animation	Animated Transitions	Transition Types	View Changes
+Interactive Visualization	Interactivity Types	Animation	Animated Transitions	Time Animation	Time Playback
+Interactive Visualization	Interactivity Types	Animation	Animated Transitions	Time Animation	Temporal Animation
+Interactive Visualization	Navigation	Navigation Patterns	Navigation Types	Hierarchical Navigation	Breadcrumbs
+Interactive Visualization	Navigation	Navigation Patterns	Navigation Types	Hierarchical Navigation	Tree Navigation
+Interactive Visualization	Navigation	Navigation Patterns	Navigation Types	Sequential Navigation	Previous/Next
+Interactive Visualization	Navigation	Navigation Patterns	Navigation Types	Sequential Navigation	Pagination
+Interactive Visualization	Navigation	Linked Views	Multi-View Coordination	Coordinated Views	Brushing
+Interactive Visualization	Navigation	Linked Views	Multi-View Coordination	Coordinated Views	Linking
+Interactive Visualization	Navigation	Linked Views	Multi-View Coordination	Coordinated Views	Cross-Filtering
+Interactive Visualization	Exploration	Data Exploration	Exploration Techniques	Overview Methods	Overview+Detail
+Interactive Visualization	Exploration	Data Exploration	Exploration Techniques	Overview Methods	Focus+Context
+Interactive Visualization	Exploration	Data Exploration	Exploration Techniques	Detail Methods	Details-on-Demand
+Interactive Visualization	Exploration	Data Exploration	Exploration Techniques	Detail Methods	Progressive Disclosure
+Data Storytelling	Storytelling Fundamentals	Story Structure	Narrative Framework	Story Arc	Beginning
+Data Storytelling	Storytelling Fundamentals	Story Structure	Narrative Framework	Story Arc	Middle
+Data Storytelling	Storytelling Fundamentals	Story Structure	Narrative Framework	Story Arc	End
+Data Storytelling	Storytelling Fundamentals	Story Structure	Narrative Framework	Story Elements	Context
+Data Storytelling	Storytelling Fundamentals	Story Structure	Narrative Framework	Story Elements	Conflict
+Data Storytelling	Storytelling Fundamentals	Story Structure	Narrative Framework	Story Elements	Resolution
+Data Storytelling	Storytelling Fundamentals	Story Structure	Narrative Framework	Message	Key Takeaway
+Data Storytelling	Storytelling Fundamentals	Story Structure	Narrative Framework	Message	Call to Action
+Data Storytelling	Storytelling Fundamentals	Audience Understanding	Know Your Audience	Audience Analysis	Technical Level
+Data Storytelling	Storytelling Fundamentals	Audience Understanding	Know Your Audience	Audience Analysis	Domain Knowledge
+Data Storytelling	Storytelling Fundamentals	Audience Understanding	Know Your Audience	Audience Analysis	Decision Authority
+Data Storytelling	Storytelling Fundamentals	Audience Understanding	Know Your Audience	Audience Needs	Information Needs
+Data Storytelling	Storytelling Fundamentals	Audience Understanding	Know Your Audience	Audience Needs	Time Constraints
+Data Storytelling	Narrative Techniques	Flow & Sequence	Logical Flow	Information Flow	Sequential Reveal
+Data Storytelling	Narrative Techniques	Flow & Sequence	Logical Flow	Information Flow	Guided Discovery
+Data Storytelling	Narrative Techniques	Flow & Sequence	Logical Flow	Pacing	Rhythm
+Data Storytelling	Narrative Techniques	Flow & Sequence	Logical Flow	Pacing	Timing
+Data Storytelling	Narrative Techniques	Visual Narrative	Visual Flow	Visual Sequence	Visual Hierarchy
+Data Storytelling	Narrative Techniques	Visual Narrative	Visual Flow	Visual Sequence	Visual Path
+Data Storytelling	Narrative Techniques	Visual Narrative	Visual Flow	Emphasis Techniques	Highlighting
+Data Storytelling	Narrative Techniques	Visual Narrative	Visual Flow	Emphasis Techniques	Focal Points
+Data Storytelling	Presentation Formats	Story Formats	Format Types	Slide Presentations	PowerPoint Story
+Data Storytelling	Presentation Formats	Story Formats	Format Types	Slide Presentations	Keynote Story
+Data Storytelling	Presentation Formats	Story Formats	Format Types	Reports	Written Report
+Data Storytelling	Presentation Formats	Story Formats	Format Types	Reports	Infographic
+Data Storytelling	Presentation Formats	Story Formats	Format Types	Interactive Stories	Scrollytelling
+Data Storytelling	Presentation Formats	Story Formats	Format Types	Interactive Stories	Interactive Report
+Data Storytelling	Presentation Formats	Story Formats	Format Types	Video	Animated Explanation
+Data Storytelling	Presentation Formats	Story Formats	Format Types	Video	Video Narrative
+Visualization Tools	Business Intelligence Tools	Enterprise BI	BI Platforms	Tableau	Tableau Desktop
+Visualization Tools	Business Intelligence Tools	Enterprise BI	BI Platforms	Tableau	Tableau Server
+Visualization Tools	Business Intelligence Tools	Enterprise BI	BI Platforms	Tableau	Tableau Public
+Visualization Tools	Business Intelligence Tools	Enterprise BI	BI Platforms	Tableau	Tableau Online
+Visualization Tools	Business Intelligence Tools	Enterprise BI	BI Platforms	Power BI	Power BI Desktop
+Visualization Tools	Business Intelligence Tools	Enterprise BI	BI Platforms	Power BI	Power BI Service
+Visualization Tools	Business Intelligence Tools	Enterprise BI	BI Platforms	Power BI	Power BI Mobile
+Visualization Tools	Business Intelligence Tools	Enterprise BI	BI Platforms	Qlik	Qlik Sense
+Visualization Tools	Business Intelligence Tools	Enterprise BI	BI Platforms	Qlik	QlikView
+Visualization Tools	Business Intelligence Tools	Enterprise BI	BI Platforms	Looker	Looker Studio
+Visualization Tools	Business Intelligence Tools	Enterprise BI	BI Platforms	Looker	Looker (Google Cloud)
+Visualization Tools	Business Intelligence Tools	Cloud BI	Cloud Platforms	Google Tools	Google Data Studio
+Visualization Tools	Business Intelligence Tools	Cloud BI	Cloud Platforms	Google Tools	Looker Studio
+Visualization Tools	Business Intelligence Tools	Cloud BI	Cloud Platforms	Amazon Tools	Amazon QuickSight
+Visualization Tools	Business Intelligence Tools	Cloud BI	Cloud Platforms	Microsoft Tools	Power BI Service
+Visualization Tools	Business Intelligence Tools	Analytics Platforms	Advanced Analytics	Sisense	Sisense Platform
+Visualization Tools	Business Intelligence Tools	Analytics Platforms	Advanced Analytics	Domo	Domo Platform
+Visualization Tools	Business Intelligence Tools	Analytics Platforms	Advanced Analytics	Zoho	Zoho Analytics
+Visualization Tools	Business Intelligence Tools	Analytics Platforms	Advanced Analytics	IBM	IBM Cognos
+Visualization Tools	Programming Libraries	JavaScript Libraries	Web Visualization	D3.js	D3.js Core
+Visualization Tools	Programming Libraries	JavaScript Libraries	Web Visualization	D3.js	D3.js Modules
+Visualization Tools	Programming Libraries	JavaScript Libraries	Web Visualization	Chart.js	Chart.js
+Visualization Tools	Programming Libraries	JavaScript Libraries	Web Visualization	Plotly.js	Plotly.js
+Visualization Tools	Programming Libraries	JavaScript Libraries	Web Visualization	ECharts	Apache ECharts
+Visualization Tools	Programming Libraries	JavaScript Libraries	Web Visualization	Highcharts	Highcharts
+Visualization Tools	Programming Libraries	JavaScript Libraries	Web Visualization	Vega	Vega
+Visualization Tools	Programming Libraries	JavaScript Libraries	Web Visualization	Vega	Vega-Lite
+Visualization Tools	Programming Libraries	Python Libraries	Python Visualization	Matplotlib	Matplotlib
+Visualization Tools	Programming Libraries	Python Libraries	Python Visualization	Matplotlib	Pyplot
+Visualization Tools	Programming Libraries	Python Libraries	Python Visualization	Seaborn	Seaborn
+Visualization Tools	Programming Libraries	Python Libraries	Python Visualization	Plotly	Plotly Python
+Visualization Tools	Programming Libraries	Python Libraries	Python Visualization	Bokeh	Bokeh
+Visualization Tools	Programming Libraries	Python Libraries	Python Visualization	Altair	Altair
+Visualization Tools	Programming Libraries	Python Libraries	Python Visualization	Pandas	Pandas Plotting
+Visualization Tools	Programming Libraries	R Libraries	R Visualization	ggplot2	ggplot2
+Visualization Tools	Programming Libraries	R Libraries	R Visualization	Plotly	Plotly R
+Visualization Tools	Programming Libraries	R Libraries	R Visualization	Shiny	Shiny
+Visualization Tools	Programming Libraries	R Libraries	R Visualization	Lattice	Lattice
+Visualization Tools	Specialized Tools	Infographic Tools	Infographic Platforms	Canva	Canva
+Visualization Tools	Specialized Tools	Infographic Tools	Infographic Platforms	Venngage	Venngage
+Visualization Tools	Specialized Tools	Infographic Tools	Infographic Platforms	Piktochart	Piktochart
+Visualization Tools	Specialized Tools	Infographic Tools	Infographic Platforms	Infogram	Infogram
+Visualization Tools	Specialized Tools	Network Visualization	Network Tools	Gephi	Gephi
+Visualization Tools	Specialized Tools	Network Visualization	Network Tools	Cytoscape	Cytoscape
+Visualization Tools	Specialized Tools	Geographic Tools	GIS Tools	ArcGIS	ArcGIS
+Visualization Tools	Specialized Tools	Geographic Tools	GIS Tools	QGIS	QGIS
+Visualization Tools	Specialized Tools	Geographic Tools	GIS Tools	Mapbox	Mapbox
+Visualization Tools	Specialized Tools	Geographic Tools	GIS Tools	Leaflet	Leaflet
+Visualization Tools	Spreadsheet Tools	Excel-Based	Spreadsheet Viz	Microsoft Excel	Excel Charts
+Visualization Tools	Spreadsheet Tools	Excel-Based	Spreadsheet Viz	Microsoft Excel	Excel Dashboards
+Visualization Tools	Spreadsheet Tools	Excel-Based	Spreadsheet Viz	Microsoft Excel	Power Query
+Visualization Tools	Spreadsheet Tools	Excel-Based	Spreadsheet Viz	Google Sheets	Sheets Charts
+Visualization Tools	Spreadsheet Tools	Excel-Based	Spreadsheet Viz	Google Sheets	Sheets Dashboards
+Visualization Tools	Embedded Analytics	Embedded Viz	Embedded Platforms	Embeddable BI	Embedded Tableau
+Visualization Tools	Embedded Analytics	Embedded Viz	Embedded Platforms	Embeddable BI	Embedded Power BI
+Visualization Tools	Embedded Analytics	Embedded Viz	Embedded Platforms	Custom Embed	iFrame Embedding
+Visualization Tools	Embedded Analytics	Embedded Viz	Embedded Platforms	Custom Embed	JavaScript Embedding
+Advanced Topics	Big Data Visualization	Large Dataset Viz	Handling Large Data	Data Reduction	Sampling
+Advanced Topics	Big Data Visualization	Large Dataset Viz	Handling Large Data	Data Reduction	Aggregation
+Advanced Topics	Big Data Visualization	Large Dataset Viz	Handling Large Data	Data Reduction	Filtering
+Advanced Topics	Big Data Visualization	Large Dataset Viz	Handling Large Data	Performance	Data Binning
+Advanced Topics	Big Data Visualization	Large Dataset Viz	Handling Large Data	Performance	Progressive Rendering
+Advanced Topics	Big Data Visualization	Large Dataset Viz	Handling Large Data	Performance	Level of Detail
+Advanced Topics	Real-Time Visualization	Live Data Viz	Real-Time Techniques	Streaming	Data Streaming
+Advanced Topics	Real-Time Visualization	Live Data Viz	Real-Time Techniques	Streaming	Live Updates
+Advanced Topics	Real-Time Visualization	Live Data Viz	Real-Time Techniques	Performance	Efficient Rendering
+Advanced Topics	Real-Time Visualization	Live Data Viz	Real-Time Techniques	Performance	Incremental Updates
+Advanced Topics	3D Visualization	Three-Dimensional	3D Techniques	3D Charts	3D Bar Chart
+Advanced Topics	3D Visualization	Three-Dimensional	3D Techniques	3D Charts	3D Surface Plot
+Advanced Topics	3D Visualization	Three-Dimensional	3D Techniques	3D Charts	3D Scatter Plot
+Advanced Topics	3D Visualization	Three-Dimensional	3D Techniques	Virtual Reality	VR Visualization
+Advanced Topics	3D Visualization	Three-Dimensional	3D Techniques	Virtual Reality	Immersive Data
+Advanced Topics	AI-Powered Visualization	Automated Visualization	AI Techniques	Auto-Generation	Auto Chart Selection
+Advanced Topics	AI-Powered Visualization	Automated Visualization	AI Techniques	Auto-Generation	Smart Recommendations
+Advanced Topics	AI-Powered Visualization	Automated Visualization	AI Techniques	Augmented Analytics	Automated Insights
+Advanced Topics	AI-Powered Visualization	Automated Visualization	AI Techniques	Augmented Analytics	Natural Language Generation
+Advanced Topics	AI-Powered Visualization	Natural Language	NL Interfaces	Query Types	Natural Language Query
+Advanced Topics	AI-Powered Visualization	Natural Language	NL Interfaces	Query Types	Conversational Analytics
+Advanced Topics	Accessibility	Visual Accessibility	Accessible Design	Vision Accessibility	High Contrast
+Advanced Topics	Accessibility	Visual Accessibility	Accessible Design	Vision Accessibility	Large Text
+Advanced Topics	Accessibility	Visual Accessibility	Accessible Design	Vision Accessibility	Alternative Text
+Advanced Topics	Accessibility	Visual Accessibility	Accessible Design	Color Blindness	Colorblind-Safe Palettes
+Advanced Topics	Accessibility	Visual Accessibility	Accessible Design	Color Blindness	Pattern/Texture Use
+Advanced Topics	Accessibility	Interaction Accessibility	Accessible Interaction	Keyboard Access	Keyboard Navigation
+Advanced Topics	Accessibility	Interaction Accessibility	Accessible Interaction	Keyboard Access	Tab Order
+Advanced Topics	Accessibility	Interaction Accessibility	Accessible Interaction	Screen Readers	Screen Reader Support
+Advanced Topics	Accessibility	Interaction Accessibility	Accessible Interaction	Screen Readers	ARIA Labels
+Advanced Topics	Accessibility	Standards	Accessibility Standards	WCAG	WCAG 2.1
+Advanced Topics	Accessibility	Standards	Accessibility Standards	WCAG	WCAG 2.2
+Advanced Topics	Accessibility	Standards	Accessibility Standards	Section 508	508 Compliance
+Domain-Specific Viz	Business Analytics	Financial Visualization	Financial Charts	Financial Reports	P&L Visualization
+Domain-Specific Viz	Business Analytics	Financial Visualization	Financial Charts	Financial Reports	Balance Sheet Viz
+Domain-Specific Viz	Business Analytics	Financial Visualization	Financial Charts	Financial Reports	Cash Flow Viz
+Domain-Specific Viz	Business Analytics	Financial Visualization	Financial Charts	KPIs	Revenue Metrics
+Domain-Specific Viz	Business Analytics	Financial Visualization	Financial Charts	KPIs	Profitability Metrics
+Domain-Specific Viz	Business Analytics	Sales & Marketing	Sales Visualizations	Sales Metrics	Sales Funnel
+Domain-Specific Viz	Business Analytics	Sales & Marketing	Sales Visualizations	Sales Metrics	Sales Performance
+Domain-Specific Viz	Business Analytics	Sales & Marketing	Sales Visualizations	Marketing Metrics	Campaign Performance
+Domain-Specific Viz	Business Analytics	Sales & Marketing	Sales Visualizations	Marketing Metrics	Conversion Rates
+Domain-Specific Viz	Business Analytics	Operations	Operational Viz	Process Metrics	Process Performance
+Domain-Specific Viz	Business Analytics	Operations	Operational Viz	Process Metrics	Efficiency Metrics
+Domain-Specific Viz	Business Analytics	Operations	Operational Viz	Supply Chain	Supply Chain Viz
+Domain-Specific Viz	Business Analytics	Operations	Operational Viz	Supply Chain	Inventory Visualization
+Domain-Specific Viz	Scientific Visualization	Research Viz	Scientific Charts	Lab Data	Experimental Results
+Domain-Specific Viz	Scientific Visualization	Research Viz	Scientific Charts	Lab Data	Statistical Analysis
+Domain-Specific Viz	Scientific Visualization	Research Viz	Scientific Charts	Publications	Research Figures
+Domain-Specific Viz	Scientific Visualization	Research Viz	Scientific Charts	Publications	Academic Charts
+Domain-Specific Viz	Scientific Visualization	Medical Visualization	Medical Charts	Patient Data	Health Metrics
+Domain-Specific Viz	Scientific Visualization	Medical Visualization	Medical Charts	Patient Data	Vital Signs
+Domain-Specific Viz	Scientific Visualization	Medical Visualization	Medical Charts	Clinical Data	Clinical Outcomes
+Domain-Specific Viz	Scientific Visualization	Medical Visualization	Medical Charts	Medical Imaging	Imaging Visualization
+Domain-Specific Viz	Social Media Analytics	Social Viz	Social Metrics	Engagement	Engagement Metrics
+Domain-Specific Viz	Social Media Analytics	Social Viz	Social Metrics	Engagement	Sentiment Analysis
+Domain-Specific Viz	Social Media Analytics	Social Viz	Social Metrics	Network Analysis	Social Networks
+Domain-Specific Viz	Social Media Analytics	Social Viz	Social Metrics	Network Analysis	Influence Mapping
+Domain-Specific Viz	IoT & Sensor Data	IoT Visualization	Sensor Viz	Real-Time Sensors	Live Sensor Data
+Domain-Specific Viz	IoT & Sensor Data	IoT Visualization	Sensor Viz	Real-Time Sensors	Streaming Sensors
+Domain-Specific Viz	IoT & Sensor Data	IoT Visualization	Sensor Viz	Device Monitoring	Device Status
+Domain-Specific Viz	IoT & Sensor Data	IoT Visualization	Sensor Viz	Device Monitoring	System Health
+Domain-Specific Viz	Sports Analytics	Sports Viz	Sports Metrics	Performance	Player Performance
+Domain-Specific Viz	Sports Analytics	Sports Viz	Sports Metrics	Performance	Team Statistics
+Domain-Specific Viz	Sports Analytics	Sports Viz	Sports Metrics	Game Analysis	Game Visualization
+Domain-Specific Viz	Sports Analytics	Sports Viz	Sports Metrics	Game Analysis	Play-by-Play
+Workflow & Process	Visualization Workflow	Planning Phase	Project Planning	Requirements	Define Goals
+Workflow & Process	Visualization Workflow	Planning Phase	Project Planning	Requirements	Identify Audience
+Workflow & Process	Visualization Workflow	Planning Phase	Project Planning	Requirements	Select Metrics
+Workflow & Process	Visualization Workflow	Planning Phase	Data Understanding	Data Exploration	Explore Data
+Workflow & Process	Visualization Workflow	Planning Phase	Data Understanding	Data Exploration	Understand Structure
+Workflow & Process	Visualization Workflow	Planning Phase	Data Understanding	Data Exploration	Identify Patterns
+Workflow & Process	Visualization Workflow	Design Phase	Sketching	Ideation	Sketch Ideas
+Workflow & Process	Visualization Workflow	Design Phase	Sketching	Ideation	Wireframes
+Workflow & Process	Visualization Workflow	Design Phase	Sketching	Ideation	Mock-ups
+Workflow & Process	Visualization Workflow	Design Phase	Prototyping	Prototype Creation	Low-Fidelity Prototype
+Workflow & Process	Visualization Workflow	Design Phase	Prototyping	Prototype Creation	High-Fidelity Prototype
+Workflow & Process	Visualization Workflow	Design Phase	Prototyping	Prototype Creation	Interactive Prototype
+Workflow & Process	Visualization Workflow	Development Phase	Implementation	Build Process	Data Connection
+Workflow & Process	Visualization Workflow	Development Phase	Implementation	Build Process	Chart Creation
+Workflow & Process	Visualization Workflow	Development Phase	Implementation	Build Process	Styling
+Workflow & Process	Visualization Workflow	Development Phase	Implementation	Build Process	Interactivity
+Workflow & Process	Visualization Workflow	Testing Phase	Quality Assurance	Testing Types	Functionality Testing
+Workflow & Process	Visualization Workflow	Testing Phase	Quality Assurance	Testing Types	Usability Testing
+Workflow & Process	Visualization Workflow	Testing Phase	Quality Assurance	Testing Types	Performance Testing
+Workflow & Process	Visualization Workflow	Testing Phase	Quality Assurance	Testing Types	Accessibility Testing
+Workflow & Process	Visualization Workflow	Iteration	Refinement	Improvement Process	Feedback Collection
+Workflow & Process	Visualization Workflow	Iteration	Refinement	Improvement Process	Iterate Design
+Workflow & Process	Visualization Workflow	Iteration	Refinement	Improvement Process	Optimize Performance
+Workflow & Process	Data Preparation	Data Processing	Data Cleaning	Cleaning Steps	Handle Missing Values
+Workflow & Process	Data Preparation	Data Processing	Data Cleaning	Cleaning Steps	Remove Duplicates
+Workflow & Process	Data Preparation	Data Processing	Data Cleaning	Cleaning Steps	Fix Errors
+Workflow & Process	Data Preparation	Data Processing	Data Transformation	Transform Operations	Normalize Data
+Workflow & Process	Data Preparation	Data Processing	Data Transformation	Transform Operations	Aggregate Data
+Workflow & Process	Data Preparation	Data Processing	Data Transformation	Transform Operations	Calculate Metrics
+Workflow & Process	Data Preparation	Data Processing	Data Transformation	Transform Operations	Create Bins
+Workflow & Process	Data Preparation	Data Structuring	Data Structure	Structure Types	Flat Data
+Workflow & Process	Data Preparation	Data Structuring	Data Structure	Structure Types	Hierarchical Data
+Workflow & Process	Data Preparation	Data Structuring	Data Structure	Structure Types	Network Data
+Workflow & Process	Data Preparation	Data Structuring	Data Structure	Structure Types	Time Series Data
+Best Practices Reference	Common Mistakes	Pitfalls to Avoid	Avoid Mistakes	Chart Misuse	Wrong Chart Type
+Best Practices Reference	Common Mistakes	Pitfalls to Avoid	Avoid Mistakes	Chart Misuse	3D When Unnecessary
+Best Practices Reference	Common Mistakes	Pitfalls to Avoid	Avoid Mistakes	Chart Misuse	Dual Y-Axis Confusion
+Best Practices Reference	Common Mistakes	Pitfalls to Avoid	Avoid Mistakes	Design Errors	Too Much Color
+Best Practices Reference	Common Mistakes	Pitfalls to Avoid	Avoid Mistakes	Design Errors	Cluttered Layout
+Best Practices Reference	Common Mistakes	Pitfalls to Avoid	Avoid Mistakes	Design Errors	Poor Contrast
+Best Practices Reference	Common Mistakes	Pitfalls to Avoid	Avoid Mistakes	Data Issues	Truncated Y-Axis
+Best Practices Reference	Common Mistakes	Pitfalls to Avoid	Avoid Mistakes	Data Issues	Misleading Scales
+Best Practices Reference	Common Mistakes	Pitfalls to Avoid	Avoid Mistakes	Data Issues	Cherry-Picking Data
+Best Practices Reference	Success Factors	Keys to Success	Success Elements	Planning	Clear Objectives
+Best Practices Reference	Success Factors	Keys to Success	Success Elements	Planning	Know Your Data
+Best Practices Reference	Success Factors	Keys to Success	Success Elements	Planning	Understand Users
+Best Practices Reference	Success Factors	Keys to Success	Success Elements	Execution	Simple Design
+Best Practices Reference	Success Factors	Keys to Success	Success Elements	Execution	Accurate Representation
+Best Practices Reference	Success Factors	Keys to Success	Success Elements	Execution	Thoughtful Color Use
+Best Practices Reference	Success Factors	Keys to Success	Success Elements	Validation	Test with Users
+Best Practices Reference	Success Factors	Keys to Success	Success Elements	Validation	Gather Feedback
+Best Practices Reference	Success Factors	Keys to Success	Success Elements	Validation	Iterate Improvements
+Emerging Trends	Future Directions	Next Generation Viz	Emerging Tech	Augmented Reality	AR Visualization
+Emerging Trends	Future Directions	Next Generation Viz	Emerging Tech	Augmented Reality	AR Dashboards
+Emerging Trends	Future Directions	Next Generation Viz	Emerging Tech	Virtual Reality	VR Data Exploration
+Emerging Trends	Future Directions	Next Generation Viz	Emerging Tech	Virtual Reality	Immersive Analytics
+Emerging Trends	Future Directions	Next Generation Viz	Emerging Tech	Voice Interfaces	Voice-Activated Viz
+Emerging Trends	Future Directions	Next Generation Viz	Emerging Tech	Voice Interfaces	Conversational Dashboards
+Emerging Trends	Future Directions	Next Generation Viz	Emerging Tech	AI Integration	Smart Visualizations
+Emerging Trends	Future Directions	Next Generation Viz	Emerging Tech	AI Integration	Predictive Viz
+Emerging Trends	Innovations	Modern Approaches	New Techniques	Personalization	Customized Views
+Emerging Trends	Innovations	Modern Approaches	New Techniques	Personalization	Adaptive Dashboards
+Emerging Trends	Innovations	Modern Approaches	New Techniques	Collaboration	Collaborative Dashboards
+Emerging Trends	Innovations	Modern Approaches	New Techniques	Collaboration	Shared Analytics
+Emerging Trends	Innovations	Modern Approaches	New Techniques	Mobile-First	Mobile Dashboards
+Emerging Trends	Innovations	Modern Approaches	New Techniques	Mobile-First	Touch-Optimized Viz

@@ -1,0 +1,194 @@
+Below is a structured analysis framework you can use to dissect a SQL interview question and decide which concepts—such as joins, aggregations, or window functions—you’ll need. This framework helps break down the problem into key components:
+
+---
+
+### 1. Understand the Problem Requirements
+
+* **Read the Question Carefully:**
+  Identify the end goal. Ask yourself:
+
+  * What is the desired output? (e.g., a summary, detailed list, ranking, or transformation.)
+  * Is the question asking for comparisons, totals, or specific rows?
+  * Are there conditions or filters mentioned?
+
+* **Clarify the Data Sources:**
+  Determine whether the data comes from a single table or multiple tables:
+
+  * **Single Table:** The solution might focus on filtering, aggregations, or window functions.
+  * **Multiple Tables:** You’ll likely need to use joins or subqueries to combine data.
+
+---
+
+### 2. Identify Key Operations and SQL Concepts
+
+Based on the question’s wording and requirements, use the following guide:
+
+#### A. **Joins**
+
+* **When to Use:**
+
+  * If the question involves multiple tables or references different data entities.
+  * If you need to combine related information (e.g., customer details with order data).
+* **Indicators in the Question:**
+
+  * References to “joining,” “combining data from X and Y,” or “linked records.”
+* **Example:**
+  *“Retrieve orders along with customer names.”*
+  **Solution:** Use an `INNER JOIN` (or appropriate join type).
+
+#### B. **Aggregations (GROUP BY, HAVING)**
+
+* **When to Use:**
+
+  * If the question asks for summaries such as totals, counts, averages, or other statistical measures.
+  * When you need to group data by categories (e.g., per department, per month).
+* **Indicators in the Question:**
+
+  * Keywords like “total,” “sum,” “count,” “average,” “per,” “grouped by.”
+* **Example:**
+  *“Find the total sales per region.”*
+  **Solution:** Use `GROUP BY region` with aggregate functions.
+
+#### C. **Window Functions**
+
+* **When to Use:**
+
+  * If the question requires rankings, running totals, or comparisons between rows (e.g., previous/next value).
+  * When you need to perform a calculation across a set of rows without collapsing them.
+* **Indicators in the Question:**
+
+  * Terms like “rank,” “running total,” “moving average,” “difference from previous.”
+* **Example:**
+  *“Rank employees by salary within each department.”*
+  **Solution:** Use `ROW_NUMBER()` or `RANK()` with a `PARTITION BY department`.
+
+#### D. **Subqueries and Common Table Expressions (CTEs)**
+
+* **When to Use:**
+
+  * For complex queries that are easier to break into smaller parts.
+  * When one part of the query depends on the results of another query.
+* **Indicators in the Question:**
+
+  * Phrases like “first, calculate…” or “where the result of a query is used as a filter.”
+* **Example:**
+  *“List products that have generated above-average revenue.”*
+  **Solution:** Use a subquery or a CTE to calculate the average revenue, then filter products accordingly.
+
+#### E. **CASE Statements and Conditional Logic**
+
+* **When to Use:**
+
+  * When the question asks for categorization or conditional computations.
+  * To transform data based on specified criteria (e.g., labeling rows as “High Value” or “Low Value”).
+* **Indicators in the Question:**
+
+  * Keywords like “if,” “when,” “case,” or “categorize.”
+* **Example:**
+  *“Label orders as ‘Large’ if the amount is greater than $100 and ‘Small’ otherwise.”*
+  **Solution:** Use a `CASE` expression.
+
+#### F. **Date and Time Functions**
+
+* **When to Use:**
+
+  * If the problem involves time intervals, filtering by dates, or date arithmetic.
+  * For extracting parts of a date (e.g., year, month, day).
+* **Indicators in the Question:**
+
+  * Phrases such as “in the last month,” “between two dates,” or “per quarter.”
+* **Example:**
+  *“Calculate the number of orders per month for the current year.”*
+  **Solution:** Use date functions (e.g., `EXTRACT`, `DATEDIFF`).
+
+#### G. **String Manipulation**
+
+* **When to Use:**
+
+  * If the question involves working with text (e.g., splitting or concatenating strings).
+  * When you need to extract specific parts of a string (e.g., domain from an email address).
+* **Indicators in the Question:**
+
+  * Keywords like “substring,” “extract,” “concatenate,” or “pattern.”
+* **Example:**
+  *“Extract the domain from each email address.”*
+  **Solution:** Use string functions like `SUBSTRING_INDEX` or `SUBSTR`.
+
+---
+
+### 3. Decision Tree for SQL Concept Identification
+
+1. **Is the data coming from one table or multiple tables?**
+
+   * **Multiple Tables:**
+     ➔ Consider **Joins** or **Subqueries/CTEs**.
+   * **Single Table:**
+     ➔ Proceed to next step.
+
+2. **Does the question ask for a summary or statistical information?**
+
+   * **Yes:**
+     ➔ Use **Aggregations** (`GROUP BY`, `HAVING`).
+   * **No:**
+     ➔ Continue.
+
+3. **Is there a need to rank, calculate running totals, or compare rows?**
+
+   * **Yes:**
+     ➔ Use **Window Functions**.
+   * **No:**
+     ➔ Continue.
+
+4. **Does the question involve conditional logic or categorization?**
+
+   * **Yes:**
+     ➔ Use **CASE Statements**.
+   * **No:**
+     ➔ Continue.
+
+5. **Does the question involve date or time-based calculations?**
+
+   * **Yes:**
+     ➔ Use **Date and Time Functions**.
+   * **No:**
+     ➔ Continue.
+
+6. **Is the manipulation of text strings a requirement?**
+
+   * **Yes:**
+     ➔ Use **String Manipulation Functions**.
+   * **No:**
+     ➔ Check if additional complex subqueries or transformations are needed.
+
+---
+
+### 4. Practical Application
+
+When you receive a question, walk through the decision tree:
+
+* **Example Scenario:**
+  *“For each customer, list their name, total orders, and rank the customers by total order value within their region.”*
+  **Analysis:**
+
+  * **Multiple Tables?** Likely yes (Customers and Orders) → **Joins** are required.
+  * **Aggregation?** Yes, you need the total orders and total order value per customer → **GROUP BY**.
+  * **Ranking?** Yes, rank within regions → **Window Functions** (e.g., `RANK()` with `PARTITION BY region`).
+  * **Conditional Logic?** Not explicitly, unless you want to categorize customers further.
+
+* **Resulting Approach:**
+
+  * Join the Customers and Orders tables.
+  * Aggregate orders by customer.
+  * Apply a window function to rank customers by order value within each region.
+
+---
+
+### 5. Summary
+
+This SQL question analysis framework helps you:
+
+* **Identify** the required SQL concepts based on the problem’s requirements.
+* **Determine** when to use joins, aggregations, window functions, etc.
+* **Follow** a systematic decision tree to break down the problem before coding.
+
+By practicing with real interview questions and applying this framework, you can quickly determine which SQL concepts are relevant and craft solutions that are both efficient and easy to understand.

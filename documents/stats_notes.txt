@@ -1,0 +1,176 @@
+Statistics and Mathematics (SMS)
+
+
+
+
+CORE TOPICS
+
+
+
+
+
+
+Probability & Distributions
+
+
+Descriptive Statistics
+
+
+Inferential Statistics
+
+
+Regression Analysis
+
+
+Probability & Distributions (PDS)
+
+
+
+
+BROAD TOPIC
+SUB-TOPICS
+DETAILED TOPICS
+Probability
+Fundamentals
+- Sample spaces and events
+- Probability rules (addition, multiplication)
+- Conditional probability
+- Bayes’ Theorem
+
+
+Probability Distributions
+- Discrete distributions (Binomial, Poisson)
+- Continuous distributions (Normal, Exponential)
+- Expected value and variance
+- Central Limit Theorem
+
+
+
+
+Descriptive Statistics
+
+
+
+
+
+Descriptive Statistics
+Measures of Central Tendency
+- Mean, median, mode
+- Weighted averages
+
+
+Measures of Dispersion
+- Variance, standard deviation
+- Range, interquartile range
+- Skewness and kurtosis
+
+
+
+Inferential Statistics
+
+
+
+
+
+Inferential Statistics
+Hypothesis Testing
+- Null vs. alternative hypothesis
+- P-values and significance levels
+- Type I and Type II errors
+- T-tests, ANOVA
+
+
+Confidence Intervals
+- Estimation and interpretation
+- Margin of error
+- Confidence levels (e.g., 95%)
+
+
+Regression Analysis
+
+
+
+
+
+Regression Analysis
+Linear Regression
+- Simple and multiple linear regression
+- Least squares method
+- R-squared and adjusted R-squared
+
+
+Logistic Regression
+- Binary and multinomial logistic regression
+- Odds ratios
+- Model evaluation (ROC, AUC)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Regression Modeling w/ Cases
+1. Linear Regression
+Use: To measure the impact of one or more independent variables (e.g., ad spend, campaign impressions) on a dependent variable (e.g., sales or revenue).
+Adobe Example:
+Situation: Adobe’s Creative Cloud sales team needed to understand the relationship between marketing spend across channels and overall subscription revenue.
+Task: Develop a model to identify which channels were driving the most impact on sales.
+Action: Used linear regression to analyze historical spend data across channels, including TV, social media, and search. The model identified key contributors to sales and diminishing returns for overspending on certain channels.
+Result: Reallocated 15% of the budget to underperforming but high-potential channels, resulting in a 20% increase in ROI within one quarter.
+2. Logistic Regression
+Use: To predict binary outcomes (e.g., purchase vs. no purchase, churn vs. retention) based on independent variables.
+Credit Karma Example:
+Situation: Credit Karma aimed to reduce churn among users who frequently accessed their credit reports but didn’t engage with other financial tools.
+Task: Predict the likelihood of churn based on user behaviors and engagement metrics.
+Action: Built a logistic regression model using features like frequency of logins, product usage patterns, and email engagement rates. Identified high-risk users and implemented targeted outreach campaigns.
+Result: Reduced churn by 18% in the identified high-risk cohort, contributing to a 12% improvement in overall retention rates.
+3. Ridge and Lasso Regression
+Use: To handle multicollinearity in data by regularizing coefficients (Ridge) or performing feature selection (Lasso).
+Adobe Example:
+Situation: Adobe marketing managers faced multicollinearity in campaign data across overlapping channels (e.g., digital ads and social media).
+Task: Build a robust model to identify key performance drivers without overfitting.
+Action: Applied Ridge regression to reduce the impact of multicollinearity and Lasso regression to select the most impactful variables.
+Result: Improved model accuracy by 25%, enabling the team to confidently reallocate budgets and focus on high-performing channels, driving a 15% sales uplift.
+4. Time Series Regression
+Use: To forecast outcomes based on temporal data, accounting for trends, seasonality, and cycles.
+Credit Karma Example:
+Situation: Credit Karma needed to predict daily site traffic during the tax season to optimize marketing efforts.
+Task: Build a time series model to forecast traffic and allocate campaign budgets accordingly.
+Action: Used an ARIMA model to forecast traffic, accounting for seasonal spikes in tax-related queries. Recommended scaling ad spend during high-traffic days.
+Result: Increased site traffic by 25% during peak days while maintaining a cost-per-click 10% below the industry benchmark.
+5. Logistic Regression with Interaction Terms
+Use: To understand how combinations of variables influence a binary outcome.
+Adobe Example:
+Situation: Adobe wanted to understand how email engagement and webinar attendance together impacted trial-to-paid conversion rates.
+Task: Build a model to identify the combined effects of user engagement behaviors.
+Action: Built a logistic regression model with interaction terms for email opens and webinar participation. Insights revealed that users who attended webinars and opened emails were 3x more likely to convert.
+Result: Focused resources on email follow-ups for webinar attendees, boosting trial-to-paid conversions by 30%.
+6. Multivariate Regression
+Use: To assess the impact of multiple dependent variables simultaneously.
+Credit Karma Example:
+Situation: Credit Karma wanted to evaluate the simultaneous effects of marketing campaigns on user engagement and revenue.
+Task: Develop a model to analyze multiple outcomes.
+Action: Built a multivariate regression model to measure how variations in campaign spending impacted revenue and engagement metrics like time on site and click-through rates.
+Result: Revealed optimal budget thresholds for maximizing both engagement and revenue, increasing average session duration by 20% and revenue by 10%.
+7. Stepwise Regression
+Use: To identify the most statistically significant predictors in large datasets.
+Adobe Example:
+Situation: Adobe needed to identify the most critical drivers of customer satisfaction from a survey dataset with over 50 variables.
+Task: Develop a model to highlight significant predictors while reducing noise.
+Action: Used stepwise regression to iteratively add and remove predictors based on statistical significance. The analysis identified three key drivers of satisfaction: ease of use, feature breadth, and customer support.
+Result: Informed product and support improvements, increasing customer satisfaction scores by 15% in six months.
+
+
+
+
+
+
+

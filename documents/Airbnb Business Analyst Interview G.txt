@@ -1,0 +1,178 @@
+Airbnb Business Analyst Interview Guide – Process, Questions & Tips
+Next, you’ll tackle a technical screen that combines a 30-minute HackerRank SQL assessment with a short case study or deck critique. You’ll be challenged to write queries, interpret data, and solve real-world business problems—often referencing an Airbnb business analytics tool you’ve used or built. This stage tests your ability to extract insights from complex datasets, apply statistical reasoning, and communicate your findings clearly. Expect to demonstrate proficiency in SQL, Python, and data visualization, as well as your approach to A/B testing and business metric analysis. Your performance here is crucial, as it directly reflects your readiness to drive impact at scale.
+SQL / Technical Questions
+Expect to showcase your Airbnb advanced analytics chops with SQL questions that assess your ability to manipulate complex datasets, detect patterns, and deliver actionable insights for business decisions:
+
+1. Find the total salary of slacking employees
+
+To solve this, use an INNER JOIN to combine the employees and projects tables, filtering for employees who have at least one project assigned but no completed projects (End_dt IS NULL). Group by employee ID and use HAVING COUNT(p.End_dt) = 0 to identify slacking employees. Finally, sum their salaries using a subquery.
+
+2. Write a query to get the average commute time for each commuter in New York
+
+To solve this, use two subqueries: one to calculate the average commute time for each commuter in New York grouped by commuter_id, and another to calculate the overall average commute time across all commuters in New York. Use the TIMESTAMPDIFF function to calculate the duration of each ride in minutes, and then join the results to display both averages in the output.
+
+3. Write a query to retrieve all user IDs whose transactions have exactly a 10-second gap
+
+To solve this, use the LAG() and LEAD() window functions to calculate the time difference between consecutive transactions. Filter the results to include only those transactions with a 10-second gap and return the distinct user IDs in ascending order.
+
+4. Find the average number of accepted friend requests for each age group
+
+To solve this, use a RIGHT JOIN between the requests_accepted and age_groups tables to associate accepted friend requests with age groups. Calculate the average acceptance by dividing the count of accepted requests by the count of unique users in each age group, grouping by age_group, and ordering the results in descending order.
+
+5. Cumulative Sales Since Last Restocking
+
+To calculate cumulative sales since the last restocking, first identify the latest restocking date for each product using the MAX() function grouped by product_id. Then, use a window function SUM(...) OVER() to compute the running total of sales for each product after its last restocking date. Join the sales, products, and the derived table of last restocking dates, filtering sales that occurred after the last restocking date.
+
+Case Study & Forecasting Questions
+These questions test how you translate data into forward-looking strategy, often asking you to forecast metrics or build models that align with Airbnb, Inc. forecast and analysis efforts:
+
+6. How would you build a dynamic pricing system for Airbnb based on demand and availability?
+
+To build a dynamic pricing system, gather data on demand, availability, seasonality, and external factors like local events. Use machine learning models, such as regression or reinforcement learning, to predict optimal prices. Consider factors like user behavior, competitor pricing, and elasticity of demand while ensuring the system adapts to real-time changes.
+
+7. How would you forecast revenue for the next year?
+
+To forecast revenue for the next year, analyze historical revenue data for Facebook’s various revenue streams, considering attributes like seasonality and trends. Depending on the behavior of each stream, use models such as classical time series forecasting, ARMA, or ARIMA to predict future revenue, and sum forecasts for all streams to estimate total revenue.
+
+8. Given a task to predict hotel occupancy rates, how would you design the model?
+
+To design the model, start by collecting relevant data such as historical occupancy rates, booking trends, seasonality, holidays, and external factors like local events or weather. Use this data to train a machine learning model, such as regression or time-series forecasting. Evaluate the model’s performance using metrics like Mean Absolute Error (MAE) or Root Mean Square Error (RMSE) to ensure accuracy.
+
+9. Call Center Resource Management
+
+To address this problem, a predictive model such as a time-series forecasting model or a regression model can be used to predict call volumes and allocate agents accordingly. Metrics to evaluate the model include accuracy in predicting call volumes, agent utilization rates, and customer wait times. Over-allocation ensures better customer satisfaction but may increase costs, while under-allocation risks longer wait times and lower customer satisfaction. Balancing these trade-offs is key to determining the optimal allocation strategy.
+
+10. How would you build a function to return a list of daily forecasted revenue starting from Day 1 to the end of the quarter (Day N)?
+
+To solve this, calculate the daily growth rate by dividing the difference between the total revenue target and Day 1 revenue by the number of days minus one. Then, iteratively compute the revenue for each day by adding the daily growth rate to the previous day’s revenue, storing the results in a list.
+
+Dashboard & Tooling Questions
+You’ll be asked to critique and design visualizations, evaluate metrics, and improve user understanding using tools like Minerva and Superset, often within the context of an Airbnb analytics dashboard or other Airbnb analysis software:
+
+11. How would you visualize data with long tail text to effectively convey its characteristics and help extract actionable insights?
+
+To visualize long-tail text data, start with frequency distribution plots like log-log scale histograms or Zipf plots to highlight keyword occurrences. Use semantic analysis techniques such as word clouds or clustering methods like t-SNE to uncover patterns. Integrate these insights with conversion metrics and temporal trends into dashboards for actionable business decisions.
+
+12. Design a dashboard that provides personalized insights, sales forecasts, and inventory recommendations for shop owners
+
+To design a merchant dashboard, prioritize metrics like sales trends (e.g., week-over-week revenue changes), inventory insights (e.g., days remaining for stock), and customer behavior (e.g., repeat purchase rates). Use adaptive visualizations tailored to merchant types, such as cohort charts for customer segmentation or smart banners highlighting actionable insights. Ensure scalability by leveraging metadata to personalize layouts and validate utility through merchant interaction tracking.
+
+13. Interpreting Fraud Detection Trends
+
+To interpret fraud detection graphs, focus on identifying anomalies, spikes, or patterns in fraudulent activities over time. Key insights include understanding the frequency, timing, and types of fraud, which can help refine detection algorithms and implement preventive measures. Use these insights to improve fraud detection processes by enhancing model accuracy, updating rules, and deploying real-time monitoring systems.
+
+14. Critique a Minerva dashboard that shows booking trends by city. What would you improve?
+
+Start by evaluating clarity and usefulness. Are city-level metrics aggregated at appropriate levels? Look for over-cluttered visualizations, inconsistent color schemes, or missing comparison baselines like year-over-year trends. Suggest adding filters for dates, guest demographics, and property types. Finally, recommend aligning KPI definitions across the airbnb analytics dashboard so regional teams interpret the data consistently.
+
+Behavioral & Values Questions
+Here, interviewers are looking to understand how you collaborate, communicate, and live out Airbnb’s values—especially in moments of ambiguity, cross-functional tension, or high-stakes decision-making:
+
+15. How would you convey insights and the methods you use to a non-technical audience?
+
+At Airbnb, business analysts frequently collaborate with design, operations, and regional teams that may not have technical expertise. You should describe how you structure your insights using storytelling, visualizations, and real-world analogies. For example, you might walk through how you used clustering to segment guests by travel behavior, then presented clear visuals and trade-offs to help a marketing team prioritize a campaign. Focus on simplifying without oversimplifying.
+
+16. What do you tell an interviewer when they ask you what your strengths and weaknesses are?
+
+Tailor your answer to qualities that align with Airbnb’s values. For strengths, consider areas like strong SQL proficiency, experience with experimentation platforms, or a track record of turning ambiguous problems into structured analysis. For weaknesses, avoid clichés. Instead, be honest and share how you’ve addressed it. For example, you might say you previously over-indexed on perfection in dashboards but learned that speed-to-insight is more critical in fast-paced teams like Airbnb’s regional operations.
+
+17. Why Do You Want to Work With Us
+
+Go beyond generic admiration. In 2025, Airbnb continues to lead in the intersection of travel, trust, and technology. Reference your alignment with Airbnb’s mission and how you’re excited to contribute to key initiatives, such as sustainable travel growth or optimizing the host onboarding experience. Mention interest in working with global teams, using real-time data to drive product or marketplace strategy, and leveraging Airbnb’s strong analytics infrastructure to make meaningful impact.
+
+18. Talk about a time when you had trouble communicating with stakeholders. How were you able to overcome it?
+
+Airbnb analysts often sit between product, operations, and regional leadership. When there is disagreement or confusion, it is your role to bridge data and narrative. Provide a story where you had to identify why your insight wasn’t resonating, then explain how you reframed the data or involved the stakeholders earlier in the analysis process. Focus on active listening, using visual tools, or scenario modeling to create alignment and improve decision-making.
+
+How to Prepare for a Business Analyst Role at Airbnb
+To excel in the Airbnb business analyst interview, you’ll want to master both technical and strategic preparation. Start by honing your SQL and Tableau skills, as you’ll be expected to analyze complex datasets and visualize insights using an airbnb business analytics tool. Practice writing advanced queries that extract actionable trends from booking, pricing, and review data—these are core to the technical screens and on-site exercises. Airbnb’s interviewers value candidates who can not only manipulate data but also translate findings into business recommendations using clear, compelling dashboards.
+
+Building your own forecasting projects is a powerful way to stand out. Leverage the open-source Airbnb review dataset, which contains millions of real guest reviews and listing details from global cities. Use this dataset to practice exploratory data analysis, sentiment mining, and predictive modeling—skills that directly mirror the challenges you’ll face at Airbnb. For example, you might forecast review scores or booking trends using Python and Tableau, then present your findings as you would to a cross-functional team. Practice with our AI Interviewer to gain more clarity on the approach to the ideal answers.
+
+Equally important is your ability to tell stories with data and align with Airbnb’s core values. Use the STAR method (Situation, Task, Action, Result) to structure your behavioral answers, and be ready to demonstrate how you “Champion the Mission” by connecting your work to Airbnb’s vision of belonging and community impact.
+
+Finally, simulate the interview environment with mock interviews and peer feedback. Benchmark your SQL speed and accuracy on data-driven platforms, and seek out realistic case studies to sharpen your business sense. This holistic, hands-on approach will help you approach the process with confidence and clarity, ready to make a measurable impact from day one.
+
+SQL / Technical Questions
+Expect to showcase your Airbnb advanced analytics chops with SQL questions that assess your ability to manipulate complex datasets, detect patterns, and deliver actionable insights for business decisions:
+
+1. Find the total salary of slacking employees
+
+To solve this, use an INNER JOIN to combine the employees and projects tables, filtering for employees who have at least one project assigned but no completed projects (End_dt IS NULL). Group by employee ID and use HAVING COUNT(p.End_dt) = 0 to identify slacking employees. Finally, sum their salaries using a subquery.
+
+2. Write a query to get the average commute time for each commuter in New York
+
+To solve this, use two subqueries: one to calculate the average commute time for each commuter in New York grouped by commuter_id, and another to calculate the overall average commute time across all commuters in New York. Use the TIMESTAMPDIFF function to calculate the duration of each ride in minutes, and then join the results to display both averages in the output.
+
+3. Write a query to retrieve all user IDs whose transactions have exactly a 10-second gap
+
+To solve this, use the LAG() and LEAD() window functions to calculate the time difference between consecutive transactions. Filter the results to include only those transactions with a 10-second gap and return the distinct user IDs in ascending order.
+
+4. Find the average number of accepted friend requests for each age group
+
+To solve this, use a RIGHT JOIN between the requests_accepted and age_groups tables to associate accepted friend requests with age groups. Calculate the average acceptance by dividing the count of accepted requests by the count of unique users in each age group, grouping by age_group, and ordering the results in descending order.
+
+5. Cumulative Sales Since Last Restocking
+
+To calculate cumulative sales since the last restocking, first identify the latest restocking date for each product using the MAX() function grouped by product_id. Then, use a window function SUM(...) OVER() to compute the running total of sales for each product after its last restocking date. Join the sales, products, and the derived table of last restocking dates, filtering sales that occurred after the last restocking date.
+
+Case Study & Forecasting Questions
+These questions test how you translate data into forward-looking strategy, often asking you to forecast metrics or build models that align with Airbnb, Inc. forecast and analysis efforts:
+
+6. How would you build a dynamic pricing system for Airbnb based on demand and availability?
+
+To build a dynamic pricing system, gather data on demand, availability, seasonality, and external factors like local events. Use machine learning models, such as regression or reinforcement learning, to predict optimal prices. Consider factors like user behavior, competitor pricing, and elasticity of demand while ensuring the system adapts to real-time changes.
+
+7. How would you forecast revenue for the next year?
+
+To forecast revenue for the next year, analyze historical revenue data for Facebook’s various revenue streams, considering attributes like seasonality and trends. Depending on the behavior of each stream, use models such as classical time series forecasting, ARMA, or ARIMA to predict future revenue, and sum forecasts for all streams to estimate total revenue.
+
+8. Given a task to predict hotel occupancy rates, how would you design the model?
+
+To design the model, start by collecting relevant data such as historical occupancy rates, booking trends, seasonality, holidays, and external factors like local events or weather. Use this data to train a machine learning model, such as regression or time-series forecasting. Evaluate the model’s performance using metrics like Mean Absolute Error (MAE) or Root Mean Square Error (RMSE) to ensure accuracy.
+
+9. Call Center Resource Management
+
+To address this problem, a predictive model such as a time-series forecasting model or a regression model can be used to predict call volumes and allocate agents accordingly. Metrics to evaluate the model include accuracy in predicting call volumes, agent utilization rates, and customer wait times. Over-allocation ensures better customer satisfaction but may increase costs, while under-allocation risks longer wait times and lower customer satisfaction. Balancing these trade-offs is key to determining the optimal allocation strategy.
+
+10. How would you build a function to return a list of daily forecasted revenue starting from Day 1 to the end of the quarter (Day N)?
+
+To solve this, calculate the daily growth rate by dividing the difference between the total revenue target and Day 1 revenue by the number of days minus one. Then, iteratively compute the revenue for each day by adding the daily growth rate to the previous day’s revenue, storing the results in a list.
+
+Dashboard & Tooling Questions
+You’ll be asked to critique and design visualizations, evaluate metrics, and improve user understanding using tools like Minerva and Superset, often within the context of an Airbnb analytics dashboard or other Airbnb analysis software:
+
+11. How would you visualize data with long tail text to effectively convey its characteristics and help extract actionable insights?
+
+To visualize long-tail text data, start with frequency distribution plots like log-log scale histograms or Zipf plots to highlight keyword occurrences. Use semantic analysis techniques such as word clouds or clustering methods like t-SNE to uncover patterns. Integrate these insights with conversion metrics and temporal trends into dashboards for actionable business decisions.
+
+12. Design a dashboard that provides personalized insights, sales forecasts, and inventory recommendations for shop owners
+
+To design a merchant dashboard, prioritize metrics like sales trends (e.g., week-over-week revenue changes), inventory insights (e.g., days remaining for stock), and customer behavior (e.g., repeat purchase rates). Use adaptive visualizations tailored to merchant types, such as cohort charts for customer segmentation or smart banners highlighting actionable insights. Ensure scalability by leveraging metadata to personalize layouts and validate utility through merchant interaction tracking.
+
+13. Interpreting Fraud Detection Trends
+
+To interpret fraud detection graphs, focus on identifying anomalies, spikes, or patterns in fraudulent activities over time. Key insights include understanding the frequency, timing, and types of fraud, which can help refine detection algorithms and implement preventive measures. Use these insights to improve fraud detection processes by enhancing model accuracy, updating rules, and deploying real-time monitoring systems.
+
+14. Critique a Minerva dashboard that shows booking trends by city. What would you improve?
+
+Start by evaluating clarity and usefulness. Are city-level metrics aggregated at appropriate levels? Look for over-cluttered visualizations, inconsistent color schemes, or missing comparison baselines like year-over-year trends. Suggest adding filters for dates, guest demographics, and property types. Finally, recommend aligning KPI definitions across the airbnb analytics dashboard so regional teams interpret the data consistently.
+
+Behavioral & Values Questions
+Here, interviewers are looking to understand how you collaborate, communicate, and live out Airbnb’s values—especially in moments of ambiguity, cross-functional tension, or high-stakes decision-making:
+
+15. How would you convey insights and the methods you use to a non-technical audience?
+
+At Airbnb, business analysts frequently collaborate with design, operations, and regional teams that may not have technical expertise. You should describe how you structure your insights using storytelling, visualizations, and real-world analogies. For example, you might walk through how you used clustering to segment guests by travel behavior, then presented clear visuals and trade-offs to help a marketing team prioritize a campaign. Focus on simplifying without oversimplifying.
+
+16. What do you tell an interviewer when they ask you what your strengths and weaknesses are?
+
+Tailor your answer to qualities that align with Airbnb’s values. For strengths, consider areas like strong SQL proficiency, experience with experimentation platforms, or a track record of turning ambiguous problems into structured analysis. For weaknesses, avoid clichés. Instead, be honest and share how you’ve addressed it. For example, you might say you previously over-indexed on perfection in dashboards but learned that speed-to-insight is more critical in fast-paced teams like Airbnb’s regional operations.
+
+17. Why Do You Want to Work With Us
+
+Go beyond generic admiration. In 2025, Airbnb continues to lead in the intersection of travel, trust, and technology. Reference your alignment with Airbnb’s mission and how you’re excited to contribute to key initiatives, such as sustainable travel growth or optimizing the host onboarding experience. Mention interest in working with global teams, using real-time data to drive product or marketplace strategy, and leveraging Airbnb’s strong analytics infrastructure to make meaningful impact.
+
+18. Talk about a time when you had trouble communicating with stakeholders. How were you able to overcome it?
+
+Airbnb analysts often sit between product, operations, and regional leadership. When there is disagreement or confusion, it is your role to bridge data and narrative. Provide a story where you had to identify why your insight wasn’t resonating, then explain how you reframed the data or involved the stakeholders earlier in the analysis process. Focus on active listening, using visual tools, or scenario modeling to create alignment and improve decision-making.

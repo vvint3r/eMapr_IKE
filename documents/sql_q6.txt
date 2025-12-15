@@ -1,0 +1,298 @@
+0 By DotNetTricks By DotNetTricks
+Live Training TRAINING CATEGORIES
+1 .NET Platform
+2 Career & Leadership
+3 Cloud & DevOps
+4 Data Science & AI
+5 Java Platform
+6 JS & Front-end
+View All Training TRAINING PROGRAMS
+1 .NET Certification Training
+2 .NET Microservices Certification Training
+3 .NET Software Architecture and Design Training
+4 ASP.NET Core Certification Training
+5 Blazor Certification Training
+1 Live Training .NET Platform .NET Certification Training
+2 .NET Microservices Certification Training
+3 .NET Software Architecture and Design Training
+4 ASP.NET Core Certification Training
+5 Blazor Certification Training
+1 Career & Leadership English for Software Professionals
+2 The Top 1% Tech Leader Program
+1 Cloud & DevOps AWS Developer Certification Training
+2 Azure Administrator Certification Training
+3 Azure AI Engineer Certification Training
+4 Azure Developer Certification Training
+5 Azure DevOps Certification Training
+6 Azure Solution Architect Certification Training
+1 Data Science & AI Azure AI Engineer Certification Training
+2 Azure AI Foundry Certification Training
+1 Java Platform Data Structures and Algorithms Training
+2 Java Microservices Certification Training
+3 Java Software Architecture and Design Training
+1 JS & Front-end Angular Certification Training
+2 Frontend Foundations Certification Training
+3 React Certification Training
+0 Training Library
+0 Job Oriented Training For Beginners/ExperiencedFull-Stack .NET Core Developer For Beginners/ExperiencedAdv. Full-Stack Java Developer For Beginners/ExperiencedAzure AI & Gen AI Engineer For Beginners/ExperiencedFor ExperiencedAdvanced Full-Stack .NET Core For Working Professionals.NET Solution Architect For .NET DevelopersJava Solution Architect For Java Developers
+1 Job Oriented Training .NET Developer Training
+2 Full-Stack .NET Developer Training
+3 Advanced Full-Stack .NET Developer Training
+4 Advanced Full-Stack Java Developer Training
+5 .NET Solution Architect Certification Training
+6 Java Solution Architect Certification Training
+7 Azure AI and GenAI Engineer Certification Training
+0 Free Master Classes
+1 Free Courses
+2 Free Books
+3 Training Batches
+1 Explore Membership
+2 DSA Problems
+3 Online Compiler
+0 Tutorials
+1 Cart
+2 0
+3 Login/SignUp
+View AllBrowse Tutorials
+01 Beginner
+1 Understanding Outer Join in SQL
+2 Understanding Natural Join in SQL
+3 Inner Join in SQL: How It Works
+4 Self Join in SQL: A Step-by-Step Guide
+5 Understanding SQL CROSS JOIN with Examples
+6 SQL HAVING Clause Explained: Filter Your Data Like a Pro
+7 Understanding LEFT JOIN in SQL: A Simple Guide
+8 Top SQL Developer Skills You Need to Master in 2025
+9 Full Outer Join in SQL: A Comprehensive Guide
+10 Understanding Database Normalization in SQL with Example
+11 What are the 5 Basic SQL Commands? (DDL, DML, DCL, TCL, DQL)
+12 SQL Server 2012 New Features and Programmability Enhancements
+13 Download SQL Server Express Editions
+14 Introduction to SQL Server
+15 SQL Cheat Sheet: Full Guide for Beginners & Professionals
+16 Different Types of SQL Keys
+17 SQL Server Naming Conventions and Standards
+18 Sql Server 2019 New Features
+19 SQL Vs. NoSQL: Difference Between SQL and NoSQL Database
+02 Intermediate
+1 Understanding SQL Server Case Expression with Example
+2 Exception Handling in SQL Server by TRY…CATCH
+3 Different Types of Triggers In SQL Server
+4 Difference between CTE and Temp Table and Table Variable
+5 Get field name, data type and size of database table
+6 Delete Duplicate Rows in SQL Server From a Table
+7 Create a comma separated list from column using select statement
+8 SQL Server XML Data Type
+9 SQL Server System Defined Database
+10 Definition, Use of Group by and Having Clause
+11 Cursors In SQL Server
+12 Different Types of SQL Server Functions
+13 Group By Clause in SQL: Unveiling Patterns in Data
+14 SQL WHERE Clause Explained: Filter Data with Precision
+15 Get nth Highest and Lowest Salary of an Employee
+16 Logical Tables in SQL Server: Inserted and Deleted Logical Table
+17 Different Types of Views in SQL Server
+18 Swap the Values of Two Columns in SQL Server
+19 Remove Unsent Database Email from SQL Server
+20 Clear List of Recent SQL Server Connection From SQL Server Management Studio
+21 Calculate Running Total, Total of a Column and Row
+22 Difference between Primary Key and Unique Key
+23 Drop all Tables, Stored Procedures, Views and Triggers
+24 How to Insert Values to Identity Column in SQL Server?
+25 Joins in SQL: Types, Syntax, Examples & Use Cases
+26 Stored Procedure in SQL: What It Is, Types, Syntax & Examples
+27 Difference between Stored Procedure and Function in SQL Server
+28 SQL Integrity Constraints
+29 Differences between Primary Key and Foreign Key
+30 Difference between Inner Join and Equi Join and Natural Join
+03 Advanced
+1 SQL Server Alternatives Cursor
+2 Tips to improve SQL Server performance & database design
+3 SQL Server Setting Triggers Firing Order
+4 Stored Procedure Plan Recompilation and Performance Tuning
+5 SQL Server XQuery Methods
+6 SQL Server Transactions Management
+7 SQL Server Database Mail Setup
+8 SQL Server Exceptions Working
+9 SQL Server Insert, Retrieve, Update, Delete Operations using Stored Procedures
+10 Enable Intellisense in SQL Server
+11 After Trigger, Instead of Trigger Example
+12 SQL Injection Attacks: How to be Aware?
+13 SQL Server Different Types of Cursors
+04 Questions
+1 SQL Viva Questions: A Must-Read for Tech Students
+2 Top 50 SQL Interview Questions for All Experience Levels
+3 Top 50 SQL Queries Interview Questions and Answers To Get Hired
+4 Top SQL Joins Interview Questions You Need to Know
+5 Top SQL MCQ Questions to Boost Your Knowledge and Skills
+6 Top 50+ SQL Server Interview Questions and Answers
+05 Training Programs
+1 C# Programming Course For Beginners
+2 SQL Server Foundations Course
+3 .NET Certification Training
+1 Home
+2 Tutorials
+3 Sqlserver
+4 Top 50 SQL Interview Ques..
+Top 50 SQL Interview Questions for All Experience Levels
+16 Jun 2025 Question 7.42K Views 25 min read Learn with an interactive course and practical hands-on labs
+Free SQL Server Online Course with Certificate - Start Today
+Start Learning Free Free Interview books Skill Test SQL Interview Questions
+Getting ready for an SQL interview can be easy with the right help! This guide has a list of SQL interview questions that cover everything you need to know, from basic topics like queries and joins to advanced ones like performance and indexing. Whether you’re new to SQL or have some experience, these SQL interview questions will help you feel confident and ready to do your best in any interview. If you have any doubts, let's explore theSQL Server tutorialto understand the SQL command easily.
+In this Interview Tutorial, let's learn about the most commonly asked SQL Interview Questions.
+Top SQL Interview Questions and Answers
+Q 1. What is SQL?
+SQL (Structured Query Language) is a standard programming language used to manage and manipulate relational databases. It is used for querying, inserting, updating, and deleting data in a database.
+Q 2. What are the different types of SQL Commands?
+SQL commands are divided into several categories, including:
+1 Data Query Language (DQL): SELECT
+2 Data Definition Language (DDL): CREATE, ALTER, DROP
+3 Data Manipulation Language (DML): INSERT, UPDATE, DELETE
+4 Data Control Language (DCL): GRANT, REVOKE
+5 Transaction Control Language (TCL): COMMIT, ROLLBACK, SAVEPOINT
+Q 3. What is a primary key?
+A primary key is a unique identifier for each record in a table. It ensures that no two rows can have the same value for the primary key column(s). Primary keys also automatically create a unique index for faster query performance.
+Read MoreDifference between Primary Key and Unique KeyDifferences between Primary Key and Foreign KeyQ 4. What is a foreign key?
+A foreign key is a column or set of columns that establishes a link between data in two tables. It is a reference to the primary key in another table, ensuring referential integrity between the two tables.
+Q 5. What is the difference between INNER JOIN and LEFT JOIN?
+1 INNER JOIN returns only the rows that have matching values in both tables.
+1 LEFT JOIN returns all rows from the left table and the matched rows from the right table. If there is no match, NULL values are returned for the right table.
+SELECT employees.name, departments.department_name FROM employees LEFT JOIN departments ON employees.department_id = departments.id;
+Q 6. What is normalization?
+Normalizationis the process of organizing data in a database to reduce redundancy and dependency by dividing large tables into smaller, related tables. This process aims to improve data integrity and avoid anomalies.
+Q 7. What are the different normal forms in database normalization?
+The main normal forms include:
+1 First Normal Form (1NF): Eliminate duplicate columns, ensure atomic values.
+2 Second Normal Form (2NF): Eliminate partial dependencies, ensure each non-key column is fully dependent on the primary key.
+3 Third Normal Form (3NF): Eliminate transitive dependencies, ensuring that non-key columns are not dependent on other non-key columns.
+4 Higher normal forms (BCNF, 4NF, 5NF) deal with more advanced data integrity issues.
+Q 8. What is an index in SQL?
+An index is a database object that speeds up data retrieval operations on a table. It creates a lookup table for faster searching. Indexes can be created on one or more columns of a table.
+CREATE INDEX idx_employee_name ON employees (name);
+Q 9. What is the difference between UNION and UNION ALL?
+1 UNION combines the results of two queries and removes duplicate rows.
+1 UNION ALL combines the results of two queries but includes duplicates.
+SELECT name FROM employees UNION SELECT name FROM contractors;
+Q 10. What is a subquery in SQL?
+A subquery is a query nested inside another query. It is used to perform operations that require multiple steps or filters. Subqueries can be used in SELECT, INSERT, UPDATE, or DELETE statements.
+SELECT name FROM employees WHERE department_id = ( SELECT id FROM departments WHERE name = 'Sales' );
+Q 11. What is the difference between DELETE and TRUNCATE?
+1 DELETE removes rows from a table based on a condition, and it can be rolled back. It can also fire triggers.
+1 TRUNCATE removes all rows from a table, and it cannot be rolled back. It does not fire triggers and is faster than DELETE.
+Q 12. What is a view in SQL?
+A view in SQL is a virtual table that provides a way to simplify complex queries. It is based on the result of a SELECT query, and it doesn’t store data physically but displays it dynamically.
+CREATE VIEW employee_details AS SELECT name, department FROM employees;
+Q 13. What is a stored procedure?
+A stored procedure is a precompiled collection of one or more SQL statements that can be executed as a unit. Stored procedures are used to encapsulate business logic, improving performance and code reusability.
+CREATE PROCEDURE GetEmployeeInfo() BEGIN SELECT * FROM employees; END ;
+Q 14. What is the difference between CHAR and VARCHAR?
+1 CHAR is a fixed-length string, where the allocated space is always filled, padding with spaces if needed.
+1 VARCHAR is a variable-length string, storing only the number of characters entered without padding.
+Q 15. What is a trigger in SQL?
+A trigger in SQL is a special type of stored procedure that automatically executes in response to certain events on a table or view (e.g., INSERT, UPDATE, DELETE).
+CREATE TRIGGER update_salary BEFORE UPDATE ON employees FOR EACH ROW BEGIN SET NEW.salary = OLD.salary * 1.1 ; END ;
+Q 16. What is a transaction in SQL?
+A transaction is a sequence of one or more SQL operations that are executed as a single unit. Transactions ensure that data is consistent and reliable by following the ACID properties (Atomicity, Consistency, Isolation, Durability).
+Q 17. What are aggregate functions in SQL?
+Aggregate functions perform calculations on a set of values and return a single value. Common aggregate functions include:
+1 COUNT(): Counts the number of rows.
+2 SUM(): Sums up numeric values.
+3 AVG(): Returns the average value.
+4 MAX(): Returns the maximum value.
+5 MIN(): Returns the minimum value.
+Q 18. What is the difference between WHERE and HAVING?
+1 WHERE is used to filter rows before grouping.
+1 HAVING is used to filter groups after the GROUP BY clause has been applied.
+SELECT department, COUNT ( * ) FROM employees GROUP BY department HAVING COUNT ( * ) > 10 ;
+Q 19. What is a composite key?
+A composite key is a primary key that consists of two or more columns used together to uniquely identify a record in a table.
+CREATE TABLE employee_project ( employee_id INT , project_id INT , PRIMARY KEY (employee_id, project_id) );
+Q 20. What are the different types of JOINS in SQL?
+The main types of join in SQL are:
+1 INNER JOIN: Returns only matching rows from both tables.
+2 LEFT JOIN: Returns all rows from the left table and matching rows from the right table.
+3 RIGHT JOIN: Returns all rows from the right table and matching rows from the left table.
+4 FULL OUTER JOIN: Returns all rows from both tables, with NULL values where there is no match.
+SELECT a.name, b.department FROM employees a LEFT JOIN departments b ON a.department_id = b.id;
+Q 21. What is the difference between a clustered index and a non-clustered index?
+A clustered index determines the physical order of data in a table, meaning the rows are stored on the disk in the same order as the clustered index. A non-clustered index, on the other hand, is a separate structure from the data table and only stores pointers to the data rows.
+CREATE CLUSTERED INDEX idx_name ON employees (name);
+Q 22. What is a schema in SQL?
+A schema is a logical container or grouping of database objects such as tables, views, and stored procedures. It helps organize and manage objects in a database.
+CREATE SCHEMA finance;
+Q 23. What is the difference between the DELETE and DROP command?
+DELETE removes data from a table based on a condition but does not remove the structure of the table. DROP removes the entire table or database structure, including all its data and associated constraints.
+DELETE FROM employees WHERE employee_id = 5 ; DROP TABLE employees;
+Q 24. What is the use of the BETWEEN operator?
+The BETWEEN operator is used to filter the result set within a specific range, including the boundary values.
+SELECT * FROM employees WHERE salary BETWEEN 40000 AND 80000 ;
+Q 25. What is a self-join in SQL?
+A self join in SQL is a join where a table is joined with itself. It is useful when you need to compare rows within the same table.
+SELECT e1.name AS Employee, e2.name AS Manager FROM employees e1 JOIN employees e2 ON e1.manager_id = e2.employee_id;
+Q 26. What is the difference between IS NULL and IS NOT NULL?
+IS NULL is used to check if a value is NULL, while IS NOT NULL is used to check if a value is not NULL.
+SELECT * FROM employees WHERE department_id IS NULL ; SELECT * FROM employees WHERE department_id IS NOT NULL ;
+Q 27. What are the different types of constraints in SQL?
+SQL constraints are rules applied to columns or tables to enforce data integrity. Types include:
+1 PRIMARY KEY: Uniquely identifies each record.
+2 FOREIGN KEY: Ensures referential integrity between two tables.
+3 UNIQUE: Ensures that all values in a column are unique.
+4 CHECK: Ensures that values in a column satisfy a specific condition.
+5 NOT NULL: Ensures that a column cannot have a NULL value.
+Q 28. What is the RANK() function in SQL?
+The RANK() function assigns a unique rank to each row within a partition of a result set. It allows handling ties, where rows with equal values receive the same rank.
+SELECT employee_id, salary, RANK () OVER ( ORDER BY salary DESC ) AS salary_rank FROM employees;
+Q 29. What is the difference between CHAR and TEXT data types?
+CHAR is used for fixed-length strings, while TEXT is used for variable-length strings that can store large amounts of data.
+Q 30. What is the purpose of the GROUP BY clause in SQL?
+The GROUP BY clause is used to arrange identical data into groups, typically when using aggregate functions like COUNT, SUM, AVG, etc.
+SELECT department, COUNT(*) AS num_employees FROM employees GROUP BY department;
+Q 31. What is a CROSS JOIN in SQL?
+A CROSS JOIN in SQL returns the Cartesian product of two tables. Each row from the first table is joined with each row from the second table.
+SELECT employees.name, departments.department_name FROM employees CROSS JOIN departments;
+Q 32. What is the HAVING clause used for?
+The HAVING clause in SQLis used to filter results after an aggregation is applied. It is similar to WHERE, but WHERE works before aggregation, and HAVING works after.
+SELECT department, COUNT ( * ) AS num_employees FROM employees GROUP BY department HAVING COUNT ( * ) > 5 ;
+Q 33. What is a CASE statement in SQL?
+The CASE statement is used to create conditional logic within SQL queries, similar to an IF-ELSE statement in other programming languages.
+SELECT name, CASE WHEN salary > 50000 THEN 'High' WHEN salary <= 50000 THEN 'Low' END AS salary_range FROM employees;
+Q 34. What is a stored function in SQL?
+A stored function is a database object that encapsulates a set of SQL queries and operations into a single callable function. It returns a value when executed.
+CREATE FUNCTION calculate_bonus(salary DECIMAL ) RETURNS DECIMAL BEGIN RETURN salary * 0.10 ; END ;
+Q 35. How do you add a column to an existing table in SQL?
+You can use the ALTER TABLE statement to add a column to an existing table.
+ALTER TABLE employees ADD email VARCHAR ( 100 );
+Q 36. What is the DISTINCT keyword in SQL?
+The DISTINCT keyword is used to return only unique values from a query, eliminating duplicates.
+SELECT DISTINCT department FROM employees;
+Q 37. What is a UNIQUE constraint in SQL?
+A UNIQUE constraint ensures that all values in a column are distinct and no duplicates are allowed.
+ALTER TABLE employees ADD CONSTRAINT unique_email UNIQUE (email);
+Q 38. What is the difference between INNER JOIN and OUTER JOIN?
+INNER JOINreturns only the rows that have matching values in both tables, while OUTER JOINreturns all rows from one table and the matching rows from the other table (if any), with NULLs for non-matching rows.
+Q 39. What is a NULL value in SQL?
+A NULL value represents the absence of any value or unknown data. It is different from an empty string or zero.
+Q40. How do you remove duplicates from a query result in SQL?
+To remove duplicates, you can use the DISTINCT keyword in your SELECT statement.
+SELECT DISTINCT name FROM employees;
+Q 41. What is the difference between a subquery and a join?
+A subquery is a query nested inside another query, while a JOIN is a way to combine columns from two or more tables based on a related column. Subqueries are often used for complex conditions or retrieving values to be used by the outer query.
+Q 42. What are window functions in SQL?
+Window functions are functions that perform a calculation across a set of table rows related to the current row. Examples include ROW_NUMBER(), RANK(), and SUM(). They allow for complex calculations like running totals without needing to use a GROUP BY.
+Q 43. Explain the difference between UNION and UNION ALL.
+UNION combines the results of two or more queries and removes duplicates. UNION ALL, on the other hand, combines results but retains duplicates. The choice between them depends on whether duplicates are acceptable in the result set.
+Q 44. What is the COALESCE function in SQL?
+The COALESCE function returns the first non-null value in a list of expressions. It's useful for replacing NULL values with a default value in queries.
+SELECT COALESCE ( NULL , 'No Data' , 'Available' );
+Q 45. What is the difference between the LIKE and ILIKE operators in SQL?
+LIKE is case-sensitive in some databases (like MySQL), while ILIKE is case-insensitive (in PostgreSQL). Both are used for pattern matching, but ILIKE allows for more flexible comparisons without worrying about case.
+Q 46. How do you use indexes to optimize SQL queries?
+Indexes are used to improve the speed of data retrieval operations. By creating indexes on frequently searched columns or those used in JOINs or WHERE clauses, query performance can be significantly improved. However, they can slow down data modification operations like INSERT, UPDATE, and DELETE.
+Q 47. What is the difference between CHAR and VARCHAR data types in SQL?
+CHAR is used for fixed-length strings, and any space beyond the string's actual length is padded with spaces. VARCHAR is used for variable-length strings and stores only the characters entered without padding.
+Q 48. What is a transactional database, and what is ACID compliance?
+A transactional database ensures that database operations are performed correctly and fully. ACID (Atomicity, Consistency, Isolation, Durability) complianceguarantees that database transactions are processed reliably and ensures data integrity, even in cases of system failure.
+Q 49. How can you prevent SQL injection in queries?
+SQL injection can be prevented by using prepared statements or parameterized queries, which ensure that input data is treated as data and not executable code. Additionally, using ORM frameworks and validating user inputs can also help prevent this vulnerability.
+Q 50. What is the purpose of the EXPLAIN keyword in SQL?
+The EXPLAIN keyword is used to obtain information about the query execution plan in databases like MySQL and PostgreSQL. It helps you understand how the database engine executes a query, such as whether it uses indexes or scans the entire table. This is useful for query optimization.

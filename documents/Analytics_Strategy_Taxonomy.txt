@@ -1,0 +1,438 @@
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Vision & Mission	Strategic Vision Development
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Vision & Mission	Mission Statement Creation
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Vision & Mission	Value Proposition Definition
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Vision & Mission	North Star Metrics
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Vision & Mission	Strategic Principles
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Vision & Mission	Guiding Values
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Business Alignment	Business Objectives Alignment
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Business Alignment	Corporate Strategy Integration
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Business Alignment	Marketing Strategy Alignment
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Business Alignment	Stakeholder Alignment
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Business Alignment	Cross-Functional Integration
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Business Alignment	Strategic Priorities
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Strategic Planning	Long-Term Strategy (3-5 Years)
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Strategic Planning	Annual Strategy Planning
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Strategic Planning	Quarterly Planning
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Strategic Planning	Strategic Initiatives
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Strategic Planning	Strategic Trade-offs
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Strategic Planning	Portfolio Prioritization
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Use Case Definition	Primary Use Cases
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Use Case Definition	Business Questions
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Use Case Definition	Decision Points
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Use Case Definition	Analytical Requirements
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Use Case Definition	Impact Assessment
+ANALYTICS STRATEGY	STRATEGY FOUNDATIONS	Use Case Definition	Use Case Prioritization
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Roadmap Development	Roadmap Framework
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Roadmap Development	Initiative Identification
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Roadmap Development	Initiative Prioritization
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Roadmap Development	Sequencing & Phasing
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Roadmap Development	Timeline Development
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Roadmap Development	Milestone Definition
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Implementation Phases	Phase 0: Discovery & Assessment
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Implementation Phases	Phase 1: Foundation Building
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Implementation Phases	Phase 2: Core Capabilities
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Implementation Phases	Phase 3: Advanced Analytics
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Implementation Phases	Phase 4: Optimization & Scale
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Implementation Phases	Phase 5: Innovation & Transformation
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Quick Wins	Quick Win Identification
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Quick Wins	90-Day Initiatives
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Quick Wins	Low-Hanging Fruit
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Quick Wins	Proof of Concept
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Quick Wins	Pilot Programs
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Quick Wins	Value Demonstration
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Dependencies & Risks	Technical Dependencies
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Dependencies & Risks	Resource Dependencies
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Dependencies & Risks	Capability Dependencies
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Dependencies & Risks	Risk Identification
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Dependencies & Risks	Risk Mitigation
+ANALYTICS STRATEGY	ANALYTICS ROADMAP	Dependencies & Risks	Contingency Planning
+ANALYTICS STRATEGY	OPERATING MODEL	Model Selection	Centralized Model
+ANALYTICS STRATEGY	OPERATING MODEL	Model Selection	Decentralized Model
+ANALYTICS STRATEGY	OPERATING MODEL	Model Selection	Federated Model
+ANALYTICS STRATEGY	OPERATING MODEL	Model Selection	Hub & Spoke Model
+ANALYTICS STRATEGY	OPERATING MODEL	Model Selection	Functional Model
+ANALYTICS STRATEGY	OPERATING MODEL	Model Selection	Hybrid Model
+ANALYTICS STRATEGY	OPERATING MODEL	Center of Excellence (COE)	COE Structure
+ANALYTICS STRATEGY	OPERATING MODEL	Center of Excellence (COE)	COE Charter
+ANALYTICS STRATEGY	OPERATING MODEL	Center of Excellence (COE)	COE Governance
+ANALYTICS STRATEGY	OPERATING MODEL	Center of Excellence (COE)	COE Services
+ANALYTICS STRATEGY	OPERATING MODEL	Center of Excellence (COE)	COE Standards
+ANALYTICS STRATEGY	OPERATING MODEL	Center of Excellence (COE)	COE Enablement
+ANALYTICS STRATEGY	OPERATING MODEL	Federated Structure	Central Hub Functions
+ANALYTICS STRATEGY	OPERATING MODEL	Federated Structure	Embedded Teams
+ANALYTICS STRATEGY	OPERATING MODEL	Federated Structure	Resource Allocation
+ANALYTICS STRATEGY	OPERATING MODEL	Federated Structure	Shared Services
+ANALYTICS STRATEGY	OPERATING MODEL	Federated Structure	Collaboration Mechanisms
+ANALYTICS STRATEGY	OPERATING MODEL	Federated Structure	Handoff Processes
+ANALYTICS STRATEGY	OPERATING MODEL	Organizational Placement	Reporting Structure
+ANALYTICS STRATEGY	OPERATING MODEL	Organizational Placement	Leadership Positioning
+ANALYTICS STRATEGY	OPERATING MODEL	Organizational Placement	Team Distribution
+ANALYTICS STRATEGY	OPERATING MODEL	Organizational Placement	Cross-Functional Relationships
+ANALYTICS STRATEGY	OPERATING MODEL	Organizational Placement	Span of Control
+ANALYTICS STRATEGY	OPERATING MODEL	Organizational Placement	Authority & Accountability
+ANALYTICS STRATEGY	OPERATING MODEL	Roles & Responsibilities	Role Definitions
+ANALYTICS STRATEGY	OPERATING MODEL	Roles & Responsibilities	Responsibility Matrix (RACI)
+ANALYTICS STRATEGY	OPERATING MODEL	Roles & Responsibilities	Decision Rights
+ANALYTICS STRATEGY	OPERATING MODEL	Roles & Responsibilities	Escalation Paths
+ANALYTICS STRATEGY	OPERATING MODEL	Roles & Responsibilities	Collaboration Models
+ANALYTICS STRATEGY	OPERATING MODEL	Roles & Responsibilities	Partnership Frameworks
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Maturity Models	DELTA Model
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Maturity Models	Gartner AI Maturity Model
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Maturity Models	DAMA Maturity Model
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Maturity Models	Capability Maturity Model (CMM)
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Maturity Models	Custom Maturity Models
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Maturity Models	Industry-Specific Models
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Maturity Levels	Level 0: Ad Hoc/Unaware
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Maturity Levels	Level 1: Initial/Aware
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Maturity Levels	Level 2: Repeatable/Descriptive
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Maturity Levels	Level 3: Defined/Diagnostic
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Maturity Levels	Level 4: Managed/Predictive
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Maturity Levels	Level 5: Optimized/Prescriptive
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Assessment Dimensions	Data Management Maturity
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Assessment Dimensions	Technology Maturity
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Assessment Dimensions	People & Skills Maturity
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Assessment Dimensions	Process Maturity
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Assessment Dimensions	Culture Maturity
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Assessment Dimensions	Governance Maturity
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Current State Assessment	Capability Assessment
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Current State Assessment	Gap Analysis
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Current State Assessment	Strengths & Weaknesses
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Current State Assessment	Benchmarking
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Current State Assessment	Readiness Assessment
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Current State Assessment	Baseline Metrics
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Target State Definition	Future State Vision
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Target State Definition	Desired Capabilities
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Target State Definition	Maturity Goals
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Target State Definition	Timeline to Target
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Target State Definition	Resource Requirements
+ANALYTICS STRATEGY	MATURITY ASSESSMENT	Target State Definition	Success Criteria
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Goal-Setting Frameworks	OKR Framework
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Goal-Setting Frameworks	KPI Framework
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Goal-Setting Frameworks	Balanced Scorecard
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Goal-Setting Frameworks	SMART Goals
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Goal-Setting Frameworks	V2MOM Framework
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Goal-Setting Frameworks	Hoshin Kanri
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Objectives & Key Results (OKRs)	Objective Setting
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Objectives & Key Results (OKRs)	Key Result Definition
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Objectives & Key Results (OKRs)	OKR Cadence
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Objectives & Key Results (OKRs)	OKR Cascading
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Objectives & Key Results (OKRs)	OKR Tracking
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Objectives & Key Results (OKRs)	OKR Reviews
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Key Performance Indicators (KPIs)	Strategic KPIs
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Key Performance Indicators (KPIs)	Operational KPIs
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Key Performance Indicators (KPIs)	Leading Indicators
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Key Performance Indicators (KPIs)	Lagging Indicators
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Key Performance Indicators (KPIs)	KPI Selection Criteria
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Key Performance Indicators (KPIs)	KPI Hierarchies
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Marketing Metrics Strategy	North Star Metric
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Marketing Metrics Strategy	Funnel Metrics
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Marketing Metrics Strategy	Customer Journey Metrics
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Marketing Metrics Strategy	Channel Metrics
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Marketing Metrics Strategy	Campaign Metrics
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Marketing Metrics Strategy	Content Metrics
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Performance Dashboards	Executive Dashboards
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Performance Dashboards	Operational Dashboards
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Performance Dashboards	Analytical Dashboards
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Performance Dashboards	Real-Time Dashboards
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Performance Dashboards	Mobile Dashboards
+ANALYTICS STRATEGY	STRATEGIC MEASUREMENT	Performance Dashboards	Dashboard Design Principles
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Technology Vision	Technology Roadmap
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Technology Vision	Platform Strategy
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Technology Vision	Architecture Principles
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Technology Vision	Integration Strategy
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Technology Vision	Cloud Strategy
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Technology Vision	Innovation Strategy
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Technology Stack	Data Infrastructure
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Technology Stack	Analytics Platforms
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Technology Stack	Visualization Tools
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Technology Stack	Data Science Tools
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Technology Stack	MarTech Integration
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Technology Stack	API Strategy
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Vendor Strategy	Vendor Landscape Assessment
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Vendor Strategy	Build vs. Buy Decisions
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Vendor Strategy	Best-of-Breed vs. Suite
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Vendor Strategy	Multi-Vendor Strategy
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Vendor Strategy	Vendor Consolidation
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Vendor Strategy	Strategic Partnerships
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Vendor Selection	Requirements Definition
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Vendor Selection	Request for Information (RFI)
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Vendor Selection	Request for Proposal (RFP)
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Vendor Selection	Evaluation Criteria
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Vendor Selection	Scoring & Ranking
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Vendor Selection	Proof of Concept (POC)
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Vendor Management	Contract Negotiation
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Vendor Management	SLA Management
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Vendor Management	Vendor Performance
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Vendor Management	Relationship Management
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Vendor Management	Vendor Risk Management
+ANALYTICS STRATEGY	TECHNOLOGY STRATEGY	Vendor Management	Exit Strategy
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Change Strategy	Change Vision
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Change Strategy	Change Charter
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Change Strategy	Change Objectives
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Change Strategy	Change Roadmap
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Change Strategy	Change Governance
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Change Strategy	Success Metrics
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Readiness Assessment	Organizational Readiness
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Readiness Assessment	Cultural Readiness
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Readiness Assessment	Technical Readiness
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Readiness Assessment	Leadership Readiness
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Readiness Assessment	Stakeholder Readiness
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Readiness Assessment	Change Capacity
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Stakeholder Engagement	Stakeholder Identification
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Stakeholder Engagement	Stakeholder Analysis
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Stakeholder Engagement	Influence Mapping
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Stakeholder Engagement	Engagement Strategy
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Stakeholder Engagement	Resistance Management
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Stakeholder Engagement	Coalition Building
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Communication Planning	Communication Strategy
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Communication Planning	Message Development
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Communication Planning	Channel Selection
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Communication Planning	Communication Cadence
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Communication Planning	Feedback Mechanisms
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Communication Planning	Two-Way Communication
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Training & Enablement	Training Needs Assessment
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Training & Enablement	Training Strategy
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Training & Enablement	Learning Paths
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Training & Enablement	Certification Programs
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Training & Enablement	Champion Programs
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Training & Enablement	Train-the-Trainer
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Adoption Strategy	Adoption Planning
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Adoption Strategy	Adoption Metrics
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Adoption Strategy	User Onboarding
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Adoption Strategy	Usage Tracking
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Adoption Strategy	Adoption Incentives
+ANALYTICS STRATEGY	CHANGE MANAGEMENT	Adoption Strategy	Continuous Support
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Culture Building	Vision & Values
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Culture Building	Leadership Modeling
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Culture Building	Cultural Norms
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Culture Building	Behavioral Change
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Culture Building	Storytelling
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Culture Building	Success Stories
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Data Literacy	Literacy Assessment
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Data Literacy	Literacy Programs
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Data Literacy	Basic Analytics Training
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Data Literacy	Data Interpretation
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Data Literacy	Statistical Thinking
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Data Literacy	Critical Thinking
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Decision-Making	Data-Driven Decisions
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Decision-Making	Evidence-Based Decision Framework
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Decision-Making	Decision Quality
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Decision-Making	Decision Velocity
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Decision-Making	Decision Documentation
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Decision-Making	Learning from Decisions
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Democratization	Self-Service Analytics
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Democratization	Data Access Strategy
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Democratization	Tool Accessibility
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Democratization	Empowerment Framework
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Democratization	Citizen Analysts
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Democratization	Governance Balance
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Experimentation	Experimentation Culture
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Experimentation	Test & Learn Framework
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Experimentation	Failure Tolerance
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Experimentation	Innovation Programs
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Experimentation	Hypothesis-Driven Approach
+ANALYTICS STRATEGY	DATA-DRIVEN CULTURE	Experimentation	Learning Organization
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Strategic Governance	Governance Framework
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Strategic Governance	Governance Structure
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Strategic Governance	Governance Policies
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Strategic Governance	Decision-Making Authority
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Strategic Governance	Governance Processes
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Strategic Governance	Compliance Oversight
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Analytics Council	Council Structure
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Analytics Council	Council Charter
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Analytics Council	Membership
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Analytics Council	Meeting Cadence
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Analytics Council	Decision Rights
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Analytics Council	Escalation Process
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Standards & Policies	Naming Conventions
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Standards & Policies	Methodology Standards
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Standards & Policies	Quality Standards
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Standards & Policies	Security Policies
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Standards & Policies	Privacy Policies
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Standards & Policies	Ethics Guidelines
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Data Governance	Data Ownership
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Data Governance	Data Stewardship
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Data Governance	Data Quality
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Data Governance	Master Data Management
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Data Governance	Metadata Management
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Data Governance	Data Lineage
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Regulatory Compliance	GDPR Compliance
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Regulatory Compliance	CCPA Compliance
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Regulatory Compliance	Industry Regulations
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Regulatory Compliance	Compliance Monitoring
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Regulatory Compliance	Audit Trails
+ANALYTICS STRATEGY	GOVERNANCE & COMPLIANCE	Regulatory Compliance	Compliance Reporting
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Talent Strategy	Skills Requirements
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Talent Strategy	Talent Acquisition
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Talent Strategy	Team Structure
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Talent Strategy	Career Paths
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Talent Strategy	Retention Strategy
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Talent Strategy	Succession Planning
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Capability Development	Skills Gap Analysis
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Capability Development	Training Programs
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Capability Development	Upskilling Initiatives
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Capability Development	Reskilling Programs
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Capability Development	Mentorship Programs
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Capability Development	Knowledge Transfer
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Resourcing Model	Resource Planning
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Resourcing Model	Capacity Planning
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Resourcing Model	Resource Allocation
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Resourcing Model	Demand Management
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Resourcing Model	Prioritization Framework
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Resourcing Model	Resource Optimization
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Partnerships	Academic Partnerships
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Partnerships	Consulting Partnerships
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Partnerships	Technology Partnerships
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Partnerships	Outsourcing Strategy
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Partnerships	Managed Services
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Partnerships	Partnership Governance
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Budget Strategy	Budget Planning
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Budget Strategy	Investment Prioritization
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Budget Strategy	Cost Models
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Budget Strategy	Chargeback Models
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Budget Strategy	ROI Tracking
+ANALYTICS STRATEGY	RESOURCE STRATEGY	Budget Strategy	Budget Governance
+ANALYTICS STRATEGY	VALUE REALIZATION	Value Framework	Value Definition
+ANALYTICS STRATEGY	VALUE REALIZATION	Value Framework	Value Drivers
+ANALYTICS STRATEGY	VALUE REALIZATION	Value Framework	Business Case Development
+ANALYTICS STRATEGY	VALUE REALIZATION	Value Framework	Value Hypotheses
+ANALYTICS STRATEGY	VALUE REALIZATION	Value Framework	Value Measurement
+ANALYTICS STRATEGY	VALUE REALIZATION	Value Framework	Value Communication
+ANALYTICS STRATEGY	VALUE REALIZATION	ROI & Business Case	ROI Calculation
+ANALYTICS STRATEGY	VALUE REALIZATION	ROI & Business Case	Cost-Benefit Analysis
+ANALYTICS STRATEGY	VALUE REALIZATION	ROI & Business Case	Payback Period
+ANALYTICS STRATEGY	VALUE REALIZATION	ROI & Business Case	NPV Analysis
+ANALYTICS STRATEGY	VALUE REALIZATION	ROI & Business Case	TCO Analysis
+ANALYTICS STRATEGY	VALUE REALIZATION	ROI & Business Case	Business Impact
+ANALYTICS STRATEGY	VALUE REALIZATION	Impact Measurement	Baseline Establishment
+ANALYTICS STRATEGY	VALUE REALIZATION	Impact Measurement	Impact Metrics
+ANALYTICS STRATEGY	VALUE REALIZATION	Impact Measurement	Attribution Methods
+ANALYTICS STRATEGY	VALUE REALIZATION	Impact Measurement	Before/After Analysis
+ANALYTICS STRATEGY	VALUE REALIZATION	Impact Measurement	Control Groups
+ANALYTICS STRATEGY	VALUE REALIZATION	Impact Measurement	Impact Reporting
+ANALYTICS STRATEGY	VALUE REALIZATION	Benefits Tracking	Benefits Registry
+ANALYTICS STRATEGY	VALUE REALIZATION	Benefits Tracking	Realized Benefits
+ANALYTICS STRATEGY	VALUE REALIZATION	Benefits Tracking	Unrealized Benefits
+ANALYTICS STRATEGY	VALUE REALIZATION	Benefits Tracking	Benefits Validation
+ANALYTICS STRATEGY	VALUE REALIZATION	Benefits Tracking	Benefits Reporting
+ANALYTICS STRATEGY	VALUE REALIZATION	Benefits Tracking	Benefits Communication
+ANALYTICS STRATEGY	VALUE REALIZATION	Success Stories	Case Studies
+ANALYTICS STRATEGY	VALUE REALIZATION	Success Stories	Use Case Documentation
+ANALYTICS STRATEGY	VALUE REALIZATION	Success Stories	Win Documentation
+ANALYTICS STRATEGY	VALUE REALIZATION	Success Stories	Internal PR
+ANALYTICS STRATEGY	VALUE REALIZATION	Success Stories	External Communication
+ANALYTICS STRATEGY	VALUE REALIZATION	Success Stories	Awards & Recognition
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Performance Monitoring	Strategy Review Cadence
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Performance Monitoring	Health Metrics
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Performance Monitoring	Progress Tracking
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Performance Monitoring	Variance Analysis
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Performance Monitoring	Corrective Actions
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Performance Monitoring	Course Correction
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Feedback Loops	User Feedback
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Feedback Loops	Stakeholder Feedback
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Feedback Loops	Retrospectives
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Feedback Loops	Post-Mortems
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Feedback Loops	Lessons Learned
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Feedback Loops	Knowledge Management
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Strategy Refresh	Annual Strategy Review
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Strategy Refresh	Quarterly Reviews
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Strategy Refresh	Strategy Updates
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Strategy Refresh	Pivot Planning
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Strategy Refresh	Adaptive Strategy
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Strategy Refresh	Market Sensing
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Innovation	Emerging Technologies
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Innovation	Innovation Pipeline
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Innovation	POC Programs
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Innovation	Sandbox Environments
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Innovation	Research & Development
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Innovation	Technology Radar
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Benchmarking	Industry Benchmarks
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Benchmarking	Competitive Analysis
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Benchmarking	Best Practices
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Benchmarking	Peer Comparison
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Benchmarking	External Benchmarking
+ANALYTICS STRATEGY	CONTINUOUS IMPROVEMENT	Benchmarking	Maturity Benchmarking
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Marketing Strategy Alignment	Marketing Objectives
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Marketing Strategy Alignment	Campaign Strategy
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Marketing Strategy Alignment	Channel Strategy
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Marketing Strategy Alignment	Customer Strategy
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Marketing Strategy Alignment	Brand Strategy
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Marketing Strategy Alignment	Growth Strategy
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Analytics Use Cases	Attribution Strategy
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Analytics Use Cases	Customer Journey Analytics
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Analytics Use Cases	Marketing Mix Modeling
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Analytics Use Cases	Predictive Analytics
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Analytics Use Cases	Personalization Strategy
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Analytics Use Cases	Optimization Strategy
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Measurement Strategy	Measurement Framework
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Measurement Strategy	Attribution Modeling
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Measurement Strategy	Incrementality Testing
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Measurement Strategy	Unified Measurement
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Measurement Strategy	Privacy-First Measurement
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Measurement Strategy	Cross-Platform Tracking
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Insight Generation	Insight Strategy
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Insight Generation	Analysis Prioritization
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Insight Generation	Insight Distribution
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Insight Generation	Actionable Insights
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Insight Generation	Insight Impact
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Insight Generation	Storytelling Strategy
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Customer Analytics	Customer Segmentation Strategy
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Customer Analytics	Lifetime Value Strategy
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Customer Analytics	Retention Strategy
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Customer Analytics	Churn Analytics
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Customer Analytics	Customer Health Scoring
+ANALYTICS STRATEGY	MARKETING ANALYTICS STRATEGY	Customer Analytics	360-Degree View
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	Stakeholder Partnerships	Executive Sponsorship
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	Stakeholder Partnerships	Business Unit Partnerships
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	Stakeholder Partnerships	Marketing Partnership
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	Stakeholder Partnerships	IT Partnership
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	Stakeholder Partnerships	Finance Partnership
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	Stakeholder Partnerships	Product Partnership
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	External Partnerships	Vendor Partnerships
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	External Partnerships	Agency Partnerships
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	External Partnerships	Technology Partners
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	External Partnerships	Data Partners
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	External Partnerships	Research Partners
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	External Partnerships	Industry Partnerships
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	Community Building	Internal Community
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	Community Building	User Groups
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	Community Building	Centers of Excellence
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	Community Building	Practice Groups
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	Community Building	Knowledge Sharing
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	Community Building	Collaboration Platforms
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	Industry Engagement	Conference Participation
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	Industry Engagement	Industry Associations
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	Industry Engagement	Thought Leadership
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	Industry Engagement	Speaking Engagements
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	Industry Engagement	Publication Strategy
+ANALYTICS STRATEGY	STRATEGIC PARTNERSHIPS	Industry Engagement	Network Building
+ANALYTICS STRATEGY	RISK MANAGEMENT	Strategic Risks	Technology Risks
+ANALYTICS STRATEGY	RISK MANAGEMENT	Strategic Risks	Resource Risks
+ANALYTICS STRATEGY	RISK MANAGEMENT	Strategic Risks	Capability Risks
+ANALYTICS STRATEGY	RISK MANAGEMENT	Strategic Risks	Adoption Risks
+ANALYTICS STRATEGY	RISK MANAGEMENT	Strategic Risks	Value Realization Risks
+ANALYTICS STRATEGY	RISK MANAGEMENT	Strategic Risks	Competitive Risks
+ANALYTICS STRATEGY	RISK MANAGEMENT	Risk Assessment	Risk Identification
+ANALYTICS STRATEGY	RISK MANAGEMENT	Risk Assessment	Risk Analysis
+ANALYTICS STRATEGY	RISK MANAGEMENT	Risk Assessment	Risk Prioritization
+ANALYTICS STRATEGY	RISK MANAGEMENT	Risk Assessment	Risk Heat Maps
+ANALYTICS STRATEGY	RISK MANAGEMENT	Risk Assessment	Impact Assessment
+ANALYTICS STRATEGY	RISK MANAGEMENT	Risk Assessment	Probability Assessment
+ANALYTICS STRATEGY	RISK MANAGEMENT	Risk Mitigation	Mitigation Strategies
+ANALYTICS STRATEGY	RISK MANAGEMENT	Risk Mitigation	Control Measures
+ANALYTICS STRATEGY	RISK MANAGEMENT	Risk Mitigation	Contingency Plans
+ANALYTICS STRATEGY	RISK MANAGEMENT	Risk Mitigation	Risk Transfer
+ANALYTICS STRATEGY	RISK MANAGEMENT	Risk Mitigation	Risk Acceptance
+ANALYTICS STRATEGY	RISK MANAGEMENT	Risk Mitigation	Risk Monitoring
+ANALYTICS STRATEGY	RISK MANAGEMENT	Privacy & Ethics	Privacy Strategy
+ANALYTICS STRATEGY	RISK MANAGEMENT	Privacy & Ethics	Ethical Guidelines
+ANALYTICS STRATEGY	RISK MANAGEMENT	Privacy & Ethics	Bias Detection
+ANALYTICS STRATEGY	RISK MANAGEMENT	Privacy & Ethics	Fair Use Policies
+ANALYTICS STRATEGY	RISK MANAGEMENT	Privacy & Ethics	Transparency
+ANALYTICS STRATEGY	RISK MANAGEMENT	Privacy & Ethics	Responsible AI
+ANALYTICS STRATEGY	RISK MANAGEMENT	Compliance Risks	Regulatory Compliance
+ANALYTICS STRATEGY	RISK MANAGEMENT	Compliance Risks	Legal Risks
+ANALYTICS STRATEGY	RISK MANAGEMENT	Compliance Risks	Contractual Obligations
+ANALYTICS STRATEGY	RISK MANAGEMENT	Compliance Risks	Audit Readiness
+ANALYTICS STRATEGY	RISK MANAGEMENT	Compliance Risks	Documentation
+ANALYTICS STRATEGY	RISK MANAGEMENT	Compliance Risks	Compliance Monitoring

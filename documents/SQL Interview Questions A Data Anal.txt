@@ -1,0 +1,179 @@
+SQL Interview Questions: A Data Analyst's Guide for Success
+Written by Coursera Staff • Updated on Jul 9, 2024
+Share
+Prepare for the SQL portion of your interview with example questions and a framework for answering them.
+
+[Featured image] A person in a gray button-down sits at a computer workstation running SQL queries on a laptop
+Being able to use SQL, or Structured Query Language, ranks among the most important skills for data analysts to have. As you prepare to interview for data analyst jobs, you can expect SQL to come up during the interview process.
+
+With this guide, you’ll learn more about SQL technical screenings, what type of screening you might encounter, and some common types of questions that can arise during these interviews. You’ll also find some example questions, a step-by-step guide for writing SQL code during your interview, and tips for success. Let’s get started.  
+
+What to expect from SQL technical screenings
+Data analysts use SQL to communicate with relational databases to access, clean, and analyze data. At the time of writing, more than 230,000 jobs on LinkedIn included SQL in the listing. 
+
+Since it’s such a critical skill, it’s common for data analyst interviews to include a SQL technical screening. This portion of the interview tasks you with solving real-world problems using SQL. While you may be asked some definitional questions that are more typical of a standard interview, the real point here is for the interviewer to verify that you can actually use SQL, not just talk about it. 
+
+These screenings typically take one of three forms:
+
+1. Whiteboard test: The most common type of SQL screening is the whiteboard interview. In this type of screening, you’re given a whiteboard and a marker to write out your queries by hand. Since you won’t have a computer alerting you to any syntax or logical errors in your code, this is more about demonstrating that you can think through a problem and know the right SQL concepts to solve it. 
+
+2. Live coding: With this type of screening, you’ll be given SQL problems to solve in a live coding environment. This allows you to run your queries and check your work as you go, but syntax will matter since you’re running your code. Since different databases use different tools, this type of screening isn’t as common as the whiteboard screening.
+
+3. Take-home assignment: With this less-common screening technique, you’ll be given a problem or series of problems to take home and solve within a given period. This lets you write your queries in the comfort of your home, without the pressure of an interviewer looking over your shoulder. On the other hand, the coding challenges are often more complex.
+
+Related: 5 SQL Certifications for Your Data Career
+
+Types of SQL interview questions for data analysts
+Just as there are three formats technical screenings might take, there are also three broad categories of questions you’ll typically be asked during this portion of the interview. We’ve arranged them here from the most simple to the most complex. Generally speaking, the easier, definitional questions will be fewer and less important than the live coding questions—something to keep in mind as you prepare.
+
+IBM
+specialization
+
+Data Analysis and Visualization Foundations
+Get ahead w/ Data Analysis & Visualization skills. Enhance your career by learning to analyze data using Excel spreadsheets, and create stunning visualizations and interactive dashboards with Cognos.
+
+4.8
+
+(3,125 ratings)
+
+46,663 already enrolled
+
+Beginner level
+
+Average time: 1 month(s)
+
+Learn at your own pace
+
+Skills you'll build:
+
+Excel Formulas, Apache Hive, Data Analysis, Data Visualization, Tree Maps, Big Data, Apache Hadoop, Data Visualization Software, Data Science, Dashboard, Data Mining, Statistical Analysis, IBM Cognos Analytics, Data Wrangling, Data Collection, Data Storytelling, Data Warehousing, Microsoft Excel, Data Mart, Data Cleansing, Pivot Tables And Charts, Histogram, Scatter Plots, Data Quality, Exploratory Data Analysis, Data Manipulation, Data Import/Export, Information Privacy, Data Integrity, Google Sheets, Spreadsheet Software, Apache Spark, Data Lakes, Analytics
+
+1. Define a SQL term
+If you’re interviewing for a data analyst role, you probably know what SQL is (and your interviewer assumes you know this). It’s possible you’d be asked what SQL is, but you’ll more likely be asked to explain more technical concepts in SQL, the difference between two (or more) related concepts, or how a concept is used. This is not an exhaustive list, but here are some examples of terms you should be ready to explain:
+
+Trigger: a procedure stored within a database, which automatically happens whenever a specific event occurs.
+
+Index: a special lookup table within a database to increase data retrieval speed.
+
+Cursor: a pointer, or identifier, associated with a single or group of rows.
+
+Constraints: rules used to limit the type of data allowed within a table. Common constraints include primary key, foreign key, unique key, and NOT NULL.
+
+ETL (Extract, transform, and load): a data integration process used to combine multiple data sources into one data store, such as a data warehouse.
+
+Primary key, foreign key, and unique key: constraints used to identify records within a table.
+
+Normalization vs. denormalization: techniques used to either divide data into multiple tables to achieve integrity ("normalization") or combine data into a table to increase the speed of data retrieval ("denormalization").
+
+RDBMS vs. DBMS: two types of database management systems. Within a relational database management system (RDBMS) data is stored as a table, while in a database management system (DBMS) its stored as a file.
+
+
+Clustered vs. non-clustered index: two types of indices used to sort and store data. A clustered index sorts data based on their key values, while a non-clustered index stores data and their records in separate locations.
+
+
+Forms definitional questions may take:
+
+What is the purpose of an index in a table? Explain the different types.
+
+What are the types of joins in SQL?
+
+What is the difference between DROP, TRUNCATE, and DELETE statements?
+
+How do you use a cursor?
+
+What is the difference between a HAVING clause and a WHERE clause?
+
+Read more: SQL vs. MySQL: Differences, Similarities, Uses, and Benefits
+
+
+2. Questions about a query
+This second category gives you an SQL query and asks you a question about it. This tests your ability to read, interpret, analyze, and debug code written by others.
+
+Forms query analysis questions may take:
+Given a query,
+
+
+Put the clauses in order by how SQL would run them.
+
+Identify the error and correct it.
+
+Predict what the query will return.
+
+Explain what problem the query is meant to solve.
+
+
+Learn more: SQL vs. NoSQL: The Differences Explained + When to Use Each
+
+3. Write a query
+The questions most commonly associated with the SQL technical screening ask you to solve a given problem by writing out a query in SQL. You’ll typically be given one or more tables and asked to write queries to retrieve, edit, or remove data from those tables.
+
+The difficulty of questions will likely vary based on the company and the role (entry-level vs. advanced). In general, you should be comfortable writing queries using the following concepts, statements, and clauses:
+
+Categorization, aggregation, and ratio (CASE, COUNT, or SUM, numerator and denominator)
+
+Joining two tables (JOIN inner vs. left or right)
+
+Modifying a database (INSERT, UPDATE, and DELETE)
+
+Comparison operators (Less than, greater than, equal to)
+
+Organizing data (ORDER BY, GROUP BY, HAVING)
+
+Subqueries 
+
+Forms query-writing questions may take:
+Given a table or tables with a few sample rows,
+
+List the three stores with the highest number of customer transactions.
+
+Extract employee IDs for all employees who earned a three or higher on their last performance review.
+
+Calculate the average monthly sales by product displayed in descending order.
+
+Find and remove duplicates in the table without creating another table.
+
+Identify the common records between two tables.
+
+Video placeholder
+Play Video
+Eine Vorlesung aus dem Data Analytics Professional Certificate von Google.
+Google
+Analyze Data to Answer Questions
+Google
+4.6 (11,986 ratings)
+
+ | 
+
+740K Students Enrolled
+
+Course 5 of 9 in the Google Data Analytics Professional Certificate
+
+SQL interview tips for success
+In addition to the process above, here are some tips for preparing for your SQL interview.
+
+Talk through your process out loud. Your interviewer may or may not know SQL themselves, so be sure to explain the what, how, and why of each step.
+
+Include written comments on what each step of your query is meant to accomplish. This can help you keep track of where you are in the problem and make your code easier to understand. If you’re coding in a live environment, you can type comments using a double hash (--). On a whiteboard, write your comments off to the side.
+
+Use correct formatting. While your problem-solving ability is more important than precise syntax, you can avoid confusing the interviewer (and yourself) by keeping your hand-written code organized.
+
+Embrace the awkwardness. It’s okay if the room is silent while you think through a problem. As you’re thinking out loud, you may find yourself re-starting sentences with a better way to explain something. That’s okay, too.
+
+Read more: How to Prepare for an Interview
+
+Six-step strategy for your SQL interview
+Sometimes, the best way to calm nerves before an interview is to walk into the screening with a clear action plan. No matter what type of query you’re asked to write, you can use this six-step process to organize your thoughts and guide you to a solution, even when you’re nervous.
+
+1. Restate the question to ensure you understand what you’re asked to do.
+
+2. Explore the data by asking questions. What data type is in each column? Do any columns contain unique data (such as user ID)? 
+
+3. Identify the columns you’ll need to solve the problem. This helps you focus on the data that matters so you’re not distracted by data irrelevant to the query.
+
+4. Think about what your answer should look like. Are you looking for a single value or a list? Will the answer be the result of a calculation? If so, should it be a float or an integer? Do you need to account for this in your code?
+
+5. Write your code one step at a time. It can help to outline your approach first. By writing down the steps you plan to take, you’ll have a clear outline once you start writing your query (and you’ll give the interviewer a chance to correct you if there’s an issue with your approach).
+
+Then, code in increments, taking one step of your outline at a time. After you’re happy with your code for the first step, build onto that code with the second step. 
+
+6. Explain your solution as a whole.  If there’s a more efficient way you could have written your code—using subqueries, for example—explain that. And remember to answer the original question.

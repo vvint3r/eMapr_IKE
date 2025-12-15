@@ -1,0 +1,443 @@
+SQL Theory 
+I. Fundamentals of SQL 
+SQL (Structured Query Language) is a standard, domain-specific programming language for 
+managing data in a relational database management system (RDBMS). Unlike imperative 
+languages (e.g., Python), SQL is declarative, focusing on what data to retrieve rather than how. 
+It is a core skill for a wide range of data-focused roles, including Data Analyst, Data Scientist, 
+Data Engineer, and Business Intelligence Engineer. At a company like Airbnb, SQL is used daily 
+for tasks like analyzing customer behavior to improve property recommendations and 
+monitoring system performance. 
+A. SQL Dialects and Big Data Engines 
+While standard SQL provides the foundation, different database systems have their own 
+implementations or "dialects". It is important to be aware of the specific dialect used by a 
+potential employer, as syntax for certain functions can vary. 
+● Common Dialects: T-SQL (Microsoft SQL Server), PL/SQL (Oracle), MySQL, and 
+PostgreSQL are some of the most common. 
+● Big Data SQL Engines (Used at Airbnb): For handling massive datasets, companies 
+like Airbnb use specialized query engines like Hive and Presto. While their syntax is 
+very similar to standard SQL, being aware of them is beneficial for interviews at such 
+companies. 
+B. Relational vs. Non-Relational Databases 
+● Relational Databases (SQL): These databases store data in structured tables with 
+rows and columns, enforcing data consistency through a predefined schema and ACID 
+properties (Atomicity, Consistency, Isolation, and Durability). They are ideal for 
+structured data and complex queries. 
+● Non-Relational Databases (NoSQL): These offer more flexibility for unstructured or 
+evolving data, using various models like document, key-value, and graph formats. 
+While highly scalable, they may not guarantee full ACID compliance. 
+C. Subsets of SQL Commands 
+SQL commands are grouped into functional subsets: 
+● Data Definition Language (DDL): Defines the database structure. Commands include 
+CREATE, ALTER, DROP, TRUNCATE. 
+● Data Manipulation Language (DML): Accesses and manipulates data. Commands 
+include INSERT, UPDATE, DELETE. 
+● Data Control Language (DCL): Manages user access. Commands include GRANT, 
+REVOKE. 
+● Transaction Control Language (TCL): Manages transactions. Commands include 
+COMMIT, ROLLBACK, SAVEPOINT. 
+● Data Query Language (DQL): Retrieves data. The primary command is SELECT. 
+II. Core Commands and Clauses for 
+Querying Data 
+A solid mental model of the logical order in which SQL clauses are processed is fundamental 
+to writing correct and efficient queries. The logical processing order is: FROM/JOIN, WHERE, 
+GROUP BY, HAVING, SELECT, DISTINCT, ORDER BY, and finally LIMIT/OFFSET. 
+● SELECT: Retrieves data from tables. It is best practice to name specific columns rather 
+than using SELECT * to improve performance and clarity. 
+● DISTINCT: Eliminates duplicate rows from the result set. 
+● FROM: Specifies the source table(s). 
+● WHERE: Filters individual rows before any grouping occurs. 
+● GROUP BY: Groups rows with the same values into summary rows, often used with 
+aggregate functions. 
+● HAVING: Filters groups after aggregation has occurred. The difference between WHERE 
+and HAVING is a very common interview question. 
+● ORDER BY: Sorts the final result set in ascending (ASC) or descending (DESC) order. 
+● CASE: Provides if-then-else logic, useful for creating new categories or conditional 
+aggregations. 
+III. Joining and Combining Data 
+JOIN clauses are considered one of the most critical topics in SQL interviews across all 
+experience levels. 
+● Common JOIN Types: 
+○ INNER JOIN: Returns records with matching values in both tables. 
+○ LEFT JOIN (or LEFT OUTER JOIN): Returns all records from the left table and 
+matched records from the right. This is useful for finding entities that may not 
+have a corresponding entry in another table (an "anti-join" pattern when 
+combined with WHERE right_table.key IS NULL). There's no functional 
+difference between LEFT JOIN and LEFT OUTER JOIN. 
+○ RIGHT JOIN: The inverse of a LEFT JOIN. Many developers avoid it by 
+reordering the tables and using a LEFT JOIN instead. 
+○ FULL OUTER JOIN: Returns all records when there is a match in either table. 
+○ CROSS JOIN: Returns the Cartesian product of two tables. 
+● SELF JOIN: A regular join where a table is joined to itself. This is a common pattern 
+tested in interviews, especially for querying hierarchical data (e.g., employees and their 
+managers) or analyzing pairs of items. 
+● UNION vs. UNION ALL: Combines result sets from multiple SELECT statements. UNION 
+removes duplicates, making it slower, while UNION ALL includes all rows and is more 
+performant. 
+IV. Advanced SQL Concepts 
+For senior roles, interviewers expect proficiency in features that enable sophisticated analysis, 
+with window functions and CTEs being the most frequently cited advanced topics. 
+● Window Functions: These perform calculations across a set of rows related to the 
+current row without collapsing them like GROUP BY does. They are crucial for ranking, 
+running totals, and period-over-period analysis. 
+○ Ranking Functions: A critical interview topic is the difference between RANK(), 
+DENSE_RANK(), and ROW_NUMBER(). 
+■ ROW_NUMBER() assigns a unique number to each row. 
+■ RANK() assigns the same rank to ties but leaves gaps in the sequence. 
+■ DENSE_RANK() assigns the same rank to ties without leaving gaps, 
+which is often preferred for "Top N per group" problems. 
+○ Navigation Functions: LAG() and LEAD() access data from previous or 
+subsequent rows, respectively. They are invaluable for calculating 
+period-over-period changes or for sessionization tasks. 
+● Common Table Expressions (CTEs): A named, temporary result set created using the 
+WITH clause. CTEs are often preferred over subqueries because they break down 
+complex logic into readable, sequential steps. 
+○ Recursive CTEs: A powerful feature for querying hierarchical data, such as 
+organizational charts. 
+● Subqueries (Nested Queries): A query nested inside another. They can be 
+non-correlated (independent) or correlated (dependent on the outer query, executing 
+once for each outer row). While powerful, they can often be rewritten as more readable 
+CTEs or more efficient JOINs. 
+V. Database Design and Data 
+Integrity 
+Understanding database structure is crucial, especially for senior roles. 
+● Keys and Constraints: 
+○ Primary Key: Uniquely identifies each record in a table; cannot be NULL. 
+○ Foreign Key: Links two tables together, ensuring referential integrity. 
+○ Unique Key: Ensures all values in a column are different, but can allow NULL 
+values. 
+● Normalization: The process of organizing data to reduce redundancy and improve data 
+integrity, commonly up to Third Normal Form (3NF). 
+● Denormalization: The intentional addition of redundancy to improve read performance 
+by reducing the need for joins. It is often used in data warehousing (OLAP systems) 
+where query speed is critical. 
+VI. Performance and Optimization 
+Senior-level interviews often include questions on how to diagnose and fix slow-running 
+queries. 
+● Indexes: The primary tool for improving query performance. A clustered index 
+determines the physical order of data (only one per table), while a non-clustered index 
+is a separate lookup structure (multiple allowed per table). 
+● Query Optimization Techniques: 
+○ Analyze the Execution Plan: Use EXPLAIN to understand how the database 
+executes a query and find bottlenecks. 
+○ Filter Early: Use the WHERE clause effectively to reduce the dataset size before 
+joins or aggregations. 
+○ Avoid SELECT *: Only retrieve the columns you need. 
+○ Prefer UNION ALL over UNION if duplicates are acceptable, as it avoids a costly 
+deduplication step. 
+VII. SQL in Practice at Airbnb 
+At Airbnb, SQL is a foundational tool for data-driven decision-making, particularly in 
+marketing, product, and operations analytics. 
+● Interview Process and Expectations: 
+○ The process often includes a technical screen (e.g., on HackerRank or Coderpad) 
+followed by an on-site or virtual loop with case studies. 
+○ Interviewers often permit looking up syntax, emphasizing conceptual mastery 
+and problem-solving over rote memorization. 
+○ A key evaluation criterion is your ability to translate ambiguous business 
+problems into structured SQL queries and clearly communicate your thought 
+process. 
+● Common Business Scenarios and Data Schemas: 
+○ Interview questions frequently model real-world Airbnb scenarios using tables 
+like listings, hosts, guests, bookings, reviews, and search_sessions. 
+○ Product & Growth Analysis: Measuring the success of new features (e.g., a new 
+search algorithm), analyzing user funnels (like search-to-book conversion), and 
+performing cohort analysis to understand user retention are common tasks. 
+○ Marketing Analytics: Typical problems include calculating customer acquisition 
+cost (CAC), lifetime value (CLV), and marketing attribution to measure campaign 
+effectiveness. 
+○ Marketplace Analysis: Queries often involve calculating key metrics such as 
+occupancy rates, pricing trends, and marketplace supply vs. demand. 
+○ User Behavior Analysis: Common tasks include identifying repeat guests, 
+f
+ inding users with consecutive activity (a "gaps and islands" problem), and 
+sessionizing user events. 
+● Learning Resources and Practice: 
+○ To prepare, sources consistently recommend practicing on platforms with 
+real-world problems, such as LeetCode, HackerRank, DataLemur, and 
+StrataScratch. For foundational learning, W3Schools and SQLZoo are also 
+suggested. 
+SQL Theory v2 
+Comprehensive SQL Interview Preparation 
+Guide 
+Table of Contents 
+1. SQL Fundamentals 
+2. Data Types and Constraints 
+3. Query Structure and Clauses 
+4. Joins and Relationships 
+5. Functions and Operations 
+6. Advanced Topics 
+7. Interview Questions by Difficulty 
+8. Company-Specific Questions 
+9. Practice Problems 
+10. Performance and Optimization 
+SQL Fundamentals 
+What is SQL? 
+SQL (Structured Query Language) is a standard programming language used to manage and 
+manipulate relational databases. It is used for querying, inserting, updating, and deleting data 
+in a database. 
+SQL Command Categories 
+Data Definition Language (DDL) 
+● CREATE: Creates database objects (tables, indexes, etc.) 
+● ALTER: Modifies existing database objects 
+● DROP: Removes database objects 
+● TRUNCATE: Removes all data from a table 
+Data Manipulation Language (DML) 
+● SELECT: Retrieves data from tables 
+● INSERT: Adds new data to tables 
+● UPDATE: Modifies existing data 
+● DELETE: Removes specific data 
+Data Control Language (DCL) 
+● GRANT: Provides user access privileges 
+● REVOKE: Removes user access privileges 
+Transaction Control Language (TCL) 
+● COMMIT: Saves transaction changes 
+● ROLLBACK: Undoes transaction changes 
+● SAVEPOINT: Sets transaction savepoints 
+Data Types and Constraints 
+Primary Data Types 
+● CHAR: Fixed-length character strings 
+● VARCHAR: Variable-length character strings 
+● INT/INTEGER: Whole numbers 
+● DECIMAL/NUMERIC: Decimal numbers 
+● DATE: Date values 
+● DATETIME/TIMESTAMP: Date and time values 
+● BOOLEAN: True/false values 
+Key Constraints 
+Primary Key 
+● Uniquely identifies each record in a table 
+● Cannot contain NULL values 
+● Only one per table 
+CREATE TABLE employees ( 
+employee_id INT PRIMARY KEY, 
+name VARCHAR(100), 
+email VARCHAR(100) 
+); 
+Foreign Key 
+● Links two tables together 
+● References primary key in another table 
+● Maintains referential integrity 
+CREATE TABLE orders ( 
+order_id INT PRIMARY KEY, 
+customer_id INT, 
+FOREIGN KEY (customer_id) REFERENCES customers(customer_id) 
+); 
+Unique Key 
+● Ensures all values in column are unique 
+● Can accept NULL values 
+● Multiple unique keys per table allowed 
+Check Constraint 
+● Ensures values meet specific conditions 
+ALTER TABLE employees ADD CONSTRAINT chk_salary CHECK (salary > 0); 
+Not NULL Constraint 
+● Ensures column cannot contain NULL values 
+Query Structure and Clauses 
+Basic SELECT Structure 
+SELECT column1, column2, ... 
+FROM table_name 
+WHERE condition 
+GROUP BY column 
+HAVING condition 
+ORDER BY column ASC/DESC 
+LIMIT number; 
+Essential Clauses 
+WHERE vs HAVING 
+● WHERE: Filters rows before grouping 
+● HAVING: Filters groups after GROUP BY -- WHERE example 
+SELECT department, COUNT(*) 
+FROM employees 
+WHERE salary > 50000 
+GROUP BY department; -- HAVING example 
+SELECT department, COUNT(*) 
+FROM employees 
+GROUP BY department 
+HAVING COUNT(*) > 10; 
+ORDER BY 
+● Sorts result set 
+● ASC (ascending) is default 
+● DESC for descending order 
+GROUP BY 
+● Groups rows with same values 
+● Used with aggregate functions 
+DISTINCT 
+● Returns unique values only 
+SELECT DISTINCT department FROM employees; 
+Joins and Relationships 
+Join Types 
+INNER JOIN 
+Returns only rows with matching values in both tables 
+SELECT e.name, d.department_name 
+FROM employees e 
+INNER JOIN departments d ON e.department_id = d.id; 
+LEFT JOIN (LEFT OUTER JOIN) 
+Returns all rows from left table and matching rows from right table 
+SELECT e.name, d.department_name 
+FROM employees e 
+LEFT JOIN departments d ON e.department_id = d.id; 
+RIGHT JOIN (RIGHT OUTER JOIN) 
+Returns all rows from right table and matching rows from left table 
+SELECT e.name, d.department_name 
+FROM employees e 
+RIGHT JOIN departments d ON e.department_id = d.id; 
+FULL OUTER JOIN 
+Returns all rows from both tables 
+SELECT e.name, d.department_name 
+FROM employees e 
+FULL OUTER JOIN departments d ON e.department_id = d.id; 
+CROSS JOIN 
+Returns Cartesian product of both tables 
+SELECT e.name, d.department_name 
+FROM employees e 
+CROSS JOIN departments d; 
+SELF JOIN 
+Joins table to itself 
+SELECT e1.name AS Employee, e2.name AS Manager 
+FROM employees e1 
+JOIN employees e2 ON e1.manager_id = e2.employee_id; 
+Relationship Types 
+● One-to-One: Single row in one table relates to single row in another 
+● One-to-Many: Single row in one table relates to multiple rows in another 
+● Many-to-Many: Multiple rows in each table relate to multiple rows in the other 
+Functions and Operations 
+Aggregate Functions 
+● COUNT(): Counts rows 
+● SUM(): Sums numeric values 
+● AVG(): Calculates average 
+● MAX(): Returns maximum value 
+● MIN(): Returns minimum value 
+SELECT  
+COUNT(*) as total_employees, 
+AVG(salary) as average_salary, 
+MAX(salary) as highest_salary, 
+MIN(salary) as lowest_salary 
+FROM employees; 
+String Functions 
+● CONCAT(): Joins strings 
+● SUBSTRING(): Extracts part of string 
+● UPPER(): Converts to uppercase 
+● LOWER(): Converts to lowercase 
+● LENGTH(): Returns string length 
+● TRIM(): Removes leading/trailing spaces 
+Date Functions 
+● NOW(): Current date and time 
+● CURDATE(): Current date 
+● DATEADD(): Adds interval to date 
+● DATEDIFF(): Calculates difference between dates 
+● EXTRACT(): Extracts part of date 
+Mathematical Functions 
+● ROUND(): Rounds numbers 
+● CEIL(): Rounds up 
+● FLOOR(): Rounds down 
+● ABS(): Absolute value 
+● MOD(): Modulo operation 
+Window Functions 
+● ROW_NUMBER(): Assigns row numbers 
+● RANK(): Assigns ranks (with gaps for ties) 
+● DENSE_RANK(): Assigns ranks (without gaps) 
+● LAG(): Accesses previous row value 
+● LEAD(): Accesses next row value 
+SELECT  
+name, 
+salary, 
+ROW_NUMBER() OVER (ORDER BY salary DESC) as row_num, 
+RANK() OVER (ORDER BY salary DESC) as rank_num, 
+DENSE_RANK() OVER (ORDER BY salary DESC) as dense_rank 
+FROM employees; 
+Advanced Topics 
+Subqueries 
+Queries nested inside other queries 
+Types of Subqueries 
+● Scalar: Returns single value 
+● Row: Returns single row 
+● Table: Returns multiple rows and columns -- Scalar subquery 
+SELECT name FROM employees  
+WHERE salary = (SELECT MAX(salary) FROM employees); -- Correlated subquery 
+SELECT name FROM employees e1 
+WHERE salary > (SELECT AVG(salary) FROM employees e2  
+WHERE e1.department = e2.department); 
+Common Table Expressions (CTE) 
+Temporary result sets for complex queries 
+WITH high_earners AS ( 
+SELECT name, salary  
+FROM employees  
+WHERE salary > 80000 
+) 
+SELECT * FROM high_earners ORDER BY salary DESC; 
+Views 
+Virtual tables based on query results 
+CREATE VIEW employee_summary AS 
+SELECT department, COUNT(*) as emp_count, AVG(salary) as avg_salary 
+FROM employees 
+GROUP BY department; 
+Stored Procedures 
+Precompiled collections of SQL statements 
+CREATE PROCEDURE GetEmployeesByDept(@dept_name VARCHAR(50)) 
+AS 
+BEGIN 
+SELECT * FROM employees WHERE department = @dept_name; 
+END; 
+Triggers 
+Special procedures that execute automatically 
+CREATE TRIGGER salary_audit 
+AFTER UPDATE ON employees 
+FOR EACH ROW 
+BEGIN 
+INSERT INTO audit_log (employee_id, old_salary, new_salary, change_date) 
+VALUES (NEW.employee_id, OLD.salary, NEW.salary, NOW()); 
+END; 
+Transactions and ACID Properties 
+● Atomicity: All operations succeed or all fail 
+● Consistency: Database remains in valid state 
+● Isolation: Concurrent transactions don't interfere 
+● Durability: Committed changes persist 
+BEGIN TRANSACTION; 
+UPDATE accounts SET balance = balance - 100 WHERE id = 1; 
+UPDATE accounts SET balance = balance + 100 WHERE id = 2; 
+COMMIT; 
+Indexes 
+Improve query performance by creating lookup structures -- Single column index 
+CREATE INDEX idx_employee_name ON employees(name); -- Composite index 
+CREATE INDEX idx_dept_salary ON employees(department, salary); -- Unique index 
+CREATE UNIQUE INDEX idx_employee_email ON employees(email); 
+Performance and Optimization 
+Query Optimization Techniques 
+Index Strategy 
+● Create indexes on frequently queried columns 
+● Use composite indexes for multi-column searches 
+● Avoid over-indexing (impacts INSERT/UPDATE performance) 
+Query Writing Best Practices 
+● Use specific columns instead of SELECT * 
+● Filter early with WHERE clauses 
+● Use appropriate JOIN types 
+● Avoid functions in WHERE clauses on indexed columns -- Bad: Function prevents index usage 
+SELECT * FROM orders WHERE YEAR(order_date) = 2023; -- Good: Index can be used 
+SELECT * FROM orders WHERE order_date >= '2023-01-01' AND order_date < '2024-01-01'; 
+Common Performance Issues 
+● N+1 Query Problem: Use JOINs instead of multiple queries 
+● Cartesian Products: Ensure proper JOIN conditions 
+● Subquery vs JOIN: JOINs often perform better than correlated subqueries 
+Monitoring and Analysis 
+● Use EXPLAIN plans to analyze query execution 
+● Monitor query execution time 
+● Identify and optimize slow queries 
+● Regular database maintenance (statistics updates, index rebuilds) 
+Key Interview Tips 
+Technical Preparation 
+1. Understand fundamentals: JOINs, subqueries, indexes 
+2. Practice complex queries: Window functions, CTEs, recursive queries 
+3. Know performance concepts: Execution plans, indexing strategies 
+4. Understand database design: Normalization, relationships 
+Common Question Types 
+1. Query writing: Given requirements, write SQL 
+2. Query optimization: Improve slow query performance 
+3. Database design: Design schema for given requirements 
+4. Troubleshooting: Debug problematic queries 
+Best Practices During Interview 
+● Ask clarifying questions about data structure and requirements 
+● Explain your approach before writing code 
+● Consider edge cases and data quality issues 
+● Discuss performance implications of your solutions 
+● Be familiar with multiple SQL dialects (MySQL, PostgreSQL, SQL Server) 
+Conclusion 
+This comprehensive guide covers essential SQL concepts for technical interviews. Practice 
+regularly with real datasets, understand performance implications, and stay current with 
+modern SQL features. Remember that interviews often focus on problem-solving approach as 
+much as syntax knowledge. 

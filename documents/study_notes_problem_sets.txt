@@ -1,0 +1,2721 @@
+# Problem Sets
+
+## Statistics & Probability — 135 Calculate sample size per group — 136 The Best Medium-Hard Data Analyst SQL Interview Questions
+
+By Zachary Thomas ([zthomas.nc@gmail.com](mailto:zthomas.nc@gmail.com), [Twitter](https://twitter.com/zach_i_thomas), [LinkedIn](https://www.linkedin.com/in/thomaszi/)) 
+
+**Tip: **See the Table of Contents (document outline) by hovering over the vertical line on the right side of the page 
+
+## SQL — 136 The Best Medium-Hard Data Analyst SQL Interview Questions — 136.1 Background & Motivation
+
+> The first 70% of SQL is pretty straightforward but the remaining 30% can be pretty tricky.
+
+
+Between the fall of 2015 and the summer of 2019 I interviewed for data analyst and data scientists positions four separate times, getting to onsite interviews at over a dozen companies. After an interview in 2017 went poorly — mostly due to me floundering at the more difficult SQL questions they asked me — I started putting together a study guide of medium and hard SQL questions to better prepare and found it particularly useful during my 2019 interview cycle. Over the past year I have shared that guide with a couple of friends, and with the extra time on my hands due to the coronavirus pandemic, I have polished it up into this doc. 
+
+There are plenty of great beginner SQL guides out there. My favorites are Codecademy’s [interactive SQL courses](https://www.codecademy.com/learn/learn-sql) and Zi Chong Kao’s [Select Star SQL](https://selectstarsql.com/). However, like I told a friend, while the first 70% of SQL is pretty straightforward, the remaining 30% can be pretty tricky. Data analyst and data scientist interview questions at technology companies often pull from that 30%.  
+
+Strangely, I have never really found a comprehensive source online for those medium-hard SQL questions, which is why I put together this guide. 
+
+Working through this guide should improve your performance on data analyst interviews. It should also make you better at your current and future job positions. Personally, I find some of the SQL patterns found in this doc useful for ETLs powering reporting tools featuring trends over time. 
+
+To be clear, data analyst and data scientist interviews consist of more than SQL questions. Other common topics include explaining past projects, A/B testing, metric development and open-ended analytical problems. This [Quora answer](https://qr.ae/pNrdGV) has Facebook’s product analyst interview guide circa 2017, which discusses this topic in more depth. That said, if improving your SQL skills can make your interviews less stressful than they already are, it could very well be worth your time. 
+
+In the future, I may transition this doc to a website like [Select Star SQL](https://selectstarsql.com/) with an embedded SQL editor so that readers can write SQL statements to questions and get real-time feedback on their code. Another option could be adding these questions as problems on Leetcode. For the time being though I just wanted to publish this doc so that people could find it useful now.  
+
+**I would love to get your feedback on this doc. Please drop a note if you find this useful, have improvements/corrections, or encounter other good resources for medium/hard difficulty SQL questions. **
+
+## SQL — 136 The Best Medium-Hard Data Analyst SQL Interview Questions — 136.2 Assumptions & How to use this guide
+
+**Assumptions about SQL proficiency: **This guide assumes you have a working knowledge of SQL. You probably use it frequently at work already but want to sharpen your skills on topics like self-joins and window functions. 
+
+**How to use this guide:** Since interviews usually utilize a whiteboard or a virtual (non-compiling) notepad, my recommendation is to get out a pencil and paper and write out your solutions to each part of the problem, and once complete compare your answers to the answer key. Or, complete these with a friend who can act as the interviewer!
+
+* Small SQL syntax errors aren’t a big deal during whiteboard/notepad interviews. However, they can distracting to the interviewer, so ideally practice reducing these so your logic shines through in the interview. 
+* The answers I provide may not be the only way to successfully solve the question. Feel free to message with additional solutions and I can add them to this guide! 
+
+## SQL — 136 The Best Medium-Hard Data Analyst SQL Interview Questions — 136.3 Tips on solving difficult SQL interview questions
+
+This advice mirrors typical code interview advice ... 
+
+1. Listen carefully to problem description, repeat back the crux of the problem to the interviewer
+2. Spell out an edge case to demonstrate you actually understand problem (i.e. a row that *wouldn’t* be included in the output of the SQL you are about to sketch out) 
+3. (If the problem involves a self-join) For your own benefit sketch out what the self-join will look like — this will typically be at least three columns: a column of interest from the main table, the column to join from the main table, and the column to join from the secondary table 
+    1. Or, as you get more used to self-join problems, you can explain this step verbally 
+4. Start writing SQL — err towards writing SQL versus trying to perfectly understand the problem. Verbalize your assumptions as you go so your interviewer can correct you if you go astray. 
+
+## SQL — 136 The Best Medium-Hard Data Analyst SQL Interview Questions — 136.4 Acknowledgments and Additional Resources
+
+Some of the problems listed here are adapted from old Periscope blog posts (mostly written around 2014 by [Sean Cook](https://www.linkedin.com/in/seangcook/), although his authorship seems to have been removed from the posts following SiSense's [merger with](https://www.sisense.com/blog/sisense-and-periscope-data-merge-2/) Periscope) or discussions from Stack Overflow; I've noted them at the start of questions as appropriate. 
+
+[Select Star SQL](https://selectstarsql.com/) has good[challenge questions](https://selectstarsql.com/questions.html#challenge_questions) that are complementary to the questions in this doc. 
+
+Please note that these questions are not literal copies of SQL interview questions I have encountered while interviewing nor were they interview questions used at a company I have worked at or work at. 
+* * *
+
+## SQL — 136 The Best Medium-Hard Data Analyst SQL Interview Questions — 137 Self-Join Practice Problems
+
+## SQL — 137 Self-Join Practice Problems — 137.1 #1: MoM Percent Change
+
+**Context:** Oftentimes it's useful to know how much a key metric, such as monthly active users, changes between months. Say we have a table `logins` in the form: 
+
+```
+| user_id | date       |
+|---------|------------|
+| 1       | 2018-07-01 |
+| 234     | 2018-07-02 |
+| 3       | 2018-07-02 |
+| 1       | 2018-07-02 |
+| ...     | ...        |
+| 234     | 2018-10-04 |
+```
+
+**Task**: Find the month-over-month percentage change for monthly active users (MAU). 
+* * *
+***Solution:***
+
+*(This solution, like other solution code blocks you will see in this doc, contains comments about SQL syntax that may differ between flavors of SQL or other comments about the solutions as listed) *
+
+```
+WITH mau AS 
+(
+  SELECT 
+   /* 
+    * Typically, interviewers allow you to write psuedocode for date functions 
+    * i.e. will NOT be checking if you have memorized date functions. 
+    * Just explain what your function does as you whiteboard 
+    *
+    * DATE_TRUNC() is available in Postgres, but other SQL date functions or 
+    * combinations of date functions can give you a identical results   
+    * See https://www.postgresql.org/docs/9.0/functions-datetime.html#FUNCTIONS-DATETIME-TRUNC
+    */ 
+    DATE_TRUNC('month', date) month_timestamp,
+    COUNT(DISTINCT user_id) mau
+  FROM 
+    logins 
+  GROUP BY 
+    DATE_TRUNC('month', date)
+  )
+ 
+ SELECT 
+    /*
+    * You don't literally need to include the previous month in this SELECT statement. 
+    * 
+    * However, as mentioned in the "Tips" section of this guide, it can be helpful 
+    * to at least sketch out self-joins to avoid getting confused which table 
+    * represents the prior month vs current month, etc. 
+    */ 
+    a.month_timestamp previous_month, 
+    a.mau previous_mau, 
+    b.month_timestamp current_month, 
+    b.mau current_mau, 
+    ROUND(100.0*(b.mau - a.mau)/a.mau,2) AS percent_change 
+ FROM
+    mau a 
+ JOIN 
+    /*
+    * Could also have done `ON b.month_timestamp = a.month_timestamp + interval '1 month'` 
+    */
+    mau b ON a.month_timestamp = b.month_timestamp - interval '1 month' 
+  
+```
+
+
+
+## SQL — 137 Self-Join Practice Problems — 137.2 #2: Tree Structure Labeling
+
+**Context:** Say you have a table `tree` with a column of nodes and a column corresponding parent nodes 
+
+```
+node   parent
+1       2
+2       5
+3       5
+4       3
+5       NULL 
+```
+
+**Task:** Write SQL such that we label each node as a “leaf”, “inner” or “Root” node, such that for the nodes above we get: 
+
+```
+node    label  
+1       Leaf
+2       Inner
+3       Inner
+4       Leaf
+5       Root
+```
+
+(Side note: [this link](http://ceadserv1.nku.edu/longa//classes/mat385_resources/docs/trees.html) has more details on Tree data structure terminology. Not needed to solve the problem though!)
+* * *
+***Solution:***
+
+**Acknowledgement:** this more generalizable solution was contributed by Fabian Hofmann on 5/2/20. Thank, FH! 
+
+```
+WITH join_table AS
+(
+    SELECT 
+        cur.node, 
+        cur.parent, 
+        COUNT(next.node) AS num_children
+    FROM 
+        tree cur
+    LEFT JOIN 
+        tree next ON (next.parent = cur.node)
+    GROUP BY 
+        cur.node, 
+        cur.parent
+)
+
+SELECT
+    node,
+    CASE
+        WHEN parent IS NULL THEN "Root"
+        WHEN num_children = 0 THEN "Leaf"
+        ELSE "Inner"
+    END AS label
+FROM 
+    join_table 
+```
+
+An alternate solution, without explicit joins: 
+
+```
+SELECT 
+    node,
+    CASE 
+        WHEN parent IS NULL THEN 'Root'
+        WHEN node NOT IN (SELECT parent FROM tree) THEN 'Leaf'
+        WHEN node IN (SELECT parent FROM tree) AND parent IS NOT NULL THEN 'Inner'
+    END AS label 
+ from 
+    tree
+```
+
+
+
+## SQL — 137 Self-Join Practice Problems — 137.3 #3: Retained Users Per Month (multi-part)
+
+**Acknowledgement: **this problem is adapted from SiSense’s [“Using Self Joins to Calculate Your Retention, Churn, and Reactivation Metrics”](https://www.sisense.com/blog/use-self-joins-to-calculate-your-retention-churn-and-reactivation-metrics/) blog post
+
+## SQL — 137 Self-Join Practice Problems — 137.3.1 Part 1:
+
+**Context:** Say we have login data in the table `logins`: 
+
+```
+| user_id | date       |
+|---------|------------|
+| 1       | 2018-07-01 |
+| 234     | 2018-07-02 |
+| 3       | 2018-07-02 |
+| 1       | 2018-07-02 |
+| ...     | ...        |
+| 234     | 2018-10-04 |
+```
+
+**Task:** Write a query that gets the number of retained users per month. In this case, retention for a given month is defined as the number of users who logged in that month who also logged in the immediately previous month. 
+* * *
+***Solution:***
+
+```
+SELECT 
+    DATE_TRUNC('month', a.date) month_timestamp, 
+    COUNT(DISTINCT a.user_id) retained_users 
+ FROM 
+    logins a 
+ JOIN 
+    logins b ON a.user_id = b.user_id 
+        AND DATE_TRUNC('month', a.date) = DATE_TRUNC('month', b.date) + 
+                                             interval '1 month'
+ GROUP BY 
+    date_trunc('month', a.date)
+```
+
+
+
+## SQL — 137 Self-Join Practice Problems — 137.3.2 Part 2:
+
+**Task:** Now we’ll take retention and turn it on its head: Write a query to find many users last month *did not* come back this month. i.e. the number of churned users.  
+* * *
+***Solution:***
+
+```
+SELECT 
+    DATE_TRUNC('month', a.date) month_timestamp, 
+    COUNT(DISTINCT b.user_id) churned_users 
+FROM 
+    logins a 
+FULL OUTER JOIN 
+    logins b ON a.user_id = b.user_id 
+        AND DATE_TRUNC('month', a.date) = DATE_TRUNC('month', b.date) + 
+                                         interval '1 month'
+WHERE 
+    a.user_id IS NULL 
+GROUP BY 
+    DATE_TRUNC('month', a.date)
+```
+
+Note that there are solutions to this problem that can use `LEFT` or `RIGHT` joins. 
+
+
+## SQL — 137 Self-Join Practice Problems — 137.3.3 Part 3:
+
+**Note:** this question is probably more complex than the kind you would encounter in an interview. Consider it a challenge problem, or feel free to skip it!
+
+**Context**: Good work on the previous two problems! Data engineering has decided to give you a helping hand by creating a table of churned users per month, `user_churns`. If a user is active last month but then not active this month, then that user gets an entry for this month. `user_churns` has the form: 
+
+```
+| user_id | month_date |
+|---------|------------|
+| 1       | 2018-05-01 |
+| 234     | 2018-05-01 |
+| 3       | 2018-05-01 |
+| 12      | 2018-05-01 |
+| ...     | ...        |
+| 234     | 2018-10-01 |
+```
+
+
+**Task**: You now want to do a cohort analysis of active users this month *who have been reactivated users in the past*. Create a table that contains these users. You may use the tables `user_churns` as well as `logins` to create this cohort. In Postgres, the current timestamp is available through `current_timestamp`.
+* * *
+***Solution:***
+
+```
+WITH user_login_data AS 
+(
+    SELECT 
+        DATE_TRUNC('month', a.date) month_timestamp,
+        a.user_id,
+        /* 
+        * At least in the flavors of SQL I have used, you don't need to 
+        * include the columns used in HAVING in the SELECT statement.
+        * I have written them out for clarity here.  
+        */ 
+        MAX(b.month_date) as most_recent_churn, 
+        MAX(DATE_TRUNC('month', c.date)) as most_recent_active 
+     FROM 
+        logins a
+     JOIN 
+        user_churns b 
+            ON a.user_id = b.user_id AND DATE_TRUNC('month', a.date) > b.month_date 
+     JOIN
+        logins c 
+            ON a.user_id = c.user_id 
+            AND 
+            DATE_TRUNC('month', a.date) > DATE_TRUNC('month', c.date)
+     WHERE 
+        DATE_TRUNC('month', a.date) = DATE_TRUNC('month', current_timestamp)
+     GROUP BY 
+        DATE_TRUNC('month', a.date),
+        a.user_id
+     HAVING 
+        most_recent_churn > most_recent_active
+```
+
+
+
+## SQL — 137 Self-Join Practice Problems — 137.4 #4: Cumulative Sums
+
+**Acknowledgement:** This problem was inspired by Sisense’s[“Cash Flow modeling in SQL”](https://www.sisense.com/blog/cash-flow-modeling-in-sql/) blog post 
+
+**Context:** Say we have a table `transactions` in the form:
+
+```
+| date       | cash_flow |
+|------------|-----------|
+| 2018-01-01 | -1000     |
+| 2018-01-02 | -100      |
+| 2018-01-03 | 50        |
+| ...        | ...       |
+```
+
+Where `cash_flow` is the revenues minus costs for each day. 
+
+**Task: **Write a query to get *cumulative* cash flow for each day such that we end up with a table in the form below: 
+
+```
+| date       | cumulative_cf |
+|------------|---------------|
+| 2018-01-01 | -1000         |
+| 2018-01-02 | -1100         |
+| 2018-01-03 | -1050         |
+| ...        | ...           |
+```
+
+* * *
+***Solution:***
+
+```
+SELECT 
+    a.date date, 
+    SUM(b.cash_flow) as cumulative_cf 
+FROM
+    transactions a
+JOIN b 
+    transactions b ON a.date >= b.date 
+GROUP BY 
+    a.date 
+ORDER BY 
+    date ASC
+```
+
+Alternate solution using a window function (more efficient!):  
+
+```
+SELECT 
+    date, 
+    SUM(cash_flow) OVER (ORDER BY date ASC) as cumulative_cf 
+FROM
+    transactions 
+ORDER BY 
+    date ASC
+```
+
+## SQL — 137 Self-Join Practice Problems — 137.5 #5: Rolling Averages
+
+**Acknowledgement:** This problem is adapted from Sisense’s [“Rolling Averages in MySQL and SQL Server”](https://www.sisense.com/blog/rolling-average/) blog post 
+
+**Note:** there are different ways to compute rolling/moving averages. Here we'll use a preceding average which means that the metric for the 7th day of the month would be the average of the preceding 6 days and that day itself. 
+
+**Context**: Say we have table `signups` in the form: 
+
+```
+| date       | sign_ups |
+|------------|----------|
+| 2018-01-01 | 10       |
+| 2018-01-02 | 20       |
+| 2018-01-03 | 50       |
+| ...        | ...      |
+| 2018-10-01 | 35       |
+```
+
+**Task**: Write a query to get 7-day rolling (preceding) average of daily sign ups. 
+* * *
+***Solution:***
+
+```
+SELECT 
+  a.date, 
+  AVG(b.sign_ups) average_sign_ups 
+FROM 
+  signups a 
+JOIN 
+  signups b ON a.date <= b.date + interval '6 days' AND a.date >= b.date
+GROUP BY 
+  a.date
+```
+
+
+
+## SQL — 137 Self-Join Practice Problems — 137.6 #6: Multiple Join Conditions
+
+**Acknowledgement:** This problem was inspired by Sisense’s [“Analyzing Your Email with SQL”](https://www.sisense.com/blog/analyzing-your-email-with-sql/) blog post 
+
+**Context:** Say we have a table `emails` that includes emails sent to and from [`zach@g.com`](mailto:zach@g.com):
+
+```
+| id | subject  | from         | to           | timestamp           |
+|----|----------|--------------|--------------|---------------------|
+| 1  | Yosemite | zach@g.com   | thomas@g.com | 2018-01-02 12:45:03 |
+| 2  | Big Sur  | sarah@g.com  | thomas@g.com | 2018-01-02 16:30:01 |
+| 3  | Yosemite | thomas@g.com | zach@g.com   | 2018-01-02 16:35:04 |
+| 4  | Running  | jill@g.com   | zach@g.com   | 2018-01-03 08:12:45 |
+| 5  | Yosemite | zach@g.com   | thomas@g.com | 2018-01-03 14:02:01 |
+| 6  | Yosemite | thomas@g.com | zach@g.com   | 2018-01-03 15:01:05 |
+| .. | ..       | ..           | ..           | ..                  |
+```
+
+**Task: **Write a query to get the response time per email (`id`) sent to `zach@g.com` . Do not include `id`s that did not receive a response from [zach@g.com](mailto:zach@g.com). Assume each email thread has a unique subject. Keep in mind a thread may have multiple responses back-and-forth between [zach@g.com](mailto:zach@g.com) and another email address. 
+* * *
+***Solution:***
+
+```
+SELECT 
+    a.id, 
+    MIN(b.timestamp) - a.timestamp as time_to_respond 
+FROM 
+    emails a 
+JOIN
+    emails b 
+        ON 
+            b.subject = a.subject 
+        AND 
+            a.to = b.from
+        AND 
+            a.from = b.to 
+        AND 
+            a.timestamp < b.timestamp 
+ WHERE 
+    a.to = 'zach@g.com' 
+ GROUP BY 
+    a.id 
+```
+
+
+
+## SQL — 137 Self-Join Practice Problems — 138 Window Function Practice Problems
+
+## SQL — 138 Window Function Practice Problems — 138.1 #1: Get the ID with the highest value
+
+**Context:** Say we have a table `salaries` with data on employee salary and department in the following format: 
+
+```
+  depname  | empno | salary |     
+-----------+-------+--------+
+ develop   |    11 |   5200 | 
+ develop   |     7 |   4200 | 
+ develop   |     9 |   4500 | 
+ develop   |     8 |   6000 | 
+ develop   |    10 |   5200 | 
+ personnel |     5 |   3500 | 
+ personnel |     2 |   3900 | 
+ sales     |     3 |   4800 | 
+ sales     |     1 |   5000 | 
+ sales     |     4 |   4800 | 
+```
+
+**Task**: Write a query to get the `empno` with the highest salary. Make sure your solution can handle ties!
+* * *
+***Solution:***
+
+```
+WITH max_salary AS (
+    SELECT 
+        MAX(salary) max_salary
+    FROM 
+        `salaries
+    )
+SELECT 
+    s.empno
+FROM 
+    `salaries s
+JOIN 
+    max_salary ms ON s.salary = ms.max_salary ``
+```
+
+Alternate solution using `RANK()`:
+
+```
+WITH sal_rank AS 
+  (SELECT 
+    empno, 
+    RANK() OVER(ORDER BY salary DESC) rnk
+  FROM 
+    salaries)
+SELECT 
+  empno
+FROM
+  sal_rank
+WHERE 
+  rnk = 1;
+```
+
+
+
+## SQL — 138 Window Function Practice Problems — 138.2 #2: Average and rank with a window function (multi-part)
+
+## SQL — 138 Window Function Practice Problems — 138.2.1 Part 1:
+
+**Context**: Say we have a table `salaries` in the format:
+
+```
+  depname  | empno | salary |     
+-----------+-------+--------+
+ develop   |    11 |   5200 | 
+ develop   |     7 |   4200 | 
+ develop   |     9 |   4500 | 
+ develop   |     8 |   6000 | 
+ develop   |    10 |   5200 | 
+ personnel |     5 |   3500 | 
+ personnel |     2 |   3900 | 
+ sales     |     3 |   4800 | 
+ sales     |     1 |   5000 | 
+ sales     |     4 |   4800 | 
+```
+
+**Task:** Write a query that returns the same table, but with a new column that has average salary per `depname`. We would expect a table in the form: 
+
+```
+  depname  | empno | salary | avg_salary |     
+-----------+-------+--------+------------+
+ develop   |    11 |   5200 |       5020 |
+ develop   |     7 |   4200 |       5020 | 
+ develop   |     9 |   4500 |       5020 |
+ develop   |     8 |   6000 |       5020 | 
+ develop   |    10 |   5200 |       5020 | 
+ personnel |     5 |   3500 |       3700 |
+ personnel |     2 |   3900 |       3700 |
+ sales     |     3 |   4800 |       4867 | 
+ sales     |     1 |   5000 |       4867 | 
+ sales     |     4 |   4800 |       4867 |
+```
+
+* * *
+***Solution:***
+
+```
+SELECT 
+    *, 
+    /*
+    * AVG() is a Postgres command, but other SQL flavors like BigQuery use 
+    * AVERAGE()
+    */ 
+    ROUND(AVG(salary),0) OVER (PARTITION BY depname) avg_salary
+FROM
+    salaries
+```
+
+## SQL — 138 Window Function Practice Problems — 138.2.2 Part 2:
+
+**Task:** Write a query that adds a column with the rank of each employee based on their salary within their department, where the employee with the highest salary gets the rank of `1`. We would expect a table in the form: 
+
+```
+  depname  | empno | salary | salary_rank |     
+-----------+-------+--------+-------------+
+ develop   |    11 |   5200 |           2 |
+ develop   |     7 |   4200 |           5 | 
+ develop   |     9 |   4500 |           4 |
+ develop   |     8 |   6000 |           1 | 
+ develop   |    10 |   5200 |           2 | 
+ personnel |     5 |   3500 |           2 |
+ personnel |     2 |   3900 |           1 |
+ sales     |     3 |   4800 |           2 | 
+ sales     |     1 |   5000 |           1 | 
+ sales     |     4 |   4800 |           2 | 
+```
+
+* * *
+***Solution:***
+
+```
+SELECT 
+    *, 
+    RANK() OVER(PARTITION BY depname ORDER BY salary DESC) salary_rank
+ FROM  
+    salaries 
+```
+
+
+
+## SQL — 138 Window Function Practice Problems — 139 Other Medium/Hard SQL Practice Problems
+
+## SQL — 139 Other Medium/Hard SQL Practice Problems — 139.1 #1: Histograms
+
+**Context:** Say we have a table `sessions` where each row is a video streaming session with length in seconds: 
+
+```
+| session_id | length_seconds |
+|------------|----------------|
+| 1          | 23             |
+| 2          | 453            |
+| 3          | 27             |
+| ..         | ..             |
+```
+
+**Task:** Write a query to count the number of sessions that fall into bands of size 5, i.e. for the above snippet, produce something akin to: 
+
+```
+| bucket  | count |
+|---------|-------|
+| 20-25   | 2     |
+| 450-455 | 1     |
+```
+
+Get complete credit for the proper string labels (“5-10”, etc.) but near complete credit for something that is communicable as the bin. 
+* * *
+***Solution:***
+
+```
+WITH bin_label AS 
+(SELECT 
+    session_id, 
+    FLOOR(length_seconds/5) as bin_label 
+ FROM
+    sessions 
+ )
+ SELECT 
+    `CONCATENTATE(STR(bin_label*5), '-', STR(`bin_label*5+5)) bucket, 
+    COUNT(DISTINCT session_id) count ``
+ GROUP BY 
+    bin_label
+ ORDER BY 
+    `bin_label ASC `
+```
+
+
+
+## SQL — 139 Other Medium/Hard SQL Practice Problems — 139.2 #2: CROSS JOIN (multi-part)
+
+## SQL — 139 Other Medium/Hard SQL Practice Problems — 139.2.1 Part 1:
+
+**Context:** Say we have a table `state_streams` where each row is a state and the total number of hours of streaming from a video hosting service: 
+
+```
+| state | total_streams |
+|-------|---------------|
+| NC    | 34569         |
+| SC    | 33999         |
+| CA    | 98324         |
+| MA    | 19345         |
+| ..    | ..            |
+```
+
+(In reality these kinds of aggregate tables would normally have a date column, but we’ll exclude that component in this problem) 
+
+**Task:** Write a query to get the pairs of states with total streaming amounts within 1000 of each other. For the snippet above, we would want to see something like:
+
+```
+| state_a | state_b |
+|---------|---------|
+| NC      | SC      |
+| SC      | NC      |
+```
+
+* * *
+***Solution:***
+
+```
+SELECT
+    a.state as state_a, 
+    b.state as state_b 
+ FROM   
+    state_streams a
+ CROSS JOIN 
+    state_streams b 
+ WHERE 
+    ABS(a.total_streams - b.total_streams) < 1000
+    AND 
+    a.state <> b.state 
+```
+
+FYI, `CROSS JOIN` s can also be written without explicitly specifying a join: 
+
+```
+SELECT
+    a.state as state_a, 
+    b.state as state_b 
+ FROM   
+    state_streams a, state_streams b 
+ WHERE 
+    ABS(a.total_streams - b.total_streams) < 1000
+    AND 
+    a.state <> b.state 
+```
+
+
+
+## SQL — 139 Other Medium/Hard SQL Practice Problems — 139.2.2 Part 2:
+
+**Note:** This question is considered more of a bonus problem than an actual SQL pattern. Feel free to skip it!
+
+**Task:** How could you modify the SQL from the solution to Part 1 of this question so that duplicates are removed? For example, if we used the sample table from Part 1, the pair `NC` and `SC` should only appear in one row instead of two. 
+* * *
+***Solution: ***
+
+```
+SELECT
+    a.state as state_a, 
+    b.state as state_b 
+ FROM   
+    state_streams a, state_streams b 
+ WHERE 
+    ABS(a.total_streams - b.total_streams) < 1000
+    AND 
+    a.state > b.state 
+```
+
+
+
+## SQL — 139 Other Medium/Hard SQL Practice Problems — 139.3 #3: Advancing Counting
+
+**Acknowledgement:** This question is adapted from [this Stack Overflow question](https://stackoverflow.com/questions/54488894/using-case-to-properly-count-items-with-if-else-logic-in-sql) by me (zthomas.nc) 
+
+**Note:** this question is probably more complex than the kind you would encounter in an interview. Consider it a challenge problem, or feel free to skip it! 
+
+**Context: **Say I have a table `table` in the following form, where a `user` can be mapped to multiple values of `class`:
+
+```
+| user | class |
+|------|-------|
+| 1    | a     |
+| 1    | b     |
+| 1    | b     |
+| 2    | b     |
+| 3    | a     |
+```
+
+**Task:** Assume there are only two possible values for `class`. Write a query to count the number of users in each class such that any user who has label `a` and `b` gets sorted into `b`, any user with just `a` gets sorted into `a` and any user with just `b` gets into `b`. 
+
+For `table` that would result in the following table: 
+
+```
+| class | count |
+|-------|-------|
+| a     | 1     |
+ | b     | 2     |
+```
+
+* * *
+***Solution: ***
+
+```
+WITH usr_b_sum AS 
+(
+    SELECT 
+        user, 
+        SUM(CASE WHEN class = 'b' THEN 1 ELSE 0 END) num_b
+    FROM 
+        table
+    GROUP BY 
+        user
+), 
+
+usr_class_label AS 
+(
+    SELECT 
+        user, 
+        CASE WHEN num_b > 0 THEN 'b' ELSE 'a' END class 
+    FROM 
+        usr_b_sum
+)
+
+SELECT 
+    class, 
+    COUNT(DISTINCT user) count 
+FROM
+    usr_class_label
+GROUP BY 
+    class 
+ORDER BY 
+    class ASC
+
+    
+```
+
+Alternate solution: Using `SELECT`s in the `SELECT` statement and `UNION`: 
+
+```
+SELECT 
+    "a" class,
+    COUNT(DISTINCT user_id) - 
+        (SELECT COUNT(DISTINCT user_id) FROM table WHERE class = 'b') count 
+UNION
+SELECT 
+    "b" class,
+    (SELECT COUNT(DISTINCT user_id) FROM table WHERE class = 'b') count 
+```
+SQL Performance Tuning : Advanced Techniques with Examples
+Code Crafter
+Published : 29 July 2025
+Updated : 29 July 2025
+80 Views
+SQLMySQLOptimizationPerformance
+SQL performance tuning plays a crucial role in database management by enhancing the speed and efficiency of SQL queries. A well-optimized queries not only run faster but also reduce server load and improve overall application performance.
+
+In this article, we will explore proven techniques, tools and best practices for SQL performance tuning. Whether you're a developer or DBA, mastering these strategies will help you write high-performing queries and ensure your database operates at peak efficiency.
+
+What is SQL Performance Tuning?
+SQL performance tuning is the process of optimizing SQL queries to improve execution speed, minimize system resource usage (CPU, memory, disk I/O) and maximize the overall efficiency and scalability of the database system. It is an essential practice for ensuring fast application performance, especially in high-traffic or data-heavy environments.
+
+Unoptimized queries can dramatically slow a database (like lead to full table scans), increase CPU usage and even cause downtime. By improving execution plans, indexing and resource usage, DBAs keep systems responsive and scalable as data volumes grow.
+
+Why SQL Query Optimization Matters
+Optimizing SQL queries isn't just a best practice. it's essential for building fast, reliable and scalable database systems. Here's some points why it matters
+
+✅ Reduces Query Execution Time and Improves Performance : Speeds up response time by eliminating unnecessary computations and improving data access paths.
+✅ Minimizes Resource Consumption: Lowers CPU usage, memory load and I/O overhead, which helps maintain server health and performance.
+✅ Improves Concurrency and High Availability: Enables smooth operation for multiple users by reducing lock contention and resource bottlenecks.
+✅ Boosts Throughput: Enhances performance in both OLTP (Online Transaction Processing) and OLAP (Online Analytical Processing) workloads.
+✅ Prevents Downtime and SLA Violations: Slow queries can lead to timeout errors, degraded performance or even downtime. Ensures your production systems remain stable, responsive and compliant with service level agreements.
+✅ Improves Developer Productivity : Developers spend less time debugging or rewriting slow queries and easier maintenance and debugging of well-structured queries.
+✅ Better User Experience : End-users experience faster load times, especially in data-intensive applications (e.g., reporting dashboards, analytics portals).
+✅ Enables Complex Business Logic : Complex reports and analytics are only feasible if underlying queries are well-optimized.
+Key Factors Affecting SQL Query Performance
+Several factors can significantly influence how efficiently your SQL queries run. Understanding these helps in identifying performance bottlenecks and applying the right optimizations. Some of the major factors that influence the computation and execution time of query in SQL are
+
+Factor	Impact on Performance
+Table Size	Large tables increase scan times and slow down joins, especially without proper indexing or partitioning.
+Joins	Complex or unindexed joins can cause heavy CPU usage and I/O, leading to major performance issues.
+Aggregations	Performing aggregations (e.g., SUM(), COUNT(), GROUP BY) on large datasets without optimization leads to high processing time.
+Concurrency	Multiple users accessing the same data concurrently can cause contention, blocking or deadlocks if not managed properly.
+Indexes	Missing or poorly maintained indexes can severely degrade query speed on the flip side, too many indexes can slow down writes.
+Query Plan	An inefficient execution plan may result in full table scans, nested loops or other costly operations that hurt performance.
+How to Identify Slow SQL Queries
+Identifying slow or poorly performing SQL queries is the first step in database performance tuning. Below are effective techniques used by developers and DBAs to diagnose bottlenecks and take corrective action.
+
+1. Analyze SQL Query Execution Plan
+Execution plans (a.k.a. query plans) show how the SQL engine processes your query.
+
+1. Using Query
+You can run below query to see execution plan of your query
+
+-- SQL Server
+SET STATISTICS PROFILE ON;
+GO
+SELECT * FROM Orders WHERE CustomerID = 123;
+GO
+SET STATISTICS PROFILE OFF;
+
+-- MySQL
+EXPLAIN SELECT * FROM Orders WHERE CustomerID = 123;
+2. Using SQL Server Management Studio (SSMS)
+It provides a graphical breakdown of how SQL Server executes a query, including operations like index seeks, table scans, joins and sorts.
+
+Steps to View Execution Plan
+Open SQL Server Management Studio (SSMS)
+Write your query
+Click on "Include Actual Execution Plan" or press Ctrl + M
+Run the query (F5)
+Examine the execution steps for inefficiencies
+What to Look For
+Table Scan – Indicates a missing index or unfiltered query.
+Index Seek – A sign of efficient index usage
+Nested Loops vs. Hash Join – Evaluate if the join method is optimal for the data size
+2. Monitoring System Resources
+Monitoring system metrics helps identify performance bottlenecks caused by hardware limitations or excessive query loads.
+
+Tools like Windows Performance Monitor, SQL Server Activity Monitor or SysInternals help you identify CPU spikes, Memory pressure, Disk I/O bottlenecks, Blocking sessions etc.
+
+Tip : Monitor Batch Requests/sec, Page Life Expectancy and SQL Compilations/sec.
+
+3. Using DMVs (Dynamic Management Views)
+DMVs give direct insight into query execution statistics, cached plans, CPU usage and I/O patterns.
+
+Query Syntax Example : Helpful DMV Query to Spot Slow Queries
+
+SELECT TOP 10
+    qs.total_elapsed_time / qs.execution_count AS AvgElapsedTime,
+    qs.execution_count,
+    qs.total_worker_time,
+    qt.text
+FROM sys.dm_exec_query_stats qs
+CROSS APPLY sys.dm_exec_sql_text(qs.sql_handle) qt
+ORDER BY AvgElapsedTime DESC;
+What This Shows
+Average execution time
+Query execution frequency
+CPU time usage
+Query text for slowest queries
+4. Monitor Slow Query Logs
+Most modern relational databases offer built-in mechanisms to log queries that exceed a defined execution time. These slow query logs are essential for pinpointing expensive queries in production environments.
+
+MySQL
+Enable the slow query log and define a time threshold to log queries that exceed the limit.
+
+-- Enable slow query logging
+SET GLOBAL slow_query_log = 'ON';
+
+-- Log queries taking longer than 1 second
+SET GLOBAL long_query_time = 1;
+Note : Logs are typically stored in a file like /var/log/mysql/mysql-slow.log or /var/lib/mysql/hostname-slow.log, which can be analyzed manually or with tools like pt-query-digest.
+
+How to Check Current Log Path
+SHOW VARIABLES LIKE 'slow_query_log_file';
+PostgreSQL
+PostgreSQL logs slow statements using the log_min_duration_statement setting
+
+-- Log queries taking longer than 1000 milliseconds (1 second)
+SET log_min_duration_statement = 1000;
+You can set this in postgresql.conf or on a per-session basis. The logs will appear in the standard PostgreSQL log file.
+
+5. Query Performance Tools
+Modern relational databases come with built-in utilities or support third-party tools that help monitor and analyze SQL query performance. These tools provide critical insights into execution time, resource usage, indexing issues and more.
+
+Popular Tools by Database System
+DBMS	Query Performance Tools
+SQL Server	- Query Store: Tracks historical query performance and plan changes
+- SQL Profiler: Captures real-time query events and durations
+- Extended Events: Lightweight event monitoring for detailed diagnostics
+MySQL	- SHOW PROCESSLIST: Displays currently running queries and their status
+- Performance Schema: Advanced monitoring of query execution, waits, and resource usage
+PostgreSQL	- pg_stat_statements: Tracks execution stats like call count, total time, etc.
+- auto_explain: Logs query plans for slow queries automatically
+Oracle	- AWR Reports (Automatic Workload Repository): Historical performance analysis
+- SQL Trace & TKPROF: Detailed tracing of SQL statements and execution
+Tip : Combine these tools with slow query logs and execution plans to get a complete picture of performance bottlenecks.
+
+6. Check Wait Stats
+Wait statistics reveal where SQL Server is spending time when executing queries , whether it's waiting on CPU, disk I/O, memory, locks or other system resources. Analyzing these stats helps uncover performance bottlenecks beyond just slow queries.
+
+SQL Server Example: Get Wait Stats
+SELECT * 
+FROM sys.dm_os_wait_stats
+ORDER BY wait_time_ms DESC;
+7. Check Blocking and Locks
+Locking and blocking are common causes of poor performance in SQL databases. A single long-running or inefficient query can block other queries, causing timeouts, delays and reduced system concurrency.
+
+Monitoring locks in real time helps identify the root cause of contention and take corrective action.
+
+MySQL: Check Locks and Blocking
+Use the InnoDB engine status to examine current locks and blocked transactions
+
+SHOW ENGINE INNODB STATUS\G
+Look in the output for sections like
+LATEST DETECTED DEADLOCK
+TRANSACTIONS
+WAITING FOR THIS LOCK TO BE GRANTED
+For more structured insights
+
+SELECT * 
+FROM performance_schema.data_locks;
+
+SELECT * 
+FROM performance_schema.metadata_locks;
+SQL Server: View Active Locks
+Use the following DMV to list current locks
+
+SELECT * 
+FROM sys.dm_tran_locks;
+You can also join this with session and request views to see who is blocking whom
+
+SELECT 
+    blocking_session_id AS BlockerSession,
+    session_id AS BlockedSession,
+    wait_type,
+    wait_time,
+    wait_resource,
+    status
+FROM sys.dm_exec_requests
+WHERE blocking_session_id <> 0;
+SQL Query Optimization Techniques (with Examples)
+Poorly written or inefficient SQL queries can place a heavy load on your production database, leading to high CPU usage, long response times and even blocking or disconnecting other users. To maintain high performance and scalability, query optimization is essential.
+
+In this section, we will explore a variety of proven SQL performance tuning techniques from indexing strategies to query rewriting. Each technique is supported by practical examples to help you understand how and when to apply them.
+
+These optimizations aim to
+
+Reduce resource consumption (CPU, memory, I/O)
+Improve query execution time
+Enhance overall database responsiveness and user experience
+1. Select Only Required Columns instead of using SELECT *
+Using SELECT * retrieves all columns from a table regardless of whether you need them or not. This can result in increased memory usage, longer execution times and higher network traffic, especially for large tables or high-concurrency systems.
+
+Inefficient
+SELECT * FROM Orders;
+Optimized
+SELECT OrderID, CustomerName, OrderDate FROM Orders;
+✅ Benefits of Selecting Specific Columns
+Reduces processing overhead on both the server and client side.
+Improves performance by enabling more efficient query plans.
+Enhances maintainability and avoids potential issues when table structure changes.
+Avoid exposing sensitive or unintended data to the response that was not meant to be served intentionally.
+Fetch only required fields from the database to minimize memory consumption and improve performance.
+Supports covering indexes, which can eliminate the need to access the full table.
+Note : SELECT * can also break your app if the table structure changes (e.g., column added), so being explicit is safer and more maintainable.
+
+2. Avoid SELECT DISTINCT
+SELECT DISTINCT removes duplicate rows from the result set after retrieving all the data. It performs a sort or hashing operation to identify duplicates and both operations are CPU and memory-intensive, especially on large datasets.
+
+Inefficient Query Example
+SELECT DISTINCT FirstName, LastName, Mobile FROM Persons;
+This forces the database to compare every row to every other row to find duplicates.
+Costly in terms of CPU, memory and execution time.
+Better Alternatives
+1. Refine the WHERE clause to reduce duplication at the source:
+
+SELECT FirstName, LastName FROM Persons WHERE Mobile IS NOT NULL;
+Filters out rows that cause redundancy (in this case, NULL values).
+Often reduces the result set before expensive de-duplication is needed.
+2. Use GROUP BY if it makes logical sense
+
+SELECT Mobile FROM Persons GROUP BY Mobile;
+Faster than DISTINCT because it groups on indexed fields and can utilize aggregation logic efficiently.
+
+Note
+Use DISTINCT only when required, since it can negatively impact performance by forcing additional sorting or deduplication operations
+If possible, restructure the query to avoid DISTINCT, especially on large datasets.
+3. Use Explicit JOINs Instead of WHERE Clause Joins
+Many developers still use the old-style join syntax by listing multiple tables in the FROM clause and applying join conditions in the WHERE clause. This approach is not only harder to read but can also lead to inefficient queries and even accidental Cartesian products if join conditions are missed.
+
+Example – Inefficient (Comma Join / Implicit Join)
+SELECT Orders.CustomerId, Customers.Name, Customers.Mobile
+FROM Orders, Customers
+WHERE Orders.CustomerId = Customers.CustomerId;
+Solution: Use Explicit JOIN Syntax (INNER, LEFT, RIGHT etc.)
+Modern SQL standards and best practices encourage using explicit JOIN syntax, which clearly defines the relationship between tables and improves readability, maintainability and performance.
+
+Example – Efficient (Explicit INNER JOIN)
+SELECT Orders.CustomerId, Customers.Name, Customers.Mobile
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+Tip : Always use explicit JOIN syntax for clarity, flexibility and performance. It’s a modern best practice that prevents mistakes, supports complex joins and helps the database engine optimize your queries more effectively.
+
+4. Use WHERE Instead of HAVING for Pre-Aggregation Filtering
+The HAVING clause is designed to filter groups after aggregation. However, Some developers often misuse it to apply filters that could be handled more efficiently by the WHERE clause. This mistake can increase processing time because filtering happens after all rows have been grouped.
+
+Example – Inefficient (Using HAVING instead of WHERE)
+SELECT COUNT(*) 
+FROM Orders 
+GROUP BY Region 
+HAVING Region = 'East';
+Solution: Use WHERE for Filtering Before Aggregation
+The WHERE clause filters rows before the GROUP BY and aggregation steps. This reduces the number of rows processed and improving query performance.
+
+Example – Efficient (Filter First with WHERE)
+SELECT COUNT(*) 
+FROM Orders 
+WHERE Region = 'East' 
+GROUP BY Region;
+Real-World Example: Filter Sales by Year
+Let’s say you want to count customers who had sales in 2025. Filtering with WHERE instead of HAVING results in a much more efficient query:
+
+Inefficient
+SELECT C.CustomerId, C.Name, MAX(O.LastSaleDate)
+FROM Customers C
+INNER JOIN Orders O ON C.CustomerId = O.CustomerId
+GROUP BY C.CustomerId, C.Name
+HAVING MAX(O.LastSaleDate) BETWEEN '2025-01-01' AND '2025-12-31';
+Efficient
+SELECT C.CustomerId, C.Name, MAX(O.LastSaleDate)
+FROM Customers C
+INNER JOIN Orders O ON C.CustomerId = O.CustomerId
+WHERE O.LastSaleDate BETWEEN '2025-01-01' AND '2025-12-31'
+GROUP BY C.CustomerId, C.Name;
+✅ Tip : Use WHERE to filter data before aggregation and reserve HAVING for filtering on aggregate values like SUM(), COUNT(), or AVG()
+
+5. Optimize LIKE and Wildcard Searches
+Using the % wildcard at the beginning of a search pattern ('%value') disables index usage, forcing SQL to perform a full table scan. This leads to slower query performance, especially on large datasets.
+
+Inefficient
+-- SQL must scan all rows
+SELECT * 
+FROM Customers 
+WHERE Name LIKE '%son%';
+This query cannot use an index on the Name column effectively because the search term starts with %.
+
+Efficient
+-- SQL can use index on Name
+SELECT * 
+FROM Customers 
+WHERE Name LIKE 'John%';
+By placing the wildcard only at the end, SQL can utilize any available index on the Name column, speeding up the search significantly.
+
+Leading Wildcard Blocks Index Use
+Suffix Wildcard Allows Index Use
+Use LIKE 'value%' to retain index optimization.
+Avoid % at the start of the pattern unless full-text indexing is in place.
+Consider Full-Text Search or inverted indexes for complex substring searches.
+6. Use LIMIT or TOP for Sampling Query Results
+When working with large datasets, full-table queries can be inefficient and potentially risky. To improve performance and reduce load, use LIMIT (or TOP in some SQL dialects) to retrieve a manageable subset of rows. which is extremely useful during
+
+Query debugging or optimization
+Data analysis
+Paginating large result sets
+Preventing accidental database strain
+Limits rows returned → reduces memory and I/O
+Prevents production risks → avoids scanning millions of rows by accident
+Best Practice Example
+SELECT Orders.CustomerId, Customers .Name, MAX(Orders.LastSaleDate)
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerId = Customers .CustomerId
+WHERE Orders.LastSaleDate BETWEEN '2025-01-01' AND '2025-12-31'
+GROUP BY Orders.CustomerId, Customers .Name
+LIMIT 10;
+Benefits
+Fetch a sample of n records(on limit n) matching specific conditions without querying the entire dataset.
+Minimizes resource consumption: Limits memory, CPU and disk I/O.
+Helps preview data structure: Quickly inspect output during development.
+Avoid stressing the production database with a big query.
+Speeds up development cycles: Using LIMIT (or TOP) helps developers iterate and debug SQL queries much faster.
+7. Schedule Heavy Queries During Off-Peak Hours
+Running resource-intensive queries, such as ETL processes, batch updates, analytical reports or large joins during peak business hours can negatively impact overall system performance. To minimize disruption, schedule these operations during off-peak hours (e.g., late at night or early morning) when system usage is low.
+
+Best Practice
+Monitor system activity to identify the best off-peak window.
+Use SQL Agent Jobs (SQL Server), cron jobs (Linux-based systems) or database scheduler tools to automate execution on during Off-Peak Hours.
+Avoid running multiple heavy tasks simultaneously, even during off-hours.
+Batch or defer analytics when possible.
+Example Use Cases
+Daily report generation
+Backfilling historical data
+Data warehouse refresh or sync
+Index maintenance or rebuild
+8. Index Tuning Techniques for Optimal SQL Performance
+Indexes are powerful tools for speeding up SQL query execution but ineffective or excessive indexing can degrade performance, especially for write-heavy workloads. Proper index tuning ensures fast data access while keeping storage and maintenance costs in check.
+
+Indexing Best Practices
+Technique	What It Does	Why It’s Important	Best For
+Covering Index	Includes all columns used in the query	Avoids table access entirely; boosts read performance	Read-heavy queries with predictable patterns
+Index Key Columns in WHERE / JOIN / ORDER BY	Speeds up search, joins, and sorting	Enables index seeks instead of table scans	Filtering, joining, sorting, aggregating
+Avoid Over-Indexing	Limits excessive indexing	Reduces write overhead, improves maintainability, and saves storage	Write-heavy tables; large-scale systems
+Filtered (Partial) Indexes	Indexes only a subset of rows	Optimizes queries on sparse/highly selective data; reduces index size	Columns with nulls, status flags, active rows
+Rebuild or Reorganize Indexes	Fixes index fragmentation	Restores query performance degraded by frequent updates or deletes	Long-running databases; OLTP systems
+What Is Index Tuning?
+Index tuning is the process of strategically analyzing, designing and optimizing indexes to improve SQL query performance and reduce database overhead.
+
+It’s a critical part of SQL performance tuning that ensures your indexes are helping, not hurting, your workload efficiency. It involves
+
+Selecting appropriate indexes for frequent and expensive queries.
+Modifying or removing unused indexes to reduce overhead.
+Monitoring usage patterns to continuously adjust strategy.
+Advantages of Proper Index Tuning in SQL
+Effective index tuning can significantly transform your database performance. When done correctly, it optimizes how data is accessed and retrieved, especially under high-load or read-intensive environments.
+
+Index tuning improves query and database performance by identifying how indexes can best support your actual query workload. It does this through
+
+Improved Query Execution Speed
+Index tuning significantly reduces the execution time of frequent and expensive queries by enabling proper indexing to the database. This enables database engine to use index seeks instead of full table scans, which can cut query execution time from seconds (or minutes) down to milliseconds.
+
+Reduced CPU, Memory and Disk I/O Load
+Well-tuned indexes help the query engine to avoid unnecessary reads and memory usage, Perform fewer CPU-intensive operations (like sorting or hashing) and Conserve disk access bandwidth.
+
+Better Application Responsiveness
+If query performance improves, so API response time, UI rendering speed and Report generation time also will improve. Proper index tuning boosts end-to-end performance across the stack.
+
+Efficient Page Retrieval
+Indexes help fetch only relevant rows, improving performance in filters, joins and sorting.
+
+Intelligent Index Recommendations
+Leverages the query optimizer and historical workload analysis to recommend the most efficient indexes for improving query performance.
+
+Activity-Based Insights
+Uses tools like SQL Profiler to record live database activity, helping uncover index usage trends and bottlenecks.
+
+Reduced Trial-and-Error
+Automated suggestions reduce the need for manual guesswork in performance tuning.
+
+Top SQL Performance Tuning Tools
+Here’s a breakdown of popular tuning tools that help monitor, analyze and optimize SQL queries
+
+Tool	Vendor	Key Features
+SQL Sentry	SolarWinds	Monitors server health, detects blocking/deadlocks, visualizes wait stats.
+SQL Profiler	Microsoft	Captures query events, execution plans, and trace logs for in-depth review.
+SQL Index Manager	Redgate	Detects index fragmentation, unused indexes, and recommends fixes.
+SQL Diagnostic Manager	IDERA	Offers real-time monitoring, tuning advice, alerts, and diagnostics.
+Database Tuning Advisor	Microsoft	Analyzes workloads and suggests indexes, partitions, and stats improvements.
+EverSQL (Cloud)	EverSQL	AI-based query optimizer with index suggestions and rewrite recommendations.
+pgBadger	PostgreSQL	Fast log analyzer for PostgreSQL, with visual reports and query stats.
+Performance Schema	MySQL	Built-in MySQL tool for tracking low-level server performance metrics.
+How These Tools Help
+Capability	Benefit
+Query Monitoring	Tracks long-running or resource-intensive queries.
+Index Recommendations	Suggests covering, filtered or composite indexes.
+Execution Plan Visualization	Helps identify costly operations like table scans or sorts.
+Fragmentation Analysis	Detects and fixes fragmented indexes that slow down performance.
+Real-Time Alerting	Notifies of blocking, deadlocks or CPU spikes before they affect users.
+Workload Replay and Simulation	Allows testing query impact in dev/test environments before production.
+Frequently Asked Questions (FAQs)
+1. What is index tuning in SQL?
+Index tuning is the process of analyzing, creating, modifying or removing indexes to improve the performance of SQL queries. It aims to speed up data retrieval while balancing storage, maintenance and write operation costs.
+
+2. When should I create an index?
+Create an index when
+
+A column is frequently used in WHERE, JOIN or ORDER BY clauses.
+Queries on a table become slow as data grows.
+You need to enforce uniqueness (UNIQUE INDEX).
+The same query pattern is executed repeatedly and needs optimization.
+3. What is a covering index?
+A covering index includes all the columns required by a query, allowing it to be served entirely from the index without accessing the table. This significantly improves performance.
+
+4. What’s the difference between clustered and non-clustered indexes?
+Clustered Index: Sorts and stores the data rows in the table based on the key. Only one per table.
+
+Non-Clustered Index: Contains a copy of indexed columns with a reference to the actual data row. A table can have many non-clustered indexes.
+
+5. Can too many indexes hurt performance?
+Yes. While indexes improve read performance, they slow down write operations (INSERT, UPDATE, DELETE) and increase storage and maintenance overhead. Always index strategically.
+
+6. How can I find unused indexes in SQL Server?
+Use the dynamic management view
+
+SELECT * 
+FROM sys.dm_db_index_usage_stats 
+WHERE user_seeks = 0 AND user_scans = 0 AND user_lookups = 0;
+This identifies indexes that are never read.
+
+7. What is index fragmentation and how does it impact performance?
+Fragmentation occurs when the logical order of pages in an index does not match the physical order, leading to inefficient I/O. This slows down query performance. You should reorganize or rebuild fragmented indexes regularly.
+Top 40 Data Science Statistics Interview Questions
+Zaynab
+Zaynab
+Last Updated : 02 Jun, 2025
+ 14 min read
+302
+
+As Josh Wills once said, “A Data Scientist is a person who is better at statistics than any programmer and better at programming than any statistician“.
+
+
+Statistics is a fundamental tool when dealing with data and its analysis in Data Science. It provides tools and methods that assist a Data Scientist derive insights and interpret vast amounts of data. It is not enough to master Data Science tools and languages. You should also have a strong understanding of certain core statistical concepts and basics. Keeping this in mind, here is a list of 40 most frequently asked Statistics Data Science Interview Questions and Answers. It will help you refresh your memory of key aspects of statistics and help you prepare for job interviews encompassing Data Science and Machine Learning.
+
+With that said, let’s get into it!
+
+This article was published as a part of the Data Science Blogathon.
+
+Data science interview questions
+
+
+Statistics Interview Questions and Answers
+
+Q1. What is the difference between a population and a sample?
+
+
+Answer: A population represents the entirety of all items that are being studied. A sample is a finite subset of the population that is selected to represent the entire group. A sample is usually selected because the population is too large or costly to study in its entirety.
+
+
+Population and sample
+
+ 
+
+
+An example of population data is a census, and a good example of a sample is a survey.
+
+
+Q2. What is the difference between inferential and descriptive statistics?
+
+
+Answer: Descriptive statistics describes some sample or population. Inferential statistics attempts to infer from some sample to the larger population.
+
+
+inferential and descriptive statistics
+
+ 
+
+
+Q3. What are quantitative and qualitative data?
+
+
+Answer: Quantitative data are measures of values or counts and are expressed as numbers. Quantitative data refers to numerical data (e.g. how many, how much, or how often). Qualitative data are measures of ‘types’ and may be represented by a name, symbol, or a number code. Qualitative data is also known as categorical data.
+
+
+Q4. What is the meaning of standard deviation?
+
+
+Answer: Standard deviation is a statistic that measures the dispersion of a dataset relative to its mean. It is the average amount of variability in your dataset. It tells you, on average, how far each value lies from the mean.
+
+A high standard deviation means that values are generally far from the mean, while a low standard deviation indicates that values are clustered close to the mean.
+
+The standard deviation is calculated as the square root of variance by determining each data point’s deviation relative to the mean.
+
+standard deviation formula
+ 
+
+
+Q5. What is the difference between long format and wide format data?
+
+
+Answer: A dataset can be written in two different formats: wide and long. Wide format is where we have a single row for every data point with multiple columns to hold the values of various attributes. The long format is where for each data point we have as many rows as the number of attributes and each row contains the value of a particular attribute for a given data point.
+
+long format and wide format data
+ 
+
+
+Q6. Give an example where the median is a better measure than the mean
+
+
+Answer: The median is a better measure of central tendency than the mean when the distribution of data values is skewed or when there are clear outliers.
+
+Q7. How do you calculate the needed sample size?
+
+Answer: To calculate the sample size needed for a survey or experiment:
+
+Define the population size: The first thing is to determine the total number of your target demographic. If you are dealing with a larger population, you can approximate the total population between several educated guesses.
+Decide on a margin of error: Also known as a “confidence interval”. The margin of error indicates how much of a difference you are willing to allow between your sample mean and the mean of the population.
+Choose a confidence level: Your confidence level indicates how assured you are that the actual mean will fall within your chosen margin of error. The most common confidence levels are 90%, 95%, and 99%. Your specified confidence level corresponds with a z-score.
+Z-scores for the three most common confidence levels are:
+90% = 1.645
+95% = 1.96
+99% = 2.576
+4. Pick a standard of deviation: Next, you will need to determine your standard of deviation, or the level of variance you expect to see in the information gathered. If you don’t know how much variance to expect, a standard deviation of 0.5 is typically a safe choice that will ensure your sample size is large enough.
+
+5. Calculate your sample size: Finally, you can use these values to calculate the sample size. You can do this by using the formula or by using a sample size using a calculator online.
+
+Calculation of sample size
+ 
+
+
+Q8. What are the types of sampling in Statistics?
+
+
+Answer: The four main types of data sampling in Statistics are:
+
+Simple random sampling: This method involves pure random division. Each individual has the same probability of being chosen to be a part of the sample.
+simple random sampling
+ 
+
+2. Cluster sampling: This method involves dividing the entire population into clusters. Clusters are identified and included in the sample based on demographic parameters like sex, age and location.
+
+3. Stratified sampling: This method involves dividing the population into unique groups that represent the entire population. While sampling, these groups can be organized and then drawn a sample from each group separately.
+
+cluster sampling
+ 
+
+4. Systematic sampling: This sampling method involves choosing the sample members from a larger according to a random starting point but with a fixed, periodic interval called sampling interval. The sampling interval is calculated by diving the population by the desired sample size. This type of sampling method has a predefined range, hence the least time-consuming.
+
+systematic sampling
+ 
+
+
+Q9. What is Bessel’s correction?
+
+
+Answer: In statistics, Bessel’s correction is the use of n-1 instead of n in several formulas, including the sample variance and standard deviation, where n is the number of observations in a sample. This method corrects the bias in the estimation of the population variance. It also partially corrects the bias in the estimation of the population standard deviation, thereby, providing more accurate results.
+
+
+Q10. What do you understand by the term Normal Distribution?
+
+
+Answer: Normal distribution, also known as the Gaussian distribution, is a bell-shaped frequency distribution curve. Most of the data values in a normal distribution tend to cluster around the mean.
+
+Normal distribution
+ 
+
+
+Q11. What is the assumption of normality?
+
+
+Answer: This assumption of normality dictates that if many independent random samples are collected from a population and some value of interest (like the sample mean) is calculated, and then a histogram is created to visualize the distribution of sample means, a normal distribution should be observed.
+
+
+Q12. How do you convert a normal distribution to standard normal distribution?
+
+
+Answer: The standard normal distribution, also called the z-distribution, is a special normal distribution where the mean is equal to 0 and the standard deviation is equal to 1.
+
+Any nonstandard normal distribution can be standardized by transforming each data value x into a z-score.
+
+To convert the point x from a normal distribution into a z-score with this formula:
+
+z = (x-µ) / σ
+
+Q13. What are left-skewed distribution and right-skewed distribution?
+
+
+Answer: Skewness is a way to describe the symmetry of a distribution. A left-skewed (Negative Skew) distribution is one in which the left tail is longer than that of the right tail. For this distribution, mean < median < mode. Similarly, right-skewed (Positively Skew) distribution is one in which the right tail is longer than the left one. For this distribution, mean > median > mode.
+
+left-skewed distribution and right-skewed distribution
+ 
+
+
+Q14. What are some of the properties of a normal distribution?
+
+
+Answer: Some of the properties of a Normal Distribution are as follows:
+
+Unimodal: normal distribution has only one peak. (i.e., one mode)
+Symmetric: a normal distribution is perfectly symmetrical around its centre. (i.e., the right side of the centre is a mirror image of the left side)
+The Mean, Mode, and Median are all located in the centre (i.e., are all equal)
+Asymptotic: normal distributions are continuous and have tails that are asymptotic. The curve approaches the x-axis, but it never touches.
+normal distribution
+ 
+
+
+Q15. What is the Binomial Distribution formula?
+
+
+Answer: The binomial distribution formula is for any random variable X, given by;
+
+P(x; n, p) = nCx * px (1 – p)n – x
+
+Where:
+n = the number of trials
+x = 0, 1, 2, ...
+p = probability of success on an individual trial
+q = 1 - p = probability of failure on an individual trial
+
+Q16. What are the criteria that Binomial distributions must meet?
+
+
+Answer: The 4 criteria that Binomial distributions must meet are:
+
+There is a fixed number of trials.
+The outcome of each trial is independent of one another.
+Each trail represents one of two outcomes (“success” or “failure”).
+The probability of “success” p is the same across all trials.
+
+Q17. What is an Outlier?
+
+
+Answer: An outlier is a data point that differs significantly from other data points in a dataset. An outlier may be due to variability in measurement, or it may indicate an experimental error.
+
+Outliers can greatly impact the statistical analyses and skew the results of any hypothesis tests.
+
+outlier
+ 
+
+It is important to carefully identify potential outliers in the dataset and appropriately deal with them for accurate results.
+
+
+Q18. Mention methods to screen for outliers in a dataset.
+
+
+Answer: There are many different ways to screen for outliers ina dataset. Some of them are:
+
+1. A simple way to check whether there is a need to investigate certain data points before using more sophisticated methods is the sorting method. Values in the data can be sorted from low to high and then scanned for extremely low or extremely high values.
+
+2. Visualization (e.g. box plot) is another useful way to see the data distribution at a glance and to detect outliers. This chart highlights statistical information like minimum and maximum values (the range), the median, and the interquartile range for the data. When reviewing a box plot, an outlier is a data point outside the box plot’s whiskers.
+
+Interquartile range method
+3. A common method is the Interquartile range method. This method is helpful if there are few values on the extreme ends of the dataset, but you aren’t sure whether any of them might count as outliers. The interquartile range (IQR) also called midspread tells the range of the middle half of a dataset. The IQR can be used to create “fences” around the data then, the outliers can be defined as any values greater than the upper fence or less than the lower fence.
+
+To use the IQR method:
+
+Sort the data from low to high
+Identify the first quartile (Q1), the median, and the third quartile (Q3).
+Calculate the IQR; IQR = Q3 – Q1
+Calculate the upper fence; Q3 + (1.5 * IQR) and the lower fence; Q1 – (1.5 * IQR)
+Use the fences to highlight any outliers (all values that fall outside your fences).
+4. Another way to identify outliers is to use Z-score. The Z-score is just how many standard deviations away from the mean value that a certain data point is. To calculate z-score use the formula, z = (x-µ) / σ
+
+If the z-score is positive, the data point is above average.
+If the z-score is negative, the data point is below average.
+If the z-score is close to zero, the data point is close to average.
+If the z-score is above or below 3 (assuming z-score = 3 is considered as a cut-off value to set the limit), it is an outlier and the data point is considered unusual.
+Other methods to screen outliers include Isolation Forest and DBScan clustering.
+
+
+Q19. What types of biases can you encounter while sampling?
+
+
+Answer: Sampling bias occurs when a sample is not representative of a target population during an investigation or a survey. The three main that one can encounter while sampling is:
+
+Selection bias: It involves the selection of individual or grouped data in a way that is not random.
+Undercoverage bias: This type of bias occurs when some population members are inadequately represented in the sample.
+Survivorship bias occurs when a sample concentrates on the ‘surviving’ or existing observations and ignores those that have already ceased to exist. This can lead to wrong conclusions in numerous different means.
+
+Q20. What is the meaning of an inliner?
+
+
+Answer: An inlier is a data value that lies within the general distribution of other observed values but is an error. Inliers are difficult to distinguish from good data values, therefore, they are sometimes difficult to find and correct. An example of an inlier might be a value recorded in the wrong units.
+
+
+Q21. What is hypothesis testing?
+
+
+Answer: Hypothesis testing is a type of statistical inference that uses data from a sample to conclude about the population data. Before performing the testing, an assumption is made about the population parameter. This assumption is called the null hypothesis and is denoted by H0. An alternative hypothesis (denoted Ha), which is the logical opposite of the null hypothesis, is then defined. The hypothesis testing procedure involves using sample data to determine whether or not H0 should be rejected. The acceptance of the alternative hypothesis (Ha) follows the rejection of the null hypothesis (H0).
+
+
+Q22. What is the p-value in hypothesis testing?
+
+
+Answer: A p-value is a number that describes the probability of finding the observed or more extreme results when the null hypothesis (H0) is True. P-values are used in hypothesis testing to help decide whether to reject the null hypothesis or not. The smaller the p-value, the stronger the evidence that you should reject the null hypothesis.
+
+
+Q23. When should you use a t-test vs. a z-test?
+
+
+Answer: A T-test asks whether a difference between the means of two groups is unlikely to have occurred because of random chance. It is usually used when dealing with problems with a limited sample size (n < 30). If the population standard deviation is known, the sample size is less than or equal to 30, or if the population standard deviation is unknown, use the T-test.
+
+A Z-test, on the other hand, compares a sample to a defined population and is typically used for dealing with problems relating to large samples (i.e., n > 30). Generally, you should use a Z-test when the population’s standard deviation is known, and the sample size exceeds 30.
+
+
+Q24. What is the difference between one-tail and two-tail hypothesis testing?
+
+
+Answer: One-tailed tests allow for the possibility of an effect in one direction. Here, the critical region lies only on one tail.
+
+one-tail hypothesis testing
+ 
+
+Two-tailed tests test for the possibility of an effect in two directions—positive and negative. Here, the critical region is one of both tails.
+
+two-tail hypothesis testing
+ 
+
+
+Q25. What is the difference between type I vs. type II errors?
+
+
+Answer: A type I error occurs when the null hypothesis true in the population is rejected. It is also known as false-positive. A type II error occurs when the null hypothesis that is false in the population fails to get rejected. It is also known as a false-negative.
+
+null hypothesis
+ 
+
+
+Q26. What is the Central Limit Theorem?
+
+
+Answer: The Central Limit Theorem (CLT) states that, given a sufficiently large sample size from a population with a finite level of variance, the sampling distribution of the mean will be normally distributed regardless of if the population is normally distributed.
+
+Central Limit Theorem
+ 
+
+
+Q27. What general conditions must be satisfied for the central limit theorem to hold?
+
+
+Answer: The central limit theorem states that the sampling distribution of the mean will always follow a normal distribution under the following conditions:
+
+ The sample size is sufficiently large (i.e., the sample size is n ≥ 30).
+The samples are independent and identically distributed random variables.
+The population’s distribution has finite variance.
+
+Q28. What are correlation and covariance in statistics?
+
+
+Answer: Correlation indicates how strongly two variables are related. The value of correlation between two variables ranges from -1 to +1.
+
+The -1 value represents a high negative correlation, i.e., if the value in one variable increases, then the value in the other variable will decrease. Similarly, +1 means a positive correlation, i.e., an increase in one variable leads to an increase in the other. Whereas 0 means there is no correlation.
+
+correlation in statistics
+ 
+
+Covariance, on the other hand, is a measure that indicates the extent to which a pair of random variables vary with each other. A higher number denotes a higher dependency.
+
+covariance in statistics
+ 
+
+
+Q29. What is the difference between Point Estimate and Confidence Interval Estimate? 
+
+
+Answer: A point estimate gives a single value as an estimate of a population parameter. For example, a sample standard deviation is a point estimate of a population’s standard deviation. A confidence interval estimate gives a range of values likely to contain the population parameter. It is the most common type of interval estimate because it tells us how likely this interval is to contain the population parameter.
+
+Point Estimate and Confidence Interval Estimate
+ 
+
+
+Q30. Mention the relationship between standard error and margin of error?
+
+
+Answer: As the standard error increases, the margin of error also increases. The margin of error can be calculated using the standard error with this formula:
+
+Margin of error = Critical value * Standard error of the sample
+
+
+Q31. How would you define Kurtosis?
+
+
+Answer: Kurtosis is the extent to which the values of a distribution’s tails differ from the centre of the distribution. Outliers are detected in a data distribution using kurtosis. The higher the kurtosis, the higher the number of outliers in the data.
+
+
+Q32. What is the proportion of confidence interval that will not contain the population parameter?
+
+
+Answer: Alpha (α) is the portion of the confidence interval that will not contain the population parameter.
+
+α = 1 – CL = the probability a confidence interval will not include the population parameter.
+
+1 – α = CL = the probability the population parameter will be in the interval
+
+For example, if the confidence level (CL) is 95%, then, α = 1 – 0.95, or α = 0.05.
+
+
+Q33. What is the Law of Large Numbers in statistics?
+
+
+Answer: According to the law of large numbers in statistics, an increase in the number of trials performed will cause a positive proportional increase in the average of the results, becoming the expected value. For example, the probability of flipping a fair coin and landing heads is closer to 0.5 when flipped 100, 000 times compared to when flipped 50 times.
+
+
+Q34. What is the goal of A/B testing?
+
+
+Answer: A/B testing is statistical hypothesis testing. It is an analytical method for making decisions that estimate population parameters based on sample statistics. The goal is usually to identify any changes to a web page to maximize or increase the outcome of interest. A/B testing is a fantastic method to figure out the best online promotional and marketing strategies for your business.
+
+
+Q35. What do you understand by sensitivity and specificity?
+
+
+Answer: Sensitivity is a measure of the proportion of actual positive cases that got predicted as positive (or true positive). Specificity is a measure of the proportion of actual negative cases that got predicted as negative (or true negative). The calculation of Sensitivity and Specificity is pretty straightforward.
+
+sensitivity and specificity
+ 
+
+
+Q36. What is Resampling and what are the common methods of resampling?
+
+
+Answer: Resampling involves the selection of randomized cases with replacement from the original data sample in such a way that each number of the sample drawn has several cases that are similar to the original data sample.
+
+Two common methods of resampling are:
+
+Bootstrapping and Normal resampling
+Cross Validation
+
+Q37. What is Linear Regression?
+
+
+Answer: In statistics, linear regression is an approach for modeling the relationship between one or more predictor variables (X) and one outcome variable (y). If there is one predictor variable, it is called simple linear regression. If there is more than one predictor variable, it is called multiple linear regression.
+
+Linear Regression
+
+Q38. What are the assumptions required for linear regression?
+
+
+Answer: The linear regression has four key assumptions:
+
+Linear relationship: There’s a linear relationship between X and the mean of Y.
+Independence: Observations are independent of each other.
+Normality: The distribution of Y along X should be the Normal Distribution.
+Homoscedasticity: The variation in the outcome or response variable is the same for any value of X.
+
+Q39. What is a ROC curve?
+
+
+Answer: The Receiver Operator Characteristic (ROC) curve is a graphical representation of the performance of a classification model at various thresholds. The curve plots True Positive Rate (TPR) vs. False Positive Rate(FPR) at different classification thresholds.
+
+ROC curve
+ 
+
+
+Q40. What is Cost Function?
+
+
+Answer: The cost function is an important parameter that measures the performance of a machine learning model for a given dataset.
+
+It measures how wrong the model is in estimating the relationship between input and output parameters.
+
+
+Conclusion
+
+This article discussed why a Data Scientist should master Statistics and some important and frequently asked Statistics Data Science Interview Questions and  Answers.
+
+
+To sum up, the following are the major takeaways from the article:
+
+
+We learned about Sampling, the different types of Sampling, and how to calculate the needed sample size.
+We covered Central Tendency and Probability Distributions.
+We discussed Relationship between Variables and the difference between Covariance and Correlation.
+We covered Hypotheses Testing and P-value and discussed when to use the T-test and Z-test.
+We discussed Regression and the assumptions of Linear Regression.
+
+ 
+This story delves into advanced SQL techniques that will be useful for data science practitioners. In this piece, I will provide a detailed exploration of expert-grade SQL queries I use daily in my analytics projects. SQL, along with modern data warehouses, forms the backbone of data science. It is an indispensable tool for data manipulation and user behaviour analytics. The techniques I am going to talk about are designed to be practical and beneficial from the data science perspective. Mastery of SQL is a valuable skill, crucial for a wide range of projects, and these techniques have significantly streamlined my daily work. I hope it will be useful for you as well.
+
+Given that SQL is the primary language used by data warehouse and business intelligence professionals, it’s an ideal choice for sharing data across data platforms. Its robust features facilitate seamless data modelling and visualization. It remains the most popular means of communication for any data team and nearly every data platform available in the market.
+
+We will use BigQuery’s standard SQL dialect. It’s free and easy to run the queries I wrote and provided below.
+
+Recursive CTEs
+Similarly, we would use Python’s faker library, we can mock test data using recursive CTEs in SQL.
+
+    WITH RECURSIVE
+    CTE_1 AS (
+        (SELECT 0 AS iteration)
+        UNION ALL
+        SELECT iteration + 1 AS iteration FROM CTE_1 WHERE iteration < 3
+    )
+    SELECT iteration FROM CTE_1
+    ORDER BY 1 ASC
+The output would be this:
+
+Image by author.
+Image by author.
+In BigQuery and many other data warehouse solutions CTEs can be either non-recursive or recursive. The RECURSIVE keyword allows for recursion within the WITH clause (e.g., WITH RECURSIVE).
+
+Recursive CTEs continue to execute until no new results are produced, making them well-suited for querying hierarchical and graph data. In our case execution will stop is defined by the where clause: FROM CTE_1 WHERE iteration < 3
+
+In contrast, non-recursive CTEs execute only once.
+
+The main difference is that a non-recursive CTE can only reference preceding CTEs and cannot reference itself, whereas a recursive CTE can reference itself, as well as preceding or subsequent CTEs.
+
+Working with graphs
+Using recursive CTE to work with graph data is very handy. In the data science world graphs are a pretty neat concept used almost everywhere. In Data engineering I use dependency graphs a lot to demonstrate data lineage in my data pipeline.
+
+We can use recursive SQL techniques to evaluate reachability in graphs. In the code snippet below we will find nodes that can be reached from node table_5 in a graph called SampleGraph
+
+WITH RECURSIVE
+  SampleGraph AS (
+    --      table_1               table_5
+    --      /                      / 
+    --  table_2 - table_3    table_6   table_7
+    --      |               /
+    --   table_4       table_8
+    SELECT 'table_1' AS from_node, 'table_2' AS to_node UNION ALL
+    SELECT 'table_1', 'table_3' UNION ALL
+    SELECT 'table_2', 'table_3' UNION ALL
+    SELECT 'table_3', 'table_4' UNION ALL
+    SELECT 'table_5', 'table_6' UNION ALL
+    SELECT 'table_5', 'table_7' UNION ALL
+    SELECT 'table_6', 'table_8' UNION ALL
+    SELECT 'table_7', 'table_8'
+  ),
+  R AS (
+    (SELECT 'table_5' AS node)
+    UNION ALL
+    (
+      SELECT SampleGraph.to_node AS node
+      FROM R
+      INNER JOIN SampleGraph
+        ON (R.node = SampleGraph.from_node)
+    )
+  )
+SELECT DISTINCT node FROM R ORDER BY node;
+Output:
+
+image by author
+image by author
+Recursive CTEs are quite expensive and we would want to make sure they are used for the intended purpose. If your query doesn’t involve graphs or hierarchical data, it may be more efficient to explore alternatives, such as employing a LOOP statement in conjunction with a non-recursive CTE.
+
+Also, be aware of infinite recursion. We wouldn’t want our SQL to run forever.
+
+Fuzzy matching and approximate joins
+It proves to be exceptionally useful in situations where we need to join two datasets with values that, while not identical, share a close resemblance. These scenarios require more sophisticated approaches to ensure accurate data matching. The fuzzy matching technique is a great example of the advanced SQL methods that data analysts often rely on in approximate JOINs.
+
+To illustrate this, consider the following SQL snippet:
+
+with people as (
+select 'gmail' as domain, 'john.adams@gmail.com' as email
+union all
+select 'gmail' as domain, 'dave.robinson@gmail.com' as email
+)
+
+, linkedin as (
+select
+ 'gmail'          as domain
+,'Dave Robinson'  as name  
+)
+
+, similarity as (
+select 
+  linkedin.name   as name 
+, linkedin.domain as domain
+, people.email
+, fhoffa.x.levenshtein(linkedin.name, people.email) similarity_score
+from linkedin 
+join people
+ on linkedin.domain = people.domain
+)
+
+select
+*
+, row_number() over (partition by name order by similarity_score) as best_match
+from 
+similarity
+We can apply proximity functions such as ngramdistance (available in Clickhouse) and levenshtein (BigQuery) to identify emails that resemble each other.
+
+A lower score indicates a better match:
+
+Image by author
+Image by author
+This approach proved to be very useful in tasks of matching entities, i.e. individuals, etc. from two separate datasets using their attributes, i.e. email addresses. This is a straightforward scenario when dealing with data from platforms like LinkedIn, Crunchbase, and similar sources where we need to align user information.
+
+Calculating user activity and sessions using LEAD and LAG operators
+Window functions proved to be very useful in data science.
+
+Often we need to calculate sessions to aggregate user activity. The example below demonstrates how to do it in SQL.
+
+
+-- models/sessions.sql
+-- mock some data
+with raw_event_data as (
+    select 'A' as user_id, timestamp_add(current_timestamp(), interval -1 minute) as timestamp union all
+    select 'A' as user_id, timestamp_add(current_timestamp(), interval -3 minute) as timestamp union all
+    select 'A' as user_id, timestamp_add(current_timestamp(), interval -5 minute) as timestamp union all
+    select 'A' as user_id, timestamp_add(current_timestamp(), interval -36 minute) as timestamp union all
+    select 'A' as user_id, timestamp_add(current_timestamp(), interval -75 minute) as timestamp
+
+)
+-- calculate sessions:
+SELECT
+    event.user_id || '-' || row_number() over(partition by event.user_id order by event.timestamp) as session_id
+    , event.user_id
+    , event.timestamp as session_start_at
+    , lead(timestamp) over(partition by event.user_id order by event.timestamp) as next_session_start_at
+FROM (
+    SELECT
+        e.user_id
+        , e.timestamp
+        , DATE_DIFF(
+             e.timestamp
+            ,LAG(e.timestamp) OVER(
+                PARTITION BY e.user_id ORDER BY e.timestamp
+                )
+            , minute
+            ) AS inactivity_time  
+        FROM raw_event_data AS e
+      ) as event
+    WHERE (event.inactivity_time > 30 OR event.inactivity_time is null)
+The output would be the following:
+
+Calculating user sessions with SQL. Image by author.
+Calculating user sessions with SQL. Image by author.
+This is a widely used approach to get an aggregated activity the right way in a scenario when the data science team have to deal with raw user engagement event data.
+
+The benefit of this approach is that we don’t need to rely on data engineers with their streaming techniques or maintain a Kafka server [1].
+
+Mastering Data Streaming in Python
+
+With this data model in place, answering the user analytics questions becomes straightforward. It can be a simple event count but it’s session analytics now. For instance, to compute the average session duration, we can utilize the following SQL:
+
+SELECT
+  COUNT(*) AS sessions_count,
+  AVG(duration) AS average_session_duration
+FROM (
+  SELECT session_id
+        , DATEDIFF(minutes, MIN(events.timestamp), MAX(events.timestamp)) AS duration
+  FROM sessions
+  LEFT JOIN events on events.user_id = sessions.user_id
+        AND events.timestamp >= events.session_start_at
+        AND (events.timestamp < sessions.next_session_start_at OR sessions.next_session_start_at is null)
+  GROUP BY 1
+)
+Using NTILE()
+NTILE() is a useful numbering function typically used in analytics to get a distribution of a metric, i.e. sales, revenue, etc. The most common SQL using NTILE() would look like this:
+
+SELECT
+    NTILE(4) OVER ( ORDER BY amount ) AS sale_group,
+    product_id,
+    product_category,
+    soccer_team,
+    amount as sales_amount
+FROM sales
+WHERE sale_date >= '2024-12-01' AND sale_date <= '2024-12-31';
+It returns the distribution of sales ordered by amount in 4 even buckets.
+
+I find it particularly handy for tracking metrics such as login duration in seconds for a mobile app. For instance, with my app connected to Firebase, I can monitor how long each user’s login process takes.
+
+Image by author
+Image by author
+This function partitions rows into a specified number of buckets according to their order and assigns each row a bucket number as +1 – a constant integer expression. The rows within each bucket can vary by no more than one. Any remainder from dividing the total number of rows by the number of buckets is distributed evenly across the buckets, starting with bucket 1. If the specified number of buckets is NULL, 0, or negative, an error will be generated. The SQL below explains how I calculate median login duration times:
+
+-- Looker Studio dataset:
+select (case when tile = 50 then 'median' when tile = 95 then '95%' else '5%' end) as tile
+    , dt
+    , max(cast( round(duration/1000) as numeric)/1000 ) max_duration_s
+    , min(cast( round(duration/1000) as numeric)/1000 ) min_duration_s
+
+from (
+    select 
+         trace_info.duration_us duration
+        , ntile(100) over (partition by (date(event_timestamp)) order by trace_info.duration_us) tile
+        , date(event_timestamp) dt
+
+    from firebase_performance.my_mobile_app 
+    where 
+        date(_partitiontime) >= parse_date('%y%m%d', @ds_start_date) and date(_partitiontime) <= parse_date('%y%m%d', @ds_end_date)
+        and 
+        date(event_timestamp) >= parse_date('%y%m%d', @ds_start_date)
+        and 
+        date(event_timestamp) <= parse_date('%y%m%d', @ds_end_date)
+    and lower(event_type) = "duration_trace"
+    and lower(event_name) = 'logon'
+) x
+WHERE tile in (5, 50, 95)
+group by dt, tile
+order by dt
+;
+Median and k-th percentile are valuable statistics for analyzing data
+
+Using FOLLOWING AND PRECEDING
+FOLLOWING AND PRECEDING are SQL operators we would want to use when we need to check a window before or after that particular record.
+
+Moving average
+This is often used to calculate a moving (rolling) average. Consider the SQL below. It explains how to do it and this is a standard task in data analysis.
+
+-- mock data
+with temperatures as (
+    select 'A' as city, timestamp_add(current_timestamp(), interval -1 day) as timestamp  ,15 as temperature union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -3 day) as timestamp  ,15 union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -5 day) as timestamp  ,15 union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -36 day) as timestamp ,20 union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -75 day) as timestamp ,25
+
+)
+
+SELECT
+  city,
+  day,
+  AVG(temperature) OVER(PARTITION BY city ORDER BY UNIX_DATE(date(timestamp)) 
+                RANGE BETWEEN 14 PRECEDING AND CURRENT ROW) AS rolling_avg_14_days,
+  AVG(temperature) OVER(PARTITION BY city ORDER BY UNIX_DATE(date(timestamp)) 
+                RANGE BETWEEN 30 PRECEDING AND CURRENT ROW) AS rolling_avg_30_days
+FROM (
+  SELECT date(timestamp) day, city, temperature, timestamp
+  FROM temperatures
+)
+We’ve mocked some data to illustrate the calculation and the output would be the following:
+
+Moving average. Image by author.
+Moving average. Image by author.
+Indeed, it is very easy to prove that it worked by having just a simple glance at the image above.
+
+Calculating Moving Average Convergence Divergence (MACD)
+Widely used by investors, the Moving Average Convergence Divergence (MACD) is a technical indicator to pinpoint optimal market entry points for buying or selling.
+
+MACD can also be calculated using PRECEDING
+
+We will need a 26-period exponential moving average (EMA) and then subtract it from the 12-period EMA. The signal line, which helps to interpret the MACD, is a nine-period EMA of the MACD line itself.
+
+The SQL below explains how to calculate it:
+
+-- mock data
+with temperatures as (
+    select 'A' as city, timestamp_add(current_timestamp(), interval -1 day) as timestamp  ,15 as temperature union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -3 day) as timestamp  ,15 union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -5 day) as timestamp  ,15 union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -12 day) as timestamp ,20 union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -26 day) as timestamp ,25
+)
+, data as (
+SELECT
+  city,
+  day,
+  temperature,
+  AVG(temperature) OVER(PARTITION BY city ORDER BY UNIX_DATE(date(timestamp)) 
+                RANGE BETWEEN 12 PRECEDING AND CURRENT ROW) AS rolling_avg_12_days,
+  AVG(temperature) OVER(PARTITION BY city ORDER BY UNIX_DATE(date(timestamp)) 
+                RANGE BETWEEN 26 PRECEDING AND CURRENT ROW) AS rolling_avg_26_days
+FROM (
+  SELECT date(timestamp) day, city, temperature, timestamp
+  FROM temperatures
+)
+)
+
+select s.day,
+    s.temperature,
+    s.rolling_avg_12_days,
+    s.rolling_avg_26_days,
+    s.rolling_avg_12_days - l.rolling_avg_26_days as macd
+from
+ data s
+join 
+ data l
+on
+ s.day = l.day
+Output:
+
+Image by author.
+Image by author.
+Percentage change
+This standard indicator can also be calculated using LEAD and LAG. The SQL below explains how to do it.
+
+-- mock data
+with temperatures as (
+    select 'A' as city, timestamp_add(current_timestamp(), interval -1 day) as timestamp  ,15 as temperature union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -3 day) as timestamp  ,15 union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -5 day) as timestamp  ,15 union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -12 day) as timestamp ,20 union all
+    select 'A' as city, timestamp_add(current_timestamp(), interval -26 day) as timestamp ,25
+)
+
+SELECT
+  city,
+  day,
+  temperature,
+
+    (temperature - lag(temperature) over (order by day))*1.0/lag(temperature) over (order by day)*100
+FROM (
+  SELECT date(timestamp) day, city, temperature, timestamp
+  FROM temperatures
+)
+Output:
+
+Image by author.
+Image by author.
+Marketing analytics using FOLLOWING AND UNBOUNDED FOLLOWING
+Similar to PRECEDING, this is particularly useful when we need to compile a list of items, such as events or purchases, to create a funnel dataset. Using PARTITION BY allows you to group all subsequent events within each partition, regardless of their quantity.
+
+A good example of this concept is marketing funnels.
+
+Our dataset might include a series of recurring events of the same type, but ideally, you want to link each event to the subsequent one of a different type.
+
+Let’s imagine we need to get all events after a user had join_group an event in their funnel. The code below explains how to do it:
+
+-- mock some data
+with d as (
+select * from unnest([
+  struct('0003f' as user_pseudo_id, 12322175 as user_id, timestamp_add(current_timestamp(), interval -1 minute) as event_timestamp, 'join_group' as event_name),
+  ('0003',12,timestamp_add(current_timestamp(), interval -1 minute),'set_avatar'),
+  ('0003',12,timestamp_add(current_timestamp(), interval -2 minute),'set_avatar'),
+  ('0003',12,timestamp_add(current_timestamp(), interval -3 minute),'set_avatar'),
+  ('0003',12,timestamp_add(current_timestamp(), interval -4 minute),'join_group'),
+  ('0003',12,timestamp_add(current_timestamp(), interval -5 minute),'create_group'),
+  ('0003',12,timestamp_add(current_timestamp(), interval -6 minute),'create_group'),
+  ('0003',12,timestamp_add(current_timestamp(), interval -7 minute),'in_app_purchase'),
+  ('0003',12,timestamp_add(current_timestamp(), interval -8 minute),'spend_virtual_currency'),
+  ('0003',12,timestamp_add(current_timestamp(), interval -9 minute),'create_group'),
+  ('0003',12,timestamp_add(current_timestamp(), interval -10 minute),'set_avatar')
+  ]
+  ) as t)
+
+  , event_data as (
+SELECT 
+    user_pseudo_id
+  , user_id
+  , event_timestamp
+  , event_name
+  , ARRAY_AGG(
+        STRUCT(
+              event_name AS event_name
+            , event_timestamp AS event_timestamp
+        )
+    ) 
+    OVER(PARTITION BY user_pseudo_id ORDER BY event_timestamp ROWS BETWEEN 1 FOLLOWING AND  UNBOUNDED FOLLOWING ) as next_events
+
+FROM d
+WHERE
+DATE(event_timestamp) = current_date()
+
+)
+
+-- Get events after each `join_group` event per user
+select
+*
+from event_data t
+where event_name = 'join_group'
+;
+I previously wrote about it here [2] and there is a more advanced example of marketing funnels:
+
+Advanced SQL techniques for beginners
+
+Exploratory data analysis
+It’s often more efficient to conduct analysis directly on the data within your tables using SQL before progressing to ML, AI, data science, or engineering tasks. In fact, you can now even build machine learning models using SQL – BigQuery ML is a prime example of this capability. The trend is clear: everything is increasingly shifting towards data warehouses.
+
+EDA. Image by author.
+EDA. Image by author.
+Getting unique column values is easily done using Pandas but can we do it in SQL?
+
+The SQL snippet below provides a handy script to achieve this. Run this code in BigQuery (replace ‘your-client’ with your project name):
+
+DECLARE columns ARRAY<STRING>;
+DECLARE query STRING;
+SET columns = (
+  WITH all_columns AS (
+    SELECT column_name
+    FROM `your-client.staging.INFORMATION_SCHEMA.COLUMNS`
+    WHERE table_name = 'churn'
+  )
+  SELECT ARRAY_AGG((column_name) ) AS columns
+  FROM all_columns
+);
+
+SET query = (select STRING_AGG('(select count(distinct '||x||')  from `your-client.staging.churn`) '||x ) AS string_agg from unnest(columns) x );
+EXECUTE IMMEDIATE 
+"SELECT  "|| query
+;
+Output:
+
+EDA. Image by author.
+EDA. Image by author.
+Describing the datasets
+We can use SQL scripts to describe tables we have in our data warehouse. I will slightly change the SQL mentioned above and add mean, max, min, median, 0.75 tile, 0.25 tile so the final SQL would be like this:
+
+DECLARE columns ARRAY<STRING>;
+DECLARE query1, query2, query3, query4, query5, query6, query7 STRING;
+SET columns = (
+  WITH all_columns AS (
+    SELECT column_name
+    FROM `your-client.staging.INFORMATION_SCHEMA.COLUMNS`
+    WHERE table_name = 'churn' 
+        and  data_type IN ('INT64','FLOAT64')
+  )
+  SELECT ARRAY_AGG((column_name) ) AS columns
+  FROM all_columns
+);
+
+SET query1 = (select STRING_AGG('(select stddev( '||x||')  from `your-client.staging.churn`) '||x ) AS string_agg from unnest(columns) x );
+SET query2 = (select STRING_AGG('(select avg( '||x||')  from `your-client.staging.churn`) '||x ) AS string_agg from unnest(columns) x );
+SET query3 = (select STRING_AGG('(select PERCENTILE_CONT( '||x||', 0.5) over()  from `your-client.staging.churn` limit 1) '||x ) AS string_agg from unnest(columns) x );
+SET query4 = (select STRING_AGG('(select PERCENTILE_CONT( '||x||', 0.25) over()  from `your-client.staging.churn` limit 1) '||x ) AS string_agg from unnest(columns) x );
+SET query5 = (select STRING_AGG('(select PERCENTILE_CONT( '||x||', 0.75) over()  from `your-client.staging.churn` limit 1) '||x ) AS string_agg from unnest(columns) x );
+SET query6 = (select STRING_AGG('(select max( '||x||')  from `your-client.staging.churn`) '||x ) AS string_agg from unnest(columns) x );
+SET query7 = (select STRING_AGG('(select min( '||x||')  from `your-client.staging.churn`) '||x ) AS string_agg from unnest(columns) x );
+
+EXECUTE IMMEDIATE (
+"SELECT 'stddev' ,"|| query1 || " UNION ALL " ||
+"SELECT 'mean'   ,"|| query2 || " UNION ALL " ||
+"SELECT 'median' ,"|| query3 || " UNION ALL " ||
+"SELECT '0.25' ,"|| query4 || " UNION ALL " ||
+"SELECT '0.75' ,"|| query5 || " UNION ALL " ||
+"SELECT 'max' ,"|| query6 || " UNION ALL " ||
+"SELECT 'min' ,"|| query7
+)
+;
+It generates all standard EDA metrics:
+
+Describe() in SQL. Image by author.
+Describe() in SQL. Image by author.
+EDA can be easily performed using SQL
+
+For instance, we can apply SQL to analyse the correlation between two variables, i.e. CreditScore and Balance. The beauty of SQL-based solutions is that we can easily visualize the results and create scatterplots between all variables using modern BI tools.
+
+Variable distribution. Image by author.
+Variable distribution. Image by author.
+For instance, in one of my previous stories I compared EDA in SQL and Pandas to calculate such metrics as Standard Deviation and Correlation Matrix [3].
+
+Exploratory Data Analysis with BigQuery SQL? Easy!
+
+Conclusion
+Time series analytics is an essential part of data science. In this story, I’ve covered the most popular SQL for data science use cases. I used these queries quite often I hope this will be useful for you in your data science projects.
+
+With SQL scripting, we can automate queries, perform Exploratory Data Analysis, and visualize results directly in any Business Intelligence tool. Modern data warehouses have built-in machine learning tools, i.e. BigQuery ML, etc. and it simplifies ML modelling too.
+
+User Churn Prediction
+
+While Python remains a powerful tool for data scientists, offering robust scripting features, SQL can efficiently handle EDA tasks as well. For visualizing results, an SQL-like setup offers a superior dashboarding experience. Once the dashboard is configured, there’s no need to rerun queries or notebooks, making it a one-time setup that streamlines the process. Adding a modern data modelling tool to this environment setup will put everything to an even higher level of automation with robust data quality checks and unit testing.
+
+Advanced Data Modelling
+Airbnb Business Analyst Interview Guide – Process, Questions & Tips
+Next, you’ll tackle a technical screen that combines a 30-minute HackerRank SQL assessment with a short case study or deck critique. You’ll be challenged to write queries, interpret data, and solve real-world business problems—often referencing an Airbnb business analytics tool you’ve used or built. This stage tests your ability to extract insights from complex datasets, apply statistical reasoning, and communicate your findings clearly. Expect to demonstrate proficiency in SQL, Python, and data visualization, as well as your approach to A/B testing and business metric analysis. Your performance here is crucial, as it directly reflects your readiness to drive impact at scale.
+SQL / Technical Questions
+Expect to showcase your Airbnb advanced analytics chops with SQL questions that assess your ability to manipulate complex datasets, detect patterns, and deliver actionable insights for business decisions:
+
+1. Find the total salary of slacking employees
+
+To solve this, use an INNER JOIN to combine the employees and projects tables, filtering for employees who have at least one project assigned but no completed projects (End_dt IS NULL). Group by employee ID and use HAVING COUNT(p.End_dt) = 0 to identify slacking employees. Finally, sum their salaries using a subquery.
+
+2. Write a query to get the average commute time for each commuter in New York
+
+To solve this, use two subqueries: one to calculate the average commute time for each commuter in New York grouped by commuter_id, and another to calculate the overall average commute time across all commuters in New York. Use the TIMESTAMPDIFF function to calculate the duration of each ride in minutes, and then join the results to display both averages in the output.
+
+3. Write a query to retrieve all user IDs whose transactions have exactly a 10-second gap
+
+To solve this, use the LAG() and LEAD() window functions to calculate the time difference between consecutive transactions. Filter the results to include only those transactions with a 10-second gap and return the distinct user IDs in ascending order.
+
+4. Find the average number of accepted friend requests for each age group
+
+To solve this, use a RIGHT JOIN between the requests_accepted and age_groups tables to associate accepted friend requests with age groups. Calculate the average acceptance by dividing the count of accepted requests by the count of unique users in each age group, grouping by age_group, and ordering the results in descending order.
+
+5. Cumulative Sales Since Last Restocking
+
+To calculate cumulative sales since the last restocking, first identify the latest restocking date for each product using the MAX() function grouped by product_id. Then, use a window function SUM(...) OVER() to compute the running total of sales for each product after its last restocking date. Join the sales, products, and the derived table of last restocking dates, filtering sales that occurred after the last restocking date.
+
+Case Study & Forecasting Questions
+These questions test how you translate data into forward-looking strategy, often asking you to forecast metrics or build models that align with Airbnb, Inc. forecast and analysis efforts:
+
+6. How would you build a dynamic pricing system for Airbnb based on demand and availability?
+
+To build a dynamic pricing system, gather data on demand, availability, seasonality, and external factors like local events. Use machine learning models, such as regression or reinforcement learning, to predict optimal prices. Consider factors like user behavior, competitor pricing, and elasticity of demand while ensuring the system adapts to real-time changes.
+
+7. How would you forecast revenue for the next year?
+
+To forecast revenue for the next year, analyze historical revenue data for Facebook’s various revenue streams, considering attributes like seasonality and trends. Depending on the behavior of each stream, use models such as classical time series forecasting, ARMA, or ARIMA to predict future revenue, and sum forecasts for all streams to estimate total revenue.
+
+8. Given a task to predict hotel occupancy rates, how would you design the model?
+
+To design the model, start by collecting relevant data such as historical occupancy rates, booking trends, seasonality, holidays, and external factors like local events or weather. Use this data to train a machine learning model, such as regression or time-series forecasting. Evaluate the model’s performance using metrics like Mean Absolute Error (MAE) or Root Mean Square Error (RMSE) to ensure accuracy.
+
+9. Call Center Resource Management
+
+To address this problem, a predictive model such as a time-series forecasting model or a regression model can be used to predict call volumes and allocate agents accordingly. Metrics to evaluate the model include accuracy in predicting call volumes, agent utilization rates, and customer wait times. Over-allocation ensures better customer satisfaction but may increase costs, while under-allocation risks longer wait times and lower customer satisfaction. Balancing these trade-offs is key to determining the optimal allocation strategy.
+
+10. How would you build a function to return a list of daily forecasted revenue starting from Day 1 to the end of the quarter (Day N)?
+
+To solve this, calculate the daily growth rate by dividing the difference between the total revenue target and Day 1 revenue by the number of days minus one. Then, iteratively compute the revenue for each day by adding the daily growth rate to the previous day’s revenue, storing the results in a list.
+
+Dashboard & Tooling Questions
+You’ll be asked to critique and design visualizations, evaluate metrics, and improve user understanding using tools like Minerva and Superset, often within the context of an Airbnb analytics dashboard or other Airbnb analysis software:
+
+11. How would you visualize data with long tail text to effectively convey its characteristics and help extract actionable insights?
+
+To visualize long-tail text data, start with frequency distribution plots like log-log scale histograms or Zipf plots to highlight keyword occurrences. Use semantic analysis techniques such as word clouds or clustering methods like t-SNE to uncover patterns. Integrate these insights with conversion metrics and temporal trends into dashboards for actionable business decisions.
+
+12. Design a dashboard that provides personalized insights, sales forecasts, and inventory recommendations for shop owners
+
+To design a merchant dashboard, prioritize metrics like sales trends (e.g., week-over-week revenue changes), inventory insights (e.g., days remaining for stock), and customer behavior (e.g., repeat purchase rates). Use adaptive visualizations tailored to merchant types, such as cohort charts for customer segmentation or smart banners highlighting actionable insights. Ensure scalability by leveraging metadata to personalize layouts and validate utility through merchant interaction tracking.
+
+13. Interpreting Fraud Detection Trends
+
+To interpret fraud detection graphs, focus on identifying anomalies, spikes, or patterns in fraudulent activities over time. Key insights include understanding the frequency, timing, and types of fraud, which can help refine detection algorithms and implement preventive measures. Use these insights to improve fraud detection processes by enhancing model accuracy, updating rules, and deploying real-time monitoring systems.
+
+14. Critique a Minerva dashboard that shows booking trends by city. What would you improve?
+
+Start by evaluating clarity and usefulness. Are city-level metrics aggregated at appropriate levels? Look for over-cluttered visualizations, inconsistent color schemes, or missing comparison baselines like year-over-year trends. Suggest adding filters for dates, guest demographics, and property types. Finally, recommend aligning KPI definitions across the airbnb analytics dashboard so regional teams interpret the data consistently.
+
+Behavioral & Values Questions
+Here, interviewers are looking to understand how you collaborate, communicate, and live out Airbnb’s values—especially in moments of ambiguity, cross-functional tension, or high-stakes decision-making:
+
+15. How would you convey insights and the methods you use to a non-technical audience?
+
+At Airbnb, business analysts frequently collaborate with design, operations, and regional teams that may not have technical expertise. You should describe how you structure your insights using storytelling, visualizations, and real-world analogies. For example, you might walk through how you used clustering to segment guests by travel behavior, then presented clear visuals and trade-offs to help a marketing team prioritize a campaign. Focus on simplifying without oversimplifying.
+
+16. What do you tell an interviewer when they ask you what your strengths and weaknesses are?
+
+Tailor your answer to qualities that align with Airbnb’s values. For strengths, consider areas like strong SQL proficiency, experience with experimentation platforms, or a track record of turning ambiguous problems into structured analysis. For weaknesses, avoid clichés. Instead, be honest and share how you’ve addressed it. For example, you might say you previously over-indexed on perfection in dashboards but learned that speed-to-insight is more critical in fast-paced teams like Airbnb’s regional operations.
+
+17. Why Do You Want to Work With Us
+
+Go beyond generic admiration. In 2025, Airbnb continues to lead in the intersection of travel, trust, and technology. Reference your alignment with Airbnb’s mission and how you’re excited to contribute to key initiatives, such as sustainable travel growth or optimizing the host onboarding experience. Mention interest in working with global teams, using real-time data to drive product or marketplace strategy, and leveraging Airbnb’s strong analytics infrastructure to make meaningful impact.
+
+18. Talk about a time when you had trouble communicating with stakeholders. How were you able to overcome it?
+
+Airbnb analysts often sit between product, operations, and regional leadership. When there is disagreement or confusion, it is your role to bridge data and narrative. Provide a story where you had to identify why your insight wasn’t resonating, then explain how you reframed the data or involved the stakeholders earlier in the analysis process. Focus on active listening, using visual tools, or scenario modeling to create alignment and improve decision-making.
+
+How to Prepare for a Business Analyst Role at Airbnb
+To excel in the Airbnb business analyst interview, you’ll want to master both technical and strategic preparation. Start by honing your SQL and Tableau skills, as you’ll be expected to analyze complex datasets and visualize insights using an airbnb business analytics tool. Practice writing advanced queries that extract actionable trends from booking, pricing, and review data—these are core to the technical screens and on-site exercises. Airbnb’s interviewers value candidates who can not only manipulate data but also translate findings into business recommendations using clear, compelling dashboards.
+
+Building your own forecasting projects is a powerful way to stand out. Leverage the open-source Airbnb review dataset, which contains millions of real guest reviews and listing details from global cities. Use this dataset to practice exploratory data analysis, sentiment mining, and predictive modeling—skills that directly mirror the challenges you’ll face at Airbnb. For example, you might forecast review scores or booking trends using Python and Tableau, then present your findings as you would to a cross-functional team. Practice with our AI Interviewer to gain more clarity on the approach to the ideal answers.
+
+Equally important is your ability to tell stories with data and align with Airbnb’s core values. Use the STAR method (Situation, Task, Action, Result) to structure your behavioral answers, and be ready to demonstrate how you “Champion the Mission” by connecting your work to Airbnb’s vision of belonging and community impact.
+
+Finally, simulate the interview environment with mock interviews and peer feedback. Benchmark your SQL speed and accuracy on data-driven platforms, and seek out realistic case studies to sharpen your business sense. This holistic, hands-on approach will help you approach the process with confidence and clarity, ready to make a measurable impact from day one.
+
+SQL / Technical Questions
+Expect to showcase your Airbnb advanced analytics chops with SQL questions that assess your ability to manipulate complex datasets, detect patterns, and deliver actionable insights for business decisions:
+
+1. Find the total salary of slacking employees
+
+To solve this, use an INNER JOIN to combine the employees and projects tables, filtering for employees who have at least one project assigned but no completed projects (End_dt IS NULL). Group by employee ID and use HAVING COUNT(p.End_dt) = 0 to identify slacking employees. Finally, sum their salaries using a subquery.
+
+2. Write a query to get the average commute time for each commuter in New York
+
+To solve this, use two subqueries: one to calculate the average commute time for each commuter in New York grouped by commuter_id, and another to calculate the overall average commute time across all commuters in New York. Use the TIMESTAMPDIFF function to calculate the duration of each ride in minutes, and then join the results to display both averages in the output.
+
+3. Write a query to retrieve all user IDs whose transactions have exactly a 10-second gap
+
+To solve this, use the LAG() and LEAD() window functions to calculate the time difference between consecutive transactions. Filter the results to include only those transactions with a 10-second gap and return the distinct user IDs in ascending order.
+
+4. Find the average number of accepted friend requests for each age group
+
+To solve this, use a RIGHT JOIN between the requests_accepted and age_groups tables to associate accepted friend requests with age groups. Calculate the average acceptance by dividing the count of accepted requests by the count of unique users in each age group, grouping by age_group, and ordering the results in descending order.
+
+5. Cumulative Sales Since Last Restocking
+
+To calculate cumulative sales since the last restocking, first identify the latest restocking date for each product using the MAX() function grouped by product_id. Then, use a window function SUM(...) OVER() to compute the running total of sales for each product after its last restocking date. Join the sales, products, and the derived table of last restocking dates, filtering sales that occurred after the last restocking date.
+
+Case Study & Forecasting Questions
+These questions test how you translate data into forward-looking strategy, often asking you to forecast metrics or build models that align with Airbnb, Inc. forecast and analysis efforts:
+
+6. How would you build a dynamic pricing system for Airbnb based on demand and availability?
+
+To build a dynamic pricing system, gather data on demand, availability, seasonality, and external factors like local events. Use machine learning models, such as regression or reinforcement learning, to predict optimal prices. Consider factors like user behavior, competitor pricing, and elasticity of demand while ensuring the system adapts to real-time changes.
+
+7. How would you forecast revenue for the next year?
+
+To forecast revenue for the next year, analyze historical revenue data for Facebook’s various revenue streams, considering attributes like seasonality and trends. Depending on the behavior of each stream, use models such as classical time series forecasting, ARMA, or ARIMA to predict future revenue, and sum forecasts for all streams to estimate total revenue.
+
+8. Given a task to predict hotel occupancy rates, how would you design the model?
+
+To design the model, start by collecting relevant data such as historical occupancy rates, booking trends, seasonality, holidays, and external factors like local events or weather. Use this data to train a machine learning model, such as regression or time-series forecasting. Evaluate the model’s performance using metrics like Mean Absolute Error (MAE) or Root Mean Square Error (RMSE) to ensure accuracy.
+
+9. Call Center Resource Management
+
+To address this problem, a predictive model such as a time-series forecasting model or a regression model can be used to predict call volumes and allocate agents accordingly. Metrics to evaluate the model include accuracy in predicting call volumes, agent utilization rates, and customer wait times. Over-allocation ensures better customer satisfaction but may increase costs, while under-allocation risks longer wait times and lower customer satisfaction. Balancing these trade-offs is key to determining the optimal allocation strategy.
+
+10. How would you build a function to return a list of daily forecasted revenue starting from Day 1 to the end of the quarter (Day N)?
+
+To solve this, calculate the daily growth rate by dividing the difference between the total revenue target and Day 1 revenue by the number of days minus one. Then, iteratively compute the revenue for each day by adding the daily growth rate to the previous day’s revenue, storing the results in a list.
+
+Dashboard & Tooling Questions
+You’ll be asked to critique and design visualizations, evaluate metrics, and improve user understanding using tools like Minerva and Superset, often within the context of an Airbnb analytics dashboard or other Airbnb analysis software:
+
+11. How would you visualize data with long tail text to effectively convey its characteristics and help extract actionable insights?
+
+To visualize long-tail text data, start with frequency distribution plots like log-log scale histograms or Zipf plots to highlight keyword occurrences. Use semantic analysis techniques such as word clouds or clustering methods like t-SNE to uncover patterns. Integrate these insights with conversion metrics and temporal trends into dashboards for actionable business decisions.
+
+12. Design a dashboard that provides personalized insights, sales forecasts, and inventory recommendations for shop owners
+
+To design a merchant dashboard, prioritize metrics like sales trends (e.g., week-over-week revenue changes), inventory insights (e.g., days remaining for stock), and customer behavior (e.g., repeat purchase rates). Use adaptive visualizations tailored to merchant types, such as cohort charts for customer segmentation or smart banners highlighting actionable insights. Ensure scalability by leveraging metadata to personalize layouts and validate utility through merchant interaction tracking.
+
+13. Interpreting Fraud Detection Trends
+
+To interpret fraud detection graphs, focus on identifying anomalies, spikes, or patterns in fraudulent activities over time. Key insights include understanding the frequency, timing, and types of fraud, which can help refine detection algorithms and implement preventive measures. Use these insights to improve fraud detection processes by enhancing model accuracy, updating rules, and deploying real-time monitoring systems.
+
+14. Critique a Minerva dashboard that shows booking trends by city. What would you improve?
+
+Start by evaluating clarity and usefulness. Are city-level metrics aggregated at appropriate levels? Look for over-cluttered visualizations, inconsistent color schemes, or missing comparison baselines like year-over-year trends. Suggest adding filters for dates, guest demographics, and property types. Finally, recommend aligning KPI definitions across the airbnb analytics dashboard so regional teams interpret the data consistently.
+
+Behavioral & Values Questions
+Here, interviewers are looking to understand how you collaborate, communicate, and live out Airbnb’s values—especially in moments of ambiguity, cross-functional tension, or high-stakes decision-making:
+
+15. How would you convey insights and the methods you use to a non-technical audience?
+
+At Airbnb, business analysts frequently collaborate with design, operations, and regional teams that may not have technical expertise. You should describe how you structure your insights using storytelling, visualizations, and real-world analogies. For example, you might walk through how you used clustering to segment guests by travel behavior, then presented clear visuals and trade-offs to help a marketing team prioritize a campaign. Focus on simplifying without oversimplifying.
+
+16. What do you tell an interviewer when they ask you what your strengths and weaknesses are?
+
+Tailor your answer to qualities that align with Airbnb’s values. For strengths, consider areas like strong SQL proficiency, experience with experimentation platforms, or a track record of turning ambiguous problems into structured analysis. For weaknesses, avoid clichés. Instead, be honest and share how you’ve addressed it. For example, you might say you previously over-indexed on perfection in dashboards but learned that speed-to-insight is more critical in fast-paced teams like Airbnb’s regional operations.
+
+17. Why Do You Want to Work With Us
+
+Go beyond generic admiration. In 2025, Airbnb continues to lead in the intersection of travel, trust, and technology. Reference your alignment with Airbnb’s mission and how you’re excited to contribute to key initiatives, such as sustainable travel growth or optimizing the host onboarding experience. Mention interest in working with global teams, using real-time data to drive product or marketplace strategy, and leveraging Airbnb’s strong analytics infrastructure to make meaningful impact.
+
+18. Talk about a time when you had trouble communicating with stakeholders. How were you able to overcome it?
+
+Airbnb analysts often sit between product, operations, and regional leadership. When there is disagreement or confusion, it is your role to bridge data and narrative. Provide a story where you had to identify why your insight wasn’t resonating, then explain how you reframed the data or involved the stakeholders earlier in the analysis process. Focus on active listening, using visual tools, or scenario modeling to create alignment and improve decision-making.
+The Ultimate SQL Interview Guide Covers:
+
+Common SQL Commands Used in Interviews
+SQL Questions from Tesla, Microsoft, TikTok, and Uber (with solutions)
+Join SQL Interview Questions
+Window Functions Used in SQL Interviews
+Common Database Design Interview Questions
+6-Step Process to Solve Hard SQL Questions
+3 Best Books for SQL Interviews
+Best Site to Practice SQL Interview Questions
+How to Approach Open-Ended Take-Home SQL Challenges
+4 Real Take-Home SQL Interview Challenges
+Before we go into the exact topics SQL interviews cover, we need to get into the interviewer’s head and truly understand WHY tech companies ask SQL questions during interviews.
+
+Why Do Data Interviews Ask SQL Questions?
+While SQL might not be as glamorous and sexy as Python or R, SQL is an important language to master for Data Analysts and Data Scientists because your data lives in a database, and that’s where cleaning, filtering, and joining of large datasets can be done in a performant way. You don’t want to pull all the data into a Pandas or R dataframe, and crash your laptop, when you can efficiently shape and filter datasets thanks to SQL.
+
+Just Use SQL Bellcurve Meme
+
+That's why SQL is listed in 61% of data analytics jobs posted on Indeed, according to research done by DataQuest.io. In order to see if you can do the day-to-day work, hiring managers typically send candidates a SQL assessment during the Data Analyst or Data Science interview process.
+
+But you might say: "Nick, I got into this field to do Deep Learning with Tensorflow, are you seriously telling me Data Science interviews cover boring old SQL?"
+
+YES that's exactly what I'm saying!!
+
+SQL?! I thought Data Science was about Neural Networks in Python?
+Even at companies like Amazon and Facebook, which have massive amounts of data, most Data Scientists still spend most of their time writing SQL queries to answer business questions like "What are the top-selling products?", or "How do we increase ad click-through rates?".
+
+For more insight into the importance of SQL for Data Scientists, you can read this infamous article "No, you don't need ML/AI – You need SQL" which concretely shows you how so many ML problems can just be solved in a fraction of the time with some heuristics and a SQL query.
+
+What version of SQL is used in interviews?
+SQL comes in a variety of versions (also known as flavors), like MySQL, SQL Server, Oracle SQL, and PostgreSQL. Because the SQL versions are pretty similar, most data job interviews don't require you to use a specific version of SQL during the interview. We recommend aspiring Data Analysts and Data Scientists practice their SQL interview questions in PostgreSQL, because it’s the most standards-compliant version of SQL out there, and one of the most popular flavors of SQL in the data industry.
+
+However, if you are strongest in another flavor of SQL, it usually shouldn’t be a problem for SQL interviews. That’s because interviewers are more-so seeing if you understand how to write SQL queries and problem-solve – they know on the job you can just learn the version of SQL the company uses in a few days. As such, during live SQL interviews, a good interviewer won’t stress about minor syntactical errors or differences between different SQL versions.
+
+What Do SQL Interviews Cover?
+SQL interviews typically cover five main topics:
+
+basic SQL commands
+SQL joins
+window functions
+database design concepts
+your ability to write SQL queries to answer business questions
+While most other SQL interview question lists cover SQL trivia, like “What does DBMS stand for?” this guide focuses on what FAANG companies like Amazon and Google ask during interviews. I need to emphasize this point, because the first result on Google for "SQL interview questions" is a pop-up riddled website claiming "What is database?" is a legit interview question 😂.
+
+Fake List of Questions on InterviewBit
+
+Instead of asking conceptual questions, top Silicon Valley technology companies put you on the spot, and ask you to write a SQL query to answer a realistic business questions like "Find me the number of companies who accidentally posted duplicate job listings on LinkedIn?"
+
+LinkedIn SQL Interview Question: Find Duplicate Job Listings
+
+Before we can learn to apply SQL to these scenario-based questions, we need to cover some foundational SQL concepts like the most common SQL commands you need to know for interviews, what kinds of joins show up, and the most popular window functions for SQL interviews.
+
+What are the most common SQL commands used in interviews?
+Here’s the top 7 most common SQL commands tested during SQL interviews:
+
+SELECT - used to select specific columns from a table
+FROM - used to specify the table that contains the columns you are SELECT’ing
+WHERE - used to specify which rows to pick
+GROUP BY - used to group rows with similar values together
+HAVING - used to specify which groups to include, that were formed by the GROUP BY clause.
+ORDER BY - used to order the rows in the result set, either in ascending or descending order
+LIMIT - used to limit the number of rows returned
+However, 99% of Data Science & Data Analyst interviews at competitive companies won't just straight up ask you "What does GROUP BY do?". Instead you'll have to write a query that actually uses GROUP BY to solve a real-world problem. Check out the next section to see what we mean.
+
+Group By Example: Tesla SQL Interview Question
+In this real Tesla SQL Interview question, a Data Analyst was given the table called parts_assembly and asked to "Write a SQL query that determines which parts have begun the assembly process but are not yet finished?".
+
+Tesla Data Analyst SQL Interview Question
+
+To solve the question, realize that parts that are not yet finished can be found by filtering for rows with no data present in the finish_date column. This can be done using the SQL snippet:
+
+WHERE finish_date IS NULL
+Because some parts might be represented multiple times in the query data because they have several assembly steps that are not yet complete, we can GROUP BY to obtain only the unique parts.
+
+Thus, the final answer to this Tesla SQL Interview question is:
+
+SELECT part
+FROM parts_assembly
+WHERE finish_date IS NULL
+GROUP BY part;
+Hopefully, you've understood how just memorizing what WHERE or GROUP BY isn't going to cut it, and that to solve beginner SQL interview questions you still have to creatively apply the basic commands. To practice this Tesla SQL question yourself, click the image below:
+
+Tesla SQL Question: Unfinished Parts
+
+Now, let's cover another fundamental topic that's often combined with basic SQL commands: aggregate functions like COUNT() and SUM().
+
+Aggregate Functions Used In SQL Interviews
+Aggregate functions allow you to summarize information about a group of rows. For example, say you worked at JPMorgan Chase, in their Credit Card analytics department, and had access to a table called monthly_cards_issued. This table has data on how many credit cards were issued per month, for each different type of credit card that Chase offered.
+
+JPMorgan Chase SQL Interview Question Data
+
+To answer a question like “How many total cards were issued for each credit card” you’d use the SUM() aggregate function:
+
+SELECT card_name,
+       SUM(issued_amount)
+FROM   monthly_cards_issued
+GROUP  BY card_name; 
+Entering this query on DataLemur yields the following output:
+
+SUM() PostgreSQL Interview Question Example
+
+Similarly, if you wanted to count the total number of rows, you could use the aggregate function COUNT(). To play around with this dataset, open the SQL sandbox for the JPMorgan SQL Interview Question.
+
+JPMorgan SQL Interview Questions: Cards Issued Difference
+
+While PostgreSQL technically has dozens of aggregate functions, 99% of the time you'll just be using the big five functions covered below.
+
+What are the most common SQL aggregate functions?
+The 5 most common aggregate functions used in SQL interviews are:
+
+AVG() - Returns the average value
+COUNT() - Returns the number of rows
+MAX() - Returns the largest value
+MIN() - Returns the smallest value
+SUM() - Returns the sum
+While array_agg() and string_agg() aggregate functions may show up in advanced SQL interviews, they are extremely rare. To learn more about these uncommon commands, visit the PostgreSQL documentation.
+
+SQL Interview Questions On Joins
+In real-world data science & data analytics, you don't just use aggregate functions on one table at a time. Because your data lives in multiple SQL tables, as an analyst you're constantly writing SQL joins to analyze all the data together in one go. As such, hiring managers frequently ask both conceptual questions about SQL joins, as well as give you practical scenarios and then ask you to write a SQL query to join two tables.
+
+Microsoft SQL Interview Question Using JOIN
+For a concrete example of how joins show up during SQL interviews, checkout this real SQL interview Question asked by Microsoft:
+
+“Which Azure customer buys at least 1 Azure product from each product category?”
+
+The data needed to answer this would be in two tables – a customer_contracts table, which details which companies buy which products, and a table of Azure products, which has details about what product category each Azure service belongs too.
+
+Microsoft SQL Interview Question Dataset
+
+To solve this question, you'd need to combine the customer_contracts and products tables with a SQL join, which is what the following SQL snippet does:
+
+SELECT *
+FROM customer_contracts
+LEFT JOIN products 
+    ON customers.product_id = products.product_id
+To solve this real Microsoft Data Analyst SQL question yourself, and see the full solution give it a try on DataLemur:
+
+Microsoft Join SQL Interview Question
+
+What are the 4 different joins tested in SQL assessments?
+There are four main ways to join two database tables, and one of the most frequently asked SQL interview questions is to distinguish between each kind:
+
+INNER JOIN - combines rows from two tables that have matching values
+LEFT JOIN - combines rows from the left table, even if there are no matching values in the right table
+RIGHT JOIN - combines rows from the right table, even if there are no matching values in the left table
+FULL JOIN - combines rows from both tables, regardless of whether there are matching values
+Because a picture is worth a thousand words, checkout this neat infographic from DataSchool that explains joins visually:
+
+SQL Joins Explained Visually
+
+6 Most Common SQL Join Interview Questions
+Besides having to write queries which use JOIN commands, you might also encounter the following commonly asked conceptual interview questions about SQL joins:
+
+What is a self-join, and when would you use it?
+What is an anti-join, and when would you use it?
+What are the performance considerations of SQL join queries?
+How do you optimize a slow join query?
+How do you join more than two tables?
+Does a join always have to be on two rows sharing the same value (non-equi joins)?
+Many of these conceptual join questions closely relate to how databases are organized, and the costs and benefits of normalizing your tables. If you're interviewing for a Data Engineering, this topic is a must-know!
+
+Do I need to know date/time functions for SQL assessments?
+While it’s good to be familiar with date and time functions when preparing for a SQL interview, it isn’t absolutely mandatory to memorize the exact syntax for date/time functions because they differ greatly between SQL flavors. For example, SQL Server and MySQL have a DATEADD function, but PostgreSQL uses the keyword INTERVAL to get the same results.
+
+Because of the varying syntax, interviewers often give you some leeway and allow you to look up the exact date/time SQL commands mid-interview, especially if you are interviewing in a version of SQL you aren’t accustomed to.
+
+Most Common Date/Time Functions Used in SQL Interviews
+The most common date/time functions to know for SQL interviews are:
+
+NOW(): returns the current date and time
+CURRENT_DATE(): returns the current date
+INTERVAL: adds a specified time interval to a date
+DATEDIFF: calculates the difference between two dates
+EXTRACT: extracts a specific part of a date (e.g., month, day, year)
+You should also know the following date/time operators:
+
++: adds a time interval to a date/time value
+-: subtracts a time interval from a date/time value
+||: concatenates two date/time values
+Before a SQL assessment, it's also useful to be familiar with the various date/time types available in PostgreSQL, such as DATE, TIME, and TIMESTAMP.
+
+Using Date/Time Functions In A TikTok SQL Assessment
+To see PostgreSQL date/time operators in action, let’s solve this TikTok SQL Assessment Question called 2nd-day confirmation which gives you a table of text message and email signup data. You’re asked to write a query to display the ids of the users who confirmed their phone number via text message on the day AFTER they signed up (aka their 2nd day on Tik-Tok).
+
+TikTok SQL Assessment: 2nd Day Confirmation
+
+In the example data above, email_id 433 has a signup_date of 7/9/2022 and a confirmed action date of 7/10/2022. Hence, the user had a 1-day delay between the two events.
+
+The answer to this TikTok SQL question utilizes the date/time operator INTERVAL to identify the 1-day gap between signup and confirmation. The snippet looks like this:
+
+WHERE texts.action_date = emails.signup_date + INTERVAL '1 day'
+The full solution also requires us to join the texts and emails table, and also filter down to text messages that were confirmed. Hence, the final solution is:
+
+SELECT DISTINCT user_id
+FROM emails 
+INNER JOIN texts
+  ON emails.email_id = texts.email_id
+WHERE texts.action_date = emails.signup_date + INTERVAL '1 day'
+  AND texts.signup_action = 'Confirmed';
+Hard Date/Time SQL Interview Question From Stripe
+If your up for a challenging date/time SQL interview question, try this very hard Stripe SQL Interview question asked in a final-round Data Science interview. The problem requires you to EXTRACT the EPOCH from a transaction timestamp.
+
+Practice Problem
+Stripe SQL Question: Write a SQL query to identify any payments made with the same credit card for the same amount within 10 minutes of each other.
+
+
+If you have no idea how to solve this question, and reading the solution doesn't help, you probably need a refresher on window functions like LAG, conveniently covered up next!
+
+Window Functions In SQL Interviews
+Window functions are tricky, and hence show up constantly in advanced SQL interview questions to separate the beginners from the more experienced data analysts & data scientists.
+
+At a high-level, a window function performs calculation across a set of rows that are related to the current row. This is similar to an aggregate function like SUM() or COUNT(), but unlike an aggregate function, a window function does not cause rows to become grouped into a single output row. Instead, you have control over the window (subset) of rows which are being acted upon.
+
+ROW_NUMBER() Example From Google SQL Interview
+For example the window function ROW_NUMBER() ranks selected rows in ascending order, but resets the ranks for each window. To demo this, let's analyze data from a real Google SQL Interview Question.
+
+Google SQL Interview Question Odd Even
+
+In the problem, you are given the measurements table which has data from an IoT sensor that collects multiple measurements per day:
+
+measurements Example Input:
+measurement_id	measurement_value	measurement_time
+131233	1109.51	07/10/2022 09:00:00
+135211	1662.74	07/10/2022 11:00:00
+523542	1246.24	07/10/2022 13:15:00
+143562	1124.50	07/11/2022 15:00:00
+346462	1234.14	07/11/2022 16:45:00
+You are asked to find the sum of the odd-numbered and even-numbered sensor measurements for each day. Before we start worrying about the odd measurements (1st, 3rd, 5th measurement of the day, etc.) and even measurements, we need to just understand what was the 1st, 2nd, 3rd, 4th, measurement of the day.
+
+To do this we use ROW_NUMBER() to rank the rows BUT make the window only one-day wide. That means at the end of every day, the ranks reset back to 1. This is achieved with the following window function:
+
+ROW_NUMBER() OVER (
+    PARTITION BY CAST(measurement_time AS DATE) 
+    ORDER BY measurement_time) AS measurement_num
+When we run the code, you'll see at the end of each day the measurement number resets:Row_Number() Window Function Example.
+
+From here, to get odd and even measurements, we just need to divide the measurement_num by 2 and check the remainder, but we'll leave it up to you to implement inside the SQL code sandbox for this Google Data Analyst SQL question.
+
+For another example, let's dive into a practical exercise from an Uber Data Science assessment which also uses the ROW_NUMBER() window function.
+
+Uber Window Function SQL Interview Question
+Take for example this Uber SQL Interview Question about selecting a user's 3rd transaction made on the Uber platform.Uber SQL Interview Question: User's 3rd Transaction
+
+At the core of this SQL question is the window function ROW_NUMBER() which assigns a number to each row within the partition. Essentially, we want to group/partition all the Uber transactions together based on which user_id made the transaction, and then order these transactions by when they occured (transaction_date), so that we can label the order in which they occured using ROW_NUMBER():
+
+    ROW_NUMBER() OVER (
+      PARTITION BY user_id ORDER BY transaction_date) AS row_num
+    FROM transactions) AS trans_num 
+Finally, using the output from the window function, we want to filter our results to only get the 3rd transaction for every user:
+
+WHERE row_num = 3
+This yields us the final solution:
+
+SELECT 
+  user_id,
+  spend,
+  transaction_date
+FROM (
+  SELECT 
+    user_id, 
+    spend, 
+    transaction_date, 
+    ROW_NUMBER() OVER (
+      PARTITION BY user_id ORDER BY transaction_date) AS row_num
+  FROM transactions) AS trans_num 
+WHERE row_num = 3;
+For more practice with SQL interview questions that use window functions select the 'Window Functions' filter on the DataLemur SQL interview questions.
+
+Window Function SQL Interview Questions
+
+What are the most common window functions for SQL interviews?
+The top window functions used in SQL interviews are:
+
+RANK() - gives a rank to each row in a partition based on a specified column or value
+DENSE_RANK() - gives a rank to each row, but DOESN'T skip rank values
+ROW_NUMBER() - gives a unique integer to each row in a partition based on the order of the rows
+NTILE() - divides a partition into a specified number of groups, and gives a group number to each row
+LAG() - retrieves a value from a previous row in a partition based on a specified column or expression
+LEAD() - retrieves a value from a subsequent row in a partition based on a specified column or expression
+NTH_VALUE() - retrieves the nth value in a partition
+To understand each window function in more detail, check out Mode's SQL tutorial on Window Functions.
+
+Now that you know the basic SQL commands that come up in interviews, along with intermediate SQL interview topics like joins and window functions, we're ready to cover database design and data modeling interview questions.
+
+Database Design & Data Modeling Interview Questions
+Database design and data modeling interview questions test you on how well you understand the inner-workings of databases, along with how to design your data warehouse. If you're preparing for a Data Engineering or Analytics Engineering interview, this section is just as important as being able to write SQL queries. However, we still think it’s an important topic for Data Analysts and Data Scientists to briefly cover too, especially if interviewing for a smaller startup where you’ll likely wear multiple hats and end up doing some Data Engineering work too.
+
+Common Database Design Interview Questions
+What is an index, and why does it speed up queries?
+What are the dis-advantages of using indexes?
+How do you troubleshoot a slow SQL query?
+How do you CREATE, READ, UPDATE, and DELETE in SQL?
+What is a stored procedure, and when do we use them?
+What is normalization? Why might we want to also de-normalize some tables?
+What is ACID, and how does a database enforce atomicity, consistency, isolation, durability?
+What’s the difference between Star schema and Snowflake schema?
+What are the different types of dimensions (e.g. junk dimensions, conformed dimensions, mini dimensions, shrunken dimensions)?
+If you had to make a simple news feed, similar to the Facebook or LinkedIn feed, what are the main tables you’d have? Can you whiteboard a quick ER Diagram for it?
+What is database sharding?
+What are the advantages and disadvantages of relational vs. NoSQL databases?
+How To Prep For Database Design Interview Questions
+If these database design interview questions look super tough, I recommend reading the classic book Database Design for Mere Mortals because it covers topics like translating business needs into design specifications, how to determine what tables you need and their relationships, how to anticipate and mitigate performance bottlenecks, and how to ensure data integrity via field specifications and constraints.
+## SQL — 185 Find the seller(s) who joined the earliest but have listings priced higher than the average price in their respective categories. Display the seller name, title of the listing, and price. — 185.2.1 Practice Questions
+I'll provide 10 questions progressing from basic to intermediate, with Airbnb-themed contexts. 
+Try solving them first, then check the solutions. Use online SQL sandboxes (e.g., DB-Fiddle) or 
+tools like ChatGPT for syntax checks during practice. 
+1. **Basic Filtering and Aggregation**: Find the total revenue from bookings in San Francisco in 
+2024. - Solution: `SELECT SUM(revenue) AS total_revenue FROM bookings JOIN listings ON 
+bookings.listing_id = listings.listing_id WHERE listings.city = 'San Francisco' AND 
+YEAR(booking_date) = 2024;` 
+2. **Joins**: List all users who have hosted at least one listing but never made a booking as a 
+guest. - Solution: `SELECT u.user_id, u.signup_date FROM users u JOIN listings l ON u.user_id = 
+l.host_id LEFT JOIN bookings b ON u.user_id = b.guest_id WHERE b.booking_id IS NULL 
+GROUP BY u.user_id, u.signup_date HAVING COUNT(l.listing_id) >= 1;` 
+3. **Subqueries**: Find listings with prices above the average price in their city. - Solution: `SELECT listing_id, city, price FROM listings WHERE price > (SELECT AVG(price) 
+FROM listings AS sub WHERE sub.city = listings.city);` 
+4. **Self-Joins**: Identify pairs of bookings by the same guest that occurred within 7 days of 
+each other (e.g., for repeat travel patterns). - Solution: `SELECT b1.booking_id, b1.guest_id, b1.booking_date, b2.booking_id, 
+b2.booking_date FROM bookings b1 JOIN bookings b2 ON b1.guest_id = b2.guest_id AND 
+b1.booking_id < b2.booking_id WHERE DATEDIFF(b2.booking_date, b1.booking_date) <= 7;` 
+5. **Window Functions (Basic)**: Rank listings by revenue within each city, showing the top 3 
+per city. - Solution: `SELECT listing_id, city, revenue, RANK() OVER (PARTITION BY city ORDER BY 
+revenue DESC) AS rank FROM (SELECT l.listing_id, l.city, SUM(b.revenue) AS revenue FROM 
+listings l JOIN bookings b ON l.listing_id = b.listing_id GROUP BY l.listing_id, l.city) AS sub 
+WHERE rank <= 3;` 
+6. **Aggregating with Conditions**: Calculate the average nights stayed per booking, but only 
+for users exposed to a 'discount' marketing campaign. - Solution: `SELECT AVG(nights) AS avg_nights FROM bookings b JOIN campaigns c ON 
+b.guest_id = c.user_id WHERE c.type = 'discount';` 
+7. **Subqueries in Joins**: Find the percentage of users who booked within 30 days of signup. - Solution: `SELECT (COUNT(DISTINCT b.guest_id) * 100.0 / COUNT(DISTINCT u.user_id)) 
+AS conversion_rate FROM users u LEFT JOIN bookings b ON u.user_id = b.guest_id AND 
+DATEDIFF(b.booking_date, u.signup_date) <= 30;` 
+8. **Window Functions (Advanced)**: For each booking, calculate the running total revenue 
+per host over time. - Solution: `SELECT host_id, booking_date, revenue, SUM(revenue) OVER (PARTITION BY 
+host_id ORDER BY booking_date) AS running_total FROM bookings b JOIN listings l ON 
+b.listing_id = l.listing_id ORDER BY host_id, booking_date;` 
+9. **Self-Joins with Aggregation**: Compare monthly booking growth year-over-year for each 
+city. - Solution: `SELECT curr.city, curr.month, curr.bookings, prev.bookings AS prev_bookings, 
+(curr.bookings - prev.bookings) * 100.0 / prev.bookings AS growth_pct FROM (SELECT l.city, 
+DATE_TRUNC('month', b.booking_date) AS month, COUNT(b.booking_id) AS bookings FROM 
+bookings b JOIN listings l ON b.listing_id = l.listing_id GROUP BY l.city, month) curr LEFT JOIN 
+(SELECT l.city, DATE_TRUNC('month', b.booking_date) AS month, COUNT(b.booking_id) AS 
+bookings FROM bookings b JOIN listings l ON b.listing_id = l.listing_id GROUP BY l.city, month) 
+prev ON curr.city = prev.city AND DATE_ADD(curr.month, INTERVAL -1 YEAR) = prev.month;` 
+10. **Combined Concepts**: Using window functions and subqueries, find the top 5% of hosts 
+by revenue contribution in the last year, with their share of total revenue. - Solution: `WITH host_revenue AS (SELECT host_id, SUM(revenue) AS total_revenue 
+FROM bookings b JOIN listings l ON b.listing_id = l.listing_id WHERE YEAR(b.booking_date) = 
+2024 GROUP BY host_id), ranked_hosts AS (SELECT host_id, total_revenue, NTILE(20) OVER 
+(ORDER BY total_revenue DESC) AS percentile FROM host_revenue) SELECT host_id, 
+total_revenue, (total_revenue / (SELECT SUM(total_revenue) FROM host_revenue)) * 100 AS 
+revenue_share FROM ranked_hosts WHERE percentile = 1;` 
+Tips for SQL Portion: - Practice explaining your query logic aloud—interviewers may ask why you chose a subquery 
+over a join. - Handle edge cases: NULLs (use COALESCE), date functions (DATEADD, DATEDIFF), string 
+manipulation (CONCAT, SUBSTRING). - If stuck, verbalize: "I'd look up the Presto syntax for window functions here." - Resources: LeetCode SQL problems (filter by medium), HackerRank, or Airbnb-specific mocks 
+on Glassdoor. 
+## SQL — 185 Find the seller(s) who joined the earliest but have listings priced higher than the average price in their respective categories. Display the seller name, title of the listing, and price. — 185.3 Case Study Preparation
+The case study will assess your high-level approach to measuring product development and 
+solving metrics problems. Expect scenarios like evaluating a new feature's impact or optimizing 
+marketing spend. Structure your responses using a framework like: 
+1. **Clarify the Problem**: Ask questions to define scope (e.g., "What are the success 
+criteria?"). 
+2. **Define Key Metrics**: North Star (e.g., bookings), proxies (e.g., engagement), guards (e.g., 
+churn). 
+3. **Analytical Approach**: Data sources, methods (A/B tests, causal inference), tools (SQL for 
+querying, Python/R for modeling). 
+4. **Dig Deeper**: Segment analysis, potential biases, next steps. 
+5. **Recommendations**: Actionable insights, risks. 
+## SQL — 185 Find the seller(s) who joined the earliest but have listings priced higher than the average price in their respective categories. Display the seller name, title of the listing, and price. — 185.3.1 Sample Case Studies
+Practice these with timed responses (20-30 mins), then discuss trade-offs. 
+1. **Measuring a New Feature**: "Airbnb launches a 'personalized recommendations' feature 
+for guests. How would you measure its success?" - Approach: North Star: Increase in booking conversion rate. Proxies: Click-through rate on 
+recs, session time. Guards: No drop in host satisfaction. Method: A/B test (randomize users), 
+SQL to query pre/post data, causal inference if rollout isn't clean (e.g., 
+difference-in-differences). Dig deeper: Segment by user type (new vs. repeat), check for 
+novelty effects. Recommendation: If uplift >5%, scale; else, iterate on algo. 
+2. **Marketing Campaign Analysis**: "Evaluate the ROI of a email campaign targeting inactive 
+hosts to relist properties." - Approach: Metrics: Incremental listings/reactivations, revenue lift, cost per acquisition. 
+Approach: Control group (non-exposed hosts), propensity score matching for causal impact. 
+SQL: Join campaigns and listings tables, aggregate reactivations post-exposure. Dig deeper: 
+Cohort analysis by host tenure, attribution (first-touch vs. multi-touch). Recommendation: 
+Calculate ROI as (incremental revenue - campaign cost) / cost; optimize by segmenting 
+high-value hosts. 
+3. **Product Metrics Problem**: "Bookings are down 10% YoY. How do you diagnose and 
+propose fixes?" - Approach: Funnel breakdown: Traffic > Searches > Views > Bookings. Metrics: Drop-off 
+rates at each stage. Approach: SQL cohort analysis, window functions for trends. Dig deeper: 
+External factors (seasonality, competition via web data), internal (feature changes). 
+Recommendation: If issue is in search-to-view, A/B test UI improvements; prioritize based on 
+impact size. 
+Tips for Case Study: - Tie to Airbnb's marketplace: Balance guest/host sides, consider network effects. - Mention advanced methods from JD: Causal inference (e.g., for non-random experiments), 
+statistical modeling. - Practice with real data: Use public datasets like Inside Airbnb for mock analysis. 
+## SQL — 186 SQL Query Patterns: A Framework for Data Extraction — 187 Reframe the question and ask clarifying questions
+Always start by confirming your understanding of the question. I do this by reframing the question in my own words. This shows my thought process and gives the interviewer a chance to correct me before I dive in. (Just in case I misunderstood or misinterpreted the question)
+
+If the question involves some ambiguity, this is also your chance to clarify and align with your interviewer.
+
+For example, if the interviewer asked you a question like: "What is the growth rate of X metric?"
+
+There are so many ways to define growth:
+
+→ Do we want absolute change or relative change?
+→ Are we looking at long-term growth or short-term growth?
+
+Use this first step as a chance to solidify how you will approach the question. This discussion shows off your product sense and great communication skills.

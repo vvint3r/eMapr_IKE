@@ -1,0 +1,56 @@
+Of course! Let's break this down.
+
+### What is a Quasi-Experiment?
+
+A **quasi-experiment** is a research design used to estimate the causal impact of an intervention on a target population *without* the benefit of random assignment.
+
+The key difference from a true experiment is the **lack of random assignment**. In a true experiment (like an A/B test), participants are randomly assigned to either the treatment or control group. This randomness helps ensure the groups are statistically identical before the treatment, so any difference in outcome can be confidently attributed to the treatment.
+
+In a quasi-experiment, random assignment is not feasible for practical or ethical reasons. Instead, researchers use creative methods to construct a comparison group that is as similar as possible to the treatment group. They rely on statistical techniques to control for confounding variables and isolate the effect of the intervention.
+
+**Common Quasi-Experimental Designs:**
+*   **Difference-in-Differences (DiD):** Compares the change in outcomes over time for a treatment group to the change over time for a control group.
+*   **Regression Discontinuity Design (RDD):** Assigns treatment based on a cutoff score on a continuous variable (e.g., students above a test score get a scholarship).
+*   **Instrumental Variables (IV):** Uses a third variable that influences the treatment but not the outcome to isolate causal effects.
+*   **Matching:** Finds non-treated units (e.g., individual customers) that have very similar characteristics to treated units and compares their outcomes.
+
+---
+
+### Example of a Quasi-Experiment at Shopify's Marketing Team
+
+**Scenario:**
+Shopify's marketing team wants to measure the impact of a **new, high-budget brand awareness TV ad campaign** that will run in Canada. The goal is to see if the campaign increases the number of new merchant sign-ups.
+
+**The Problem with a True Experiment:**
+They cannot randomly assign which Canadians see the TV ad. TV ads are broadcast to entire geographic regions (Designated Market Areas or DMAs). You can't show the ad to one household and not its neighbor on the same channel at the same time.
+
+**The Quasi-Experimental Solution: Difference-in-Differences (DiD)**
+
+The marketing team can use a DiD design to measure the campaign's effect.
+
+1.  **Treatment Group:** All potential merchants in the Canadian DMAs where the TV ad campaign aired (e.g., Toronto, Vancouver, Montreal).
+2.  **Control Group:** All potential merchants in similar Canadian DMAs where the ad did *not* air (e.g., Calgary, Ottawa, Halifax). The team would carefully select these control markets to be as similar as possible to the treatment markets in terms of population size, economic activity, and historical sign-up trends.
+3.  **Timeline:**
+    *   **Pre-Period:** The 4 weeks *before* the TV campaign starts.
+    *   **Post-Period:** The 4 weeks *during* (and slightly after) the TV campaign runs.
+
+4.  **Analysis:**
+    The team will collect daily sign-up data for both the treatment and control groups during the pre- and post-periods.
+
+    *   They will calculate the average sign-ups in the treatment group before and after the ad.
+    *   They will do the same for the control group.
+    *   The **"Difference-in-Differences"** estimate is:
+        `(Treatment_After - Treatment_Before) - (Control_After - Control_Before)`
+
+    This calculation removes:
+    *   **Pre-existing trends** (e.g., a general increase in sign-ups due to seasonality like the holiday rush).
+    *   **Time-invariant differences** between the two groups (e.g., Toronto might always have more sign-ups than Halifax).
+
+    The resulting number is the estimated causal effect of the TV ad on sign-ups, isolated from these other factors.
+
+**Why this is a Quasi-Experiment:**
+*   **No Random Assignment:** The treatment was applied to entire geographic regions, not randomized individuals.
+*   **Constructed Control Group:** The control group was strategically chosen by analysts to be comparable, not created by a randomizer.
+*   **Statistical Control:** The DiD methodology is used to statistically control for confounding variables (like underlying growth trends).
+
+This approach allows the Shopify marketing team to get a much more reliable measure of the TV ad's ROI than simply looking at a spike in sign-ups and assuming the ad caused it.
