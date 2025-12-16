@@ -1,0 +1,370 @@
+LEVEL_1	LEVEL_2	LEVEL_3	LEVEL_4	LEVEL_5	CODE	DESCRIPTION
+KNOWLEDGE FOUNDATIONS	Theoretical Knowledge	Core Theories & Principles	Foundational Theories	Fundamental laws and rules	KF-TK-CT-FT	Fundamental laws, rules, and scientific foundations
+KNOWLEDGE FOUNDATIONS	Theoretical Knowledge	Core Theories & Principles	Domain Principles	Governing concepts	KF-TK-CT-DP	Governing concepts specific to the field
+KNOWLEDGE FOUNDATIONS	Theoretical Knowledge	Core Theories & Principles	Theoretical Models	Abstract representations	KF-TK-CT-TM	Abstract representations of systems and relationships
+KNOWLEDGE FOUNDATIONS	Theoretical Knowledge	Core Theories & Principles	Paradigms & Schools of Thought	Intellectual traditions	KF-TK-CT-PS	Major intellectual traditions and perspectives
+KNOWLEDGE FOUNDATIONS	Theoretical Knowledge	Core Theories & Principles	Axioms & Postulates	Self-evident truths	KF-TK-CT-AP	Self-evident truths accepted as starting points
+KNOWLEDGE FOUNDATIONS	Theoretical Knowledge	Conceptual Frameworks	Mental Models	Internal representations	KF-TK-CF-MM	Internal representations for understanding complex systems
+KNOWLEDGE FOUNDATIONS	Theoretical Knowledge	Conceptual Frameworks	Conceptual Maps	Visual organization	KF-TK-CF-CM	Visual organization of idea relationships
+KNOWLEDGE FOUNDATIONS	Theoretical Knowledge	Conceptual Frameworks	Abstraction Hierarchies	Concrete to abstract	KF-TK-CF-AH	Levels from concrete instances to abstract concepts
+KNOWLEDGE FOUNDATIONS	Theoretical Knowledge	Conceptual Frameworks	Taxonomies & Classifications	Systematic categorization	KF-TK-CF-TC	Systematic categorization structures
+KNOWLEDGE FOUNDATIONS	Theoretical Knowledge	Conceptual Frameworks	Ontologies	Formal representations	KF-TK-CF-ON	Formal representations of knowledge domains
+KNOWLEDGE FOUNDATIONS	Theoretical Knowledge	Historical & Evolutionary Context	Historical Development	Field emergence	KF-TK-HC-HD	How the field emerged and evolved
+KNOWLEDGE FOUNDATIONS	Theoretical Knowledge	Historical & Evolutionary Context	Key Milestones	Pivotal discoveries	KF-TK-HC-KM	Pivotal discoveries, publications, and breakthroughs
+KNOWLEDGE FOUNDATIONS	Theoretical Knowledge	Historical & Evolutionary Context	Influential Thinkers	Thought leaders	KF-TK-HC-IT	Foundational contributors and thought leaders
+KNOWLEDGE FOUNDATIONS	Theoretical Knowledge	Historical & Evolutionary Context	Paradigm Shifts	Major changes	KF-TK-HC-PS	Major changes in fundamental assumptions
+KNOWLEDGE FOUNDATIONS	Theoretical Knowledge	Historical & Evolutionary Context	Future Trajectories	Emerging directions	KF-TK-HC-FT	Emerging directions and predicted evolution
+KNOWLEDGE FOUNDATIONS	Definitions & Terminology	Core Vocabulary	Technical Terms	Specialized language	KF-DT-CV-TT	Field-specific jargon and specialized language
+KNOWLEDGE FOUNDATIONS	Definitions & Terminology	Core Vocabulary	Acronyms & Abbreviations	Shortened forms	KF-DT-CV-AA	Standard shortened forms
+KNOWLEDGE FOUNDATIONS	Definitions & Terminology	Core Vocabulary	Industry Nomenclature	Naming conventions	KF-DT-CV-IN	Sector-particular naming conventions
+KNOWLEDGE FOUNDATIONS	Definitions & Terminology	Core Vocabulary	Etymologies	Word origins	KF-DT-CV-ET	Word origins providing deeper understanding
+KNOWLEDGE FOUNDATIONS	Definitions & Terminology	Core Vocabulary	Semantic Distinctions	Nuanced differences	KF-DT-CV-SD	Nuanced differences between related terms
+KNOWLEDGE FOUNDATIONS	Definitions & Terminology	Glossaries & Lexicons	Comprehensive Glossaries	Complete definitions	KF-DT-GL-CG	Complete term definitions
+KNOWLEDGE FOUNDATIONS	Definitions & Terminology	Glossaries & Lexicons	Quick-Reference Guides	Abbreviated lists	KF-DT-GL-QR	Abbreviated definition lists
+KNOWLEDGE FOUNDATIONS	Definitions & Terminology	Glossaries & Lexicons	Context-Specific Dictionaries	Situational usage	KF-DT-GL-CD	Situational term usage
+KNOWLEDGE FOUNDATIONS	Definitions & Terminology	Glossaries & Lexicons	Cross-Domain Translations	Term equivalents	KF-DT-GL-CT	Term equivalents across related fields
+KNOWLEDGE FOUNDATIONS	Definitions & Terminology	Conceptual Distinctions	Similar Concept Differentiation	Related ideas	KF-DT-CD-SC	Distinguishing closely related ideas
+KNOWLEDGE FOUNDATIONS	Definitions & Terminology	Conceptual Distinctions	Hierarchical Relationships	Parent-child structures	KF-DT-CD-HR	Parent-child concept structures
+KNOWLEDGE FOUNDATIONS	Definitions & Terminology	Conceptual Distinctions	Synonyms & Antonyms	Related terms	KF-DT-CD-SA	Related and opposing terms
+KNOWLEDGE FOUNDATIONS	Definitions & Terminology	Conceptual Distinctions	Usage Contexts	Appropriate application	KF-DT-CD-UC	When and how terms are appropriately applied
+KNOWLEDGE FOUNDATIONS	Research & Evidence Base	Empirical Foundations	Seminal Studies	Foundational research	KF-RE-EF-SS	Foundational research establishing key findings
+KNOWLEDGE FOUNDATIONS	Research & Evidence Base	Empirical Foundations	Meta-Analyses	Synthesized research	KF-RE-EF-MA	Synthesized research across multiple studies
+KNOWLEDGE FOUNDATIONS	Research & Evidence Base	Empirical Foundations	Systematic Reviews	Literature evaluations	KF-RE-EF-SR	Comprehensive literature evaluations
+KNOWLEDGE FOUNDATIONS	Research & Evidence Base	Empirical Foundations	Longitudinal Research	Time-tracked studies	KF-RE-EF-LR	Studies tracking phenomena over time
+KNOWLEDGE FOUNDATIONS	Research & Evidence Base	Empirical Foundations	Experimental Evidence	Controlled findings	KF-RE-EF-EE	Controlled study findings
+KNOWLEDGE FOUNDATIONS	Research & Evidence Base	Data & Statistics	Benchmark Data	Industry standards	KF-RE-DS-BD	Industry standards and comparison points
+KNOWLEDGE FOUNDATIONS	Research & Evidence Base	Data & Statistics	Performance Metrics	Success indicators	KF-RE-DS-PM	Quantitative success indicators
+KNOWLEDGE FOUNDATIONS	Research & Evidence Base	Data & Statistics	Statistical Norms	Expected values	KF-RE-DS-SN	Expected values and distributions
+KNOWLEDGE FOUNDATIONS	Research & Evidence Base	Data & Statistics	Trend Data	Historical patterns	KF-RE-DS-TD	Historical patterns and projections
+METHODOLOGIES & FRAMEWORKS	Strategic Frameworks	Decision-Making Frameworks	Analysis Matrices	Evaluation tools	MF-SF-DM-AM	Structured evaluation tools (SWOT, BCG, etc.)
+METHODOLOGIES & FRAMEWORKS	Strategic Frameworks	Decision-Making Frameworks	Decision Trees	Branching logic	MF-SF-DM-DT	Branching logic for choice navigation
+METHODOLOGIES & FRAMEWORKS	Strategic Frameworks	Decision-Making Frameworks	Risk Assessment Models	Uncertainty evaluation	MF-SF-DM-RA	Uncertainty evaluation frameworks
+METHODOLOGIES & FRAMEWORKS	Strategic Frameworks	Decision-Making Frameworks	Prioritization Frameworks	Resource allocation	MF-SF-DM-PF	Resource allocation decision tools
+METHODOLOGIES & FRAMEWORKS	Strategic Frameworks	Decision-Making Frameworks	Trade-off Analysis	Competing considerations	MF-SF-DM-TA	Balancing competing considerations
+METHODOLOGIES & FRAMEWORKS	Strategic Frameworks	Planning Frameworks	Strategic Planning Models	Long-term direction	MF-SF-PF-SP	Long-term direction setting
+METHODOLOGIES & FRAMEWORKS	Strategic Frameworks	Planning Frameworks	Goal-Setting Frameworks	Objectives	MF-SF-PF-GS	OKRs, SMART goals, cascading objectives
+METHODOLOGIES & FRAMEWORKS	Strategic Frameworks	Planning Frameworks	Scenario Planning	Future possibilities	MF-SF-PF-SC	Future possibility exploration
+METHODOLOGIES & FRAMEWORKS	Strategic Frameworks	Planning Frameworks	Roadmapping Approaches	Timeline planning	MF-SF-PF-RM	Timeline-based planning structures
+METHODOLOGIES & FRAMEWORKS	Strategic Frameworks	Thinking Models	First Principles Thinking	Fundamental truths	MF-SF-TM-FP	Reasoning from fundamental truths
+METHODOLOGIES & FRAMEWORKS	Strategic Frameworks	Thinking Models	Systems Thinking	Holistic understanding	MF-SF-TM-ST	Holistic interconnection understanding
+METHODOLOGIES & FRAMEWORKS	Strategic Frameworks	Thinking Models	Design Thinking	Human-centered	MF-SF-TM-DT	Human-centered problem solving
+METHODOLOGIES & FRAMEWORKS	Strategic Frameworks	Thinking Models	Critical Thinking Frameworks	Logical analysis	MF-SF-TM-CT	Logical analysis structures
+METHODOLOGIES & FRAMEWORKS	Strategic Frameworks	Thinking Models	Creative Thinking Models	Innovation approaches	MF-SF-TM-CR	Innovation and ideation approaches
+METHODOLOGIES & FRAMEWORKS	Operational Methodologies	Process Methodologies	Agile Methodologies	Iterative approaches	MF-OM-PM-AG	Iterative, adaptive approaches (Scrum, Kanban)
+METHODOLOGIES & FRAMEWORKS	Operational Methodologies	Process Methodologies	Lean Methodologies	Waste elimination	MF-OM-PM-LE	Waste elimination and efficiency
+METHODOLOGIES & FRAMEWORKS	Operational Methodologies	Process Methodologies	Six Sigma	Statistical quality	MF-OM-PM-SS	Statistical quality control
+METHODOLOGIES & FRAMEWORKS	Operational Methodologies	Process Methodologies	Waterfall	Sequential phases	MF-OM-PM-WF	Sequential, phase-based processes
+METHODOLOGIES & FRAMEWORKS	Operational Methodologies	Process Methodologies	Hybrid Approaches	Combined methods	MF-OM-PM-HY	Combined methodology implementations
+METHODOLOGIES & FRAMEWORKS	Operational Methodologies	Research Methodologies	Quantitative Methods	Statistical approaches	MF-OM-RM-QN	Statistical and numerical approaches
+METHODOLOGIES & FRAMEWORKS	Operational Methodologies	Research Methodologies	Qualitative Methods	Interpretive approaches	MF-OM-RM-QL	Interpretive and exploratory approaches
+METHODOLOGIES & FRAMEWORKS	Operational Methodologies	Research Methodologies	Mixed Methods	Combined designs	MF-OM-RM-MX	Combined quantitative-qualitative designs
+METHODOLOGIES & FRAMEWORKS	Operational Methodologies	Research Methodologies	Action Research	Practice-embedded	MF-OM-RM-AR	Practice-embedded investigation
+METHODOLOGIES & FRAMEWORKS	Operational Methodologies	Research Methodologies	Case Study Methods	Instance analysis	MF-OM-RM-CS	Deep instance analysis
+METHODOLOGIES & FRAMEWORKS	Operational Methodologies	Problem-Solving Methodologies	Root Cause Analysis	Issue identification	MF-OM-PS-RC	Underlying issue identification
+METHODOLOGIES & FRAMEWORKS	Operational Methodologies	Problem-Solving Methodologies	5 Whys Technique	Iterative questioning	MF-OM-PS-5W	Iterative questioning for cause discovery
+METHODOLOGIES & FRAMEWORKS	Operational Methodologies	Problem-Solving Methodologies	Fishbone Diagrams	Cause-effect	MF-OM-PS-FB	Cause-effect visualization
+METHODOLOGIES & FRAMEWORKS	Operational Methodologies	Problem-Solving Methodologies	Hypothesis-Driven	Theory testing	MF-OM-PS-HD	Theory testing methods
+METHODOLOGIES & FRAMEWORKS	Operational Methodologies	Problem-Solving Methodologies	A3 Problem Solving	Structured documentation	MF-OM-PS-A3	Structured problem documentation
+METHODOLOGIES & FRAMEWORKS	Analytical Frameworks	Diagnostic Frameworks	Assessment Models	State evaluation	MF-AF-DF-AM	Current state evaluation
+METHODOLOGIES & FRAMEWORKS	Analytical Frameworks	Diagnostic Frameworks	Gap Analysis	State comparison	MF-AF-DF-GA	Desired vs. actual state comparison
+METHODOLOGIES & FRAMEWORKS	Analytical Frameworks	Diagnostic Frameworks	Maturity Models	Capability assessment	MF-AF-DF-MM	Capability level assessment
+METHODOLOGIES & FRAMEWORKS	Analytical Frameworks	Diagnostic Frameworks	Health Check Frameworks	System status	MF-AF-DF-HC	System status evaluation
+METHODOLOGIES & FRAMEWORKS	Analytical Frameworks	Measurement Frameworks	KPI Structures	Performance hierarchies	MF-AF-MF-KP	Key performance indicator hierarchies
+METHODOLOGIES & FRAMEWORKS	Analytical Frameworks	Measurement Frameworks	Balanced Scorecards	Multi-perspective	MF-AF-MF-BS	Multi-perspective performance measurement
+METHODOLOGIES & FRAMEWORKS	Analytical Frameworks	Measurement Frameworks	OKR Frameworks	Objectives systems	MF-AF-MF-OK	Objectives and key results systems
+METHODOLOGIES & FRAMEWORKS	Analytical Frameworks	Measurement Frameworks	Attribution Models	Contribution assessment	MF-AF-MF-AT	Contribution assessment frameworks
+PRACTICAL APPLICATIONS	Case Studies	By Outcome Type	Success Stories	Positive outcomes	PA-CS-OT-SS	Positive outcome examples with lessons learned
+PRACTICAL APPLICATIONS	Case Studies	By Outcome Type	Failure Postmortems	What went wrong	PA-CS-OT-FP	What went wrong analyses with prevention insights
+PRACTICAL APPLICATIONS	Case Studies	By Outcome Type	Turnaround Cases	Transformation examples	PA-CS-OT-TC	Transformation from failure to success
+PRACTICAL APPLICATIONS	Case Studies	By Outcome Type	Innovation Cases	Novel approaches	PA-CS-OT-IC	Novel approach implementations
+PRACTICAL APPLICATIONS	Case Studies	By Outcome Type	Scale Cases	Growth examples	PA-CS-OT-SC	Growth and expansion examples
+PRACTICAL APPLICATIONS	Case Studies	By Analysis Depth	Quick Case Summaries	Brief examples	PA-CS-AD-QC	Brief illustrative examples
+PRACTICAL APPLICATIONS	Case Studies	By Analysis Depth	Standard Case Analyses	Moderate-depth	PA-CS-AD-SA	Moderate-depth explorations
+PRACTICAL APPLICATIONS	Case Studies	By Analysis Depth	Deep Dive Cases	Comprehensive	PA-CS-AD-DD	Comprehensive multi-faceted examinations
+PRACTICAL APPLICATIONS	Case Studies	By Analysis Depth	Longitudinal Cases	Time-tracked	PA-CS-AD-LC	Evolution tracked over time
+PRACTICAL APPLICATIONS	Case Studies	By Industry/Context	Industry-Specific Cases	Sector examples	PA-CS-IC-IS	Sector-particular examples
+PRACTICAL APPLICATIONS	Case Studies	By Industry/Context	Cross-Industry Cases	Transferable lessons	PA-CS-IC-CI	Transferable lessons from other domains
+PRACTICAL APPLICATIONS	Case Studies	By Industry/Context	Academic Cases	Research examples	PA-CS-IC-AC	Research institution examples
+PRACTICAL APPLICATIONS	Case Studies	By Industry/Context	Practitioner Cases	Real-world scenarios	PA-CS-IC-PC	Real-world professional scenarios
+PRACTICAL APPLICATIONS	Examples & Demonstrations	Worked Examples	Step-by-Step Walkthroughs	Detailed demonstrations	PA-ED-WE-SW	Detailed process demonstrations
+PRACTICAL APPLICATIONS	Examples & Demonstrations	Worked Examples	Before/After Comparisons	Transformations	PA-ED-WE-BA	Transformation illustrations
+PRACTICAL APPLICATIONS	Examples & Demonstrations	Worked Examples	Annotated Examples	Explained samples	PA-ED-WE-AE	Explained samples with commentary
+PRACTICAL APPLICATIONS	Examples & Demonstrations	Worked Examples	Progressive Examples	Simple to complex	PA-ED-WE-PE	Simple to complex scaffolding
+PRACTICAL APPLICATIONS	Examples & Demonstrations	Sample Artifacts	Sample Reports	Deliverable documents	PA-ED-SA-SR	Example deliverable documents
+PRACTICAL APPLICATIONS	Examples & Demonstrations	Sample Artifacts	Sample Analyses	Analytical samples	PA-ED-SA-SA	Completed analytical work samples
+PRACTICAL APPLICATIONS	Examples & Demonstrations	Sample Artifacts	Sample Presentations	Communication samples	PA-ED-SA-SP	Communication deliverable examples
+PRACTICAL APPLICATIONS	Examples & Demonstrations	Sample Artifacts	Sample Code/Queries	Technical samples	PA-ED-SA-SC	Technical implementation samples
+PRACTICAL APPLICATIONS	Examples & Demonstrations	Demonstrations	Video Demonstrations	Visual recordings	PA-ED-DM-VD	Visual process recordings
+PRACTICAL APPLICATIONS	Examples & Demonstrations	Demonstrations	Live Demonstrations	Real-time execution	PA-ED-DM-LD	Real-time execution examples
+PRACTICAL APPLICATIONS	Examples & Demonstrations	Demonstrations	Screen Recordings	Software captures	PA-ED-DM-SR	Software/tool usage captures
+PRACTICAL APPLICATIONS	Examples & Demonstrations	Demonstrations	Interactive Simulations	Hands-on environments	PA-ED-DM-IS	Hands-on exploratory environments
+PRACTICAL APPLICATIONS	Use Cases & Applications	By Application Context	Internal Use Cases	Organization-internal	PA-UC-AC-IU	Organization-internal applications
+PRACTICAL APPLICATIONS	Use Cases & Applications	By Application Context	Customer-Facing Use Cases	External users	PA-UC-AC-CF	External user applications
+PRACTICAL APPLICATIONS	Use Cases & Applications	By Application Context	Partner/Vendor Use Cases	B2B contexts	PA-UC-AC-PV	B2B context applications
+PRACTICAL APPLICATIONS	Use Cases & Applications	By Application Context	Research Use Cases	Academic/scientific	PA-UC-AC-RU	Academic/scientific applications
+PRACTICAL APPLICATIONS	Use Cases & Applications	By Problem Type	Diagnostic Use Cases	Problem identification	PA-UC-PT-DG	Problem identification scenarios
+PRACTICAL APPLICATIONS	Use Cases & Applications	By Problem Type	Optimization Use Cases	Improvement scenarios	PA-UC-PT-OP	Improvement implementation scenarios
+PRACTICAL APPLICATIONS	Use Cases & Applications	By Problem Type	Troubleshooting Use Cases	Issue resolution	PA-UC-PT-TS	Issue resolution scenarios
+PRACTICAL APPLICATIONS	Use Cases & Applications	By Problem Type	Innovation Use Cases	Novel solutions	PA-UC-PT-IN	Novel solution development scenarios
+PROCEDURAL KNOWLEDGE	Tutorials & How-To Guides	By Complexity Level	Beginner Tutorials	Entry-level	PK-TH-CL-BG	Entry-level foundational instruction
+PROCEDURAL KNOWLEDGE	Tutorials & How-To Guides	By Complexity Level	Intermediate Guides	Building on basics	PK-TH-CL-IM	Building on basics with more complexity
+PROCEDURAL KNOWLEDGE	Tutorials & How-To Guides	By Complexity Level	Advanced Tutorials	Expert-level	PK-TH-CL-AD	Expert-level sophisticated procedures
+PROCEDURAL KNOWLEDGE	Tutorials & How-To Guides	By Complexity Level	Master-Level Guides	Cutting-edge	PK-TH-CL-MA	Cutting-edge techniques for specialists
+PROCEDURAL KNOWLEDGE	Tutorials & How-To Guides	By Format Type	Written Step-by-Step Guides	Text-based	PK-TH-FT-WR	Text-based procedural instructions
+PROCEDURAL KNOWLEDGE	Tutorials & How-To Guides	By Format Type	Video Tutorials	Visual instruction	PK-TH-FT-VD	Visual demonstration instruction
+PROCEDURAL KNOWLEDGE	Tutorials & How-To Guides	By Format Type	Interactive Tutorials	Hands-on guided	PK-TH-FT-IN	Hands-on guided learning
+PROCEDURAL KNOWLEDGE	Tutorials & How-To Guides	By Format Type	Audio Guides	Podcast format	PK-TH-FT-AU	Podcast/audio instruction formats
+PROCEDURAL KNOWLEDGE	Tutorials & How-To Guides	By Format Type	Hybrid Formats	Multi-modal	PK-TH-FT-HY	Multi-modal combined instruction
+PROCEDURAL KNOWLEDGE	Tutorials & How-To Guides	By Scope	Quick Starts	Rapid onboarding	PK-TH-SC-QS	Rapid onboarding minimum-viable instruction
+PROCEDURAL KNOWLEDGE	Tutorials & How-To Guides	By Scope	Comprehensive Guides	End-to-end coverage	PK-TH-SC-CG	Complete end-to-end coverage
+PROCEDURAL KNOWLEDGE	Tutorials & How-To Guides	By Scope	Task-Specific Tutorials	Single procedure	PK-TH-SC-TS	Single procedure focused instruction
+PROCEDURAL KNOWLEDGE	Tutorials & How-To Guides	By Scope	Project-Based Tutorials	Multi-task integrated	PK-TH-SC-PB	Multi-task integrated instruction
+PROCEDURAL KNOWLEDGE	Processes & Workflows	Standard Operating Procedures	Core Process SOPs	Essential operations	PK-PW-SP-CP	Essential operational procedures
+PROCEDURAL KNOWLEDGE	Processes & Workflows	Standard Operating Procedures	Exception Handling SOPs	Non-standard situations	PK-PW-SP-EH	Non-standard situation procedures
+PROCEDURAL KNOWLEDGE	Processes & Workflows	Standard Operating Procedures	Emergency Procedures	Crisis response	PK-PW-SP-EP	Crisis response protocols
+PROCEDURAL KNOWLEDGE	Processes & Workflows	Standard Operating Procedures	Compliance Procedures	Regulatory requirements	PK-PW-SP-CO	Regulatory requirement processes
+PROCEDURAL KNOWLEDGE	Processes & Workflows	Workflow Structures	Sequential Workflows	Linear processes	PK-PW-WS-SQ	Linear step-by-step processes
+PROCEDURAL KNOWLEDGE	Processes & Workflows	Workflow Structures	Parallel Workflows	Concurrent activities	PK-PW-WS-PA	Concurrent activity processes
+PROCEDURAL KNOWLEDGE	Processes & Workflows	Workflow Structures	Conditional Workflows	Decision-branching	PK-PW-WS-CN	Decision-branching processes
+PROCEDURAL KNOWLEDGE	Processes & Workflows	Workflow Structures	Iterative Workflows	Repeating cycles	PK-PW-WS-IT	Repeating cycle processes
+PROCEDURAL KNOWLEDGE	Processes & Workflows	Workflow Structures	Adaptive Workflows	Context-responsive	PK-PW-WS-AD	Context-responsive processes
+PROCEDURAL KNOWLEDGE	Processes & Workflows	Process Documentation	Process Maps	Visual workflows	PK-PW-PD-PM	Visual workflow representations
+PROCEDURAL KNOWLEDGE	Processes & Workflows	Process Documentation	Flowcharts	Decision diagrams	PK-PW-PD-FC	Decision and action flow diagrams
+PROCEDURAL KNOWLEDGE	Processes & Workflows	Process Documentation	Swimlane Diagrams	Role-based views	PK-PW-PD-SL	Role-based process views
+PROCEDURAL KNOWLEDGE	Processes & Workflows	Process Documentation	BPMN Diagrams	Standardized notation	PK-PW-PD-BP	Standardized business process notation
+PROCEDURAL KNOWLEDGE	Templates & Reusable Assets	Document Templates	Report Templates	Structured formats	PK-TR-DT-RT	Structured document formats
+PROCEDURAL KNOWLEDGE	Templates & Reusable Assets	Document Templates	Presentation Templates	Slide frameworks	PK-TR-DT-PT	Slide deck frameworks
+PROCEDURAL KNOWLEDGE	Templates & Reusable Assets	Document Templates	Email Templates	Message formats	PK-TR-DT-ET	Communication message formats
+PROCEDURAL KNOWLEDGE	Templates & Reusable Assets	Document Templates	Proposal Templates	Recommendation structures	PK-TR-DT-PP	Recommendation document structures
+PROCEDURAL KNOWLEDGE	Templates & Reusable Assets	Document Templates	Meeting Agenda Templates	Session planning	PK-TR-DT-MA	Session planning formats
+PROCEDURAL KNOWLEDGE	Templates & Reusable Assets	Analytical Templates	Analysis Frameworks	Evaluation formats	PK-TR-AT-AF	Pre-structured evaluation formats
+PROCEDURAL KNOWLEDGE	Templates & Reusable Assets	Analytical Templates	Dashboard Templates	Visualization layouts	PK-TR-AT-DT	Visualization layout structures
+PROCEDURAL KNOWLEDGE	Templates & Reusable Assets	Analytical Templates	Query Templates	SQL/code patterns	PK-TR-AT-QT	SQL/code pattern libraries
+PROCEDURAL KNOWLEDGE	Templates & Reusable Assets	Analytical Templates	Calculation Templates	Formula frameworks	PK-TR-AT-CT	Formula and computation frameworks
+PROCEDURAL KNOWLEDGE	Templates & Reusable Assets	Operational Templates	Project Plan Templates	Initiative planning	PK-TR-OT-PP	Initiative planning structures
+PROCEDURAL KNOWLEDGE	Templates & Reusable Assets	Operational Templates	Checklist Templates	Verification lists	PK-TR-OT-CL	Verification procedure lists
+PROCEDURAL KNOWLEDGE	Templates & Reusable Assets	Operational Templates	Tracking Templates	Progress monitoring	PK-TR-OT-TT	Progress monitoring frameworks
+PROCEDURAL KNOWLEDGE	Templates & Reusable Assets	Operational Templates	Review Templates	Evaluation documentation	PK-TR-OT-RT	Evaluation documentation formats
+SKILLS & COMPETENCIES	Hard Skills (Technical)	Domain-Specific Technical Skills	Core Technical Competencies	Fundamental abilities	SC-HS-DT-CT	Fundamental field-specific abilities
+SKILLS & COMPETENCIES	Hard Skills (Technical)	Domain-Specific Technical Skills	Specialized Technical Skills	Advanced capabilities	SC-HS-DT-ST	Advanced niche capabilities
+SKILLS & COMPETENCIES	Hard Skills (Technical)	Domain-Specific Technical Skills	Tool Proficiencies	Software mastery	SC-HS-DT-TP	Software and equipment mastery
+SKILLS & COMPETENCIES	Hard Skills (Technical)	Domain-Specific Technical Skills	Technical Certifications	Validated credentials	SC-HS-DT-TC	Validated technical credentials
+SKILLS & COMPETENCIES	Hard Skills (Technical)	Analytical Skills	Data Analysis	Information examination	SC-HS-AS-DA	Information examination and interpretation
+SKILLS & COMPETENCIES	Hard Skills (Technical)	Analytical Skills	Statistical Analysis	Quantitative methods	SC-HS-AS-SA	Quantitative method application
+SKILLS & COMPETENCIES	Hard Skills (Technical)	Analytical Skills	Financial Analysis	Economic evaluation	SC-HS-AS-FA	Economic and monetary evaluation
+SKILLS & COMPETENCIES	Hard Skills (Technical)	Analytical Skills	Research Skills	Investigation methods	SC-HS-AS-RS	Investigation and inquiry methods
+SKILLS & COMPETENCIES	Hard Skills (Technical)	Analytical Skills	Diagnostic Skills	Problem identification	SC-HS-AS-DS	Problem identification capabilities
+SKILLS & COMPETENCIES	Hard Skills (Technical)	Technical Communication	Technical Writing	Documentation creation	SC-HS-TC-TW	Documentation and specification creation
+SKILLS & COMPETENCIES	Hard Skills (Technical)	Technical Communication	Data Visualization	Graphic representation	SC-HS-TC-DV	Information graphic representation
+SKILLS & COMPETENCIES	Hard Skills (Technical)	Technical Communication	Technical Presentation	Concept explanation	SC-HS-TC-TP	Complex concept explanation
+SKILLS & COMPETENCIES	Hard Skills (Technical)	Technical Communication	Code Documentation	Technical explanation	SC-HS-TC-CD	Technical artifact explanation
+SKILLS & COMPETENCIES	Soft Skills (Interpersonal)	Communication Skills	Verbal Communication	Spoken interaction	SC-SS-CS-VC	Spoken interaction effectiveness
+SKILLS & COMPETENCIES	Soft Skills (Interpersonal)	Communication Skills	Written Communication	Text-based messages	SC-SS-CS-WC	Text-based message clarity
+SKILLS & COMPETENCIES	Soft Skills (Interpersonal)	Communication Skills	Presentation Skills	Audience engagement	SC-SS-CS-PS	Audience engagement and delivery
+SKILLS & COMPETENCIES	Soft Skills (Interpersonal)	Communication Skills	Active Listening	Attentive understanding	SC-SS-CS-AL	Attentive understanding practices
+SKILLS & COMPETENCIES	Soft Skills (Interpersonal)	Communication Skills	Storytelling	Narrative construction	SC-SS-CS-ST	Narrative construction for impact
+SKILLS & COMPETENCIES	Soft Skills (Interpersonal)	Collaboration Skills	Teamwork	Cooperative work	SC-SS-CB-TW	Cooperative work practices
+SKILLS & COMPETENCIES	Soft Skills (Interpersonal)	Collaboration Skills	Cross-Functional Collaboration	Inter-department	SC-SS-CB-CF	Inter-department coordination
+SKILLS & COMPETENCIES	Soft Skills (Interpersonal)	Collaboration Skills	Stakeholder Management	Relationship cultivation	SC-SS-CB-SM	Relationship cultivation
+SKILLS & COMPETENCIES	Soft Skills (Interpersonal)	Collaboration Skills	Conflict Resolution	Disagreement navigation	SC-SS-CB-CR	Disagreement navigation
+SKILLS & COMPETENCIES	Soft Skills (Interpersonal)	Collaboration Skills	Negotiation	Agreement facilitation	SC-SS-CB-NG	Mutual agreement facilitation
+SKILLS & COMPETENCIES	Soft Skills (Interpersonal)	Leadership Skills	Strategic Leadership	Vision setting	SC-SS-LS-SL	Vision and direction setting
+SKILLS & COMPETENCIES	Soft Skills (Interpersonal)	Leadership Skills	People Leadership	Team development	SC-SS-LS-PL	Team development and motivation
+SKILLS & COMPETENCIES	Soft Skills (Interpersonal)	Leadership Skills	Change Leadership	Transformation facilitation	SC-SS-LS-CL	Transformation facilitation
+SKILLS & COMPETENCIES	Soft Skills (Interpersonal)	Leadership Skills	Influence Without Authority	Persuasion	SC-SS-LS-IA	Persuasion and advocacy
+SKILLS & COMPETENCIES	Cognitive Skills	Critical Thinking	Logical Reasoning	Argument evaluation	SC-CG-CT-LR	Structured argument evaluation
+SKILLS & COMPETENCIES	Cognitive Skills	Critical Thinking	Evidence Evaluation	Credibility assessment	SC-CG-CT-EE	Source credibility assessment
+SKILLS & COMPETENCIES	Cognitive Skills	Critical Thinking	Assumption Identification	Belief recognition	SC-CG-CT-AI	Underlying belief recognition
+SKILLS & COMPETENCIES	Cognitive Skills	Critical Thinking	Bias Recognition	Distortion detection	SC-CG-CT-BR	Prejudice and distortion detection
+SKILLS & COMPETENCIES	Cognitive Skills	Creative Thinking	Ideation	Concept generation	SC-CG-CR-ID	Novel concept generation
+SKILLS & COMPETENCIES	Cognitive Skills	Creative Thinking	Innovation	Solution development	SC-CG-CR-IN	New solution development
+SKILLS & COMPETENCIES	Cognitive Skills	Creative Thinking	Lateral Thinking	Non-linear approach	SC-CG-CR-LT	Non-linear problem approach
+SKILLS & COMPETENCIES	Cognitive Skills	Creative Thinking	Synthesis	Element combining	SC-CG-CR-SY	Combining elements into new wholes
+SKILLS & COMPETENCIES	Cognitive Skills	Meta-Cognitive Skills	Self-Regulation	Personal management	SC-CG-MC-SR	Personal learning management
+SKILLS & COMPETENCIES	Cognitive Skills	Meta-Cognitive Skills	Reflection	Insight development	SC-CG-MC-RF	Experience-based insight development
+SKILLS & COMPETENCIES	Cognitive Skills	Meta-Cognitive Skills	Learning Agility	Rapid acquisition	SC-CG-MC-LA	Rapid new knowledge acquisition
+SKILLS & COMPETENCIES	Cognitive Skills	Meta-Cognitive Skills	Adaptive Thinking	Context-responsive	SC-CG-MC-AT	Context-responsive cognition
+SKILLS & COMPETENCIES	Competency Progression	Bloom's Taxonomy Levels	Remember	Information recall	SC-CP-BT-RE	Information recall and recognition
+SKILLS & COMPETENCIES	Competency Progression	Bloom's Taxonomy Levels	Understand	Meaning comprehension	SC-CP-BT-UN	Meaning comprehension and interpretation
+SKILLS & COMPETENCIES	Competency Progression	Bloom's Taxonomy Levels	Apply	Knowledge use	SC-CP-BT-AP	Knowledge use in new situations
+SKILLS & COMPETENCIES	Competency Progression	Bloom's Taxonomy Levels	Analyze	Information breakdown	SC-CP-BT-AN	Information breakdown and relationship identification
+SKILLS & COMPETENCIES	Competency Progression	Bloom's Taxonomy Levels	Evaluate	Judgment assessment	SC-CP-BT-EV	Judgment and criteria-based assessment
+SKILLS & COMPETENCIES	Competency Progression	Bloom's Taxonomy Levels	Create	Novel generation	SC-CP-BT-CR	Novel product or viewpoint generation
+SKILLS & COMPETENCIES	Competency Progression	Proficiency Levels	Awareness	Basic familiarity	SC-CP-PL-AW	Basic familiarity with concepts
+SKILLS & COMPETENCIES	Competency Progression	Proficiency Levels	Knowledge	Theoretical understanding	SC-CP-PL-KN	Theoretical understanding
+SKILLS & COMPETENCIES	Competency Progression	Proficiency Levels	Skill	Practical application	SC-CP-PL-SK	Practical application ability
+SKILLS & COMPETENCIES	Competency Progression	Proficiency Levels	Mastery	Expert proficiency	SC-CP-PL-MA	Expert-level proficiency
+SKILLS & COMPETENCIES	Competency Progression	Proficiency Levels	Thought Leadership	Field advancement	SC-CP-PL-TL	Field advancement contribution
+TOOLS & RESOURCES	Software & Platforms	Core Professional Tools	Primary Work Platforms	Main software	TR-SP-CP-PW	Main software for daily tasks
+TOOLS & RESOURCES	Software & Platforms	Core Professional Tools	Productivity Suites	Office tools	TR-SP-CP-PS	Office and collaboration tools
+TOOLS & RESOURCES	Software & Platforms	Core Professional Tools	Communication Platforms	Messaging tools	TR-SP-CP-CM	Messaging and meeting tools
+TOOLS & RESOURCES	Software & Platforms	Core Professional Tools	Project Management Tools	Work tracking	TR-SP-CP-PM	Work tracking and coordination
+TOOLS & RESOURCES	Software & Platforms	Specialized Domain Tools	Analysis Tools	Examination software	TR-SP-SD-AT	Data examination software
+TOOLS & RESOURCES	Software & Platforms	Specialized Domain Tools	Visualization Tools	Graphic platforms	TR-SP-SD-VT	Graphic creation platforms
+TOOLS & RESOURCES	Software & Platforms	Specialized Domain Tools	Development Tools	Building environments	TR-SP-SD-DT	Code and system building environments
+TOOLS & RESOURCES	Software & Platforms	Specialized Domain Tools	Design Tools	Creative software	TR-SP-SD-DS	Creative and UX software
+TOOLS & RESOURCES	Software & Platforms	Specialized Domain Tools	Research Tools	Investigation platforms	TR-SP-SD-RT	Investigation and literature platforms
+TOOLS & RESOURCES	Software & Platforms	Automation & Integration	Workflow Automation	Process automation	TR-SP-AI-WA	Process automation tools
+TOOLS & RESOURCES	Software & Platforms	Automation & Integration	Integration Platforms	System connection	TR-SP-AI-IP	System connection tools
+TOOLS & RESOURCES	Software & Platforms	Automation & Integration	API Tools	Interface utilities	TR-SP-AI-AP	Interface development utilities
+TOOLS & RESOURCES	Software & Platforms	Automation & Integration	Scripting Environments	Automation programming	TR-SP-AI-SE	Automation programming platforms
+TOOLS & RESOURCES	Reference Materials	Documentation Types	API Documentation	Interface specs	TR-RM-DT-AP	Interface specifications
+TOOLS & RESOURCES	Reference Materials	Documentation Types	Technical Specifications	System requirements	TR-RM-DT-TS	System requirement details
+TOOLS & RESOURCES	Reference Materials	Documentation Types	User Manuals	Tool guides	TR-RM-DT-UM	Tool usage guides
+TOOLS & RESOURCES	Reference Materials	Documentation Types	Architecture Diagrams	Structure visuals	TR-RM-DT-AD	System structure visualizations
+TOOLS & RESOURCES	Reference Materials	Documentation Types	Configuration Guides	Setup instructions	TR-RM-DT-CG	Setup and customization instructions
+TOOLS & RESOURCES	Reference Materials	Reference Resources	Style Guides	Standards documentation	TR-RM-RR-SG	Standards and conventions documentation
+TOOLS & RESOURCES	Reference Materials	Reference Resources	Coding Standards	Development guidelines	TR-RM-RR-CS	Development practice guidelines
+TOOLS & RESOURCES	Reference Materials	Reference Resources	Best Practice Libraries	Approach collections	TR-RM-RR-BP	Proven approach collections
+TOOLS & RESOURCES	Reference Materials	Reference Resources	Pattern Libraries	Solution catalogs	TR-RM-RR-PL	Reusable solution catalogs
+TOOLS & RESOURCES	Reference Materials	Quick Reference	Cheat Sheets	Information summaries	TR-RM-QR-CH	Condensed information summaries
+TOOLS & RESOURCES	Reference Materials	Quick Reference	Quick Reference Cards	Facts at-a-glance	TR-RM-QR-QR	Essential facts at-a-glance
+TOOLS & RESOURCES	Reference Materials	Quick Reference	Keyboard Shortcuts	Efficiency accelerators	TR-RM-QR-KS	Efficiency accelerators
+TOOLS & RESOURCES	Reference Materials	Quick Reference	Formula References	Calculation lookups	TR-RM-QR-FR	Calculation quick-lookups
+TOOLS & RESOURCES	Learning Resources	Formal Education	Courses	Structured programs	TR-LR-FE-CR	Structured learning programs
+TOOLS & RESOURCES	Learning Resources	Formal Education	Certifications	Credential programs	TR-LR-FE-CT	Credential-earning programs
+TOOLS & RESOURCES	Learning Resources	Formal Education	Degree Programs	Academic paths	TR-LR-FE-DP	Academic qualification paths
+TOOLS & RESOURCES	Learning Resources	Formal Education	Boot Camps	Intensive programs	TR-LR-FE-BC	Intensive skill development programs
+TOOLS & RESOURCES	Learning Resources	Self-Directed Learning	Books & Textbooks	In-depth written	TR-LR-SD-BK	In-depth written resources
+TOOLS & RESOURCES	Learning Resources	Self-Directed Learning	Online Courses	Self-paced digital	TR-LR-SD-OC	Self-paced digital learning
+TOOLS & RESOURCES	Learning Resources	Self-Directed Learning	Video Libraries	Visual collections	TR-LR-SD-VL	Visual learning collections
+TOOLS & RESOURCES	Learning Resources	Self-Directed Learning	Podcasts	Audio content	TR-LR-SD-PD	Audio learning content
+TOOLS & RESOURCES	Learning Resources	Self-Directed Learning	Newsletters	Update subscriptions	TR-LR-SD-NL	Regular update subscriptions
+TOOLS & RESOURCES	Learning Resources	Community Resources	Professional Communities	Peer networks	TR-LR-CR-PC	Peer networks and forums
+TOOLS & RESOURCES	Learning Resources	Community Resources	Mentorship Programs	Guided relationships	TR-LR-CR-MP	Guided learning relationships
+TOOLS & RESOURCES	Learning Resources	Community Resources	Conferences & Events	Learning gatherings	TR-LR-CR-CE	In-person learning gatherings
+TOOLS & RESOURCES	Learning Resources	Community Resources	User Groups	Tool communities	TR-LR-CR-UG	Tool-specific community gatherings
+LEARNING PATHWAYS	Roadmaps & Learning Paths	Career Progression Paths	Entry-Level Path	Foundation building	LP-RL-CP-EL	Foundation building trajectory
+LEARNING PATHWAYS	Roadmaps & Learning Paths	Career Progression Paths	Mid-Career Path	Advancement	LP-RL-CP-MC	Advancement and specialization
+LEARNING PATHWAYS	Roadmaps & Learning Paths	Career Progression Paths	Senior/Leadership Path	Strategic focus	LP-RL-CP-SL	Strategic and management focus
+LEARNING PATHWAYS	Roadmaps & Learning Paths	Career Progression Paths	Specialist Path	Deep expertise	LP-RL-CP-SP	Deep expertise development
+LEARNING PATHWAYS	Roadmaps & Learning Paths	Career Progression Paths	Generalist Path	Broad capability	LP-RL-CP-GP	Broad capability building
+LEARNING PATHWAYS	Roadmaps & Learning Paths	Skill Development Roadmaps	Technical Skill Roadmaps	Hard skill sequences	LP-RL-SD-TS	Hard skill acquisition sequences
+LEARNING PATHWAYS	Roadmaps & Learning Paths	Skill Development Roadmaps	Soft Skill Development Plans	Interpersonal growth	LP-RL-SD-SS	Interpersonal growth trajectories
+LEARNING PATHWAYS	Roadmaps & Learning Paths	Skill Development Roadmaps	Tool Mastery Paths	Platform proficiency	LP-RL-SD-TM	Platform proficiency journeys
+LEARNING PATHWAYS	Roadmaps & Learning Paths	Skill Development Roadmaps	Domain Knowledge Paths	Subject expertise	LP-RL-SD-DK	Subject expertise building
+LEARNING PATHWAYS	Roadmaps & Learning Paths	Learning Sequences	Prerequisite Chains	Prior knowledge	LP-RL-LS-PC	Required prior knowledge structures
+LEARNING PATHWAYS	Roadmaps & Learning Paths	Learning Sequences	Progressive Complexity	Scaffolded difficulty	LP-RL-LS-PX	Scaffolded difficulty increases
+LEARNING PATHWAYS	Roadmaps & Learning Paths	Learning Sequences	Parallel Learning Tracks	Concurrent development	LP-RL-LS-PT	Concurrent skill development
+LEARNING PATHWAYS	Roadmaps & Learning Paths	Learning Sequences	Integration Milestones	Cross-skill synthesis	LP-RL-LS-IM	Cross-skill synthesis points
+LEARNING PATHWAYS	Assessment & Validation	Formative Assessment	Knowledge Checks	Understanding verification	LP-AV-FA-KC	Understanding verification quizzes
+LEARNING PATHWAYS	Assessment & Validation	Formative Assessment	Skill Demonstrations	Ability displays	LP-AV-FA-SD	Ability display exercises
+LEARNING PATHWAYS	Assessment & Validation	Formative Assessment	Self-Assessments	Personal evaluations	LP-AV-FA-SA	Personal progress evaluations
+LEARNING PATHWAYS	Assessment & Validation	Formative Assessment	Peer Reviews	Colleague feedback	LP-AV-FA-PR	Colleague feedback mechanisms
+LEARNING PATHWAYS	Assessment & Validation	Formative Assessment	Practice Exercises	Skill reinforcement	LP-AV-FA-PE	Skill reinforcement activities
+LEARNING PATHWAYS	Assessment & Validation	Summative Assessment	Certification Exams	Credential tests	LP-AV-SA-CE	Credential validation tests
+LEARNING PATHWAYS	Assessment & Validation	Summative Assessment	Portfolio Evaluations	Work sample assessment	LP-AV-SA-PE	Work sample assessments
+LEARNING PATHWAYS	Assessment & Validation	Summative Assessment	Performance Reviews	Job evaluations	LP-AV-SA-PR	Job performance evaluations
+LEARNING PATHWAYS	Assessment & Validation	Summative Assessment	Project Assessments	Deliverable evaluations	LP-AV-SA-PA	Deliverable quality evaluations
+LEARNING PATHWAYS	Assessment & Validation	Summative Assessment	Case Competitions	Problem-solving contests	LP-AV-SA-CC	Applied problem-solving contests
+LEARNING PATHWAYS	Assessment & Validation	Competency Validation	Rubrics	Criteria frameworks	LP-AV-CV-RB	Criteria-based evaluation frameworks
+LEARNING PATHWAYS	Assessment & Validation	Competency Validation	Competency Matrices	Skill mapping	LP-AV-CV-CM	Skill level mapping tools
+LEARNING PATHWAYS	Assessment & Validation	Competency Validation	360-Degree Feedback	Multi-source evaluations	LP-AV-CV-36	Multi-source evaluations
+LEARNING PATHWAYS	Assessment & Validation	Competency Validation	Skill Badges	Micro-credentials	LP-AV-CV-SB	Micro-credential achievements
+LEARNING PATHWAYS	Professional Development	Career Development	Career Planning	Professional trajectory	LP-PD-CD-CP	Long-term professional trajectory
+LEARNING PATHWAYS	Professional Development	Career Development	Skill Gap Analysis	Development needs	LP-PD-CD-SG	Development need identification
+LEARNING PATHWAYS	Professional Development	Career Development	Development Plans	Growth programs	LP-PD-CD-DP	Structured growth programs
+LEARNING PATHWAYS	Professional Development	Career Development	Mentorship	Guided development	LP-PD-CD-MT	Guided professional development
+LEARNING PATHWAYS	Professional Development	Career Development	Coaching	Performance support	LP-PD-CD-CO	Performance enhancement support
+LEARNING PATHWAYS	Professional Development	Continuous Learning	Learning Goals	Knowledge objectives	LP-PD-CL-LG	Specific knowledge objectives
+LEARNING PATHWAYS	Professional Development	Continuous Learning	Learning Habits	Study practices	LP-PD-CL-LH	Sustainable study practices
+LEARNING PATHWAYS	Professional Development	Continuous Learning	Reflection Practices	Experience learning	LP-PD-CL-RP	Experience-based learning
+LEARNING PATHWAYS	Professional Development	Continuous Learning	Knowledge Sharing	Teaching reinforcement	LP-PD-CL-KS	Teaching to reinforce learning
+LEARNING PATHWAYS	Professional Development	Continuous Learning	Community Participation	Peer engagement	LP-PD-CL-CM	Peer learning engagement
+METRICS & MEASUREMENT	Key Performance Indicators	KPI Categories	Leading Indicators	Predictive metrics	MM-KP-KC-LI	Predictive forward-looking metrics
+METRICS & MEASUREMENT	Key Performance Indicators	KPI Categories	Lagging Indicators	Outcome metrics	MM-KP-KC-LA	Outcome-based retrospective metrics
+METRICS & MEASUREMENT	Key Performance Indicators	KPI Categories	Input Metrics	Resource measurements	MM-KP-KC-IM	Resource and effort measurements
+METRICS & MEASUREMENT	Key Performance Indicators	KPI Categories	Output Metrics	Result measurements	MM-KP-KC-OM	Deliverable and result measurements
+METRICS & MEASUREMENT	Key Performance Indicators	KPI Categories	Process Metrics	Efficiency measurements	MM-KP-KC-PM	Efficiency and quality measurements
+METRICS & MEASUREMENT	Key Performance Indicators	KPI Structures	KPI Hierarchies	Cascading frameworks	MM-KP-KS-KH	Cascading metric frameworks
+METRICS & MEASUREMENT	Key Performance Indicators	KPI Structures	KPI Targets	Goal-setting	MM-KP-KS-KT	Goal-setting approaches
+METRICS & MEASUREMENT	Key Performance Indicators	KPI Structures	KPI Thresholds	Performance boundaries	MM-KP-KS-KB	Performance boundary definitions
+METRICS & MEASUREMENT	Key Performance Indicators	KPI Structures	KPI Dashboards	Visual monitoring	MM-KP-KS-KD	Visual monitoring displays
+METRICS & MEASUREMENT	Analysis Types	Descriptive Analytics	What Happened	Historical analysis	MM-AT-DA-WH	Historical performance analysis
+METRICS & MEASUREMENT	Analysis Types	Descriptive Analytics	Trend Analysis	Pattern identification	MM-AT-DA-TA	Pattern identification over time
+METRICS & MEASUREMENT	Analysis Types	Descriptive Analytics	Comparative Analysis	Benchmarking	MM-AT-DA-CA	Benchmarking against standards
+METRICS & MEASUREMENT	Analysis Types	Descriptive Analytics	Segmentation Analysis	Category breakdown	MM-AT-DA-SA	Breakdown by categories
+METRICS & MEASUREMENT	Analysis Types	Diagnostic Analytics	Why It Happened	Causal identification	MM-AT-DG-WI	Causal factor identification
+METRICS & MEASUREMENT	Analysis Types	Diagnostic Analytics	Root Cause Analysis	Deep investigation	MM-AT-DG-RC	Deep issue investigation
+METRICS & MEASUREMENT	Analysis Types	Diagnostic Analytics	Correlation Analysis	Relationship identification	MM-AT-DG-CO	Relationship identification
+METRICS & MEASUREMENT	Analysis Types	Diagnostic Analytics	Variance Analysis	Deviation analysis	MM-AT-DG-VA	Deviation from expectations
+METRICS & MEASUREMENT	Analysis Types	Predictive & Prescriptive	Predictive Analytics	Future forecasting	MM-AT-PP-PA	Future outcome forecasting
+METRICS & MEASUREMENT	Analysis Types	Predictive & Prescriptive	Prescriptive Analytics	Recommended actions	MM-AT-PP-PR	Recommended actions
+METRICS & MEASUREMENT	Analysis Types	Predictive & Prescriptive	Scenario Analysis	What-if exploration	MM-AT-PP-SA	What-if exploration
+METRICS & MEASUREMENT	Analysis Types	Predictive & Prescriptive	Optimization Analysis	Best outcomes	MM-AT-PP-OA	Best outcome identification
+METRICS & MEASUREMENT	Reporting & Communication	Report Types	Operational Reports	Status updates	MM-RC-RT-OR	Day-to-day status updates
+METRICS & MEASUREMENT	Reporting & Communication	Report Types	Analytical Reports	Deep-dive	MM-RC-RT-AR	Deep-dive investigations
+METRICS & MEASUREMENT	Reporting & Communication	Report Types	Executive Reports	High-level summaries	MM-RC-RT-ER	High-level summaries
+METRICS & MEASUREMENT	Reporting & Communication	Report Types	Ad-hoc Reports	Custom analyses	MM-RC-RT-AH	Custom one-time analyses
+METRICS & MEASUREMENT	Reporting & Communication	Visualization Types	Dashboards	Real-time displays	MM-RC-VT-DB	Real-time monitoring displays
+METRICS & MEASUREMENT	Reporting & Communication	Visualization Types	Charts & Graphs	Data visuals	MM-RC-VT-CG	Data visual representations
+METRICS & MEASUREMENT	Reporting & Communication	Visualization Types	Infographics	Information graphics	MM-RC-VT-IF	Information graphics
+METRICS & MEASUREMENT	Reporting & Communication	Visualization Types	Data Stories	Narrative presentations	MM-RC-VT-DS	Narrative-driven presentations
+PROFESSIONAL CONTEXT	Standards & Best Practices	Industry Standards	Technical Standards	Specification requirements	PC-SB-IS-TS	Specification and protocol requirements
+PROFESSIONAL CONTEXT	Standards & Best Practices	Industry Standards	Process Standards	Methodology norms	PC-SB-IS-PS	Methodology and procedure norms
+PROFESSIONAL CONTEXT	Standards & Best Practices	Industry Standards	Quality Standards	Excellence criteria	PC-SB-IS-QS	Excellence criteria and benchmarks
+PROFESSIONAL CONTEXT	Standards & Best Practices	Industry Standards	Safety Standards	Risk prevention	PC-SB-IS-SS	Risk prevention requirements
+PROFESSIONAL CONTEXT	Standards & Best Practices	Best Practice Categories	Technical Best Practices	Technical approaches	PC-SB-BP-TB	Proven technical approaches
+PROFESSIONAL CONTEXT	Standards & Best Practices	Best Practice Categories	Process Best Practices	Workflow methods	PC-SB-BP-PB	Optimized workflow methods
+PROFESSIONAL CONTEXT	Standards & Best Practices	Best Practice Categories	Communication Best Practices	Interaction patterns	PC-SB-BP-CB	Effective interaction patterns
+PROFESSIONAL CONTEXT	Standards & Best Practices	Best Practice Categories	Management Best Practices	Leadership methods	PC-SB-BP-MB	Leadership and coordination methods
+PROFESSIONAL CONTEXT	Standards & Best Practices	Governance & Compliance	Regulatory Requirements	Legal compliance	PC-SB-GC-RR	Legal compliance mandates
+PROFESSIONAL CONTEXT	Standards & Best Practices	Governance & Compliance	Industry Regulations	Sector rules	PC-SB-GC-IR	Sector-specific rules
+PROFESSIONAL CONTEXT	Standards & Best Practices	Governance & Compliance	Data Privacy Standards	Information protection	PC-SB-GC-DP	Information protection requirements
+PROFESSIONAL CONTEXT	Standards & Best Practices	Governance & Compliance	Security Standards	Access controls	PC-SB-GC-SS	Protection and access controls
+PROFESSIONAL CONTEXT	Ethics & Professional Conduct	Ethical Frameworks	Professional Ethics	Moral standards	PC-EP-EF-PE	Field-specific moral standards
+PROFESSIONAL CONTEXT	Ethics & Professional Conduct	Ethical Frameworks	Business Ethics	Commercial principles	PC-EP-EF-BE	Commercial conduct principles
+PROFESSIONAL CONTEXT	Ethics & Professional Conduct	Ethical Frameworks	Research Ethics	Investigation integrity	PC-EP-EF-RE	Investigation integrity standards
+PROFESSIONAL CONTEXT	Ethics & Professional Conduct	Ethical Frameworks	Data Ethics	Information handling	PC-EP-EF-DE	Information handling principles
+PROFESSIONAL CONTEXT	Ethics & Professional Conduct	Professional Conduct	Codes of Conduct	Behavioral standards	PC-EP-PC-CC	Behavioral standards
+PROFESSIONAL CONTEXT	Ethics & Professional Conduct	Professional Conduct	Professional Boundaries	Scope limits	PC-EP-PC-PB	Appropriate scope limits
+PROFESSIONAL CONTEXT	Ethics & Professional Conduct	Professional Conduct	Confidentiality	Information protection	PC-EP-PC-CF	Information protection obligations
+PROFESSIONAL CONTEXT	Ethics & Professional Conduct	Professional Conduct	Conflict of Interest	Bias prevention	PC-EP-PC-CI	Bias prevention guidelines
+PROFESSIONAL CONTEXT	Industry Knowledge	Market Intelligence	Industry Trends	Sector direction	PC-IK-MI-IT	Sector direction and evolution
+PROFESSIONAL CONTEXT	Industry Knowledge	Market Intelligence	Competitive Landscape	Market analysis	PC-IK-MI-CL	Market player analysis
+PROFESSIONAL CONTEXT	Industry Knowledge	Market Intelligence	Emerging Technologies	New capabilities	PC-IK-MI-ET	New capability developments
+PROFESSIONAL CONTEXT	Industry Knowledge	Market Intelligence	Disruption Factors	Change forces	PC-IK-MI-DF	Change-driving forces
+PROFESSIONAL CONTEXT	Industry Knowledge	Organizational Context	Business Models	Value creation	PC-IK-OC-BM	Value creation structures
+PROFESSIONAL CONTEXT	Industry Knowledge	Organizational Context	Organizational Structures	Company arrangements	PC-IK-OC-OS	Company arrangement patterns
+PROFESSIONAL CONTEXT	Industry Knowledge	Organizational Context	Cultural Factors	Workplace values	PC-IK-OC-CF	Workplace value systems
+PROFESSIONAL CONTEXT	Industry Knowledge	Organizational Context	Political Dynamics	Power patterns	PC-IK-OC-PD	Power and influence patterns
+CONTENT ENGAGEMENT FORMATS	By Time Investment	Quick Reference	Cheat Sheets	One-page summaries	CE-TI-QR-CS	One-page summaries
+CONTENT ENGAGEMENT FORMATS	By Time Investment	Quick Reference	Quick Tips	Bite-sized advice	CE-TI-QR-QT	Bite-sized advice
+CONTENT ENGAGEMENT FORMATS	By Time Investment	Quick Reference	Flashcards	Rapid recall	CE-TI-QR-FC	Rapid recall practice
+CONTENT ENGAGEMENT FORMATS	By Time Investment	Quick Reference	Micro-Learning	2-5 minute modules	CE-TI-QR-ML	2-5 minute modules
+CONTENT ENGAGEMENT FORMATS	By Time Investment	Standard Learning	Article Reading	Written content	CE-TI-SL-AR	Written content consumption
+CONTENT ENGAGEMENT FORMATS	By Time Investment	Standard Learning	Video Lessons	Short videos	CE-TI-SL-VL	Short instructional videos
+CONTENT ENGAGEMENT FORMATS	By Time Investment	Standard Learning	Podcast Episodes	Audio segments	CE-TI-SL-PE	Audio learning segments
+CONTENT ENGAGEMENT FORMATS	By Time Investment	Standard Learning	Practice Exercises	Skill activities	CE-TI-SL-PX	Skill reinforcement activities
+CONTENT ENGAGEMENT FORMATS	By Time Investment	Deep Dive	Comprehensive Courses	Multi-lesson	CE-TI-DD-CC	Multi-lesson programs
+CONTENT ENGAGEMENT FORMATS	By Time Investment	Deep Dive	Book Chapters	In-depth reading	CE-TI-DD-BC	In-depth reading
+CONTENT ENGAGEMENT FORMATS	By Time Investment	Deep Dive	Case Study Analysis	Detailed examination	CE-TI-DD-CA	Detailed example examination
+CONTENT ENGAGEMENT FORMATS	By Time Investment	Deep Dive	Project Work	Applied learning	CE-TI-DD-PW	Applied learning activities
+CONTENT ENGAGEMENT FORMATS	By Interaction Mode	Passive Consumption	Reading	Text absorption	CE-IM-PC-RD	Text content absorption
+CONTENT ENGAGEMENT FORMATS	By Interaction Mode	Passive Consumption	Watching	Video viewing	CE-IM-PC-WT	Video content viewing
+CONTENT ENGAGEMENT FORMATS	By Interaction Mode	Passive Consumption	Listening	Audio consumption	CE-IM-PC-LS	Audio content consumption
+CONTENT ENGAGEMENT FORMATS	By Interaction Mode	Passive Consumption	Observing	Demonstration watching	CE-IM-PC-OB	Demonstration watching
+CONTENT ENGAGEMENT FORMATS	By Interaction Mode	Active Engagement	Practice	Hands-on application	CE-IM-AE-PR	Hands-on skill application
+CONTENT ENGAGEMENT FORMATS	By Interaction Mode	Active Engagement	Problem Solving	Challenge-based	CE-IM-AE-PS	Challenge-based learning
+CONTENT ENGAGEMENT FORMATS	By Interaction Mode	Active Engagement	Discussion	Dialogue-based	CE-IM-AE-DS	Dialogue-based learning
+CONTENT ENGAGEMENT FORMATS	By Interaction Mode	Active Engagement	Creation	Output-generating	CE-IM-AE-CR	Output-generating learning
+CONTENT ENGAGEMENT FORMATS	By Interaction Mode	Collaborative Learning	Peer Learning	Colleague sharing	CE-IM-CL-PL	Colleague-based knowledge sharing
+CONTENT ENGAGEMENT FORMATS	By Interaction Mode	Collaborative Learning	Group Projects	Team-based	CE-IM-CL-GP	Team-based applied learning
+CONTENT ENGAGEMENT FORMATS	By Interaction Mode	Collaborative Learning	Study Groups	Collective preparation	CE-IM-CL-SG	Collective preparation
+CONTENT ENGAGEMENT FORMATS	By Interaction Mode	Collaborative Learning	Community Participation	Forum engagement	CE-IM-CL-CP	Forum and group engagement
+CONTENT ENGAGEMENT FORMATS	By Delivery Medium	Text-Based	Articles & Blog Posts	Short-form	CE-DM-TB-AB	Short-form written content
+CONTENT ENGAGEMENT FORMATS	By Delivery Medium	Text-Based	Books & eBooks	Long-form	CE-DM-TB-BK	Long-form written content
+CONTENT ENGAGEMENT FORMATS	By Delivery Medium	Text-Based	Documentation	Reference written	CE-DM-TB-DC	Reference written content
+CONTENT ENGAGEMENT FORMATS	By Delivery Medium	Text-Based	White Papers	Research-based	CE-DM-TB-WP	Research-based written content
+CONTENT ENGAGEMENT FORMATS	By Delivery Medium	Visual	Videos	Motion-based	CE-DM-VS-VD	Motion-based visual content
+CONTENT ENGAGEMENT FORMATS	By Delivery Medium	Visual	Infographics	Information graphics	CE-DM-VS-IF	Information graphic content
+CONTENT ENGAGEMENT FORMATS	By Delivery Medium	Visual	Diagrams	Process visuals	CE-DM-VS-DG	Process and relationship visuals
+CONTENT ENGAGEMENT FORMATS	By Delivery Medium	Visual	Interactive Visualizations	Exploratory	CE-DM-VS-IV	Exploratory visual content
+CONTENT ENGAGEMENT FORMATS	By Delivery Medium	Audio	Podcasts	Episode-based	CE-DM-AU-PD	Episode-based audio content
+CONTENT ENGAGEMENT FORMATS	By Delivery Medium	Audio	Audiobooks	Narrated	CE-DM-AU-AB	Narrated book content
+CONTENT ENGAGEMENT FORMATS	By Delivery Medium	Audio	Audio Courses	Structured audio	CE-DM-AU-AC	Structured audio learning
+CONTENT ENGAGEMENT FORMATS	By Delivery Medium	Audio	Recorded Presentations	Captured audio	CE-DM-AU-RP	Captured session audio
+CONTENT ENGAGEMENT FORMATS	By Delivery Medium	Interactive	Simulations	Environment-based	CE-DM-IN-SM	Environment-based learning
+CONTENT ENGAGEMENT FORMATS	By Delivery Medium	Interactive	Labs	Hands-on environments	CE-DM-IN-LB	Hands-on practice environments
+CONTENT ENGAGEMENT FORMATS	By Delivery Medium	Interactive	Games	Gamified learning	CE-DM-IN-GM	Gamified learning experiences
+CONTENT ENGAGEMENT FORMATS	By Delivery Medium	Interactive	Interactive Tutorials	Guided practice	CE-DM-IN-IT	Guided practice content

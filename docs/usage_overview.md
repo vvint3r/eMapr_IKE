@@ -9,6 +9,7 @@
        --uri bolt://localhost:7687 --user neo4j --password <password> --wipe
    ```
 4. Open the Neo4j Browser/Bloom to explore `MA_Node` vertices and relations.
+5. If you prefer a managed Aura cluster (TLS, cloud access), follow `docs/neo4j_aura.md` for provisioning + env setup. Once `KG_AURA_*` vars are set, the Streamlit sidebar will let you switch between local and Aura profiles without restarting.
 
 ## 2. Generate KG Node Embeddings
 1. Install embedding deps: `pip install sentence-transformers chromadb` (optional if you only need JSON).
@@ -70,7 +71,22 @@
 
 This flow keeps the KG authoritative in Neo4j while embeddings enable semantic retrieval for LLM-based applications.
 
-## 6. Document Router & Multi-Format Ingestion
+## 6. Learning Layer Blueprints
+1. Generate scaffolds for each KG node (levels ≥2 by default):
+   ```bash
+   scripts/learning_layer_builder.py \
+       --kg artifacts/marketing_analytics_kg.json \
+       --out artifacts/learning_blueprints.json
+   ```
+   - The script infers Bloom/SOLO targets, prerequisite chains, recommended activities, and assessment scaffolds based on `notes/learning-framework.md`.
+   - `KG_LEARNING_BLUEPRINTS` can override the default output path and is also respected by the Streamlit app.
+2. Relaunch Streamlit and select any node—the new **Learning Blueprint** panel surfaces:
+   - Status + coverage gauge (based on linked blueprints/micro-assets).
+   - Objectives, prerequisites, activities, assessments, resources, and metacognition prompts pulled from the generated JSON.
+   - Missing-section hints to prioritize future content work.
+3. Update the JSON manually or rerun the builder whenever the KG evolves; Streamlit hot-reloads the latest file.
+
+## 7. Document Router & Multi-Format Ingestion
 1. Supports `.txt`, `.md`, `.pdf` (text-based or scanned via OCR). Hooks are ready for future image/video/URL preprocessors.
 2. Run the router to triage documents before chunking:
    ```bash
@@ -85,7 +101,7 @@ This flow keeps the KG authoritative in Neo4j while embeddings enable semantic r
    - **review** – too short or no confident KG topic match; check manually.
 4. All routing decisions and checksums are logged in `artifacts/router/manifest.json`, preventing reprocessing of the same material on future runs.
 
-## 7. LangChain RAG Chat
+## 8. LangChain RAG Chat
 1. Set an OpenAI API key in your environment: `export OPENAI_API_KEY=sk-...`
 2. (Optional) choose a different chat model via `export RAG_MODEL_NAME=gpt-4.1-mini`.
 3. Relaunch Streamlit – a “Chat with the Knowledge Graph” panel appears.

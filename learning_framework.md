@@ -152,24 +152,3 @@ Marketing Analytics is the practice of using data to evaluate the performance of
 2.  **Slide 2:** The "Hidden Value" (Analysis of view-through conversions).
 3.  **Slide 3:** The Forecast (Predictive chart: If we cut spend, sales drop by X).
 4.  **Rubric:** Pass = Correctly identifies that TV drives Search volume; Fail = Recommends cutting TV solely due to lack of direct clicks.
-
-[1](https://www.averi.ai/breakdowns/mastering-ai-content-creation-a-step-by-step-framework-for-high-quality-output-at-scale)
-[2](https://www.reddit.com/r/ChatGPTPromptGenius/comments/1gbk12r/build_comprehensive_courses_and_learning/)
-[3](https://students.tippie.uiowa.edu/tippie-resources/technology/instructional-design/models/gagne)
-[4](https://proctorizer.com/wp-content/uploads/2025/02/GAIDE.pdf)
-[5](https://guides.library.ucdavis.edu/genai/prompt)
-[6](https://pmc.ncbi.nlm.nih.gov/articles/PMC4598645/)
-[7](https://www.aprimo.com/blog/use-generative-ai-for-content-creation-without-losing-brand-authenticity)
-[8](https://learnprompting.org/docs/introduction)
-[9](https://www.coursebox.ai/blog/gagne-instructional-design-model)
-[10](https://www.rapidops.com/blog/generative-ai-framework-digital-project/)
-[11](https://cloud.google.com/discover/what-is-prompt-engineering)
-[12](https://whatfix.com/blog/gagnes-nine-events-of-instruction-model/)
-[13](https://www.tanzenconsulting.com/blog/structured-content-ai)
-[14](https://mitsloanedtech.mit.edu/ai/basics/effective-prompts/)
-[15](https://edtechbooks.org/id/robert_gagn_and_systematic_design)
-[16](https://anthropic.skilljar.com/ai-fluency-framework-foundations)
-[17](https://www.promptengineering.ninja/p/prompt-engineering-for-curriculum)
-[18](https://www.bakeru.edu/images/pdf/SOE/EdD_Theses/Higgins_Cynthia.pdf)
-[19](https://www.teqsa.gov.au/sites/default/files/2025-12/IHEA-whole-of-institution-GenAI-framework.pdf)
-[20](https://www.promptingguide.ai)

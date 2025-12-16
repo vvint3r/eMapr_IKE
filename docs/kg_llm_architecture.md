@@ -16,6 +16,8 @@
 
 - **Experience Layer**
   - Streamlit explorer (`streamlit_app.py`) pulls subgraphs via `Neo4jService`, renders them with PyVis, and surfaces enriched Chroma chunks (summaries, learning/tone tags, entities).
+  - Sidebar connection selector toggles between Local Docker and Neo4j Aura profiles (driven by `AppConfig`).
+  - Learning blueprint panel reads `artifacts/learning_blueprints.json` to expose outcomes, activities, assessments, and coverage gaps per node.
   - LangChain-powered chat panel uses the `MarketingRAG` service (Chroma retriever + Neo4j facts) to answer questions with cited sources.
   - Sidebar controls: node picker, traversal depth, chunk query, topic filters.
 
@@ -44,7 +46,8 @@ flowchart LR
 | Hierarchical / nested browsing | Graph viz + node metadata | Collapsible tree / sunburst view, side-by-side related-domain panels |
 | LLM chat with RAG | Streamlit chat panel + LangChain RAG chain live | Conversation logging, evaluation harness, multi-model routing |
 | NLP/ML enrichments | spaCy enrichment adds NER, keyphrases, summaries, learning tags | Sentiment scoring, model evaluation loop, advanced summarization |
-| Deployment (Aura/Bloom) | Local Docker + Streamlit | Aura instance sync, multi-environment config |
+| Deployment (Aura/Bloom) | Local Docker + Aura dual profile, runbooks in `docs/neo4j_aura.md` | Bloom palette export + remote admin hardening |
+| Learning layer views | Blueprint generator + Streamlit panel fed by `learning_layer_builder.py` | Editable UI + progress dashboards, tie-ins to document coverage |
 | Advanced ML (fine-tuning, RLHF) | Not started | Logging Q&A pairs, evaluation harness, fine-tune pipelines |
 
 ## 3. Upcoming Architecture (Proposed)
@@ -90,7 +93,12 @@ flowchart TB
    - Allow Streamlit to switch between local Neo4j and Aura (env-driven config).
    - Document port-forwarding / tunneling steps for remote access.
 
-5. **Fine-Tuning / RLHF Prep**
+5. **Learning Layer (COMPLETED)**
+   - `scripts/learning_layer_builder.py` produces learning blueprint scaffolds for each capability.
+   - Streamlit renders status + objectives/activities/assessments per node.
+   - Coverage index highlights blueprint gaps for curation.
+
+6. **Fine-Tuning / RLHF Prep**
    - Log chat interactions (prompt, retrieved context, response).
    - Set up evaluation notebooks (LangSmith/Eval) to compare prompts/models.
    - Later, fine-tune selected OSS models using collected Q&A pairs.
@@ -101,6 +109,8 @@ flowchart TB
 - `artifacts/marketing_analytics_kg.json`
 - `artifacts/chroma/`
 - `artifacts/kg_node_embeddings.json`
+- `artifacts/learning_blueprints.json`
 - `app/streamlit_app.py`
+- `scripts/learning_layer_builder.py`
 - `llm_models_analysis.md`
 
